@@ -195,19 +195,19 @@ export function formatMotivation(item) {
 }
 
 /**
- * Format a reading test post (Mini App)
+ * Format a reading test post (Document)
  */
 export function formatReadingTest(item) {
   const lines = [
     `📱 <b>Mini IELTS Reading Test</b>`,
     SEPARATOR,
     ``,
-    `Bugun interaktiv test ishlab, o'zimizni sinab ko'ramiz! Telegramdan chiqmasdan, taymer bilan ishlang.`,
+    `Bugun interaktiv test ishlab, o'zimizni sinab ko'ramiz!`,
     ``,
     `📌 <b>Mavzu:</b> <i>${item.title}</i>`,
     `📋 <b>Test turi:</b> ${item.type}`,
     ``,
-    `👇 Pastdagi tugmani bosib testni boshlang!`,
+    `👇 Pastdagi biriktirilgan HTML faylni oching va testni taymer bilan yechib ko'ring!`,
     ``,
     SEPARATOR,
     `#IELTS #ReadingTest #MiniApp`,
