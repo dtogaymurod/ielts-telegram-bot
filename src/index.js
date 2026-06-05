@@ -16,7 +16,7 @@
  *   CONTENT_TYPE           — Force content type (e.g., vocabulary, quiz)
  */
 
-import { sendMessage, sendQuiz, sendDocument, validateConfig } from './telegram.js';
+import { sendMessage, sendQuiz, sendDocument, sendPhoto, validateConfig } from './telegram.js';
 import { generateDailyReadingTest } from './reading-generator.js';
 import {
   getTimeSlot,
@@ -80,7 +80,15 @@ async function main() {
   } else if (contentType === 'recent-writing') {
     console.log('✍️ Generating Recent Writing post...');
     const task = updateAndGetNextWritingTask();
-    postText = await gemini.generateRecentWriting(task);
+    const result = await gemini.generateRecentWriting(task);
+    if (typeof result === 'string') {
+      postText = result;
+    } else if (result && typeof result === 'object') {
+      postText = result.text;
+      if (result.photoUrl) {
+        messageOptions.photoUrl = result.photoUrl;
+      }
+    }
   } else {
     postText = await tryAIGeneration(contentType);
 
@@ -92,6 +100,15 @@ async function main() {
       if (item) {
         postText = formatContent(contentType, item);
       }
+    }
+  }
+  
+  if (!postText) {
+    console.log('⚠️ AI generation failed for recent exams. Falling back to database (motivation)...');
+    const dbFile = getDatabaseFile('motivation');
+    const item = getContentFromDatabase(dbFile);
+    if (item) {
+      postText = formatContent('motivation', item);
     }
   }
 
@@ -112,6 +129,8 @@ async function main() {
     console.log(postText);
     if (messageOptions.document) {
       console.log('\n📎 Attached Document: ', messageOptions.document.fileName);
+    } else if (messageOptions.photoUrl) {
+      console.log('\n🖼️ Attached Photo URL: ', messageOptions.photoUrl);
     }
     console.log('\n═══════════════════════\n');
     console.log(`📏 Length: ${postText.length} / 4096 chars`);
@@ -125,6 +144,8 @@ async function main() {
         messageOptions.document.fileName,
         postText
       );
+    } else if (messageOptions.photoUrl) {
+      result = await sendPhoto(messageOptions.photoUrl, postText);
     } else {
       result = await sendMessage(postText, messageOptions);
     }

@@ -387,9 +387,9 @@ export async function generateRecentWriting(task) {
   if (!client) return null;
 
   try {
-    const response = await client.models.generateContent({
-      model: 'gemini-2.5-flash',
-      contents: `You are an expert IELTS examiner. Think of a recently reported IELTS Writing Task ${task} question from 2026 or 2025 (e.g. from global or Uzbekistan exams).
+    const isTask1 = task === 1;
+    
+    let promptText = `You are an expert IELTS examiner. Think of a recently reported IELTS Writing Task ${task} question from 2026 or 2025 (e.g. from global or Uzbekistan exams).
       
       Generate a Telegram post for this question.
       Include:
@@ -398,16 +398,38 @@ export async function generateRecentWriting(task) {
       - A quick outline of Ideas/Structure (Agree/Disagree points if Task 2, or Main trends if Task 1)
       - 3-5 advanced Band 8.0+ vocabulary words to use in this essay, with translations in Uzbek
       
-      Write the post entirely in Telegram HTML format (<b>, <i>, <u>). Use engaging emojis. Keep it under 3000 characters.`,
+      Write the post entirely in Telegram HTML format (<b>, <i>, <u>). Use engaging emojis. Keep it under 3000 characters.`;
+
+    if (isTask1) {
+      promptText += `\n\nCRITICAL FOR TASK 1: You MUST also generate a valid QuickChart.io URL that accurately visualizes the data for this Task 1 question (e.g., a bar chart, line graph, or pie chart).
+      Return your response STRICTLY as a JSON object matching this schema:
+      {
+        "text": "The telegram post text here...",
+        "photoUrl": "https://quickchart.io/chart?c={type:'bar',data:{...}}"
+      }
+      Do not include markdown code blocks around the JSON.`;
+    }
+
+    const response = await client.models.generateContent({
+      model: 'gemini-2.5-flash',
+      contents: promptText,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
         temperature: 0.85,
         maxOutputTokens: 2048,
+        responseMimeType: isTask1 ? 'application/json' : 'text/plain',
       },
     });
-    let text = response.text;
-    text = `🚨 <b>RECENT EXAM QUESTION: WRITING TASK ${task}</b> 🚨\n\n` + text;
-    return text;
+
+    if (isTask1) {
+      const data = JSON.parse(response.text);
+      data.text = `🚨 <b>RECENT EXAM QUESTION: WRITING TASK 1</b> 🚨\n\n` + data.text;
+      return data; // returns { text, photoUrl }
+    } else {
+      let text = response.text;
+      text = `🚨 <b>RECENT EXAM QUESTION: WRITING TASK 2</b> 🚨\n\n` + text;
+      return text;
+    }
   } catch (error) {
     console.error('❌ Gemini recent writing generation failed:', error.message);
     return null;
