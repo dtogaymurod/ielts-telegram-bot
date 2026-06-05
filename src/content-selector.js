@@ -29,7 +29,7 @@ const SCHEDULE = {
 export function getTimeSlot() {
   // Check if TIME_SLOT is set by GitHub Actions
   const envSlot = process.env.TIME_SLOT;
-  if (envSlot && ['morning', 'afternoon', 'evening'].includes(envSlot)) {
+  if (envSlot && ['morning', 'afternoon', 'readingtest', 'evening'].includes(envSlot)) {
     return envSlot;
   }
 
@@ -38,7 +38,8 @@ export function getTimeSlot() {
   const tashkentHour = (now.getUTCHours() + 5) % 24;
 
   if (tashkentHour >= 6 && tashkentHour < 12) return 'morning';
-  if (tashkentHour >= 12 && tashkentHour < 18) return 'afternoon';
+  if (tashkentHour >= 12 && tashkentHour < 15) return 'afternoon';
+  if (tashkentHour >= 15 && tashkentHour < 18) return 'readingtest';
   return 'evening';
 }
 
@@ -56,6 +57,10 @@ export function getContentType() {
   const tashkentTime = new Date(now.getTime() + 5 * 60 * 60 * 1000);
   const dayOfWeek = tashkentTime.getUTCDay();
   const timeSlot = getTimeSlot();
+
+  if (timeSlot === 'readingtest') {
+    return 'reading-test';
+  }
 
   return SCHEDULE[dayOfWeek][timeSlot];
 }
