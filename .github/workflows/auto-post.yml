@@ -2,12 +2,16 @@ name: IELTS Channel Auto-Post
 
 on:
   schedule:
-    # Ertalab post — 08:00 Toshkent vaqti (03:00 UTC)
+    # Speaking post — 10:00 Toshkent vaqti (05:00 UTC)
+    - cron: '0 5 * * *'
+    # Ertalab post — 08:00 Toshkent vaqti (03:00 UTC) (will be skipped or merged? No, user kept it)
     - cron: '0 3 * * *'
     # Tushlik post — 13:00 Toshkent vaqti (08:00 UTC)
     - cron: '0 8 * * *'
     # Reading test post — 16:00 Toshkent vaqti (11:00 UTC)
     - cron: '0 11 * * *'
+    # Writing post — 22:00 Toshkent vaqti (17:00 UTC)
+    - cron: '0 17 * * *'
     # Kechqurun post — 20:00 Toshkent vaqti (15:00 UTC)
     - cron: '0 15 * * *'
 
@@ -22,9 +26,11 @@ on:
         options:
           - ''
           - morning
+          - recentspeaking
           - afternoon
           - readingtest
           - evening
+          - recentwriting
       content_type:
         description: 'Force content type'
         required: false
@@ -39,6 +45,8 @@ on:
           - band-score
           - motivation
           - quiz
+          - recent-speaking
+          - recent-writing
       dry_run:
         description: 'Dry run (no actual posting)'
         required: false
@@ -74,12 +82,16 @@ jobs:
           HOUR=$(date -u +%H)
           if [ "$HOUR" = "03" ]; then
             echo "slot=morning" >> $GITHUB_OUTPUT
+          elif [ "$HOUR" = "05" ]; then
+            echo "slot=recentspeaking" >> $GITHUB_OUTPUT
           elif [ "$HOUR" = "08" ]; then
             echo "slot=afternoon" >> $GITHUB_OUTPUT
           elif [ "$HOUR" = "11" ]; then
             echo "slot=readingtest" >> $GITHUB_OUTPUT
           elif [ "$HOUR" = "15" ]; then
             echo "slot=evening" >> $GITHUB_OUTPUT
+          elif [ "$HOUR" = "17" ]; then
+            echo "slot=recentwriting" >> $GITHUB_OUTPUT
           else
             echo "slot=" >> $GITHUB_OUTPUT
           fi

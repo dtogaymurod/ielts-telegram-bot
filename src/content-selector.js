@@ -29,7 +29,7 @@ const SCHEDULE = {
 export function getTimeSlot() {
   // Check if TIME_SLOT is set by GitHub Actions
   const envSlot = process.env.TIME_SLOT;
-  if (envSlot && ['morning', 'afternoon', 'readingtest', 'evening'].includes(envSlot)) {
+  if (envSlot && ['morning', 'recentspeaking', 'afternoon', 'readingtest', 'evening', 'recentwriting'].includes(envSlot)) {
     return envSlot;
   }
 
@@ -37,10 +37,12 @@ export function getTimeSlot() {
   const now = new Date();
   const tashkentHour = (now.getUTCHours() + 5) % 24;
 
-  if (tashkentHour >= 6 && tashkentHour < 12) return 'morning';
+  if (tashkentHour >= 6 && tashkentHour < 9) return 'morning';
+  if (tashkentHour >= 9 && tashkentHour < 12) return 'recentspeaking';
   if (tashkentHour >= 12 && tashkentHour < 15) return 'afternoon';
   if (tashkentHour >= 15 && tashkentHour < 18) return 'readingtest';
-  return 'evening';
+  if (tashkentHour >= 18 && tashkentHour < 21) return 'evening';
+  return 'recentwriting';
 }
 
 /**
@@ -58,11 +60,49 @@ export function getContentType() {
   const dayOfWeek = tashkentTime.getUTCDay();
   const timeSlot = getTimeSlot();
 
-  if (timeSlot === 'readingtest') {
-    return 'reading-test';
-  }
+  if (timeSlot === 'readingtest') return 'reading-test';
+  if (timeSlot === 'recentspeaking') return 'recent-speaking';
+  if (timeSlot === 'recentwriting') return 'recent-writing';
 
-  return SCHEDULE[dayOfWeek][timeSlot];
+  return SCHEDULE[dayOfWeek][timeSlot] || 'motivation'; // fallback
+}
+
+/**
+ * Get and update the next speaking part
+ * @returns {number} 1, 2, or 3
+ */
+export function updateAndGetNextSpeakingPart() {
+  const statePath = join(CONTENT_DIR, 'state.json');
+  try {
+    const state = JSON.parse(readFileSync(statePath, 'utf-8'));
+    let part = state.lastSpeakingPart + 1;
+    if (part > 3) part = 1;
+    state.lastSpeakingPart = part;
+    writeFileSync(statePath, JSON.stringify(state, null, 2), 'utf-8');
+    return part;
+  } catch (err) {
+    console.error('Error reading state.json:', err.message);
+    return 1;
+  }
+}
+
+/**
+ * Get and update the next writing task
+ * @returns {number} 1 or 2
+ */
+export function updateAndGetNextWritingTask() {
+  const statePath = join(CONTENT_DIR, 'state.json');
+  try {
+    const state = JSON.parse(readFileSync(statePath, 'utf-8'));
+    let task = state.lastWritingTask + 1;
+    if (task > 2) task = 1;
+    state.lastWritingTask = task;
+    writeFileSync(statePath, JSON.stringify(state, null, 2), 'utf-8');
+    return task;
+  } catch (err) {
+    console.error('Error reading state.json:', err.message);
+    return 1;
+  }
 }
 
 /**

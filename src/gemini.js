@@ -341,3 +341,75 @@ export async function generateReadingTest() {
     return null;
   }
 }
+
+/**
+ * Generate a recent IELTS speaking post
+ * @param {number} part - 1, 2, or 3
+ */
+export async function generateRecentSpeaking(part) {
+  const client = getAI();
+  if (!client) return null;
+
+  try {
+    const response = await client.models.generateContent({
+      model: 'gemini-2.5-flash',
+      contents: `You are an expert IELTS examiner. Search your knowledge for a recently reported IELTS Speaking Part ${part} question from 2026 or 2025 (e.g. from global or Uzbekistan exams).
+      
+      Generate a Telegram post based on this question.
+      Include:
+      - The Question (in English)
+      - O'zbekcha tarjimasi
+      - Band 8.0-9.0 Sample Answer (in English)
+      - 3-5 useful vocabulary words from the answer with definitions in Uzbek
+      
+      Write the post entirely in Telegram HTML format (<b>, <i>, <u>). Use engaging emojis. Keep it under 2500 characters.`,
+      config: {
+        systemInstruction: SYSTEM_INSTRUCTION,
+        temperature: 0.85,
+        maxOutputTokens: 2048,
+      },
+    });
+    let text = response.text;
+    text = `🚨 <b>RECENT EXAM QUESTION: SPEAKING PART ${part}</b> 🚨\n\n` + text;
+    return text;
+  } catch (error) {
+    console.error('❌ Gemini recent speaking generation failed:', error.message);
+    return null;
+  }
+}
+
+/**
+ * Generate a recent IELTS writing post
+ * @param {number} task - 1 or 2
+ */
+export async function generateRecentWriting(task) {
+  const client = getAI();
+  if (!client) return null;
+
+  try {
+    const response = await client.models.generateContent({
+      model: 'gemini-2.5-flash',
+      contents: `You are an expert IELTS examiner. Think of a recently reported IELTS Writing Task ${task} question from 2026 or 2025 (e.g. from global or Uzbekistan exams).
+      
+      Generate a Telegram post for this question.
+      Include:
+      - The exact prompt/question (in English)
+      - O'zbekcha tarjimasi
+      - A quick outline of Ideas/Structure (Agree/Disagree points if Task 2, or Main trends if Task 1)
+      - 3-5 advanced Band 8.0+ vocabulary words to use in this essay, with translations in Uzbek
+      
+      Write the post entirely in Telegram HTML format (<b>, <i>, <u>). Use engaging emojis. Keep it under 3000 characters.`,
+      config: {
+        systemInstruction: SYSTEM_INSTRUCTION,
+        temperature: 0.85,
+        maxOutputTokens: 2048,
+      },
+    });
+    let text = response.text;
+    text = `🚨 <b>RECENT EXAM QUESTION: WRITING TASK ${task}</b> 🚨\n\n` + text;
+    return text;
+  } catch (error) {
+    console.error('❌ Gemini recent writing generation failed:', error.message);
+    return null;
+  }
+}
