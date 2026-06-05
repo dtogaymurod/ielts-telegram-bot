@@ -17,6 +17,7 @@
  */
 
 import { sendMessage, sendQuiz, sendDocument, validateConfig } from './telegram.js';
+import { generateDailyReadingTest } from './reading-generator.js';
 import {
   getTimeSlot,
   getContentType,
@@ -60,8 +61,7 @@ async function main() {
 
   if (contentType === 'reading-test') {
     console.log('📱 Preparing Mini App reading test document...');
-    const dbFile = getDatabaseFile(contentType);
-    const item = getContentFromDatabase(dbFile);
+    const item = await generateDailyReadingTest();
 
     if (item) {
       postText = formatContent(contentType, item);

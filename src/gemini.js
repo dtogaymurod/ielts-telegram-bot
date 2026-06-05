@@ -279,3 +279,65 @@ export async function generateQuiz() {
     return null;
   }
 }
+
+/**
+ * Generate a reading test with AI
+ * @returns {Promise<object|null>} JSON object with reading test data
+ */
+export async function generateReadingTest() {
+  const client = getAI();
+  if (!client) return null;
+
+  try {
+    const response = await client.models.generateContent({
+      model: 'gemini-2.5-flash',
+      contents: `You are an expert IELTS examiner. Generate an IELTS Reading passage and 5 Multiple Choice questions.
+      
+      The passage should be:
+      - 250-350 words long
+      - Divided into exactly 4 paragraphs
+      - Academic or semi-academic topic (e.g., science, history, environment, psychology)
+      - Interesting and engaging
+  
+      Then create 5 Multiple Choice questions based on the text:
+      - Each question must have exactly 4 options (A, B, C, D)
+      - Only one option should be correct
+      - The options should test reading comprehension, not just vocabulary matching
+  
+      QATTIQ FORMAT (faqat JSON qaytar, boshqa hech narsa yo'q):
+      {
+        "title": "The Title of the Passage",
+        "paragraphs": [
+          "First paragraph text without any newlines or unescaped quotes...",
+          "Second paragraph text..."
+        ],
+        "questions": [
+          {
+            "question": "1. What is the main idea of...",
+            "options": ["Option A text", "Option B text", "Option C text", "Option D text"],
+            "correct_index": 2
+          }
+        ]
+      }`,
+      config: {
+        systemInstruction: 'Faqat valid JSON qaytar. Do not use unescaped quotes (") or newlines (\\n) inside string values. Boshqa hech qanday matn yoki markdown yozma.',
+        temperature: 0.7,
+        maxOutputTokens: 2048,
+        responseMimeType: 'application/json',
+      },
+    });
+
+    const testData = JSON.parse(response.text);
+
+    // Validate structure
+    if (!testData.title || !Array.isArray(testData.paragraphs) || !Array.isArray(testData.questions)) {
+      console.error('❌ Invalid reading test structure from Gemini');
+      return null;
+    }
+
+    return testData;
+  } catch (error) {
+    console.error('❌ Gemini reading test generation failed:', error.message);
+    return null;
+  }
+}

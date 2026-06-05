@@ -11,7 +11,7 @@
     "title": "Matching Headings Practice",
     "type": "Matching Headings",
     "filename": "ielts_matching_headings.html",
-    "used": false
+    "used": true
   },
   {
     "id": "rt_003",
@@ -39,14 +39,14 @@
     "title": "Multiple Choice Test 2",
     "type": "Multiple Choice",
     "filename": "ielts_multiple_choice_2.html",
-    "used": false
+    "used": true
   },
   {
     "id": "rt_007",
     "title": "Full Reading Passage",
     "type": "Mixed Questions",
     "filename": "ielts_reading.html",
-    "used": false
+    "used": true
   },
   {
     "id": "rt_008",
