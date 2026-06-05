@@ -70,8 +70,8 @@ async function main() {
         reply_markup: {
           inline_keyboard: [[
             {
-              text: "📝 Testni ishlash (Mini App)",
-              web_app: { url: `${GITHUB_PAGES_URL}/${item.filename}` }
+              text: "📝 Testni ishlash",
+              url: `${GITHUB_PAGES_URL}/${item.filename}`
             }
           ]]
         }
