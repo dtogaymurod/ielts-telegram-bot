@@ -1,0 +1,437 @@
+[
+  {
+    "id": "quiz_001",
+    "category": "vocabulary",
+    "question": "What does 'ubiquitous' mean?",
+    "options": ["Rare and unusual", "Present everywhere", "Very beautiful", "Extremely dangerous"],
+    "correct_index": 1,
+    "explanation_uz": "'Ubiquitous' — hamma joyda mavjud degani. Masalan: 'Social media has become ubiquitous in modern life.'",
+    "difficulty": "medium",
+    "used": false
+  },
+  {
+    "id": "quiz_002",
+    "category": "vocabulary",
+    "question": "Choose the correct synonym for 'detrimental':",
+    "options": ["Beneficial", "Harmful", "Neutral", "Attractive"],
+    "correct_index": 1,
+    "explanation_uz": "'Detrimental' — zararli degani. 'Harmful' uning sinonimi. Masalan: 'Smoking is detrimental to health.'",
+    "difficulty": "easy",
+    "used": false
+  },
+  {
+    "id": "quiz_003",
+    "category": "grammar",
+    "question": "Choose the correct sentence:",
+    "options": [
+      "The number of students have increased.",
+      "The number of students has increased.",
+      "A number of students has increased.",
+      "The numbers of students has increased."
+    ],
+    "correct_index": 1,
+    "explanation_uz": "'The number of' dan keyin birlik fe'l (has) ishlatiladi. 'A number of' dan keyin esa ko'plik fe'l (have) ishlatiladi. Bu IELTS Writing da juda muhim qoida.",
+    "difficulty": "medium",
+    "used": false
+  },
+  {
+    "id": "quiz_004",
+    "category": "vocabulary",
+    "question": "What does 'exacerbate' mean?",
+    "options": ["To improve", "To make worse", "To investigate", "To celebrate"],
+    "correct_index": 1,
+    "explanation_uz": "'Exacerbate' — vaziyatni yomonlashtirmoq degani. Masalan: 'Pollution exacerbates respiratory diseases.'",
+    "difficulty": "medium",
+    "used": false
+  },
+  {
+    "id": "quiz_005",
+    "category": "collocations",
+    "question": "Which word correctly completes: 'The government should take _____ measures to reduce pollution.'",
+    "options": ["strong", "heavy", "stringent", "hard"],
+    "correct_index": 2,
+    "explanation_uz": "'Stringent measures' — qat'iy choralar. Bu IELTS da keng ishlatiladigan kollokatsiya. 'Strong measures' ham to'g'ri, lekin 'stringent' akademik darajani oshiradi.",
+    "difficulty": "medium",
+    "used": false
+  },
+  {
+    "id": "quiz_006",
+    "category": "grammar",
+    "question": "Choose the correct sentence:",
+    "options": [
+      "Despite of the rain, we went outside.",
+      "Despite the rain, we went outside.",
+      "Despite it rained, we went outside.",
+      "Despite that it rained, we went outside."
+    ],
+    "correct_index": 1,
+    "explanation_uz": "'Despite' dan keyin ot yoki ot iborasi keladi (despite + noun). 'Despite of' — NOTO'G'RI! 'Although' dan keyin gap keladi: 'Although it rained, we went outside.'",
+    "difficulty": "easy",
+    "used": false
+  },
+  {
+    "id": "quiz_007",
+    "category": "vocabulary",
+    "question": "What is the antonym of 'affluent'?",
+    "options": ["Wealthy", "Impoverished", "Generous", "Popular"],
+    "correct_index": 1,
+    "explanation_uz": "'Affluent' — boy, badavlat. Uning antonimi 'impoverished' — qashshoq, kambag'al. Masalan: 'Affluent nations should help impoverished countries.'",
+    "difficulty": "medium",
+    "used": false
+  },
+  {
+    "id": "quiz_008",
+    "category": "error_correction",
+    "question": "Find the error: 'The informations provided by the researcher was very useful.'",
+    "options": [
+      "'informations' should be 'information'",
+      "'provided' should be 'providing'",
+      "'was' should be 'were'",
+      "Both A and C are correct"
+    ],
+    "correct_index": 3,
+    "explanation_uz": "'Information' — sanab bo'lmaydigan ot, 'informations' NOTO'G'RI. 'Information' birlik, shuning uchun 'was' to'g'ri. Lekin 'informations' → 'information' bo'lganda, 'was' to'g'ri qoladi. Aslida javob A — faqat 'information' tuzatiladi.",
+    "difficulty": "hard",
+    "used": false
+  },
+  {
+    "id": "quiz_009",
+    "category": "vocabulary",
+    "question": "Choose the word that means 'to make less severe':",
+    "options": ["Exacerbate", "Mitigate", "Perpetuate", "Scrutinize"],
+    "correct_index": 1,
+    "explanation_uz": "'Mitigate' — yumshatmoq, kamraytirmoq degani. Masalan: 'We need to mitigate the effects of climate change.' 'Exacerbate' esa teskarisi — yomonlashtirmoq.",
+    "difficulty": "medium",
+    "used": false
+  },
+  {
+    "id": "quiz_010",
+    "category": "grammar",
+    "question": "Which sentence uses the correct article?",
+    "options": [
+      "Education is a key to success.",
+      "Education is the key to success.",
+      "The education is key to the success.",
+      "An education is key to a success."
+    ],
+    "correct_index": 1,
+    "explanation_uz": "'The key to success' — aniq bir kalit. 'Education' (umumiy tushuncha) — article yo'q. 'The education' — faqat aniq ta'limdan gapirilganda ishlatiladi.",
+    "difficulty": "medium",
+    "used": false
+  },
+  {
+    "id": "quiz_011",
+    "category": "collocations",
+    "question": "Complete: 'Technology has had a _____ impact on society.'",
+    "options": ["profound", "deep", "strong", "big"],
+    "correct_index": 0,
+    "explanation_uz": "'Profound impact' — eng akademik va to'g'ri kollokatsiya. 'Big impact' — norasmiy. 'Deep impact' — odatda shaxsiy ta'sir uchun ishlatiladi.",
+    "difficulty": "easy",
+    "used": false
+  },
+  {
+    "id": "quiz_012",
+    "category": "vocabulary",
+    "question": "What does 'conducive' mean?",
+    "options": ["Harmful", "Productive", "Making something possible/likely", "Difficult to achieve"],
+    "correct_index": 2,
+    "explanation_uz": "'Conducive to' — biror narsaga qulay sharoit yaratadigan. Masalan: 'A quiet environment is conducive to learning.' 'Good for' ning akademik versiyasi.",
+    "difficulty": "medium",
+    "used": false
+  },
+  {
+    "id": "quiz_013",
+    "category": "grammar",
+    "question": "Choose the correct sentence with a conditional:",
+    "options": [
+      "If governments will invest more, education would improve.",
+      "If governments invested more, education would improve.",
+      "If governments invest more, education will improved.",
+      "If governments would invest more, education improved."
+    ],
+    "correct_index": 1,
+    "explanation_uz": "Second conditional: If + past simple, ... would + base form. Bu hozirda ehtimolsiz yoki faraziy vaziyatlarni ifodalaydi. IELTS Writing da juda ko'p ishlatiladi.",
+    "difficulty": "medium",
+    "used": false
+  },
+  {
+    "id": "quiz_014",
+    "category": "error_correction",
+    "question": "Find the error: 'Many peoples believes that education should be freely.'",
+    "options": [
+      "'peoples' should be 'people'",
+      "'believes' should be 'believe'",
+      "'freely' should be 'free'",
+      "All of the above"
+    ],
+    "correct_index": 3,
+    "explanation_uz": "3 ta xato: 1) 'people' allaqachon ko'plik, 's' qo'shish noto'g'ri. 2) 'people believe' — ko'plik fe'l. 3) 'free' — sifat (education is free), 'freely' — ravish (speak freely).",
+    "difficulty": "easy",
+    "used": false
+  },
+  {
+    "id": "quiz_015",
+    "category": "vocabulary",
+    "question": "What does 'unprecedented' mean?",
+    "options": ["Very common", "Expected", "Never happened before", "Gradually increasing"],
+    "correct_index": 2,
+    "explanation_uz": "'Unprecedented' — ilgari hech qachon bo'lmagan. Masalan: 'The pandemic caused unprecedented disruption.' Bu band 7+ so'z.",
+    "difficulty": "easy",
+    "used": false
+  },
+  {
+    "id": "quiz_016",
+    "category": "collocations",
+    "question": "Which phrase is correct?",
+    "options": [
+      "Do a decision",
+      "Make a decision",
+      "Take a decision",
+      "Both B and C are correct"
+    ],
+    "correct_index": 3,
+    "explanation_uz": "'Make a decision' va 'take a decision' ikkalasi ham to'g'ri. 'Do a decision' — NOTO'G'RI! 'Make' — amerikan ingliz tilida ko'proq, 'take' — britaniya ingliz tilida.",
+    "difficulty": "easy",
+    "used": false
+  },
+  {
+    "id": "quiz_017",
+    "category": "grammar",
+    "question": "Choose the correct passive voice:",
+    "options": [
+      "The new policy has implementing by the government.",
+      "The new policy has been implemented by the government.",
+      "The new policy has been implementing by the government.",
+      "The new policy have been implemented by the government."
+    ],
+    "correct_index": 1,
+    "explanation_uz": "Present perfect passive: has/have + been + past participle. 'The new policy' — birlik, shuning uchun 'has'. 'Implemented' — past participle.",
+    "difficulty": "medium",
+    "used": false
+  },
+  {
+    "id": "quiz_018",
+    "category": "vocabulary",
+    "question": "What is the meaning of 'viable'?",
+    "options": ["Impossible to achieve", "Capable of working successfully", "Very expensive", "Temporary"],
+    "correct_index": 1,
+    "explanation_uz": "'Viable' — amalga oshirish mumkin bo'lgan. Masalan: 'Renewable energy is a viable alternative.' 'Feasible' uning sinonimi.",
+    "difficulty": "medium",
+    "used": false
+  },
+  {
+    "id": "quiz_019",
+    "category": "error_correction",
+    "question": "Find the error: 'Although technology has many benefits, but it also has drawbacks.'",
+    "options": [
+      "'has' should be 'have'",
+      "'but' should be removed",
+      "'drawbacks' should be 'drawback'",
+      "No error"
+    ],
+    "correct_index": 1,
+    "explanation_uz": "'Although' va 'but' ni bitta gapda ishlatib bo'lmaydi! 'Although X, Y' yoki 'X, but Y' — birini tanlang. 'Although technology has many benefits, it also has drawbacks.' ✅",
+    "difficulty": "easy",
+    "used": false
+  },
+  {
+    "id": "quiz_020",
+    "category": "vocabulary",
+    "question": "Choose the correct synonym for 'paramount':",
+    "options": ["Optional", "Supreme", "Minimal", "Ordinary"],
+    "correct_index": 1,
+    "explanation_uz": "'Paramount' — eng muhim, birinchi o'rindagi. 'Supreme' uning sinonimi. 'Of paramount importance' — band 7+ ifoda.",
+    "difficulty": "medium",
+    "used": false
+  },
+  {
+    "id": "quiz_021",
+    "category": "grammar",
+    "question": "Choose the correct relative clause:",
+    "options": [
+      "The city which I was born is Tashkent.",
+      "The city where I was born is Tashkent.",
+      "The city who I was born is Tashkent.",
+      "The city whom I was born is Tashkent."
+    ],
+    "correct_index": 1,
+    "explanation_uz": "Joy uchun 'where', odam uchun 'who/whom', narsa uchun 'which/that' ishlatiladi. 'The city WHERE I was born' — to'g'ri.",
+    "difficulty": "easy",
+    "used": false
+  },
+  {
+    "id": "quiz_022",
+    "category": "collocations",
+    "question": "Complete: 'The report _____ light on the causes of poverty.'",
+    "options": ["gives", "sheds", "throws", "Both B and C"],
+    "correct_index": 3,
+    "explanation_uz": "'Shed light on' va 'throw light on' — ikkalasi ham to'g'ri. Ma'nosi: biror narsani oydinlashtirmoq, tushuntirmoq. IELTS Writing da foydali ibora.",
+    "difficulty": "hard",
+    "used": false
+  },
+  {
+    "id": "quiz_023",
+    "category": "vocabulary",
+    "question": "What does 'scrutinize' mean?",
+    "options": ["To ignore completely", "To examine closely", "To destroy", "To support"],
+    "correct_index": 1,
+    "explanation_uz": "'Scrutinize' — sinchiklab tekshirmoq. Masalan: 'Scientists scrutinize the data before publishing.' 'Examine' ning kuchli versiyasi.",
+    "difficulty": "medium",
+    "used": false
+  },
+  {
+    "id": "quiz_024",
+    "category": "grammar",
+    "question": "Which sentence correctly uses 'not only... but also'?",
+    "options": [
+      "Not only she is intelligent, but also hardworking.",
+      "Not only is she intelligent, but she is also hardworking.",
+      "Not only she is intelligent, but she is also hardworking.",
+      "She not only is intelligent, but also is hardworking."
+    ],
+    "correct_index": 1,
+    "explanation_uz": "'Not only' gap boshida kelganda inversion kerak: 'Not only IS she...' Bu band 8 grammatik tuzilma — IELTS da juda yuqori baholanadi.",
+    "difficulty": "hard",
+    "used": false
+  },
+  {
+    "id": "quiz_025",
+    "category": "vocabulary",
+    "question": "What is the antonym of 'alleviate'?",
+    "options": ["Worsen", "Improve", "Maintain", "Discover"],
+    "correct_index": 0,
+    "explanation_uz": "'Alleviate' — yengillashtirmoq. Antonimi: 'worsen' yoki 'intensify' — kuchaytirmoq. 'Alleviate poverty' — kambag'allikni kamaytirmoq.",
+    "difficulty": "medium",
+    "used": false
+  },
+  {
+    "id": "quiz_026",
+    "category": "error_correction",
+    "question": "Find the error: 'The amount of people who attend university has risen.'",
+    "options": [
+      "'amount' should be 'number'",
+      "'who' should be 'which'",
+      "'has' should be 'have'",
+      "No error"
+    ],
+    "correct_index": 0,
+    "explanation_uz": "'Amount' — sanab bo'lmaydigan otlar uchun (amount of water). 'Number' — sanab bo'ladigan otlar uchun (number of people). 'People' sanab bo'ladigan ot — 'number' to'g'ri.",
+    "difficulty": "easy",
+    "used": false
+  },
+  {
+    "id": "quiz_027",
+    "category": "collocations",
+    "question": "Which is the correct collocation?",
+    "options": [
+      "Do progress",
+      "Make progress",
+      "Take progress",
+      "Get progress"
+    ],
+    "correct_index": 1,
+    "explanation_uz": "'Make progress' — to'g'ri kollokatsiya. 'Do progress', 'take progress', 'get progress' — NOTO'G'RI! Masalan: 'Students have made significant progress.'",
+    "difficulty": "easy",
+    "used": false
+  },
+  {
+    "id": "quiz_028",
+    "category": "grammar",
+    "question": "Choose the correct sentence:",
+    "options": [
+      "There is a wide range of opinions exists on this topic.",
+      "There are a wide range of opinions on this topic.",
+      "There is a wide range of opinions on this topic.",
+      "There exist a wide range of opinions on this topic."
+    ],
+    "correct_index": 2,
+    "explanation_uz": "'A wide range' — birlik, shuning uchun 'There is' to'g'ri. 'There are' — 'a wide range' ning ichidagi 'opinions' ga qarab qo'yilgan, lekin grammatik jihatdan 'is' to'g'ri.",
+    "difficulty": "hard",
+    "used": false
+  },
+  {
+    "id": "quiz_029",
+    "category": "vocabulary",
+    "question": "What does 'perpetuate' mean?",
+    "options": ["To stop immediately", "To make continue indefinitely", "To investigate", "To reduce"],
+    "correct_index": 1,
+    "explanation_uz": "'Perpetuate' — davom ettirmoq, saqlab qolmoq. Masalan: 'Stereotypes in media perpetuate inequality.' Salbiy kontekstda ko'p ishlatiladi.",
+    "difficulty": "hard",
+    "used": false
+  },
+  {
+    "id": "quiz_030",
+    "category": "grammar",
+    "question": "Which sentence is correct?",
+    "options": [
+      "I suggest him to study harder.",
+      "I suggest that he study harder.",
+      "I suggest that he studies harder.",
+      "Both B and C are acceptable"
+    ],
+    "correct_index": 3,
+    "explanation_uz": "'Suggest' dan keyin 'that + subject + base form' (subjunctive) yoki 'that + subject + present simple' ishlatiladi. Ikkalasi ham to'g'ri. 'Suggest + to + infinitive' — NOTO'G'RI!",
+    "difficulty": "hard",
+    "used": false
+  },
+  {
+    "id": "quiz_031",
+    "category": "collocations",
+    "question": "Complete: 'The research _____ attention to the problem of air pollution.'",
+    "options": ["pays", "draws", "gives", "puts"],
+    "correct_index": 1,
+    "explanation_uz": "'Draw attention to' — e'tiborni qaratmoq. 'Pay attention to' — e'tibor bermoq (o'zing). 'Draw attention to' — boshqalarning e'tiborini qaratmoq. IELTS Writing da ko'p ishlatiladi.",
+    "difficulty": "medium",
+    "used": false
+  },
+  {
+    "id": "quiz_032",
+    "category": "vocabulary",
+    "question": "Choose the word that means 'corresponding in size or degree':",
+    "options": ["Disproportionate", "Commensurate", "Exaggerated", "Diminished"],
+    "correct_index": 1,
+    "explanation_uz": "'Commensurate' — mos, mutanosib. 'Commensurate with' — ...ga mos. Masalan: 'Salary should be commensurate with experience.' Band 8+ so'z!",
+    "difficulty": "hard",
+    "used": false
+  },
+  {
+    "id": "quiz_033",
+    "category": "error_correction",
+    "question": "Find the error: 'Each students must submit their assignment by Friday.'",
+    "options": [
+      "'students' should be 'student'",
+      "'their' should be 'his or her'",
+      "Both A and B",
+      "No error"
+    ],
+    "correct_index": 0,
+    "explanation_uz": "'Each' dan keyin birlik ot keladi: 'each student'. 'Their' — hozirgi ingliz tilida birlik uchun ham qabul qilinadi (singular 'they'). Shuning uchun asosiy xato — 'students' → 'student'.",
+    "difficulty": "medium",
+    "used": false
+  },
+  {
+    "id": "quiz_034",
+    "category": "vocabulary",
+    "question": "What does 'tangible' mean?",
+    "options": ["Abstract and theoretical", "Clear, definite, and real", "Temporary and fleeting", "Invisible and hidden"],
+    "correct_index": 1,
+    "explanation_uz": "'Tangible' — aniq, real, seziladigan. 'Tangible results' — aniq natijalar. 'Tangible benefits' — real foyda. Antonimi: 'intangible'.",
+    "difficulty": "medium",
+    "used": false
+  },
+  {
+    "id": "quiz_035",
+    "category": "grammar",
+    "question": "Choose the correct sentence with an inversion:",
+    "options": [
+      "Rarely people consider the long-term effects.",
+      "Rarely do people consider the long-term effects.",
+      "Rarely people do consider the long-term effects.",
+      "Rarely does people consider the long-term effects."
+    ],
+    "correct_index": 1,
+    "explanation_uz": "Negative adverb (rarely, seldom, never) gap boshida kelganda inversion kerak: 'Rarely DO people...' 'People' ko'plik, shuning uchun 'do'. Bu band 8 grammatik tuzilma!",
+    "difficulty": "hard",
+    "used": false
+  }
+]

@@ -1,0 +1,103 @@
+name: IELTS Channel Auto-Post
+
+on:
+  schedule:
+    # Ertalab post — 08:00 Toshkent vaqti (03:00 UTC)
+    - cron: '0 3 * * *'
+    # Tushlik post — 13:00 Toshkent vaqti (08:00 UTC)
+    - cron: '0 8 * * *'
+    # Kechqurun post — 20:00 Toshkent vaqti (15:00 UTC)
+    - cron: '0 15 * * *'
+
+  # Qo'lda ishga tushirish imkoniyati (testing uchun)
+  workflow_dispatch:
+    inputs:
+      time_slot:
+        description: 'Time slot to simulate'
+        required: false
+        default: ''
+        type: choice
+        options:
+          - ''
+          - morning
+          - afternoon
+          - evening
+      content_type:
+        description: 'Force content type'
+        required: false
+        default: ''
+        type: choice
+        options:
+          - ''
+          - vocabulary
+          - writing
+          - speaking
+          - reading-listening
+          - band-score
+          - motivation
+          - quiz
+      dry_run:
+        description: 'Dry run (no actual posting)'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  post-to-channel:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Determine time slot
+        id: timeslot
+        run: |
+          # Manual trigger with input
+          if [ -n "${{ github.event.inputs.time_slot }}" ]; then
+            echo "slot=${{ github.event.inputs.time_slot }}" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          # Auto-detect from cron schedule (UTC time)
+          HOUR=$(date -u +%H)
+          if [ "$HOUR" = "03" ]; then
+            echo "slot=morning" >> $GITHUB_OUTPUT
+          elif [ "$HOUR" = "08" ]; then
+            echo "slot=afternoon" >> $GITHUB_OUTPUT
+          elif [ "$HOUR" = "15" ]; then
+            echo "slot=evening" >> $GITHUB_OUTPUT
+          else
+            echo "slot=" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Post to Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TIME_SLOT: ${{ steps.timeslot.outputs.slot }}
+          CONTENT_TYPE: ${{ github.event.inputs.content_type }}
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            node src/index.js --dry-run
+          else
+            node src/index.js
+          fi
+
+      - name: Commit usage tracking changes
+        if: success() && github.event.inputs.dry_run != 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add content/*.json
+          git diff --staged --quiet || git commit -m "📊 Update content usage tracking [skip ci]"
+          git push || echo "Nothing to push"

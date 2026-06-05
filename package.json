@@ -1,0 +1,17 @@
+{
+  "name": "ielts-telegram-bot",
+  "version": "1.0.0",
+  "description": "Automated IELTS preparation content poster for Telegram channels",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "post": "node src/index.js",
+    "dry-run": "node src/index.js --dry-run",
+    "test": "node src/index.js --test"
+  },
+  "keywords": ["ielts", "telegram", "bot", "education"],
+  "license": "MIT",
+  "dependencies": {
+    "@google/genai": "^1.0.0"
+  }
+}
