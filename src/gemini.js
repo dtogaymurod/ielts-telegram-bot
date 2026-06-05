@@ -4,6 +4,8 @@
  */
 
 import { GoogleGenAI } from '@google/genai';
+import fs from 'fs';
+import path from 'path';
 
 let ai = null;
 
@@ -388,8 +390,38 @@ export async function generateRecentWriting(task) {
 
   try {
     const isTask1 = task === 1;
-    
-    let promptText = `You are an expert IELTS examiner. Think of a recently reported IELTS Writing Task ${task} question from 2026 or 2025 (e.g. from global or Uzbekistan exams).
+    let promptText = '';
+    let localPhotoPath = null;
+    let selectedImageItem = null;
+
+    if (isTask1) {
+      const dbPath = path.join(process.cwd(), 'content', 'task1_database.json');
+      if (fs.existsSync(dbPath)) {
+        const dbContent = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
+        const unusedItems = dbContent.filter(item => !item.used);
+        if (unusedItems.length > 0) {
+          selectedImageItem = unusedItems[Math.floor(Math.random() * unusedItems.length)];
+          localPhotoPath = path.join(process.cwd(), 'content', 'task1_images', selectedImageItem.image);
+          
+          promptText = `You are an expert IELTS examiner. You have been given the following REAL IELTS Writing Task 1 prompt:
+          
+          "${selectedImageItem.prompt}"
+          (Chart Type: ${selectedImageItem.type})
+          
+          Generate a Telegram post analyzing this specific Task 1 question.
+          Include:
+          - The exact prompt/question (in English)
+          - O'zbekcha tarjimasi
+          - A quick outline of Main trends/Overview
+          - 3-5 advanced Band 8.0+ vocabulary words to use in this essay, with translations in Uzbek
+          
+          Write the post entirely in Telegram HTML format (<b>, <i>, <u>). Use engaging emojis. Keep it under 2500 characters.`;
+        }
+      }
+    }
+
+    if (!isTask1 || !selectedImageItem) {
+      promptText = `You are an expert IELTS examiner. Think of a recently reported IELTS Writing Task ${task} question from 2026 or 2025 (e.g. from global or Uzbekistan exams).
       
       Generate a Telegram post for this question.
       Include:
@@ -399,15 +431,6 @@ export async function generateRecentWriting(task) {
       - 3-5 advanced Band 8.0+ vocabulary words to use in this essay, with translations in Uzbek
       
       Write the post entirely in Telegram HTML format (<b>, <i>, <u>). Use engaging emojis. Keep it under 3000 characters.`;
-
-    if (isTask1) {
-      promptText += `\n\nCRITICAL FOR TASK 1: You MUST also generate a valid QuickChart.io URL that accurately visualizes the data for this Task 1 question (e.g., a bar chart, line graph, or pie chart).
-      Return your response STRICTLY as a JSON object matching this schema:
-      {
-        "text": "The telegram post text here...",
-        "photoUrl": "https://quickchart.io/chart?c={type:'bar',data:{...}}"
-      }
-      Do not include markdown code blocks around the JSON.`;
     }
 
     const response = await client.models.generateContent({
@@ -417,17 +440,29 @@ export async function generateRecentWriting(task) {
         systemInstruction: SYSTEM_INSTRUCTION,
         temperature: 0.85,
         maxOutputTokens: 2048,
-        responseMimeType: isTask1 ? 'application/json' : 'text/plain',
       },
     });
 
+    const rawText = response.text.trim();
+    
     if (isTask1) {
-      const data = JSON.parse(response.text);
-      data.text = `🚨 <b>RECENT EXAM QUESTION: WRITING TASK 1</b> 🚨\n\n` + data.text;
-      return data; // returns { text, photoUrl }
+      if (selectedImageItem) {
+        const dbPath = path.join(process.cwd(), 'content', 'task1_database.json');
+        const dbContent = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
+        const itemIndex = dbContent.findIndex(i => i.id === selectedImageItem.id);
+        if (itemIndex !== -1) {
+          dbContent[itemIndex].used = true;
+          if (dbContent.every(i => i.used)) {
+            dbContent.forEach(i => i.used = false);
+          }
+          fs.writeFileSync(dbPath, JSON.stringify(dbContent, null, 2));
+        }
+      }
+      
+      const text = `🚨 <b>RECENT EXAM QUESTION: WRITING TASK 1</b> 🚨\n\n` + rawText;
+      return { text, localPhotoPath };
     } else {
-      let text = response.text;
-      text = `🚨 <b>RECENT EXAM QUESTION: WRITING TASK 2</b> 🚨\n\n` + text;
+      const text = `🚨 <b>RECENT EXAM QUESTION: WRITING TASK 2</b> 🚨\n\n` + rawText;
       return text;
     }
   } catch (error) {

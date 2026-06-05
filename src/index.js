@@ -16,7 +16,7 @@
  *   CONTENT_TYPE           — Force content type (e.g., vocabulary, quiz)
  */
 
-import { sendMessage, sendQuiz, sendDocument, sendPhoto, validateConfig } from './telegram.js';
+import { sendMessage, sendQuiz, sendDocument, sendPhoto, sendLocalPhoto, validateConfig } from './telegram.js';
 import { generateDailyReadingTest } from './reading-generator.js';
 import {
   getTimeSlot,
@@ -88,6 +88,9 @@ async function main() {
       if (result.photoUrl) {
         messageOptions.photoUrl = result.photoUrl;
       }
+      if (result.localPhotoPath) {
+        messageOptions.localPhotoPath = result.localPhotoPath;
+      }
     }
   } else {
     postText = await tryAIGeneration(contentType);
@@ -131,6 +134,8 @@ async function main() {
       console.log('\n📎 Attached Document: ', messageOptions.document.fileName);
     } else if (messageOptions.photoUrl) {
       console.log('\n🖼️ Attached Photo URL: ', messageOptions.photoUrl);
+    } else if (messageOptions.localPhotoPath) {
+      console.log('\n🖼️ Attached Local Photo: ', messageOptions.localPhotoPath);
     }
     console.log('\n═══════════════════════\n');
     console.log(`📏 Length: ${postText.length} / 4096 chars`);
@@ -146,6 +151,8 @@ async function main() {
       );
     } else if (messageOptions.photoUrl) {
       result = await sendPhoto(messageOptions.photoUrl, postText);
+    } else if (messageOptions.localPhotoPath) {
+      result = await sendLocalPhoto(messageOptions.localPhotoPath, postText);
     } else {
       result = await sendMessage(postText, messageOptions);
     }

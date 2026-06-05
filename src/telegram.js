@@ -98,6 +98,49 @@ export async function sendPhoto(photoUrl, caption = '') {
 }
 
 /**
+ * Send a local photo file to the channel
+ * @param {string} filePath - Path to the local photo
+ * @param {string} caption - HTML formatted caption (max 1024 chars)
+ */
+export async function sendLocalPhoto(filePath, caption = '') {
+  const url = `${BASE_URL}/sendPhoto`;
+  const formData = new FormData();
+  formData.append('chat_id', CHANNEL_ID);
+  
+  const fileBuffer = readFileSync(filePath);
+  const blob = new Blob([fileBuffer]);
+  formData.append('photo', blob, 'photo.jpg');
+  
+  formData.append('caption', caption);
+  formData.append('parse_mode', 'HTML');
+
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await response.json();
+      
+      if (!data.ok) {
+        if (data.error_code === 429 && data.parameters?.retry_after) {
+          const waitSeconds = data.parameters.retry_after;
+          console.log(`⏳ Rate limited. Waiting ${waitSeconds}s...`);
+          await sleep(waitSeconds * 1000);
+          continue;
+        }
+        throw new Error(`Telegram API error [${data.error_code}]: ${data.description}`);
+      }
+      return data.result;
+    } catch (error) {
+      if (attempt === 3) throw error;
+      console.log(`⚠️ Attempt ${attempt} failed: ${error.message}. Retrying...`);
+      await sleep(1000 * attempt);
+    }
+  }
+}
+
+/**
  * Send a local document (file) to the channel
  * @param {string} filePath - Path to the local file
  * @param {string} fileName - Name of the file to display in Telegram
