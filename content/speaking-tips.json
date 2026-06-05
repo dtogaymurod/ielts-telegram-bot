@@ -6,7 +6,13 @@
     "topic_en": "Describe a book you have recently read",
     "tip_uz": "1 daqiqa tayyorgarlik vaqtida tezkor notalar yozing: Kim? Nima? Qachon? Nega? Notalaringizni to'liq gaplar emas, kalit so'zlar shaklida yozing.",
     "sample_answer": "I'd like to talk about a fascinating book I recently finished called 'Sapiens' by Yuval Noah Harari. I came across it about three months ago when a close friend of mine recommended it during a casual conversation. The book explores the entire history of humankind, from the Stone Age to the present day. What really struck me was how Harari connects seemingly unrelated events in human history to explain why our world is the way it is today. I found it particularly thought-provoking because it challenged many of my assumptions about progress and civilization. Looking back, I think this book has fundamentally changed the way I view human development.",
-    "useful_phrases": ["I'd like to talk about...", "What really struck me was...", "Looking back, I think...", "I found it particularly...", "It fundamentally changed..."],
+    "useful_phrases": [
+      "I'd like to talk about...",
+      "What really struck me was...",
+      "Looking back, I think...",
+      "I found it particularly...",
+      "It fundamentally changed..."
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -17,7 +23,13 @@
     "topic_en": "Work or Studies",
     "tip_uz": "Part 1 da qisqa va aniq javob bering (2-3 gap). Keyin misollar yoki sabablar qo'shing. Javobni cho'zmang!",
     "sample_answer": "Q: Do you work or are you a student?\nA: I'm currently in my final year at university, studying international economics. I chose this field because I've always been fascinated by how global markets interact with one another. After graduation, I'm hoping to pursue a career in international trade.\n\nQ: What do you enjoy most about your studies?\nA: I'd say the most enjoyable aspect is the analytical side of things. I particularly enjoy examining case studies of real-world economic crises and understanding the factors behind them. It makes the theoretical concepts come alive.",
-    "useful_phrases": ["I'm currently...", "I chose this field because...", "The most enjoyable aspect is...", "I particularly enjoy...", "It makes... come alive"],
+    "useful_phrases": [
+      "I'm currently...",
+      "I chose this field because...",
+      "The most enjoyable aspect is...",
+      "I particularly enjoy...",
+      "It makes... come alive"
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -28,7 +40,14 @@
     "topic_en": "The impact of technology on education",
     "tip_uz": "Part 3 da chuqurroq fikrlang. O'z fikringizni aytib, keyin misollar va sabablar bilan qo'llab-quvvatlang. 'It depends' javobini ishlating.",
     "sample_answer": "Q: How has technology changed the way people learn?\nA: Well, I think technology has revolutionized education in several significant ways. First and foremost, it has made information incredibly accessible. Students no longer need to rely solely on textbooks — they can access academic journals, video lectures, and interactive simulations from anywhere in the world. Having said that, I think it's worth noting that technology can also be a double-edged sword. While it provides more resources, it can also lead to shorter attention spans and a tendency to skim rather than deeply engage with material. So I suppose the impact really depends on how effectively technology is integrated into the learning process.",
-    "useful_phrases": ["I think it has revolutionized...", "First and foremost...", "Having said that...", "It's worth noting that...", "It can be a double-edged sword", "It really depends on..."],
+    "useful_phrases": [
+      "I think it has revolutionized...",
+      "First and foremost...",
+      "Having said that...",
+      "It's worth noting that...",
+      "It can be a double-edged sword",
+      "It really depends on..."
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -39,7 +58,13 @@
     "topic_en": "Describe a memorable trip you have taken",
     "tip_uz": "Sayohat tavsifida beshta sezgi (ko'rish, eshitish, hid bilish, tatib ko'rish, his qilish) haqida gapiring — bu tavsifingizni jonli qiladi.",
     "sample_answer": "I'd like to describe a memorable trip I took to Istanbul about two years ago. It was a week-long holiday that I had been planning for months. What made it truly unforgettable was the incredible blend of Eastern and Western cultures. I vividly remember standing in the Hagia Sophia, completely overwhelmed by the sheer scale and beauty of the architecture. The Grand Bazaar was another highlight — the vibrant colours, the aroma of spices, and the sound of merchants calling out to visitors created an atmosphere unlike anything I'd experienced before. I tried authentic Turkish cuisine, and the flavours were absolutely exquisite. This trip left a lasting impression on me because it opened my eyes to how beautifully different cultures can coexist in a single city.",
-    "useful_phrases": ["I'd like to describe...", "What made it truly unforgettable was...", "I vividly remember...", "It left a lasting impression on me...", "It opened my eyes to..."],
+    "useful_phrases": [
+      "I'd like to describe...",
+      "What made it truly unforgettable was...",
+      "I vividly remember...",
+      "It left a lasting impression on me...",
+      "It opened my eyes to..."
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -50,7 +75,13 @@
     "topic_en": "Hometown / Where you live",
     "tip_uz": "Uyingiz yoki shahringiz haqida oddiy gapirmang — qiziqarli tafsilotlar qo'shing! Solishtirishlar ishlating.",
     "sample_answer": "Q: Where are you from?\nA: I'm originally from Tashkent, which is the capital city of Uzbekistan. It's a vibrant metropolis with a fascinating mix of modern architecture and ancient Silk Road heritage. I've lived there my entire life, actually.\n\nQ: What do you like most about your hometown?\nA: What I appreciate most is the incredible hospitality of the people. There's a strong sense of community that you don't always find in larger cities. Also, the food scene is remarkable — you can find everything from traditional pilaf to contemporary fusion cuisine.",
-    "useful_phrases": ["I'm originally from...", "It's a vibrant...", "What I appreciate most is...", "There's a strong sense of...", "You can find everything from... to..."],
+    "useful_phrases": [
+      "I'm originally from...",
+      "It's a vibrant...",
+      "What I appreciate most is...",
+      "There's a strong sense of...",
+      "You can find everything from... to..."
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -61,7 +92,14 @@
     "topic_en": "Environmental protection and responsibility",
     "tip_uz": "Part 3 da mavhum savolga javob bering. Umumiy fikrdan boshlang, keyin aniq misollar keltiring, va xulosa qiling.",
     "sample_answer": "Q: Whose responsibility is it to protect the environment — individuals or governments?\nA: That's an interesting question, and I think the answer is that it's a shared responsibility. Governments certainly have the power to implement large-scale policies, such as imposing carbon taxes or investing in renewable energy infrastructure. However, I believe individuals also play a crucial role. Small everyday actions, like reducing plastic usage, using public transport, or conserving water, can collectively make a significant difference. For example, in some Scandinavian countries, strong government policies combined with high levels of environmental awareness among citizens have led to remarkable results. So ultimately, I'd argue that neither party can solve this problem alone — it requires a collaborative effort.",
-    "useful_phrases": ["That's an interesting question...", "I think the answer is that...", "...certainly have the power to...", "I believe... also play a crucial role", "I'd argue that...", "It requires a collaborative effort"],
+    "useful_phrases": [
+      "That's an interesting question...",
+      "I think the answer is that...",
+      "...certainly have the power to...",
+      "I believe... also play a crucial role",
+      "I'd argue that...",
+      "It requires a collaborative effort"
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -72,7 +110,13 @@
     "topic_en": "Describe a person who has influenced you",
     "tip_uz": "Inson haqida gapirganda uning xususiyatlari va sizga qanday ta'sir qilganini batafsil aytib bering.",
     "sample_answer": "I'd like to talk about my high school English teacher, Mrs Karimova, who had a profound influence on my personal and academic development. She was in her late forties when I first met her, with an incredibly warm personality and an infectious enthusiasm for literature. What set her apart from other teachers was her ability to make every student feel valued. She would always take the time to provide detailed feedback on our essays and encourage us to think critically rather than simply memorize facts. She introduced me to the world of English literature, and it was largely thanks to her encouragement that I developed a genuine passion for the English language. Looking back, I think she taught me that education isn't just about passing exams — it's about cultivating curiosity and a love of learning.",
-    "useful_phrases": ["I'd like to talk about...", "...who had a profound influence on...", "What set her apart was...", "It was largely thanks to...", "She taught me that..."],
+    "useful_phrases": [
+      "I'd like to talk about...",
+      "...who had a profound influence on...",
+      "What set her apart was...",
+      "It was largely thanks to...",
+      "She taught me that..."
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -83,7 +127,13 @@
     "topic_en": "Free time and hobbies",
     "tip_uz": "Xobbilaringiz haqida zavq bilan gapiring! Nima uchun yoqishini tushuntiring va misollar keltiring.",
     "sample_answer": "Q: What do you do in your free time?\nA: Whenever I have some spare time, I tend to read non-fiction books or go for long walks. I find reading particularly relaxing because it allows me to escape from the stresses of daily life and broaden my knowledge at the same time.\n\nQ: Have your hobbies changed since you were a child?\nA: Absolutely, yes. When I was younger, I was really into video games and outdoor sports. But as I've grown older, my interests have shifted towards more intellectual pursuits like reading, podcasts, and learning new languages. I suppose our hobbies evolve as we mature.",
-    "useful_phrases": ["Whenever I have some spare time...", "I tend to...", "I find... particularly relaxing because...", "My interests have shifted towards...", "I suppose our hobbies evolve..."],
+    "useful_phrases": [
+      "Whenever I have some spare time...",
+      "I tend to...",
+      "I find... particularly relaxing because...",
+      "My interests have shifted towards...",
+      "I suppose our hobbies evolve..."
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -94,9 +144,16 @@
     "topic_en": "Globalization and cultural identity",
     "tip_uz": "Murakkab mavzularda ikkala tomonni ham muhokama qiling. 'On one hand... on the other hand...' tuzilmasini ishlating.",
     "sample_answer": "Q: Do you think globalization is a threat to local cultures?\nA: This is quite a complex issue, and I think there are valid arguments on both sides. On the one hand, globalization has undoubtedly led to a certain degree of cultural homogenization. For instance, you can find the same fast-food chains and fashion brands in virtually every major city around the world, which arguably undermines local traditions. On the other hand, globalization has also created opportunities for cultural exchange and appreciation. People can now learn about and celebrate diverse traditions through the internet, travel, and international events. Personally, I believe that while some degree of cultural blending is inevitable, it's essential for communities to actively preserve their unique traditions and heritage.",
-    "useful_phrases": ["This is quite a complex issue...", "There are valid arguments on both sides", "On the one hand... On the other hand...", "This arguably undermines...", "Personally, I believe that...", "It's essential for communities to..."],
+    "useful_phrases": [
+      "This is quite a complex issue...",
+      "There are valid arguments on both sides",
+      "On the one hand... On the other hand...",
+      "This arguably undermines...",
+      "Personally, I believe that...",
+      "It's essential for communities to..."
+    ],
     "band_target": "7+",
-    "used": false
+    "used": true
   },
   {
     "id": "sp_010",
@@ -105,7 +162,14 @@
     "topic_en": "Describe a skill you learned recently",
     "tip_uz": "Ko'nikma o'rganish jarayonini bosqichma-bosqich tasvirlang. Qiyinchiliklarni ham aytib bering — bu javobingizni qiziqarli qiladi.",
     "sample_answer": "I'd like to describe how I learned to cook traditional Uzbek pilaf about six months ago. I'd always wanted to master this dish because it's such a central part of our culture. Initially, I watched numerous YouTube tutorials, but I soon realized that watching and doing are very different things. My first attempt was, to be honest, a complete disaster — the rice was overcooked and the meat was too tough. However, I didn't give up. I asked my grandmother for guidance, and she taught me some invaluable techniques, like how to properly layer the ingredients and control the heat. After about ten attempts, I finally managed to produce a pilaf that my family genuinely enjoyed. The experience taught me that patience and perseverance are just as important as talent when learning any new skill.",
-    "useful_phrases": ["I'd like to describe how I...", "I'd always wanted to...", "To be honest...", "I didn't give up", "She taught me some invaluable techniques...", "The experience taught me that..."],
+    "useful_phrases": [
+      "I'd like to describe how I...",
+      "I'd always wanted to...",
+      "To be honest...",
+      "I didn't give up",
+      "She taught me some invaluable techniques...",
+      "The experience taught me that..."
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -116,7 +180,14 @@
     "topic_en": "Internet and social media",
     "tip_uz": "Bu mavzuda ijobiy va salbiy tomonlarni balans bilan aytib bering. Juda bir tomonlama bo'lmang.",
     "sample_answer": "Q: How much time do you spend on social media?\nA: I'd say I spend roughly an hour or so each day on social media platforms, mainly Instagram and Telegram. I use them primarily to stay connected with friends and to keep up with current events, rather than just scrolling aimlessly.\n\nQ: Do you think social media has more advantages or disadvantages?\nA: Honestly, I think it's a bit of both. On the positive side, it's an incredible tool for networking and staying informed. However, I've noticed that spending too much time on it can be quite draining and even affect my productivity. So I try to set limits for myself.",
-    "useful_phrases": ["I'd say I spend roughly...", "I use them primarily to...", "Honestly, I think it's a bit of both", "On the positive side...", "I've noticed that...", "I try to set limits for myself"],
+    "useful_phrases": [
+      "I'd say I spend roughly...",
+      "I use them primarily to...",
+      "Honestly, I think it's a bit of both",
+      "On the positive side...",
+      "I've noticed that...",
+      "I try to set limits for myself"
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -127,7 +198,14 @@
     "topic_en": "Changes in the education system",
     "tip_uz": "O'tmish va hozirni solishtiring. Kelajak haqida bashorat qiling. Bu Part 3 da yuqori ball olish uchun muhim.",
     "sample_answer": "Q: How has education changed compared to your parents' generation?\nA: There have been some quite dramatic changes, I think. In my parents' time, education was very much focused on rote learning and memorization. Students were expected to absorb information passively and reproduce it in exams. Nowadays, the emphasis has shifted considerably towards critical thinking, problem-solving, and collaborative learning. Technology has also transformed the classroom — interactive whiteboards, online resources, and even AI-powered tutoring are becoming increasingly common. Looking ahead, I predict that education will become even more personalized, with artificial intelligence tailoring learning experiences to individual students' needs and pace.",
-    "useful_phrases": ["There have been some quite dramatic changes...", "In my parents' time...", "The emphasis has shifted towards...", "Technology has transformed...", "Looking ahead, I predict that...", "...tailoring learning experiences to..."],
+    "useful_phrases": [
+      "There have been some quite dramatic changes...",
+      "In my parents' time...",
+      "The emphasis has shifted towards...",
+      "Technology has transformed...",
+      "Looking ahead, I predict that...",
+      "...tailoring learning experiences to..."
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -138,7 +216,14 @@
     "topic_en": "Describe a difficult decision you had to make",
     "tip_uz": "Qiyinchiliklarni emas, qarorning o'zini va uning natijalarini batafsil tasvirlab bering.",
     "sample_answer": "I'd like to talk about a really tough decision I had to make last year when I was choosing between accepting a well-paid job offer and continuing my postgraduate studies. On the one hand, the job offered financial stability and practical experience, which was very appealing. On the other hand, I felt that completing my master's degree would give me better long-term career prospects and deeper expertise in my field. I spent weeks weighing up the pros and cons, discussing it with my family and mentors. Eventually, I decided to continue my studies, reasoning that the investment in education would pay off in the long run. Looking back, I'm confident I made the right choice, as my studies have opened doors that wouldn't have been available otherwise.",
-    "useful_phrases": ["I'd like to talk about a really tough decision...", "On the one hand... On the other hand...", "I spent weeks weighing up...", "I eventually decided to...", "Looking back, I'm confident I made the right choice...", "...opened doors that wouldn't have been available otherwise"],
+    "useful_phrases": [
+      "I'd like to talk about a really tough decision...",
+      "On the one hand... On the other hand...",
+      "I spent weeks weighing up...",
+      "I eventually decided to...",
+      "Looking back, I'm confident I made the right choice...",
+      "...opened doors that wouldn't have been available otherwise"
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -149,7 +234,14 @@
     "topic_en": "Weather and seasons",
     "tip_uz": "Ob-havo haqida faqat 'hot' yoki 'cold' demang. Turli sifatlar ishlating va his-tuyg'ularingizni bildiring.",
     "sample_answer": "Q: What's the weather like in your country?\nA: Uzbekistan has quite extreme weather, to be honest. In summer, temperatures can soar to over 40 degrees Celsius, which can be absolutely scorching. Winters, on the other hand, can be bitterly cold, especially in the mountainous regions. Personally, I prefer autumn because the weather is pleasantly mild, and the changing colours of the leaves are absolutely stunning.\n\nQ: Does the weather affect your mood?\nA: Definitely. I find that sunny days tend to boost my energy and motivation, whereas prolonged cloudy or rainy weather can make me feel a bit lethargic and unmotivated. I think most people are affected by the weather to some degree.",
-    "useful_phrases": ["...has quite extreme weather", "Temperatures can soar to...", "Personally, I prefer...", "I find that... tend to...", "...can make me feel...", "I think most people are affected by..."],
+    "useful_phrases": [
+      "...has quite extreme weather",
+      "Temperatures can soar to...",
+      "Personally, I prefer...",
+      "I find that... tend to...",
+      "...can make me feel...",
+      "I think most people are affected by..."
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -160,7 +252,14 @@
     "topic_en": "Health and lifestyle choices",
     "tip_uz": "Sog'liq mavzusida misollar va statistika keltiring. Shaxsiy va jamiyat darajasida gapiring.",
     "sample_answer": "Q: Why do you think unhealthy lifestyles are becoming more common?\nA: I think there are several interconnected factors at play here. Firstly, the fast pace of modern life means that many people simply don't have time to cook nutritious meals or exercise regularly. They resort to convenience foods and sedentary forms of entertainment instead. Secondly, the food industry plays a significant role — processed foods are often cheaper and more accessible than fresh, healthy alternatives, especially in lower-income communities. There's also the psychological dimension — many people turn to comfort eating or excessive screen time as coping mechanisms for stress. I think addressing this issue requires a multi-faceted approach, combining public health education, better urban planning with more green spaces, and stricter regulations on food marketing.",
-    "useful_phrases": ["There are several interconnected factors...", "The fast pace of modern life means that...", "They resort to...", "There's also the psychological dimension...", "I think addressing this issue requires...", "A multi-faceted approach"],
+    "useful_phrases": [
+      "There are several interconnected factors...",
+      "The fast pace of modern life means that...",
+      "They resort to...",
+      "There's also the psychological dimension...",
+      "I think addressing this issue requires...",
+      "A multi-faceted approach"
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -171,7 +270,14 @@
     "topic_en": "Describe a celebration or event you enjoyed",
     "tip_uz": "Bayram haqida gapirganingizda atmosferani tasvirlab bering — ovozlar, ranglar, hislar. Bu examiner ga yorqin taassurot qoldiradi.",
     "sample_answer": "I'd like to describe Navruz, the spring festival, which I celebrated last March with my extended family. It's one of the most cherished holidays in our culture, marking the beginning of the new year. We gathered at my grandparents' house in the countryside, and the preparations had actually started days in advance. The aroma of sumalak — a traditional sweet wheat dish that takes an entire night to prepare — filled the house. Women in the family sang traditional songs while stirring the massive pot. During the day, we enjoyed traditional games, horse riding, and an enormous feast with pilaf, samsa, and fresh fruits. What made it particularly special was having four generations of our family together. The atmosphere was incredibly warm and festive, and it reminded me of the importance of maintaining cultural traditions in our rapidly modernizing world.",
-    "useful_phrases": ["I'd like to describe...", "It's one of the most cherished holidays...", "The preparations had started days in advance...", "What made it particularly special was...", "The atmosphere was incredibly...", "It reminded me of the importance of..."],
+    "useful_phrases": [
+      "I'd like to describe...",
+      "It's one of the most cherished holidays...",
+      "The preparations had started days in advance...",
+      "What made it particularly special was...",
+      "The atmosphere was incredibly...",
+      "It reminded me of the importance of..."
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -182,7 +288,14 @@
     "topic_en": "Transportation and travel",
     "tip_uz": "Transport mavzusida shaxsiy tajribangizni aytib, keyin umumiy fikr bildiring.",
     "sample_answer": "Q: How do you usually get around in your city?\nA: I mainly rely on the metro, which is actually quite efficient and affordable in Tashkent. During rush hours, it can get quite crowded, but overall it's still the most convenient option. Occasionally, I use ride-hailing apps like Yandex when I need to get somewhere quickly.\n\nQ: Do you prefer public or private transport?\nA: I generally prefer public transport for everyday commuting because it's more environmentally friendly and I can use the travel time productively — reading or listening to podcasts. However, for longer trips or when I'm travelling with my family, I'd opt for a private car for the comfort and flexibility it offers.",
-    "useful_phrases": ["I mainly rely on...", "Overall it's still the most convenient option", "Occasionally, I use...", "I generally prefer... because...", "I can use the travel time productively", "I'd opt for..."],
+    "useful_phrases": [
+      "I mainly rely on...",
+      "Overall it's still the most convenient option",
+      "Occasionally, I use...",
+      "I generally prefer... because...",
+      "I can use the travel time productively",
+      "I'd opt for..."
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -193,7 +306,14 @@
     "topic_en": "Future jobs and the impact of technology",
     "tip_uz": "Kelajak haqida gapirganingizda 'will', 'likely to', 'bound to', 'set to' kabi tuzilmalardan foydalaning.",
     "sample_answer": "Q: Do you think robots will replace human workers in the future?\nA: It's a thought-provoking question. I think automation is bound to replace certain types of jobs, particularly those involving repetitive manual tasks. For instance, we're already seeing self-checkout machines in supermarkets and automated manufacturing processes. However, I don't believe robots will entirely replace human workers. Jobs that require creativity, emotional intelligence, and complex problem-solving — such as teaching, counselling, and artistic professions — are likely to remain firmly in human hands. What I think will happen is that new types of jobs will emerge that we can't even imagine right now, much like how social media management and app development were unheard of twenty years ago.",
-    "useful_phrases": ["It's a thought-provoking question", "...is bound to...", "We're already seeing...", "I don't believe... will entirely...", "...are likely to remain...", "What I think will happen is that..."],
+    "useful_phrases": [
+      "It's a thought-provoking question",
+      "...is bound to...",
+      "We're already seeing...",
+      "I don't believe... will entirely...",
+      "...are likely to remain...",
+      "What I think will happen is that..."
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -204,7 +324,14 @@
     "topic_en": "Describe a useful website or app",
     "tip_uz": "Texnologiya mavzusida konkret misollar keltiring. Ilovaning qanday va nega foydali ekanini batafsil ayting.",
     "sample_answer": "I'd like to talk about an app called Anki, which is a flashcard application that I've been using for the past year to prepare for my IELTS exam. What makes it stand out from other language-learning apps is its spaced repetition algorithm, which means it shows you cards at optimal intervals to maximize retention. I use it daily to review vocabulary, collocations, and even grammar structures. What I find particularly impressive is how customizable it is — you can create your own cards with images, audio, and example sentences. Since I started using it consistently, my vocabulary has expanded significantly, and I feel much more confident using academic words in both writing and speaking. I would highly recommend it to anyone preparing for standardized tests.",
-    "useful_phrases": ["I'd like to talk about an app called...", "What makes it stand out is...", "I use it daily to...", "What I find particularly impressive is...", "Since I started using it...", "I would highly recommend it to..."],
+    "useful_phrases": [
+      "I'd like to talk about an app called...",
+      "What makes it stand out is...",
+      "I use it daily to...",
+      "What I find particularly impressive is...",
+      "Since I started using it...",
+      "I would highly recommend it to..."
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -215,7 +342,14 @@
     "topic_en": "Food and eating habits",
     "tip_uz": "Ovqat haqida faqat 'I like' demang — ta'm, hid, tayyorlash jarayoni haqida gapiring.",
     "sample_answer": "Q: What's your favourite food?\nA: I'd have to say it's my grandmother's homemade pilaf. It's a traditional Uzbek rice dish cooked with tender lamb, carrots, and a blend of aromatic spices. The flavours are incredibly rich and comforting, and I think what makes it so special is that it's always associated with family gatherings and celebrations.\n\nQ: Do you prefer eating at home or in restaurants?\nA: I generally prefer eating at home because I find home-cooked meals tend to be healthier and more satisfying. However, I do enjoy dining out occasionally, especially when trying new cuisines. There's something exciting about discovering a new dish that I've never tasted before.",
-    "useful_phrases": ["I'd have to say it's...", "The flavours are incredibly...", "What makes it so special is...", "I generally prefer... because...", "I do enjoy... occasionally", "There's something exciting about..."],
+    "useful_phrases": [
+      "I'd have to say it's...",
+      "The flavours are incredibly...",
+      "What makes it so special is...",
+      "I generally prefer... because...",
+      "I do enjoy... occasionally",
+      "There's something exciting about..."
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -226,7 +360,14 @@
     "topic_en": "Urban vs. rural life",
     "tip_uz": "Solishtirishda balansli javob bering. Har ikkala tomonning afzallik va kamchiliklarini ko'rsating.",
     "sample_answer": "Q: Do you think young people prefer to live in cities rather than rural areas?\nA: Yes, by and large, I think most young people are drawn to urban areas, and there are some obvious reasons for this. Cities typically offer better career opportunities, a wider range of educational institutions, and a more vibrant social scene. For ambitious young professionals, the networking opportunities alone can be a major pull factor. However, I've noticed an interesting countertrend recently — some young people, particularly those who can work remotely, are choosing to relocate to smaller towns or rural areas in search of a better quality of life, lower living costs, and closer contact with nature. So while the overall trend is still towards urbanization, I think we might see a gradual shift as remote work becomes more mainstream.",
-    "useful_phrases": ["By and large...", "...are drawn to...", "The networking opportunities alone can be...", "I've noticed an interesting countertrend...", "In search of...", "I think we might see a gradual shift..."],
+    "useful_phrases": [
+      "By and large...",
+      "...are drawn to...",
+      "The networking opportunities alone can be...",
+      "I've noticed an interesting countertrend...",
+      "In search of...",
+      "I think we might see a gradual shift..."
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -237,7 +378,14 @@
     "topic_en": "Describe a movie you watched recently",
     "tip_uz": "Film haqida gapirganingizda syujet, aktyorlar, va sizga qanday ta'sir qilgani haqida gapiring. Spoiler bermang!",
     "sample_answer": "I'd like to talk about a film I watched recently called 'The Shawshank Redemption', which is actually a classic from 1994 but I only got around to watching it last month. It tells the story of Andy Dufresne, a banker who is wrongfully convicted of murder and sentenced to life in prison. What captivated me about this film was the powerful message of hope and resilience. Despite facing unimaginable hardships, Andy never loses his dignity or his belief that freedom is possible. The performances by Tim Robbins and Morgan Freeman are absolutely outstanding, and the cinematography beautifully captures both the bleakness of prison life and moments of profound beauty. It moved me deeply and made me reflect on the importance of never giving up hope, no matter how dire the circumstances.",
-    "useful_phrases": ["I'd like to talk about a film I watched recently...", "I only got around to watching it...", "What captivated me was...", "The performances are absolutely outstanding...", "It moved me deeply...", "It made me reflect on..."],
+    "useful_phrases": [
+      "I'd like to talk about a film I watched recently...",
+      "I only got around to watching it...",
+      "What captivated me was...",
+      "The performances are absolutely outstanding...",
+      "It moved me deeply...",
+      "It made me reflect on..."
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -248,7 +396,14 @@
     "topic_en": "Music and art",
     "tip_uz": "Musiqa haqida gapirganingizda qaysi janr, qaysi holatda eshitishni yoqtirishingizni batafsil ayting.",
     "sample_answer": "Q: Do you listen to music?\nA: Absolutely, music is an essential part of my daily routine. I tend to listen to different genres depending on my mood and what I'm doing. When I'm studying, I prefer instrumental music or lo-fi beats because they help me concentrate without being distracting. When I'm commuting or working out, I gravitate towards more upbeat pop or rock music to keep my energy levels up.\n\nQ: Can you play any musical instruments?\nA: I actually learned to play the guitar a few years ago, though I wouldn't call myself an expert by any stretch. I can play basic chords and a handful of songs. It's something I'd like to dedicate more time to in the future.",
-    "useful_phrases": ["Music is an essential part of...", "I tend to listen to... depending on...", "They help me concentrate without being...", "I gravitate towards...", "I wouldn't call myself an expert by any stretch", "It's something I'd like to dedicate more time to"],
+    "useful_phrases": [
+      "Music is an essential part of...",
+      "I tend to listen to... depending on...",
+      "They help me concentrate without being...",
+      "I gravitate towards...",
+      "I wouldn't call myself an expert by any stretch",
+      "It's something I'd like to dedicate more time to"
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -259,7 +414,14 @@
     "topic_en": "Crime and punishment",
     "tip_uz": "Nozik mavzularda diplomatik bo'ling. Turli nuqtai nazarlarni ko'rsating va o'z fikringizni asoslang.",
     "sample_answer": "Q: Do you think prison is the best way to deal with criminals?\nA: This is a nuanced issue that doesn't have a straightforward answer. For serious offences like violent crimes, I think imprisonment is necessary to protect public safety and serve as a deterrent. However, for less severe crimes, particularly those committed by young first-time offenders, I believe alternative approaches such as community service, rehabilitation programs, and counselling may be more effective in the long run. Research consistently shows that purely punitive measures often lead to high reoffending rates, whereas programs focused on rehabilitation and reintegration tend to produce better outcomes for both the individual and society. So I think a balanced approach that considers the nature and severity of the crime is the most sensible path forward.",
-    "useful_phrases": ["This is a nuanced issue...", "For serious offences...", "For less severe crimes...", "Research consistently shows that...", "...tend to produce better outcomes...", "A balanced approach... is the most sensible path forward"],
+    "useful_phrases": [
+      "This is a nuanced issue...",
+      "For serious offences...",
+      "For less severe crimes...",
+      "Research consistently shows that...",
+      "...tend to produce better outcomes...",
+      "A balanced approach... is the most sensible path forward"
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -270,7 +432,14 @@
     "topic_en": "Describe a place that surprised you",
     "tip_uz": "Kutganingiz va haqiqat orasidagi farqni ta'kidlab gapiring — bu javobni juda qiziqarli qiladi.",
     "sample_answer": "I'd like to describe a visit to the Aral Sea region in Uzbekistan that truly surprised me. Before going, I'd read about the environmental disaster there, but nothing could have prepared me for what I actually witnessed. Where there was once a thriving inland sea, I saw vast expanses of dry, salt-crusted desert with rusted fishing boats stranded on what used to be the seabed. It was both haunting and surreal. What surprised me most, however, was the resilience of the local community. Despite losing their primary livelihood, people had adapted in remarkable ways — some had turned to alternative agriculture, while others had developed eco-tourism initiatives to raise awareness about the crisis. The contrast between environmental devastation and human determination left a profound impression on me and made me realize the urgency of addressing environmental issues before they become irreversible.",
-    "useful_phrases": ["Nothing could have prepared me for...", "Where there was once...", "It was both haunting and surreal", "What surprised me most was...", "...had adapted in remarkable ways...", "The contrast between... left a profound impression"],
+    "useful_phrases": [
+      "Nothing could have prepared me for...",
+      "Where there was once...",
+      "It was both haunting and surreal",
+      "What surprised me most was...",
+      "...had adapted in remarkable ways...",
+      "The contrast between... left a profound impression"
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -281,7 +450,14 @@
     "topic_en": "Sports and physical activity",
     "tip_uz": "Sport haqida so'ralganda, sportning sizga qanday foyda berishini ham aytib o'ting.",
     "sample_answer": "Q: Do you play any sports?\nA: Yes, I try to stay reasonably active. I've been playing football with friends on weekends for the past couple of years, and I also go jogging three or four times a week. I find that regular exercise really helps me manage stress and maintain a positive outlook.\n\nQ: Is sport popular in your country?\nA: Very much so. Football is arguably the most popular sport, and you can see people playing it in parks and stadiums all over the country. In recent years, combat sports like boxing and martial arts have also gained a significant following, partly thanks to Uzbek athletes achieving success at international competitions.",
-    "useful_phrases": ["I try to stay reasonably active", "I've been playing... for the past...", "I find that regular exercise helps me...", "Very much so", "...is arguably the most popular...", "...have gained a significant following"],
+    "useful_phrases": [
+      "I try to stay reasonably active",
+      "I've been playing... for the past...",
+      "I find that regular exercise helps me...",
+      "Very much so",
+      "...is arguably the most popular...",
+      "...have gained a significant following"
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -292,7 +468,14 @@
     "topic_en": "Advertising and consumer culture",
     "tip_uz": "Reklama mavzusida tanqidiy fikrlashni ko'rsating. Reklama usullarini tahlil qiling.",
     "sample_answer": "Q: How does advertising influence people's buying habits?\nA: I think advertising has a tremendously powerful influence on consumer behaviour, often in ways that people aren't fully aware of. Modern advertising doesn't just inform people about products — it creates desires and emotional associations. For example, a luxury car advertisement doesn't simply highlight the vehicle's specifications; it sells a lifestyle and a sense of status. Social media has taken this to another level through influencer marketing, where products are promoted in a way that feels personal and authentic rather than commercial. I think this is particularly concerning when it comes to younger consumers who may lack the critical thinking skills to distinguish between genuine recommendations and paid promotions. That's why I believe media literacy should be taught in schools from an early age.",
-    "useful_phrases": ["...has a tremendously powerful influence on...", "Often in ways that people aren't fully aware of...", "It creates desires and emotional associations", "...has taken this to another level...", "This is particularly concerning when...", "That's why I believe..."],
+    "useful_phrases": [
+      "...has a tremendously powerful influence on...",
+      "Often in ways that people aren't fully aware of...",
+      "It creates desires and emotional associations",
+      "...has taken this to another level...",
+      "This is particularly concerning when...",
+      "That's why I believe..."
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -303,7 +486,15 @@
     "topic_en": "Describe your plans for the future",
     "tip_uz": "Kelajak haqida gapirganingizda aniq va real rejalar ayting. Nima uchun bu rejalar muhimligini tushuntiring.",
     "sample_answer": "I'd like to share my plans for the next few years, which I've been thinking about quite a lot recently. My immediate goal is to achieve a band 7.5 in IELTS, which would open the door to studying abroad. Specifically, I'm hoping to pursue a master's degree in data science at a university in the UK or Canada. I chose this field because I believe data-driven decision making is the future of virtually every industry. In the longer term, I'd like to return to Uzbekistan and contribute to the growing technology sector here. I envision starting my own tech company that uses data analytics to solve local problems, such as improving agricultural efficiency or optimizing urban transportation. Of course, these are ambitious plans, and I'm aware that things don't always go as expected, but I firmly believe that having clear goals gives you a sense of direction and purpose.",
-    "useful_phrases": ["I'd like to share my plans for...", "My immediate goal is to...", "I'm hoping to pursue...", "I chose this field because...", "In the longer term...", "I envision starting...", "Having clear goals gives you a sense of direction"],
+    "useful_phrases": [
+      "I'd like to share my plans for...",
+      "My immediate goal is to...",
+      "I'm hoping to pursue...",
+      "I chose this field because...",
+      "In the longer term...",
+      "I envision starting...",
+      "Having clear goals gives you a sense of direction"
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -314,7 +505,14 @@
     "topic_en": "Reading habits",
     "tip_uz": "O'qish haqida gapirganingizda kitob turlari, o'qish vaqtingiz va sabablarini ayting.",
     "sample_answer": "Q: Do you like reading?\nA: Yes, I'm quite an avid reader, actually. I try to read for at least thirty minutes before going to bed. It's become a sort of ritual that helps me unwind after a long day. I mostly read non-fiction — books about psychology, history, and self-improvement.\n\nQ: Do you prefer e-books or physical books?\nA: I tend to lean towards physical books, to be honest. There's something deeply satisfying about holding a real book, turning the pages, and even the smell of paper. Having said that, I do use e-books for convenience when travelling, since carrying multiple physical books isn't always practical.",
-    "useful_phrases": ["I'm quite an avid reader", "It's become a sort of ritual...", "I mostly read...", "I tend to lean towards...", "There's something deeply satisfying about...", "Having said that..."],
+    "useful_phrases": [
+      "I'm quite an avid reader",
+      "It's become a sort of ritual...",
+      "I mostly read...",
+      "I tend to lean towards...",
+      "There's something deeply satisfying about...",
+      "Having said that..."
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -325,7 +523,15 @@
     "topic_en": "Information technology and privacy",
     "tip_uz": "Bu murakkab mavzuda turli qarashlarni muhokama qiling va o'z pozitsiyangizni aniq bildiring.",
     "sample_answer": "Q: Are you concerned about online privacy?\nA: Absolutely, and I think this is one of the most pressing issues of our digital age. On a personal level, I'm quite cautious about what information I share online, and I make use of privacy settings and two-factor authentication whenever possible. But on a broader societal level, I think there are serious concerns about how tech companies collect, store, and utilize our personal data. The algorithms that track our browsing habits, purchasing patterns, and even our physical movements raise fundamental questions about individual autonomy and consent. While I acknowledge that some data collection is necessary for improving services, I believe there needs to be much greater transparency and stricter regulation to protect individuals' right to privacy. The European Union's GDPR is a step in the right direction, but I think more comprehensive global standards are needed.",
-    "useful_phrases": ["This is one of the most pressing issues of...", "On a personal level...", "On a broader societal level...", "...raise fundamental questions about...", "While I acknowledge that...", "I believe there needs to be...", "...is a step in the right direction"],
+    "useful_phrases": [
+      "This is one of the most pressing issues of...",
+      "On a personal level...",
+      "On a broader societal level...",
+      "...raise fundamental questions about...",
+      "While I acknowledge that...",
+      "I believe there needs to be...",
+      "...is a step in the right direction"
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -336,7 +542,14 @@
     "topic_en": "Describe an event that changed your life",
     "tip_uz": "Voqeani tasvirlaganingizda his-tuyg'ularingizni ham bayon eting. 'Before' va 'after' holatni solishtiring.",
     "sample_answer": "I'd like to talk about a life-changing event that happened to me about three years ago, when I attended a TEDx conference in Tashkent. At the time, I was feeling quite lost and uncertain about my career direction. One speaker in particular — a young Uzbek entrepreneur who had built a successful tech startup from scratch — had an enormous impact on me. He spoke about how he had dropped out of a conventional career path to pursue his passion for technology, and how the initial failures he experienced were actually the most valuable learning experiences. His words resonated with me profoundly. Before that event, I had been passively following a career path that others expected of me. Afterwards, I found the courage to switch my major to computer science, which aligned much more closely with my genuine interests. That decision has shaped everything that's happened since, and I'm genuinely grateful for that moment of clarity.",
-    "useful_phrases": ["I'd like to talk about a life-changing event...", "At the time, I was feeling...", "...had an enormous impact on me", "His words resonated with me profoundly", "I found the courage to...", "That decision has shaped everything..."],
+    "useful_phrases": [
+      "I'd like to talk about a life-changing event...",
+      "At the time, I was feeling...",
+      "...had an enormous impact on me",
+      "His words resonated with me profoundly",
+      "I found the courage to...",
+      "That decision has shaped everything..."
+    ],
     "band_target": "7+",
     "used": false
   },
@@ -347,7 +560,14 @@
     "topic_en": "Festivals and traditions",
     "tip_uz": "Bayramlar haqida gapirganingizda madaniy jihatlarni ta'kidlang — bu IELTS da yuqori baholanadi.",
     "sample_answer": "Q: What is the most important festival in your country?\nA: I'd say Navruz, which marks the spring equinox and the start of the new year in our calendar. It's celebrated on the 21st of March and holds deep cultural significance for Uzbek people. It symbolizes renewal, hope, and the triumph of light over darkness.\n\nQ: How do people celebrate it?\nA: Families typically gather together for elaborate feasts featuring traditional dishes like sumalak and halim. There are also colourful public celebrations with music, dancing, and various cultural performances. What I find most meaningful is how the festival brings entire communities together, regardless of their background or social status.",
-    "useful_phrases": ["I'd say...", "It holds deep cultural significance...", "It symbolizes...", "Families typically gather together for...", "What I find most meaningful is...", "It brings communities together, regardless of..."],
+    "useful_phrases": [
+      "I'd say...",
+      "It holds deep cultural significance...",
+      "It symbolizes...",
+      "Families typically gather together for...",
+      "What I find most meaningful is...",
+      "It brings communities together, regardless of..."
+    ],
     "band_target": "7+",
     "used": false
   }

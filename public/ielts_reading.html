@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer-Delivered IELTS Reading Practice</title>
+    <style>
+        :root {
+            --primary-bg: #f5f5f5;
+            --panel-bg: #ffffff;
+            --text-color: #333333;
+            --border-color: #e0e0e0;
+            --accent-color: #005a9c;
+            --nav-bg: #004578;
+            --highlight-bg: #fff9c4;
+            --correct-color: #4caf50;
+            --incorrect-color: #f44336;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        header {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+
+        .timer {
+            font-family: monospace;
+            font-size: 1.1rem;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .nav-bar {
+            display: flex;
+            background: var(--nav-bg);
+            padding: 0 10px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            padding: 10px 18px;
+            background: transparent;
+            color: rgba(255,255,255,0.8);
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.2s;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-btn:hover {
+            color: white;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .nav-btn.active {
+            color: white;
+            border-bottom: 3px solid #ffeb3b;
+            background: var(--accent-color);
+        }
+
+        .part-container {
+            display: none;
+            flex: 1;
+            overflow: hidden;
+            flex-direction: row;
+        }
+
+        .part-container.active {
+            display: flex;
+        }
+
+        .panel {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+            background-color: var(--panel-bg);
+        }
+
+        .left-panel {
+            border-right: 2px solid var(--border-color);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            padding-bottom: 80px;
+        }
+
+        .right-panel {
+            background-color: #fafafa;
+            padding-bottom: 80px;
+        }
+
+        .passage-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .passage-text p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .paragraph-label {
+            font-weight: bold;
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+
+        .instructions {
+            background-color: var(--highlight-bg);
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+            border-left: 4px solid #ffeb3b;
+        }
+
+        .instructions h3 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .question-block {
+            margin-bottom: 25px;
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+        }
+
+        /* Multiple Choice & T/F/NG styling */
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .options.horizontal {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .radio-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            transition: all 0.2s;
+            background-color: #f9f9f9;
+        }
+
+        .radio-label:hover {
+            background-color: #eef2f5;
+            border-color: var(--accent-color);
+        }
+
+        input[type="radio"] {
+            accent-color: var(--accent-color);
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Fill in the blanks styling */
+        .fill-blank-input {
+            padding: 6px 10px;
+            font-size: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            margin-left: 5px;
+            width: 200px;
+        }
+
+        .fill-blank-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 2px rgba(0,90,156,0.2);
+        }
+
+        /* Matching styling */
+        .matching-select {
+            padding: 6px 10px;
+            font-size: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .matching-select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 2px rgba(0,90,156,0.2);
+        }
+
+        /* Word bank styling */
+        .word-bank {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 15px;
+            background: #eef2f5;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border: 1px dashed var(--accent-color);
+        }
+
+        .word-bank-item {
+            padding: 6px 14px;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* Short answer styling */
+        .short-answer-input {
+            padding: 8px 12px;
+            font-size: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            width: 100%;
+            max-width: 350px;
+            margin-top: 10px;
+        }
+
+        .short-answer-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 2px rgba(0,90,156,0.2);
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: white;
+            padding: 15px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            text-align: right;
+            z-index: 20;
+        }
+
+        .submit-btn {
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .submit-btn:hover {
+            background-color: #004578;
+        }
+
+        .feedback {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: none;
+        }
+
+        .feedback.correct {
+            color: var(--correct-color);
+            display: block;
+        }
+
+        .feedback.incorrect {
+            color: var(--incorrect-color);
+            display: block;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            body {
+                overflow: auto;
+            }
+            .part-container {
+                flex-direction: column;
+                overflow: visible;
+                display: none;
+            }
+            .part-container.active {
+                display: flex;
+            }
+            .left-panel {
+                border-right: none;
+                border-bottom: 4px solid var(--border-color);
+                max-height: 50vh;
+                resize: vertical;
+                overflow-y: auto;
+                padding-bottom: 20px;
+            }
+            .panel {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div>IELTS Academic Reading <span style="font-size: 0.8rem; margin-left: 10px; font-weight: normal; color: #e0e0e0;">| Made by Dilshod Ustoz</span></div>
+        <div class="timer" id="timer">08:00</div>
+    </header>
+
+    <div class="nav-bar">
+        <button class="nav-btn active" onclick="switchPart(1)">Part 1</button>
+        <button class="nav-btn" onclick="switchPart(2)">Part 2</button>
+        <button class="nav-btn" onclick="switchPart(3)">Part 3</button>
+        <button class="nav-btn" onclick="switchPart(4)">Part 4</button>
+        <button class="nav-btn" onclick="switchPart(5)">Part 5</button>
+        <button class="nav-btn" onclick="switchPart(6)">Part 6</button>
+        <button class="nav-btn" onclick="switchPart(7)">Part 7</button>
+    </div>
+
+    <form id="quiz-form">
+        <!-- PART 1 -->
+        <div class="part-container active" id="part-1">
+            <div class="panel left-panel">
+                <h1 class="passage-title">The Origins of Tea</h1>
+                <div class="passage-text">
+                    <p>Tea is the second most consumed beverage in the world after water. Its origins can be traced back to ancient China. According to popular legend, tea was discovered by the Chinese Emperor Shen Nung in 2737 BC. The story goes that he was sitting beneath a tree while his servant boiled drinking water. Some leaves from the tree blew into the water, and Shen Nung, a renowned herbalist, decided to try the infusion. He found the resulting drink to be refreshing and revitalizing.</p>
+                    <p>For many centuries, tea remained a medicinal drink in China. It wasn't until the Tang Dynasty (618-907 AD) that it became a popular everyday beverage. During this time, the process of steaming and rolling tea leaves into cakes was developed, making it easier to transport and trade. Tea eventually spread to Japan in the 9th century, brought by Buddhist monks who had traveled to China to study.</p>
+                </div>
+            </div>
+            <div class="panel right-panel">
+                <div class="instructions">
+                    <h3>Questions 1 - 5</h3>
+                    <p>Do the following statements agree with the information given in the Reading Passage?</p>
+                    <br>
+                    <p><strong>TRUE</strong> - if the statement agrees with the information</p>
+                    <p><strong>FALSE</strong> - if the statement contradicts the information</p>
+                    <p><strong>NOT GIVEN</strong> - if there is no information on this</p>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">1. Water is the most popular drink in the world.</div>
+                    <div class="options horizontal">
+                        <label class="radio-label"><input type="radio" name="q1" value="TRUE"> TRUE</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="FALSE"> FALSE</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="NOT GIVEN"> NOT GIVEN</label>
+                    </div>
+                    <div class="feedback" id="q1-feedback"></div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">2. Emperor Shen Nung was actively searching for a new type of drink when he discovered tea.</div>
+                    <div class="options horizontal">
+                        <label class="radio-label"><input type="radio" name="q2" value="TRUE"> TRUE</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="FALSE"> FALSE</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="NOT GIVEN"> NOT GIVEN</label>
+                    </div>
+                    <div class="feedback" id="q2-feedback"></div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">3. In ancient China, people initially drank tea to improve their health.</div>
+                    <div class="options horizontal">
+                        <label class="radio-label"><input type="radio" name="q3" value="TRUE"> TRUE</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="FALSE"> FALSE</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="NOT GIVEN"> NOT GIVEN</label>
+                    </div>
+                    <div class="feedback" id="q3-feedback"></div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">4. The process of making tea cakes was invented by a Buddhist monk.</div>
+                    <div class="options horizontal">
+                        <label class="radio-label"><input type="radio" name="q4" value="TRUE"> TRUE</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="FALSE"> FALSE</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="NOT GIVEN"> NOT GIVEN</label>
+                    </div>
+                    <div class="feedback" id="q4-feedback"></div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">5. Tea spread to Japan before the Tang Dynasty period.</div>
+                    <div class="options horizontal">
+                        <label class="radio-label"><input type="radio" name="q5" value="TRUE"> TRUE</label>
+                        <label class="radio-label"><input type="radio" name="q5" value="FALSE"> FALSE</label>
+                        <label class="radio-label"><input type="radio" name="q5" value="NOT GIVEN"> NOT GIVEN</label>
+                    </div>
+                    <div class="feedback" id="q5-feedback"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PART 2 -->
+        <div class="part-container" id="part-2">
+            <div class="panel left-panel">
+                <h1 class="passage-title">The Evolution of the Bicycle</h1>
+                <div class="passage-text">
+                    <p><span class="paragraph-label">A</span>The first human-powered land vehicle was created in 1817 by a German baron named Karl von Drais. His invention, known as the "running machine" or "Draisine," had no pedals. Riders propelled themselves by pushing their feet against the ground. It was made almost entirely of wood and was primarily a novelty for the wealthy.</p>
+                    <p><span class="paragraph-label">B</span>In the 1860s, French inventors added pedals to the front wheel, creating what became known as the "velocipede." It earned the nickname "boneshaker" due to its stiff wooden frame and iron-banded wheels, which made for an extremely uncomfortable ride on cobblestone streets.</p>
+                    <p><span class="paragraph-label">C</span>The 1870s saw the introduction of the "Penny Farthing" or high-wheel bicycle. The large front wheel allowed for higher speeds, but the design was notoriously dangerous. Because the rider sat very high up over the front axle, any sudden stop could send them tumbling forward headfirst.</p>
+                    <p><span class="paragraph-label">D</span>The major breakthrough came in 1885 with the invention of the "safety bicycle" by John Kemp Starley. It featured two wheels of equal size and a chain-driven rear wheel. This design drastically improved stability and safety. The subsequent addition of pneumatic (air-filled) rubber tires made the ride much smoother, cementing the bicycle as a practical mode of transportation for the masses.</p>
+                </div>
+            </div>
+            <div class="panel right-panel">
+                <div class="instructions">
+                    <h3>Questions 6 - 10</h3>
+                    <p>Choose the correct letter, <strong>A, B, C, or D</strong>.</p>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">6. What was a key feature of the Draisine invented in 1817?</div>
+                    <div class="options">
+                        <label class="radio-label"><input type="radio" name="q6" value="A"> A) It had a chain drive.</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="B"> B) It lacked pedals.</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="C"> C) It was made of iron.</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="D"> D) It was designed for the poor.</label>
+                    </div>
+                    <div class="feedback" id="q6-feedback"></div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">7. Why was the velocipede nicknamed the "boneshaker"?</div>
+                    <div class="options">
+                        <label class="radio-label"><input type="radio" name="q7" value="A"> A) Because it was too fast.</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="B"> B) Because of its large front wheel.</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="C"> C) Because it offered a very rough and bumpy ride.</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="D"> D) Because it was used primarily on smooth roads.</label>
+                    </div>
+                    <div class="feedback" id="q7-feedback"></div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">8. What was the main disadvantage of the Penny Farthing?</div>
+                    <div class="options">
+                        <label class="radio-label"><input type="radio" name="q8" value="A"> A) It was very slow.</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="B"> B) It was prone to causing forward-tumbling accidents.</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="C"> C) It required special shoes to ride.</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="D"> D) It had unequal wheel sizes that made steering impossible.</label>
+                    </div>
+                    <div class="feedback" id="q8-feedback"></div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">9. The "safety bicycle" of 1885 improved upon previous designs by:</div>
+                    <div class="options">
+                        <label class="radio-label"><input type="radio" name="q9" value="A"> A) Using a chain to drive the rear wheel.</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="B"> B) Introducing a larger front wheel.</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="C"> C) Removing the pedals for safety.</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="D"> D) Utilizing a heavy wooden frame.</label>
+                    </div>
+                    <div class="feedback" id="q9-feedback"></div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">10. What addition finally made bicycles comfortable for everyday use?</div>
+                    <div class="options">
+                        <label class="radio-label"><input type="radio" name="q10" value="A"> A) Iron bands.</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="B"> B) Pneumatic rubber tires.</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="C"> C) Two equal-sized wheels.</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="D"> D) A high seating position.</label>
+                    </div>
+                    <div class="feedback" id="q10-feedback"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PART 3 -->
+        <div class="part-container" id="part-3">
+            <div class="panel left-panel">
+                <h1 class="passage-title">The Mystery of the Northern Lights</h1>
+                <div class="passage-text">
+                    <p>The Northern Lights, scientifically known as the Aurora Borealis, are a spectacular natural light show visible in high-latitude regions. These mesmerizing displays occur when highly charged particles emitted by the sun, known as the solar wind, collide with the Earth's magnetic field. While our planet's magnetic field protects us from the majority of these particles, some get trapped in the magnetic field lines and are funneled toward the magnetic poles. When these solar particles crash into gases in the Earth's upper atmosphere, they transfer their energy, causing the gas molecules to glow. The color of the aurora depends on the specific gas involved in the collision. For example, oxygen produces the most common pale yellowish-green hue, as well as rare red auroras. Nitrogen, on the other hand, is responsible for creating blue or purplish-red lights.</p>
+                </div>
+            </div>
+            <div class="panel right-panel">
+                <div class="instructions">
+                    <h3>Questions 11 - 15</h3>
+                    <p>Complete the sentences below.</p>
+                    <p>Choose <strong>NO MORE THAN TWO WORDS</strong> from the passage for each answer.</p>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">11. The Northern Lights are primarily caused by the interaction between the Earth's magnetic field and the <input type="text" class="fill-blank-input" name="q11" autocomplete="off"> .</div>
+                    <div class="feedback" id="q11-feedback"></div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">12. The solar particles are funneled toward the <input type="text" class="fill-blank-input" name="q12" autocomplete="off"> by the Earth's field lines.</div>
+                    <div class="feedback" id="q12-feedback"></div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">13. The glow is created when solar particles collide with <input type="text" class="fill-blank-input" name="q13" autocomplete="off"> in the atmosphere.</div>
+                    <div class="feedback" id="q13-feedback"></div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">14. The specific color of the aurora is determined by the type of <input type="text" class="fill-blank-input" name="q14" autocomplete="off"> involved in the collision.</div>
+                    <div class="feedback" id="q14-feedback"></div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">15. Collisions involving nitrogen typically produce a blue or <input type="text" class="fill-blank-input" name="q15" autocomplete="off"> color.</div>
+                    <div class="feedback" id="q15-feedback"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PART 4 -->
+        <div class="part-container" id="part-4">
+            <div class="panel left-panel">
+                <h1 class="passage-title">Octopus Intelligence</h1>
+                <div class="passage-text">
+                    <p><span class="paragraph-label">A</span>The octopus is widely considered the most intelligent of all invertebrates. Unlike most animals, an octopus's nervous system is highly distributed. While it has a central brain, approximately two-thirds of its neurons are located in its arms. This allows each arm to act somewhat independently, reacting to stimuli and performing complex tasks without needing direct instructions from the brain.</p>
+                    <p><span class="paragraph-label">B</span>Octopuses have demonstrated remarkable problem-solving skills. In laboratory settings, they have been observed navigating mazes, unscrewing jars to retrieve food, and even using tools. For instance, some wild octopuses have been seen carrying coconut shells to use as a mobile shelter, a clear sign of forward planning and tool use.</p>
+                    <p><span class="paragraph-label">C</span>Their ability to escape from almost any enclosure is legendary among aquarium keepers. Octopuses are incredibly flexible because they have no bones; the only hard part of their body is their beak. This allows them to squeeze through openings that are no larger than a coin. They are also known to squirt jets of water to short-circuit lights or deliberately plug drain valves, causing tanks to overflow.</p>
+                    <p><span class="paragraph-label">D</span>The lifespan of an octopus is relatively short, posing a mystery regarding their high intelligence. Most species live only one to two years, and they do not pass down knowledge to their offspring, as the parents typically die shortly after the eggs hatch. Therefore, every octopus must learn how to survive and solve problems entirely from scratch.</p>
+                </div>
+            </div>
+            <div class="panel right-panel">
+                <div class="instructions">
+                    <h3>Questions 16 - 20</h3>
+                    <p>The reading passage has four paragraphs, <strong>A-D</strong>.</p>
+                    <p>Which paragraph contains the following information?</p>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">
+                        16. Mention of the physical trait that allows an octopus to fit through tiny spaces.
+                        <select name="q16" class="matching-select">
+                            <option value="">-- Select Paragraph --</option>
+                            <option value="A">Paragraph A</option>
+                            <option value="B">Paragraph B</option>
+                            <option value="C">Paragraph C</option>
+                            <option value="D">Paragraph D</option>
+                        </select>
+                    </div>
+                    <div class="feedback" id="q16-feedback"></div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">
+                        17. The proportion of neurons found outside the octopus's central brain.
+                        <select name="q17" class="matching-select">
+                            <option value="">-- Select Paragraph --</option>
+                            <option value="A">Paragraph A</option>
+                            <option value="B">Paragraph B</option>
+                            <option value="C">Paragraph C</option>
+                            <option value="D">Paragraph D</option>
+                        </select>
+                    </div>
+                    <div class="feedback" id="q17-feedback"></div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">
+                        18. The reason why baby octopuses cannot learn directly from their parents.
+                        <select name="q18" class="matching-select">
+                            <option value="">-- Select Paragraph --</option>
+                            <option value="A">Paragraph A</option>
+                            <option value="B">Paragraph B</option>
+                            <option value="C">Paragraph C</option>
+                            <option value="D">Paragraph D</option>
+                        </select>
+                    </div>
+                    <div class="feedback" id="q18-feedback"></div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">
+                        19. An example of an octopus utilizing an external object for protection.
+                        <select name="q19" class="matching-select">
+                            <option value="">-- Select Paragraph --</option>
+                            <option value="A">Paragraph A</option>
+                            <option value="B">Paragraph B</option>
+                            <option value="C">Paragraph C</option>
+                            <option value="D">Paragraph D</option>
+                        </select>
+                    </div>
+                    <div class="feedback" id="q19-feedback"></div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">
+                        20. Instances of octopuses intentionally causing disruption in artificial environments.
+                        <select name="q20" class="matching-select">
+                            <option value="">-- Select Paragraph --</option>
+                            <option value="A">Paragraph A</option>
+                            <option value="B">Paragraph B</option>
+                            <option value="C">Paragraph C</option>
+                            <option value="D">Paragraph D</option>
+                        </select>
+                    </div>
+                    <div class="feedback" id="q20-feedback"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PART 5: Matching Headings -->
+        <div class="part-container" id="part-5">
+            <div class="panel left-panel">
+                <h1 class="passage-title">The Rise of Urban Farming</h1>
+                <div class="passage-text">
+                    <p><span class="paragraph-label">A</span>In recent years, cities around the world have witnessed a dramatic increase in urban farming. Rooftop gardens, community plots, and even vertical farms inside abandoned warehouses are becoming common sights. This trend has been driven largely by growing concerns about food security, the environmental costs of transporting produce over long distances, and a desire for fresher, healthier food options.</p>
+                    <p><span class="paragraph-label">B</span>One of the most innovative approaches is vertical farming, where crops are grown in stacked layers inside climate-controlled buildings. These facilities use LED lighting and hydroponic systems — growing plants in nutrient-rich water instead of soil — to produce food year-round. A single vertical farm can yield as much produce as several hectares of traditional farmland, using a fraction of the water.</p>
+                    <p><span class="paragraph-label">C</span>Urban farming also provides significant social benefits. Community gardens bring neighbours together, reduce crime rates in neglected areas, and offer educational opportunities for children who may never have seen food growing naturally. Studies have shown that participation in community gardening improves mental health and strengthens social bonds within neighborhoods.</p>
+                    <p><span class="paragraph-label">D</span>Despite these advantages, urban farming faces several challenges. The cost of land in cities is extremely high, making it difficult for farming projects to be financially viable. Additionally, soil contamination from previous industrial use is a serious concern in many urban areas, requiring expensive remediation before any food can be safely grown.</p>
+                    <p><span class="paragraph-label">E</span>Looking ahead, experts predict that advances in technology — particularly in artificial intelligence and robotics — will make urban farming increasingly efficient and affordable. Automated systems could handle planting, watering, and harvesting with minimal human intervention, potentially transforming the way cities feed their populations in the coming decades.</p>
+                </div>
+            </div>
+            <div class="panel right-panel">
+                <div class="instructions">
+                    <h3>Questions 21 - 25</h3>
+                    <p>The reading passage has five paragraphs, <strong>A-E</strong>.</p>
+                    <p>Choose the correct heading for each paragraph from the list of headings below.</p>
+                    <br>
+                    <p><strong>List of Headings</strong></p>
+                    <p><strong>i</strong> &nbsp; The psychological and community impact of growing food in cities</p>
+                    <p><strong>ii</strong> &nbsp; How technology may shape the future of city-based agriculture</p>
+                    <p><strong>iii</strong> &nbsp; Financial and environmental obstacles to urban food production</p>
+                    <p><strong>iv</strong> &nbsp; A modern method of growing food without traditional fields</p>
+                    <p><strong>v</strong> &nbsp; The growing popularity of farming in urban areas</p>
+                    <p><strong>vi</strong> &nbsp; Government policies supporting urban farmers</p>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">
+                        21. Paragraph A
+                        <select name="q21" class="matching-select">
+                            <option value="">-- Select Heading --</option>
+                            <option value="i">i</option>
+                            <option value="ii">ii</option>
+                            <option value="iii">iii</option>
+                            <option value="iv">iv</option>
+                            <option value="v">v</option>
+                            <option value="vi">vi</option>
+                        </select>
+                    </div>
+                    <div class="feedback" id="q21-feedback"></div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">
+                        22. Paragraph B
+                        <select name="q22" class="matching-select">
+                            <option value="">-- Select Heading --</option>
+                            <option value="i">i</option>
+                            <option value="ii">ii</option>
+                            <option value="iii">iii</option>
+                            <option value="iv">iv</option>
+                            <option value="v">v</option>
+                            <option value="vi">vi</option>
+                        </select>
+                    </div>
+                    <div class="feedback" id="q22-feedback"></div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">
+                        23. Paragraph C
+                        <select name="q23" class="matching-select">
+                            <option value="">-- Select Heading --</option>
+                            <option value="i">i</option>
+                            <option value="ii">ii</option>
+                            <option value="iii">iii</option>
+                            <option value="iv">iv</option>
+                            <option value="v">v</option>
+                            <option value="vi">vi</option>
+                        </select>
+                    </div>
+                    <div class="feedback" id="q23-feedback"></div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">
+                        24. Paragraph D
+                        <select name="q24" class="matching-select">
+                            <option value="">-- Select Heading --</option>
+                            <option value="i">i</option>
+                            <option value="ii">ii</option>
+                            <option value="iii">iii</option>
+                            <option value="iv">iv</option>
+                            <option value="v">v</option>
+                            <option value="vi">vi</option>
+                        </select>
+                    </div>
+                    <div class="feedback" id="q24-feedback"></div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">
+                        25. Paragraph E
+                        <select name="q25" class="matching-select">
+                            <option value="">-- Select Heading --</option>
+                            <option value="i">i</option>
+                            <option value="ii">ii</option>
+                            <option value="iii">iii</option>
+                            <option value="iv">iv</option>
+                            <option value="v">v</option>
+                            <option value="vi">vi</option>
+                        </select>
+                    </div>
+                    <div class="feedback" id="q25-feedback"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PART 6: Summary Completion (Word Bank) -->
+        <div class="part-container" id="part-6">
+            <div class="panel left-panel">
+                <h1 class="passage-title">Sleep and Memory</h1>
+                <div class="passage-text">
+                    <p>Sleep plays a critical role in the consolidation of memory. During the day, the brain absorbs vast amounts of information, but it is during sleep that this information is sorted, processed, and stored as long-term memories. Research has shown that the brain replays experiences from the day during a stage of sleep known as Rapid Eye Movement (REM) sleep, strengthening the neural connections that form the basis of memory.</p>
+                    <p>Studies on university students have demonstrated that those who slept for at least seven hours after learning new material performed significantly better on tests than those who stayed awake to study through the night. Sleep deprivation, on the other hand, severely impairs the hippocampus — the brain region most closely associated with forming new memories — making it difficult to retain even simple facts.</p>
+                    <p>Interestingly, short naps of around 20 minutes have also been found to boost cognitive performance and memory recall. Unlike longer naps, these brief rest periods do not lead to sleep inertia — the groggy feeling that can occur after deeper sleep. Many leading technology companies have begun installing dedicated nap rooms in their offices, recognizing the positive impact of short rest periods on employee productivity and creativity.</p>
+                </div>
+            </div>
+            <div class="panel right-panel">
+                <div class="instructions">
+                    <h3>Questions 26 - 30</h3>
+                    <p>Complete the summary below.</p>
+                    <p>Choose <strong>ONE WORD ONLY</strong> from the box for each answer.</p>
+                </div>
+
+                <div class="word-bank">
+                    <span class="word-bank-item">hippocampus</span>
+                    <span class="word-bank-item">creativity</span>
+                    <span class="word-bank-item">consolidation</span>
+                    <span class="word-bank-item">replays</span>
+                    <span class="word-bank-item">naps</span>
+                    <span class="word-bank-item">inertia</span>
+                    <span class="word-bank-item">deprivation</span>
+                    <span class="word-bank-item">connections</span>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">26. Sleep is essential for the <input type="text" class="fill-blank-input" name="q26" autocomplete="off" placeholder="..."> of memory.</div>
+                    <div class="feedback" id="q26-feedback"></div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">27. During REM sleep, the brain <input type="text" class="fill-blank-input" name="q27" autocomplete="off" placeholder="..."> experiences from the day.</div>
+                    <div class="feedback" id="q27-feedback"></div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">28. Sleep <input type="text" class="fill-blank-input" name="q28" autocomplete="off" placeholder="..."> damages the brain's ability to form new memories.</div>
+                    <div class="feedback" id="q28-feedback"></div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">29. The <input type="text" class="fill-blank-input" name="q29" autocomplete="off" placeholder="..."> is the part of the brain responsible for creating new memories.</div>
+                    <div class="feedback" id="q29-feedback"></div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">30. Short <input type="text" class="fill-blank-input" name="q30" autocomplete="off" placeholder="..."> can improve performance without causing grogginess.</div>
+                    <div class="feedback" id="q30-feedback"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PART 7: Short Answer Questions -->
+        <div class="part-container" id="part-7">
+            <div class="panel left-panel">
+                <h1 class="passage-title">The Silk Road</h1>
+                <div class="passage-text">
+                    <p>The Silk Road was an ancient network of trade routes that connected the East and West for centuries. It was first established during the Han Dynasty of China around 130 BC, when the emperor sent his envoy Zhang Qian westward to forge alliances against hostile nomadic tribes. Although the route became famous for the trade of Chinese silk — the most valuable commodity of the time — merchants also exchanged spices, precious metals, gemstones, glass, and textiles along the way.</p>
+                    <p>The Silk Road was not a single path but a series of interconnected routes stretching approximately 6,400 kilometres from the Chinese city of Xi'an to the Mediterranean Sea. Merchants rarely travelled the entire distance themselves. Instead, goods were passed from trader to trader at key stopping points known as caravanserais — roadside inns built to shelter travelling merchants, their animals, and their cargo.</p>
+                    <p>Beyond commerce, the Silk Road served as a vital channel for the exchange of ideas, religions, and technologies. Buddhism spread from India to China along these routes, while papermaking and gunpowder travelled from China to Europe. The network eventually declined in the 15th century as maritime trade routes became faster and safer alternatives for long-distance commerce.</p>
+                </div>
+            </div>
+            <div class="panel right-panel">
+                <div class="instructions">
+                    <h3>Questions 31 - 35</h3>
+                    <p>Answer the questions below.</p>
+                    <p>Choose <strong>NO MORE THAN THREE WORDS AND/OR A NUMBER</strong> from the passage for each answer.</p>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">31. During which Chinese dynasty was the Silk Road first established?</div>
+                    <input type="text" class="short-answer-input" name="q31" autocomplete="off" placeholder="Write your answer...">
+                    <div class="feedback" id="q31-feedback"></div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">32. Who did the Chinese emperor send westward to build alliances?</div>
+                    <input type="text" class="short-answer-input" name="q32" autocomplete="off" placeholder="Write your answer...">
+                    <div class="feedback" id="q32-feedback"></div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">33. What was the most valuable product traded on the Silk Road?</div>
+                    <input type="text" class="short-answer-input" name="q33" autocomplete="off" placeholder="Write your answer...">
+                    <div class="feedback" id="q33-feedback"></div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">34. What were the roadside shelters for merchants and their cargo called?</div>
+                    <input type="text" class="short-answer-input" name="q34" autocomplete="off" placeholder="Write your answer...">
+                    <div class="feedback" id="q34-feedback"></div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-text">35. What type of trade routes replaced the Silk Road in the 15th century?</div>
+                    <input type="text" class="short-answer-input" name="q35" autocomplete="off" placeholder="Write your answer...">
+                    <div class="feedback" id="q35-feedback"></div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+    <footer>
+        <button type="button" class="submit-btn" onclick="checkAllAnswers()">Submit Test / Barcha javoblarni tekshirish</button>
+    </footer>
+
+    <script>
+        // Tab switching logic
+        function switchPart(partNumber) {
+            document.querySelectorAll('.part-container').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
+            
+            document.getElementById(`part-${partNumber}`).classList.add('active');
+            document.querySelector(`.nav-btn:nth-child(${partNumber})`).classList.add('active');
+            window.scrollTo(0,0);
+        }
+
+        // Timer logic
+        let timeLeft = 360; // 6 minutes
+        const timerElement = document.getElementById('timer');
+        
+        const timerInterval = setInterval(() => {
+            if(timeLeft <= 0) {
+                clearInterval(timerInterval);
+                checkAllAnswers();
+                return;
+            }
+            timeLeft--;
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }, 1000);
+
+        // Answers dictionary
+        const correctAnswers = {
+            // Part 1: T/F/NG
+            q1: "TRUE", q2: "FALSE", q3: "TRUE", q4: "NOT GIVEN", q5: "FALSE",
+            // Part 2: Multiple Choice
+            q6: "B", q7: "C", q8: "B", q9: "A", q10: "B",
+            // Part 3: Sentence Completion
+            q11: "solar wind", q12: "magnetic poles", q13: "gases", q14: "gas", q15: "purplish-red",
+            // Part 4: Matching Information
+            q16: "C", q17: "A", q18: "D", q19: "B", q20: "C",
+            // Part 5: Matching Headings
+            q21: "v", q22: "iv", q23: "i", q24: "iii", q25: "ii",
+            // Part 6: Summary Completion
+            q26: "consolidation", q27: "replays", q28: "deprivation", q29: "hippocampus", q30: "naps",
+            // Part 7: Short Answer Questions
+            q31: "han dynasty", q32: "zhang qian", q33: "silk", q34: "caravanserais", q35: "maritime trade routes"
+        };
+
+        function checkAllAnswers() {
+            const form = document.getElementById('quiz-form');
+            const formData = new FormData(form);
+            let totalCorrect = 0;
+            const totalQuestions = 35;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const qName = `q${i}`;
+                let userAnswer = formData.get(qName);
+                if (userAnswer) userAnswer = userAnswer.trim().toLowerCase();
+                
+                const expectedAnswer = correctAnswers[qName].toLowerCase();
+                const feedbackEl = document.getElementById(`${qName}-feedback`);
+                
+                if (!userAnswer) {
+                    feedbackEl.textContent = "Belgilanmagan (Not answered)";
+                    feedbackEl.className = "feedback incorrect";
+                    continue;
+                }
+
+                if (userAnswer === expectedAnswer) {
+                    feedbackEl.textContent = "✅ To'g'ri (Correct)";
+                    feedbackEl.className = "feedback correct";
+                    totalCorrect++;
+                } else {
+                    feedbackEl.textContent = `❌ Noto'g'ri (Incorrect). To'g'ri javob: ${correctAnswers[qName]}`;
+                    feedbackEl.className = "feedback incorrect";
+                }
+            }
+            
+            alert(`Test yakunlandi!\n\nNatija: ${totalCorrect} / ${totalQuestions}\n\nBatafsil ko'rish uchun har bir Part ni varoqlab chiqing.`);
+        }
+    </script>
+</body>
+</html>

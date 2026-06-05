@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Reading – Summary Completion</title>
+    <style>
+        :root { --accent: #005a9c; --nav: #004578; --border: #e0e0e0; --green: #4caf50; --red: #f44336; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        body { background: #f5f5f5; color: #333; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+        header { background: var(--accent); color: #fff; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; font-size: 1.2rem; font-weight: 600; box-shadow: 0 2px 4px rgba(0,0,0,.1); z-index: 10; }
+        .badge { font-size: .75rem; background: rgba(255,255,255,.2); padding: 4px 10px; border-radius: 20px; margin-left: 12px; font-weight: 400; }
+        .timer { font-family: monospace; font-size: 1.1rem; background: rgba(255,255,255,.2); padding: 5px 10px; border-radius: 4px; }
+        .container { display: flex; flex: 1; overflow: hidden; }
+        .panel { flex: 1; padding: 30px; overflow-y: auto; background: #fff; }
+        .left-panel { border-right: 2px solid var(--border); font-size: 1.1rem; line-height: 1.8; padding-bottom: 80px; }
+        .right-panel { background: #fafafa; padding-bottom: 80px; }
+        .title { text-align: center; margin-bottom: 20px; font-size: 1.5rem; font-weight: 700; }
+        .passage p { margin-bottom: 20px; text-align: justify; }
+        .instructions { background: #fff9c4; padding: 15px; border-radius: 6px; margin-bottom: 25px; font-size: .95rem; border-left: 4px solid #ffeb3b; }
+        .instructions h3 { margin-bottom: 10px; }
+        .word-bank { display: flex; flex-wrap: wrap; gap: 10px; padding: 15px; background: #eef2f5; border-radius: 6px; margin-bottom: 20px; border: 1px dashed var(--accent); }
+        .word-bank span { padding: 6px 14px; background: #fff; border: 1px solid var(--border); border-radius: 20px; font-size: .95rem; font-weight: 500; }
+        .qblock { margin-bottom: 20px; background: #fff; padding: 15px; border-radius: 6px; border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+        .qtext { font-weight: 600; font-size: 1.05rem; line-height: 2; }
+        .blank { padding: 6px 10px; font-size: 1rem; border: 1px solid var(--border); border-radius: 4px; width: 200px; }
+        .blank:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px rgba(0,90,156,.2); }
+        .fb { margin-top: 10px; font-size: .9rem; font-weight: 600; display: none; }
+        .fb.c { color: var(--green); display: block; } .fb.w { color: var(--red); display: block; }
+        footer { position: fixed; bottom: 0; width: 100%; background: #fff; padding: 15px; box-shadow: 0 -2px 10px rgba(0,0,0,.1); text-align: center; z-index: 20; }
+        .btn { padding: 12px 40px; background: var(--accent); color: #fff; border: none; border-radius: 6px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: .2s; }
+        .btn:hover { background: var(--nav); }
+        @media (max-width:900px) { body { overflow: auto; } .container { flex-direction: column; } .left-panel { border-right: none; border-bottom: 4px solid var(--border); max-height: 50vh; overflow-y: auto; padding-bottom: 20px; } .panel { padding: 20px; } .blank { width: 160px; } }
+    </style>
+</head>
+<body>
+<header>
+    <div>IELTS Reading <span class="badge">Made by Dilshod Ustoz</span></div>
+    <div class="timer" id="timer">08:00</div>
+</header>
+<div class="container">
+    <div class="panel left-panel">
+        <h1 class="title">Sleep and Memory</h1>
+        <div class="passage">
+            <p>Sleep plays a critical role in the consolidation of memory. During the day, the brain absorbs vast amounts of information, but it is during sleep that this information is sorted, processed, and stored as long-term memories. Research has shown that the brain replays experiences from the day during a stage of sleep known as Rapid Eye Movement (REM) sleep, strengthening the neural connections that form the basis of memory.</p>
+            <p>Studies on university students have demonstrated that those who slept for at least seven hours after learning new material performed significantly better on tests than those who stayed awake to study through the night. Sleep deprivation, on the other hand, severely impairs the hippocampus — the brain region most closely associated with forming new memories — making it difficult to retain even simple facts.</p>
+            <p>Interestingly, short naps of around 20 minutes have also been found to boost cognitive performance and memory recall. Unlike longer naps, these brief rest periods do not lead to sleep inertia — the groggy feeling that can occur after deeper sleep. Many leading technology companies have begun installing dedicated nap rooms in their offices, recognizing the positive impact of short rest periods on employee productivity and creativity.</p>
+        </div>
+    </div>
+    <div class="panel right-panel">
+        <div class="instructions">
+            <h3>Questions 1 – 5</h3>
+            <p>Complete the summary below.</p>
+            <p>Choose <strong>ONE WORD ONLY</strong> from the box for each answer.</p>
+        </div>
+        <div class="word-bank">
+            <span>hippocampus</span>
+            <span>creativity</span>
+            <span>consolidation</span>
+            <span>replays</span>
+            <span>naps</span>
+            <span>inertia</span>
+            <span>deprivation</span>
+            <span>connections</span>
+        </div>
+        <form id="f">
+            <div class="qblock"><div class="qtext">1. Sleep is essential for the <input type="text" class="blank" name="q1" autocomplete="off" placeholder="..."> of memory.</div><div class="fb" id="f1"></div></div>
+            <div class="qblock"><div class="qtext">2. During REM sleep, the brain <input type="text" class="blank" name="q2" autocomplete="off" placeholder="..."> experiences from the day.</div><div class="fb" id="f2"></div></div>
+            <div class="qblock"><div class="qtext">3. Sleep <input type="text" class="blank" name="q3" autocomplete="off" placeholder="..."> damages the brain's ability to form new memories.</div><div class="fb" id="f3"></div></div>
+            <div class="qblock"><div class="qtext">4. The <input type="text" class="blank" name="q4" autocomplete="off" placeholder="..."> is the part of the brain responsible for creating new memories.</div><div class="fb" id="f4"></div></div>
+            <div class="qblock"><div class="qtext">5. Short <input type="text" class="blank" name="q5" autocomplete="off" placeholder="..."> can improve performance without causing grogginess.</div><div class="fb" id="f5"></div></div>
+        </form>
+    </div>
+</div>
+<footer><button class="btn" onclick="check()">Check Answers / Javoblarni tekshirish</button></footer>
+<script>
+let t=480;const te=document.getElementById('timer');setInterval(()=>{if(t<=0)return;t--;te.textContent=`${String(Math.floor(t/60)).padStart(2,'0')}:${String(t%60).padStart(2,'0')}`;},1000);
+const ans={q1:"consolidation",q2:"replays",q3:"deprivation",q4:"hippocampus",q5:"naps"};
+function check(){const fd=new FormData(document.getElementById('f'));let s=0;for(let i=1;i<=5;i++){let u=fd.get('q'+i);if(u)u=u.trim().toLowerCase();const el=document.getElementById('f'+i);if(!u){el.textContent="Belgilanmagan";el.className="fb w";continue;}if(u===ans['q'+i]){el.textContent="✅ To'g'ri";el.className="fb c";s++;}else{el.textContent="❌ Noto'g'ri. Javob: "+ans['q'+i];el.className="fb w";}}alert(`Natija: ${s} / 5`);}
+</script>
+</body>
+</html>

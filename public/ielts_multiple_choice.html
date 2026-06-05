@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Reading – Multiple Choice</title>
+    <style>
+        :root { --accent: #005a9c; --nav: #004578; --border: #e0e0e0; --green: #4caf50; --red: #f44336; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        body { background: #f5f5f5; color: #333; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+        header { background: var(--accent); color: #fff; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; font-size: 1.2rem; font-weight: 600; box-shadow: 0 2px 4px rgba(0,0,0,.1); z-index: 10; }
+        .badge { font-size: .75rem; background: rgba(255,255,255,.2); padding: 4px 10px; border-radius: 20px; margin-left: 12px; font-weight: 400; }
+        .timer { font-family: monospace; font-size: 1.1rem; background: rgba(255,255,255,.2); padding: 5px 10px; border-radius: 4px; }
+        .container { display: flex; flex: 1; overflow: hidden; }
+        .panel { flex: 1; padding: 30px; overflow-y: auto; background: #fff; }
+        .left-panel { border-right: 2px solid var(--border); font-size: 1.1rem; line-height: 1.8; padding-bottom: 80px; }
+        .right-panel { background: #fafafa; padding-bottom: 80px; }
+        .title { text-align: center; margin-bottom: 20px; font-size: 1.5rem; font-weight: 700; }
+        .passage p { margin-bottom: 20px; text-align: justify; }
+        .plabel { font-weight: bold; margin-right: 10px; color: var(--accent); }
+        .instructions { background: #fff9c4; padding: 15px; border-radius: 6px; margin-bottom: 25px; font-size: .95rem; border-left: 4px solid #ffeb3b; }
+        .instructions h3 { margin-bottom: 10px; }
+        .qblock { margin-bottom: 20px; background: #fff; padding: 15px; border-radius: 6px; border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+        .qtext { font-weight: 600; margin-bottom: 12px; font-size: 1.05rem; }
+        .opts { display: flex; flex-direction: column; gap: 8px; }
+        .rlabel { display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 8px 12px; border: 1px solid var(--border); border-radius: 4px; transition: .2s; background: #f9f9f9; }
+        .rlabel:hover { background: #eef2f5; border-color: var(--accent); }
+        input[type=radio] { accent-color: var(--accent); width: 16px; height: 16px; }
+        .fb { margin-top: 10px; font-size: .9rem; font-weight: 600; display: none; }
+        .fb.c { color: var(--green); display: block; } .fb.w { color: var(--red); display: block; }
+        footer { position: fixed; bottom: 0; width: 100%; background: #fff; padding: 15px; box-shadow: 0 -2px 10px rgba(0,0,0,.1); text-align: center; z-index: 20; }
+        .btn { padding: 12px 40px; background: var(--accent); color: #fff; border: none; border-radius: 6px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: .2s; }
+        .btn:hover { background: var(--nav); }
+        @media (max-width:900px) { body { overflow: auto; } .container { flex-direction: column; } .left-panel { border-right: none; border-bottom: 4px solid var(--border); max-height: 50vh; overflow-y: auto; padding-bottom: 20px; } .panel { padding: 20px; } }
+    </style>
+</head>
+<body>
+<header>
+    <div>IELTS Reading <span class="badge">Made by Dilshod Ustoz</span></div>
+    <div class="timer" id="timer">08:00</div>
+</header>
+<div class="container">
+    <div class="panel left-panel">
+        <h1 class="title">The Evolution of the Bicycle</h1>
+        <div class="passage">
+            <p><span class="plabel">A</span>The first human-powered land vehicle was created in 1817 by a German baron named Karl von Drais. His invention, known as the "running machine" or "Draisine," had no pedals. Riders propelled themselves by pushing their feet against the ground. It was made almost entirely of wood and was primarily a novelty for the wealthy.</p>
+            <p><span class="plabel">B</span>In the 1860s, French inventors added pedals to the front wheel, creating what became known as the "velocipede." It earned the nickname "boneshaker" due to its stiff wooden frame and iron-banded wheels, which made for an extremely uncomfortable ride on cobblestone streets.</p>
+            <p><span class="plabel">C</span>The 1870s saw the introduction of the "Penny Farthing" or high-wheel bicycle. The large front wheel allowed for higher speeds, but the design was notoriously dangerous. Because the rider sat very high up over the front axle, any sudden stop could send them tumbling forward headfirst.</p>
+            <p><span class="plabel">D</span>The major breakthrough came in 1885 with the invention of the "safety bicycle" by John Kemp Starley. It featured two wheels of equal size and a chain-driven rear wheel. This design drastically improved stability and safety. The subsequent addition of pneumatic (air-filled) rubber tires made the ride much smoother, cementing the bicycle as a practical mode of transportation for the masses.</p>
+        </div>
+    </div>
+    <div class="panel right-panel">
+        <div class="instructions">
+            <h3>Questions 1 – 5</h3>
+            <p>Choose the correct letter, <strong>A, B, C, or D</strong>.</p>
+        </div>
+        <form id="f">
+            <div class="qblock"><div class="qtext">1. What was a key feature of the Draisine invented in 1817?</div><div class="opts"><label class="rlabel"><input type="radio" name="q1" value="A"> A) It had a chain drive.</label><label class="rlabel"><input type="radio" name="q1" value="B"> B) It lacked pedals.</label><label class="rlabel"><input type="radio" name="q1" value="C"> C) It was made of iron.</label><label class="rlabel"><input type="radio" name="q1" value="D"> D) It was designed for the poor.</label></div><div class="fb" id="f1"></div></div>
+            <div class="qblock"><div class="qtext">2. Why was the velocipede nicknamed the "boneshaker"?</div><div class="opts"><label class="rlabel"><input type="radio" name="q2" value="A"> A) Because it was too fast.</label><label class="rlabel"><input type="radio" name="q2" value="B"> B) Because of its large front wheel.</label><label class="rlabel"><input type="radio" name="q2" value="C"> C) Because it offered a very rough and bumpy ride.</label><label class="rlabel"><input type="radio" name="q2" value="D"> D) Because it was used primarily on smooth roads.</label></div><div class="fb" id="f2"></div></div>
+            <div class="qblock"><div class="qtext">3. What was the main disadvantage of the Penny Farthing?</div><div class="opts"><label class="rlabel"><input type="radio" name="q3" value="A"> A) It was very slow.</label><label class="rlabel"><input type="radio" name="q3" value="B"> B) It was prone to causing forward-tumbling accidents.</label><label class="rlabel"><input type="radio" name="q3" value="C"> C) It required special shoes to ride.</label><label class="rlabel"><input type="radio" name="q3" value="D"> D) It had unequal wheel sizes that made steering impossible.</label></div><div class="fb" id="f3"></div></div>
+            <div class="qblock"><div class="qtext">4. The "safety bicycle" of 1885 improved upon previous designs by:</div><div class="opts"><label class="rlabel"><input type="radio" name="q4" value="A"> A) Using a chain to drive the rear wheel.</label><label class="rlabel"><input type="radio" name="q4" value="B"> B) Introducing a larger front wheel.</label><label class="rlabel"><input type="radio" name="q4" value="C"> C) Removing the pedals for safety.</label><label class="rlabel"><input type="radio" name="q4" value="D"> D) Utilizing a heavy wooden frame.</label></div><div class="fb" id="f4"></div></div>
+            <div class="qblock"><div class="qtext">5. What addition finally made bicycles comfortable for everyday use?</div><div class="opts"><label class="rlabel"><input type="radio" name="q5" value="A"> A) Iron bands.</label><label class="rlabel"><input type="radio" name="q5" value="B"> B) Pneumatic rubber tires.</label><label class="rlabel"><input type="radio" name="q5" value="C"> C) Two equal-sized wheels.</label><label class="rlabel"><input type="radio" name="q5" value="D"> D) A high seating position.</label></div><div class="fb" id="f5"></div></div>
+        </form>
+    </div>
+</div>
+<footer><button class="btn" onclick="check()">Check Answers / Javoblarni tekshirish</button></footer>
+<script>
+let t=480;const te=document.getElementById('timer');setInterval(()=>{if(t<=0)return;t--;te.textContent=`${String(Math.floor(t/60)).padStart(2,'0')}:${String(t%60).padStart(2,'0')}`;},1000);
+const ans={q1:"B",q2:"C",q3:"B",q4:"A",q5:"B"};
+function check(){const fd=new FormData(document.getElementById('f'));let s=0;for(let i=1;i<=5;i++){const u=fd.get('q'+i),el=document.getElementById('f'+i);if(!u){el.textContent="Belgilanmagan";el.className="fb w";continue;}if(u===ans['q'+i]){el.textContent="✅ To'g'ri";el.className="fb c";s++;}else{el.textContent="❌ Noto'g'ri. Javob: "+ans['q'+i];el.className="fb w";}}alert(`Natija: ${s} / 5`);}
+</script>
+</body>
+</html>

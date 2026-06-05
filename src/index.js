@@ -55,15 +55,39 @@ async function main() {
   }
 
   // Try AI generation first, then fall back to database
-  let postText = await tryAIGeneration(contentType);
+  let postText = null;
+  let messageOptions = {};
 
-  if (!postText) {
-    console.log('📦 Using content from database...');
+  if (contentType === 'reading-test') {
+    console.log('📱 Preparing Mini App reading test...');
     const dbFile = getDatabaseFile(contentType);
     const item = getContentFromDatabase(dbFile);
 
     if (item) {
       postText = formatContent(contentType, item);
+      const GITHUB_PAGES_URL = 'https://dtogaymurod.github.io/ielts-telegram-bot/public';
+      messageOptions.extra = {
+        reply_markup: {
+          inline_keyboard: [[
+            {
+              text: "📝 Testni ishlash (Mini App)",
+              web_app: { url: `${GITHUB_PAGES_URL}/${item.filename}` }
+            }
+          ]]
+        }
+      };
+    }
+  } else {
+    postText = await tryAIGeneration(contentType);
+
+    if (!postText) {
+      console.log('📦 Using content from database...');
+      const dbFile = getDatabaseFile(contentType);
+      const item = getContentFromDatabase(dbFile);
+
+      if (item) {
+        postText = formatContent(contentType, item);
+      }
     }
   }
 
@@ -82,12 +106,16 @@ async function main() {
   if (isDryRun || isTest) {
     console.log('\n📋 ═══ POST PREVIEW ═══\n');
     console.log(postText);
+    if (messageOptions.extra?.reply_markup) {
+      console.log('\n🔘 Button: ', messageOptions.extra.reply_markup.inline_keyboard[0][0].text);
+      console.log('🔗 URL: ', messageOptions.extra.reply_markup.inline_keyboard[0][0].web_app.url);
+    }
     console.log('\n═══════════════════════\n');
     console.log(`📏 Length: ${postText.length} / 4096 chars`);
     console.log('✅ Dry run complete. No message sent.');
   } else {
     console.log('📤 Sending to Telegram...');
-    const result = await sendMessage(postText);
+    const result = await sendMessage(postText, messageOptions);
     console.log(`✅ Message sent! ID: ${result.message_id}`);
   }
 }

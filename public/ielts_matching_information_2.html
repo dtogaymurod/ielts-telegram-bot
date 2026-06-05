@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Reading – Matching Information (2)</title>
+    <style>
+        :root { --accent: #005a9c; --nav: #004578; --border: #e0e0e0; --green: #4caf50; --red: #f44336; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        body { background: #f5f5f5; color: #333; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+        header { background: var(--accent); color: #fff; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; font-size: 1.2rem; font-weight: 600; box-shadow: 0 2px 4px rgba(0,0,0,.1); z-index: 10; }
+        .badge { font-size: .75rem; background: rgba(255,255,255,.2); padding: 4px 10px; border-radius: 20px; margin-left: 12px; font-weight: 400; }
+        .timer { font-family: monospace; font-size: 1.1rem; background: rgba(255,255,255,.2); padding: 5px 10px; border-radius: 4px; }
+        .container { display: flex; flex: 1; overflow: hidden; }
+        .panel { flex: 1; padding: 30px; overflow-y: auto; background: #fff; }
+        .left-panel { border-right: 2px solid var(--border); font-size: 1.1rem; line-height: 1.8; padding-bottom: 80px; }
+        .right-panel { background: #fafafa; padding-bottom: 80px; }
+        .title { text-align: center; margin-bottom: 20px; font-size: 1.5rem; font-weight: 700; }
+        .passage p { margin-bottom: 20px; text-align: justify; }
+        .plabel { font-weight: bold; margin-right: 10px; color: var(--accent); }
+        .instructions { background: #fff9c4; padding: 15px; border-radius: 6px; margin-bottom: 25px; font-size: .95rem; border-left: 4px solid #ffeb3b; }
+        .instructions h3 { margin-bottom: 10px; }
+        .qblock { margin-bottom: 20px; background: #fff; padding: 15px; border-radius: 6px; border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+        .qtext { font-weight: 600; font-size: 1.05rem; }
+        select.sel { padding: 6px 10px; font-size: 1rem; border: 1px solid var(--border); border-radius: 4px; margin-top: 10px; cursor: pointer; }
+        select.sel:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px rgba(0,90,156,.2); }
+        .fb { margin-top: 10px; font-size: .9rem; font-weight: 600; display: none; }
+        .fb.c { color: var(--green); display: block; } .fb.w { color: var(--red); display: block; }
+        footer { position: fixed; bottom: 0; width: 100%; background: #fff; padding: 15px; box-shadow: 0 -2px 10px rgba(0,0,0,.1); text-align: center; z-index: 20; }
+        .btn { padding: 12px 40px; background: var(--accent); color: #fff; border: none; border-radius: 6px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: .2s; }
+        .btn:hover { background: var(--nav); }
+        @media (max-width:900px) { body { overflow: auto; } .container { flex-direction: column; } .left-panel { border-right: none; border-bottom: 4px solid var(--border); max-height: 50vh; overflow-y: auto; padding-bottom: 20px; } .panel { padding: 20px; } }
+    </style>
+</head>
+<body>
+<header>
+    <div>IELTS Reading <span class="badge">Made by Dilshod Ustoz</span></div>
+    <div class="timer" id="timer">08:00</div>
+</header>
+<div class="container">
+    <div class="panel left-panel">
+        <h1 class="title">The Human Brain</h1>
+        <div class="passage">
+            <p><span class="plabel">A</span>The human brain weighs approximately 1.4 kilograms and contains around 86 billion neurons. Despite making up only about two percent of total body weight, the brain consumes roughly 20 percent of the body's energy. This enormous energy demand is necessary because neurons are constantly firing electrical signals, even during sleep.</p>
+            <p><span class="plabel">B</span>The brain is divided into two hemispheres, each responsible for controlling the opposite side of the body. The left hemisphere is generally associated with language, logic, and analytical thinking, while the right hemisphere is linked to creativity, spatial awareness, and emotional processing. However, modern research has shown that most complex tasks require cooperation between both hemispheres.</p>
+            <p><span class="plabel">C</span>One of the brain's most extraordinary features is neuroplasticity — its ability to reorganise itself by forming new neural connections throughout life. This means the brain can adapt to new experiences, learn new skills, and even recover from certain types of injury. For example, if one area of the brain is damaged, neighbouring regions can sometimes take over its functions.</p>
+            <p><span class="plabel">D</span>The prefrontal cortex, located behind the forehead, is the last part of the brain to fully develop, typically not maturing until a person reaches their mid-twenties. This region is responsible for decision-making, impulse control, and planning for the future. Its late development is one reason why teenagers often engage in riskier behaviour than adults.</p>
+        </div>
+    </div>
+    <div class="panel right-panel">
+        <div class="instructions">
+            <h3>Questions 1 – 5</h3>
+            <p>The reading passage has four paragraphs, <strong>A–D</strong>.</p>
+            <p>Which paragraph contains the following information?</p>
+        </div>
+        <form id="f">
+            <div class="qblock"><div class="qtext">1. An explanation of why young people tend to take more risks.<select name="q1" class="sel"><option value="">-- Select --</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select></div><div class="fb" id="f1"></div></div>
+            <div class="qblock"><div class="qtext">2. The amount of energy the brain requires relative to body weight.<select name="q2" class="sel"><option value="">-- Select --</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select></div><div class="fb" id="f2"></div></div>
+            <div class="qblock"><div class="qtext">3. The brain's capacity to recover after being injured.<select name="q3" class="sel"><option value="">-- Select --</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select></div><div class="fb" id="f3"></div></div>
+            <div class="qblock"><div class="qtext">4. A correction to the popular idea that each brain half works independently.<select name="q4" class="sel"><option value="">-- Select --</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select></div><div class="fb" id="f4"></div></div>
+            <div class="qblock"><div class="qtext">5. The part of the brain that is involved in controlling impulses.<select name="q5" class="sel"><option value="">-- Select --</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option></select></div><div class="fb" id="f5"></div></div>
+        </form>
+    </div>
+</div>
+<footer><button class="btn" onclick="check()">Check Answers / Javoblarni tekshirish</button></footer>
+<script>
+let t=480;const te=document.getElementById('timer');setInterval(()=>{if(t<=0)return;t--;te.textContent=`${String(Math.floor(t/60)).padStart(2,'0')}:${String(t%60).padStart(2,'0')}`;},1000);
+const ans={q1:"D",q2:"A",q3:"C",q4:"B",q5:"D"};
+function check(){const fd=new FormData(document.getElementById('f'));let s=0;for(let i=1;i<=5;i++){const u=fd.get('q'+i),el=document.getElementById('f'+i);if(!u){el.textContent="Belgilanmagan";el.className="fb w";continue;}if(u===ans['q'+i]){el.textContent="✅ To'g'ri";el.className="fb c";s++;}else{el.textContent="❌ Noto'g'ri. Javob: "+ans['q'+i];el.className="fb w";}}alert(`Natija: ${s} / 5`);}
+</script>
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer-Delivered IELTS Reading Practice</title>
+    <style>
+        :root {
+            --primary-bg: #f5f5f5;
+            --panel-bg: #ffffff;
+            --text-color: #333333;
+            --border-color: #e0e0e0;
+            --accent-color: #005a9c;
+            --highlight-bg: #fff9c4;
+            --correct-color: #4caf50;
+            --incorrect-color: #f44336;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        header {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+
+        .timer {
+            font-family: monospace;
+            font-size: 1.1rem;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .container {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+            flex-direction: row;
+        }
+
+        .panel {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+            background-color: var(--panel-bg);
+        }
+
+        .left-panel {
+            border-right: 2px solid var(--border-color);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .right-panel {
+            background-color: #fafafa;
+        }
+
+        .passage-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .passage-text p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .instructions {
+            background-color: var(--highlight-bg);
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+            border-left: 4px solid #ffeb3b;
+        }
+
+        .instructions h3 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .question-block {
+            margin-bottom: 25px;
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+        }
+
+        .options {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .radio-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            transition: all 0.2s;
+            background-color: #f9f9f9;
+        }
+
+        .radio-label:hover {
+            background-color: #eef2f5;
+            border-color: var(--accent-color);
+        }
+
+        input[type="radio"] {
+            accent-color: var(--accent-color);
+            width: 16px;
+            height: 16px;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            background-color: #004578;
+        }
+
+        .feedback {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: none;
+        }
+
+        .feedback.correct {
+            color: var(--correct-color);
+            display: block;
+        }
+
+        .feedback.incorrect {
+            color: var(--incorrect-color);
+            display: block;
+        }
+
+        .explanation {
+            margin-top: 8px;
+            font-size: 0.9rem;
+            color: #555;
+            display: none;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            body {
+                overflow: auto;
+            }
+            .container {
+                flex-direction: column;
+                overflow: visible;
+            }
+            .left-panel {
+                border-right: none;
+                border-bottom: 4px solid var(--border-color);
+                max-height: 50vh;
+                resize: vertical;
+                overflow-y: auto;
+            }
+            .panel {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .options {
+                flex-direction: column;
+                gap: 8px;
+            }
+            header {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div>IELTS Academic Reading <span style="font-size: 0.8rem; margin-left: 10px; font-weight: normal; color: #e0e0e0;">| Made by Dilshod Ustoz</span></div>
+        <div class="timer" id="timer">06:00</div>
+    </header>
+
+    <div class="container">
+        <!-- Left Panel: Reading Passage -->
+        <div class="panel left-panel">
+            <h1 class="passage-title">The Origins of Tea</h1>
+            <div class="passage-text">
+                <p>Tea is the second most consumed beverage in the world after water. Its origins can be traced back to ancient China. According to popular legend, tea was discovered by the Chinese Emperor Shen Nung in 2737 BC. The story goes that he was sitting beneath a tree while his servant boiled drinking water. Some leaves from the tree blew into the water, and Shen Nung, a renowned herbalist, decided to try the infusion. He found the resulting drink to be refreshing and revitalizing.</p>
+                <p>For many centuries, tea remained a medicinal drink in China. It wasn't until the Tang Dynasty (618-907 AD) that it became a popular everyday beverage. During this time, the process of steaming and rolling tea leaves into cakes was developed, making it easier to transport and trade. Tea eventually spread to Japan in the 9th century, brought by Buddhist monks who had traveled to China to study.</p>
+            </div>
+        </div>
+
+        <!-- Right Panel: Questions -->
+        <div class="panel right-panel">
+            <div class="instructions">
+                <h3>Questions 1 - 4</h3>
+                <p>Do the following statements agree with the information given in the Reading Passage?</p>
+                <br>
+                <p><strong>TRUE</strong> - if the statement agrees with the information</p>
+                <p><strong>FALSE</strong> - if the statement contradicts the information</p>
+                <p><strong>NOT GIVEN</strong> - if there is no information on this</p>
+            </div>
+
+            <form id="quiz-form">
+                <!-- Question 1 -->
+                <div class="question-block" id="q1-block">
+                    <div class="question-text">1. Water is the most popular drink in the world.</div>
+                    <div class="options">
+                        <label class="radio-label"><input type="radio" name="q1" value="TRUE"> TRUE</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="FALSE"> FALSE</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="NOT GIVEN"> NOT GIVEN</label>
+                    </div>
+                    <div class="feedback" id="q1-feedback"></div>
+                    <div class="explanation" id="q1-explanation"><strong>Izoh:</strong> Matnda choy suvdan keyin dunyoda eng ko'p iste'mol qilinadigan ikkinchi ichimlik ekani aytilgan ("Tea is the second most consumed beverage in the world after water"). Bu suv birinchi o'rinda ekanini anglatadi.</div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="question-block" id="q2-block">
+                    <div class="question-text">2. Emperor Shen Nung was actively searching for a new type of drink when he discovered tea.</div>
+                    <div class="options">
+                        <label class="radio-label"><input type="radio" name="q2" value="TRUE"> TRUE</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="FALSE"> FALSE</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="NOT GIVEN"> NOT GIVEN</label>
+                    </div>
+                    <div class="feedback" id="q2-feedback"></div>
+                    <div class="explanation" id="q2-explanation"><strong>Izoh:</strong> Matnga ko'ra, daraxt barglari tasodifan suvga tushib ketgan ("Some leaves from the tree blew into the water"). Imperator maxsus yangi ichimlik qidirmagan.</div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="question-block" id="q3-block">
+                    <div class="question-text">3. In ancient China, people initially drank tea to improve their health.</div>
+                    <div class="options">
+                        <label class="radio-label"><input type="radio" name="q3" value="TRUE"> TRUE</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="FALSE"> FALSE</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="NOT GIVEN"> NOT GIVEN</label>
+                    </div>
+                    <div class="feedback" id="q3-feedback"></div>
+                    <div class="explanation" id="q3-explanation"><strong>Izoh:</strong> Matnda choy asrlar davomida Xitoyda tibbiy (shifobaxsh) ichimlik bo'lib qolgani aytilgan ("For many centuries, tea remained a medicinal drink in China").</div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="question-block" id="q4-block">
+                    <div class="question-text">4. The process of making tea cakes was invented by a Buddhist monk.</div>
+                    <div class="options">
+                        <label class="radio-label"><input type="radio" name="q4" value="TRUE"> TRUE</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="FALSE"> FALSE</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="NOT GIVEN"> NOT GIVEN</label>
+                    </div>
+                    <div class="feedback" id="q4-feedback"></div>
+                    <div class="explanation" id="q4-explanation"><strong>Izoh:</strong> Matnda rohiblar choyni Yaponiyaga olib borgani aytiladi, ammo choy tayyorlashning jarayonini aynan kim o'ylab topgani haqida ma'lumot yo'q.</div>
+                </div>
+
+                <button type="button" class="submit-btn" onclick="checkAnswers()">Check Answers / Javoblarni tekshirish</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Simple mock timer for realism
+        let timeLeft = 360; // 6 minutes in seconds
+        const timerElement = document.getElementById('timer');
+        
+        setInterval(() => {
+            if(timeLeft <= 0) return;
+            timeLeft--;
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }, 1000);
+
+        const correctAnswers = {
+            q1: "TRUE",
+            q2: "FALSE",
+            q3: "TRUE",
+            q4: "NOT GIVEN"
+        };
+
+        function checkAnswers() {
+            const form = document.getElementById('quiz-form');
+            const formData = new FormData(form);
+
+            for (let i = 1; i <= 4; i++) {
+                const qName = `q${i}`;
+                const userAnswer = formData.get(qName);
+                const feedbackEl = document.getElementById(`${qName}-feedback`);
+                const explanationEl = document.getElementById(`${qName}-explanation`);
+                
+                if (!userAnswer) {
+                    feedbackEl.textContent = "Belgilanmagan (Not answered)";
+                    feedbackEl.className = "feedback incorrect";
+                    explanationEl.style.display = "block";
+                    continue;
+                }
+
+                if (userAnswer === correctAnswers[qName]) {
+                    feedbackEl.textContent = "✅ To'g'ri (Correct)";
+                    feedbackEl.className = "feedback correct";
+                } else {
+                    feedbackEl.textContent = `❌ Noto'g'ri (Incorrect). To'g'ri javob: ${correctAnswers[qName]}`;
+                    feedbackEl.className = "feedback incorrect";
+                }
+                
+                explanationEl.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

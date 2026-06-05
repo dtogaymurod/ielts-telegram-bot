@@ -111,6 +111,7 @@ export const CONTENT_TYPE_MAP = {
   'band-score': 'band-score-tips',
   motivation: 'motivation',
   quiz: 'quizzes',
+  'reading-test': 'reading-tests',
 };
 
 /**

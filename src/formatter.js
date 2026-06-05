@@ -195,6 +195,28 @@ export function formatMotivation(item) {
 }
 
 /**
+ * Format a reading test post (Mini App)
+ */
+export function formatReadingTest(item) {
+  const lines = [
+    `📱 <b>Mini IELTS Reading Test</b>`,
+    SEPARATOR,
+    ``,
+    `Bugun interaktiv test ishlab, o'zimizni sinab ko'ramiz! Telegramdan chiqmasdan, taymer bilan ishlang.`,
+    ``,
+    `📌 <b>Mavzu:</b> <i>${item.title}</i>`,
+    `📋 <b>Test turi:</b> ${item.type}`,
+    ``,
+    `👇 Pastdagi tugmani bosib testni boshlang!`,
+    ``,
+    SEPARATOR,
+    `#IELTS #ReadingTest #MiniApp`,
+  ];
+
+  return lines.join('\n');
+}
+
+/**
  * Format content based on type
  * @param {string} contentType - Type of content
  * @param {object} item - Content data
@@ -208,6 +230,7 @@ export function formatContent(contentType, item) {
     'reading-listening': formatReadingListening,
     'band-score': formatBandScoreTip,
     motivation: formatMotivation,
+    'reading-test': formatReadingTest,
   };
 
   const formatter = formatters[contentType];

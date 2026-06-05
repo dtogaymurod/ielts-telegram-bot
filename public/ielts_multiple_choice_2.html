@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Reading – Multiple Choice (2)</title>
+    <style>
+        :root { --accent: #005a9c; --nav: #004578; --border: #e0e0e0; --green: #4caf50; --red: #f44336; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        body { background: #f5f5f5; color: #333; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+        header { background: var(--accent); color: #fff; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; font-size: 1.2rem; font-weight: 600; box-shadow: 0 2px 4px rgba(0,0,0,.1); z-index: 10; }
+        .badge { font-size: .75rem; background: rgba(255,255,255,.2); padding: 4px 10px; border-radius: 20px; margin-left: 12px; font-weight: 400; }
+        .timer { font-family: monospace; font-size: 1.1rem; background: rgba(255,255,255,.2); padding: 5px 10px; border-radius: 4px; }
+        .container { display: flex; flex: 1; overflow: hidden; }
+        .panel { flex: 1; padding: 30px; overflow-y: auto; background: #fff; }
+        .left-panel { border-right: 2px solid var(--border); font-size: 1.1rem; line-height: 1.8; padding-bottom: 80px; }
+        .right-panel { background: #fafafa; padding-bottom: 80px; }
+        .title { text-align: center; margin-bottom: 20px; font-size: 1.5rem; font-weight: 700; }
+        .passage p { margin-bottom: 20px; text-align: justify; }
+        .instructions { background: #fff9c4; padding: 15px; border-radius: 6px; margin-bottom: 25px; font-size: .95rem; border-left: 4px solid #ffeb3b; }
+        .instructions h3 { margin-bottom: 10px; }
+        .qblock { margin-bottom: 20px; background: #fff; padding: 15px; border-radius: 6px; border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+        .qtext { font-weight: 600; margin-bottom: 12px; font-size: 1.05rem; }
+        .opts { display: flex; flex-direction: column; gap: 8px; }
+        .rlabel { display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 8px 12px; border: 1px solid var(--border); border-radius: 4px; transition: .2s; background: #f9f9f9; }
+        .rlabel:hover { background: #eef2f5; border-color: var(--accent); }
+        input[type=radio] { accent-color: var(--accent); width: 16px; height: 16px; }
+        .fb { margin-top: 10px; font-size: .9rem; font-weight: 600; display: none; }
+        .fb.c { color: var(--green); display: block; } .fb.w { color: var(--red); display: block; }
+        footer { position: fixed; bottom: 0; width: 100%; background: #fff; padding: 15px; box-shadow: 0 -2px 10px rgba(0,0,0,.1); text-align: center; z-index: 20; }
+        .btn { padding: 12px 40px; background: var(--accent); color: #fff; border: none; border-radius: 6px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: .2s; }
+        .btn:hover { background: var(--nav); }
+        @media (max-width:900px) { body { overflow: auto; } .container { flex-direction: column; } .left-panel { border-right: none; border-bottom: 4px solid var(--border); max-height: 50vh; overflow-y: auto; padding-bottom: 20px; } .panel { padding: 20px; } }
+    </style>
+</head>
+<body>
+<header>
+    <div>IELTS Reading <span class="badge">Made by Dilshod Ustoz</span></div>
+    <div class="timer" id="timer">08:00</div>
+</header>
+<div class="container">
+    <div class="panel left-panel">
+        <h1 class="title">Coral Reefs in Danger</h1>
+        <div class="passage">
+            <p>Coral reefs are among the most biologically diverse ecosystems on Earth, supporting roughly 25 percent of all known marine species despite covering less than one percent of the ocean floor. They are formed over thousands of years by tiny organisms called coral polyps, which secrete a hard limestone skeleton. Over time, these skeletons accumulate to form the massive structures we recognise as reefs.</p>
+            <p>However, coral reefs around the world are under severe threat. Rising ocean temperatures caused by climate change lead to a phenomenon known as coral bleaching. When water becomes too warm, corals expel the colourful algae living inside their tissues, turning white. Without these algae, which provide up to 90 percent of a coral's energy through photosynthesis, the coral slowly starves and eventually dies if temperatures do not return to normal.</p>
+            <p>Ocean acidification presents another major danger. As the ocean absorbs increasing amounts of carbon dioxide from the atmosphere, seawater becomes more acidic. This makes it harder for coral polyps to build their calcium carbonate skeletons, weakening existing reef structures and slowing the growth of new ones. Scientists estimate that if current trends continue, more than 70 percent of the world's coral reefs could disappear by 2050.</p>
+        </div>
+    </div>
+    <div class="panel right-panel">
+        <div class="instructions">
+            <h3>Questions 1 – 5</h3>
+            <p>Choose the correct letter, <strong>A, B, C, or D</strong>.</p>
+        </div>
+        <form id="f">
+            <div class="qblock"><div class="qtext">1. What percentage of marine species do coral reefs support?</div><div class="opts"><label class="rlabel"><input type="radio" name="q1" value="A"> A) About 1%</label><label class="rlabel"><input type="radio" name="q1" value="B"> B) About 25%</label><label class="rlabel"><input type="radio" name="q1" value="C"> C) About 50%</label><label class="rlabel"><input type="radio" name="q1" value="D"> D) About 90%</label></div><div class="fb" id="f1"></div></div>
+            <div class="qblock"><div class="qtext">2. What are coral reefs primarily built from?</div><div class="opts"><label class="rlabel"><input type="radio" name="q2" value="A"> A) Sand deposits</label><label class="rlabel"><input type="radio" name="q2" value="B"> B) Volcanic rock</label><label class="rlabel"><input type="radio" name="q2" value="C"> C) Limestone skeletons of coral polyps</label><label class="rlabel"><input type="radio" name="q2" value="D"> D) Compressed seaweed</label></div><div class="fb" id="f2"></div></div>
+            <div class="qblock"><div class="qtext">3. What happens during coral bleaching?</div><div class="opts"><label class="rlabel"><input type="radio" name="q3" value="A"> A) Corals absorb too much sunlight.</label><label class="rlabel"><input type="radio" name="q3" value="B"> B) Corals release the algae that live inside them.</label><label class="rlabel"><input type="radio" name="q3" value="C"> C) Corals grow faster than usual.</label><label class="rlabel"><input type="radio" name="q3" value="D"> D) Corals move to cooler water.</label></div><div class="fb" id="f3"></div></div>
+            <div class="qblock"><div class="qtext">4. How does ocean acidification affect corals?</div><div class="opts"><label class="rlabel"><input type="radio" name="q4" value="A"> A) It helps them grow stronger.</label><label class="rlabel"><input type="radio" name="q4" value="B"> B) It makes it harder for them to build skeletons.</label><label class="rlabel"><input type="radio" name="q4" value="C"> C) It increases the number of algae in their tissues.</label><label class="rlabel"><input type="radio" name="q4" value="D"> D) It causes them to change colour permanently.</label></div><div class="fb" id="f4"></div></div>
+            <div class="qblock"><div class="qtext">5. According to scientists, what could happen to coral reefs by 2050?</div><div class="opts"><label class="rlabel"><input type="radio" name="q5" value="A"> A) They will double in size.</label><label class="rlabel"><input type="radio" name="q5" value="B"> B) Over 70% could disappear.</label><label class="rlabel"><input type="radio" name="q5" value="C"> C) They will adapt to warmer temperatures.</label><label class="rlabel"><input type="radio" name="q5" value="D"> D) About 25% will be protected.</label></div><div class="fb" id="f5"></div></div>
+        </form>
+    </div>
+</div>
+<footer><button class="btn" onclick="check()">Check Answers / Javoblarni tekshirish</button></footer>
+<script>
+let t=480;const te=document.getElementById('timer');setInterval(()=>{if(t<=0)return;t--;te.textContent=`${String(Math.floor(t/60)).padStart(2,'0')}:${String(t%60).padStart(2,'0')}`;},1000);
+const ans={q1:"B",q2:"C",q3:"B",q4:"B",q5:"B"};
+function check(){const fd=new FormData(document.getElementById('f'));let s=0;for(let i=1;i<=5;i++){const u=fd.get('q'+i),el=document.getElementById('f'+i);if(!u){el.textContent="Belgilanmagan";el.className="fb w";continue;}if(u===ans['q'+i]){el.textContent="✅ To'g'ri";el.className="fb c";s++;}else{el.textContent="❌ Noto'g'ri. Javob: "+ans['q'+i];el.className="fb w";}}alert(`Natija: ${s} / 5`);}
+</script>
+</body>
+</html>
