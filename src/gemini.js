@@ -19,18 +19,16 @@ function getAI() {
   return ai;
 }
 
-const SYSTEM_INSTRUCTION = `Sen IELTS bo'yicha tajribali o'qituvchisan. Telegram kanalga post yozasan.
+const SYSTEM_INSTRUCTION = `Sen IELTS bo'yicha tajribali, zamonaviy va do'stona o'qituvchisan. Telegram kanalga o'quvchilar bilan suhbatlashgandek, samimiy va jonli post yozasan.
 
 MUHIM QOIDALAR:
-1. Tushuntirishlar va maslahatlarni O'ZBEK tilida yoz (lotin alifbosida)
-2. Inglizcha misollar, ta'riflar va sample javoblarni INGLIZ tilida yoz
-3. Telegram HTML formatidan foydalan: <b>qalin</b>, <i>kursiv</i>, <u>tagiga chizilgan</u>
-4. Satr uzilishlari uchun \\n ishlatish
-5. Emojilar ishlatish (lekin haddan oshirmaslik - har bir postda 4-8 ta)
-6. Postni 3000 belgidan oshirma
-7. Oxirida tegishli hashtaglar qo'sh: #IELTS #Vocabulary va h.k.
-8. Kontent haqiqiy foydali bo'lsin - oddiy va tushunarli
-9. Band 7+ darajaga mo'ljallangan bo'lsin`;
+1. Qisqalik va londa bo'lish: Postlar o'qishga oson, ixcham bo'lishi shart. Keraksiz va cho'zilgan gaplardan saqlan. Asosiy fikrni tez va aniq yetkaz (maksimum 1500-2000 belgi).
+2. Tabiiy O'zbek tili: Ingliz tilidan so'zma-so'z tarjima qilingan (robotic) sun'iy jumlalardan mutlaqo qoch. Xuddi tirik inson o'zbek tilida gapirayotgandek, tabiiy, ravon va grammatik jihatdan to'g'ri yoz.
+3. Qolipdan qochish: Har bir post bir xil, zerikarli shablonda bo'lmasin. Tabiiy ko'rinish uchun formatlashni o'zgartirib tur.
+4. Inglizcha qismlar: Misollar, so'zlar va namunaviy javoblar aslicha (ingliz tilida) qolsin.
+5. Formatlash: Telegram HTML (<b>, <i>, <u>) dan o'z o'rnida foydalan. Paragraflar orasida bo'sh joy qoldir.
+6. Emojilar: O'z o'rnida, tabiiy va kamroq ishlat (postda 2-4 ta).
+7. Band 7+ daraja: Ingliz tili materiallari haqiqatan ham ilg'or darajadagi o'quvchilar uchun mo'ljallangan bo'lsin.`;
 
 /**
  * Generate vocabulary post
@@ -42,17 +40,13 @@ export async function generateVocabulary() {
   try {
     const response = await client.models.generateContent({
       model: 'gemini-2.5-flash',
-      contents: `Bitta yangi IELTS vocabulary so'z haqida post yoz. 
-        Quyidagilarni qo'sh:
-        - So'z va transkriptsiyasi
-        - So'z turkumi
-        - Inglizcha ta'rif
-        - O'zbekcha ma'no
-        - 2 ta misol gap
-        - Sinonim va antonim
-        - IELTS da qanday ishlatish bo'yicha maslahat (o'zbekcha)
+      contents: `Bitta yangi ilg'or darajadagi IELTS vocabulary so'zini o'rgatuvchi qisqa va qiziqarli post yoz.
+        Quyidagilarni o'z ichiga olsin:
+        - So'z va uning o'zbekcha aniq ma'nosi
+        - 1-2 ta eslab qolish oson bo'lgan, sifatli misol gap (inglizcha)
+        - IELTS (Writing yoki Speaking) da bu so'zni qanday qilib o'rinli ishlatish bo'yicha qisqacha do'stona maslahat (o'zbek tilida).
         
-        Telegram HTML formatida yoz. Emojilar bilan chiroyli qilib format qil.`,
+        Qattiq qoliplarga tushma. O'quvchini zeriktirmaydigan, ixcham va tabiiy formatda yoz. Ortqicha va keraksiz ma'lumotlarni (masalan uzun sinonimlar ro'yxatini) olib tashla.`,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
         temperature: 0.9,
@@ -77,15 +71,13 @@ export async function generateWritingTip() {
     const taskType = Math.random() > 0.5 ? 'Task 1' : 'Task 2';
     const response = await client.models.generateContent({
       model: 'gemini-2.5-flash',
-      contents: `IELTS Writing ${taskType} bo'yicha bitta foydali maslahat yoz.
-        Quyidagilarni qo'sh:
-        - Maslahat sarlavhasi (o'zbekcha va inglizcha)
-        - Batafsil tushuntirish (o'zbekcha)
-        - Yaxshi va yomon misol (inglizcha) - before/after format
-        - Ko'p uchraydigan xato (o'zbekcha)
-        - Band score ga ta'siri
+      contents: `IELTS Writing ${taskType} bo'yicha bitta juda muhim va qisqa maslahat yoz.
+        Quyidagilar bo'lsin:
+        - Maslahat nima haqida ekanligi (jonli sarlavha)
+        - Qisqa va lo'nda tushuntirish (o'zbekcha, do'stona ohangda)
+        - Kichik bir before/after misol (inglizcha)
         
-        Telegram HTML formatida yoz.`,
+        Post xuddi tajribali ustoz o'quvchisiga Telegramda tezkor maslahat bergandek qisqa va tabiiy o'qilsin. Qolipga tushgan sun'iy tuzilmalardan saqlan.`,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
         temperature: 0.8,
@@ -112,15 +104,14 @@ export async function generateSpeakingTip() {
 
     const response = await client.models.generateContent({
       model: 'gemini-2.5-flash',
-      contents: `IELTS Speaking ${part} bo'yicha bitta foydali maslahat yoz.
-        Quyidagilarni qo'sh:
-        - Mavzu/savol (inglizcha)
-        - Strategiya (o'zbekcha)
-        - Namuna javob (inglizcha, Band 7+ darajada)
-        - Foydali iboralar ro'yxati (inglizcha)
-        - Qo'shimcha maslahat (o'zbekcha)
+      contents: `IELTS Speaking ${part} bo'yicha 1 ta foydali va qisqa maslahat yoz.
+        Quyidagilar bo'lsin:
+        - Aniq bir Speaking savoli (inglizcha)
+        - Qanday qilib yaxshi javob berish siri (o'zbekcha, 1-2 gapda)
+        - Qisqa va tabiiy Namuna javob (inglizcha, Band 7.5+ darajada)
+        - Javob ichidagi 2 ta kuchli ibora va ularning ma'nosi.
         
-        Telegram HTML formatida yoz.`,
+        Matn sun'iy tarjimaga o'xshamasin, xuddi o'zbek o'qituvchisi to'g'ridan-to'g'ri tushuntirayotgandek jonli, ixcham va o'qishga qulay bo'lsin.`,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
         temperature: 0.85,
@@ -145,15 +136,13 @@ export async function generateReadingListeningStrategy() {
     const skill = Math.random() > 0.5 ? 'Reading' : 'Listening';
     const response = await client.models.generateContent({
       model: 'gemini-2.5-flash',
-      contents: `IELTS ${skill} bo'yicha bitta strategiya yoz.
-        Quyidagilarni qo'sh:
-        - Strategiya nomi (o'zbekcha va inglizcha)
-        - Qanday qilib ishlashi (o'zbekcha, qadamma-qadam)
-        - Qaysi savol turlari uchun foydali
-        - Amaliy misol yoki mashq
-        - Ko'p uchraydigan xato (o'zbekcha)
+      contents: `IELTS ${skill} bo'yicha bitta kuchli va qisqa strategiya o'rgat.
+        Tuzilishi:
+        - Strategiyaning qiziqarli nomi
+        - U nima ekanligi va qanday ishlashi (qisqa, oddiy so'zlar bilan o'zbek tilida)
+        - Bitta amaliy misol
         
-        Telegram HTML formatida yoz.`,
+        Sun'iy, "robot"ga o'xshash matnlardan qoch! Tirik inson, do'stona va oson tushuniladigan tarzda yozsin. Juda uzun bo'lmasin.`,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
         temperature: 0.8,
@@ -180,14 +169,12 @@ export async function generateBandScoreTip() {
 
     const response = await client.models.generateContent({
       model: 'gemini-2.5-flash',
-      contents: `IELTS band scoreni ${band} oshirish bo'yicha amaliy maslahat yoz.
-        Quyidagilarni qo'sh:
-        - Aniq maqsad (band score)
-        - Nima qilish kerak (o'zbekcha, aniq qadamlar)
-        - Before/After misol (inglizcha)
-        - Muhim kalit nuqta (o'zbekcha)
+      contents: `IELTS dan ${band} band olish siri haqida qisqacha maslahat yoz.
+        Faqat 1 ta eng muhim qoidani tushuntir.
+        - Nima qilish kerakligi (o'zbekcha, sodda tilda)
+        - Farqni ko'rsatish uchun 1 ta Before/After misol (inglizcha).
         
-        Telegram HTML formatida yoz.`,
+        Zerikarli qoliplardan chiq. Oddiy so'zlar bilan, ammo kuchli ma'noli qilib yoz. Post qisqa bo'lsin.`,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
         temperature: 0.85,
@@ -211,18 +198,11 @@ export async function generateMotivation() {
   try {
     const response = await client.models.generateContent({
       model: 'gemini-2.5-flash',
-      contents: `IELTS tayyorlanayotgan talabalar uchun motivatsion post yoz.
-        Quyidagilardan birini tanlash mumkin:
-        - IELTS muvaffaqiyat hikoyasi (xayoliy lekin realastik)
-        - Motivatsion iqtibos va sharh
-        - Amaliy qadamlar bilan rag'batlantiruvchi xabar
+      contents: `IELTS ga tayyorlanayotganlar uchun qisqa va ta'sirli motivatsion post yoz.
+        Yoki bitta qisqa muvaffaqiyat hikoyasi (1-2 gap), yoki kuchli motivatsion iqtibos bo'lsin.
+        Oxirida bugun bajarish uchun 1 ta oddiy, qisqa vazifa ber (masalan, "Bugun 1 ta podcast eshiting").
         
-        Quyidagilarni qo'sh:
-        - Hikoya yoki iqtibos
-        - Saboq/xulosa (o'zbekcha)
-        - Bugungi amaliy qadam (o'zbekcha)
-        
-        Telegram HTML formatida yoz. Ilhomlantiruvchi va samimiy bo'lsin.`,
+        Ohang: Samimiy, ilhomlantiruvchi, xuddi yaqin do'stdek. Ortiqcha cho'zilgan jumlalar kerak emas.`,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
         temperature: 0.95,
@@ -355,16 +335,15 @@ export async function generateRecentSpeaking(part) {
   try {
     const response = await client.models.generateContent({
       model: 'gemini-2.5-flash',
-      contents: `You are an expert IELTS examiner. Search your knowledge for a recently reported IELTS Speaking Part ${part} question from 2026 or 2025 (e.g. from global or Uzbekistan exams).
+      contents: `Siz tajribali IELTS examiner'isiz. 2025 yoki 2026 yilda (Global yoki O'zbekistonda) haqiqiy imtihonda tushgan IELTS Speaking Part ${part} savolini o'ylab toping.
       
-      Generate a Telegram post based on this question.
-      Include:
-      - The Question (in English)
-      - O'zbekcha tarjimasi
-      - Band 8.0-9.0 Sample Answer (in English)
-      - 3-5 useful vocabulary words from the answer with definitions in Uzbek
+      Shu savol asosida Telegram kanali uchun post yozing.
+      Post ixcham va tabiiy bo'lsin:
+      - Haqiqiy savol (inglizcha) va uning qisqa o'zbekcha tarjimasi
+      - Band 8.0+ darajadagi namunaviy javob (inglizcha, juda uzun bo'lmasin)
+      - Javobdan olingan 2-3 ta kuchli so'z/ibora va ularning qisqa o'zbekcha ma'nosi.
       
-      Write the post entirely in Telegram HTML format (<b>, <i>, <u>). Use engaging emojis. Keep it under 2500 characters.`,
+      Sun'iy shablonlardan (masalan, yodlangan ro'yxatlardan) foydalanmang. Jonli, o'qishli va tabiiy matn yarating.`,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
         temperature: 0.85,
@@ -389,16 +368,15 @@ export async function generateRecentWriting(task) {
   if (!client) return null;
 
   try {
-    const promptText = `You are an expert IELTS examiner. Think of a recently reported IELTS Writing Task 2 question from 2026 or 2025 (e.g. from global or Uzbekistan exams).
+    const promptText = `Siz tajribali IELTS examiner'isiz. 2025 yoki 2026 yilda (Global yoki O'zbekistonda) haqiqiy imtihonda tushgan IELTS Writing Task 2 savolini o'ylab toping.
       
-      Generate a Telegram post for this question.
-      Include:
-      - The exact prompt/question (in English)
-      - O'zbekcha tarjimasi
-      - A quick outline of Ideas/Structure (Agree/Disagree points)
-      - 3-5 advanced Band 8.0+ vocabulary words to use in this essay, with translations in Uzbek
+      Shu savol asosida Telegram kanali uchun post yozing.
+      Post ixcham va jonli bo'lsin:
+      - Essay savoli (inglizcha) va qisqa o'zbekcha tarjimasi
+      - Qanday g'oyalar (Ideas) yozish bo'yicha juda qisqa (bullet-point) reja (o'zbek yoki ingliz tilida)
+      - Essayda ishlatish mumkin bo'lgan 3 ta kuchli (Band 8+) so'z va ularning tarjimasi.
       
-      Write the post entirely in Telegram HTML format (<b>, <i>, <u>). Use engaging emojis. Keep it under 3000 characters.`;
+      Qotib qolgan shablonlardan qoching. Post xuddi o'qituvchi o'z o'quvchilariga foydali ma'lumot ulashayotgandek tabiiy, lo'nda va o'zbek tilida ravon bo'lsin.`;
 
     const response = await client.models.generateContent({
       model: 'gemini-2.5-flash',
