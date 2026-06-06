@@ -38,7 +38,7 @@ export async function generateVocabulary() {
 
   try {
     const response = await client.models.generateContent({
-      model: 'gemini-1.5-flash',
+      model: 'gemini-2.5-flash',
       contents: `Bitta yangi ilg'or darajadagi IELTS vocabulary so'zini o'rgatuvchi qisqa va qiziqarli post yoz.
         Quyidagilarni o'z ichiga olsin:
         - So'z va uning o'zbekcha aniq ma'nosi
@@ -69,7 +69,7 @@ export async function generateWritingTip() {
   try {
     const taskType = Math.random() > 0.5 ? 'Task 1' : 'Task 2';
     const response = await client.models.generateContent({
-      model: 'gemini-1.5-flash',
+      model: 'gemini-2.5-flash',
       contents: `IELTS Writing ${taskType} bo'yicha bitta juda muhim va qisqa maslahat yoz.
         Quyidagilar bo'lsin:
         - Maslahat nima haqida ekanligi (jonli sarlavha)
@@ -102,7 +102,7 @@ export async function generateSpeakingTip() {
     const part = parts[Math.floor(Math.random() * parts.length)];
 
     const response = await client.models.generateContent({
-      model: 'gemini-1.5-flash',
+      model: 'gemini-2.5-flash',
       contents: `IELTS Speaking ${part} bo'yicha bitta qisqa va kuchli maslahat yoz.
         Quyidagilar bo'lishi shart (hech narsa tushib qolmasin):
         - Aniq bir Speaking savoli (inglizcha)
@@ -134,7 +134,7 @@ export async function generateReadingListeningStrategy() {
   try {
     const skill = Math.random() > 0.5 ? 'Reading' : 'Listening';
     const response = await client.models.generateContent({
-      model: 'gemini-1.5-flash',
+      model: 'gemini-2.5-flash',
       contents: `IELTS ${skill} bo'yicha bitta kuchli va qisqa strategiya o'rgat.
         Tuzilishi:
         - Strategiyaning qiziqarli nomi
@@ -167,7 +167,7 @@ export async function generateBandScoreTip() {
     const band = bands[Math.floor(Math.random() * bands.length)];
 
     const response = await client.models.generateContent({
-      model: 'gemini-1.5-flash',
+      model: 'gemini-2.5-flash',
       contents: `IELTS dan ${band} band olish siri haqida qisqacha maslahat yoz.
         Faqat 1 ta eng muhim qoidani tushuntir.
         - Nima qilish kerakligi (o'zbekcha, sodda tilda)
@@ -196,7 +196,7 @@ export async function generateMotivation() {
 
   try {
     const response = await client.models.generateContent({
-      model: 'gemini-1.5-flash',
+      model: 'gemini-2.5-flash',
       contents: `IELTS ga tayyorlanayotganlar uchun qisqa va ta'sirli motivatsion post yoz.
         Yoki bitta qisqa muvaffaqiyat hikoyasi (1-2 gap), yoki kuchli motivatsion iqtibos bo'lsin.
         Oxirida bugun bajarish uchun 1 ta oddiy, qisqa vazifa ber (masalan, "Bugun 1 ta podcast eshiting").
@@ -228,7 +228,7 @@ export async function generateQuiz() {
     const category = categories[Math.floor(Math.random() * categories.length)];
 
     const response = await client.models.generateContent({
-      model: 'gemini-1.5-flash',
+      model: 'gemini-2.5-flash',
       contents: `IELTS ${category} bo'yicha bitta quiz savoli yarat.
         
         QATTIQ FORMAT (faqat JSON qaytar, boshqa hech narsa yo'q):
@@ -271,7 +271,7 @@ export async function generateReadingTest() {
 
   try {
     const response = await client.models.generateContent({
-      model: 'gemini-1.5-flash',
+      model: 'gemini-2.5-flash',
       contents: `You are an expert IELTS examiner. Generate an IELTS Reading passage and 5 Multiple Choice questions.
       
       The passage should be:
@@ -333,7 +333,7 @@ export async function generateRecentSpeaking(part) {
 
   try {
     const response = await client.models.generateContent({
-      model: 'gemini-1.5-flash',
+      model: 'gemini-2.5-flash',
       contents: `Siz tajribali IELTS examiner'isiz. 2025 yoki 2026 yilda (Global yoki O'zbekistonda) haqiqiy imtihonda tushgan IELTS Speaking Part ${part} savolini o'ylab toping.
       
       Shu savol asosida Telegram kanali uchun post yozing.
@@ -378,7 +378,7 @@ export async function generateRecentWriting(task) {
       Qotib qolgan shablonlardan qoching. Post xuddi o'qituvchi o'z o'quvchilariga foydali ma'lumot ulashayotgandek tabiiy, lo'nda va o'zbek tilida ravon bo'lsin.`;
 
     const response = await client.models.generateContent({
-      model: 'gemini-1.5-flash',
+      model: 'gemini-2.5-flash',
       contents: promptText,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
