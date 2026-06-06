@@ -141,16 +141,42 @@ async function main() {
       console.log(`✅ Message/Document sent! ID: ${result.message_id}`);
     } catch (sendError) {
       console.error('❌ Failed to send content to Telegram:', sendError.message);
-      console.log('📦 Falling back to database content due to Telegram format error...');
       
-      const dbFile = getDatabaseFile('motivation');
-      const item = getContentFromDatabase(dbFile);
-      if (item) {
-        const fallbackText = formatContent('motivation', item);
-        result = await sendMessage(fallbackText, {});
-        console.log(`✅ Fallback message sent! ID: ${result.message_id}`);
-      } else {
-        throw sendError;
+      if (sendError.message.includes('can\\'t parse entities')) {
+        console.log('📦 Format error detected. Falling back to sending AI content as plain text...');
+        try {
+          const plainOptions = { ...messageOptions, extra: { ...(messageOptions.extra || {}), parse_mode: '' } };
+          if (messageOptions.document) {
+             result = await sendDocument(
+               messageOptions.document.filePath,
+               messageOptions.document.fileName,
+               postText.replace(/<[^>]*>?/gm, '') // Strip HTML for caption just in case
+             );
+          } else {
+             result = await sendMessage(postText.replace(/<[^>]*>?/gm, ''), plainOptions);
+          }
+          console.log(`✅ Plain text fallback sent! ID: ${result.message_id}`);
+          return;
+        } catch (plainError) {
+          console.error('❌ Plain text fallback also failed:', plainError.message);
+        }
+      }
+      
+      console.log('📦 Final fallback: Sending motivation from database...');
+      try {
+        const dbFile = getDatabaseFile('motivation');
+        const item = getContentFromDatabase(dbFile);
+        if (item) {
+          const fallbackText = formatContent('motivation', item);
+          result = await sendMessage(fallbackText, {});
+          console.log(`✅ Database fallback message sent! ID: ${result.message_id}`);
+        } else {
+          console.error('❌ No motivation items found for fallback.');
+          process.exit(1);
+        }
+      } catch (finalError) {
+        console.error('💥 Database fallback message failed:', finalError.message);
+        process.exit(1);
       }
     }
   }
