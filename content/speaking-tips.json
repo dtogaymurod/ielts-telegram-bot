@@ -189,7 +189,7 @@
       "I try to set limits for myself"
     ],
     "band_target": "7+",
-    "used": false
+    "used": true
   },
   {
     "id": "sp_012",
@@ -369,7 +369,7 @@
       "I think we might see a gradual shift..."
     ],
     "band_target": "7+",
-    "used": false
+    "used": true
   },
   {
     "id": "sp_022",

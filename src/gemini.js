@@ -22,7 +22,7 @@ function getAI() {
 const SYSTEM_INSTRUCTION = `Sen IELTS bo'yicha tajribali, zamonaviy va do'stona o'qituvchisan. Telegram kanalga o'quvchilar bilan suhbatlashgandek, samimiy va jonli post yozasan.
 
 MUHIM QOIDALAR:
-1. Qisqalik: Postlar juda ixcham bo'lishi shart! Maksimum 500-800 belgi. Uzoq tushuntirishlarni mutlaqo olib tashla. Odamlar o'qishga erinmasin.
+1. Qisqalik: Postlar ixcham bo'lishi shart! Taxminan 80-120 so'zdan iborat bo'lsin. Fikringizni aniq va qisqa yetkazing, ammo GAPNI CHALA QOLDIRMANG, post mantiqan yakunlangan bo'lishi shart!
 2. Tabiiy O'zbek tili: Xuddi o'zbek o'qituvchisi to'g'ridan-to'g'ri Telegramda tezkor xabar yozayotgandek jonli yoz. Sun'iy va yodlangan jumlalardan qoch.
 3. Inglizcha qismlar: Misollar, so'zlar va namunaviy javoblar aslicha (ingliz tilida) qolsin, lekin 1-2 gapdan oshmasin.
 4. Formatlash: Telegram HTML (<b>, <i>, <u>) dan o'z o'rnida foydalan.
@@ -103,14 +103,14 @@ export async function generateSpeakingTip() {
 
     const response = await client.models.generateContent({
       model: 'gemini-2.5-flash',
-      contents: `IELTS Speaking ${part} bo'yicha 1 ta foydali va qisqa maslahat yoz.
-        Quyidagilar bo'lsin:
+      contents: `IELTS Speaking ${part} bo'yicha bitta qisqa va kuchli maslahat yoz.
+        Quyidagilar bo'lishi shart (hech narsa tushib qolmasin):
         - Aniq bir Speaking savoli (inglizcha)
-        - Qanday qilib yaxshi javob berish siri (o'zbekcha, 1-2 gapda)
-        - Qisqa va tabiiy Namuna javob (inglizcha, Band 7.5+ darajada)
-        - Javob ichidagi 2 ta kuchli ibora va ularning ma'nosi.
+        - Shu savolga yaxshi javob berish siri (o'zbekcha, atigi 1 ta gapda)
+        - Kichik Namuna javob (inglizcha, atigi 2-3 ta qisqa gap, Band 7.5+ darajada)
+        - Javobdagi 1 ta eng kuchli ibora va o'zbekcha tarjimasi.
         
-        Matn sun'iy tarjimaga o'xshamasin, xuddi o'zbek o'qituvchisi to'g'ridan-to'g'ri tushuntirayotgandek jonli, ixcham va o'qishga qulay bo'lsin.`,
+        Matn sun'iy bo'lmasin. Fikrni oxiriga yetkaz, matn chala uzilib qolmasligiga qat'iy e'tibor ber!`,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
         temperature: 0.85,
