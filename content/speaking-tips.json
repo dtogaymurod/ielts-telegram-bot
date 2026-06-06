@@ -315,7 +315,7 @@
       "What I think will happen is that..."
     ],
     "band_target": "7+",
-    "used": false
+    "used": true
   },
   {
     "id": "sp_019",
@@ -551,7 +551,7 @@
       "That decision has shaped everything..."
     ],
     "band_target": "7+",
-    "used": false
+    "used": true
   },
   {
     "id": "sp_032",
