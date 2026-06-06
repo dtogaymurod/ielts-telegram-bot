@@ -129,7 +129,7 @@
     "example": "Introduction: 'People have differing views on whether university education should be free. While some argue that free education promotes equality, others contend that tuition fees are necessary to maintain quality.'\n\nBody 1 (View 1): 'On the one hand, proponents of free education argue that...'\nBody 2 (View 2): 'On the other hand, those who support tuition fees believe that...'\nConclusion: 'In my view, while free education is an admirable goal, a moderate fee system with scholarships would be more sustainable.'",
     "common_mistake_uz": "Faqat bitta fikrni yozib, ikkinchisini tashlab ketish. Ikkala fikrni ham muhokama qiling!",
     "band_target": "7+",
-    "used": false
+    "used": true
   },
   {
     "id": "wt_013",
