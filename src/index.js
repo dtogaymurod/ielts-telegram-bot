@@ -142,7 +142,7 @@ async function main() {
     } catch (sendError) {
       console.error('❌ Failed to send content to Telegram:', sendError.message);
       
-      if (sendError.message.includes('can\\'t parse entities')) {
+      if (sendError.message.includes("can't parse entities")) {
         console.log('📦 Format error detected. Falling back to sending AI content as plain text...');
         try {
           const plainOptions = { ...messageOptions, extra: { ...(messageOptions.extra || {}), parse_mode: '' } };
