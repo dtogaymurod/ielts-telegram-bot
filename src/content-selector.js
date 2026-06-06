@@ -91,18 +91,8 @@ export function updateAndGetNextSpeakingPart() {
  * @returns {number} 1 or 2
  */
 export function updateAndGetNextWritingTask() {
-  const statePath = join(CONTENT_DIR, 'state.json');
-  try {
-    const state = JSON.parse(readFileSync(statePath, 'utf-8'));
-    let task = state.lastWritingTask + 1;
-    if (task > 2) task = 1;
-    state.lastWritingTask = task;
-    writeFileSync(statePath, JSON.stringify(state, null, 2), 'utf-8');
-    return task;
-  } catch (err) {
-    console.error('Error reading state.json:', err.message);
-    return 1;
-  }
+  // Task 1 was removed per user request. Always return Task 2.
+  return 2;
 }
 
 /**

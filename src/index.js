@@ -16,7 +16,7 @@
  *   CONTENT_TYPE           — Force content type (e.g., vocabulary, quiz)
  */
 
-import { sendMessage, sendQuiz, sendDocument, sendPhoto, sendLocalPhoto, validateConfig } from './telegram.js';
+import { sendMessage, sendQuiz, sendDocument, validateConfig } from './telegram.js';
 import { generateDailyReadingTest } from './reading-generator.js';
 import {
   getTimeSlot,
@@ -80,18 +80,7 @@ async function main() {
   } else if (contentType === 'recent-writing') {
     console.log('✍️ Generating Recent Writing post...');
     const task = updateAndGetNextWritingTask();
-    const result = await gemini.generateRecentWriting(task);
-    if (typeof result === 'string') {
-      postText = result;
-    } else if (result && typeof result === 'object') {
-      postText = result.text;
-      if (result.photoUrl) {
-        messageOptions.photoUrl = result.photoUrl;
-      }
-      if (result.localPhotoPath) {
-        messageOptions.localPhotoPath = result.localPhotoPath;
-      }
-    }
+    postText = await gemini.generateRecentWriting(task);
   } else {
     postText = await tryAIGeneration(contentType);
 
@@ -132,10 +121,6 @@ async function main() {
     console.log(postText);
     if (messageOptions.document) {
       console.log('\n📎 Attached Document: ', messageOptions.document.fileName);
-    } else if (messageOptions.photoUrl) {
-      console.log('\n🖼️ Attached Photo URL: ', messageOptions.photoUrl);
-    } else if (messageOptions.localPhotoPath) {
-      console.log('\n🖼️ Attached Local Photo: ', messageOptions.localPhotoPath);
     }
     console.log('\n═══════════════════════\n');
     console.log(`📏 Length: ${postText.length} / 4096 chars`);
@@ -143,20 +128,31 @@ async function main() {
   } else {
     console.log('📤 Sending to Telegram...');
     let result;
-    if (messageOptions.document) {
-      result = await sendDocument(
-        messageOptions.document.filePath,
-        messageOptions.document.fileName,
-        postText
-      );
-    } else if (messageOptions.photoUrl) {
-      result = await sendPhoto(messageOptions.photoUrl, postText);
-    } else if (messageOptions.localPhotoPath) {
-      result = await sendLocalPhoto(messageOptions.localPhotoPath, postText);
-    } else {
-      result = await sendMessage(postText, messageOptions);
+    try {
+      if (messageOptions.document) {
+        result = await sendDocument(
+          messageOptions.document.filePath,
+          messageOptions.document.fileName,
+          postText
+        );
+      } else {
+        result = await sendMessage(postText, messageOptions);
+      }
+      console.log(`✅ Message/Document sent! ID: ${result.message_id}`);
+    } catch (sendError) {
+      console.error('❌ Failed to send content to Telegram:', sendError.message);
+      console.log('📦 Falling back to database content due to Telegram format error...');
+      
+      const dbFile = getDatabaseFile('motivation');
+      const item = getContentFromDatabase(dbFile);
+      if (item) {
+        const fallbackText = formatContent('motivation', item);
+        result = await sendMessage(fallbackText, {});
+        console.log(`✅ Fallback message sent! ID: ${result.message_id}`);
+      } else {
+        throw sendError;
+      }
     }
-    console.log(`✅ Message/Document sent! ID: ${result.message_id}`);
   }
 }
 
