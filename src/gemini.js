@@ -266,6 +266,7 @@ export async function generateMicroReading() {
         
         Tuzilishi qat'iy:
         - ⏱ 10 soniyalik Reading
+        - <i>👇 Matnni o'qing va tasdiqning True, False yoki Not Given ekanligini toping:</i>
         - Atigi 2 ta murakkabroq, akademik gapdan iborat qisqacha matn (inglizcha).
         - Shu matn ostida 1 ta qiyin True / False / Not Given savoli. (Faqat bitta!). Savolni ham inglizcha bering.
         - Savol ostida 1 ta bo'sh qator.
