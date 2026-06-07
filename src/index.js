@@ -51,9 +51,13 @@ async function main() {
   console.log(`⏰ Time slot: ${timeSlot}`);
   console.log(`📋 Content type: ${contentType}`);
 
-  // Handle quiz separately (uses sendPoll instead of sendMessage)
   if (contentType === 'quiz') {
     await handleQuiz();
+    return;
+  }
+  
+  if (contentType === 'micro-reading') {
+    await handleMicroReading();
     return;
   }
 
@@ -194,7 +198,6 @@ async function tryAIGeneration(contentType) {
     'band-score': gemini.generateBandScoreTip,
     motivation: gemini.generateMotivation,
     'magic-3': gemini.generateMagic3,
-    'micro-reading': gemini.generateMicroReading,
   };
 
   const generator = generators[contentType];
@@ -244,6 +247,61 @@ async function handleQuiz() {
       quiz.explanation
     );
     console.log(`✅ Quiz sent! ID: ${result.message_id}`);
+  }
+}
+
+/**
+ * Handle Micro Reading posting (Text + Quiz)
+ */
+async function handleMicroReading() {
+  console.log('🤖 Generating Micro Reading...');
+  const data = await gemini.generateMicroReading();
+  
+  if (!data) {
+    console.log('⚠️ AI generation failed for Micro Reading. Falling back to database (motivation)...');
+    const dbFile = getDatabaseFile('motivation');
+    const item = getContentFromDatabase(dbFile);
+    if (item) {
+      const fallbackText = formatContent('motivation', item);
+      if (!isDryRun && !isTest) {
+         await sendMessage(fallbackText, {});
+      } else {
+         console.log('Dry Run Fallback:', fallbackText);
+      }
+    }
+    return;
+  }
+
+  if (isDryRun || isTest) {
+    console.log('\\n📖 ═══ MICRO READING PREVIEW ═══\\n');
+    console.log(data.text);
+    console.log('\\n❓ ═══ QUIZ PREVIEW ═══\\n');
+    console.log(`Question: ${data.question}`);
+    console.log(`Options:`);
+    data.options.forEach((opt, i) => {
+      const marker = i === data.correct_index ? '✅' : '  ';
+      console.log(`  ${marker} ${i + 1}. ${opt}`);
+    });
+    console.log(`\\nExplanation: ${data.explanation}`);
+    console.log('\\n═══════════════════════\\n');
+  } else {
+    console.log('📤 Sending Micro Reading text to Telegram...');
+    try {
+      const textResult = await sendMessage(data.text, {});
+      console.log(`✅ Text sent! ID: ${textResult.message_id}`);
+      
+      console.log('📤 Sending Quiz attached to the text...');
+      const quizResult = await sendQuiz(
+        data.question,
+        data.options,
+        data.correct_index,
+        data.explanation
+      );
+      console.log(`✅ Quiz sent! ID: ${quizResult.message_id}`);
+    } catch (error) {
+      console.error('❌ Failed to send Micro Reading:', error.message);
+      process.exit(1);
+    }
   }
 }
 

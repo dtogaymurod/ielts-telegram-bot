@@ -262,25 +262,32 @@ export async function generateMicroReading() {
   try {
     const response = await client.models.generateContent({
       model: 'gemini-2.5-flash',
-      contents: `IELTS Reading uchun "10 soniyalik test" yarating. Odamlarni zeriktirmaslik uchun u mikroskopik darajada qisqa bo'lishi kerak.
+      contents: `IELTS Reading uchun "10 soniyalik test" yarating. U mikroskopik darajada qisqa bo'lishi kerak.
         
-        Tuzilishi qat'iy:
-        - ⏱ 10 soniyalik Reading
-        - <i>👇 Matnni o'qing va tasdiqning True, False yoki Not Given ekanligini toping:</i>
-        - Atigi 2 ta murakkabroq, akademik gapdan iborat qisqacha matn (inglizcha).
-        - Shu matn ostida 1 ta qiyin True / False / Not Given savoli. (Faqat bitta!). Savolni ham inglizcha bering.
-        - Savol ostida 1 ta bo'sh qator.
-        - Va eng muhimi, javob yashirin (spoiler) tegida bo'lishi shart! Quyidagi formatdan nusxa oling:
-          <tg-spoiler>Javob: [True/False/Not Given]. Sababi: [1 ta qisqa o'zbekcha gap bilan tushuntirish]</tg-spoiler>
-          
-        Diqqat: Telegram HTML uchun faqat <tg-spoiler> tegidan foydalaning. Postda boshqa hech qanday izoh bo'lmasin.`,
+        QATTIQ FORMAT (faqat JSON qaytar, boshqa hech narsa yo'q):
+        {
+          "text": "⏱ 10 soniyalik Reading\\n👇 Matnni o'qing va quyidagi testni ishlang:\\n\\n[Atigi 2 ta murakkabroq, akademik gapdan iborat inglizcha matn]",
+          "question": "Tasdiq savoli (inglizcha, 300 belgidan kam)",
+          "options": ["True", "False", "Not Given"],
+          "correct_index": 0, // 0=True, 1=False, 2=Not Given
+          "explanation": "Nima uchun bu javob to'g'ri ekanligini 1 ta qisqa o'zbekcha gap bilan tushuntirish (200 belgidan kam)"
+        }`,
       config: {
-        systemInstruction: SYSTEM_INSTRUCTION,
+        systemInstruction: 'Faqat valid JSON qaytar. Boshqa hech qanday matn yoki markdown yozma.',
         temperature: 0.85,
         maxOutputTokens: 2048,
+        responseMimeType: 'application/json',
       },
     });
-    return response.text;
+    
+    const testData = JSON.parse(response.text);
+    
+    if (!testData.text || !testData.question || !Array.isArray(testData.options)) {
+      console.error('❌ Invalid micro reading structure from Gemini');
+      return null;
+    }
+    
+    return testData;
   } catch (error) {
     console.error('❌ Gemini micro reading generation failed:', error.message);
     return null;
