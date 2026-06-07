@@ -8,8 +8,7 @@ on:
     - cron: '0 3 * * *'
     # Tushlik post — 13:00 Toshkent vaqti (08:00 UTC)
     - cron: '0 8 * * *'
-    # Reading test post — 16:00 Toshkent vaqti (11:00 UTC)
-    - cron: '0 11 * * *'
+
     # Writing post — 22:00 Toshkent vaqti (17:00 UTC)
     - cron: '0 17 * * *'
     # Kechqurun post — 20:00 Toshkent vaqti (15:00 UTC)
@@ -86,8 +85,7 @@ jobs:
             echo "slot=recentspeaking" >> $GITHUB_OUTPUT
           elif [ "$HOUR" = "08" ]; then
             echo "slot=afternoon" >> $GITHUB_OUTPUT
-          elif [ "$HOUR" = "11" ]; then
-            echo "slot=readingtest" >> $GITHUB_OUTPUT
+
           elif [ "$HOUR" = "15" ]; then
             echo "slot=evening" >> $GITHUB_OUTPUT
           elif [ "$HOUR" = "17" ]; then

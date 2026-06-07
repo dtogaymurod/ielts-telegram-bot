@@ -39,8 +39,7 @@ export function getTimeSlot() {
 
   if (tashkentHour >= 6 && tashkentHour < 9) return 'morning';
   if (tashkentHour >= 9 && tashkentHour < 12) return 'recentspeaking';
-  if (tashkentHour >= 12 && tashkentHour < 15) return 'afternoon';
-  if (tashkentHour >= 15 && tashkentHour < 18) return 'readingtest';
+  if (tashkentHour >= 12 && tashkentHour < 18) return 'afternoon';
   if (tashkentHour >= 18 && tashkentHour < 21) return 'evening';
   return 'recentwriting';
 }
