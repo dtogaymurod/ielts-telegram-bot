@@ -193,6 +193,8 @@ async function tryAIGeneration(contentType) {
     'reading-listening': gemini.generateReadingListeningStrategy,
     'band-score': gemini.generateBandScoreTip,
     motivation: gemini.generateMotivation,
+    'magic-3': gemini.generateMagic3,
+    'micro-reading': gemini.generateMicroReading,
   };
 
   const generator = generators[contentType];

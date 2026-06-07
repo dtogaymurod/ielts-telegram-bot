@@ -29,7 +29,7 @@ const SCHEDULE = {
 export function getTimeSlot() {
   // Check if TIME_SLOT is set by GitHub Actions
   const envSlot = process.env.TIME_SLOT;
-  if (envSlot && ['morning', 'recentspeaking', 'afternoon', 'readingtest', 'evening', 'recentwriting'].includes(envSlot)) {
+  if (envSlot && ['morning', 'recentspeaking', 'afternoon', 'microreading', 'magic3', 'evening', 'recentwriting'].includes(envSlot)) {
     return envSlot;
   }
 
@@ -39,8 +39,10 @@ export function getTimeSlot() {
 
   if (tashkentHour >= 6 && tashkentHour < 9) return 'morning';
   if (tashkentHour >= 9 && tashkentHour < 12) return 'recentspeaking';
-  if (tashkentHour >= 12 && tashkentHour < 18) return 'afternoon';
-  if (tashkentHour >= 18 && tashkentHour < 21) return 'evening';
+  if (tashkentHour >= 12 && tashkentHour < 15) return 'afternoon';
+  if (tashkentHour >= 15 && tashkentHour < 17) return 'microreading';
+  if (tashkentHour >= 17 && tashkentHour < 19) return 'magic3';
+  if (tashkentHour >= 19 && tashkentHour < 21) return 'evening';
   return 'recentwriting';
 }
 
@@ -59,7 +61,8 @@ export function getContentType() {
   const dayOfWeek = tashkentTime.getUTCDay();
   const timeSlot = getTimeSlot();
 
-  if (timeSlot === 'readingtest') return 'reading-test';
+  if (timeSlot === 'microreading') return 'micro-reading';
+  if (timeSlot === 'magic3') return 'magic-3';
   if (timeSlot === 'recentspeaking') return 'recent-speaking';
   if (timeSlot === 'recentwriting') return 'recent-writing';
 

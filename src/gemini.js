@@ -217,6 +217,76 @@ export async function generateMotivation() {
 }
 
 /**
+ * Generate Magic 3 collocations
+ */
+export async function generateMagic3() {
+  const client = getAI();
+  if (!client) return null;
+
+  try {
+    const topics = ['Environment', 'Technology', 'Education', 'Health', 'Economy', 'Crime', 'Society', 'Work', 'Space', 'Media'];
+    const topic = topics[Math.floor(Math.random() * topics.length)];
+
+    const response = await client.models.generateContent({
+      model: 'gemini-2.5-flash',
+      contents: `IELTS IELTS dagi "${topic}" mavzusi uchun 3 ta juda kuchli, doim birga keladigan so'z birikmalari (Collocations) - "Magic 3" postini yarating.
+        
+        Quyidagicha tuzilsin:
+        - Sarlavha: 🪄 Magic 3: [Mavzu nomi o'zbekcha]
+        - 1. [Inglizcha birikma] - [O'zbekcha tarjimasi]
+          Misol: [1 ta qisqa inglizcha gap]
+        - 2...
+        - 3...
+        
+        Hech qanday qo'shimcha so'z, salomlashish yoki tushuntirish kerak emas. Faqat aniq va londa ro'yxat!`,
+      config: {
+        systemInstruction: SYSTEM_INSTRUCTION,
+        temperature: 0.85,
+        maxOutputTokens: 2048,
+      },
+    });
+    return response.text;
+  } catch (error) {
+    console.error('❌ Gemini magic 3 generation failed:', error.message);
+    return null;
+  }
+}
+
+/**
+ * Generate 10-second Micro Reading
+ */
+export async function generateMicroReading() {
+  const client = getAI();
+  if (!client) return null;
+
+  try {
+    const response = await client.models.generateContent({
+      model: 'gemini-2.5-flash',
+      contents: `IELTS Reading uchun "10 soniyalik test" yarating. Odamlarni zeriktirmaslik uchun u mikroskopik darajada qisqa bo'lishi kerak.
+        
+        Tuzilishi qat'iy:
+        - ⏱ 10 soniyalik Reading
+        - Atigi 2 ta murakkabroq, akademik gapdan iborat qisqacha matn (inglizcha).
+        - Shu matn ostida 1 ta qiyin True / False / Not Given savoli. (Faqat bitta!). Savolni ham inglizcha bering.
+        - Savol ostida 1 ta bo'sh qator.
+        - Va eng muhimi, javob yashirin (spoiler) tegida bo'lishi shart! Quyidagi formatdan nusxa oling:
+          <tg-spoiler>Javob: [True/False/Not Given]. Sababi: [1 ta qisqa o'zbekcha gap bilan tushuntirish]</tg-spoiler>
+          
+        Diqqat: Telegram HTML uchun faqat <tg-spoiler> tegidan foydalaning. Postda boshqa hech qanday izoh bo'lmasin.`,
+      config: {
+        systemInstruction: SYSTEM_INSTRUCTION,
+        temperature: 0.85,
+        maxOutputTokens: 2048,
+      },
+    });
+    return response.text;
+  } catch (error) {
+    console.error('❌ Gemini micro reading generation failed:', error.message);
+    return null;
+  }
+}
+
+/**
  * Generate a quiz question
  * Returns structured data for sendPoll API
  */
