@@ -198,11 +198,15 @@ export async function generateMotivation() {
   try {
     const response = await client.models.generateContent({
       model: 'gemini-2.5-flash',
-      contents: `IELTS ga tayyorlanayotganlar uchun qisqa va ta'sirli motivatsion post yoz.
-        Yoki bitta qisqa muvaffaqiyat hikoyasi (1-2 gap), yoki kuchli motivatsion iqtibos bo'lsin.
-        Oxirida bugun bajarish uchun 1 ta oddiy, qisqa vazifa ber (masalan, "Bugun 1 ta podcast eshiting").
-        
-        Ohang: Samimiy, ilhomlantiruvchi, xuddi yaqin do'stdek. Ortiqcha cho'zilgan jumlalar kerak emas.`,
+      contents: `IELTS o'qiyotgan o'quvchilarda tez-tez uchraydigan haqiqiy psixologik yoki o'quv muammosi haqida (masalan: charchash, bir xil ballda qotib qolish, imtihon oldi qo'rquvi, vaqt yetishmasligi) xuddi yaqin do'st yoki g'amxo'r ustoz sifatida samimiy post yozing.
+      
+      QAT'IY TALABLAR:
+      1. Uydirma qahramonlar (masalan, "Bir kuni Ali ismli yigit 5.5 oldi...") QAT'IYAN TAQIQLANADI! Hikoya to'qimang.
+      2. To'g'ridan-to'g'ri o'quvchining o'ziga, uning his-tuyg'ulariga murojaat qiling. Uni tushunayotganingizni, bu normal holat ekanligini bildiring.
+      3. "Taslim bo'lmang", "Maqsad sari intiling", "Hech qachon to'xtamang" kabi o'ta shablon va pafosli (balandparvoz) so'zlardan U-MU-MAN foydalanmang.
+      4. Buning o'rniga bitta juda oddiy, amaliy va psixologik yechim/maslahat bering (masalan: "bugun umuman ingliz tili o'qimang, miya dam olsin", yoki "faqat o'zingiz yoqtirgan 1 ta podcast eshiting").
+      
+      Post qisqa, o'qishli va eng muhimi - sun'iylikdan xoli, 100% tirik inson yozgandek jaranglashi shart.`,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
         temperature: 0.95,
