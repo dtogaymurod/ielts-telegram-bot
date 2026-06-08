@@ -22,7 +22,7 @@ function getAI() {
 const SYSTEM_INSTRUCTION = `Sen IELTS bo'yicha tajribali, zamonaviy va do'stona o'qituvchisan. Telegram kanalga o'quvchilar bilan suhbatlashgandek, samimiy va jonli post yozasan.
 
 MUHIM QOIDALAR:
-1. Qisqalik: Postlar ixcham bo'lishi shart! Taxminan 80-120 so'zdan iborat bo'lsin. Fikringizni aniq va qisqa yetkazing, ammo GAPNI CHALA QOLDIRMANG, post mantiqan yakunlangan bo'lishi shart!
+1. Qisqalik: Odamlarni zeriktirmaslik uchun imkon qadar qisqa va londa yozing, LEKIN kerakli barcha qismlarni to'liq yozing va GAPNI CHALA QOLDIRMANG. Har bir post mantiqan to'liq yakunlangan bo'lishi shart! (Odatda 100-200 so'z atrofida bo'lsin, agar mavzu talab qilsa sal ko'proq bo'lishi mumkin).
 2. Kirish so'zlarisiz (No Greetings): "Salom do'stlar", "Assalomu alaykum", "Hammaga salom", "Bugun biz..." kabi kirish yoki salomlashish so'zlarini umuman ishlatmang! To'g'ridan-to'g'ri asosiy qoidaga, maslahatga yoki so'zga o'tib keting. Xayrlashish ham shart emas!
 3. Tabiiy O'zbek tili: Xuddi o'zbek o'qituvchisi to'g'ridan-to'g'ri Telegramda tezkor xabar yozayotgandek jonli yoz. Sun'iy va yodlangan jumlalardan qoch.
 4. Inglizcha qismlar: Misollar, so'zlar va namunaviy javoblar aslicha (ingliz tilida) qolsin, lekin 1-2 gapdan oshmasin.
@@ -421,7 +421,8 @@ export async function generateRecentSpeaking(part) {
       - Band 8.0+ darajadagi namunaviy javob (inglizcha, juda uzun bo'lmasin)
       - Javobdan olingan 2-3 ta kuchli so'z/ibora va ularning qisqa o'zbekcha ma'nosi.
       
-      Sun'iy shablonlardan (masalan, yodlangan ro'yxatlardan) foydalanmang. Jonli, o'qishli va tabiiy matn yarating.`,
+      Sun'iy shablonlardan (masalan, yodlangan ro'yxatlardan) foydalanmang. Jonli, o'qishli va tabiiy matn yarating.
+      DIQQAT: Matnni va gapni hech qachon chala uzib qo'ymang! Barcha qismlar to'liq yozib tugatilishi shart.`,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
         temperature: 0.85,
@@ -454,7 +455,8 @@ export async function generateRecentWriting(task) {
       - Qanday g'oyalar (Ideas) yozish bo'yicha juda qisqa (bullet-point) reja (o'zbek yoki ingliz tilida)
       - Essayda ishlatish mumkin bo'lgan 3 ta kuchli (Band 8+) so'z va ularning tarjimasi.
       
-      Qotib qolgan shablonlardan qoching. Post xuddi o'qituvchi o'z o'quvchilariga foydali ma'lumot ulashayotgandek tabiiy, lo'nda va o'zbek tilida ravon bo'lsin.`;
+      Qotib qolgan shablonlardan qoching. Post xuddi o'qituvchi o'z o'quvchilariga foydali ma'lumot ulashayotgandek tabiiy, lo'nda va o'zbek tilida ravon bo'lsin.
+      DIQQAT: Matnni va gapni hech qachon chala uzib qo'ymang! Barcha qismlar (savol, tarjima, g'oya, so'zlar) to'liq va yakunlangan bo'lishi shart.`;
 
     const response = await client.models.generateContent({
       model: 'gemini-2.5-flash',
