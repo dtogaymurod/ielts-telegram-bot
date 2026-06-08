@@ -113,6 +113,11 @@ async function main() {
     process.exit(1);
   }
 
+  // Strip stray markdown bolding (**bold**) to Telegram HTML
+  postText = postText.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+  // Optional: strip stray markdown italic (*italic*) if it's not a bullet point
+  postText = postText.replace(/(^|[^\\])\*([^*\n]+)\*/g, '$1<i>$2</i>');
+
   // Ensure post doesn't exceed Telegram limit
   if (postText.length > 4096) {
     console.warn(`⚠️ Post too long (${postText.length} chars). Truncating...`);
