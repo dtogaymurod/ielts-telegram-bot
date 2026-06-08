@@ -223,6 +223,11 @@ export function formatReadingTest(item) {
  * @returns {string} Formatted HTML text
  */
 export function formatContent(contentType, item) {
+  // If the item is already a pre-formatted string (from our new fallback system)
+  if (item.text) {
+    return item.text;
+  }
+
   const formatters = {
     vocabulary: formatVocabulary,
     writing: formatWritingTip,

@@ -1,22 +1,12 @@
 [
   {
-    "id": "mot_001",
-    "title_uz": "Charchoqni qanday yengish mumkin?",
-    "story_uz": "IELTS tayyorgarligi marafonga o'xshaydi. Ko'pchilik o'quvchilar bir necha oy tinimsiz o'qib, imtihonga yaqin qolganda qattiq charchoq (burnout) his qilishadi. Miya ma'lumot qabul qilishdan bosh tortadi, test natijalari tushib ketadi. Bu juda normal fiziologik jarayon. Bunday paytda o'zingizni zo'rlash vaziyatni yanada yomonlashtiradi.",
-    "lesson_uz": "Agar o'zingizda charchoq his qilsangiz, vaqtinchalik to'xtash – orqaga chekinish emas, balki kuch yig'ishdir.",
-    "quote": "Almost everything will work again if you unplug it for a few minutes, including you.",
-    "quote_author": "Anne Lamott",
-    "action_step_uz": "Agar charchoq sezsangiz, bugun kitoblarni yoping. Kamida 1 kun umuman ingliz tili haqida o'ylamang va toza havoda sayr qiling.",
+    "id": "mot_fb_1",
+    "text": "💪 <b>IELTS Motivatsiya</b>\n━━━━━━━━━━━━━━━━━━━━\nIELTS tayyorgarligi marafonga o'xshaydi. Ko'pchilik o'quvchilar bir necha oy tinimsiz o'qib, imtihonga yaqin qolganda qattiq charchoq (burnout) his qilishadi.\n\nMiya ma'lumot qabul qilishdan bosh tortadi, test natijalari tushib ketadi. Bu juda normal fiziologik jarayon. Bunday paytda o'zingizni zo'rlash vaziyatni yanada yomonlashtiradi.\n\nAgar o'zingizda charchoq his qilsangiz, bugun kitoblarni yoping. 1-2 kun to'liq dam oling. Qaytib kelganingizda miyangiz ma'lumotlarni ancha tezroq hazm qilishni boshlaydi.",
     "used": false
   },
   {
-    "id": "mot_002",
-    "title_uz": "Bir xil ballda qotib qolish (Plateau)",
-    "story_uz": "Ko'pincha o'quvchilar 6.0 yoki 6.5 ballda qotib qolishadi. Qancha ko'p test ishlamasin, natija oshmaydi. Bu holat 'plateau' deb ataladi. Aslida muammo ko'p test ishlashda emas, balki xatolarni tahlil qilmaslikda. Faqat test yechish orqali ball oshmaydi, xatolarning tub negizini (masalan, sinonimlarni bilmaslik yoki chalg'ituvchi so'zlarga aldanib qolish) topish kerak.",
-    "lesson_uz": "Ko'r-ko'rona test ishlashni to'xtating. Bitta testni ishlang, lekin har bir xatoingizni chuqur tahlil qiling.",
-    "quote": "Insanity is doing the same thing over and over again and expecting different results.",
-    "quote_author": "Albert Einstein",
-    "action_step_uz": "Bugun yangi test ishlamang. Kecha ishlagan testingizdagi xatolaringizni oling va nima uchun adashganingizni daftarga yozing.",
+    "id": "mot_fb_2",
+    "text": "💪 <b>IELTS Motivatsiya</b>\n━━━━━━━━━━━━━━━━━━━━\nKo'pincha o'quvchilar 6.0 yoki 6.5 ballda qotib qolishadi. Qancha ko'p test ishlamasin, natija oshmaydi. Bu holat 'plateau' deb ataladi.\n\nAslida muammo ko'p test ishlashda emas, balki xatolarni tahlil qilmaslikda. Faqat test yechish orqali ball oshmaydi, xatolarning tub negizini topish kerak.\n\nBugun yangi test ishlamang. Kecha ishlagan testingizdagi xatolaringizni oling va aynan NIMA UCHUN adashganingizni chuqur tahlil qiling.",
     "used": false
   }
 ]
