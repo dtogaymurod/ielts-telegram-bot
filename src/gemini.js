@@ -447,16 +447,21 @@ export async function generateRecentWriting(task) {
   if (!client) return null;
 
   try {
-    const promptText = `Siz tajribali IELTS examiner'isiz. 2025 yoki 2026 yilda (Global yoki O'zbekistonda) haqiqiy imtihonda tushgan IELTS Writing Task 2 savolini o'ylab toping.
+    const promptText = `Siz tajribali, ammo juda zamonaviy va samimiy IELTS o'qituvchisisiz. 2025 yoki 2026 yilda (Global yoki O'zbekistonda) haqiqiy imtihonda tushgan IELTS Writing Task 2 savolini o'ylab toping.
       
-      Shu savol asosida Telegram kanali uchun post yozing.
-      Post ixcham va jonli bo'lsin:
-      - Essay savoli (inglizcha) va qisqa o'zbekcha tarjimasi
-      - Qanday g'oyalar (Ideas) yozish bo'yicha juda qisqa (bullet-point) reja (o'zbek yoki ingliz tilida)
-      - Essayda ishlatish mumkin bo'lgan 3 ta kuchli (Band 8+) so'z va ularning tarjimasi.
+      Shu savol asosida Telegram kanali uchun post yozing. 
       
-      Qotib qolgan shablonlardan qoching. Post xuddi o'qituvchi o'z o'quvchilariga foydali ma'lumot ulashayotgandek tabiiy, lo'nda va o'zbek tilida ravon bo'lsin.
-      DIQQAT: Matnni va gapni hech qachon chala uzib qo'ymang! Barcha qismlar (savol, tarjima, g'oya, so'zlar) to'liq va yakunlangan bo'lishi shart.`;
+      POST JUDA TABIIY VA JONLI BO'LISHI SHART! Xuddi do'stingizga ovozli xabar yuborayotgandek yoki darsda o'quvchilarga qiziqarli qilib gapirib berayotgandek yozing. 
+      Robotlarga xos bo'lgan qoliplardan (masalan: "Afzalliklari: 1, 2, 3", "Ishlatiladigan so'zlar:") U-MU-MAN foydalanmang! 
+      
+      Post quyidagicha silliq oqib kelishi kerak:
+      1. Savolning o'zi (inglizcha) va uning qisqa, sodda o'zbekcha tarjimasi (tarjima so'zma-so'z bo'lmasin, o'zbekchasiga tabiiy jaranglasin).
+      2. Bu essayga qanday g'oyalar bilan yozish mumkinligini shunchaki 2-3 ta gap bilan tushuntirib bering (hech qanday ro'yxat yoki nuqtachalar qo'ymang, matn ko'rinishida yozing).
+      3. Shu fikringiz ichida 3 ta kuchli (Band 8+) inglizcha so'zni tabiiy ravishda qistirib o'tib keting va qavs ichida ma'nosini yozing. Alohida so'zlar ro'yxati qilmang! So'zlarga (verb), (noun) deb yozish shart emas.
+      
+      Misol uchun stili shunday bo'lsin: "Bunga nima deb yozishimiz mumkin? Bir tomondan... (inglizcha zo'r so'z - ma'nosi) deyishimiz mumkin. Ikkinchi tomondan esa..."
+      
+      DIQQAT: Hech qanday ro'yxatlar (bullet points), raqamlangan qatorlar qilmang. Matnni va gapni hech qachon chala uzib qo'ymang! Barcha qismlar to'liq va yakunlangan bo'lishi shart.`;
 
     const response = await client.models.generateContent({
       model: 'gemini-2.5-flash',
