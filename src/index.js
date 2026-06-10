@@ -281,13 +281,15 @@ async function handleMicroReading() {
     console.log('\\n📖 ═══ MICRO READING PREVIEW ═══\\n');
     console.log(data.text);
     console.log('\\n❓ ═══ QUIZ PREVIEW ═══\\n');
-    console.log(`Question: ${data.question}`);
-    console.log(`Options:`);
-    data.options.forEach((opt, i) => {
-      const marker = i === data.correct_index ? '✅' : '  ';
-      console.log(`  ${marker} ${i + 1}. ${opt}`);
+    data.quizzes.forEach((quiz, qIndex) => {
+      console.log(`[Quiz ${qIndex + 1}] Question: ${quiz.question}`);
+      console.log(`Options:`);
+      quiz.options.forEach((opt, i) => {
+        const marker = i === quiz.correct_index ? '✅' : '  ';
+        console.log(`  ${marker} ${i + 1}. ${opt}`);
+      });
+      console.log(`Explanation: ${quiz.explanation}\\n`);
     });
-    console.log(`\\nExplanation: ${data.explanation}`);
     console.log('\\n═══════════════════════\\n');
   } else {
     console.log('📤 Sending Micro Reading text to Telegram...');
@@ -295,14 +297,17 @@ async function handleMicroReading() {
       const textResult = await sendMessage(data.text, {});
       console.log(`✅ Text sent! ID: ${textResult.message_id}`);
       
-      console.log('📤 Sending Quiz attached to the text...');
-      const quizResult = await sendQuiz(
-        data.question,
-        data.options,
-        data.correct_index,
-        data.explanation
-      );
-      console.log(`✅ Quiz sent! ID: ${quizResult.message_id}`);
+      console.log('📤 Sending Quizzes attached to the text...');
+      for (let i = 0; i < data.quizzes.length; i++) {
+        const quiz = data.quizzes[i];
+        const quizResult = await sendQuiz(
+          quiz.question,
+          quiz.options,
+          quiz.correct_index,
+          quiz.explanation
+        );
+        console.log(`✅ Quiz ${i + 1} sent! ID: ${quizResult.message_id}`);
+      }
     } catch (error) {
       console.error('❌ Failed to send Micro Reading:', error.message);
       process.exit(1);

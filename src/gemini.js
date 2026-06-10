@@ -266,15 +266,39 @@ export async function generateMicroReading() {
   try {
     const response = await client.models.generateContent({
       model: 'gemini-2.5-flash',
-      contents: `IELTS Reading uchun "10 soniyalik test" yarating. U mikroskopik darajada qisqa bo'lishi kerak.
+      contents: `IELTS Reading uchun "10 soniyalik test" (Micro Reading) tuzing. 
+
+        MUHIM QOIDALAR:
+        1. Matn darajasi (Level): O'rtacha (Intermediate/Upper-Intermediate). Juda qiyin yoki kamyob akademik so'zlarni ishlatmang. Matn hajmi 3-4 gapdan iborat bo'lsin.
+        2. Paraphrasing (Eng muhim!): Savollardagi va javob variantlaridagi so'zlar matndagi so'zlarni aslo aynan takrorlamasin! Ma'nodosh so'zlar (synonyms) va iboralar bilan "paraphrase" qiling.
+        3. 3 ta har xil turdagi test tuzing:
+           - 1-savol: True/False/Not Given
+           - 2-savol: Multiple Choice (Asosiy g'oya yoki ma'lum bir detalni topish)
+           - 3-savol: Vocabulary/Paraphrase (Matndagi bitta so'z yoki iboraning to'g'ri sinonimini topish)
         
         QATTIQ FORMAT (faqat JSON qaytar, boshqa hech narsa yo'q):
         {
-          "text": "⏱ 10 soniyalik Reading\\n👇 Matnni o'qing va quyidagi testni ishlang:\\n\\n[Atigi 2 ta murakkabroq, akademik gapdan iborat inglizcha matn]",
-          "question": "Tasdiq savoli (inglizcha, 300 belgidan kam)",
-          "options": ["True", "False", "Not Given"],
-          "correct_index": 0, // 0=True, 1=False, 2=Not Given
-          "explanation": "Nima uchun bu javob to'g'ri ekanligini 1 ta qisqa o'zbekcha gap bilan tushuntirish (200 belgidan kam)"
+          "text": "⏱ <b>Micro Reading</b>\\n👇 Matnni o'qing va testlarni ishlang:\\n\\n[Bu yerga 3-4 gapdan iborat matn yozing]",
+          "quizzes": [
+            {
+              "question": "1. True/False/Not Given savoli",
+              "options": ["True", "False", "Not Given"],
+              "correct_index": 0,
+              "explanation": "Nima uchun to'g'ri (1-2 gap, o'zbekcha)"
+            },
+            {
+              "question": "2. Multiple Choice savoli",
+              "options": ["A varianti", "B varianti", "C varianti", "D varianti"],
+              "correct_index": 2,
+              "explanation": "Nima uchun to'g'ri (1-2 gap, o'zbekcha)"
+            },
+            {
+              "question": "3. Vocabulary/Paraphrasing savoli",
+              "options": ["A varianti", "B varianti", "C varianti", "D varianti"],
+              "correct_index": 1,
+              "explanation": "Nima uchun to'g'ri (1-2 gap, o'zbekcha)"
+            }
+          ]
         }`,
       config: {
         systemInstruction: 'Faqat valid JSON qaytar. Boshqa hech qanday matn yoki markdown yozma.',
@@ -286,7 +310,7 @@ export async function generateMicroReading() {
     
     const testData = JSON.parse(response.text);
     
-    if (!testData.text || !testData.question || !Array.isArray(testData.options)) {
+    if (!testData.text || !Array.isArray(testData.quizzes) || testData.quizzes.length !== 3) {
       console.error('❌ Invalid micro reading structure from Gemini');
       return null;
     }
