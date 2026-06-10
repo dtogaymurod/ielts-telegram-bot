@@ -118,6 +118,11 @@ async function main() {
   // Optional: strip stray markdown italic (*italic*) if it's not a bullet point
   postText = postText.replace(/(^|[^\\])\*([^*\n]+)\*/g, '$1<i>$2</i>');
 
+  // Smart escape of < and & to prevent Telegram parse errors without breaking valid tags
+  postText = postText.replace(/&(?!(amp|lt|gt|quot|apos);)/g, '&amp;');
+  postText = postText.replace(/<(?!b>|\/b>|i>|\/i>|u>|\/u>|s>|\/s>|a |\/a>|code>|\/code>|pre>|\/pre>)/g, '&lt;');
+
+
   // Ensure post doesn't exceed Telegram limit
   if (postText.length > 4096) {
     console.warn(`⚠️ Post too long (${postText.length} chars). Truncating...`);
@@ -159,10 +164,10 @@ async function main() {
              result = await sendDocument(
                messageOptions.document.filePath,
                messageOptions.document.fileName,
-               postText.replace(/<[^>]*>?/gm, '') // Strip HTML for caption just in case
+               postText.replace(/<[^>]+>/gm, '') // Strip valid HTML tags, leave unclosed ones alone to prevent truncation
              );
           } else {
-             result = await sendMessage(postText.replace(/<[^>]*>?/gm, ''), plainOptions);
+             result = await sendMessage(postText.replace(/<[^>]+>/gm, ''), plainOptions);
           }
           console.log(`✅ Plain text fallback sent! ID: ${result.message_id}`);
           return;
