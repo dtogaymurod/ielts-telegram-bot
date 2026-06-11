@@ -23,8 +23,7 @@ import {
   getContentType,
   getContentFromDatabase,
   getDatabaseFile,
-  updateAndGetNextSpeakingPart,
-  updateAndGetNextWritingTask
+  updateAndGetNextSpeakingPart
 } from './content-selector.js';
 import { formatContent } from './formatter.js';
 import { getQuiz, validateQuiz } from './quiz-generator.js';
@@ -81,10 +80,6 @@ async function main() {
     console.log('🗣 Generating Recent Speaking post...');
     const part = updateAndGetNextSpeakingPart();
     postText = await gemini.generateRecentSpeaking(part);
-  } else if (contentType === 'recent-writing') {
-    console.log('✍️ Generating Recent Writing post...');
-    const task = updateAndGetNextWritingTask();
-    postText = await gemini.generateRecentWriting(task);
   } else {
     postText = await tryAIGeneration(contentType);
 

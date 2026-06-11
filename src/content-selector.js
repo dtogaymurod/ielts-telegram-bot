@@ -29,7 +29,7 @@ const SCHEDULE = {
 export function getTimeSlot() {
   // Check if TIME_SLOT is set by GitHub Actions
   const envSlot = process.env.TIME_SLOT;
-  if (envSlot && ['morning', 'recentspeaking', 'afternoon', 'microreading', 'magic3', 'evening', 'recentwriting'].includes(envSlot)) {
+  if (envSlot && ['morning', 'recentspeaking', 'afternoon', 'microreading', 'magic3', 'evening'].includes(envSlot)) {
     return envSlot;
   }
 
@@ -42,8 +42,8 @@ export function getTimeSlot() {
   if (tashkentHour >= 12 && tashkentHour < 15) return 'afternoon';
   if (tashkentHour >= 15 && tashkentHour < 17) return 'microreading';
   if (tashkentHour >= 17 && tashkentHour < 19) return 'magic3';
-  if (tashkentHour >= 19 && tashkentHour < 21) return 'evening';
-  return 'recentwriting';
+  if (tashkentHour >= 19 && tashkentHour < 22) return 'evening';
+  return 'morning'; // Default fallback
 }
 
 /**
@@ -64,7 +64,6 @@ export function getContentType() {
   if (timeSlot === 'microreading') return 'micro-reading';
   if (timeSlot === 'magic3') return 'magic-3';
   if (timeSlot === 'recentspeaking') return 'recent-speaking';
-  if (timeSlot === 'recentwriting') return 'recent-writing';
 
   return SCHEDULE[dayOfWeek][timeSlot] || 'motivation'; // fallback
 }
@@ -88,14 +87,7 @@ export function updateAndGetNextSpeakingPart() {
   }
 }
 
-/**
- * Get and update the next writing task
- * @returns {number} 1 or 2
- */
-export function updateAndGetNextWritingTask() {
-  // Task 1 was removed per user request. Always return Task 2.
-  return 2;
-}
+
 
 /**
  * Get a random unused item from a content file
