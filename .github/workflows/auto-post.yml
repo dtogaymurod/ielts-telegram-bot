@@ -12,8 +12,7 @@ on:
     - cron: '0 11 * * *'
     # Magic 3 — 18:00 Toshkent vaqti (13:00 UTC)
     - cron: '0 13 * * *'
-    # Writing post — 22:00 Toshkent vaqti (17:00 UTC)
-    - cron: '0 17 * * *'
+
     # Kechqurun post — 20:00 Toshkent vaqti (15:00 UTC)
     - cron: '0 15 * * *'
 
@@ -95,8 +94,7 @@ jobs:
             echo "slot=magic3" >> $GITHUB_OUTPUT
           elif [ "$HOUR" = "15" ]; then
             echo "slot=evening" >> $GITHUB_OUTPUT
-          elif [ "$HOUR" = "17" ]; then
-            echo "slot=recentwriting" >> $GITHUB_OUTPUT
+
           else
             echo "slot=" >> $GITHUB_OUTPUT
           fi
