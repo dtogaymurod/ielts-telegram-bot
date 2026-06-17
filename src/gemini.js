@@ -275,26 +275,27 @@ export async function generateMicroReading() {
            - 1-savol: True/False/Not Given
            - 2-savol: Multiple Choice (Asosiy g'oya yoki ma'lum bir detalni topish)
            - 3-savol: Vocabulary/Paraphrase (Matndagi bitta so'z yoki iboraning to'g'ri sinonimini topish)
+        4. TIL (Language): Quizning "question" va "options" qismlari FAQAT INGLIZ TILIDA bo'lishi shart! (Masalan: "According to the passage..."). Faqatgina "explanation" qismi O'zbek tilida bo'lsin.
         
         QATTIQ FORMAT (faqat JSON qaytar, boshqa hech narsa yo'q):
         {
           "text": "⏱ <b>Micro Reading</b>\\n👇 Matnni o'qing va testlarni ishlang:\\n\\n[Bu yerga 3-4 gapdan iborat matn yozing]",
           "quizzes": [
             {
-              "question": "1. True/False/Not Given savoli",
+              "question": "1. [English question for True/False/Not Given]",
               "options": ["True", "False", "Not Given"],
               "correct_index": 0,
               "explanation": "Nima uchun to'g'ri (1-2 gap, o'zbekcha)"
             },
             {
-              "question": "2. Multiple Choice savoli",
-              "options": ["A varianti", "B varianti", "C varianti", "D varianti"],
+              "question": "2. [English question for Multiple Choice]",
+              "options": ["Option A in English", "Option B in English", "Option C in English", "Option D in English"],
               "correct_index": 2,
               "explanation": "Nima uchun to'g'ri (1-2 gap, o'zbekcha)"
             },
             {
-              "question": "3. Vocabulary/Paraphrasing savoli",
-              "options": ["A varianti", "B varianti", "C varianti", "D varianti"],
+              "question": "3. [English question for Vocabulary/Paraphrasing]",
+              "options": ["Option A in English", "Option B in English", "Option C in English", "Option D in English"],
               "correct_index": 1,
               "explanation": "Nima uchun to'g'ri (1-2 gap, o'zbekcha)"
             }
