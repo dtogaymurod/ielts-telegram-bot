@@ -299,12 +299,27 @@ async function handleMicroReading() {
       
       console.log('📤 Sending Quizzes attached to the text...');
       for (let i = 0; i < data.quizzes.length; i++) {
-        const quiz = data.quizzes[i];
+        let quiz = data.quizzes[i];
+        
+        // Map correct_index to correctIndex for validateQuiz
+        const mappedQuiz = {
+          question: quiz.question,
+          options: quiz.options,
+          correctIndex: quiz.correct_index,
+          explanation: quiz.explanation || ''
+        };
+        
+        const validation = validateQuiz(mappedQuiz);
+        if (!validation.valid) {
+          console.error(`⚠️ Quiz ${i + 1} is invalid: ${validation.reason}. Skipping...`);
+          continue;
+        }
+
         const quizResult = await sendQuiz(
-          quiz.question,
-          quiz.options,
-          quiz.correct_index,
-          quiz.explanation
+          mappedQuiz.question,
+          mappedQuiz.options,
+          mappedQuiz.correctIndex,
+          mappedQuiz.explanation
         );
         console.log(`✅ Quiz ${i + 1} sent! ID: ${quizResult.message_id}`);
       }

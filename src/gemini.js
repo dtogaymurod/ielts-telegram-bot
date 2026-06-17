@@ -303,12 +303,19 @@ export async function generateMicroReading() {
       config: {
         systemInstruction: 'Faqat valid JSON qaytar. Boshqa hech qanday matn yoki markdown yozma.',
         temperature: 0.85,
-        maxOutputTokens: 2048,
+        maxOutputTokens: 8192,
         responseMimeType: 'application/json',
       },
     });
+    console.log('🤖 Finish Reason:', response.candidates?.[0]?.finishReason);
     
-    const testData = JSON.parse(response.text);
+    let testData;
+    try {
+      testData = JSON.parse(response.text);
+    } catch (parseError) {
+      console.error('❌ JSON parse error. Raw response text was:', response.text);
+      throw parseError;
+    }
     
     if (!testData.text || !Array.isArray(testData.quizzes) || testData.quizzes.length !== 3) {
       console.error('❌ Invalid micro reading structure from Gemini');
