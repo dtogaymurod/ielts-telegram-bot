@@ -6,6 +6,7 @@
 import { GoogleGenAI } from '@google/genai';
 import fs from 'fs';
 import path from 'path';
+import { getHistory, saveHistory } from './history-tracker.js';
 
 let ai = null;
 
@@ -46,14 +47,24 @@ export async function generateVocabulary() {
         - 1-2 ta eslab qolish oson bo'lgan, sifatli misol gap (inglizcha)
         - IELTS (Writing yoki Speaking) da bu so'zni qanday qilib o'rinli ishlatish bo'yicha qisqacha do'stona maslahat (o'zbek tilida).
         
-        Qattiq qoliplarga tushma. O'quvchini zeriktirmaydigan, ixcham va tabiiy formatda yoz. Ortqicha va keraksiz ma'lumotlarni (masalan uzun sinonimlar ro'yxatini) olib tashla.`,
+        Qattiq qoliplarga tushma. O'quvchini zeriktirmaydigan, ixcham va tabiiy formatda yoz. Ortqicha va keraksiz ma'lumotlarni (masalan uzun sinonimlar ro'yxatini) olib tashla.
+
+[HISTORY_INJECTION]
+Shuningdek, javobingizning eng boshida (birinchi qatorda) albatta "[TOPIC: mavzu_yoki_soz_nomi]" deb yozib qoldiring. Bu orqali biz bu mavzuni xotiraga saqlaymiz.`
+        + (getHistory('generateVocabulary').length > 0 ? `\n\nMUHIM QOIDA: Quyidagi mavzular (yoki so'zlar/grammatikalar) kanalimizda avval chiqqan, shuning uchun bularni UMUMAN QAYTA ISHLATMANG (har doim yangisini toping): \n${getHistory('generateVocabulary').join(', ')}\n` : ''),
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
         temperature: 0.9,
         maxOutputTokens: 2048,
       },
     });
-    return response.text;
+    let text = response.text;
+    const topicMatch = text.match(/\[TOPIC:\s*(.+?)\]/);
+    if (topicMatch) {
+      saveHistory('generateVocabulary', topicMatch[1].trim());
+      text = text.replace(topicMatch[0], '').trim();
+    }
+    return text;
   } catch (error) {
     console.error('❌ Gemini vocabulary generation failed:', error.message);
     return null;
@@ -77,14 +88,24 @@ export async function generateWritingTip() {
         - Qisqa va lo'nda tushuntirish (o'zbekcha, do'stona ohangda)
         - Kichik bir before/after misol (inglizcha)
         
-        Post xuddi tajribali ustoz o'quvchisiga Telegramda tezkor maslahat bergandek qisqa va tabiiy o'qilsin. Qolipga tushgan sun'iy tuzilmalardan saqlan.`,
+        Post xuddi tajribali ustoz o'quvchisiga Telegramda tezkor maslahat bergandek qisqa va tabiiy o'qilsin. Qolipga tushgan sun'iy tuzilmalardan saqlan.
+
+[HISTORY_INJECTION]
+Shuningdek, javobingizning eng boshida (birinchi qatorda) albatta "[TOPIC: mavzu_yoki_soz_nomi]" deb yozib qoldiring. Bu orqali biz bu mavzuni xotiraga saqlaymiz.`
+        + (getHistory('generateWritingTip').length > 0 ? `\n\nMUHIM QOIDA: Quyidagi mavzular (yoki so'zlar/grammatikalar) kanalimizda avval chiqqan, shuning uchun bularni UMUMAN QAYTA ISHLATMANG (har doim yangisini toping): \n${getHistory('generateWritingTip').join(', ')}\n` : ''),
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
         temperature: 0.8,
         maxOutputTokens: 2048,
       },
     });
-    return response.text;
+    let text = response.text;
+    const topicMatch = text.match(/\[TOPIC:\s*(.+?)\]/);
+    if (topicMatch) {
+      saveHistory('generateWritingTip', topicMatch[1].trim());
+      text = text.replace(topicMatch[0], '').trim();
+    }
+    return text;
   } catch (error) {
     console.error('❌ Gemini writing tip generation failed:', error.message);
     return null;
@@ -111,14 +132,24 @@ export async function generateSpeakingTip() {
         - Kichik Namuna javob (inglizcha, atigi 2-3 ta qisqa gap, Band 7.5+ darajada)
         - Javobdagi 1 ta eng kuchli ibora va o'zbekcha tarjimasi.
         
-        Matn sun'iy bo'lmasin. Fikrni oxiriga yetkaz, matn chala uzilib qolmasligiga qat'iy e'tibor ber!`,
+        Matn sun'iy bo'lmasin. Fikrni oxiriga yetkaz, matn chala uzilib qolmasligiga qat'iy e'tibor ber!
+
+[HISTORY_INJECTION]
+Shuningdek, javobingizning eng boshida (birinchi qatorda) albatta "[TOPIC: mavzu_yoki_soz_nomi]" deb yozib qoldiring. Bu orqali biz bu mavzuni xotiraga saqlaymiz.`
+        + (getHistory('generateSpeakingTip').length > 0 ? `\n\nMUHIM QOIDA: Quyidagi mavzular (yoki so'zlar/grammatikalar) kanalimizda avval chiqqan, shuning uchun bularni UMUMAN QAYTA ISHLATMANG (har doim yangisini toping): \n${getHistory('generateSpeakingTip').join(', ')}\n` : ''),
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
         temperature: 0.85,
         maxOutputTokens: 2048,
       },
     });
-    return response.text;
+    let text = response.text;
+    const topicMatch = text.match(/\[TOPIC:\s*(.+?)\]/);
+    if (topicMatch) {
+      saveHistory('generateSpeakingTip', topicMatch[1].trim());
+      text = text.replace(topicMatch[0], '').trim();
+    }
+    return text;
   } catch (error) {
     console.error('❌ Gemini speaking tip generation failed:', error.message);
     return null;
@@ -142,14 +173,24 @@ export async function generateReadingListeningStrategy() {
         - U nima ekanligi va qanday ishlashi (qisqa, oddiy so'zlar bilan o'zbek tilida)
         - Bitta amaliy misol
         
-        Sun'iy, "robot"ga o'xshash matnlardan qoch! Tirik inson, do'stona va oson tushuniladigan tarzda yozsin. Juda uzun bo'lmasin.`,
+        Sun'iy, "robot"ga o'xshash matnlardan qoch! Tirik inson, do'stona va oson tushuniladigan tarzda yozsin. Juda uzun bo'lmasin.
+
+[HISTORY_INJECTION]
+Shuningdek, javobingizning eng boshida (birinchi qatorda) albatta "[TOPIC: mavzu_yoki_soz_nomi]" deb yozib qoldiring. Bu orqali biz bu mavzuni xotiraga saqlaymiz.`
+        + (getHistory('generateReadingListeningStrategy').length > 0 ? `\n\nMUHIM QOIDA: Quyidagi mavzular (yoki so'zlar/grammatikalar) kanalimizda avval chiqqan, shuning uchun bularni UMUMAN QAYTA ISHLATMANG (har doim yangisini toping): \n${getHistory('generateReadingListeningStrategy').join(', ')}\n` : ''),
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
         temperature: 0.8,
         maxOutputTokens: 2048,
       },
     });
-    return response.text;
+    let text = response.text;
+    const topicMatch = text.match(/\[TOPIC:\s*(.+?)\]/);
+    if (topicMatch) {
+      saveHistory('generateReadingListeningStrategy', topicMatch[1].trim());
+      text = text.replace(topicMatch[0], '').trim();
+    }
+    return text;
   } catch (error) {
     console.error('❌ Gemini reading/listening generation failed:', error.message);
     return null;
@@ -174,14 +215,24 @@ export async function generateBandScoreTip() {
         - Nima qilish kerakligi (o'zbekcha, sodda tilda)
         - Farqni ko'rsatish uchun 1 ta Before/After misol (inglizcha).
         
-        Zerikarli qoliplardan chiq. Oddiy so'zlar bilan, ammo kuchli ma'noli qilib yoz. Post qisqa bo'lsin.`,
+        Zerikarli qoliplardan chiq. Oddiy so'zlar bilan, ammo kuchli ma'noli qilib yoz. Post qisqa bo'lsin.
+
+[HISTORY_INJECTION]
+Shuningdek, javobingizning eng boshida (birinchi qatorda) albatta "[TOPIC: mavzu_yoki_soz_nomi]" deb yozib qoldiring. Bu orqali biz bu mavzuni xotiraga saqlaymiz.`
+        + (getHistory('generateBandScoreTip').length > 0 ? `\n\nMUHIM QOIDA: Quyidagi mavzular (yoki so'zlar/grammatikalar) kanalimizda avval chiqqan, shuning uchun bularni UMUMAN QAYTA ISHLATMANG (har doim yangisini toping): \n${getHistory('generateBandScoreTip').join(', ')}\n` : ''),
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
         temperature: 0.85,
         maxOutputTokens: 2048,
       },
     });
-    return response.text;
+    let text = response.text;
+    const topicMatch = text.match(/\[TOPIC:\s*(.+?)\]/);
+    if (topicMatch) {
+      saveHistory('generateBandScoreTip', topicMatch[1].trim());
+      text = text.replace(topicMatch[0], '').trim();
+    }
+    return text;
   } catch (error) {
     console.error('❌ Gemini band score tip generation failed:', error.message);
     return null;
@@ -206,14 +257,24 @@ export async function generateMotivation() {
       3. "Taslim bo'lmang", "Maqsad sari intiling", "Hech qachon to'xtamang" kabi o'ta shablon va pafosli (balandparvoz) so'zlardan U-MU-MAN foydalanmang.
       4. Buning o'rniga bitta juda oddiy, amaliy va psixologik yechim/maslahat bering (masalan: "bugun umuman ingliz tili o'qimang, miya dam olsin", yoki "faqat o'zingiz yoqtirgan 1 ta podcast eshiting").
       
-      Post qisqa, o'qishli va eng muhimi - sun'iylikdan xoli, 100% tirik inson yozgandek jaranglashi shart.`,
+      Post qisqa, o'qishli va eng muhimi - sun'iylikdan xoli, 100% tirik inson yozgandek jaranglashi shart.
+
+[HISTORY_INJECTION]
+Shuningdek, javobingizning eng boshida (birinchi qatorda) albatta "[TOPIC: mavzu_yoki_soz_nomi]" deb yozib qoldiring. Bu orqali biz bu mavzuni xotiraga saqlaymiz.`
+        + (getHistory('generateMotivation').length > 0 ? `\n\nMUHIM QOIDA: Quyidagi mavzular (yoki so'zlar/grammatikalar) kanalimizda avval chiqqan, shuning uchun bularni UMUMAN QAYTA ISHLATMANG (har doim yangisini toping): \n${getHistory('generateMotivation').join(', ')}\n` : ''),
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
         temperature: 0.95,
         maxOutputTokens: 2048,
       },
     });
-    return response.text;
+    let text = response.text;
+    const topicMatch = text.match(/\[TOPIC:\s*(.+?)\]/);
+    if (topicMatch) {
+      saveHistory('generateMotivation', topicMatch[1].trim());
+      text = text.replace(topicMatch[0], '').trim();
+    }
+    return text;
   } catch (error) {
     console.error('❌ Gemini motivation generation failed:', error.message);
     return null;
@@ -242,14 +303,24 @@ export async function generateMagic3() {
         - 2...
         - 3...
         
-        Hech qanday qo'shimcha so'z, salomlashish yoki tushuntirish kerak emas. Faqat aniq va londa ro'yxat!`,
+        Hech qanday qo'shimcha so'z, salomlashish yoki tushuntirish kerak emas. Faqat aniq va londa ro'yxat!
+
+[HISTORY_INJECTION]
+Shuningdek, javobingizning eng boshida (birinchi qatorda) albatta "[TOPIC: mavzu_yoki_soz_nomi]" deb yozib qoldiring. Bu orqali biz bu mavzuni xotiraga saqlaymiz.`
+        + (getHistory('generateMagic3').length > 0 ? `\n\nMUHIM QOIDA: Quyidagi mavzular (yoki so'zlar/grammatikalar) kanalimizda avval chiqqan, shuning uchun bularni UMUMAN QAYTA ISHLATMANG (har doim yangisini toping): \n${getHistory('generateMagic3').join(', ')}\n` : ''),
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
         temperature: 0.85,
         maxOutputTokens: 2048,
       },
     });
-    return response.text;
+    let text = response.text;
+    const topicMatch = text.match(/\[TOPIC:\s*(.+?)\]/);
+    if (topicMatch) {
+      saveHistory('generateMagic3', topicMatch[1].trim());
+      text = text.replace(topicMatch[0], '').trim();
+    }
+    return text;
   } catch (error) {
     console.error('❌ Gemini magic 3 generation failed:', error.message);
     return null;
@@ -279,6 +350,7 @@ export async function generateMicroReading() {
         
         QATTIQ FORMAT (faqat JSON qaytar, boshqa hech narsa yo'q):
         {
+          "topic": "mavzu nomi inglizcha (masalan: Space exploration, Animal behavior)",
           "text": "⏱ <b>Micro Reading</b>\\n👇 Matnni o'qing va testlarni ishlang:\\n\\n[Bu yerga 3-4 gapdan iborat matn yozing]",
           "quizzes": [
             {
@@ -300,7 +372,8 @@ export async function generateMicroReading() {
               "explanation": "Nima uchun to'g'ri (1-2 gap, o'zbekcha)"
             }
           ]
-        }`,
+        }`
+        + (getHistory('generateMicroReading').length > 0 ? `\n\nMUHIM QOIDA: Quyidagi mavzular kanalimizda avval chiqqan, shuning uchun bularni UMUMAN QAYTA ISHLATMANG (har doim yangisini toping): \n${getHistory('generateMicroReading').join(', ')}\n` : ''),
       config: {
         systemInstruction: 'Faqat valid JSON qaytar. Boshqa hech qanday matn yoki markdown yozma.',
         temperature: 0.85,
@@ -313,6 +386,9 @@ export async function generateMicroReading() {
     let testData;
     try {
       testData = JSON.parse(response.text);
+      if (testData.topic) {
+        saveHistory('generateMicroReading', testData.topic);
+      }
     } catch (parseError) {
       console.error('❌ JSON parse error. Raw response text was:', response.text);
       throw parseError;
@@ -348,11 +424,13 @@ export async function generateQuiz() {
         
         QATTIQ FORMAT (faqat JSON qaytar, boshqa hech narsa yo'q):
         {
+          "topic": "mavzu yoki gramatika nomi",
           "question": "Savol matni (inglizcha, 300 belgidan kam)",
           "options": ["Variant A", "Variant B", "Variant C", "Variant D"],
           "correct_index": 0,
           "explanation_uz": "To'g'ri javob tushuntirishi (o'zbekcha, 200 belgidan kam)"
-        }`,
+        }`
+        + (getHistory('generateQuiz').length > 0 ? `\n\nMUHIM QOIDA: Quyidagi mavzular kanalimizda avval chiqqan, shuning uchun bularni UMUMAN QAYTA ISHLATMANG (har doim yangisini toping): \n${getHistory('generateQuiz').join(', ')}\n` : ''),
       config: {
         systemInstruction: 'Faqat valid JSON qaytar. Boshqa hech qanday matn yoki markdown yozma.',
         temperature: 0.8,
@@ -362,6 +440,9 @@ export async function generateQuiz() {
     });
 
     const quiz = JSON.parse(response.text);
+    if (quiz.topic) {
+      saveHistory('generateQuiz', quiz.topic);
+    }
 
     // Validate structure
     if (!quiz.question || !Array.isArray(quiz.options) || quiz.options.length < 2 || typeof quiz.correct_index !== 'number') {
@@ -402,6 +483,7 @@ export async function generateReadingTest() {
   
       QATTIQ FORMAT (faqat JSON qaytar, boshqa hech narsa yo'q):
       {
+        "topic": "passage topic (e.g., Space Exploration)",
         "title": "The Title of the Passage",
         "paragraphs": [
           "First paragraph text without any newlines or unescaped quotes...",
@@ -414,7 +496,8 @@ export async function generateReadingTest() {
             "correct_index": 2
           }
         ]
-      }`,
+      }`
+      + (getHistory('generateReadingTest').length > 0 ? `\n\nMUHIM QOIDA: Quyidagi mavzular kanalimizda avval chiqqan, shuning uchun bularni UMUMAN QAYTA ISHLATMANG (har doim yangisini toping): \n${getHistory('generateReadingTest').join(', ')}\n` : ''),
       config: {
         systemInstruction: 'Faqat valid JSON qaytar. Do not use unescaped quotes (") or newlines (\\n) inside string values. Boshqa hech qanday matn yoki markdown yozma.',
         temperature: 0.7,
@@ -424,8 +507,11 @@ export async function generateReadingTest() {
     });
 
     const testData = JSON.parse(response.text);
-
-    // Validate structure
+    if (testData.topic) {
+      saveHistory('generateReadingTest', testData.topic);
+    }
+    
+    // Simple validation structure
     if (!testData.title || !Array.isArray(testData.paragraphs) || !Array.isArray(testData.questions)) {
       console.error('❌ Invalid reading test structure from Gemini');
       return null;
