@@ -13,13 +13,13 @@ const CONTENT_DIR = join(__dirname, '..', 'content');
 // Weekly schedule: maps [dayOfWeek][timeSlot] to content type
 // dayOfWeek: 0=Sunday, 1=Monday, ..., 6=Saturday
 const SCHEDULE = {
-  0: { morning: 'vocabulary', afternoon: 'speaking', evening: 'motivation' },
-  1: { morning: 'vocabulary', afternoon: 'speaking', evening: 'quiz' },
-  2: { morning: 'writing', afternoon: 'reading-listening', evening: 'band-score' },
-  3: { morning: 'vocabulary', afternoon: 'speaking', evening: 'quiz' },
-  4: { morning: 'writing', afternoon: 'reading-listening', evening: 'motivation' },
-  5: { morning: 'vocabulary', afternoon: 'speaking', evening: 'quiz' },
-  6: { morning: 'writing', afternoon: 'reading-listening', evening: 'band-score' },
+  0: { afternoon: 'speaking' },
+  1: { afternoon: 'speaking' },
+  2: { afternoon: 'reading-listening' },
+  3: { afternoon: 'speaking' },
+  4: { afternoon: 'reading-listening' },
+  5: { afternoon: 'speaking' },
+  6: { afternoon: 'reading-listening' },
 };
 
 /**
@@ -29,7 +29,7 @@ const SCHEDULE = {
 export function getTimeSlot() {
   // Check if TIME_SLOT is set by GitHub Actions
   const envSlot = process.env.TIME_SLOT;
-  if (envSlot && ['morning', 'recentspeaking', 'afternoon', 'microreading', 'magic3', 'evening'].includes(envSlot)) {
+  if (envSlot && ['recentspeaking', 'afternoon', 'microreading', 'magic3'].includes(envSlot)) {
     return envSlot;
   }
 
@@ -37,13 +37,11 @@ export function getTimeSlot() {
   const now = new Date();
   const tashkentHour = (now.getUTCHours() + 5) % 24;
 
-  if (tashkentHour >= 6 && tashkentHour < 9) return 'morning';
   if (tashkentHour >= 9 && tashkentHour < 12) return 'recentspeaking';
   if (tashkentHour >= 12 && tashkentHour < 15) return 'afternoon';
   if (tashkentHour >= 15 && tashkentHour < 17) return 'microreading';
   if (tashkentHour >= 17 && tashkentHour < 19) return 'magic3';
-  if (tashkentHour >= 19 && tashkentHour < 22) return 'evening';
-  return 'morning'; // Default fallback
+  return 'afternoon'; // Default fallback
 }
 
 /**

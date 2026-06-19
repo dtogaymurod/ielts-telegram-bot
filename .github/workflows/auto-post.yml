@@ -4,8 +4,7 @@ on:
   schedule:
     # Speaking post — 10:00 Toshkent vaqti (05:00 UTC)
     - cron: '0 5 * * *'
-    # Ertalab post — 08:00 Toshkent vaqti (03:00 UTC) (will be skipped or merged? No, user kept it)
-    - cron: '0 3 * * *'
+
     # Tushlik post — 13:00 Toshkent vaqti (08:00 UTC)
     - cron: '0 8 * * *'
     # Micro Reading — 16:00 Toshkent vaqti (11:00 UTC)
@@ -13,8 +12,7 @@ on:
     # Magic 3 — 18:00 Toshkent vaqti (13:00 UTC)
     - cron: '0 13 * * *'
 
-    # Kechqurun post — 20:00 Toshkent vaqti (15:00 UTC)
-    - cron: '0 15 * * *'
+
 
   # Qo'lda ishga tushirish imkoniyati (testing uchun)
   workflow_dispatch:
@@ -82,9 +80,7 @@ jobs:
           
           # Auto-detect from cron schedule (UTC time)
           HOUR=$(date -u +%H)
-          if [ "$HOUR" = "03" ]; then
-            echo "slot=morning" >> $GITHUB_OUTPUT
-          elif [ "$HOUR" = "05" ]; then
+          if [ "$HOUR" = "05" ]; then
             echo "slot=recentspeaking" >> $GITHUB_OUTPUT
           elif [ "$HOUR" = "08" ]; then
             echo "slot=afternoon" >> $GITHUB_OUTPUT
@@ -92,8 +88,6 @@ jobs:
             echo "slot=microreading" >> $GITHUB_OUTPUT
           elif [ "$HOUR" = "13" ]; then
             echo "slot=magic3" >> $GITHUB_OUTPUT
-          elif [ "$HOUR" = "15" ]; then
-            echo "slot=evening" >> $GITHUB_OUTPUT
 
           else
             echo "slot=" >> $GITHUB_OUTPUT
