@@ -63,7 +63,7 @@ export function getContentType() {
   if (timeSlot === 'magic3') return 'magic-3';
   if (timeSlot === 'recentspeaking') return 'recent-speaking';
 
-  return SCHEDULE[dayOfWeek][timeSlot] || 'motivation'; // fallback
+  return SCHEDULE[dayOfWeek][timeSlot] || 'vocabulary'; // fallback
 }
 
 /**

@@ -95,11 +95,11 @@ async function main() {
   }
   
   if (!postText) {
-    console.log('⚠️ AI generation failed for recent exams. Falling back to database (motivation)...');
-    const dbFile = getDatabaseFile('motivation');
+    console.log('⚠️ AI generation failed for recent exams. Falling back to database (vocabulary)...');
+    const dbFile = getDatabaseFile('vocabulary');
     const item = getContentFromDatabase(dbFile);
     if (item) {
-      postText = formatContent('motivation', item);
+      postText = formatContent('vocabulary', item);
     }
   }
 
@@ -171,16 +171,16 @@ async function main() {
         }
       }
       
-      console.log('📦 Final fallback: Sending motivation from database...');
+      console.log('📦 Final fallback: Sending vocabulary from database...');
       try {
-        const dbFile = getDatabaseFile('motivation');
+        const dbFile = getDatabaseFile('vocabulary');
         const item = getContentFromDatabase(dbFile);
         if (item) {
-          const fallbackText = formatContent('motivation', item);
+          const fallbackText = formatContent('vocabulary', item);
           result = await sendMessage(fallbackText, {});
           console.log(`✅ Database fallback message sent! ID: ${result.message_id}`);
         } else {
-          console.error('❌ No motivation items found for fallback.');
+          console.error('❌ No vocabulary items found for fallback.');
           process.exit(1);
         }
       } catch (finalError) {
@@ -263,11 +263,11 @@ async function handleMicroReading() {
   const data = await gemini.generateMicroReading();
   
   if (!data) {
-    console.log('⚠️ AI generation failed for Micro Reading. Falling back to database (motivation)...');
-    const dbFile = getDatabaseFile('motivation');
+    console.log('⚠️ AI generation failed for Micro Reading. Falling back to database (vocabulary)...');
+    const dbFile = getDatabaseFile('vocabulary');
     const item = getContentFromDatabase(dbFile);
     if (item) {
-      const fallbackText = formatContent('motivation', item);
+      const fallbackText = formatContent('vocabulary', item);
       if (!isDryRun && !isTest) {
          await sendMessage(fallbackText, {});
       } else {
