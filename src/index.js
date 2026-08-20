@@ -118,8 +118,12 @@ async function main() {
   // Optional: strip stray markdown italic (*italic*) if it's not a bullet point
   postText = postText.replace(/(^|[^\\])\*([^*\n]+)\*/g, '$1<i>$2</i>');
 
-  // Convert <br> tags to actual newlines since Telegram doesn't support them
+  // Convert unsupported HTML tags to valid Telegram equivalents
   postText = postText.replace(/<br\s*\/?>/gi, '\n');
+  postText = postText.replace(/<li>/gi, '• ');
+  postText = postText.replace(/<\/?(ul|ol|li)[^>]*>/gi, '');
+  postText = postText.replace(/<\/p>/gi, '\n\n');
+  postText = postText.replace(/<p[^>]*>/gi, '');
 
   // Smart escape of < and & to prevent Telegram parse errors without breaking valid tags
   postText = postText.replace(/&(?!(amp|lt|gt|quot|apos);)/g, '&amp;');
