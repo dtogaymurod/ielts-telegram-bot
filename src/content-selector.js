@@ -106,11 +106,8 @@ export function getContentFromDatabase(contentType) {
     const unused = items.filter((item) => !item.used);
 
     if (unused.length === 0) {
-      // Reset all items to unused
-      console.log(`🔄 All ${contentType} items used. Resetting...`);
-      items.forEach((item) => (item.used = false));
-      writeFileSync(filePath, JSON.stringify(items, null, 2), 'utf-8');
-      return items[Math.floor(Math.random() * items.length)];
+      console.log(`❌ All ${contentType} items have been used. Strict 'no repeat' rule prevents resetting.`);
+      return null;
     }
 
     // Pick a random unused item

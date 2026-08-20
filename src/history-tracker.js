@@ -35,10 +35,6 @@ export function saveHistory(contentType, topic) {
     // Check if it already exists to avoid duplicates
     if (!data[contentType].includes(topic)) {
       data[contentType].push(topic);
-      // Keep only the last MAX_HISTORY items
-      if (data[contentType].length > MAX_HISTORY) {
-        data[contentType] = data[contentType].slice(-MAX_HISTORY);
-      }
       
       writeFileSync(HISTORY_FILE, JSON.stringify(data, null, 2));
       console.log(`✅ Saved topic "${topic}" to history for ${contentType}`);
