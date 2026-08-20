@@ -602,3 +602,161 @@ export async function generateRecentWriting(task) {
     return null;
   }
 }
+
+
+/**
+ * Generate Idiom of the week post
+ */
+export async function generateIdiom() {
+  const client = getAI();
+  if (!client) return null;
+
+  try {
+    const response = await client.models.generateContent({
+      model: 'gemini-2.5-flash',
+      contents: `Bitta yangi IELTS Speaking uchun juda foydali bo'lgan "Idiom" (ibora) o'rgatuvchi qisqa va qiziqarli post yoz.
+        Quyidagilarni o'z ichiga olsin:
+        - Idioma va uning o'zbekcha aniq ma'nosi
+        - 1 ta eslab qolish oson bo'lgan, sifatli misol gap (inglizcha)
+        - Qaysi mavzularda ishlatish mumkinligi bo'yicha do'stona maslahat.
+        
+[HISTORY_INJECTION]
+Shuningdek, javobingizning eng boshida (birinchi qatorda) albatta "[TOPIC: idiom_nomi]" deb yozib qoldiring. Bu orqali biz bu mavzuni xotiraga saqlaymiz.`
+        + (getHistory('generateIdiom').length > 0 ? `\n\nMUHIM QOIDA: Quyidagi mavzular (yoki iboralar) kanalimizda avval chiqqan, shuning uchun bularni UMUMAN QAYTA ISHLATMANG: \n${getHistory('generateIdiom').join(', ')}\n` : ''),
+      config: {
+        systemInstruction: SYSTEM_INSTRUCTION,
+        temperature: 0.9,
+      },
+    });
+    let text = response.text;
+    const topicMatch = text.match(/\[TOPIC:\s*(.+?)\]/);
+    if (topicMatch) {
+      saveHistory('generateIdiom', topicMatch[1].trim());
+      text = text.replace(topicMatch[0], '').trim();
+    }
+    return "🔥 <b>Idiom of the Week</b> 🔥\n\n" + text;
+  } catch (error) {
+    console.error('❌ Gemini idiom generation failed:', error.message);
+    return null;
+  }
+}
+
+/**
+ * Generate Collocation of the Day post
+ */
+export async function generateCollocation() {
+  const client = getAI();
+  if (!client) return null;
+
+  try {
+    const response = await client.models.generateContent({
+      model: 'gemini-2.5-flash',
+      contents: `Bitta IELTS Writing yoki Speaking uchun juda muhim bo'lgan "Collocation" (so'z birikmasi) o'rgatuvchi qisqa post yoz.
+        Native speaker'larga xos bo'lgan advanced birikma tanlang (masalan, 'heavy rain', 'make a decision' o'rniga 'exert influence', 'profound impact' kabi).
+        Quyidagilarni o'z ichiga olsin:
+        - Collocation va uning o'zbekcha ma'nosi
+        - 1 ta misol gap (inglizcha)
+        - Qaysi oddiy so'zlarning o'rniga ishlatish mumkinligi haqida maslahat.
+        
+[HISTORY_INJECTION]
+Shuningdek, javobingizning eng boshida (birinchi qatorda) albatta "[TOPIC: collocation_nomi]" deb yozib qoldiring.`
+        + (getHistory('generateCollocation').length > 0 ? `\n\nMUHIM QOIDA: Quyidagi collocation'lar avval chiqqan, bularni UMUMAN QAYTA ISHLATMANG: \n${getHistory('generateCollocation').join(', ')}\n` : ''),
+      config: {
+        systemInstruction: SYSTEM_INSTRUCTION,
+        temperature: 0.9,
+      },
+    });
+    let text = response.text;
+    const topicMatch = text.match(/\[TOPIC:\s*(.+?)\]/);
+    if (topicMatch) {
+      saveHistory('generateCollocation', topicMatch[1].trim());
+      text = text.replace(topicMatch[0], '').trim();
+    }
+    return "💡 <b>Collocation of the Day</b> 💡\n\n" + text;
+  } catch (error) {
+    console.error('❌ Gemini collocation generation failed:', error.message);
+    return null;
+  }
+}
+
+/**
+ * Generate Podcast / TED Talk recommendation
+ */
+export async function generatePodcast() {
+  const client = getAI();
+  if (!client) return null;
+
+  try {
+    const response = await client.models.generateContent({
+      model: 'gemini-2.5-flash',
+      contents: `IELTS Listening'ni oshirish uchun foydali bo'lgan bitta mashhur inglizcha Podcast yoki TED Talk videosini qisqacha tavsiya qiling.
+        Quyidagilarni o'z ichiga olsin:
+        - Nomi va muallifi
+        - Nima haqida ekanligi (o'zbekcha qisqa ta'rif)
+        - IELTS uchun qanday foydasi borligi (masalan, "Yangi aksentlarni eshitish uchun" yoki "Part 3 uchun yaxshi g'oyalar beradi").
+        
+[HISTORY_INJECTION]
+Shuningdek, javobingizning eng boshida (birinchi qatorda) albatta "[TOPIC: podcast_nomi]" deb yozib qoldiring.`
+        + (getHistory('generatePodcast').length > 0 ? `\n\nMUHIM QOIDA: Quyidagilar avval tavsiya qilingan, bularni QAYTA ISHLATMANG: \n${getHistory('generatePodcast').join(', ')}\n` : ''),
+      config: {
+        systemInstruction: SYSTEM_INSTRUCTION,
+        temperature: 0.9,
+      },
+    });
+    let text = response.text;
+    const topicMatch = text.match(/\[TOPIC:\s*(.+?)\]/);
+    if (topicMatch) {
+      saveHistory('generatePodcast', topicMatch[1].trim());
+      text = text.replace(topicMatch[0], '').trim();
+    }
+    return "🎧 <b>Sunday Recommendation</b> 🎧\n\n" + text;
+  } catch (error) {
+    console.error('❌ Gemini podcast generation failed:', error.message);
+    return null;
+  }
+}
+
+/**
+ * Generate Grammar Error Quiz
+ */
+export async function generateGrammarQuiz() {
+  const client = getAI();
+  if (!client) return null;
+
+  try {
+    const response = await client.models.generateContent({
+      model: 'gemini-2.5-flash',
+      contents: `IELTS o'quvchilari tez-tez qiladigan xatolar asosida bitta Grammar Error Correction quiz yarat.
+        
+        QATTIQ FORMAT (faqat JSON qaytar, boshqa hech narsa yo'q):
+        {
+          "topic": "xato turi (masalan: Subject-Verb Agreement, Articles)",
+          "question": "Qaysi gapda xato bor? Yoki qaysi biri to'g'ri? (inglizcha)",
+          "options": ["Variant A", "Variant B", "Variant C", "Variant D"],
+          "correct_index": 0,
+          "explanation_uz": "Nima uchun bu javob to'g'ri ekanligi tushuntirishi (o'zbekcha)"
+        }`
+        + (getHistory('generateGrammarQuiz').length > 0 ? `\n\nMUHIM QOIDA: Quyidagi mavzular kanalimizda avval chiqqan, shuning uchun bularni UMUMAN QAYTA ISHLATMANG: \n${getHistory('generateGrammarQuiz').join(', ')}\n` : ''),
+      config: {
+        systemInstruction: 'Faqat valid JSON qaytar. Boshqa hech qanday matn yozma.',
+        temperature: 0.8,
+        responseMimeType: 'application/json',
+      },
+    });
+
+    const quiz = JSON.parse(response.text);
+    if (quiz.topic) {
+      saveHistory('generateGrammarQuiz', quiz.topic);
+    }
+
+    if (!quiz.question || !Array.isArray(quiz.options) || quiz.options.length < 2 || typeof quiz.correct_index !== 'number') {
+      console.error('❌ Invalid grammar quiz structure from Gemini');
+      return null;
+    }
+
+    return quiz;
+  } catch (error) {
+    console.error('❌ Gemini grammar quiz generation failed:', error.message);
+    return null;
+  }
+}

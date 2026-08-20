@@ -55,6 +55,11 @@ async function main() {
     return;
   }
   
+  if (contentType === 'grammar-quiz') {
+    await handleGrammarQuiz();
+    return;
+  }
+  
   if (contentType === 'micro-reading') {
     await handleMicroReading();
     return;
@@ -206,6 +211,9 @@ async function tryAIGeneration(contentType) {
     'band-score': gemini.generateBandScoreTip,
     motivation: gemini.generateMotivation,
     'magic-3': gemini.generateMagic3,
+    idiom: gemini.generateIdiom,
+    collocation: gemini.generateCollocation,
+    podcast: gemini.generatePodcast,
   };
 
   const generator = generators[contentType];
@@ -255,6 +263,63 @@ async function handleQuiz() {
       quiz.explanation
     );
     console.log(`✅ Quiz sent! ID: ${result.message_id}`);
+  }
+}
+
+/**
+ * Handle grammar error quiz posting
+ */
+async function handleGrammarQuiz() {
+  console.log('🤖 Generating Grammar Quiz...');
+  const data = await gemini.generateGrammarQuiz();
+  
+  if (!data) {
+    console.log('⚠️ AI generation failed for Grammar Quiz. Falling back to vocabulary...');
+    const dbFile = getDatabaseFile('vocabulary');
+    const item = getContentFromDatabase(dbFile);
+    if (item) {
+      const fallbackText = formatContent('vocabulary', item);
+      if (!isDryRun && !isTest) {
+         await sendMessage(fallbackText, {});
+      }
+    }
+    return;
+  }
+
+  const mappedQuiz = {
+    question: "🛠 GRAMMAR FIX:\n" + data.question,
+    options: data.options,
+    correctIndex: data.correct_index,
+    explanation: data.explanation_uz
+  };
+
+  const validation = validateQuiz(mappedQuiz);
+
+  if (!validation.valid) {
+    console.error(`❌ Grammar Quiz validation failed: ${validation.reason}`);
+    process.exit(1);
+  }
+
+  if (isDryRun || isTest) {
+    console.log('\n❓ ═══ GRAMMAR QUIZ PREVIEW ═══\n');
+    console.log(`Question: ${mappedQuiz.question}`);
+    console.log(`Options:`);
+    mappedQuiz.options.forEach((opt, i) => {
+      const marker = i === mappedQuiz.correctIndex ? '✅' : '  ';
+      console.log(`  ${marker} ${i + 1}. ${opt}`);
+    });
+    console.log(`\nExplanation: ${mappedQuiz.explanation}`);
+    console.log('\n═══════════════════════\n');
+    console.log('✅ Dry run complete. No grammar quiz sent.');
+  } else {
+    console.log('📤 Sending grammar quiz to Telegram...');
+    const result = await sendQuiz(
+      mappedQuiz.question,
+      mappedQuiz.options,
+      mappedQuiz.correctIndex,
+      mappedQuiz.explanation
+    );
+    console.log(`✅ Grammar Quiz sent! ID: ${result.message_id}`);
   }
 }
 

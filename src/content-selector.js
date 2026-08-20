@@ -13,18 +13,25 @@ const CONTENT_DIR = join(__dirname, '..', 'content');
 // Weekly schedule: maps [dayOfWeek][timeSlot] to content type
 // dayOfWeek: 0=Sunday, 1=Monday, ..., 6=Saturday
 const SCHEDULE = {
-  0: { afternoon: 'speaking' },
-  1: { afternoon: 'speaking' },
-  2: { afternoon: 'reading-listening' },
-  3: { afternoon: 'speaking' },
-  4: { afternoon: 'reading-listening' },
-  5: { afternoon: 'speaking' },
-  6: { afternoon: 'reading-listening' },
+  // Sunday
+  0: { recentspeaking: 'collocation', afternoon: 'podcast', microreading: 'micro-reading', magic3: 'magic-3' },
+  // Monday
+  1: { recentspeaking: 'recent-speaking', afternoon: 'speaking', microreading: 'micro-reading', magic3: 'magic-3' },
+  // Tuesday
+  2: { recentspeaking: 'idiom', afternoon: 'reading-listening', microreading: 'micro-reading', magic3: 'magic-3' },
+  // Wednesday
+  3: { recentspeaking: 'recent-speaking', afternoon: 'grammar-quiz', microreading: 'micro-reading', magic3: 'magic-3' },
+  // Thursday
+  4: { recentspeaking: 'idiom', afternoon: 'speaking', microreading: 'micro-reading', magic3: 'magic-3' },
+  // Friday
+  5: { recentspeaking: 'recent-speaking', afternoon: 'reading-listening', microreading: 'micro-reading', magic3: 'magic-3' },
+  // Saturday
+  6: { recentspeaking: 'collocation', afternoon: 'grammar-quiz', microreading: 'micro-reading', magic3: 'magic-3' },
 };
 
 /**
  * Get the current time slot based on Tashkent time
- * @returns {'morning' | 'afternoon' | 'evening'}
+ * @returns {'recentspeaking' | 'afternoon' | 'microreading' | 'magic3'}
  */
 export function getTimeSlot() {
   // Check if TIME_SLOT is set by GitHub Actions
@@ -59,11 +66,7 @@ export function getContentType() {
   const dayOfWeek = tashkentTime.getUTCDay();
   const timeSlot = getTimeSlot();
 
-  if (timeSlot === 'microreading') return 'micro-reading';
-  if (timeSlot === 'magic3') return 'magic-3';
-  if (timeSlot === 'recentspeaking') return 'recent-speaking';
-
-  return SCHEDULE[dayOfWeek][timeSlot] || 'vocabulary'; // fallback
+  return SCHEDULE[dayOfWeek]?.[timeSlot] || 'vocabulary'; // fallback
 }
 
 /**
