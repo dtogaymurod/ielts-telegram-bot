@@ -34,15 +34,14 @@ on:
         type: choice
         options:
           - ''
-          - vocabulary
-          - writing
-          - speaking
-          - reading-listening
-          - band-score
-          - motivation
-          - quiz
           - recent-speaking
-          - recent-writing
+          - collocation
+          - speaking
+          - idiom
+          - reading-listening
+          - grammar-quiz
+          - podcast
+          - vocabulary
       dry_run:
         description: 'Dry run (no actual posting)'
         required: false
