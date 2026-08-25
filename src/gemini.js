@@ -692,6 +692,7 @@ export async function generatePodcast() {
       contents: `IELTS Listening'ni oshirish uchun foydali bo'lgan bitta mashhur inglizcha Podcast yoki TED Talk videosini qisqacha tavsiya qiling.
         Quyidagilarni o'z ichiga olsin:
         - Nomi va muallifi
+        - YouTube, Spotify yoki rasmiy veb-saytidagi HAQIQIY ssilkasi (linki)
         - Nima haqida ekanligi (o'zbekcha qisqa ta'rif)
         - IELTS uchun qanday foydasi borligi (masalan, "Yangi aksentlarni eshitish uchun" yoki "Part 3 uchun yaxshi g'oyalar beradi").
         
