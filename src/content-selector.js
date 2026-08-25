@@ -14,29 +14,29 @@ const CONTENT_DIR = join(__dirname, '..', 'content');
 // dayOfWeek: 0=Sunday, 1=Monday, ..., 6=Saturday
 const SCHEDULE = {
   // Sunday
-  0: { recentspeaking: 'collocation', afternoon: 'podcast', microreading: 'micro-reading', magic3: 'magic-3' },
+  0: { recentspeaking: 'collocation', afternoon: 'podcast', magic3: 'magic-3' },
   // Monday
-  1: { recentspeaking: 'recent-speaking', afternoon: 'speaking', microreading: 'micro-reading', magic3: 'magic-3' },
+  1: { recentspeaking: 'recent-speaking', afternoon: 'speaking', magic3: 'magic-3' },
   // Tuesday
-  2: { recentspeaking: 'idiom', afternoon: 'reading-listening', microreading: 'micro-reading', magic3: 'magic-3' },
+  2: { recentspeaking: 'idiom', afternoon: 'reading-listening', magic3: 'magic-3' },
   // Wednesday
-  3: { recentspeaking: 'recent-speaking', afternoon: 'grammar-quiz', microreading: 'micro-reading', magic3: 'magic-3' },
+  3: { recentspeaking: 'recent-speaking', afternoon: 'grammar-quiz', magic3: 'magic-3' },
   // Thursday
-  4: { recentspeaking: 'idiom', afternoon: 'speaking', microreading: 'micro-reading', magic3: 'magic-3' },
+  4: { recentspeaking: 'idiom', afternoon: 'speaking', magic3: 'magic-3' },
   // Friday
-  5: { recentspeaking: 'recent-speaking', afternoon: 'reading-listening', microreading: 'micro-reading', magic3: 'magic-3' },
+  5: { recentspeaking: 'recent-speaking', afternoon: 'reading-listening', magic3: 'magic-3' },
   // Saturday
-  6: { recentspeaking: 'collocation', afternoon: 'grammar-quiz', microreading: 'micro-reading', magic3: 'magic-3' },
+  6: { recentspeaking: 'collocation', afternoon: 'grammar-quiz', magic3: 'magic-3' },
 };
 
 /**
  * Get the current time slot based on Tashkent time
- * @returns {'recentspeaking' | 'afternoon' | 'microreading' | 'magic3'}
+ * @returns {'recentspeaking' | 'afternoon' | 'magic3'}
  */
 export function getTimeSlot() {
   // Check if TIME_SLOT is set by GitHub Actions
   const envSlot = process.env.TIME_SLOT;
-  if (envSlot && ['recentspeaking', 'afternoon', 'microreading', 'magic3'].includes(envSlot)) {
+  if (envSlot && ['recentspeaking', 'afternoon', 'magic3'].includes(envSlot)) {
     return envSlot;
   }
 
@@ -45,8 +45,7 @@ export function getTimeSlot() {
   const tashkentHour = (now.getUTCHours() + 5) % 24;
 
   if (tashkentHour >= 9 && tashkentHour < 12) return 'recentspeaking';
-  if (tashkentHour >= 12 && tashkentHour < 15) return 'afternoon';
-  if (tashkentHour >= 15 && tashkentHour < 17) return 'microreading';
+  if (tashkentHour >= 12 && tashkentHour < 17) return 'afternoon';
   if (tashkentHour >= 17 && tashkentHour < 19) return 'magic3';
   return 'afternoon'; // Default fallback
 }
