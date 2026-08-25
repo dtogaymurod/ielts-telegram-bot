@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CD IELTS Reading Practice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            background-color: #ffffff;
+            border-bottom: 2px solid #e0e0e0;
+            padding: 12px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            z-index: 10;
+        }
+        .header-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #d32f2f;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .timer {
+            background-color: #333;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+        .timer.warning {
+            background-color: #d32f2f;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0.5; }
+        }
+        .telegram-btn {
+            display: flex;
+            align-items: center;
+            background-color: #2AABEE;
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: background-color 0.3s;
+            box-shadow: 0 2px 5px rgba(42, 171, 238, 0.3);
+        }
+        .telegram-btn:hover {
+            background-color: #2298d4;
+        }
+        .telegram-btn svg {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+            fill: white;
+        }
+        .main-container {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+            padding: 15px;
+            gap: 15px;
+        }
+        .panel {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 30px;
+            overflow-y: auto;
+            flex: 1;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        .passage-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 25px;
+            color: #222;
+        }
+        .paragraph {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        .paragraph strong {
+            margin-right: 10px;
+            font-size: 18px;
+            background-color: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        .question-block {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .question-instruction {
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-style: italic;
+            background: #f9f9f9;
+            padding: 10px;
+            border-left: 4px solid #d32f2f;
+        }
+        .question-wrapper {
+            margin-bottom: 15px;
+        }
+        .question-item {
+            display: flex;
+            align-items: center;
+            background-color: #fdfdfd;
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .question-item.correct {
+            border-color: #4CAF50;
+            background-color: #e8f5e9;
+        }
+        .question-item.incorrect {
+            border-color: #f44336;
+            background-color: #ffebee;
+        }
+        .q-number {
+            font-weight: bold;
+            background-color: #333;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-right: 15px;
+            min-width: 25px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .letter-buttons {
+            display: flex;
+            gap: 5px;
+            margin-left: auto;
+        }
+        .l-btn {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 30px;
+            height: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .l-btn:hover:not(:disabled) {
+            background-color: #f0f0f0;
+            border-color: #999;
+        }
+        .l-btn.selected {
+            background-color: #333;
+            color: white;
+            border-color: #333;
+        }
+        .l-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        .input-box-inline {
+            width: 120px;
+            height: 25px;
+            border: none;
+            border-bottom: 2px solid #333;
+            margin: 0 5px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            background: transparent;
+        }
+        .input-box-inline:focus {
+            border-bottom-color: #d32f2f;
+            outline: none;
+        }
+        .input-box-inline.correct {
+            border-bottom-color: #4CAF50;
+            color: #4CAF50;
+        }
+        .input-box-inline.incorrect {
+            border-bottom-color: #f44336;
+            color: #f44336;
+        }
+        .input-box-inline:disabled {
+            background: transparent;
+            color: inherit;
+        }
+        .subject-list {
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+        }
+        .subject-list h4 {
+            margin-top: 0;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+        .subject-item {
+            margin-bottom: 8px;
+            padding-left: 10px;
+        }
+        .summary-box {
+            border: 1px solid #e0e0e0;
+            padding: 25px;
+            background-color: #f8f9fa;
+            line-height: 2.2;
+            border-radius: 6px;
+        }
+        .summary-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .explanation {
+            background-color: #fffde7;
+            border-left: 4px solid #fbc02d;
+            padding: 10px 15px;
+            margin-top: 5px;
+            font-size: 14px;
+            border-radius: 0 4px 4px 0;
+            display: none;
+        }
+        .explanation strong {
+            color: #333;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        .submit-btn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        ::selection {
+            background-color: #fff2a8;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="header-title">
+            IELTS Reading Practice
+            <div class="timer" id="timer">20:00</div>
+        </div>
+        <a href="https://t.me/dilshod_english" target="_blank" class="telegram-btn">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.11.03-1.84 1.18-5.18 3.44-.49.33-.93.5-1.33.49-.44-.01-1.28-.24-1.91-.45-.77-.25-1.38-.38-1.33-.8.03-.22.34-.44.93-.68 3.63-1.58 6.06-2.63 7.28-3.13 3.46-1.42 4.18-1.67 4.65-1.68.1 0 .32.02.46.12.12.09.15.22.16.32-.01.07-.01.19-.02.32z"/>
+            </svg>
+            Dilshod Ustoz
+        </a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        
+        <!-- Left Panel: Reading Passage -->
+        <div class="panel">
+            <div class="passage-title">On art and artists</div>
+            
+            <div class="paragraph">
+                <strong>A</strong> There really is no such thing as the "only artists". Once these were people who took coloured earth and roughed out the form of a bison on the wall of a cave; today some buy their paints, and others design posters for hoardings; they did and do many other things. There is no harm in calling all these activities art; as long as we keep in mind that such a word may mean very different things in different times and places, and as long as we realize that Art with a capital A has no existence: it has become something of an obsession. You may catch an artist by telling him that what he has just done may be quite good in its own way, only it is not "true art".
+            </div>
+
+            <div class="paragraph">
+                <strong>B</strong> Actually, I do not think that there are any wrong reasons for liking a statue or a picture. We may like a painting of a village scene because it reminds us of home. There is nothing wrong with that. All of us, when we see a painting, are bound to be reminded of a hundred-and-one things which influence our likes and dislikes. As long as these memories help us to enjoy what we see, we need not worry.
+            </div>
+
+            <div class="paragraph">
+                <strong>C</strong> It is only when some irrelevant memory makes us prejudiced, when we instinctively turn away from a magnificent picture of an alpine scene because we dislike climbing, that we should search our mind for the reason for the aversion which spoils a pleasure we might otherwise have had. There are wrong reasons for disliking a work of art.
+            </div>
+
+            <div class="paragraph">
+                <strong>D</strong> Most people like to see in pictures what they would also like to see in reality. This is quite a natural preference. We all like beauty in nature, and are grateful to the artists who have preserved it in their works. Nor would these artists themselves have rebuffed us for our taste. When the great Flemish painter Rubens made a drawing of his young son, he was surely proud of his good looks, and wanted us, too, to delight in the child's appearance. But this bias for the pretty and engaging subject is apt to become a stumbling block if it leads us to reject works which represent a less appealing subject.
+            </div>
+
+            <div class="paragraph">
+                <strong>E</strong> The great German painter Dürer certainly drew his mother with as much devotion and love as Rubens felt for his child. His truthful study of old age may give us a shock which makes us turn away from it — and yet, if we fight against that first reaction we may be richly rewarded. For Dürer’s drawing in its tremendous sincerity is a great work. The beauty of a picture does not lie in the beauty of its subject so much. The trouble about beauty is that tastes and standards of what is beautiful vary.
+            </div>
+
+            <div class="paragraph">
+                <strong>F</strong> What is true of beauty is also true of facial expression. In fact, it is often the expression of a figure in the painting which makes us like or loathe the work. Some people like an expression — perhaps of suffering or of compassion — which they can readily understand, and which therefore moves them profoundly. But we should not, for that reason, turn away from works whose expression is perhaps less easy to understand. Often we must first learn to know the artist’s methods of drawing to understand the feelings he or she wishes to portray, and may even come to prefer works of art in which expression is not obvious. Just as some of us would rather people use few words and gestures and leave something to be guessed, so some of us would rather look at paintings or sculptures which are open to interpretation.
+            </div>
+
+            <div class="paragraph">
+                <strong>G</strong> But here newcomers to art are often brought up against another difficulty. They want to admire the artist’s skill in representing the things they see. What they like best are paintings which “look real”. This is an important consideration, and the patience and skill which go into the faithful rendering of the visible world are indeed to be admired. Great artists of the past have devoted much labour to works in which every tiny detail is carefully recorded. Dürer’s watercolour study of a hare is one of the most famous examples of this loving patience. But who would say that Rembrandt’s drawing of an elephant is necessarily less good because it shows fewer details? Indeed Rembrandt gave us the feel of the elephant’s wrinkly skin with just a few lines of his chalk.
+            </div>
+
+            <div class="paragraph">
+                <strong>H</strong> If we find fault with the accuracy of a picture, we must remember that artists may have their reasons for changing the appearance of what they see. We should also never condemn a work for being “incorrectly drawn” unless we are quite sure that we are right and the painter is wrong. We have a curious habit of thinking that nature must always look like the pictures we are accustomed to. For generations, paintings showed horses galloping with outstretched legs in full flight through the air, and we came to believe that this was indeed how they moved. It was only the development of photography which proved that horses simply do not gallop in that way. And yet, when painters began to apply this new discovery, and painted horses moving as they actually do, everyone complained that their pictures looked wrong.
+            </div>
+        </div>
+
+        <!-- Right Panel: Questions -->
+        <div class="panel">
+            
+            <!-- Section 1 -->
+            <div class="question-block">
+                <h3>Questions 27–30</h3>
+                <p>Reading Passage 3 has eight paragraphs, <strong>A–H</strong>.</p>
+                <div class="question-instruction">Which paragraph contains the following information?<br>Write the correct letter, <strong>A–H</strong>, in boxes 27–30.</div>
+                
+                <div class="question-wrapper">
+                    <div class="question-item" id="item-q27">
+                        <div class="q-number">27</div>
+                        <div style="flex: 1;">a comparison between people’s preferences towards language and art</div>
+                        <div class="letter-buttons" id="btns-q27">
+                            <button class="l-btn" onclick="selectAnswer('q27', 'A')">A</button>
+                            <button class="l-btn" onclick="selectAnswer('q27', 'B')">B</button>
+                            <button class="l-btn" onclick="selectAnswer('q27', 'C')">C</button>
+                            <button class="l-btn" onclick="selectAnswer('q27', 'D')">D</button>
+                            <button class="l-btn" onclick="selectAnswer('q27', 'E')">E</button>
+                            <button class="l-btn" onclick="selectAnswer('q27', 'F')">F</button>
+                            <button class="l-btn" onclick="selectAnswer('q27', 'G')">G</button>
+                            <button class="l-btn" onclick="selectAnswer('q27', 'H')">H</button>
+                        </div>
+                    </div>
+                    <div class="explanation" id="exp-q27"></div>
+                </div>
+
+                <div class="question-wrapper">
+                    <div class="question-item" id="item-q28">
+                        <div class="q-number">28</div>
+                        <div style="flex: 1;">why people may have misunderstood how a certain animal moves</div>
+                        <div class="letter-buttons" id="btns-q28">
+                            <button class="l-btn" onclick="selectAnswer('q28', 'A')">A</button>
+                            <button class="l-btn" onclick="selectAnswer('q28', 'B')">B</button>
+                            <button class="l-btn" onclick="selectAnswer('q28', 'C')">C</button>
+                            <button class="l-btn" onclick="selectAnswer('q28', 'D')">D</button>
+                            <button class="l-btn" onclick="selectAnswer('q28', 'E')">E</button>
+                            <button class="l-btn" onclick="selectAnswer('q28', 'F')">F</button>
+                            <button class="l-btn" onclick="selectAnswer('q28', 'G')">G</button>
+                            <button class="l-btn" onclick="selectAnswer('q28', 'H')">H</button>
+                        </div>
+                    </div>
+                    <div class="explanation" id="exp-q28"></div>
+                </div>
+
+                <div class="question-wrapper">
+                    <div class="question-item" id="item-q29">
+                        <div class="q-number">29</div>
+                        <div style="flex: 1;">a contrast between the techniques used in two pictures</div>
+                        <div class="letter-buttons" id="btns-q29">
+                            <button class="l-btn" onclick="selectAnswer('q29', 'A')">A</button>
+                            <button class="l-btn" onclick="selectAnswer('q29', 'B')">B</button>
+                            <button class="l-btn" onclick="selectAnswer('q29', 'C')">C</button>
+                            <button class="l-btn" onclick="selectAnswer('q29', 'D')">D</button>
+                            <button class="l-btn" onclick="selectAnswer('q29', 'E')">E</button>
+                            <button class="l-btn" onclick="selectAnswer('q29', 'F')">F</button>
+                            <button class="l-btn" onclick="selectAnswer('q29', 'G')">G</button>
+                            <button class="l-btn" onclick="selectAnswer('q29', 'H')">H</button>
+                        </div>
+                    </div>
+                    <div class="explanation" id="exp-q29"></div>
+                </div>
+
+                <div class="question-wrapper">
+                    <div class="question-item" id="item-q30">
+                        <div class="q-number">30</div>
+                        <div style="flex: 1;">a possible negative effect of using the term “art”</div>
+                        <div class="letter-buttons" id="btns-q30">
+                            <button class="l-btn" onclick="selectAnswer('q30', 'A')">A</button>
+                            <button class="l-btn" onclick="selectAnswer('q30', 'B')">B</button>
+                            <button class="l-btn" onclick="selectAnswer('q30', 'C')">C</button>
+                            <button class="l-btn" onclick="selectAnswer('q30', 'D')">D</button>
+                            <button class="l-btn" onclick="selectAnswer('q30', 'E')">E</button>
+                            <button class="l-btn" onclick="selectAnswer('q30', 'F')">F</button>
+                            <button class="l-btn" onclick="selectAnswer('q30', 'G')">G</button>
+                            <button class="l-btn" onclick="selectAnswer('q30', 'H')">H</button>
+                        </div>
+                    </div>
+                    <div class="explanation" id="exp-q30"></div>
+                </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="question-block">
+                <h3>Questions 31–36</h3>
+                <p>Look at the following statements (Questions 31–36) and the list of subjects below.</p>
+                <div class="question-instruction">Match each statement with the correct subject, <strong>A–G</strong>.<br>Write the correct letter, <strong>A–G</strong>, in boxes 31–36.</div>
+                
+                <div class="subject-list">
+                    <h4>List of Subjects</h4>
+                    <div class="subject-item"><strong>A</strong> village scene</div>
+                    <div class="subject-item"><strong>B</strong> alpine scene</div>
+                    <div class="subject-item"><strong>C</strong> Rubens’s son</div>
+                    <div class="subject-item"><strong>D</strong> Dürer’s mother</div>
+                    <div class="subject-item"><strong>E</strong> hare</div>
+                    <div class="subject-item"><strong>F</strong> elephant</div>
+                    <div class="subject-item"><strong>G</strong> horses</div>
+                </div>
+
+                <div class="question-wrapper">
+                    <div class="question-item" id="item-q31">
+                        <div class="q-number">31</div>
+                        <div style="flex: 1;">The artist clearly hoped that we would share his admiration of this subject.</div>
+                        <div class="letter-buttons" id="btns-q31">
+                            <button class="l-btn" onclick="selectAnswer('q31', 'A')">A</button>
+                            <button class="l-btn" onclick="selectAnswer('q31', 'B')">B</button>
+                            <button class="l-btn" onclick="selectAnswer('q31', 'C')">C</button>
+                            <button class="l-btn" onclick="selectAnswer('q31', 'D')">D</button>
+                            <button class="l-btn" onclick="selectAnswer('q31', 'E')">E</button>
+                            <button class="l-btn" onclick="selectAnswer('q31', 'F')">F</button>
+                            <button class="l-btn" onclick="selectAnswer('q31', 'G')">G</button>
+                        </div>
+                    </div>
+                    <div class="explanation" id="exp-q31"></div>
+                </div>
+
+                <div class="question-wrapper">
+                    <div class="question-item" id="item-q32">
+                        <div class="q-number">32</div>
+                        <div style="flex: 1;">The artist aims to give a general impression of this subject rather than a detailed one.</div>
+                        <div class="letter-buttons" id="btns-q32">
+                            <button class="l-btn" onclick="selectAnswer('q32', 'A')">A</button>
+                            <button class="l-btn" onclick="selectAnswer('q32', 'B')">B</button>
+                            <button class="l-btn" onclick="selectAnswer('q32', 'C')">C</button>
+                            <button class="l-btn" onclick="selectAnswer('q32', 'D')">D</button>
+                            <button class="l-btn" onclick="selectAnswer('q32', 'E')">E</button>
+                            <button class="l-btn" onclick="selectAnswer('q32', 'F')">F</button>
+                            <button class="l-btn" onclick="selectAnswer('q32', 'G')">G</button>
+                        </div>
+                    </div>
+                    <div class="explanation" id="exp-q32"></div>
+                </div>
+
+                <div class="question-wrapper">
+                    <div class="question-item" id="item-q33">
+                        <div class="q-number">33</div>
+                        <div style="flex: 1;">Someone’s personal experience may make them consider a painting of this subject unpleasant.</div>
+                        <div class="letter-buttons" id="btns-q33">
+                            <button class="l-btn" onclick="selectAnswer('q33', 'A')">A</button>
+                            <button class="l-btn" onclick="selectAnswer('q33', 'B')">B</button>
+                            <button class="l-btn" onclick="selectAnswer('q33', 'C')">C</button>
+                            <button class="l-btn" onclick="selectAnswer('q33', 'D')">D</button>
+                            <button class="l-btn" onclick="selectAnswer('q33', 'E')">E</button>
+                            <button class="l-btn" onclick="selectAnswer('q33', 'F')">F</button>
+                            <button class="l-btn" onclick="selectAnswer('q33', 'G')">G</button>
+                        </div>
+                    </div>
+                    <div class="explanation" id="exp-q33"></div>
+                </div>
+
+                <div class="question-wrapper">
+                    <div class="question-item" id="item-q34">
+                        <div class="q-number">34</div>
+                        <div style="flex: 1;">The way in which this subject was once portrayed was factually wrong.</div>
+                        <div class="letter-buttons" id="btns-q34">
+                            <button class="l-btn" onclick="selectAnswer('q34', 'A')">A</button>
+                            <button class="l-btn" onclick="selectAnswer('q34', 'B')">B</button>
+                            <button class="l-btn" onclick="selectAnswer('q34', 'C')">C</button>
+                            <button class="l-btn" onclick="selectAnswer('q34', 'D')">D</button>
+                            <button class="l-btn" onclick="selectAnswer('q34', 'E')">E</button>
+                            <button class="l-btn" onclick="selectAnswer('q34', 'F')">F</button>
+                            <button class="l-btn" onclick="selectAnswer('q34', 'G')">G</button>
+                        </div>
+                    </div>
+                    <div class="explanation" id="exp-q34"></div>
+                </div>
+
+                <div class="question-wrapper">
+                    <div class="question-item" id="item-q35">
+                        <div class="q-number">35</div>
+                        <div style="flex: 1;">The painting is well known for the effort the artist put into creating a very accurate picture of this subject.</div>
+                        <div class="letter-buttons" id="btns-q35">
+                            <button class="l-btn" onclick="selectAnswer('q35', 'A')">A</button>
+                            <button class="l-btn" onclick="selectAnswer('q35', 'B')">B</button>
+                            <button class="l-btn" onclick="selectAnswer('q35', 'C')">C</button>
+                            <button class="l-btn" onclick="selectAnswer('q35', 'D')">D</button>
+                            <button class="l-btn" onclick="selectAnswer('q35', 'E')">E</button>
+                            <button class="l-btn" onclick="selectAnswer('q35', 'F')">F</button>
+                            <button class="l-btn" onclick="selectAnswer('q35', 'G')">G</button>
+                        </div>
+                    </div>
+                    <div class="explanation" id="exp-q35"></div>
+                </div>
+
+                <div class="question-wrapper">
+                    <div class="question-item" id="item-q36">
+                        <div class="q-number">36</div>
+                        <div style="flex: 1;">People may like a painting of this subject for a reason that is external to the painting.</div>
+                        <div class="letter-buttons" id="btns-q36">
+                            <button class="l-btn" onclick="selectAnswer('q36', 'A')">A</button>
+                            <button class="l-btn" onclick="selectAnswer('q36', 'B')">B</button>
+                            <button class="l-btn" onclick="selectAnswer('q36', 'C')">C</button>
+                            <button class="l-btn" onclick="selectAnswer('q36', 'D')">D</button>
+                            <button class="l-btn" onclick="selectAnswer('q36', 'E')">E</button>
+                            <button class="l-btn" onclick="selectAnswer('q36', 'F')">F</button>
+                            <button class="l-btn" onclick="selectAnswer('q36', 'G')">G</button>
+                        </div>
+                    </div>
+                    <div class="explanation" id="exp-q36"></div>
+                </div>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="question-block" style="border-bottom: none;">
+                <h3>Questions 37–40</h3>
+                <div class="question-instruction">Complete the summary below.<br>Choose <strong>ONE WORD ONLY</strong> from the passage for each answer.<br>Write your answers in boxes 37–40.</div>
+                
+                <div class="summary-box">
+                    <div class="summary-title">Beauty and expression</div>
+                    Differences in tastes and standards of beauty make it difficult to judge a painting. Dürer’s painting of his mother is considered significant because it is a <strong>37</strong> 
+                    <input type="text" id="inp-q37" class="input-box-inline"> representation of her age and situation. However, we may need to overcome an initial reaction of <strong>38</strong> 
+                    <input type="text" id="inp-q38" class="input-box-inline"> when we see it.<br><br>
+                    
+                    In order to judge the facial expressions of people portrayed in a painting, we need to become familiar with the methods that the artist has used when creating the painting. While some of us are affected by the portrayal of a facial expression that we can <strong>39</strong> 
+                    <input type="text" id="inp-q39" class="input-box-inline"> without much effort, others prefer expressions that require <strong>40</strong> 
+                    <input type="text" id="inp-q40" class="input-box-inline">.
+                </div>
+                
+                <div class="explanation" id="exp-q37"></div>
+                <div class="explanation" id="exp-q38"></div>
+                <div class="explanation" id="exp-q39"></div>
+                <div class="explanation" id="exp-q40"></div>
+            </div>
+
+            <button class="submit-btn" id="submitBtn" onclick="submitTest()">Submit Answers</button>
+        </div>
+    </div>
+
+    <script>
+        const answerKey = {
+            q27: 'F', q28: 'H', q29: 'G', q30: 'A',
+            q31: 'C', q32: 'F', q33: 'B', q34: 'G', q35: 'E', q36: 'A',
+            q37: 'truthful', q38: 'shock', q39: 'understand', q40: 'interpretation'
+        };
+
+        const explanations = {
+            q27: '<strong>Paragraph F:</strong> compares people who prefer others to "use few words and gestures" with people who prefer paintings that are open to interpretation — a direct comparison of preferences in language and in art.',
+            q28: '<strong>Paragraph H:</strong> for generations paintings showed horses galloping with outstretched legs, so people believed that was how horses moved. Photography later proved otherwise.',
+            q29: '<strong>Paragraph G:</strong> contrasts Dürer’s hare, with every tiny detail recorded, against Rembrandt’s elephant, which conveys the wrinkly skin with only a few chalk lines.',
+            q30: '<strong>Paragraph A:</strong> warns that “Art with a capital A” has become an obsession, and that an artist can be caught out by being told his work is not “true art” — the harmful side of the label.',
+            q31: '<strong>Rubens’s son (Paragraph D):</strong> Rubens was proud of the boy’s good looks and “wanted us, too, to delight in the child’s appearance”.',
+            q32: '<strong>Elephant (Paragraph G):</strong> Rembrandt showed fewer details but still gave the feel of the elephant’s skin with just a few lines — a general impression rather than a detailed record.',
+            q33: '<strong>Alpine scene (Paragraph C):</strong> someone who dislikes climbing may instinctively turn away from a magnificent alpine picture — a personal experience causing aversion.',
+            q34: '<strong>Horses (Paragraph H):</strong> photography proved horses do not gallop with outstretched legs as older paintings showed, so the earlier portrayal was factually wrong.',
+            q35: '<strong>Hare (Paragraph G):</strong> Dürer’s watercolour study of a hare is “one of the most famous examples of this loving patience”.',
+            q36: '<strong>Village scene (Paragraph B):</strong> we may like it because it reminds us of home — a reason that comes from outside the painting itself.',
+            q37: '<strong>Paragraph E:</strong> "His truthful study of old age…". The summary’s "representation of her age and situation" matches "study of old age".',
+            q38: '<strong>Paragraph E:</strong> the drawing "may give us a shock which makes us turn away from it" — the initial reaction we must overcome.',
+            q39: '<strong>Paragraph F:</strong> some people like an expression "which they can readily understand"; "readily" = without much effort.',
+            q40: '<strong>Paragraph F:</strong> some of us would rather look at works "which are open to interpretation".'
+        };
+
+        const userAnswers = {};
+
+        // Timer Logic
+        let timeLeft = 20 * 60; // 20 minutes
+        const timerEl = document.getElementById('timer');
+        let timerInterval;
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    timerEl.innerText = "00:00";
+                    submitTest();
+                    return;
+                }
+                timeLeft--;
+                let m = Math.floor(timeLeft / 60);
+                let s = timeLeft % 60;
+                timerEl.innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+                
+                if (timeLeft <= 60) {
+                    timerEl.classList.add('warning');
+                }
+            }, 1000);
+        }
+
+        startTimer();
+
+        // Selection Logic
+        function selectAnswer(qId, letter) {
+            userAnswers[qId] = letter;
+            
+            // Highlight selected button
+            const container = document.getElementById('btns-' + qId);
+            const buttons = container.getElementsByTagName('button');
+            for (let btn of buttons) {
+                btn.classList.remove('selected');
+                if (btn.innerText === letter) {
+                    btn.classList.add('selected');
+                }
+            }
+        }
+
+        // Submit Logic
+        function submitTest() {
+            clearInterval(timerInterval);
+            document.getElementById('submitBtn').disabled = true;
+            document.getElementById('submitBtn').innerText = "Test Submitted";
+
+            // Disable all buttons
+            const allBtns = document.getElementsByClassName('l-btn');
+            for (let btn of allBtns) {
+                btn.disabled = true;
+            }
+
+            let score = 0;
+
+            // Check Multiple Choice (Matching)
+            for (let i = 27; i <= 36; i++) {
+                const qId = 'q' + i;
+                const itemDiv = document.getElementById('item-' + qId);
+                const expDiv = document.getElementById('exp-' + qId);
+                
+                const correctAns = answerKey[qId];
+                const userAns = userAnswers[qId];
+
+                if (userAns === correctAns) {
+                    itemDiv.classList.add('correct');
+                    score++;
+                } else {
+                    itemDiv.classList.add('incorrect');
+                }
+
+                // Show Explanation
+                expDiv.style.display = 'block';
+                expDiv.innerHTML = `<strong>Answer: ${correctAns}</strong><br>${explanations[qId]}`;
+            }
+
+            // Check Fill in the blanks
+            for (let i = 37; i <= 40; i++) {
+                const qId = 'q' + i;
+                const inp = document.getElementById('inp-' + qId);
+                const expDiv = document.getElementById('exp-' + qId);
+                
+                const correctAns = answerKey[qId].toLowerCase();
+                const userAns = inp.value.trim().toLowerCase();
+
+                inp.disabled = true;
+
+                if (userAns === correctAns) {
+                    inp.classList.add('correct');
+                    score++;
+                } else {
+                    inp.classList.add('incorrect');
+                }
+
+                // Show Explanation
+                expDiv.style.display = 'block';
+                expDiv.innerHTML = `<strong>Answer: ${answerKey[qId]}</strong><br>${explanations[qId]}`;
+            }
+
+            alert(`Test completed! Your score is ${score} out of 14.`);
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
