@@ -428,7 +428,7 @@ export async function generateQuiz() {
           "question": "Savol matni (inglizcha, 300 belgidan kam)",
           "options": ["Variant A", "Variant B", "Variant C", "Variant D"],
           "correct_index": 0,
-          "explanation_uz": "To'g'ri javob tushuntirishi (o'zbekcha, 200 belgidan kam)"
+          "explanation_uz": "Qisqa tushuntirish (MAXSIMUM 100 TA HARF yoki 15 TA SO'Z bo'lishi shart! Telegram cheklovi tufayli)"
         }`
         + (getHistory('generateQuiz').length > 0 ? `\n\nMUHIM QOIDA: Quyidagi mavzular kanalimizda avval chiqqan, shuning uchun bularni UMUMAN QAYTA ISHLATMANG (har doim yangisini toping): \n${getHistory('generateQuiz').join(', ')}\n` : ''),
       config: {
@@ -734,7 +734,7 @@ export async function generateGrammarQuiz() {
           "question": "Qaysi gapda xato bor? Yoki qaysi biri to'g'ri? (inglizcha)",
           "options": ["Variant A", "Variant B", "Variant C", "Variant D"],
           "correct_index": 0,
-          "explanation_uz": "Nima uchun bu javob to'g'ri ekanligi tushuntirishi (o'zbekcha)"
+          "explanation_uz": "Qisqa tushuntirish (MAXSIMUM 100 TA HARF yoki 15 TA SO'Z bo'lishi shart! Chunki Telegram buni to'liq ko'rsatmaydi)"
         }`
         + (getHistory('generateGrammarQuiz').length > 0 ? `\n\nMUHIM QOIDA: Quyidagi mavzular kanalimizda avval chiqqan, shuning uchun bularni UMUMAN QAYTA ISHLATMANG: \n${getHistory('generateGrammarQuiz').join(', ')}\n` : ''),
       config: {
