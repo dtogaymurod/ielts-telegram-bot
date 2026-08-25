@@ -7,8 +7,6 @@ on:
 
     # Tushlik post — 13:00 Toshkent vaqti (08:00 UTC)
     - cron: '0 8 * * *'
-    # Magic 3 — 18:00 Toshkent vaqti (13:00 UTC)
-    - cron: '0 13 * * *'
 
 
 
@@ -82,8 +80,6 @@ jobs:
             echo "slot=recentspeaking" >> $GITHUB_OUTPUT
           elif [ "$HOUR" = "08" ]; then
             echo "slot=afternoon" >> $GITHUB_OUTPUT
-          elif [ "$HOUR" = "13" ]; then
-            echo "slot=magic3" >> $GITHUB_OUTPUT
 
           else
             echo "slot=" >> $GITHUB_OUTPUT
