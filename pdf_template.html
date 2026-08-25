@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IELTS Reading Passage 3 - On Art and Artists</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+        @page {
+            size: A4;
+            margin: 12mm 15mm 12mm 15mm;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+            color: #1e293b;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            font-size: 13px;
+            line-height: 1.55;
+        }
+
+        .brand-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #0284c7;
+            margin-bottom: 14px;
+        }
+
+        .brand-title-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-badge {
+            background: linear-gradient(135deg, #0284c7, #0369a1);
+            color: white;
+            font-weight: 800;
+            font-size: 12px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .brand-name {
+            font-size: 16px;
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -0.3px;
+        }
+
+        .brand-name span {
+            color: #0284c7;
+        }
+
+        .brand-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background-color: #f0f9ff;
+            border: 1px solid #bae6fd;
+            color: #0284c7;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
+        .brand-link svg {
+            width: 13px;
+            height: 13px;
+            fill: #0284c7;
+        }
+
+        .page {
+            page-break-after: always;
+            height: 98vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .page:last-child {
+            page-break-after: avoid;
+        }
+
+        .page-content {
+            flex: 1;
+        }
+
+        .passage-header {
+            text-align: center;
+            margin-bottom: 14px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background-color: #f1f5f9;
+            color: #475569;
+            font-size: 10.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: 4px;
+        }
+
+        .passage-main-title {
+            font-family: 'Lora', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 2px 0 4px 0;
+        }
+
+        .passage-instruction {
+            font-size: 11.5px;
+            color: #64748b;
+            font-style: italic;
+        }
+
+        .passage-body {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 13.5px;
+            line-height: 1.62;
+            color: #1e293b;
+            text-align: justify;
+        }
+
+        .paragraph-block {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .p-letter {
+            font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+            font-weight: 800;
+            font-size: 12.5px;
+            background-color: #e0f2fe;
+            color: #0369a1;
+            width: 24px;
+            height: 24px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .p-text {
+            flex: 1;
+        }
+
+        .section-title-box {
+            background: linear-gradient(to right, #f8fafc, #f1f5f9);
+            border-left: 3.5px solid #0284c7;
+            padding: 6px 12px;
+            border-radius: 0 5px 5px 0;
+            margin: 12px 0 8px 0;
+        }
+
+        .section-title-box h3 {
+            margin: 0;
+            font-size: 14px;
+            color: #0f172a;
+            font-weight: 700;
+        }
+
+        .instruction-text {
+            font-size: 11.5px;
+            color: #475569;
+            margin: 2px 0 0 0;
+        }
+
+        .q-item {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            padding: 5px 8px;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .q-num {
+            background-color: #0f172a;
+            color: white;
+            font-weight: 700;
+            font-size: 10.5px;
+            padding: 1px 6px;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+
+        .q-text {
+            flex: 1;
+            font-size: 12.5px;
+            color: #1e293b;
+        }
+
+        .q-answer-space {
+            border-bottom: 1.5px solid #0284c7;
+            width: 32px;
+            display: inline-block;
+            margin-left: 6px;
+        }
+
+        .subjects-box {
+            background-color: #f8fafc;
+            border: 1.5px dashed #cbd5e1;
+            border-radius: 6px;
+            padding: 8px 12px;
+            margin: 8px 0 10px 0;
+        }
+
+        .subjects-header {
+            font-weight: 700;
+            font-size: 11.5px;
+            color: #334155;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
+            font-size: 12px;
+        }
+
+        .subject-chip {
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        .subject-chip strong {
+            color: #0284c7;
+            margin-right: 3px;
+        }
+
+        .summary-card {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 10px 14px;
+            margin: 8px 0;
+            line-height: 1.85;
+            font-family: 'Lora', serif;
+            font-size: 12.5px;
+        }
+
+        .summary-card-title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 13.5px;
+            font-weight: 700;
+            text-align: center;
+            color: #0f172a;
+            margin-bottom: 6px;
+        }
+
+        .blank-line {
+            display: inline-block;
+            border-bottom: 1.5px solid #0284c7;
+            width: 80px;
+            text-align: center;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            color: #0284c7;
+            font-size: 11px;
+            margin: 0 3px;
+        }
+
+        .key-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 6px;
+            margin: 10px 0 14px 0;
+        }
+
+        .key-card {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .key-num {
+            font-size: 10px;
+            font-weight: 700;
+            color: #64748b;
+        }
+
+        .key-val {
+            font-size: 13px;
+            font-weight: 800;
+            color: #0284c7;
+        }
+
+        .exp-item {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-left: 3px solid #0284c7;
+            border-radius: 5px;
+            padding: 7px 10px;
+            margin-bottom: 7px;
+            font-size: 11.5px;
+            line-height: 1.45;
+        }
+
+        .exp-head {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 2px;
+        }
+
+        .exp-num-badge {
+            background-color: #0284c7;
+            color: white;
+            font-weight: 700;
+            font-size: 10px;
+            padding: 1px 5px;
+            border-radius: 3px;
+        }
+
+        .exp-target {
+            font-weight: 700;
+            color: #0f172a;
+            font-size: 12px;
+        }
+
+        .exp-body {
+            color: #334155;
+        }
+
+        .pdf-footer {
+            padding-top: 6px;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 10.5px;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PAGE 1: PASSAGE (PART 1: Paragraphs A-D) -->
+    <div class="page">
+        <div class="brand-header">
+            <div class="brand-title-wrap">
+                <span class="brand-badge">IELTS ACADEMIC</span>
+                <span class="brand-name">DILSHOD <span>ENGLISH</span></span>
+            </div>
+            <a href="https://t.me/dilshod_english" class="brand-link">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.11.03-1.84 1.18-5.18 3.44-.49.33-.93.5-1.33.49-.44-.01-1.28-.24-1.91-.45-.77-.25-1.38-.38-1.33-.8.03-.22.34-.44.93-.68 3.63-1.58 6.06-2.63 7.28-3.13 3.46-1.42 4.18-1.67 4.65-1.68.1 0 .32.02.46.12.12.09.15.22.16.32-.01.07-.01.19-.02.32z"/></svg>
+                t.me/dilshod_english
+            </a>
+        </div>
+
+        <div class="page-content">
+            <div class="passage-header">
+                <span class="section-tag">Reading Practice • Passage 3</span>
+                <h1 class="passage-main-title">On art and artists</h1>
+                <div class="passage-instruction">You should spend about 20 minutes on Questions 27–40, which are based on Reading Passage 3 below.</div>
+            </div>
+
+            <div class="passage-body">
+                <div class="paragraph-block">
+                    <div class="p-letter">A</div>
+                    <div class="p-text">There really is no such thing as the “only artists”. Once these were people who took coloured earth and roughed out the form of a bison on the wall of a cave; today some buy their paints, and others design posters for hoardings; they did and do many other things. There is no harm in calling all these activities art; as long as we keep in mind that such a word may mean very different things in different times and places, and as long as we realize that Art with a capital A has no existence: it has become something of an obsession. You may catch an artist by telling him that what he has just done may be quite good in its own way, only it is not “true art”.</div>
+                </div>
+
+                <div class="paragraph-block">
+                    <div class="p-letter">B</div>
+                    <div class="p-text">Actually, I do not think that there are any wrong reasons for liking a statue or a picture. We may like a painting of a village scene because it reminds us of home. There is nothing wrong with that. All of us, when we see a painting, are bound to be reminded of a hundred-and-one things which influence our likes and dislikes. As long as these memories help us to enjoy what we see, we need not worry.</div>
+                </div>
+
+                <div class="paragraph-block">
+                    <div class="p-letter">C</div>
+                    <div class="p-text">It is only when some irrelevant memory makes us prejudiced, when we instinctively turn away from a magnificent picture of an alpine scene because we dislike climbing, that we should search our mind for the reason for the aversion which spoils a pleasure we might otherwise have had. There are wrong reasons for disliking a work of art.</div>
+                </div>
+
+                <div class="paragraph-block">
+                    <div class="p-letter">D</div>
+                    <div class="p-text">Most people like to see in pictures what they would also like to see in reality. This is quite a natural preference. We all like beauty in nature, and are grateful to the artists who have preserved it in their works. Nor would these artists themselves have rebuffed us for our taste. When the great Flemish painter Rubens made a drawing of his young son, he was surely proud of his good looks, and wanted us, too, to delight in the child’s appearance. But this bias for the pretty and engaging subject is apt to become a stumbling block if it leads us to reject works which represent a less appealing subject.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pdf-footer">
+            <span>Telegram: @dilshod_english • Dilshod Ustoz</span>
+            <span>Passage 3 • Page 1 of 4</span>
+        </div>
+    </div>
+
+    <!-- PAGE 2: PASSAGE (PART 2: Paragraphs E-H) -->
+    <div class="page">
+        <div class="brand-header">
+            <div class="brand-title-wrap">
+                <span class="brand-badge">IELTS ACADEMIC</span>
+                <span class="brand-name">DILSHOD <span>ENGLISH</span></span>
+            </div>
+            <a href="https://t.me/dilshod_english" class="brand-link">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.11.03-1.84 1.18-5.18 3.44-.49.33-.93.5-1.33.49-.44-.01-1.28-.24-1.91-.45-.77-.25-1.38-.38-1.33-.8.03-.22.34-.44.93-.68 3.63-1.58 6.06-2.63 7.28-3.13 3.46-1.42 4.18-1.67 4.65-1.68.1 0 .32.02.46.12.12.09.15.22.16.32-.01.07-.01.19-.02.32z"/></svg>
+                t.me/dilshod_english
+            </a>
+        </div>
+
+        <div class="page-content">
+            <div class="passage-body">
+                <div class="paragraph-block">
+                    <div class="p-letter">E</div>
+                    <div class="p-text">The great German painter Dürer certainly drew his mother with as much devotion and love as Rubens felt for his child. His truthful study of old age may give us a shock which makes us turn away from it — and yet, if we fight against that first reaction we may be richly rewarded. For Dürer’s drawing in its tremendous sincerity is a great work. The beauty of a picture does not lie in the beauty of its subject so much. The trouble about beauty is that tastes and standards of what is beautiful vary.</div>
+                </div>
+
+                <div class="paragraph-block">
+                    <div class="p-letter">F</div>
+                    <div class="p-text">What is true of beauty is also true of facial expression. In fact, it is often the expression of a figure in the painting which makes us like or loathe the work. Some people like an expression — perhaps of suffering or of compassion — which they can readily understand, and which therefore moves them profoundly. But we should not, for that reason, turn away from works whose expression is perhaps less easy to understand. Often we must first learn to know the artist’s methods of drawing to understand the feelings he or she wishes to portray, and may even come to prefer works of art in which expression is not obvious. Just as some of us would rather people use few words and gestures and leave something to be guessed, so some of us would rather look at paintings or sculptures which are open to interpretation.</div>
+                </div>
+
+                <div class="paragraph-block">
+                    <div class="p-letter">G</div>
+                    <div class="p-text">But here newcomers to art are often brought up against another difficulty. They want to admire the artist’s skill in representing the things they see. What they like best are paintings which “look real”. This is an important consideration, and the patience and skill which go into the faithful rendering of the visible world are indeed to be admired. Great artists of the past have devoted much labour to works in which every tiny detail is carefully recorded. Dürer’s watercolour study of a hare is one of the most famous examples of this loving patience. But who would say that Rembrandt’s drawing of an elephant is necessarily less good because it shows fewer details? Indeed Rembrandt gave us the feel of the elephant’s wrinkly skin with just a few lines of his chalk.</div>
+                </div>
+
+                <div class="paragraph-block">
+                    <div class="p-letter">H</div>
+                    <div class="p-text">If we find fault with the accuracy of a picture, we must remember that artists may have their reasons for changing the appearance of what they see. We should also never condemn a work for being “incorrectly drawn” unless we are quite sure that we are right and the painter is wrong. We have a curious habit of thinking that nature must always look like the pictures we are accustomed to. For generations, paintings showed horses galloping with outstretched legs in full flight through the air, and we came to believe that this was indeed how they moved. It was only the development of photography which proved that horses simply do not gallop in that way. And yet, when painters began to apply this new discovery, and painted horses moving as they actually do, everyone complained that their pictures looked wrong.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pdf-footer">
+            <span>Telegram: @dilshod_english • Dilshod Ustoz</span>
+            <span>Passage 3 • Page 2 of 4</span>
+        </div>
+    </div>
+
+    <!-- PAGE 3: ALL QUESTIONS (27-40) -->
+    <div class="page">
+        <div class="brand-header">
+            <div class="brand-title-wrap">
+                <span class="brand-badge">QUESTIONS 27–40</span>
+                <span class="brand-name">DILSHOD <span>ENGLISH</span></span>
+            </div>
+            <a href="https://t.me/dilshod_english" class="brand-link">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.11.03-1.84 1.18-5.18 3.44-.49.33-.93.5-1.33.49-.44-.01-1.28-.24-1.91-.45-.77-.25-1.38-.38-1.33-.8.03-.22.34-.44.93-.68 3.63-1.58 6.06-2.63 7.28-3.13 3.46-1.42 4.18-1.67 4.65-1.68.1 0 .32.02.46.12.12.09.15.22.16.32-.01.07-.01.19-.02.32z"/></svg>
+                t.me/dilshod_english
+            </a>
+        </div>
+
+        <div class="page-content">
+            <!-- Questions 27-30 -->
+            <div class="section-title-box">
+                <h3>Questions 27–30</h3>
+                <div class="instruction-text">Reading Passage 3 has eight paragraphs, <strong>A–H</strong>. Which paragraph contains the following information?<br>Write the correct letter, <strong>A–H</strong>, in boxes 27–30 on your answer sheet.</div>
+            </div>
+
+            <div class="q-item"><span class="q-num">27</span><span class="q-text">a comparison between people’s preferences towards language and art</span><span class="q-answer-space"></span></div>
+            <div class="q-item"><span class="q-num">28</span><span class="q-text">why people may have misunderstood how a certain animal moves</span><span class="q-answer-space"></span></div>
+            <div class="q-item"><span class="q-num">29</span><span class="q-text">a contrast between the techniques used in two pictures</span><span class="q-answer-space"></span></div>
+            <div class="q-item"><span class="q-num">30</span><span class="q-text">a possible negative effect of using the term “art”</span><span class="q-answer-space"></span></div>
+
+            <!-- Questions 31-36 -->
+            <div class="section-title-box">
+                <h3>Questions 31–36</h3>
+                <div class="instruction-text">Match each statement with the correct subject, <strong>A–G</strong>. Write the correct letter in boxes 31–36.</div>
+            </div>
+
+            <div class="subjects-box">
+                <div class="subjects-header">List of Subjects</div>
+                <div class="subjects-grid">
+                    <div class="subject-chip"><strong>A</strong> village scene</div>
+                    <div class="subject-chip"><strong>B</strong> alpine scene</div>
+                    <div class="subject-chip"><strong>C</strong> Rubens’s son</div>
+                    <div class="subject-chip"><strong>D</strong> Dürer’s mother</div>
+                    <div class="subject-chip"><strong>E</strong> hare</div>
+                    <div class="subject-chip"><strong>F</strong> elephant</div>
+                    <div class="subject-chip"><strong>G</strong> horses</div>
+                </div>
+            </div>
+
+            <div class="q-item"><span class="q-num">31</span><span class="q-text">The artist clearly hoped that we would share his admiration of this subject.</span><span class="q-answer-space"></span></div>
+            <div class="q-item"><span class="q-num">32</span><span class="q-text">The artist aims to give a general impression of this subject rather than a detailed one.</span><span class="q-answer-space"></span></div>
+            <div class="q-item"><span class="q-num">33</span><span class="q-text">Someone’s personal experience may make them consider a painting of this subject unpleasant.</span><span class="q-answer-space"></span></div>
+            <div class="q-item"><span class="q-num">34</span><span class="q-text">The way in which this subject was once portrayed was factually wrong.</span><span class="q-answer-space"></span></div>
+            <div class="q-item"><span class="q-num">35</span><span class="q-text">The painting is well known for the effort the artist put into creating a very accurate picture.</span><span class="q-answer-space"></span></div>
+            <div class="q-item"><span class="q-num">36</span><span class="q-text">People may like a painting of this subject for a reason that is external to the painting.</span><span class="q-answer-space"></span></div>
+
+            <!-- Questions 37-40 -->
+            <div class="section-title-box">
+                <h3>Questions 37–40</h3>
+                <div class="instruction-text">Complete the summary below. Choose <strong>ONE WORD ONLY</strong> from the passage.</div>
+            </div>
+
+            <div class="summary-card">
+                <div class="summary-card-title">Beauty and expression</div>
+                Differences in tastes and standards of beauty make it difficult to judge a painting. Dürer’s painting of his mother is considered significant because it is a <span class="blank-line">[ 37 ]</span> representation of her age and situation. However, we may need to overcome an initial reaction of <span class="blank-line">[ 38 ]</span> when we see it. In order to judge the facial expressions of people portrayed in a painting, we need to become familiar with the methods that the artist has used when creating the painting. While some of us are affected by the portrayal of a facial expression that we can <span class="blank-line">[ 39 ]</span> without much effort, others prefer expressions that require <span class="blank-line">[ 40 ]</span>.
+            </div>
+        </div>
+
+        <div class="pdf-footer">
+            <span>Telegram: @dilshod_english • Dilshod Ustoz</span>
+            <span>Questions • Page 3 of 4</span>
+        </div>
+    </div>
+
+    <!-- PAGE 4: ANSWER KEY & DETAILED EXPLANATIONS -->
+    <div class="page">
+        <div class="brand-header">
+            <div class="brand-title-wrap">
+                <span class="brand-badge">ANSWER KEY & EXPLANATIONS</span>
+                <span class="brand-name">DILSHOD <span>ENGLISH</span></span>
+            </div>
+            <a href="https://t.me/dilshod_english" class="brand-link">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.11.03-1.84 1.18-5.18 3.44-.49.33-.93.5-1.33.49-.44-.01-1.28-.24-1.91-.45-.77-.25-1.38-.38-1.33-.8.03-.22.34-.44.93-.68 3.63-1.58 6.06-2.63 7.28-3.13 3.46-1.42 4.18-1.67 4.65-1.68.1 0 .32.02.46.12.12.09.15.22.16.32-.01.07-.01.19-.02.32z"/></svg>
+                t.me/dilshod_english
+            </a>
+        </div>
+
+        <div class="page-content">
+            <div class="section-title-box">
+                <h3>Official Answer Key (27–40)</h3>
+            </div>
+
+            <div class="key-grid">
+                <div class="key-card"><div class="key-num">Q27</div><div class="key-val">F</div></div>
+                <div class="key-card"><div class="key-num">Q28</div><div class="key-val">H</div></div>
+                <div class="key-card"><div class="key-num">Q29</div><div class="key-val">G</div></div>
+                <div class="key-card"><div class="key-num">Q30</div><div class="key-val">A</div></div>
+                <div class="key-card"><div class="key-num">Q31</div><div class="key-val">C</div></div>
+                <div class="key-card"><div class="key-num">Q32</div><div class="key-val">F</div></div>
+                <div class="key-card"><div class="key-num">Q33</div><div class="key-val">B</div></div>
+                <div class="key-card"><div class="key-num">Q34</div><div class="key-val">G</div></div>
+                <div class="key-card"><div class="key-num">Q35</div><div class="key-val">E</div></div>
+                <div class="key-card"><div class="key-num">Q36</div><div class="key-val">A</div></div>
+                <div class="key-card" style="grid-column: span 2;"><div class="key-num">Q37</div><div class="key-val">truthful</div></div>
+                <div class="key-card" style="grid-column: span 2;"><div class="key-num">Q38</div><div class="key-val">shock</div></div>
+                <div class="key-card" style="grid-column: span 2;"><div class="key-num">Q39</div><div class="key-val">understand</div></div>
+                <div class="key-card" style="grid-column: span 2;"><div class="key-num">Q40</div><div class="key-val">interpretation</div></div>
+            </div>
+
+            <div class="section-title-box">
+                <h3>Detailed Explanations & Evidence (Tahlil va Izohlar)</h3>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-head"><span class="exp-num-badge">27</span><span class="exp-target">F (Paragraph F)</span></div>
+                <div class="exp-body">Odamlarning tilda kam so'z ishlatishni xohlashi bilan san'atda ochiq talqin qilinadigan asarlarni yoqtirishi taqqoslangan: <em>“Just as some of us would rather people use few words... so some of us would rather look at paintings open to interpretation.”</em></div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-head"><span class="exp-num-badge">28</span><span class="exp-target">H (Paragraph H)</span></div>
+                <div class="exp-body">Otlarning chopishi qadimiy rasmlarda noto'g'ri (oyoqlarini havoda cho'zgan holda) chizilgani va fotosurat orqali bu noto'g'ri tushuncha ekanligi isbotlangani keltirilgan.</div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-head"><span class="exp-num-badge">29</span><span class="exp-target">G (Paragraph G)</span></div>
+                <div class="exp-body">Dürerning quyon rasmidagi mayda detallar va Rembrandtning fil rasmidagi bir nechta chiziq bilan ifodalash usullari o'zaro kontrast qilingan.</div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-head"><span class="exp-num-badge">30</span><span class="exp-target">A (Paragraph A)</span></div>
+                <div class="exp-body">"Katta A bilan San'at" (Art with a capital A) atamasining salbiy ta'siri (rassomlarning ishini "bu haqiqiy san'at emas" deb kamsitish) haqida aytilgan.</div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-head"><span class="exp-num-badge">31-36</span><span class="exp-target">Matching Features (Subjects)</span></div>
+                <div class="exp-body">
+                    • <strong>31 (C - Rubens’s son):</strong> Rubens o'g'lining chiroyli ko'rinishidan boshqalar ham zavqlanishini xohlagan (Par. D).<br>
+                    • <strong>32 (F - elephant):</strong> Rembrandt fil terisini ozgina chiziqlar bilan umumiy taassurot qilib bergan (Par. G).<br>
+                    • <strong>33 (B - alpine scene):</strong> Tog'ga chiqishni yoqtirmaydigan inson xotirasi tufayli alp manzarasi rasmini yoqtirmasligi mumkin (Par. C).<br>
+                    • <strong>34 (G - horses):</strong> Otlarning havoda cho'zilib chopishi faktik jihatdan noto'g'ri bo'lgan (Par. H).<br>
+                    • <strong>35 (E - hare):</strong> Dürerning quyon rasmi o'ta aniq va mashaqqatli mehnati bilan mashhur (Par. G).<br>
+                    • <strong>36 (A - village scene):</strong> Qishloq manzarasi rasmini undan tashqaridagi sabab (uyni eslatishi) uchun yoqtiramiz (Par. B).
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-head"><span class="exp-num-badge">37-40</span><span class="exp-target">Summary Completion (ONE WORD ONLY)</span></div>
+                <div class="exp-body">
+                    • <strong>37 (truthful):</strong> Paragraf E: <em>“His truthful study of old age...”</em> — onasining holati haqqoniy tasvirlangan.<br>
+                    • <strong>38 (shock):</strong> Paragraf E: <em>“...give us a shock which makes us turn away from it...”</em> — dastlabki his.<br>
+                    • <strong>39 (understand):</strong> Paragraf F: <em>“...which they can readily understand...”</em> (readily = without much effort).<br>
+                    • <strong>40 (interpretation):</strong> Paragraf F: <em>“...which are open to interpretation.”</em>
+                </div>
+            </div>
+        </div>
+
+        <div class="pdf-footer">
+            <span>Telegram: @dilshod_english • Dilshod Ustoz</span>
+            <span>Answer Key & Explanations • Page 4 of 4</span>
+        </div>
+    </div>
+
+</body>
+</html>
