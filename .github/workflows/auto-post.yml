@@ -2,31 +2,31 @@ name: IELTS Channel Auto-Post
 
 on:
   schedule:
-    # Speaking post — 10:00 Toshkent vaqti (05:00 UTC)
-    - cron: '0 5 * * *'
-
-    # Tushlik post — 13:00 Toshkent vaqti (08:00 UTC)
-    - cron: '0 8 * * *'
-
-
+    - cron: '0 4 * * *' # 09:00 Tashkent
+    - cron: '0 6 * * *' # 11:00 Tashkent
+    - cron: '0 8 * * *' # 13:00 Tashkent
+    - cron: '0 10 * * *' # 15:00 Tashkent
+    - cron: '0 12 * * *' # 17:00 Tashkent
+    - cron: '0 14 * * *' # 19:00 Tashkent
+    - cron: '0 16 * * *' # 21:00 Tashkent
 
   # Qo'lda ishga tushirish imkoniyati (testing uchun)
   workflow_dispatch:
     inputs:
       time_slot:
-        description: 'Time slot to simulate'
+        description: 'Time slot to simulate (mapped directly to content)'
         required: false
         default: ''
         type: choice
         options:
           - ''
-          - morning
-          - recentspeaking
-          - afternoon
-          - microreading
-          - magic3
-          - evening
-          - recentwriting
+          - recent-speaking
+          - collocation
+          - speaking
+          - idiom
+          - reading-listening
+          - grammar-quiz
+          - podcast
       content_type:
         description: 'Force content type'
         required: false
@@ -76,11 +76,20 @@ jobs:
           
           # Auto-detect from cron schedule (UTC time)
           HOUR=$(date -u +%H)
-          if [ "$HOUR" = "05" ]; then
-            echo "slot=recentspeaking" >> $GITHUB_OUTPUT
+          if [ "$HOUR" = "04" ]; then
+            echo "slot=recent-speaking" >> $GITHUB_OUTPUT
+          elif [ "$HOUR" = "06" ]; then
+            echo "slot=collocation" >> $GITHUB_OUTPUT
           elif [ "$HOUR" = "08" ]; then
-            echo "slot=afternoon" >> $GITHUB_OUTPUT
-
+            echo "slot=speaking" >> $GITHUB_OUTPUT
+          elif [ "$HOUR" = "10" ]; then
+            echo "slot=idiom" >> $GITHUB_OUTPUT
+          elif [ "$HOUR" = "12" ]; then
+            echo "slot=reading-listening" >> $GITHUB_OUTPUT
+          elif [ "$HOUR" = "14" ]; then
+            echo "slot=grammar-quiz" >> $GITHUB_OUTPUT
+          elif [ "$HOUR" = "16" ]; then
+            echo "slot=podcast" >> $GITHUB_OUTPUT
           else
             echo "slot=" >> $GITHUB_OUTPUT
           fi

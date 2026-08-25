@@ -1,6 +1,6 @@
 /**
  * Content Selector
- * Determines which content type to post based on the day and time slot
+ * Determines which content type to post based on the time slot
  */
 
 import { readFileSync, writeFileSync } from 'fs';
@@ -10,62 +10,40 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const CONTENT_DIR = join(__dirname, '..', 'content');
 
-// Weekly schedule: maps [dayOfWeek][timeSlot] to content type
-// dayOfWeek: 0=Sunday, 1=Monday, ..., 6=Saturday
-const SCHEDULE = {
-  // Sunday
-  0: { recentspeaking: 'collocation', afternoon: 'podcast' },
-  // Monday
-  1: { recentspeaking: 'recent-speaking', afternoon: 'speaking' },
-  // Tuesday
-  2: { recentspeaking: 'idiom', afternoon: 'reading-listening' },
-  // Wednesday
-  3: { recentspeaking: 'recent-speaking', afternoon: 'grammar-quiz' },
-  // Thursday
-  4: { recentspeaking: 'idiom', afternoon: 'speaking' },
-  // Friday
-  5: { recentspeaking: 'recent-speaking', afternoon: 'reading-listening' },
-  // Saturday
-  6: { recentspeaking: 'collocation', afternoon: 'grammar-quiz' },
-};
-
 /**
- * Get the current time slot based on Tashkent time
- * @returns {'recentspeaking' | 'afternoon'}
+ * Get the current time slot based on Tashkent time for logging
+ * @returns {string} Time string
  */
 export function getTimeSlot() {
-  // Check if TIME_SLOT is set by GitHub Actions
-  const envSlot = process.env.TIME_SLOT;
-  if (envSlot && ['recentspeaking', 'afternoon'].includes(envSlot)) {
-    return envSlot;
-  }
-
-  // Auto-detect based on Tashkent time (UTC+5)
   const now = new Date();
   const tashkentHour = (now.getUTCHours() + 5) % 24;
-
-  if (tashkentHour >= 9 && tashkentHour < 12) return 'recentspeaking';
-  if (tashkentHour >= 12 && tashkentHour < 17) return 'afternoon';
-  return 'afternoon'; // Default fallback
+  return `${String(tashkentHour).padStart(2, '0')}:00`;
 }
 
 /**
- * Get the content type for the current day and time slot
+ * Get the content type for the current time slot
  * @returns {string} Content type identifier
  */
 export function getContentType() {
   // Check if forced content type is set
-  const forcedType = process.env.CONTENT_TYPE;
+  const forcedType = process.env.CONTENT_TYPE || process.env.TIME_SLOT;
   if (forcedType) return forcedType;
 
+  // Auto-detect based on Tashkent time (UTC+5) for manual local testing
   const now = new Date();
-  // Convert to Tashkent time for correct day
-  const tashkentTime = new Date(now.getTime() + 5 * 60 * 60 * 1000);
-  const dayOfWeek = tashkentTime.getUTCDay();
-  const timeSlot = getTimeSlot();
+  const tashkentHour = (now.getUTCHours() + 5) % 24;
 
-  return SCHEDULE[dayOfWeek]?.[timeSlot] || 'vocabulary'; // fallback
+  if (tashkentHour >= 8 && tashkentHour < 10) return 'recent-speaking';
+  if (tashkentHour >= 10 && tashkentHour < 12) return 'collocation';
+  if (tashkentHour >= 12 && tashkentHour < 14) return 'speaking';
+  if (tashkentHour >= 14 && tashkentHour < 16) return 'idiom';
+  if (tashkentHour >= 16 && tashkentHour < 18) return 'reading-listening';
+  if (tashkentHour >= 18 && tashkentHour < 20) return 'grammar-quiz';
+  if (tashkentHour >= 20 && tashkentHour < 23) return 'podcast';
+
+  return 'vocabulary'; // fallback
 }
+
 
 /**
  * Get and update the next speaking part
