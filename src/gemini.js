@@ -20,6 +20,25 @@ function getAI() {
   return ai;
 }
 
+const MODELS = ['gemini-2.5-flash', 'gemini-3.6-flash'];
+
+async function generateWithFallback(client, requestConfig) {
+  let lastError = null;
+  for (const model of MODELS) {
+    try {
+      const response = await client.models.generateContent({
+        ...requestConfig,
+        model,
+      });
+      return response;
+    } catch (error) {
+      console.log(`⚠️ Model ${model} failed (${error.message}). Trying fallback model...`);
+      lastError = error;
+    }
+  }
+  throw lastError;
+}
+
 const SYSTEM_INSTRUCTION = `Sen IELTS bo'yicha tajribali, zamonaviy va do'stona o'qituvchisan. Telegram kanalga o'quvchilar bilan suhbatlashgandek, samimiy va jonli post yozasan.
 
 MUHIM QOIDALAR:
@@ -39,8 +58,7 @@ export async function generateVocabulary() {
   if (!client) return null;
 
   try {
-    const response = await client.models.generateContent({
-      model: 'gemini-2.5-flash',
+    const response = await generateWithFallback(client, {
       contents: `Bitta yangi ilg'or darajadagi IELTS vocabulary so'zini o'rgatuvchi qisqa va qiziqarli post yoz.
         Quyidagilarni o'z ichiga olsin:
         - So'z va uning o'zbekcha aniq ma'nosi
@@ -80,8 +98,7 @@ export async function generateWritingTip() {
 
   try {
     const taskType = Math.random() > 0.5 ? 'Task 1' : 'Task 2';
-    const response = await client.models.generateContent({
-      model: 'gemini-2.5-flash',
+    const response = await generateWithFallback(client, {
       contents: `IELTS Writing ${taskType} bo'yicha bitta juda muhim va qisqa maslahat yoz.
         Quyidagilar bo'lsin:
         - Maslahat nima haqida ekanligi (jonli sarlavha)
@@ -123,8 +140,7 @@ export async function generateSpeakingTip() {
     const parts = ['Part 1', 'Part 2', 'Part 3'];
     const part = parts[Math.floor(Math.random() * parts.length)];
 
-    const response = await client.models.generateContent({
-      model: 'gemini-2.5-flash',
+    const response = await generateWithFallback(client, {
       contents: `IELTS Speaking ${part} bo'yicha bitta qisqa va kuchli maslahat yoz.
         Quyidagilar bo'lishi shart (hech narsa tushib qolmasin):
         - Aniq bir Speaking savoli (inglizcha)
@@ -165,8 +181,7 @@ export async function generateReadingListeningStrategy() {
 
   try {
     const skill = Math.random() > 0.5 ? 'Reading' : 'Listening';
-    const response = await client.models.generateContent({
-      model: 'gemini-2.5-flash',
+    const response = await generateWithFallback(client, {
       contents: `IELTS ${skill} bo'yicha bitta kuchli va qisqa strategiya o'rgat.
         Tuzilishi:
         - Strategiyaning qiziqarli nomi
@@ -208,8 +223,7 @@ export async function generateBandScoreTip() {
     const bands = ['6.0 dan 6.5 ga', '6.5 dan 7.0 ga', '7.0 dan 7.5 ga', '7.5 dan 8.0 ga'];
     const band = bands[Math.floor(Math.random() * bands.length)];
 
-    const response = await client.models.generateContent({
-      model: 'gemini-2.5-flash',
+    const response = await generateWithFallback(client, {
       contents: `IELTS dan ${band} band olish siri haqida qisqacha maslahat yoz.
         Faqat 1 ta eng muhim qoidani tushuntir.
         - Nima qilish kerakligi (o'zbekcha, sodda tilda)
@@ -247,8 +261,7 @@ export async function generateMotivation() {
   if (!client) return null;
 
   try {
-    const response = await client.models.generateContent({
-      model: 'gemini-2.5-flash',
+    const response = await generateWithFallback(client, {
       contents: `IELTS o'qiyotgan o'quvchilarda tez-tez uchraydigan haqiqiy psixologik yoki o'quv muammosi haqida (masalan: charchash, bir xil ballda qotib qolish, imtihon oldi qo'rquvi, vaqt yetishmasligi) xuddi yaqin do'st yoki g'amxo'r ustoz sifatida samimiy post yozing.
       
       QAT'IY TALABLAR:
@@ -292,8 +305,7 @@ export async function generateMagic3() {
     const topics = ['Environment', 'Technology', 'Education', 'Health', 'Economy', 'Crime', 'Society', 'Work', 'Space', 'Media'];
     const topic = topics[Math.floor(Math.random() * topics.length)];
 
-    const response = await client.models.generateContent({
-      model: 'gemini-2.5-flash',
+    const response = await generateWithFallback(client, {
       contents: `IELTS IELTS dagi "${topic}" mavzusi uchun 3 ta juda kuchli, doim birga keladigan so'z birikmalari (Collocations) - "Magic 3" postini yarating.
         
         Quyidagicha tuzilsin:
@@ -335,8 +347,7 @@ export async function generateMicroReading() {
   if (!client) return null;
 
   try {
-    const response = await client.models.generateContent({
-      model: 'gemini-2.5-flash',
+    const response = await generateWithFallback(client, {
       contents: `IELTS Reading uchun "10 soniyalik test" (Micro Reading) tuzing. 
 
         MUHIM QOIDALAR:
@@ -418,8 +429,7 @@ export async function generateQuiz() {
     const categories = ['vocabulary', 'grammar', 'collocations', 'error correction'];
     const category = categories[Math.floor(Math.random() * categories.length)];
 
-    const response = await client.models.generateContent({
-      model: 'gemini-2.5-flash',
+    const response = await generateWithFallback(client, {
       contents: `IELTS ${category} bo'yicha bitta quiz savoli yarat.
         
         QATTIQ FORMAT (faqat JSON qaytar, boshqa hech narsa yo'q):
@@ -466,8 +476,7 @@ export async function generateReadingTest() {
   if (!client) return null;
 
   try {
-    const response = await client.models.generateContent({
-      model: 'gemini-2.5-flash',
+    const response = await generateWithFallback(client, {
       contents: `You are an expert IELTS examiner. Generate an IELTS Reading passage and 5 Multiple Choice questions.
       
       The passage should be:
@@ -533,8 +542,7 @@ export async function generateRecentSpeaking(part) {
   if (!client) return null;
 
   try {
-    const response = await client.models.generateContent({
-      model: 'gemini-2.5-flash',
+    const response = await generateWithFallback(client, {
       contents: `Siz tajribali IELTS examiner'isiz. 2025 yoki 2026 yilda (Global yoki O'zbekistonda) haqiqiy imtihonda tushgan IELTS Speaking Part ${part} savolini o'ylab toping.
       
       Shu savol asosida Telegram kanali uchun post yozing.
@@ -585,8 +593,7 @@ export async function generateRecentWriting(task) {
       
       DIQQAT: Hech qanday ro'yxatlar (bullet points), raqamlangan qatorlar qilmang. Matnni va gapni hech qachon chala uzib qo'ymang! Barcha qismlar to'liq va yakunlangan bo'lishi shart.`;
 
-    const response = await client.models.generateContent({
-      model: 'gemini-2.5-flash',
+    const response = await generateWithFallback(client, {
       contents: promptText,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
@@ -612,8 +619,7 @@ export async function generateIdiom() {
   if (!client) return null;
 
   try {
-    const response = await client.models.generateContent({
-      model: 'gemini-2.5-flash',
+    const response = await generateWithFallback(client, {
       contents: `Bitta yangi IELTS Speaking uchun juda foydali bo'lgan "Idiom" (ibora) o'rgatuvchi qisqa va qiziqarli post yoz.
         Quyidagilarni o'z ichiga olsin:
         - Idioma va uning o'zbekcha aniq ma'nosi
@@ -649,8 +655,7 @@ export async function generateCollocation() {
   if (!client) return null;
 
   try {
-    const response = await client.models.generateContent({
-      model: 'gemini-2.5-flash',
+    const response = await generateWithFallback(client, {
       contents: `Bitta IELTS Writing yoki Speaking uchun juda muhim bo'lgan "Collocation" (so'z birikmasi) o'rgatuvchi qisqa post yoz.
         Native speaker'larga xos bo'lgan advanced birikma tanlang (masalan, 'heavy rain', 'make a decision' o'rniga 'exert influence', 'profound impact' kabi).
         Quyidagilarni o'z ichiga olsin:
@@ -687,8 +692,7 @@ export async function generatePodcast() {
   if (!client) return null;
 
   try {
-    const response = await client.models.generateContent({
-      model: 'gemini-2.5-flash',
+    const response = await generateWithFallback(client, {
       contents: `IELTS Listening'ni oshirish uchun foydali bo'lgan bitta mashhur inglizcha Podcast yoki TED Talk videosini qisqacha tavsiya qiling.
         Quyidagilarni o'z ichiga olsin:
         - Nomi va muallifi
@@ -707,10 +711,10 @@ Shuningdek, javobingizning eng boshida (birinchi qatorda) albatta "[TOPIC: podca
     let text = response.text;
     const topicMatch = text.match(/\[TOPIC:\s*(.+?)\]/);
     if (topicMatch) {
-      saveHistory('generatePodcast', topicMatch[1].trim());
+    saveHistory('generatePodcast', topicMatch[1].trim());
       text = text.replace(topicMatch[0], '').trim();
     }
-    return "🎧 <b>Sunday Recommendation</b> 🎧\n\n" + text;
+    return "🎧 <b>Daily Suggestion: Podcast / TED Talk</b> 🎧\n\n" + text;
   } catch (error) {
     console.error('❌ Gemini podcast generation failed:', error.message);
     return null;
@@ -724,40 +728,74 @@ export async function generateGrammarQuiz() {
   const client = getAI();
   if (!client) return null;
 
-  try {
-    const response = await client.models.generateContent({
-      model: 'gemini-2.5-flash',
-      contents: `IELTS o'quvchilari tez-tez qiladigan xatolar asosida bitta Grammar Error Correction quiz yarat.
-        
-        QATTIQ FORMAT (faqat JSON qaytar, boshqa hech narsa yo'q):
-        {
-          "topic": "xato turi (masalan: Subject-Verb Agreement, Articles)",
-          "question": "Qaysi gapda xato bor? Yoki qaysi biri to'g'ri? (inglizcha)",
-          "options": ["Variant A", "Variant B", "Variant C", "Variant D"],
-          "correct_index": 0,
-          "explanation_uz": "Qisqa tushuntirish (MAXSIMUM 100 TA HARF yoki 15 TA SO'Z bo'lishi shart! Chunki Telegram buni to'liq ko'rsatmaydi)"
-        }`
-        + (getHistory('generateGrammarQuiz').length > 0 ? `\n\nMUHIM QOIDA: Quyidagi mavzular kanalimizda avval chiqqan, shuning uchun bularni UMUMAN QAYTA ISHLATMANG: \n${getHistory('generateGrammarQuiz').join(', ')}\n` : ''),
-      config: {
-        systemInstruction: 'Faqat valid JSON qaytar. Boshqa hech qanday matn yozma.',
-        temperature: 0.8,
-        responseMimeType: 'application/json',
-      },
-    });
+  const grammarTopics = [
+    "Inversion structures (e.g., Not only did..., Seldom do we..., Little did they know)",
+    "Mixed Conditionals & 3rd Conditional vs 2nd Conditional nuances",
+    "Gerunds vs Infinitives with meaning change (remember to do vs remember doing, stop to do vs stop doing, regret)",
+    "Participle Clauses (-ing and -ed clauses for sentence variety in IELTS)",
+    "Complex Subject-Verb Agreement (Neither/Nor, A variety of, Each of the, The number of vs A number of)",
+    "Countable vs Uncountable Nouns & Quantifiers (fewer vs less, amount vs number, little vs few)",
+    "Subjunctive Mood & Hypothetical Structures (It is imperative that he do..., If I were)",
+    "Causative Structures (have/get something done, make/let someone do)",
+    "Relative Clauses & Pronouns (defining vs non-defining, whom vs who, whose, preposition + which)",
+    "Parallel Structure in complex sentences (e.g. not only X but also Y)",
+    "Dependent Prepositions & Collocational Grammar (prone to, contribute to -ing, insist on, object to -ing)",
+    "Modal Perfects in IELTS contexts (must have been, should have done, could not have known)",
+    "Conjunctions & Contrast Linkers (Despite / In spite of + noun vs Although / Even though + clause)",
+    "Articles with Abstract, Specific, and Geographical Nouns (the Himalayas vs Mount Everest, the Internet, in society)",
+    "Comparatives & Double Comparatives (The more..., the more...)",
+    "Past Perfect vs Past Simple in complex background narrative sentences",
+    "Dangling Modifiers and Misplaced Modifiers"
+  ];
 
-    const quiz = JSON.parse(response.text);
-    if (quiz.topic) {
-      saveHistory('generateGrammarQuiz', quiz.topic);
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    try {
+      const selectedTopic = grammarTopics[Math.floor(Math.random() * grammarTopics.length)];
+      const history = getHistory('generateGrammarQuiz');
+
+      const response = await generateWithFallback(client, {
+        contents: `IELTS imtihonida (Writing va Speaking) talabalar ko'p xato qiladigan quyidagi grammatik mavzu bo'yicha bitta Grammar Error Correction quiz savoli yarat:
+          MAVZU: ${selectedTopic}
+          
+          MUHIM CHEKLOVLAR:
+          1. Har bir variant (option) MAKSIMUM 80 TA BELGIDAN OSHMASIN! Qisqa va lo'nda gaplar yoki bo'laklar tuzing.
+          2. Savol matni 250 belgidan kam bo'lsin.
+          3. Tushuntirish (explanation) maksimum 100 ta harf yoki 15 ta so'z bo'lsin.
+          
+          QATTIQ FORMAT (faqat JSON qaytar, boshqa hech narsa yo'q):
+          {
+            "topic": "aniq qoida nomi",
+            "question": "Savol matni (inglizcha)",
+            "options": ["Variant A (max 80 chars)", "Variant B (max 80 chars)", "Variant C (max 80 chars)", "Variant D (max 80 chars)"],
+            "correct_index": 0,
+            "explanation_uz": "Qisqa tushuntirish"
+          }`
+          + (history.length > 0 ? `\n\nMUHIM QOIDA: Quyidagi mavzular va savollar avval chiqqan, bularni UMUMAN QAYTA ISHLATMANG (mutlaqo yangi gaplar va qoidalar tuzing): \n${history.join(', ')}\n` : ''),
+        config: {
+          systemInstruction: 'Faqat valid JSON qaytar. Boshqa hech qanday matn yozma. Har bir variant uzunligi 80 belgidan oshmasligi shart.',
+          temperature: 0.95,
+          responseMimeType: 'application/json',
+        },
+      });
+
+      const quiz = JSON.parse(response.text);
+
+      if (!quiz.question || !Array.isArray(quiz.options) || quiz.options.length < 2 || typeof quiz.correct_index !== 'number') {
+        continue;
+      }
+
+      // Ensure options are safe within 95 chars
+      quiz.options = quiz.options.map(opt => opt.length > 95 ? opt.substring(0, 92) + '...' : opt);
+
+      if (quiz.topic) {
+        saveHistory('generateGrammarQuiz', `${quiz.topic} (${quiz.question.slice(0, 25)})`);
+      }
+
+      return quiz;
+    } catch (error) {
+      console.error(`❌ Attempt ${attempt} failed for grammar quiz:`, error.message);
     }
-
-    if (!quiz.question || !Array.isArray(quiz.options) || quiz.options.length < 2 || typeof quiz.correct_index !== 'number') {
-      console.error('❌ Invalid grammar quiz structure from Gemini');
-      return null;
-    }
-
-    return quiz;
-  } catch (error) {
-    console.error('❌ Gemini grammar quiz generation failed:', error.message);
-    return null;
   }
+
+  return null;
 }

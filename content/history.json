@@ -4,5 +4,12 @@
   ],
   "generateIdiom": [
     "hit_the_books"
+  ],
+  "generatePodcast": [
+    "Simon Sinek: How great leaders inspire action"
+  ],
+  "generateGrammarQuiz": [
+    "Past Perfect vs Past Simple in Complex Narratives (Which sentence accurately uses)",
+    "Articles with Geographical Nouns (Select the sentence with )"
   ]
 }
