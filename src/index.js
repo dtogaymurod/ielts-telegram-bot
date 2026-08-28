@@ -27,6 +27,7 @@ import {
 } from './content-selector.js';
 import { formatContent } from './formatter.js';
 import { getQuiz, validateQuiz } from './quiz-generator.js';
+import { generateDailySpeakingPublication } from './speaking-rotator.js';
 import * as gemini from './gemini.js';
 
 // Parse CLI flags
@@ -57,6 +58,11 @@ async function main() {
   
   if (contentType === 'grammar-quiz') {
     await handleGrammarQuiz();
+    return;
+  }
+  
+  if (contentType === 'speaking' || contentType === 'recent-speaking') {
+    await handleSpeakingGuide();
     return;
   }
   
@@ -324,6 +330,33 @@ async function handleGrammarQuiz() {
       mappedQuiz.explanation
     );
     console.log(`✅ Grammar Quiz sent! ID: ${result.message_id}`);
+  }
+}
+
+/**
+ * Handle Speaking Masterclass PDF Guide posting
+ */
+async function handleSpeakingGuide() {
+  console.log('🎙 Preparing Daily Speaking Masterclass Guide...');
+  const pub = await generateDailySpeakingPublication();
+  
+  if (!pub || !pub.pdfPath) {
+    console.error('❌ Failed to generate speaking publication');
+    process.exit(1);
+  }
+
+  if (isDryRun || isTest) {
+    console.log('\n📄 ═══ SPEAKING PDF PREVIEW ═══\n');
+    console.log(`Part: ${pub.partNumber}`);
+    console.log(`File: ${pub.fileName}`);
+    console.log(`PDF Path: ${pub.pdfPath}`);
+    console.log(`Caption:\n${pub.caption}`);
+    console.log('\n═══════════════════════════════\n');
+    console.log('✅ Dry run complete. No document sent.');
+  } else {
+    console.log('📤 Sending Speaking PDF Guide to Telegram...');
+    const result = await sendDocument(pub.pdfPath, pub.fileName, pub.caption);
+    console.log(`✅ Speaking PDF Guide sent! ID: ${result.message_id}`);
   }
 }
 

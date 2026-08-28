@@ -9,9 +9,15 @@
     "dry-run": "node src/index.js --dry-run",
     "test": "node src/index.js --test"
   },
-  "keywords": ["ielts", "telegram", "bot", "education"],
+  "keywords": [
+    "ielts",
+    "telegram",
+    "bot",
+    "education"
+  ],
   "license": "MIT",
   "dependencies": {
-    "@google/genai": "^1.0.0"
+    "@google/genai": "^1.0.0",
+    "qrcode": "^1.5.4"
   }
 }
