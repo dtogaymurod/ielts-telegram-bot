@@ -2,19 +2,18 @@ name: IELTS Channel Auto-Post
 
 on:
   schedule:
-    - cron: '0 4 * * *' # 09:00 Tashkent
-    - cron: '0 6 * * *' # 11:00 Tashkent
-    - cron: '0 8 * * *' # 13:00 Tashkent
-    - cron: '0 10 * * *' # 15:00 Tashkent
-    - cron: '0 12 * * *' # 17:00 Tashkent
-    - cron: '0 14 * * *' # 19:00 Tashkent
-    - cron: '0 16 * * *' # 21:00 Tashkent
+    - cron: '30 3 * * *'  # 08:30 Tashkent — Morning Start (Recent Speaking)
+    - cron: '30 6 * * *'  # 11:30 Tashkent — Midday Vocabulary (Collocation)
+    - cron: '30 8 * * *'  # 13:30 Tashkent — Lunch Study (Speaking Masterclass PDF Guide)
+    - cron: '30 11 * * *' # 16:30 Tashkent — Afternoon Focus (Reading & Listening Strategy)
+    - cron: '30 14 * * *' # 19:30 Tashkent — Evening Prime (Grammar Error Fix Quiz)
+    - cron: '30 16 * * *' # 21:30 Tashkent — Bedtime Routine (Podcast / TED Talk Suggestion)
 
-  # Qo'lda ishga tushirish imkoniyati (testing uchun)
+  # Manual trigger for testing
   workflow_dispatch:
     inputs:
       time_slot:
-        description: 'Time slot to simulate (mapped directly to content)'
+        description: 'Time slot to simulate'
         required: false
         default: ''
         type: choice
@@ -23,12 +22,11 @@ on:
           - recent-speaking
           - collocation
           - speaking
-          - idiom
           - reading-listening
           - grammar-quiz
           - podcast
       content_type:
-        description: 'Force content type'
+        description: 'Force specific content type'
         required: false
         default: ''
         type: choice
@@ -37,13 +35,13 @@ on:
           - recent-speaking
           - collocation
           - speaking
-          - idiom
           - reading-listening
           - grammar-quiz
           - podcast
+          - idiom
           - vocabulary
       dry_run:
-        description: 'Dry run (no actual posting)'
+        description: 'Dry run (preview in log, do not post)'
         required: false
         default: false
         type: boolean
@@ -75,24 +73,25 @@ jobs:
             exit 0
           fi
           
-          # Auto-detect from cron schedule (UTC time)
-          HOUR=$(date -u +%H)
-          if [ "$HOUR" = "04" ]; then
+          # Auto-detect from Tashkent time (UTC+5)
+          UTC_HOUR=$(date -u +%H)
+          TASHKENT_HOUR=$(( (10#$UTC_HOUR + 5) % 24 ))
+          echo "Detected UTC Hour: $UTC_HOUR | Tashkent Hour: $TASHKENT_HOUR"
+          
+          if [ $TASHKENT_HOUR -ge 8 ] && [ $TASHKENT_HOUR -lt 11 ]; then
             echo "slot=recent-speaking" >> $GITHUB_OUTPUT
-          elif [ "$HOUR" = "06" ]; then
+          elif [ $TASHKENT_HOUR -ge 11 ] && [ $TASHKENT_HOUR -lt 13 ]; then
             echo "slot=collocation" >> $GITHUB_OUTPUT
-          elif [ "$HOUR" = "08" ]; then
+          elif [ $TASHKENT_HOUR -ge 13 ] && [ $TASHKENT_HOUR -lt 16 ]; then
             echo "slot=speaking" >> $GITHUB_OUTPUT
-          elif [ "$HOUR" = "10" ]; then
-            echo "slot=idiom" >> $GITHUB_OUTPUT
-          elif [ "$HOUR" = "12" ]; then
+          elif [ $TASHKENT_HOUR -ge 16 ] && [ $TASHKENT_HOUR -lt 18 ]; then
             echo "slot=reading-listening" >> $GITHUB_OUTPUT
-          elif [ "$HOUR" = "14" ]; then
+          elif [ $TASHKENT_HOUR -ge 18 ] && [ $TASHKENT_HOUR -lt 21 ]; then
             echo "slot=grammar-quiz" >> $GITHUB_OUTPUT
-          elif [ "$HOUR" = "16" ]; then
+          elif [ $TASHKENT_HOUR -ge 21 ] && [ $TASHKENT_HOUR -le 22 ]; then
             echo "slot=podcast" >> $GITHUB_OUTPUT
           else
-            echo "slot=" >> $GITHUB_OUTPUT
+            echo "slot=night-blackout" >> $GITHUB_OUTPUT
           fi
 
       - name: Post to Telegram

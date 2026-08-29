@@ -25,23 +25,28 @@ export function getTimeSlot() {
  * @returns {string} Content type identifier
  */
 export function getContentType() {
-  // Check if forced content type is set
+  // Check if forced content type is set (for testing or workflow dispatch)
   const forcedType = process.env.CONTENT_TYPE || process.env.TIME_SLOT;
-  if (forcedType) return forcedType;
+  if (forcedType && forcedType !== 'night-blackout') return forcedType;
 
-  // Auto-detect based on Tashkent time (UTC+5) for manual local testing
+  // Auto-detect based on Tashkent time (UTC+5)
   const now = new Date();
   const tashkentHour = (now.getUTCHours() + 5) % 24;
 
-  if (tashkentHour >= 8 && tashkentHour < 10) return 'recent-speaking';
-  if (tashkentHour >= 10 && tashkentHour < 12) return 'collocation';
-  if (tashkentHour >= 12 && tashkentHour < 14) return 'speaking';
-  if (tashkentHour >= 14 && tashkentHour < 16) return 'idiom';
-  if (tashkentHour >= 16 && tashkentHour < 18) return 'reading-listening';
-  if (tashkentHour >= 18 && tashkentHour < 20) return 'grammar-quiz';
-  if (tashkentHour >= 20 && tashkentHour < 23) return 'podcast';
+  // 🌙 Night Blackout Guard: 22:00 to 08:00 Tashkent time
+  if (tashkentHour >= 22 || tashkentHour < 8) {
+    return 'night-blackout';
+  }
 
-  return 'vocabulary'; // fallback
+  // 🎯 Prime Times (Tashkent Time UTC+5)
+  if (tashkentHour >= 8 && tashkentHour < 11) return 'recent-speaking';
+  if (tashkentHour >= 11 && tashkentHour < 13) return 'collocation';
+  if (tashkentHour >= 13 && tashkentHour < 16) return 'speaking';
+  if (tashkentHour >= 16 && tashkentHour < 18) return 'reading-listening';
+  if (tashkentHour >= 18 && tashkentHour < 21) return 'grammar-quiz';
+  if (tashkentHour >= 21 && tashkentHour < 22) return 'podcast';
+
+  return 'night-blackout';
 }
 
 

@@ -51,6 +51,12 @@ async function main() {
   console.log(`⏰ Time slot: ${timeSlot}`);
   console.log(`📋 Content type: ${contentType}`);
 
+  // 🌙 Night Blackout Guard: Never post during night hours
+  if (contentType === 'night-blackout') {
+    console.log(`🌙 Night Blackout active (Tashkent time). No posts allowed between 22:00 and 08:00 to protect subscribers.`);
+    process.exit(0);
+  }
+
   if (contentType === 'quiz') {
     await handleQuiz();
     return;
@@ -61,7 +67,7 @@ async function main() {
     return;
   }
   
-  if (contentType === 'speaking' || contentType === 'recent-speaking') {
+  if (contentType === 'speaking') {
     await handleSpeakingGuide();
     return;
   }
@@ -104,18 +110,9 @@ async function main() {
       }
     }
   }
-  
-  if (!postText) {
-    console.log('⚠️ AI generation failed for recent exams. Falling back to database (vocabulary)...');
-    const dbFile = getDatabaseFile('vocabulary');
-    const item = getContentFromDatabase(dbFile);
-    if (item) {
-      postText = formatContent('vocabulary', item);
-    }
-  }
 
   if (!postText) {
-    console.error('❌ Could not generate or find content. Skipping post.');
+    console.error(`❌ Could not generate content for '${contentType}'. Skipping post to avoid duplicate or incorrect fallback.`);
     process.exit(1);
   }
 
@@ -186,25 +183,11 @@ async function main() {
           return;
         } catch (plainError) {
           console.error('❌ Plain text fallback also failed:', plainError.message);
+          process.exit(1);
         }
       }
       
-      console.log('📦 Final fallback: Sending vocabulary from database...');
-      try {
-        const dbFile = getDatabaseFile('vocabulary');
-        const item = getContentFromDatabase(dbFile);
-        if (item) {
-          const fallbackText = formatContent('vocabulary', item);
-          result = await sendMessage(fallbackText, {});
-          console.log(`✅ Database fallback message sent! ID: ${result.message_id}`);
-        } else {
-          console.error('❌ No vocabulary items found for fallback.');
-          process.exit(1);
-        }
-      } catch (finalError) {
-        console.error('💥 Database fallback message failed:', finalError.message);
-        process.exit(1);
-      }
+      process.exit(1);
     }
   }
 }
@@ -281,19 +264,22 @@ async function handleQuiz() {
  */
 async function handleGrammarQuiz() {
   console.log('🤖 Generating Grammar Quiz...');
-  const data = await gemini.generateGrammarQuiz();
+  let data = await gemini.generateGrammarQuiz();
   
   if (!data) {
-    console.log('⚠️ AI generation failed for Grammar Quiz. Falling back to vocabulary...');
-    const dbFile = getDatabaseFile('vocabulary');
-    const item = getContentFromDatabase(dbFile);
-    if (item) {
-      const fallbackText = formatContent('vocabulary', item);
-      if (!isDryRun && !isTest) {
-         await sendMessage(fallbackText, {});
-      }
+    console.log('⚠️ AI generation failed for Grammar Quiz. Falling back to quizzes database...');
+    const dbQuiz = await getQuiz();
+    if (dbQuiz) {
+      data = {
+        question: dbQuiz.question,
+        options: dbQuiz.options,
+        correct_index: dbQuiz.correctIndex,
+        explanation_uz: dbQuiz.explanation
+      };
+    } else {
+      console.error('❌ Could not get quiz from AI or database.');
+      process.exit(1);
     }
-    return;
   }
 
   const mappedQuiz = {
@@ -368,18 +354,8 @@ async function handleMicroReading() {
   const data = await gemini.generateMicroReading();
   
   if (!data) {
-    console.log('⚠️ AI generation failed for Micro Reading. Falling back to database (vocabulary)...');
-    const dbFile = getDatabaseFile('vocabulary');
-    const item = getContentFromDatabase(dbFile);
-    if (item) {
-      const fallbackText = formatContent('vocabulary', item);
-      if (!isDryRun && !isTest) {
-         await sendMessage(fallbackText, {});
-      } else {
-         console.log('Dry Run Fallback:', fallbackText);
-      }
-    }
-    return;
+    console.error('❌ Could not generate Micro Reading. Skipping post.');
+    process.exit(1);
   }
 
   if (isDryRun || isTest) {
