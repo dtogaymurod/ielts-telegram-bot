@@ -460,6 +460,14 @@ export async function generateQuiz() {
       return null;
     }
 
+    // Randomly shuffle options
+    const correctText = quiz.options[quiz.correct_index];
+    for (let i = quiz.options.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [quiz.options[i], quiz.options[j]] = [quiz.options[j], quiz.options[i]];
+    }
+    quiz.correct_index = quiz.options.indexOf(correctText);
+
     return quiz;
   } catch (error) {
     console.error('❌ Gemini quiz generation failed:', error.message);
@@ -786,6 +794,14 @@ export async function generateGrammarQuiz() {
 
       // Ensure options are safe within 95 chars
       quiz.options = quiz.options.map(opt => opt.length > 95 ? opt.substring(0, 92) + '...' : opt);
+
+      // Randomly shuffle options using Fisher-Yates to guarantee correct_index is evenly distributed
+      const correctOptionText = quiz.options[quiz.correct_index];
+      for (let i = quiz.options.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [quiz.options[i], quiz.options[j]] = [quiz.options[j], quiz.options[i]];
+      }
+      quiz.correct_index = quiz.options.indexOf(correctOptionText);
 
       if (quiz.topic) {
         saveHistory('generateGrammarQuiz', `${quiz.topic} (${quiz.question.slice(0, 25)})`);

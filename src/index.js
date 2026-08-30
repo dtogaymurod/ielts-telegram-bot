@@ -26,7 +26,7 @@ import {
   updateAndGetNextSpeakingPart
 } from './content-selector.js';
 import { formatContent } from './formatter.js';
-import { getQuiz, validateQuiz } from './quiz-generator.js';
+import { getQuiz, validateQuiz, shuffleQuizOptions } from './quiz-generator.js';
 import { generateDailySpeakingPublication } from './speaking-rotator.js';
 import * as gemini from './gemini.js';
 
@@ -288,6 +288,9 @@ async function handleGrammarQuiz() {
     correctIndex: data.correct_index,
     explanation: data.explanation_uz
   };
+
+  // Double-ensure options are randomized
+  shuffleQuizOptions(mappedQuiz);
 
   const validation = validateQuiz(mappedQuiz);
 

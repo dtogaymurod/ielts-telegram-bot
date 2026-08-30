@@ -52,7 +52,7 @@ export async function getQuiz() {
 /**
  * Shuffle quiz options and update correct index
  */
-function shuffleQuizOptions(quiz) {
+export function shuffleQuizOptions(quiz) {
   const options = quiz.options;
   const correctOption = options[quiz.correctIndex];
   
