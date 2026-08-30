@@ -39,9 +39,9 @@ export function getContentType() {
   }
 
   // 🎯 Prime Times (Tashkent Time UTC+5)
-  if (tashkentHour >= 8 && tashkentHour < 11) return 'recent-speaking';
-  if (tashkentHour >= 11 && tashkentHour < 13) return 'collocation';
-  if (tashkentHour >= 13 && tashkentHour < 16) return 'speaking';
+  if (tashkentHour >= 8 && tashkentHour < 11) return 'speaking';
+  if (tashkentHour >= 11 && tashkentHour < 14) return 'collocation';
+  if (tashkentHour >= 14 && tashkentHour < 16) return 'idiom';
   if (tashkentHour >= 16 && tashkentHour < 18) return 'reading-listening';
   if (tashkentHour >= 18 && tashkentHour < 21) return 'grammar-quiz';
   if (tashkentHour >= 21 && tashkentHour < 22) return 'podcast';

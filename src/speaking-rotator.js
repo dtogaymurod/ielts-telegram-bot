@@ -186,14 +186,26 @@ export async function generateDailySpeakingPublication() {
   };
   saveSpeakingState(nextState);
 
-  // Telegram Caption
+  // Telegram Caption with explicit questions and PDF CTA
   let caption = '';
   if (partNumber === 1) {
-    caption = `🎙 <b>IELTS Speaking Part 1 Master Guide</b> 🔥\n\n📌 <b>Mavzu:</b> <i>${topicData.topicTitle}</i> (May–Dec 2026)\n\nBugungi Speaking mashg'ulotimiz uchun Part 1 bo'yicha maxsus 2 sahifalik PDF qo'llanma tayyorlandi! 📑👇\n\n<b>Fayl ichida:</b>\n• 💎 <b>Top Lexical Resource:</b> Band 8.0+ so'zlar va kollokatsiyalar\n• 🎯 <b>Grammar Formulas:</b> Relative clauses va Cleft sentences\n• 🗣 <b>Model Answers:</b> Barcha savollarga Band 8.5+ namunaviy javoblar va tahlil\n\n<i>Faylni yuklab oling va ovoz chiqarib mashq qiling!</i> ⏱✅`;
+    const qList = (topicData.questions || [])
+      .map((q, i) => `${i + 1}. <i>${q.question}</i>`)
+      .join('\n');
+
+    caption = `🎙 <b>IELTS Speaking Part 1 Master Guide</b> 🔥\n\n📌 <b>Mavzu:</b> <i>${topicData.topicTitle}</i> (May–Dec 2026)\n\n❓ <b>Bugungi imtihon savollari:</b>\n${qList}\n\n💡 <b>Tayyorgarlik va tavsiyalar:</b>\nUshbu savollarga <b>Band 8.5+ namunaviy javoblar</b>, yuqori ball beruvchi <b>Top lug'at va kollokatsiyalar</b> hamda <b>Grammatika formulalari</b> bilan tanishish uchun biriktirilgan PDF qo'llanmani oching! 📑👇\n\n<i>Faylni yuklab oling va ovoz chiqarib mashq qiling!</i> ⏱✅`;
   } else if (partNumber === 2) {
-    caption = `🎙 <b>IELTS Speaking Part 2 Cue Card Guide</b> 🎯\n\n📌 <b>Mavzu:</b> <i>${topicData.cueCardTitle}</i> (May–Dec 2026)\n\nPart 2 da 2 daqiqa to'xtovsiz, ravon va yuqori ballga gapirish uchun to'liq masterclass PDF! 📑👇\n\n<b>Fayl ichida:</b>\n• 📝 <b>1-Minute Note Plan:</b> Fikrlarni tezkor tartibga solish rejasi\n• 💎 <b>Storytelling Vocabulary:</b> Hikoyani jonlantiruvchi Band 8.5+ iboralar\n• ⏱ <b>2-Minute Model Monologue:</b> To'liq va mukammal namunaviy nutq\n• 🔍 <b>Follow-up Savollar:</b> Examiner'ning qo'shimcha savollariga javoblar\n\n<i>Yuklab oling va taymer qo'yib gapirib ko'ring!</i> ⏱🎙`;
+    const bulletList = (topicData.bullets || [])
+      .map(b => `• <i>${b}</i>`)
+      .join('\n');
+
+    caption = `🎙 <b>IELTS Speaking Part 2 Cue Card Guide</b> 🎯\n\n📌 <b>Mavzu:</b> <i>${topicData.cueCardTitle}</i> (May–Dec 2026)\n\n❓ <b>Cue Card topshirig'i:</b>\n<b>You should say:</b>\n${bulletList}\n\n💡 <b>Tayyorgarlik va tavsiyalar:</b>\nUshbu mavzuda 2 daqiqa to'xtovsiz gapirish uchun <b>1-Minute Note-Taking rejasi</b>, <b>Storytelling iboralari</b> va <b>to'liq 2 daqiqalik Band 8.5+ model monolog</b>ni o'rganish uchun biriktirilgan PDF faylni oching! 📑👇\n\n<i>Faylni yuklab oling va 2 daqiqalik taymer qo'yib mashq qiling!</i> ⏱🎙`;
   } else {
-    caption = `🎙 <b>IELTS Speaking Part 3 Discussion Guide</b> 🧠\n\n📌 <b>Mavzu:</b> <i>${topicData.topicTitle}</i> (May–Dec 2026)\n\nSpeaking'ning eng qiyin va eng ko'p ball beruvchi Part 3 qismi uchun maxsus tahlil qo'llanmasi! 📑👇\n\n<b>Fayl ichida:</b>\n• 🏛 <b>AREA Method:</b> <i>Answer, Reason, Example, Alternative</i> orqali chuqur fikrlash\n• 💎 <b>Academic Phrases:</b> Abstrakt mavzular uchun tahliliy iboralar\n• 🗣 <b>Chuqur savol-javoblar:</b> Har bir savolning to'liq 4 qismli tahlili\n\n<i>Faylni oching va fikringizni chuqur asoslashni mashq qiling!</i> 💡✅`;
+    const qList = (topicData.questions || [])
+      .map((q, i) => `${i + 1}. <i>${q.question}</i>`)
+      .join('\n');
+
+    caption = `🎙 <b>IELTS Speaking Part 3 Discussion Guide</b> 🧠\n\n📌 <b>Mavzu:</b> <i>${topicData.topicTitle}</i> (May–Dec 2026)\n\n❓ <b>Bugungi chuqur muhokama savollari:</b>\n${qList}\n\n💡 <b>Tayyorgarlik va tavsiyalar:</b>\nUshbu murakkab savollarga <b>AREA metodi</b> (Answer, Reason, Example, Alternative) asosidagi Band 8.5+ tahliliy javoblar va <b>akademik frazalar</b> bilan tanishish uchun biriktirilgan PDF qo'llanmani oching! 📑👇\n\n<i>Faylni oching va fikringizni chuqur asoslashni mashq qiling!</i> 💡✅`;
   }
 
   return {

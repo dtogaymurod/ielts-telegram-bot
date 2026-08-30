@@ -2,10 +2,10 @@ name: IELTS Channel Auto-Post
 
 on:
   schedule:
-    - cron: '35 3 * * *'  # 08:35 Tashkent — Morning Start (Recent Speaking)
-    - cron: '45 6 * * *'  # 11:45 Tashkent — Midday Vocabulary (Collocation)
-    - cron: '35 8 * * *'  # 13:35 Tashkent — Lunch Study (Speaking Masterclass PDF Guide)
-    - cron: '45 11 * * *' # 16:45 Tashkent — Afternoon Focus (Reading & Listening Strategy)
+    - cron: '35 3 * * *'  # 08:35 Tashkent — Morning Speaking Masterclass (PDF Guide + Visible Questions)
+    - cron: '45 6 * * *'  # 11:45 Tashkent — Midday Vocabulary (Collocation of the Day)
+    - cron: '45 9 * * *'  # 14:45 Tashkent — Afternoon Idiom (Idiom of the Day)
+    - cron: '45 11 * * *' # 16:45 Tashkent — Study Strategy (Reading & Listening Strategy)
     - cron: '45 14 * * *' # 19:45 Tashkent — Evening Prime (Grammar Error Fix Quiz)
     - cron: '45 16 * * *' # 21:45 Tashkent — Bedtime Routine (Podcast / TED Talk Suggestion)
 
@@ -19,9 +19,9 @@ on:
         type: choice
         options:
           - ''
-          - recent-speaking
-          - collocation
           - speaking
+          - collocation
+          - idiom
           - reading-listening
           - grammar-quiz
           - podcast
@@ -32,13 +32,12 @@ on:
         type: choice
         options:
           - ''
-          - recent-speaking
-          - collocation
           - speaking
+          - collocation
+          - idiom
           - reading-listening
           - grammar-quiz
           - podcast
-          - idiom
           - vocabulary
       dry_run:
         description: 'Dry run (preview in log, do not post)'
@@ -79,11 +78,11 @@ jobs:
           echo "Detected UTC Hour: $UTC_HOUR | Tashkent Hour: $TASHKENT_HOUR"
           
           if [ $TASHKENT_HOUR -ge 8 ] && [ $TASHKENT_HOUR -lt 11 ]; then
-            echo "slot=recent-speaking" >> $GITHUB_OUTPUT
-          elif [ $TASHKENT_HOUR -ge 11 ] && [ $TASHKENT_HOUR -lt 13 ]; then
-            echo "slot=collocation" >> $GITHUB_OUTPUT
-          elif [ $TASHKENT_HOUR -ge 13 ] && [ $TASHKENT_HOUR -lt 16 ]; then
             echo "slot=speaking" >> $GITHUB_OUTPUT
+          elif [ $TASHKENT_HOUR -ge 11 ] && [ $TASHKENT_HOUR -lt 14 ]; then
+            echo "slot=collocation" >> $GITHUB_OUTPUT
+          elif [ $TASHKENT_HOUR -ge 14 ] && [ $TASHKENT_HOUR -lt 16 ]; then
+            echo "slot=idiom" >> $GITHUB_OUTPUT
           elif [ $TASHKENT_HOUR -ge 16 ] && [ $TASHKENT_HOUR -lt 18 ]; then
             echo "slot=reading-listening" >> $GITHUB_OUTPUT
           elif [ $TASHKENT_HOUR -ge 18 ] && [ $TASHKENT_HOUR -lt 21 ]; then
