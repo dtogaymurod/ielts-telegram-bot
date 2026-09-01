@@ -42,7 +42,8 @@
     "Paucity"
   ],
   "generateReadingListeningStrategy": [
-    "IELTS Reading Strategiyasi"
+    "IELTS Reading Strategiyasi",
+    "IELTS Listening Distractor Detector"
   ],
   "generateCollocation": [
     "reap the benefits",
