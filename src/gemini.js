@@ -10,7 +10,7 @@ import { getHistory, saveHistory } from './history-tracker.js';
 
 let ai = null;
 
-function getAI() {
+export function getAI() {
   if (!ai) {
     if (!process.env.GEMINI_API_KEY) {
       return null;
@@ -22,7 +22,7 @@ function getAI() {
 
 const MODELS = ['gemini-2.5-flash', 'gemini-3.6-flash'];
 
-async function generateWithFallback(client, requestConfig) {
+export async function generateWithFallback(client, requestConfig) {
   let lastError = null;
   for (const model of MODELS) {
     try {

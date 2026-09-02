@@ -539,7 +539,15 @@ function getChromePath() {
     const macPath = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
     if (fs.existsSync(macPath)) return `"${macPath}"`;
   }
-  const linuxCandidates = ['google-chrome', 'google-chrome-stable', 'chromium-browser', 'chromium'];
+  const linuxCandidates = [
+    'google-chrome',
+    'google-chrome-stable',
+    'chromium-browser',
+    'chromium',
+    '/usr/bin/google-chrome',
+    '/usr/bin/google-chrome-stable',
+    '/usr/bin/chromium-browser'
+  ];
   for (const cmd of linuxCandidates) {
     try {
       execSync(`which ${cmd}`, { stdio: 'ignore' });
@@ -552,8 +560,18 @@ function getChromePath() {
   const tempDir = execSync('mktemp -d').toString().trim();
   try {
     const chrome = getChromePath();
-    const chromeCmd = `${chrome} --headless --disable-gpu --no-sandbox --no-pdf-header-footer --user-data-dir="${tempDir}" --print-to-pdf="${outputPdfPath}" "file://${tempHtmlPath}" 2>/dev/null`;
-    execSync(chromeCmd);
+    const chromeCmd = `${chrome} --headless=new --disable-gpu --no-sandbox --disable-dev-shm-usage --no-pdf-header-footer --user-data-dir="${tempDir}" --print-to-pdf="${outputPdfPath}" "file://${tempHtmlPath}"`;
+    execSync(chromeCmd, { stdio: 'pipe' });
+  } catch (err) {
+    console.error('⚠️ Chrome headless failed, attempting fallback legacy headless...');
+    try {
+      const chrome = getChromePath();
+      const legacyCmd = `${chrome} --headless --disable-gpu --no-sandbox --disable-dev-shm-usage --no-pdf-header-footer --user-data-dir="${tempDir}" --print-to-pdf="${outputPdfPath}" "file://${tempHtmlPath}"`;
+      execSync(legacyCmd, { stdio: 'pipe' });
+    } catch (fallbackErr) {
+      console.error('❌ Failed to generate PDF with Chrome:', fallbackErr.message);
+      throw fallbackErr;
+    }
   } finally {
     try {
       execSync(`rm -rf "${tempDir}" "${tempHtmlPath}"`);
