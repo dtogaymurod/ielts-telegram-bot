@@ -52,7 +52,8 @@
     "IELTS Reading Strategiyasi",
     "IELTS Listening Distractor Detector",
     "IELTS Listening Grammatical Anchor",
-    "Topic Sentence Tracker"
+    "Topic Sentence Tracker",
+    "Paraphrase Ovchisi"
   ],
   "generateCollocation": [
     "reap the benefits",
