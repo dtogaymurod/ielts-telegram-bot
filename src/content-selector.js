@@ -27,14 +27,14 @@ export function getTimeSlot() {
 export function getContentType() {
   // Check if forced content type is set (for testing or workflow dispatch)
   const forcedType = process.env.CONTENT_TYPE || process.env.TIME_SLOT;
-  if (forcedType && forcedType !== 'night-blackout') return forcedType;
+  if (forcedType) return forcedType;
 
   // Auto-detect based on Tashkent time (UTC+5)
   const now = new Date();
   const tashkentHour = (now.getUTCHours() + 5) % 24;
 
-  // 🌙 Night Blackout Guard: 22:00 to 08:00 Tashkent time
-  if (tashkentHour >= 22 || tashkentHour < 8) {
+  // 🌙 Night Blackout Guard: 21:00 to 08:00 Tashkent time
+  if (tashkentHour >= 21 || tashkentHour < 8) {
     return 'night-blackout';
   }
 
@@ -44,7 +44,6 @@ export function getContentType() {
   if (tashkentHour >= 14 && tashkentHour < 16) return 'idiom';
   if (tashkentHour >= 16 && tashkentHour < 18) return 'reading-listening';
   if (tashkentHour >= 18 && tashkentHour < 21) return 'grammar-quiz';
-  if (tashkentHour >= 21 && tashkentHour < 22) return 'podcast';
 
   return 'night-blackout';
 }

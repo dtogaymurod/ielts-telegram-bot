@@ -53,7 +53,7 @@ async function main() {
 
   // 🌙 Night Blackout Guard: Never post during night hours
   if (contentType === 'night-blackout') {
-    console.log(`🌙 Night Blackout active (Tashkent time). No posts allowed between 22:00 and 08:00 to protect subscribers.`);
+    console.log(`🌙 Night Blackout active (Tashkent time). No posts allowed between 21:00 and 08:00 to protect subscribers.`);
     process.exit(0);
   }
 
@@ -206,7 +206,6 @@ async function tryAIGeneration(contentType) {
     'magic-3': gemini.generateMagic3,
     idiom: gemini.generateIdiom,
     collocation: gemini.generateCollocation,
-    podcast: gemini.generatePodcast,
   };
 
   const generator = generators[contentType];
