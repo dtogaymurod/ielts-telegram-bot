@@ -94,9 +94,11 @@
     "IELTS Collocations"
   ],
   "generateGrammarQuiz_easy": [
-    "Common Preposition errors (Choose the correct prepos)"
+    "Common Preposition errors (Choose the correct prepos)",
+    "Comparative mistakes (Choose the sentence that )"
   ],
   "generateGrammarQuiz_hard": [
-    "Causative Structures (have/get something done vs make/let someone do vs force to do) (The CEO made his team to )"
+    "Causative Structures (have/get something done vs make/let someone do vs force to do) (The CEO made his team to )",
+    "Relative Clauses: Preposition + Whom/Which (Identify the grammaticall)"
   ]
 }
