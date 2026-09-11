@@ -90,5 +90,11 @@
   ],
   "generateQuiz": [
     "IELTS Collocations"
+  ],
+  "generateGrammarQuiz_easy": [
+    "Common Preposition errors (Choose the correct prepos)"
+  ],
+  "generateGrammarQuiz_hard": [
+    "Causative Structures (have/get something done vs make/let someone do vs force to do) (The CEO made his team to )"
   ]
 }

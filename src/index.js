@@ -258,66 +258,102 @@ async function handleQuiz() {
   }
 }
 
+const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
 /**
- * Handle grammar error quiz posting
+ * Handle grammar error quiz posting (Generates 2 quizzes: 1 Easy + 1 Hard)
  */
 async function handleGrammarQuiz() {
-  console.log('🤖 Generating Grammar Quiz...');
-  let data = await gemini.generateGrammarQuiz();
-  
-  if (!data) {
-    console.log('⚠️ AI generation failed for Grammar Quiz. Falling back to quizzes database...');
-    const dbQuiz = await getQuiz();
-    if (dbQuiz) {
-      data = {
-        question: dbQuiz.question,
-        options: dbQuiz.options,
-        correct_index: dbQuiz.correctIndex,
-        explanation_uz: dbQuiz.explanation
-      };
-    } else {
-      console.error('❌ Could not get quiz from AI or database.');
-      process.exit(1);
+  console.log('🤖 Generating Grammar Quiz Pair (1 Easy + 1 Hard)...');
+
+  const quizzes = [];
+
+  // 1. Easy / Intermediate Quiz
+  console.log('🔹 Generating Quiz 1: Osonroq / Intermediate...');
+  const easyData = await gemini.generateGrammarQuiz('easy');
+  if (easyData) {
+    const easyQuiz = {
+      question: "🟢 GRAMMAR FIX (1-savol: Osonroq):\n" + easyData.question,
+      options: easyData.options,
+      correctIndex: easyData.correct_index,
+      explanation: easyData.explanation_uz,
+      level: 'Osonroq (Intermediate)'
+    };
+    shuffleQuizOptions(easyQuiz);
+    if (validateQuiz(easyQuiz).valid) {
+      quizzes.push(easyQuiz);
     }
   }
 
-  const mappedQuiz = {
-    question: "🛠 GRAMMAR FIX:\n" + data.question,
-    options: data.options,
-    correctIndex: data.correct_index,
-    explanation: data.explanation_uz
-  };
+  // 2. Hard / Advanced Quiz
+  console.log('🔸 Generating Quiz 2: Qiyinroq / Advanced...');
+  const hardData = await gemini.generateGrammarQuiz('hard');
+  if (hardData) {
+    const hardQuiz = {
+      question: "🔴 GRAMMAR FIX (2-savol: Qiyinroq):\n" + hardData.question,
+      options: hardData.options,
+      correctIndex: hardData.correct_index,
+      explanation: hardData.explanation_uz,
+      level: 'Qiyinroq (Advanced)'
+    };
+    shuffleQuizOptions(hardQuiz);
+    if (validateQuiz(hardQuiz).valid) {
+      quizzes.push(hardQuiz);
+    }
+  }
 
-  // Double-ensure options are randomized
-  shuffleQuizOptions(mappedQuiz);
+  // Fallback if needed
+  if (quizzes.length === 0) {
+    console.log('⚠️ AI generation failed for grammar quizzes. Falling back to quizzes database...');
+    const dbQuiz = await getQuiz();
+    if (dbQuiz) {
+      const fallbackQuiz = {
+        question: "🛠 GRAMMAR FIX:\n" + dbQuiz.question,
+        options: dbQuiz.options,
+        correctIndex: dbQuiz.correctIndex,
+        explanation: dbQuiz.explanation,
+        level: 'Standard'
+      };
+      shuffleQuizOptions(fallbackQuiz);
+      quizzes.push(fallbackQuiz);
+    }
+  }
 
-  const validation = validateQuiz(mappedQuiz);
-
-  if (!validation.valid) {
-    console.error(`❌ Grammar Quiz validation failed: ${validation.reason}`);
+  if (quizzes.length === 0) {
+    console.error('❌ Could not generate any grammar quizzes.');
     process.exit(1);
   }
 
   if (isDryRun || isTest) {
-    console.log('\n❓ ═══ GRAMMAR QUIZ PREVIEW ═══\n');
-    console.log(`Question: ${mappedQuiz.question}`);
-    console.log(`Options:`);
-    mappedQuiz.options.forEach((opt, i) => {
-      const marker = i === mappedQuiz.correctIndex ? '✅' : '  ';
-      console.log(`  ${marker} ${i + 1}. ${opt}`);
-    });
-    console.log(`\nExplanation: ${mappedQuiz.explanation}`);
-    console.log('\n═══════════════════════\n');
-    console.log('✅ Dry run complete. No grammar quiz sent.');
+    console.log(`\n❓ ═══ GRAMMAR QUIZ PAIR PREVIEW (${quizzes.length} quizzes) ═══\n`);
+    for (const [idx, q] of quizzes.entries()) {
+      console.log(`--- Quiz #${idx + 1} [${q.level}] ---`);
+      console.log(`Question: ${q.question}`);
+      console.log(`Options:`);
+      q.options.forEach((opt, i) => {
+        const marker = i === q.correctIndex ? '✅' : '  ';
+        console.log(`  ${marker} ${i + 1}. ${opt}`);
+      });
+      console.log(`\nExplanation: ${q.explanation}\n`);
+    }
+    console.log('════════════════════════════════════════════\n');
+    console.log('✅ Dry run complete. No grammar quizzes sent.');
   } else {
-    console.log('📤 Sending grammar quiz to Telegram...');
-    const result = await sendQuiz(
-      mappedQuiz.question,
-      mappedQuiz.options,
-      mappedQuiz.correctIndex,
-      mappedQuiz.explanation
-    );
-    console.log(`✅ Grammar Quiz sent! ID: ${result.message_id}`);
+    console.log(`📤 Sending ${quizzes.length} grammar quiz(zes) to Telegram...`);
+    for (let i = 0; i < quizzes.length; i++) {
+      const q = quizzes[i];
+      const result = await sendQuiz(
+        q.question,
+        q.options,
+        q.correctIndex,
+        q.explanation
+      );
+      console.log(`✅ Grammar Quiz #${i + 1} [${q.level}] sent! ID: ${result.message_id}`);
+      if (i < quizzes.length - 1) {
+        console.log('⏳ Waiting 2.5s before sending second quiz...');
+        await sleep(2500);
+      }
+    }
   }
 }
 

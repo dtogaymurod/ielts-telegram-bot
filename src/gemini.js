@@ -729,40 +729,54 @@ Shuningdek, javobingizning eng boshida (birinchi qatorda) albatta "[TOPIC: podca
   }
 }
 
+const EASY_GRAMMAR_TOPICS = [
+  "Subject-Verb Agreement with basic quantifiers (Everyone has..., Neither student was..., Each of them has)",
+  "Countable vs Uncountable Nouns in IELTS (much vs many, few vs little, advice, information, furniture, equipment)",
+  "Gerunds vs Infinitives common verbs (enjoy doing, decide to do, avoid doing, afford to buy, suggest doing)",
+  "Past Simple vs Present Perfect (specific past time 'in 2021' vs unfinished time 'since 2021')",
+  "Basic Conditionals: First vs Second Conditional (If it rains vs If I were you)",
+  "Common Preposition errors (good at, interested in, depend on, married to, listen to)",
+  "Conjunctions: Although / Even though + clause vs Despite / In spite of + noun",
+  "Fewer vs Less (fewer items with countable nouns vs less time with uncountable nouns)",
+  "Comparative mistakes (avoid 'more better', use 'much better', 'more modern' instead of 'moderner')",
+  "Active vs Passive with intransitive verbs (occurred, happened, existed cannot be passive)"
+];
+
+const HARD_GRAMMAR_TOPICS = [
+  "Inversion structures after negative adverbs (Seldom do individuals..., Not only did the policy..., Little did they realize)",
+  "Mixed Conditionals (Past condition with present outcome: If she had prepared..., she would be confident now)",
+  "Participle Clauses (-ing and -ed clauses for sentence variety in IELTS Task 2 essays)",
+  "Dangling Modifiers and Misplaced Participial Clauses",
+  "Subjunctive Mood & Formal Mandative structures (It is imperative that the government take..., We suggest that he attend)",
+  "Causative Structures (have/get something done vs make/let someone do vs force to do)",
+  "Complex Subject-Verb Agreement (The number of + singular verb vs A number of + plural verb, Not only... but also...)",
+  "Dependent Prepositions governing Gerunds (object to -ing, be prone to -ing, contribute to -ing, look forward to -ing)",
+  "Relative Clauses with Prepositional Complements (the extent to which, in which case, for whom)",
+  "Cleft Sentences & Inverted Emphasis for Band 8.5+ Writing (What is particularly striking is..., It is because of...)"
+];
+
 /**
- * Generate Grammar Error Quiz
+ * Generate Grammar Error Quiz with specified level: 'easy' or 'hard'
  */
-export async function generateGrammarQuiz() {
+export async function generateGrammarQuiz(level = 'easy') {
   const client = getAI();
   if (!client) return null;
 
-  const grammarTopics = [
-    "Inversion structures (e.g., Not only did..., Seldom do we..., Little did they know)",
-    "Mixed Conditionals & 3rd Conditional vs 2nd Conditional nuances",
-    "Gerunds vs Infinitives with meaning change (remember to do vs remember doing, stop to do vs stop doing, regret)",
-    "Participle Clauses (-ing and -ed clauses for sentence variety in IELTS)",
-    "Complex Subject-Verb Agreement (Neither/Nor, A variety of, Each of the, The number of vs A number of)",
-    "Countable vs Uncountable Nouns & Quantifiers (fewer vs less, amount vs number, little vs few)",
-    "Subjunctive Mood & Hypothetical Structures (It is imperative that he do..., If I were)",
-    "Causative Structures (have/get something done, make/let someone do)",
-    "Relative Clauses & Pronouns (defining vs non-defining, whom vs who, whose, preposition + which)",
-    "Parallel Structure in complex sentences (e.g. not only X but also Y)",
-    "Dependent Prepositions & Collocational Grammar (prone to, contribute to -ing, insist on, object to -ing)",
-    "Modal Perfects in IELTS contexts (must have been, should have done, could not have known)",
-    "Conjunctions & Contrast Linkers (Despite / In spite of + noun vs Although / Even though + clause)",
-    "Articles with Abstract, Specific, and Geographical Nouns (the Himalayas vs Mount Everest, the Internet, in society)",
-    "Comparatives & Double Comparatives (The more..., the more...)",
-    "Past Perfect vs Past Simple in complex background narrative sentences",
-    "Dangling Modifiers and Misplaced Modifiers"
-  ];
+  const isHard = level === 'hard';
+  const pool = isHard ? HARD_GRAMMAR_TOPICS : EASY_GRAMMAR_TOPICS;
+  const historyKey = isHard ? 'generateGrammarQuiz_hard' : 'generateGrammarQuiz_easy';
 
   for (let attempt = 1; attempt <= 2; attempt++) {
     try {
-      const selectedTopic = grammarTopics[Math.floor(Math.random() * grammarTopics.length)];
-      const history = getHistory('generateGrammarQuiz');
+      const selectedTopic = pool[Math.floor(Math.random() * pool.length)];
+      const history = getHistory(historyKey);
+
+      const levelPrompt = isHard
+        ? "IELTS 7.5–9.0 darajasiga mos, qiyinroq (Advanced) grammatik xatoni to'g'rilash (Error Correction) testi yarat:"
+        : "IELTS tayyorgarligi uchun o'rta / osonroq (Intermediate / Foundation B1-B2) grammatik xatoni to'g'rilash testi yarat:";
 
       const response = await generateWithFallback(client, {
-        contents: `IELTS imtihonida (Writing va Speaking) talabalar ko'p xato qiladigan quyidagi grammatik mavzu bo'yicha bitta Grammar Error Correction quiz savoli yarat:
+        contents: `${levelPrompt}
           MAVZU: ${selectedTopic}
           
           MUHIM CHEKLOVLAR:
@@ -778,7 +792,7 @@ export async function generateGrammarQuiz() {
             "correct_index": 0,
             "explanation_uz": "Qisqa tushuntirish"
           }`
-          + (history.length > 0 ? `\n\nMUHIM QOIDA: Quyidagi mavzular va savollar avval chiqqan, bularni UMUMAN QAYTA ISHLATMANG (mutlaqo yangi gaplar va qoidalar tuzing): \n${history.join(', ')}\n` : ''),
+          + (history.length > 0 ? `\n\nMUHIM QOIDA: Quyidagi mavzular va savollar avval chiqqan, bularni UMUMAN QAYTA ISHLATMANG: \n${history.join(', ')}\n` : ''),
         config: {
           systemInstruction: 'Faqat valid JSON qaytar. Boshqa hech qanday matn yozma. Har bir variant uzunligi 80 belgidan oshmasligi shart.',
           temperature: 0.95,
@@ -804,12 +818,13 @@ export async function generateGrammarQuiz() {
       quiz.correct_index = quiz.options.indexOf(correctOptionText);
 
       if (quiz.topic) {
-        saveHistory('generateGrammarQuiz', `${quiz.topic} (${quiz.question.slice(0, 25)})`);
+        saveHistory(historyKey, `${quiz.topic} (${quiz.question.slice(0, 25)})`);
       }
 
+      quiz.level = level;
       return quiz;
     } catch (error) {
-      console.error(`❌ Attempt ${attempt} failed for grammar quiz:`, error.message);
+      console.error(`❌ Attempt ${attempt} failed for ${level} grammar quiz:`, error.message);
     }
   }
 
