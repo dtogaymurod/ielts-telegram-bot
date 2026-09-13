@@ -102,13 +102,15 @@
     "Comparative mistakes (Choose the sentence that )",
     "Intransitive Verbs: Active Voice Only (Choose the grammatically )",
     "Fewer vs Less (Choose the sentence with )",
-    "Countable vs Uncountable Nouns (Which sentence correctly )"
+    "Countable vs Uncountable Nouns (Which sentence correctly )",
+    "Active vs Passive with intransitive verbs (Choose the sentence where)"
   ],
   "generateGrammarQuiz_hard": [
     "Causative Structures (have/get something done vs make/let someone do vs force to do) (The CEO made his team to )",
     "Relative Clauses: Preposition + Whom/Which (Identify the grammaticall)",
     "Mixed Conditionals (Past condition with present outcome) (Identify the grammatical )",
     "Participle Clauses: Dangling Modifiers (Which option best correct)",
-    "Dangling Modifiers and Misplaced Participial Clauses (Choose the best correctio)"
+    "Dangling Modifiers and Misplaced Participial Clauses (Choose the best correctio)",
+    "Causative Structures: make/let/have someone do (Choose the correct causat)"
   ]
 }
