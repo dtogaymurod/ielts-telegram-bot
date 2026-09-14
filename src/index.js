@@ -201,6 +201,9 @@ async function tryAIGeneration(contentType) {
     'magic-3': gemini.generateMagic3,
     idiom: gemini.generateIdiom,
     collocation: gemini.generateCollocation,
+    'writing-upgrade': gemini.generateWritingUpgrade,
+    'writing-ideas': gemini.generateWritingIdeas,
+    'writing-traps': gemini.generateWritingTraps,
   };
 
   const generator = generators[contentType];

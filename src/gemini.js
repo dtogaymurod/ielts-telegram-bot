@@ -830,3 +830,149 @@ export async function generateGrammarQuiz(level = 'easy') {
 
   return null;
 }
+
+/**
+ * Format 1: Generate Writing Upgrade Post (Band 6.0 -> Band 8.5)
+ */
+export async function generateWritingUpgrade() {
+  const client = getAI();
+  if (!client) return null;
+
+  try {
+    const history = getHistory('generateWritingUpgrade');
+    const prompt = `IELTS Writing Task 2 uchun "Band 6.0 ➡️ Band 8.5 Upgrade" postini yoz.
+TALABLAR:
+1. Sarlavha: 🚀 <b>IELTS WRITING | BAND 6.0 ➡️ BAND 8.5</b>
+2. Mavzu konteksti: Real IELTS Task 2 mavzusi (Environment, Technology, Education, Health, Work, Society, Crime kabi).
+3. ❌ <b>Band 6.0 (Oddiy talaba gapi):</b> Talabalar inshoda ko'p ishlatadigan, grammatik to'g'ri ammo so'zma-so'z, leksikasi sodda bo'lgan 1 ta gap.
+4. ✨ <b>Band 8.5 (Ekspert varianti):</b> Shu gapning akademik, kuchli kollokatsiya va boy grammatik struktura bilan qayta yozilgan varianti.
+5. 🔍 <b>Nima o'zgardi va nega ball oshadi? (Batafsil tahlil):</b>
+   - Qaysi oddiy so'zlar qanday akademik so'z/kollokatsiyalarga almashdi.
+   - Grammatik struktura qanday murakkablashdi (passive, nominalization, relative clause, cleft sentence va h.k.).
+6. 💡 <b>Oltin qoida (Golden Tip):</b> Talabalar o'z insholarida darhol qo'llashi mumkin bo'lgan 1 jumlalik maslahat.
+7. Post oxirida: 👉 @dilshod_english
+
+FORMATLASH:
+- FAQAT Telegram HTML format (<b>, <i>, <u>) ishlat. Markdown yulduzchalari (**) QAT'IYAN TAQIQLANADI!
+- Birinchi qatorda "[TOPIC: mavzu_nomi]" deb yoz (bu xotira uchun o'chiriladi).`
+    + (history.length > 0 ? `\n\nQuyidagi mavzular avval chiqqan, bularni qayta ishlatma: \n${history.join(', ')}\n` : '');
+
+    const response = await generateWithFallback(client, {
+      contents: prompt,
+      config: {
+        systemInstruction: SYSTEM_INSTRUCTION,
+        temperature: 0.85,
+        maxOutputTokens: 2048,
+      },
+    });
+
+    let text = response.text;
+    const topicMatch = text.match(/\[TOPIC:\s*(.+?)\]/);
+    if (topicMatch) {
+      saveHistory('generateWritingUpgrade', topicMatch[1].trim());
+      text = text.replace(topicMatch[0], '').trim();
+    }
+    return text;
+  } catch (error) {
+    console.error('❌ Gemini writing upgrade generation failed:', error.message);
+    return null;
+  }
+}
+
+/**
+ * Format 2: Generate Writing Brainstorming & Idea Bank Post
+ */
+export async function generateWritingIdeas() {
+  const client = getAI();
+  if (!client) return null;
+
+  try {
+    const history = getHistory('generateWritingIdeas');
+    const prompt = `IELTS Writing Task 2 uchun "Brainstorming & Idea Bank" postini yoz.
+TALABLAR:
+1. Sarlavha: 🧠 <b>IELTS WRITING TASK 2 | BRAINSTORMING & IDEA BANK</b>
+2. 📌 <b>Mavzu (Real Exam Question):</b> 2025-2026 yillarda imtihonda tushgan bitta Task 2 savoli (inglizcha va o'zbekcha qisqa tarjimasi).
+3. 💡 <b>Ikkala tomon uchun tayyor g'oyalar (Brainstorming):</b>
+   - 1-qarash (Side A): 2 ta aniq, mantiqiy g'oya (inglizcha va o'zbekcha izohi bilan).
+   - 2-qarash (Side B): 2 ta kuchli g'oya (inglizcha va o'zbekcha izohi bilan).
+4. 💎 <b>Mavzuga oid Top Akademik Kollokatsiyalar (3-4 ta):</b>
+   - Inglizcha ibora — o'zbekcha tarjimasi bilan.
+5. 📝 <b>Namunaviy Body Paragraph (Band 8.5+):</b>
+   - Ushbu g'oyalardan birini ishlatib yozilgan PEEL (Point, Explanation, Example, Link) tuzilishidagi mukammal namunaviy abzas (taxminan 80-100 so'z).
+6. DIQQAT: Matnni va barcha bo'limlarni (g'oyalar, kollokatsiyalar, body paragraph) to'liq va mukammal tugating, aslo chala qoldirmang!
+7. Post oxirida: 👉 @dilshod_english
+
+FORMATLASH:
+- FAQAT Telegram HTML format (<b>, <i>, <u>) ishlat. Markdown yulduzchalari (**) QAT'IYAN TAQIQLANADI!
+- Birinchi qatorda "[TOPIC: mavzu_nomi]" deb yoz.`
+    + (history.length > 0 ? `\n\nQuyidagi mavzular avval chiqqan, bularni qayta ishlatma: \n${history.join(', ')}\n` : '');
+
+    const response = await generateWithFallback(client, {
+      contents: prompt,
+      config: {
+        systemInstruction: SYSTEM_INSTRUCTION,
+        temperature: 0.85,
+        maxOutputTokens: 4000,
+      },
+    });
+
+    let text = response.text;
+    const topicMatch = text.match(/\[TOPIC:\s*(.+?)\]/);
+    if (topicMatch) {
+      saveHistory('generateWritingIdeas', topicMatch[1].trim());
+      text = text.replace(topicMatch[0], '').trim();
+    }
+    return text;
+  } catch (error) {
+    console.error('❌ Gemini writing ideas generation failed:', error.message);
+    return null;
+  }
+}
+
+/**
+ * Format 4: Generate Common Writing Traps & Fixes Post
+ */
+export async function generateWritingTraps() {
+  const client = getAI();
+  if (!client) return null;
+
+  try {
+    const history = getHistory('generateWritingTraps');
+    const prompt = `IELTS Writing Task 2 uchun "Common Writing Traps & Fixes" (Ko'p qilinadigan xatolar va ularni to'g'rilash) postini yoz.
+TALABLAR:
+1. Sarlavha: ⚠️ <b>IELTS WRITING | KO'P QILINADIGAN XATOLAR (Common Traps)</b>
+2. ❌ <b>Keng tarqalgan xato (Trap):</b> Ko'pchilik talabalar qiladigan aniq bitta xato (masalan: "Nowadays" yoki "Since the dawn of time" deb essay boshlash, har bir gapda "In my opinion" takrorlash, "Firstly, Secondly, Thirdly" deb quruq ro'yxat qilish, noo'rin idiomalar ishlatish, noo'rin katta so'zlarni tiqishtirish, "Every coin has two sides" kabi klichyelar).
+3. 📉 <b>Nega bu examiner oldida ballni tushiradi?</b> Xatolik sababi va IELTS mezonlari (Task Response yoki Lexical Resource) bo'yicha tushuntirish.
+4. ✅ <b>Professional va yuqori ball keltiruvchi 3 xil muqobil (Fixes):</b>
+   - 1-usul: [Inglizcha namunaviy gap] + o'zbekcha izohi
+   - 2-usul: [Inglizcha namunaviy gap] + o'zbekcha izohi
+   - 3-usul: [Inglizcha namunaviy gap] + o'zbekcha izohi
+5. 🎯 <b>Xulosa / Oltin qoida:</b> 1 gaplik xulosa.
+6. Post oxirida: 👉 @dilshod_english
+
+FORMATLASH:
+- FAQAT Telegram HTML format (<b>, <i>, <u>) ishlat. Markdown yulduzchalari (**) QAT'IYAN TAQIQLANADI!
+- Birinchi qatorda "[TOPIC: xato_mavzusi]" deb yoz.`
+    + (history.length > 0 ? `\n\nQuyidagi xatolar avval chiqqan, bularni qayta ishlatma: \n${history.join(', ')}\n` : '');
+
+    const response = await generateWithFallback(client, {
+      contents: prompt,
+      config: {
+        systemInstruction: SYSTEM_INSTRUCTION,
+        temperature: 0.85,
+        maxOutputTokens: 2048,
+      },
+    });
+
+    let text = response.text;
+    const topicMatch = text.match(/\[TOPIC:\s*(.+?)\]/);
+    if (topicMatch) {
+      saveHistory('generateWritingTraps', topicMatch[1].trim());
+      text = text.replace(topicMatch[0], '').trim();
+    }
+    return text;
+  } catch (error) {
+    console.error('❌ Gemini writing traps generation failed:', error.message);
+    return null;
+  }
+}

@@ -33,16 +33,18 @@ export function getContentType() {
   const now = new Date();
   const tashkentHour = (now.getUTCHours() + 5) % 24;
 
-  // 🌙 Night Blackout Guard: 18:00 to 08:00 Tashkent time
-  if (tashkentHour >= 18 || tashkentHour < 8) {
+  // 🌙 Night Blackout Guard: 21:00 to 08:00 Tashkent time
+  if (tashkentHour >= 21 || tashkentHour < 8) {
     return 'night-blackout';
   }
 
   // 🎯 Prime Times (Tashkent Time UTC+5)
-  if (tashkentHour >= 8 && tashkentHour < 11) return 'speaking';
-  if (tashkentHour >= 11 && tashkentHour < 14) return 'collocation';
-  if (tashkentHour >= 14 && tashkentHour < 16) return 'idiom';
+  if (tashkentHour >= 8 && tashkentHour < 10) return 'speaking';
+  if (tashkentHour >= 10 && tashkentHour < 12) return 'writing-upgrade';
+  if (tashkentHour >= 12 && tashkentHour < 14) return 'collocation';
+  if (tashkentHour >= 14 && tashkentHour < 16) return 'writing-ideas';
   if (tashkentHour >= 16 && tashkentHour < 18) return 'reading-listening';
+  if (tashkentHour >= 18 && tashkentHour < 21) return 'writing-traps';
 
   return 'night-blackout';
 }
