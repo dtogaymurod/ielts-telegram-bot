@@ -6,7 +6,6 @@ on:
     - cron: '45 6 * * *'  # 11:45 Tashkent — Midday Vocabulary (Collocation of the Day)
     - cron: '45 9 * * *'  # 14:45 Tashkent — Afternoon Idiom (Idiom of the Day)
     - cron: '45 11 * * *' # 16:45 Tashkent — Study Strategy (Reading & Listening Strategy)
-    - cron: '45 14 * * *' # 19:45 Tashkent — Evening Prime (Grammar Error Fix Quiz)
 
   # Manual trigger for testing
   workflow_dispatch:
@@ -22,7 +21,6 @@ on:
           - collocation
           - idiom
           - reading-listening
-          - grammar-quiz
       content_type:
         description: 'Force specific content type'
         required: false
@@ -34,7 +32,6 @@ on:
           - collocation
           - idiom
           - reading-listening
-          - grammar-quiz
           - vocabulary
       dry_run:
         description: 'Dry run (preview in log, do not post)'
@@ -82,8 +79,6 @@ jobs:
             echo "slot=idiom" >> $GITHUB_OUTPUT
           elif [ $TASHKENT_HOUR -ge 16 ] && [ $TASHKENT_HOUR -lt 18 ]; then
             echo "slot=reading-listening" >> $GITHUB_OUTPUT
-          elif [ $TASHKENT_HOUR -ge 18 ] && [ $TASHKENT_HOUR -lt 21 ]; then
-            echo "slot=grammar-quiz" >> $GITHUB_OUTPUT
           else
             echo "slot=night-blackout" >> $GITHUB_OUTPUT
           fi

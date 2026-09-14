@@ -51,19 +51,14 @@ async function main() {
   console.log(`⏰ Time slot: ${timeSlot}`);
   console.log(`📋 Content type: ${contentType}`);
 
-  // 🌙 Night Blackout Guard: Never post during night hours
+  // 🌙 Night Blackout Guard: Never post during evening/night hours
   if (contentType === 'night-blackout') {
-    console.log(`🌙 Night Blackout active (Tashkent time). No posts allowed between 21:00 and 08:00 to protect subscribers.`);
+    console.log(`🌙 Night Blackout active (Tashkent time). No posts allowed between 18:00 and 08:00 to protect subscribers.`);
     process.exit(0);
   }
 
   if (contentType === 'quiz') {
     await handleQuiz();
-    return;
-  }
-  
-  if (contentType === 'grammar-quiz') {
-    await handleGrammarQuiz();
     return;
   }
   
