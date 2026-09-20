@@ -1,130 +1,104 @@
 /**
  * Content Selector
- * Determines which content type to post based on the time slot
+ * Determines which IELTS skill to post based on daily 4-skill rotation:
+ * Listening ➡️ Reading ➡️ Writing ➡️ Speaking ➡️ Listening...
  */
 
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const CONTENT_DIR = join(__dirname, '..', 'content');
+const ROTATION_FILE = join(CONTENT_DIR, 'skill_rotation.json');
+const HACKS_FILE = join(CONTENT_DIR, 'skill-hacks.json');
+
+const SKILL_ORDER = ['listening', 'reading', 'writing', 'speaking'];
 
 /**
- * Get the current time slot based on Tashkent time for logging
+ * Get current time string (Tashkent UTC+5) for logging
  * @returns {string} Time string
  */
 export function getTimeSlot() {
   const now = new Date();
   const tashkentHour = (now.getUTCHours() + 5) % 24;
-  return `${String(tashkentHour).padStart(2, '0')}:00`;
+  const tashkentMin = now.getUTCMinutes();
+  return `${String(tashkentHour).padStart(2, '0')}:${String(tashkentMin).padStart(2, '0')}`;
 }
 
 /**
- * Get the content type for the current time slot
- * @returns {string} Content type identifier
+ * Get the current rotation state
+ * @returns {{ nextSkill: string, lastUpdated?: string }}
  */
-export function getContentType() {
-  // Check if forced content type is set (for testing or workflow dispatch)
-  const forcedType = process.env.CONTENT_TYPE || process.env.TIME_SLOT;
-  if (forcedType) return forcedType;
-
-  // Auto-detect based on Tashkent time (UTC+5)
-  const now = new Date();
-  const tashkentHour = (now.getUTCHours() + 5) % 24;
-
-  // 🌙 Night Blackout Guard: 21:00 to 08:00 Tashkent time
-  if (tashkentHour >= 21 || tashkentHour < 8) {
-    return 'night-blackout';
-  }
-
-  // 🎯 Prime Times (Tashkent Time UTC+5)
-  if (tashkentHour >= 8 && tashkentHour < 10) return 'speaking';
-  if (tashkentHour >= 10 && tashkentHour < 12) return 'writing-upgrade';
-  if (tashkentHour >= 12 && tashkentHour < 14) return 'collocation';
-  if (tashkentHour >= 14 && tashkentHour < 16) return 'writing-ideas';
-  if (tashkentHour >= 16 && tashkentHour < 18) return 'reading-listening';
-  if (tashkentHour >= 18 && tashkentHour < 21) return 'writing-traps';
-
-  return 'night-blackout';
-}
-
-
-/**
- * Get and update the next speaking part
- * @returns {number} 1, 2, or 3
- */
-export function updateAndGetNextSpeakingPart() {
-  const statePath = join(CONTENT_DIR, 'state.json');
+export function getRotationState() {
   try {
-    const state = JSON.parse(readFileSync(statePath, 'utf-8'));
-    let part = state.lastSpeakingPart + 1;
-    if (part > 3) part = 1;
-    state.lastSpeakingPart = part;
-    writeFileSync(statePath, JSON.stringify(state, null, 2), 'utf-8');
-    return part;
+    if (existsSync(ROTATION_FILE)) {
+      const data = JSON.parse(readFileSync(ROTATION_FILE, 'utf-8'));
+      if (SKILL_ORDER.includes(data.nextSkill)) {
+        return data;
+      }
+    }
+  } catch (_) {}
+  return { nextSkill: 'listening' };
+}
+
+/**
+ * Save updated rotation state
+ * @param {{ nextSkill: string, lastUpdated?: string }} state
+ */
+export function saveRotationState(state) {
+  try {
+    writeFileSync(ROTATION_FILE, JSON.stringify(state, null, 2), 'utf-8');
   } catch (err) {
-    console.error('Error reading state.json:', err.message);
-    return 1;
+    console.error('⚠️ Could not save skill_rotation.json:', err.message);
   }
 }
 
+/**
+ * Determine which skill to post today, and advance rotation for tomorrow
+ * @returns {string} One of: 'listening', 'reading', 'writing', 'speaking'
+ */
+export function getNextSkill() {
+  // Allow manual override via environment variable
+  const forcedSkill = process.env.SKILL || process.env.CONTENT_TYPE;
+  if (forcedSkill && SKILL_ORDER.includes(forcedSkill.toLowerCase())) {
+    return forcedSkill.toLowerCase();
+  }
 
+  const state = getRotationState();
+  const currentSkill = state.nextSkill || 'listening';
+
+  // Determine the next skill for tomorrow
+  const currentIndex = SKILL_ORDER.indexOf(currentSkill);
+  const nextIndex = (currentIndex + 1) % SKILL_ORDER.length;
+  const tomorrowSkill = SKILL_ORDER[nextIndex];
+
+  // Save new state
+  saveRotationState({
+    nextSkill: tomorrowSkill,
+    lastUpdated: new Date().toISOString(),
+  });
+
+  return currentSkill;
+}
 
 /**
- * Get a random unused item from a content file
- * @param {string} contentType - Content type (matches JSON filename)
- * @returns {object|null} Content item or null if all used/file missing
+ * Retrieve a fallback hack from database if AI is offline
+ * @param {string} skill - 'listening' | 'reading' | 'writing' | 'speaking'
+ * @returns {string|null} Pre-screened post text
  */
-export function getContentFromDatabase(contentType) {
-  const filePath = join(CONTENT_DIR, `${contentType}.json`);
-
+export function getSkillHackFallback(skill) {
   try {
-    const raw = readFileSync(filePath, 'utf-8');
-    const items = JSON.parse(raw);
-
-    // Filter unused items
-    const unused = items.filter((item) => !item.used);
-
-    if (unused.length === 0) {
-      console.log(`❌ All ${contentType} items have been used. Strict 'no repeat' rule prevents resetting.`);
-      return null;
+    if (existsSync(HACKS_FILE)) {
+      const hacks = JSON.parse(readFileSync(HACKS_FILE, 'utf-8'));
+      const list = hacks[skill];
+      if (Array.isArray(list) && list.length > 0) {
+        const item = list[Math.floor(Math.random() * list.length)];
+        return item.text || null;
+      }
     }
-
-    // Pick a random unused item
-    const selected = unused[Math.floor(Math.random() * unused.length)];
-
-    // Mark as used
-    const itemIndex = items.findIndex((item) => item.id === selected.id);
-    if (itemIndex !== -1) {
-      items[itemIndex].used = true;
-      writeFileSync(filePath, JSON.stringify(items, null, 2), 'utf-8');
-    }
-
-    return selected;
-  } catch (error) {
-    console.error(`⚠️ Could not read ${filePath}: ${error.message}`);
-    return null;
+  } catch (err) {
+    console.error('⚠️ Error reading skill-hacks.json:', err.message);
   }
-}
-
-/**
- * Map content types to their database file names
- */
-export const CONTENT_TYPE_MAP = {
-  vocabulary: 'vocabulary',
-  writing: 'writing-tips',
-  speaking: 'speaking-tips',
-  'reading-listening': 'reading-listening',
-  'band-score': 'band-score-tips',
-  motivation: 'motivation',
-  quiz: 'quizzes',
-  'reading-test': 'reading-tests',
-};
-
-/**
- * Get the database filename for a content type
- */
-export function getDatabaseFile(contentType) {
-  return CONTENT_TYPE_MAP[contentType] || contentType;
+  return null;
 }

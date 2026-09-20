@@ -2,43 +2,22 @@ name: IELTS Channel Auto-Post
 
 on:
   schedule:
-    - cron: '35 3 * * *'  # 08:35 Tashkent — Morning Speaking Masterclass (PDF Guide + Visible Questions)
-    - cron: '45 5 * * *'  # 10:45 Tashkent — Writing Upgrade (Band 6.0 ➡️ Band 8.5)
-    - cron: '45 7 * * *'  # 12:45 Tashkent — Midday Vocabulary (Collocation of the Day)
-    - cron: '15 10 * * *' # 15:15 Tashkent — Writing Brainstorming & Idea Bank
-    - cron: '15 12 * * *' # 17:15 Tashkent — Study Strategy (Reading & Listening Strategy)
-    - cron: '45 14 * * *' # 19:45 Tashkent — Writing Common Traps & Fixes
+    - cron: '30 14 * * *' # 19:30 Tashkent (14:30 UTC) — Daily Prime-Time Post (Listening ➡️ Reading ➡️ Writing ➡️ Speaking)
 
   # Manual trigger for testing
   workflow_dispatch:
     inputs:
-      time_slot:
-        description: 'Time slot to simulate'
+      skill:
+        description: 'Force specific skill (optional)'
         required: false
         default: ''
         type: choice
         options:
           - ''
+          - listening
+          - reading
+          - writing
           - speaking
-          - writing-upgrade
-          - collocation
-          - writing-ideas
-          - reading-listening
-          - writing-traps
-      content_type:
-        description: 'Force specific content type'
-        required: false
-        default: ''
-        type: choice
-        options:
-          - ''
-          - speaking
-          - writing-upgrade
-          - collocation
-          - writing-ideas
-          - reading-listening
-          - writing-traps
-          - vocabulary
       dry_run:
         description: 'Dry run (preview in log, do not post)'
         required: false
@@ -63,43 +42,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Determine time slot
-        id: timeslot
-        run: |
-          # Manual trigger with input
-          if [ -n "${{ github.event.inputs.time_slot }}" ]; then
-            echo "slot=${{ github.event.inputs.time_slot }}" >> $GITHUB_OUTPUT
-            exit 0
-          fi
-          
-          # Auto-detect from Tashkent time (UTC+5)
-          UTC_HOUR=$(date -u +%H)
-          TASHKENT_HOUR=$(( (10#$UTC_HOUR + 5) % 24 ))
-          echo "Detected UTC Hour: $UTC_HOUR | Tashkent Hour: $TASHKENT_HOUR"
-          
-          if [ $TASHKENT_HOUR -ge 8 ] && [ $TASHKENT_HOUR -lt 10 ]; then
-            echo "slot=speaking" >> $GITHUB_OUTPUT
-          elif [ $TASHKENT_HOUR -ge 10 ] && [ $TASHKENT_HOUR -lt 12 ]; then
-            echo "slot=writing-upgrade" >> $GITHUB_OUTPUT
-          elif [ $TASHKENT_HOUR -ge 12 ] && [ $TASHKENT_HOUR -lt 14 ]; then
-            echo "slot=collocation" >> $GITHUB_OUTPUT
-          elif [ $TASHKENT_HOUR -ge 14 ] && [ $TASHKENT_HOUR -lt 16 ]; then
-            echo "slot=writing-ideas" >> $GITHUB_OUTPUT
-          elif [ $TASHKENT_HOUR -ge 16 ] && [ $TASHKENT_HOUR -lt 18 ]; then
-            echo "slot=reading-listening" >> $GITHUB_OUTPUT
-          elif [ $TASHKENT_HOUR -ge 18 ] && [ $TASHKENT_HOUR -lt 21 ]; then
-            echo "slot=writing-traps" >> $GITHUB_OUTPUT
-          else
-            echo "slot=night-blackout" >> $GITHUB_OUTPUT
-          fi
-
       - name: Post to Telegram
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          TIME_SLOT: ${{ steps.timeslot.outputs.slot }}
-          CONTENT_TYPE: ${{ github.event.inputs.content_type }}
+          SKILL: ${{ github.event.inputs.skill }}
         run: |
           if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
             node src/index.js --dry-run
@@ -107,11 +55,11 @@ jobs:
             node src/index.js
           fi
 
-      - name: Commit usage tracking changes
+      - name: Commit rotation and tracking changes
         if: success() && github.event.inputs.dry_run != 'true'
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add content/*.json
-          git diff --staged --quiet || git commit -m "📊 Update content usage tracking [skip ci]"
+          git diff --staged --quiet || git commit -m "📊 Update skill rotation & content tracking [skip ci]"
           git push || echo "Nothing to push"

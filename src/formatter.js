@@ -231,6 +231,9 @@ export function formatContent(contentType, item) {
   const formatters = {
     vocabulary: formatVocabulary,
     writing: formatWritingTip,
+    'writing-upgrade': formatWritingTip,
+    'writing-ideas': formatWritingTip,
+    'writing-traps': formatWritingTip,
     speaking: formatSpeakingTip,
     'reading-listening': formatReadingListening,
     'band-score': formatBandScoreTip,

@@ -838,9 +838,10 @@ export async function generateWritingUpgrade() {
   const client = getAI();
   if (!client) return null;
 
-  try {
-    const history = getHistory('generateWritingUpgrade');
-    const prompt = `IELTS Writing Task 2 uchun "Band 6.0 ➡️ Band 8.5 Upgrade" postini yoz.
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    try {
+      const history = getHistory('generateWritingUpgrade');
+      const prompt = `IELTS Writing Task 2 uchun "Band 6.0 ➡️ Band 8.5 Upgrade" postini yoz.
 TALABLAR:
 1. Sarlavha: 🚀 <b>IELTS WRITING | BAND 6.0 ➡️ BAND 8.5</b>
 2. Mavzu konteksti: Real IELTS Task 2 mavzusi (Environment, Technology, Education, Health, Work, Society, Crime kabi).
@@ -855,28 +856,32 @@ TALABLAR:
 FORMATLASH:
 - FAQAT Telegram HTML format (<b>, <i>, <u>) ishlat. Markdown yulduzchalari (**) QAT'IYAN TAQIQLANADI!
 - Birinchi qatorda "[TOPIC: mavzu_nomi]" deb yoz (bu xotira uchun o'chiriladi).`
-    + (history.length > 0 ? `\n\nQuyidagi mavzular avval chiqqan, bularni qayta ishlatma: \n${history.join(', ')}\n` : '');
+      + (history.length > 0 ? `\n\nQuyidagi mavzular avval chiqqan, bularni qayta ishlatma: \n${history.join(', ')}\n` : '');
 
-    const response = await generateWithFallback(client, {
-      contents: prompt,
-      config: {
-        systemInstruction: SYSTEM_INSTRUCTION,
-        temperature: 0.85,
-        maxOutputTokens: 2048,
-      },
-    });
+      const response = await generateWithFallback(client, {
+        contents: prompt,
+        config: {
+          systemInstruction: SYSTEM_INSTRUCTION,
+          temperature: 0.8,
+          maxOutputTokens: 3000,
+        },
+      });
 
-    let text = response.text;
-    const topicMatch = text.match(/\[TOPIC:\s*(.+?)\]/);
-    if (topicMatch) {
-      saveHistory('generateWritingUpgrade', topicMatch[1].trim());
-      text = text.replace(topicMatch[0], '').trim();
+      let text = response.text;
+      if (!text || text.length < 300) {
+        continue;
+      }
+      const topicMatch = text.match(/\[TOPIC:\s*(.+?)\]/);
+      if (topicMatch) {
+        saveHistory('generateWritingUpgrade', topicMatch[1].trim());
+        text = text.replace(topicMatch[0], '').trim();
+      }
+      return text;
+    } catch (error) {
+      console.error(`❌ Attempt ${attempt} failed for writing upgrade:`, error.message);
     }
-    return text;
-  } catch (error) {
-    console.error('❌ Gemini writing upgrade generation failed:', error.message);
-    return null;
   }
+  return null;
 }
 
 /**
@@ -976,3 +981,270 @@ FORMATLASH:
     return null;
   }
 }
+
+// ══════════════════════════════════════════════════════════════
+// 📱 SINGLE-SCREEN (NO SCROLL) 4-SKILL DAILY HACK GENERATORS
+// ══════════════════════════════════════════════════════════════
+
+const FOOTER_CALLOUT = "💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>";
+const FOOTER_LINKS = "👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz";
+
+/**
+ * Validate post length, completeness, and Telegram HTML safety
+ */
+export function validatePostCompleteness(text) {
+  if (!text || typeof text !== 'string') return { valid: false, reason: 'Empty text' };
+
+  let clean = text.replace(/\[TOPIC:\s*.+?\]/g, '').trim();
+
+  // Single-screen length rule: 350 - 850 characters
+  if (clean.length < 350) return { valid: false, reason: `Too short (${clean.length} chars)` };
+  if (clean.length > 850) return { valid: false, reason: `Too long (${clean.length} chars) - exceeds single screen limit` };
+
+  // Mandatory links
+  if (!clean.includes('@dilshod_english') || !clean.includes('instagram.com/dilshod.ustoz')) {
+    return { valid: false, reason: 'Missing Telegram or Instagram link' };
+  }
+
+  // Must contain share callout
+  if (!clean.includes('ulashing')) {
+    return { valid: false, reason: 'Missing share callout' };
+  }
+
+  // Check balanced tags
+  const openB = (clean.match(/<b>/g) || []).length;
+  const closeB = (clean.match(/<\/b>/g) || []).length;
+  if (openB !== closeB) return { valid: false, reason: `Unbalanced <b> tags (${openB} vs ${closeB})` };
+
+  const openI = (clean.match(/<i>/g) || []).length;
+  const closeI = (clean.match(/<\/i>/g) || []).length;
+  if (openI !== closeI) return { valid: false, reason: `Unbalanced <i> tags (${openI} vs ${closeI})` };
+
+  if (clean.includes('**')) return { valid: false, reason: 'Contains markdown ** instead of HTML' };
+
+  // Must not end abruptly
+  if (clean.endsWith('...') || clean.endsWith(',') || clean.endsWith('-') || clean.endsWith(':')) {
+    return { valid: false, reason: 'Text ends mid-sentence or abruptly' };
+  }
+
+  return { valid: true, cleanText: clean };
+}
+
+/**
+ * 1. Listening Hack Generator (Single screen, ~60-80 words)
+ */
+async function generateListeningHack(client) {
+  const history = getHistory('generateListeningHack');
+  const prompt = `IELTS Listening bo'yicha telefon ekraniga sig'adigan ixcham "1 MINUTE HACK" postini yoz.
+TALABLAR:
+- HAJM: Jami 60-85 so'z (500-750 belgi). O'quvchi pastga SCROLL QILMASDAN bir qarashda o'qishi SHART!
+- MAVZU: Listening'da ko'p uchraydigan bitta aniq tuzoq (Masalan: "used to be" eski ma'lumot qopqoni, narx/raqamni spiker tuzatishi, xarita kompas yo'nalishlari, ikkitalik harflar spellingi, ko'plik (-s) qo'shimchasi).
+- TUZILISHI:
+🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>
+━━━━━━━━━━━━━━━━━━━━
+
+⚠️ <b>[Tuzoq nomi]:</b>
+[1-2 gapda audioda qanday chalg'itishi va real misol]
+
+💡 <b>Oltin qoida:</b>
+[Aniq 2-3 qatorlik yechim yoki qoida]
+
+${FOOTER_CALLOUT}
+
+${FOOTER_LINKS}
+
+MUHIM:
+- FAQAT Telegram HTML (<b>, <i>). Markdown (**) QAT'IYAN TAQIQLANADI!
+- Birinchi qatorda "[TOPIC: mavzu_nomi]" deb yoz.`
+  + (history.length > 0 ? `\n\nQuyidagi mavzular avval chiqqan, qayta ishlatma: \n${history.join(', ')}\n` : '');
+
+  const response = await generateWithFallback(client, {
+    contents: prompt,
+    config: {
+      systemInstruction: SYSTEM_INSTRUCTION,
+      temperature: 0.75,
+      maxOutputTokens: 1000,
+    },
+  });
+
+  let text = response.text;
+  const topicMatch = text?.match(/\[TOPIC:\s*(.+?)\]/);
+  if (topicMatch) {
+    saveHistory('generateListeningHack', topicMatch[1].trim());
+    text = text.replace(topicMatch[0], '').trim();
+  }
+  return text;
+}
+
+/**
+ * 2. Reading Hack Generator (Single screen, ~60-80 words)
+ */
+async function generateReadingHack(client) {
+  const history = getHistory('generateReadingHack');
+  const prompt = `IELTS Reading bo'yicha telefon ekraniga sig'adigan ixcham "1 MINUTE HACK" postini yoz.
+TALABLAR:
+- HAJM: Jami 60-85 so'z (500-750 belgi). O'quvchi pastga SCROLL QILMASDAN bir qarashda o'qishi SHART!
+- MAVZU: Reading'dagi bitta oltin qoida (Masalan: False va Not Given farqi, Matching Headings'da Topic Sentence aldami, Ekstremal so'zlar (always, only), Skimming vs Scanning, Paraphrase ovlash siri).
+- TUZILISHI:
+📖 <b>IELTS READING | 1 MINUTE HACK</b>
+━━━━━━━━━━━━━━━━━━━━
+
+⚠️ <b>[Muammo / Savol turi]:</b>
+[1-2 gapda nima uchun ko'pchilik bu savolda adashishi]
+
+💡 <b>Oltin qoida:</b>
+[Aniq va lo'nda yechim: 2-3 qatorlik tushunarli formula]
+
+${FOOTER_CALLOUT}
+
+${FOOTER_LINKS}
+
+MUHIM:
+- FAQAT Telegram HTML (<b>, <i>). Markdown (**) QAT'IYAN TAQIQLANADI!
+- Birinchi qatorda "[TOPIC: mavzu_nomi]" deb yoz.`
+  + (history.length > 0 ? `\n\nQuyidagi mavzular avval chiqqan, qayta ishlatma: \n${history.join(', ')}\n` : '');
+
+  const response = await generateWithFallback(client, {
+    contents: prompt,
+    config: {
+      systemInstruction: SYSTEM_INSTRUCTION,
+      temperature: 0.75,
+      maxOutputTokens: 1000,
+    },
+  });
+
+  let text = response.text;
+  const topicMatch = text?.match(/\[TOPIC:\s*(.+?)\]/);
+  if (topicMatch) {
+    saveHistory('generateReadingHack', topicMatch[1].trim());
+    text = text.replace(topicMatch[0], '').trim();
+  }
+  return text;
+}
+
+/**
+ * 3. Writing Hack Generator (Single screen, ~60-80 words)
+ */
+async function generateWritingHack(client) {
+  const history = getHistory('generateWritingHack');
+  const prompt = `IELTS Writing bo'yicha telefon ekraniga sig'adigan ixcham "1 MINUTE HACK" postini yoz.
+TALABLAR:
+- HAJM: Jami 60-85 so'z (500-750 belgi). O'quvchi pastga SCROLL QILMASDAN bir qarashda o'qishi SHART!
+- MAVZU: Task 2 yoki Task 1 bo'yicha bitta kuchli yangilanish (Masalan: "Nowadays" yoki "Every coin has two sides" klichyelarini almashtirish, Band 6.0 gapni Band 8.0 ga o'zgartirish, PEEL tuzilishi, Passive ovoz balansi).
+- TUZILISHI:
+✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>
+━━━━━━━━━━━━━━━━━━━━
+
+⚠️ <b>[Keng tarqalgan xato / klichye]:</b>
+[1-2 gapda muammo]
+
+💡 <b>Band 8.0+ usul:</b>
+❌ <i>[Oddiy / klichye gap]</i>
+✅ <i>[Akademik, kuchli muqobil gap]</i>
+[Qisqa 1 gaplik xulosa]
+
+${FOOTER_CALLOUT}
+
+${FOOTER_LINKS}
+
+MUHIM:
+- FAQAT Telegram HTML (<b>, <i>). Markdown (**) QAT'IYAN TAQIQLANADI!
+- Birinchi qatorda "[TOPIC: mavzu_nomi]" deb yoz.`
+  + (history.length > 0 ? `\n\nQuyidagi mavzular avval chiqqan, qayta ishlatma: \n${history.join(', ')}\n` : '');
+
+  const response = await generateWithFallback(client, {
+    contents: prompt,
+    config: {
+      systemInstruction: SYSTEM_INSTRUCTION,
+      temperature: 0.75,
+      maxOutputTokens: 1000,
+    },
+  });
+
+  let text = response.text;
+  const topicMatch = text?.match(/\[TOPIC:\s*(.+?)\]/);
+  if (topicMatch) {
+    saveHistory('generateWritingHack', topicMatch[1].trim());
+    text = text.replace(topicMatch[0], '').trim();
+  }
+  return text;
+}
+
+/**
+ * 4. Speaking Hack Generator (Single screen, ~60-80 words)
+ */
+async function generateSpeakingHack(client) {
+  const history = getHistory('generateSpeakingHack');
+  const prompt = `IELTS Speaking bo'yicha telefon ekraniga sig'adigan ixcham "1 MINUTE HACK" postini yoz.
+TALABLAR:
+- HAJM: Jami 60-85 so'z (500-750 belgi). O'quvchi pastga SCROLL QILMASDAN bir qarashda o'qishi SHART!
+- MAVZU: Speaking bo'yicha bitta aniq texnika (Masalan: Part 1 da 1 so'z bilan to'xtab qolmaslik (Answer + Reason + Example), Part 2 da 1 daqiqalik tayyorgarlikda gap emas kollokatsiya yozish, Part 3 da o'zingiz emas jamiyat nomidan gapirish, Noo'rin pauzalar o'rniga tabiiy fillerlar).
+- TUZILISHI:
+🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>
+━━━━━━━━━━━━━━━━━━━━
+
+⚠️ <b>[Ko'p uchraydigan xato]:</b>
+[1-2 gapda imtihonda talabalar to'xtab qolishi yoki xatosi]
+
+💡 <b>Oltin formula:</b>
+[2-3 qatorlik amaliy formula yoki namunaviy 1 ta gap]
+
+${FOOTER_CALLOUT}
+
+${FOOTER_LINKS}
+
+MUHIM:
+- FAQAT Telegram HTML (<b>, <i>). Markdown (**) QAT'IYAN TAQIQLANADI!
+- Birinchi qatorda "[TOPIC: mavzu_nomi]" deb yoz.`
+  + (history.length > 0 ? `\n\nQuyidagi mavzular avval chiqqan, qayta ishlatma: \n${history.join(', ')}\n` : '');
+
+  const response = await generateWithFallback(client, {
+    contents: prompt,
+    config: {
+      systemInstruction: SYSTEM_INSTRUCTION,
+      temperature: 0.75,
+      maxOutputTokens: 1000,
+    },
+  });
+
+  let text = response.text;
+  const topicMatch = text?.match(/\[TOPIC:\s*(.+?)\]/);
+  if (topicMatch) {
+    saveHistory('generateSpeakingHack', topicMatch[1].trim());
+    text = text.replace(topicMatch[0], '').trim();
+  }
+  return text;
+}
+
+/**
+ * Centralized Generator for 4-Skill Daily Posts with Validation & Retry
+ */
+export async function generateDailySkillPost(skill) {
+  const client = getAI();
+  if (!client) return null;
+
+  const validSkills = ['listening', 'reading', 'writing', 'speaking'];
+  if (!validSkills.includes(skill)) return null;
+
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      let rawText = null;
+      if (skill === 'listening') rawText = await generateListeningHack(client);
+      else if (skill === 'reading') rawText = await generateReadingHack(client);
+      else if (skill === 'writing') rawText = await generateWritingHack(client);
+      else if (skill === 'speaking') rawText = await generateSpeakingHack(client);
+
+      if (!rawText) continue;
+
+      const validation = validatePostCompleteness(rawText);
+      if (validation.valid) {
+        return validation.cleanText;
+      }
+      console.warn(`⚠️ Post validation failed for ${skill} (attempt ${attempt}): ${validation.reason}`);
+    } catch (err) {
+      console.error(`❌ Attempt ${attempt} failed for ${skill}:`, err.message);
+    }
+  }
+  return null;
+}
+
