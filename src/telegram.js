@@ -185,6 +185,38 @@ export async function sendDocument(filePath, fileName, caption = '') {
 }
 
 /**
+ * Send a document by Telegram file_id
+ * @param {string} fileId - Telegram file_id
+ * @param {string} caption - Caption HTML
+ */
+export async function sendDocumentByFileId(fileId, caption = '') {
+  const url = `${BASE_URL}/sendDocument`;
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: CHANNEL_ID,
+          document: fileId,
+          caption,
+          parse_mode: 'HTML',
+        }),
+      });
+      const data = await response.json();
+      if (!data.ok) {
+        throw new Error(`Telegram API error [${data.error_code}]: ${data.description}`);
+      }
+      return data.result;
+    } catch (error) {
+      if (attempt === 3) throw error;
+      console.log(`⚠️ Attempt ${attempt} failed: ${error.message}. Retrying...`);
+      await sleep(1000 * attempt);
+    }
+  }
+}
+
+/**
  * Validate that required environment variables are set
  */
 export function validateConfig() {
