@@ -156,7 +156,12 @@
     "Listening Correction Trap",
     "Listening -S qo'shimchasi",
     "Listening \"used to be\" trap",
-    "Listening Xarita yo'nalishlari"
+    "Listening Xarita yo'nalishlari",
+    "Listening Double Letters Spelling",
+    "Listening Sinonimlar Qopqoni",
+    "Listening Reja O'zgarishi Qopqoni",
+    "Listening Distractor Trap",
+    "Listening Raqam O'zgarishi Qopqoni"
   ],
   "generateReadingHack": [
     "False va Not Given farqi",
@@ -164,7 +169,10 @@
     "Matching Headings",
     "Paraphrase ovlash siri",
     "Skimming vs Scanning",
-    "MCQ'larda Distractorlar"
+    "MCQ'larda Distractorlar",
+    "Readingda Keywordsni chuqur tushunish",
+    "Referencing Words",
+    "Sentence Completion da Grammatik Tuzoqlar"
   ],
   "generateWritingHack": [
     "Weak Opening Phrases",
@@ -172,7 +180,8 @@
     "Repetitive Linking Phrases",
     "Klichye Xulosalardan Qochish",
     "Nominalizatsiyadan foydalanish",
-    "Task 2da Shaxsiy Fikr Bildirish"
+    "Task 2da Shaxsiy Fikr Bildirish",
+    "Task 2da Shartli Gaplar - Conditionals"
   ],
   "generateSpeakingHack": [
     "Speaking Part 2 | 1 daqiqalik tayyorgarlik",
@@ -180,6 +189,7 @@
     "IELTS Speaking Part 1",
     "IELTS Speaking Part 3",
     "IELTS Speaking | Lug'at boyligini oshirish",
-    "IELTS Speaking | G'oyalarni kengaytirish"
+    "IELTS Speaking | G'oyalarni kengaytirish",
+    "Speaking Fillers"
   ]
 }

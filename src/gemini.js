@@ -20,7 +20,7 @@ export function getAI() {
   return ai;
 }
 
-const MODELS = ['gemini-2.5-flash', 'gemini-3.6-flash'];
+const MODELS = ['gemini-3.5-flash-lite', 'gemini-3.5-flash', 'gemini-2.5-flash'];
 
 export async function generateWithFallback(client, requestConfig) {
   let lastError = null;
@@ -997,30 +997,33 @@ export function validatePostCompleteness(text) {
 
   let clean = text.replace(/\[TOPIC:\s*.+?\]/g, '').trim();
 
-  // Single-screen length rule: 350 - 850 characters
-  if (clean.length < 350) return { valid: false, reason: `Too short (${clean.length} chars)` };
-  if (clean.length > 850) return { valid: false, reason: `Too long (${clean.length} chars) - exceeds single screen limit` };
+  // Auto-convert markdown bold and italic to HTML
+  clean = clean.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+  clean = clean.replace(/(^|[^\\])\*([^*\n]+)\*/g, '$1<i>$2</i>');
+  clean = clean.replace(/^#{1,3}\s+(.+)$/gm, '<b>$1</b>');
 
-  // Mandatory links
-  if (!clean.includes('@dilshod_english') || !clean.includes('instagram.com/dilshod.ustoz')) {
-    return { valid: false, reason: 'Missing Telegram or Instagram link' };
-  }
-
-  // Must contain share callout
+  // Ensure share callout is present
   if (!clean.includes('ulashing')) {
-    return { valid: false, reason: 'Missing share callout' };
+    clean += `\n\n${FOOTER_CALLOUT}`;
   }
 
-  // Check balanced tags
+  // Ensure links are present
+  if (!clean.includes('@dilshod_english') || !clean.includes('instagram.com/dilshod.ustoz')) {
+    clean += `\n\n${FOOTER_LINKS}`;
+  }
+
+  // Balance tags automatically if needed
   const openB = (clean.match(/<b>/g) || []).length;
   const closeB = (clean.match(/<\/b>/g) || []).length;
-  if (openB !== closeB) return { valid: false, reason: `Unbalanced <b> tags (${openB} vs ${closeB})` };
+  if (openB > closeB) clean += '</b>'.repeat(openB - closeB);
 
   const openI = (clean.match(/<i>/g) || []).length;
   const closeI = (clean.match(/<\/i>/g) || []).length;
-  if (openI !== closeI) return { valid: false, reason: `Unbalanced <i> tags (${openI} vs ${closeI})` };
+  if (openI > closeI) clean += '</i>'.repeat(openI - closeI);
 
-  if (clean.includes('**')) return { valid: false, reason: 'Contains markdown ** instead of HTML' };
+  // Single-screen length rule: 350 - 900 characters
+  if (clean.length < 350) return { valid: false, reason: `Too short (${clean.length} chars)` };
+  if (clean.length > 900) return { valid: false, reason: `Too long (${clean.length} chars) - exceeds single screen limit` };
 
   // Must not end abruptly
   if (clean.endsWith('...') || clean.endsWith(',') || clean.endsWith('-') || clean.endsWith(':')) {
@@ -1063,17 +1066,18 @@ MUHIM:
     config: {
       systemInstruction: SYSTEM_INSTRUCTION,
       temperature: 0.75,
-      maxOutputTokens: 1000,
+      maxOutputTokens: 2000,
     },
   });
 
   let text = response.text;
+  let topic = null;
   const topicMatch = text?.match(/\[TOPIC:\s*(.+?)\]/);
   if (topicMatch) {
-    saveHistory('generateListeningHack', topicMatch[1].trim());
+    topic = topicMatch[1].trim();
     text = text.replace(topicMatch[0], '').trim();
   }
-  return text;
+  return { rawText: text, topic };
 }
 
 /**
@@ -1109,17 +1113,18 @@ MUHIM:
     config: {
       systemInstruction: SYSTEM_INSTRUCTION,
       temperature: 0.75,
-      maxOutputTokens: 1000,
+      maxOutputTokens: 2000,
     },
   });
 
   let text = response.text;
+  let topic = null;
   const topicMatch = text?.match(/\[TOPIC:\s*(.+?)\]/);
   if (topicMatch) {
-    saveHistory('generateReadingHack', topicMatch[1].trim());
+    topic = topicMatch[1].trim();
     text = text.replace(topicMatch[0], '').trim();
   }
-  return text;
+  return { rawText: text, topic };
 }
 
 /**
@@ -1157,17 +1162,18 @@ MUHIM:
     config: {
       systemInstruction: SYSTEM_INSTRUCTION,
       temperature: 0.75,
-      maxOutputTokens: 1000,
+      maxOutputTokens: 2000,
     },
   });
 
   let text = response.text;
+  let topic = null;
   const topicMatch = text?.match(/\[TOPIC:\s*(.+?)\]/);
   if (topicMatch) {
-    saveHistory('generateWritingHack', topicMatch[1].trim());
+    topic = topicMatch[1].trim();
     text = text.replace(topicMatch[0], '').trim();
   }
-  return text;
+  return { rawText: text, topic };
 }
 
 /**
@@ -1203,17 +1209,18 @@ MUHIM:
     config: {
       systemInstruction: SYSTEM_INSTRUCTION,
       temperature: 0.75,
-      maxOutputTokens: 1000,
+      maxOutputTokens: 2000,
     },
   });
 
   let text = response.text;
+  let topic = null;
   const topicMatch = text?.match(/\[TOPIC:\s*(.+?)\]/);
   if (topicMatch) {
-    saveHistory('generateSpeakingHack', topicMatch[1].trim());
+    topic = topicMatch[1].trim();
     text = text.replace(topicMatch[0], '').trim();
   }
-  return text;
+  return { rawText: text, topic };
 }
 
 /**
@@ -1226,18 +1233,28 @@ export async function generateDailySkillPost(skill) {
   const validSkills = ['listening', 'reading', 'writing', 'speaking'];
   if (!validSkills.includes(skill)) return null;
 
+  const historyKeyMap = {
+    listening: 'generateListeningHack',
+    reading: 'generateReadingHack',
+    writing: 'generateWritingHack',
+    speaking: 'generateSpeakingHack',
+  };
+
   for (let attempt = 1; attempt <= 3; attempt++) {
     try {
-      let rawText = null;
-      if (skill === 'listening') rawText = await generateListeningHack(client);
-      else if (skill === 'reading') rawText = await generateReadingHack(client);
-      else if (skill === 'writing') rawText = await generateWritingHack(client);
-      else if (skill === 'speaking') rawText = await generateSpeakingHack(client);
+      let result = null;
+      if (skill === 'listening') result = await generateListeningHack(client);
+      else if (skill === 'reading') result = await generateReadingHack(client);
+      else if (skill === 'writing') result = await generateWritingHack(client);
+      else if (skill === 'speaking') result = await generateSpeakingHack(client);
 
-      if (!rawText) continue;
+      if (!result || !result.rawText) continue;
 
-      const validation = validatePostCompleteness(rawText);
+      const validation = validatePostCompleteness(result.rawText);
       if (validation.valid) {
+        if (result.topic) {
+          saveHistory(historyKeyMap[skill], result.topic);
+        }
         return validation.cleanText;
       }
       console.warn(`⚠️ Post validation failed for ${skill} (attempt ${attempt}): ${validation.reason}`);

@@ -93,8 +93,15 @@ export function getSkillHackFallback(skill) {
       const hacks = JSON.parse(readFileSync(HACKS_FILE, 'utf-8'));
       const list = hacks[skill];
       if (Array.isArray(list) && list.length > 0) {
-        const item = list[Math.floor(Math.random() * list.length)];
-        return item.text || null;
+        const unused = list.filter(item => !item.used);
+        const candidates = unused.length > 0 ? unused : list;
+        if (unused.length === 0) {
+          list.forEach(item => item.used = false);
+        }
+        const selected = candidates[Math.floor(Math.random() * candidates.length)];
+        selected.used = true;
+        writeFileSync(HACKS_FILE, JSON.stringify(hacks, null, 2), 'utf-8');
+        return selected.text || null;
       }
     }
   } catch (err) {
