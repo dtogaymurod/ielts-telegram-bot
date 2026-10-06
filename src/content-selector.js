@@ -12,6 +12,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const CONTENT_DIR = join(__dirname, '..', 'content');
 const ROTATION_FILE = join(CONTENT_DIR, 'skill_rotation.json');
 const HACKS_FILE = join(CONTENT_DIR, 'skill-hacks.json');
+const LONE_WOLF_FILE = join(CONTENT_DIR, 'lone_wolf_queue.json');
 
 const SKILL_ORDER = ['listening', 'reading', 'writing', 'speaking'];
 
@@ -109,3 +110,58 @@ export function getSkillHackFallback(skill) {
   }
   return null;
 }
+
+/**
+ * Check if today is a Lone Wolf scheduled day (Tuesday, Thursday, Saturday) in Tashkent time (UTC+5)
+ * @returns {boolean}
+ */
+export function isLoneWolfDay() {
+  const now = new Date();
+  const tashkentTime = new Date(now.getTime() + 5 * 60 * 60 * 1000);
+  const day = tashkentTime.getUTCDay(); // 0: Sun, 1: Mon, 2: Tue, 3: Wed, 4: Thu, 5: Fri, 6: Sat
+  return day === 2 || day === 4 || day === 6; // Tuesday, Thursday, Saturday
+}
+
+/**
+ * Get current date string in Tashkent timezone (YYYY-MM-DD)
+ * @returns {string}
+ */
+export function getTashkentDateString() {
+  const now = new Date();
+  const tashkentTime = new Date(now.getTime() + 5 * 60 * 60 * 1000);
+  return tashkentTime.toISOString().split('T')[0];
+}
+
+/**
+ * Retrieve the next Lone Wolf task from queue if available and not yet posted today
+ */
+export function getNextLoneWolfPost() {
+  try {
+    if (!existsSync(LONE_WOLF_FILE)) return null;
+    const data = JSON.parse(readFileSync(LONE_WOLF_FILE, 'utf-8'));
+    const todayStr = getTashkentDateString();
+
+    // Check if already posted today
+    if (data.last_published_date === todayStr) {
+      return { alreadyPublishedToday: true };
+    }
+
+    const idx = data.last_published_index || 0;
+    if (idx < data.posts.length) {
+      const post = data.posts[idx];
+      return {
+        alreadyPublishedToday: false,
+        post,
+        advance: () => {
+          data.last_published_index = idx + 1;
+          data.last_published_date = todayStr;
+          writeFileSync(LONE_WOLF_FILE, JSON.stringify(data, null, 2), 'utf-8');
+        }
+      };
+    }
+  } catch (err) {
+    console.error('⚠️ Error reading lone_wolf_queue.json:', err.message);
+  }
+  return null;
+}
+

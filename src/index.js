@@ -18,7 +18,7 @@
  */
 
 import { sendMessage, validateConfig } from './telegram.js';
-import { getTimeSlot, getNextSkill, getSkillHackFallback } from './content-selector.js';
+import { getTimeSlot, getNextSkill, getSkillHackFallback, isLoneWolfDay, getNextLoneWolfPost } from './content-selector.js';
 import { generateDailySkillPost, validatePostCompleteness } from './gemini.js';
 
 // Parse CLI flags
@@ -34,6 +34,41 @@ async function main() {
   // Validate bot config (skip for preview/test)
   if (!isDryRun && !isTest) {
     validateConfig();
+  }
+
+  // Check if today is a Lone Wolf scheduled day (Tuesday, Thursday, Saturday)
+  const forcedSkill = process.env.SKILL || process.env.CONTENT_TYPE;
+  if (!forcedSkill && isLoneWolfDay()) {
+    const loneWolf = getNextLoneWolfPost();
+    if (loneWolf?.alreadyPublishedToday) {
+      console.log("ℹ️ Today's Lone Wolf task has already been published. Skipping to maintain strictly 1 post per day.");
+      return;
+    }
+    if (loneWolf?.post) {
+      console.log(`🐺 Today is Lone Wolf day (Tue/Thu/Sat)! Publishing task #${loneWolf.post.index}: ${loneWolf.post.title}...`);
+      let postText = loneWolf.post.post_text;
+      postText = postText.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+
+      if (isDryRun || isTest) {
+        console.log('\n🐺 ═══ LONE WOLF POST PREVIEW ═══\n');
+        console.log(postText);
+        console.log('\n═════════════════════════════════\n');
+        console.log(`📏 Length: ${postText.length} chars`);
+        console.log('✅ Dry run complete. No message sent.');
+        return;
+      }
+
+      console.log('📤 Sending Lone Wolf post to Telegram channel...');
+      try {
+        const result = await sendMessage(postText, { disablePreview: true });
+        console.log(`✅ Successfully published to Telegram channel! Message ID: ${result.message_id}`);
+        loneWolf.advance();
+        return;
+      } catch (error) {
+        console.error('❌ Failed to send Lone Wolf post:', error.message);
+        process.exit(1);
+      }
+    }
   }
 
   // Determine which skill to post today (Listening ➡️ Reading ➡️ Writing ➡️ Speaking)
