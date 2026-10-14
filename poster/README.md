@@ -13,3 +13,16 @@ node src/index.js --dry-run   # prints the post and the path of the poster previ
 
 Brand name, handle and colours are constants at the top of `render_post.py`.
 Fonts are Inter (SIL Open Font License), bundled in `fonts/`.
+
+## Writing samples
+
+`render_writing.py` draws the weekly Writing samples from
+`content/writing-samples.json`: Task 1 as an exam-style chart (bar, line, pie),
+Task 2 as a question card. `src/writing-sample.js` publishes the full Band 8+
+answer (useful vocabulary in bold, Uzbek glossary) as a Telegraph page and posts
+the poster with a link to it. Schedule: `.github/workflows/writing-samples.yml`
+(Monday Task 1, Thursday Task 2, 12:00 Tashkent).
+
+```bash
+node src/writing-sample.js --dry-run --task 1
+```
