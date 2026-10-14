@@ -1,0 +1,616 @@
+{
+  "samples": [
+    {
+      "id": "t1_001",
+      "task": 1,
+      "title": "Internet access in three countries",
+      "chart": {
+        "chart": "bar",
+        "title": "Percentage of households with internet access in three countries, 2000-2020",
+        "unit": "%",
+        "categories": [
+          "2000",
+          "2005",
+          "2010",
+          "2015",
+          "2020"
+        ],
+        "series": [
+          {
+            "name": "UK",
+            "values": [
+              25,
+              55,
+              73,
+              86,
+              96
+            ]
+          },
+          {
+            "name": "Uzbekistan",
+            "values": [
+              1,
+              4,
+              15,
+              42,
+              71
+            ]
+          },
+          {
+            "name": "Brazil",
+            "values": [
+              5,
+              13,
+              27,
+              51,
+              83
+            ]
+          }
+        ]
+      },
+      "question": "The bar chart shows the percentage of households with internet access in the UK, Uzbekistan and Brazil between 2000 and 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "answer": [
+        "The bar chart **illustrates** the proportion of homes with internet access in the UK, Uzbekistan and Brazil over a twenty-year period, from 2000 to 2020, measured at five-year intervals.",
+        "**Overall**, internet access rose **considerably** in all three countries. The UK **consistently** had the highest level of connectivity, while Uzbekistan, despite starting from almost zero, **recorded the most dramatic growth**.",
+        "In 2000, a quarter of British households were online, **compared with** only 5% in Brazil and a **negligible** 1% in Uzbekistan. Over the following decade, the UK figure **nearly tripled** to 73%, whereas Brazil and Uzbekistan **lagged far behind** at 27% and 15% respectively. **In other words**, the British rate in 2010 was almost five times higher than the Uzbek one.",
+        "From 2010 onwards, however, the gap **narrowed significantly**. Access in Brazil **climbed steadily**, passing the halfway mark in 2015 and reaching 83% by 2020. Uzbekistan saw an even more **remarkable surge**, with its figure almost tripling from 15% to 42% in just five years and then rising to 71% at the end of the period. Meanwhile, growth in the UK **levelled off** as it approached **near-universal** coverage, finishing the period at 96%."
+      ],
+      "vocabulary": [
+        [
+          "illustrate",
+          "ko'rsatib bermoq, tasvirlamoq"
+        ],
+        [
+          "consistently",
+          "doimiy ravishda, izchil"
+        ],
+        [
+          "dramatic growth",
+          "keskin o'sish"
+        ],
+        [
+          "negligible",
+          "juda kichik, e'tiborga olmasa ham bo'ladigan"
+        ],
+        [
+          "lag far behind",
+          "ancha ortda qolmoq"
+        ],
+        [
+          "narrow significantly",
+          "sezilarli darajada qisqarmoq (farq)"
+        ],
+        [
+          "a remarkable surge",
+          "ajoyib keskin ko'tarilish"
+        ],
+        [
+          "level off",
+          "barqarorlashmoq, o'sishdan to'xtamoq"
+        ],
+        [
+          "near-universal",
+          "deyarli hammaga tegishli"
+        ]
+      ]
+    },
+    {
+      "id": "t1_002",
+      "task": 1,
+      "title": "International tourists in four cities",
+      "chart": {
+        "chart": "line",
+        "title": "Number of international tourists visiting four cities (millions), 1990-2020",
+        "categories": [
+          "1990",
+          "1995",
+          "2000",
+          "2005",
+          "2010",
+          "2015",
+          "2020"
+        ],
+        "series": [
+          {
+            "name": "London",
+            "values": [
+              10,
+              12,
+              14,
+              15,
+              16,
+              19,
+              6
+            ]
+          },
+          {
+            "name": "Paris",
+            "values": [
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              7
+            ]
+          },
+          {
+            "name": "Samarkand",
+            "values": [
+              0.5,
+              0.6,
+              0.8,
+              1.1,
+              1.6,
+              2.5,
+              1.2
+            ]
+          },
+          {
+            "name": "Dubai",
+            "values": [
+              1,
+              2,
+              3,
+              6,
+              8,
+              14,
+              6
+            ]
+          }
+        ]
+      },
+      "question": "The line graph shows the number of international tourists who visited London, Paris, Samarkand and Dubai between 1990 and 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "answer": [
+        "The line graph **compares** the number of foreign visitors to four cities, namely London, Paris, Samarkand and Dubai, at five-year intervals between 1990 and 2020. Figures are given in millions.",
+        "**It is clear that** tourist numbers grew in all four cities until 2015, before **plummeting** in 2020. Paris and London **remained the most popular destinations** throughout, while Dubai **experienced the fastest growth**.",
+        "In 1990, Paris attracted 13 million visitors, slightly more than London's 10 million. Both cities then **saw a gradual increase**, and London **overtook** Paris in 2015, **peaking at** 19 million compared with 18 million in the French capital. Dubai, by contrast, welcomed just 1 million tourists in 1990, but this figure **rose sharply**, especially after 2010, to 14 million by 2015, a **fourteen-fold increase**.",
+        "Samarkand received by far the fewest visitors, although its figure **quintupled** from 0.5 million to 2.5 million over the same period. In 2020, **all four cities suffered a dramatic decline**, with London and Paris falling to 6 and 7 million respectively, and Dubai also dropping to 6 million. Samarkand's total **dropped back to** 1.2 million, roughly the level it had recorded in 2005."
+      ],
+      "vocabulary": [
+        [
+          "it is clear that",
+          "aniq ko'rinib turibdiki"
+        ],
+        [
+          "plummet",
+          "keskin pasaymoq, qulab tushmoq"
+        ],
+        [
+          "remain the most popular destination",
+          "eng mashhur manzil bo'lib qolmoq"
+        ],
+        [
+          "a gradual increase",
+          "asta-sekin o'sish"
+        ],
+        [
+          "overtake",
+          "quvib o'tmoq"
+        ],
+        [
+          "peak at",
+          "eng yuqori nuqtaga yetmoq"
+        ],
+        [
+          "a fourteen-fold increase",
+          "o'n to'rt baravar o'sish"
+        ],
+        [
+          "quintuple",
+          "besh baravar oshmoq"
+        ],
+        [
+          "drop back to",
+          "yana ... gacha tushmoq"
+        ]
+      ]
+    },
+    {
+      "id": "t1_003",
+      "task": 1,
+      "title": "How students spend their free time",
+      "chart": {
+        "chart": "pie",
+        "title": "How university students in Tashkent spend their weekly free time",
+        "categories": [
+          "Social media",
+          "Sports",
+          "Reading",
+          "Part-time work",
+          "Other"
+        ],
+        "series": [
+          {
+            "name": "Students",
+            "values": [
+              38,
+              17,
+              12,
+              23,
+              10
+            ]
+          }
+        ]
+      },
+      "question": "The pie chart shows how university students in Tashkent spend their weekly free time. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "answer": [
+        "The pie chart **provides a breakdown of** how university students in Tashkent use their free time each week. The data is divided into five categories of activity and is expressed in percentages.",
+        "**Overall**, social media **accounts for the largest share** of students' leisure time, while reading **takes up the smallest proportion** among the named activities.",
+        "Social media is **by far the most dominant** activity, **making up** 38% of students' free time, which is **well over a third** of the total. Part-time work **comes second** at 23%, suggesting that **almost a quarter** of their spare hours are spent earning money rather than relaxing. Combined, these two activities **constitute** 61% of the students' weekly leisure time.",
+        "Sports **represent** 17% of free time, **slightly more than** reading, which accounts for only 12%. The remaining 10% is **devoted to** other activities, such as hobbies or travel. **Notably**, the time students spend on social media is **more than three times** the time they spend reading, and more than twice the time they spend on sports."
+      ],
+      "vocabulary": [
+        [
+          "provide a breakdown of",
+          "... ni qismlarga ajratib ko'rsatmoq"
+        ],
+        [
+          "account for the largest share",
+          "eng katta ulushni tashkil etmoq"
+        ],
+        [
+          "take up the smallest proportion",
+          "eng kichik ulushni egallamoq"
+        ],
+        [
+          "by far the most dominant",
+          "eng ustun, boshqalardan ancha oldinda"
+        ],
+        [
+          "make up",
+          "tashkil etmoq"
+        ],
+        [
+          "well over a third",
+          "uchdan birdan ancha ko'p"
+        ],
+        [
+          "constitute",
+          "tashkil qilmoq"
+        ],
+        [
+          "be devoted to",
+          "... ga ajratilmoq, bag'ishlanmoq"
+        ],
+        [
+          "notably",
+          "e'tiborli tomoni shundaki"
+        ]
+      ]
+    },
+    {
+      "id": "t1_004",
+      "task": 1,
+      "title": "Energy sources for electricity",
+      "chart": {
+        "chart": "bar",
+        "title": "Sources of electricity production in Country X (% of total), 2000 and 2020",
+        "unit": "%",
+        "categories": [
+          "Coal",
+          "Gas",
+          "Hydro",
+          "Nuclear",
+          "Solar & wind"
+        ],
+        "series": [
+          {
+            "name": "2000",
+            "values": [
+              45,
+              30,
+              15,
+              8,
+              2
+            ]
+          },
+          {
+            "name": "2020",
+            "values": [
+              20,
+              38,
+              14,
+              6,
+              22
+            ]
+          }
+        ]
+      },
+      "question": "The bar chart shows the sources of electricity production in Country X in 2000 and 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "answer": [
+        "The bar chart **outlines** the **proportion** of electricity generated from five different sources in Country X in two separate years, 2000 and 2020.",
+        "**Overall**, there was a **marked shift** away from coal towards gas and renewable energy. While coal was the **primary source** in 2000, gas had **taken its place** by 2020, and solar and wind power had become **a major contributor**.",
+        "In 2000, coal **generated** almost half of the country's electricity (45%), followed by gas at 30%. Together, these two fossil fuels produced three quarters of all power. However, over the next twenty years, the share of coal **more than halved** to 20%, whereas gas **rose** by eight percentage points to 38%, making it the **leading source**.",
+        "The most **striking change** was in solar and wind energy, which **soared** from a **mere** 2% to 22%, **surpassing** coal and becoming the second largest source. In contrast, hydro and nuclear power **remained relatively stable**, **dipping slightly** from 15% to 14% and from 8% to 6% respectively. As a result, more than two fifths of the country's electricity came from low-carbon sources by 2020."
+      ],
+      "vocabulary": [
+        [
+          "outline",
+          "umumiy ko'rinishini bermoq"
+        ],
+        [
+          "a marked shift",
+          "sezilarli o'zgarish, burilish"
+        ],
+        [
+          "primary source",
+          "asosiy manba"
+        ],
+        [
+          "take its place",
+          "uning o'rnini egallamoq"
+        ],
+        [
+          "more than halve",
+          "yarmidan ham ko'proqqa kamaymoq"
+        ],
+        [
+          "striking change",
+          "ko'zga yaqqol tashlanadigan o'zgarish"
+        ],
+        [
+          "soar",
+          "keskin ko'tarilmoq"
+        ],
+        [
+          "a mere",
+          "atigi, bor-yo'g'i"
+        ],
+        [
+          "surpass",
+          "ortda qoldirmoq, oshib ketmoq"
+        ],
+        [
+          "remain relatively stable",
+          "nisbatan barqaror qolmoq"
+        ]
+      ]
+    },
+    {
+      "id": "t2_001",
+      "task": 2,
+      "type": "OPINION ESSAY",
+      "title": "Should university education be free?",
+      "question": "Some people believe that university education should be free for all students, regardless of their background. To what extent do you agree or disagree?",
+      "answer": [
+        "Whether higher education should be **funded entirely by the state** is a **contentious issue**. While I accept that free tuition has **clear merits**, I largely disagree that it should be provided to every student without condition.",
+        "**Admittedly**, abolishing tuition fees would **widen access** to universities. Many talented young people from **low-income families** are currently **deterred by** the cost of a degree, and removing this **financial barrier** would allow them to **fulfil their potential**. In Uzbekistan, for example, many capable school leavers choose to work instead of studying simply because their families cannot afford the fees. In the long run, a better-educated workforce would also **boost economic growth**, which benefits society as a whole.",
+        "**Nevertheless**, making university free for everyone would place an **enormous burden** on public finances. Governments have **limited budgets**, and money spent on tuition for wealthy students, who could easily pay, could instead be **allocated to** schools, hospitals or infrastructure. **Moreover**, when education costs nothing, some students may not **take their studies seriously**, leading to high **dropout rates** and wasted resources.",
+        "A more **sensible approach**, in my view, would be a **means-tested** system. Students from **disadvantaged backgrounds** should receive full grants, while those from **affluent families** should **contribute** to the cost. Generous loans, repaid only once graduates earn a reasonable salary, could support those in between. This would **strike a balance between** fairness and **financial sustainability**.",
+        "**In conclusion**, although free university education would **open doors** for many, I believe targeted financial support is a fairer and more realistic way to ensure that talent, rather than wealth, determines who can study."
+      ],
+      "vocabulary": [
+        [
+          "contentious issue",
+          "bahsli masala"
+        ],
+        [
+          "widen access",
+          "imkoniyatni kengaytirmoq"
+        ],
+        [
+          "be deterred by",
+          "... tufayli qaytmoq, cho'chimoq"
+        ],
+        [
+          "financial barrier",
+          "moliyaviy to'siq"
+        ],
+        [
+          "fulfil one's potential",
+          "salohiyatini to'liq ro'yobga chiqarmoq"
+        ],
+        [
+          "an enormous burden",
+          "ulkan yuk"
+        ],
+        [
+          "allocate to",
+          "... ga ajratmoq (mablag')"
+        ],
+        [
+          "means-tested",
+          "daromadga qarab beriladigan"
+        ],
+        [
+          "disadvantaged backgrounds",
+          "kam ta'minlangan oilalar"
+        ],
+        [
+          "strike a balance between",
+          "... o'rtasida muvozanat topmoq"
+        ],
+        [
+          "financial sustainability",
+          "moliyaviy barqarorlik"
+        ]
+      ]
+    },
+    {
+      "id": "t2_002",
+      "task": 2,
+      "type": "DISCUSS BOTH VIEWS",
+      "title": "Working from home or in the office?",
+      "question": "Some people think that working from home is better for employees, while others believe that working in an office is more effective. Discuss both views and give your own opinion.",
+      "answer": [
+        "The **rapid spread** of remote working has **sparked a debate** about whether employees perform better at home or in the office. This essay will examine both perspectives before explaining why I believe a **hybrid model** is the most effective.",
+        "**On the one hand**, working from home offers **considerable advantages**. Employees save the time and money they would otherwise spend **commuting**, which can **reduce stress** and improve their **work-life balance**. A worker who spends two hours a day in traffic, for instance, gains ten extra hours every week. Furthermore, many people find that they can **concentrate more effectively** at home, away from the **constant interruptions** of a busy office, and are therefore more **productive**.",
+        "**On the other hand**, supporters of office work argue that **face-to-face interaction** is **essential for** teamwork. Problems can be solved quickly when colleagues sit together, and new staff learn far more by **observing experienced co-workers** than through video calls. In addition, working alone at home for long periods can lead to **feelings of isolation**, which may **undermine** both motivation and mental health.",
+        "In my opinion, **neither option is ideal on its own**. A hybrid arrangement, in which employees spend part of the week in the office and the rest at home, **combines the best of both worlds**. It allows **focused individual work** at home while **preserving** the **collaboration** and **sense of community** that offices provide. Many international companies have already adopted this model and report higher staff satisfaction as a result.",
+        "**To sum up**, both remote and office work have **distinct benefits**, but a flexible combination of the two is likely to keep employees both productive and satisfied."
+      ],
+      "vocabulary": [
+        [
+          "spark a debate",
+          "bahs-munozaraga sabab bo'lmoq"
+        ],
+        [
+          "hybrid model",
+          "aralash (gibrid) tizim"
+        ],
+        [
+          "commute",
+          "ishga qatnamoq"
+        ],
+        [
+          "work-life balance",
+          "ish va shaxsiy hayot muvozanati"
+        ],
+        [
+          "constant interruptions",
+          "doimiy chalg'itishlar"
+        ],
+        [
+          "face-to-face interaction",
+          "yuzma-yuz muloqot"
+        ],
+        [
+          "feelings of isolation",
+          "yolg'izlik hissi"
+        ],
+        [
+          "undermine",
+          "putur yetkazmoq, susaytirmoq"
+        ],
+        [
+          "the best of both worlds",
+          "ikkala tomonning eng yaxshi jihatlari"
+        ],
+        [
+          "preserve",
+          "saqlab qolmoq"
+        ],
+        [
+          "sense of community",
+          "jamoaga tegishlilik hissi"
+        ]
+      ]
+    },
+    {
+      "id": "t2_003",
+      "task": 2,
+      "type": "ADVANTAGES & DISADVANTAGES",
+      "title": "Learning online instead of in classrooms",
+      "question": "More and more students are choosing to study online rather than attend traditional classes. Do the advantages of this trend outweigh the disadvantages?",
+      "answer": [
+        "In recent years, online learning has become an **increasingly popular alternative** to classroom education. In my view, although this trend has some **notable drawbacks**, its advantages **clearly outweigh** them.",
+        "The most **significant benefit** of online study is its **flexibility**. Learners can **access** lessons at any time and from any place, which makes education possible for people with jobs, family responsibilities or **limited mobility**. Online courses are also often **more affordable**, as students do not have to pay for transport or accommodation. **As a result**, high-quality education from **world-class institutions** is now **within reach** of students in every corner of the world. A student in a small town in Uzbekistan, for example, can now take a course taught by professors from leading British or American universities.",
+        "**That said**, online learning is not without its problems. Studying alone requires a high level of **self-discipline**, and some students **struggle to stay motivated** without a teacher **physically present**. In addition, the **lack of** face-to-face contact can limit opportunities to develop **interpersonal skills** such as teamwork and public speaking, which are **highly valued** by employers.",
+        "However, these disadvantages can be **largely overcome**. Many platforms now offer **live sessions**, discussion forums and group projects that **encourage interaction** between learners, while setting a **fixed study schedule** and clear weekly goals can help students **stay on track**.",
+        "**In conclusion**, while online education demands greater independence and self-control from students, the flexibility and **accessibility** it provides make it a **largely positive development**, and one that is likely to shape the future of learning around the world."
+      ],
+      "vocabulary": [
+        [
+          "an increasingly popular alternative",
+          "tobora ommalashib borayotgan muqobil"
+        ],
+        [
+          "notable drawbacks",
+          "sezilarli kamchiliklar"
+        ],
+        [
+          "clearly outweigh",
+          "aniq ustun kelmoq"
+        ],
+        [
+          "limited mobility",
+          "harakatlanish imkoniyati cheklangan"
+        ],
+        [
+          "world-class institutions",
+          "jahon darajasidagi oliygohlar"
+        ],
+        [
+          "within reach",
+          "qo'l yetadigan, erishsa bo'ladigan"
+        ],
+        [
+          "self-discipline",
+          "o'z-o'zini intizomga solish"
+        ],
+        [
+          "struggle to stay motivated",
+          "motivatsiyani saqlashga qiynalmoq"
+        ],
+        [
+          "interpersonal skills",
+          "odamlar bilan muloqot ko'nikmalari"
+        ],
+        [
+          "largely overcome",
+          "asosan yengib o'tmoq"
+        ],
+        [
+          "stay on track",
+          "rejadan chiqmaslik"
+        ]
+      ]
+    },
+    {
+      "id": "t2_004",
+      "task": 2,
+      "type": "PROBLEM & SOLUTION",
+      "title": "Traffic congestion in big cities",
+      "question": "Traffic congestion is becoming a serious problem in many major cities. What are the causes of this problem, and what measures could be taken to solve it?",
+      "answer": [
+        "Traffic jams have become a **daily reality** in many large cities, including Tashkent. This essay will **identify** the main causes of this problem and suggest **practical measures** to **tackle** it.",
+        "The **primary cause** of congestion is the **sharp rise** in private car ownership. As incomes grow, more families can **afford** a car, and many people **prefer** driving to using public transport, which they often see as **unreliable** or **overcrowded**. **This is compounded by** **rapid urbanisation**: as people move to cities **in search of** work and education, roads that were designed for far smaller populations become **overwhelmed**, especially during **rush hour**.",
+        "**To address** this issue, governments should first **invest heavily in** public transport. A **fast, affordable and comfortable** metro or bus network would **encourage** commuters to **leave their cars at home**. Tashkent's expanding metro system is a good example of this approach. **Secondly**, authorities could introduce **congestion charges** in city centres, as London has done, so that drivers pay to enter the busiest areas. This would **discourage unnecessary journeys** and **generate revenue** that could be reinvested in cycling lanes and wider pavements.",
+        "Finally, employers can **play a role** by offering **flexible working hours** or remote work. If employees could start at different times, or work from home on some days, traffic would be **spread more evenly** throughout the day instead of peaking at the same two moments.",
+        "**In conclusion**, congestion is **largely driven by** rising car ownership and urban growth, but **a combination of** better public transport, road charges and flexible working could **significantly ease** the problem."
+      ],
+      "vocabulary": [
+        [
+          "tackle",
+          "hal qilishga kirishmoq"
+        ],
+        [
+          "a sharp rise",
+          "keskin o'sish"
+        ],
+        [
+          "unreliable",
+          "ishonchsiz"
+        ],
+        [
+          "be compounded by",
+          "... bilan yanada og'irlashmoq"
+        ],
+        [
+          "rapid urbanisation",
+          "tez sur'atdagi shaharlashuv"
+        ],
+        [
+          "be overwhelmed",
+          "yuklamaga dosh berolmaslik"
+        ],
+        [
+          "invest heavily in",
+          "... ga katta sarmoya kiritmoq"
+        ],
+        [
+          "congestion charge",
+          "tirbandlik uchun to'lov"
+        ],
+        [
+          "generate revenue",
+          "daromad keltirmoq"
+        ],
+        [
+          "be largely driven by",
+          "asosan ... sababli yuzaga kelmoq"
+        ],
+        [
+          "significantly ease",
+          "sezilarli darajada yengillashtirmoq"
+        ]
+      ]
+    }
+  ],
+  "next_index": {
+    "1": 0,
+    "2": 0
+  }
+}

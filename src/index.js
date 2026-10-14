@@ -17,7 +17,8 @@
  *   SKILL                 — Force specific skill ('listening', 'reading', 'writing', 'speaking')
  */
 
-import { sendMessage, validateConfig } from './telegram.js';
+import { sendMessage, sendLocalPhoto, validateConfig } from './telegram.js';
+import { renderPoster, captionLength, CAPTION_LIMIT } from './poster.js';
 import { getTimeSlot, getNextSkill, getSkillHackFallback, isLoneWolfDay, getNextLoneWolfPost } from './content-selector.js';
 import { generateDailySkillPost, validatePostCompleteness } from './gemini.js';
 
@@ -111,8 +112,28 @@ async function main() {
     console.log(`• Characters: ${charCount} (Ideal: 450-750)`);
     console.log(`• Words: ${wordCount} (Ideal: 65-90)`);
     console.log(`• Scroll-free on mobile: ${charCount <= 850 ? 'YES ✅' : 'NO ⚠️'}`);
+    const previewPoster = renderPoster(postText);
+    if (previewPoster) console.log(`🖼 Poster preview saved: ${previewPoster}`);
     console.log('✅ Dry run complete. No message sent.');
     return;
+  }
+
+  // Branded poster image with the post as its caption (text-only if rendering fails)
+  const posterPath = renderPoster(postText);
+  if (posterPath) {
+    console.log('🖼 Sending poster to Telegram channel...');
+    try {
+      if (captionLength(postText) <= CAPTION_LIMIT) {
+        const result = await sendLocalPhoto(posterPath, postText);
+        console.log(`✅ Poster published with caption! Message ID: ${result.message_id}`);
+        return;
+      }
+      // Too long for a photo caption: poster first, full text right after
+      await sendLocalPhoto(posterPath, '');
+      console.log('ℹ️ Post is longer than a caption allows, sending the text separately.');
+    } catch (error) {
+      console.error('⚠️ Poster send failed, falling back to text post:', error.message);
+    }
   }
 
   console.log('📤 Sending post to Telegram channel...');

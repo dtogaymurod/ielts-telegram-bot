@@ -42,6 +42,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Setup Python (poster rendering)
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install poster dependencies
+        run: pip install -r poster/requirements.txt
+
       - name: Post to Telegram
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
