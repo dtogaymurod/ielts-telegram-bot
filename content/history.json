@@ -163,7 +163,8 @@
     "Listening Distractor Trap",
     "Listening Raqam O'zgarishi Qopqoni",
     "Listening Time Trap",
-    "Listening Name Spelling Trap"
+    "Listening Name Spelling Trap",
+    "Listening Negative Prefix Trap"
   ],
   "generateReadingHack": [
     "False va Not Given farqi",
