@@ -3,29 +3,37 @@
  *
  * Takes the next prepared sample from content/writing-samples.json,
  * publishes the full answer (useful vocabulary in bold + Uzbek glossary)
- * as a Telegraph page, and posts a branded poster with a link to it.
+ * as a Telegraph page headed by the branded poster, and posts a message
+ * whose large link preview shows the poster with Telegram's INSTANT VIEW
+ * button, so the answer opens inside Telegram.
+ *
+ * Posters live in posters/writing/<id>.png and are served from GitHub
+ * (raw.githubusercontent.com), so they must be committed before posting.
  *
  * Usage:
  *   node src/writing-sample.js              — post (Task 1 on Monday, Task 2 otherwise)
  *   node src/writing-sample.js --task 1     — force Task 1 or 2
  *   node src/writing-sample.js --dry-run    — build everything, send nothing
+ *   node src/writing-sample.js --render     — render missing posters into posters/writing
  */
 
 import { execFileSync } from 'child_process';
-import { mkdtempSync, readFileSync, writeFileSync } from 'fs';
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'fs';
 import { tmpdir } from 'os';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { sendLocalPhoto, validateConfig } from './telegram.js';
+import { sendMessage, validateConfig } from './telegram.js';
 import { createPage, inlineNodes } from './telegraph.js';
-import { captionLength, CAPTION_LIMIT } from './poster.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const SAMPLES_FILE = join(__dirname, '..', 'content', 'writing-samples.json');
 const RENDER_SCRIPT = join(__dirname, '..', 'poster', 'render_writing.py');
+const POSTER_DIR = join(__dirname, '..', 'posters', 'writing');
+const REPO = process.env.GITHUB_REPOSITORY || 'dtogaymurod/ielts-telegram-bot';
 
 const args = process.argv.slice(2);
 const isDryRun = args.includes('--dry-run');
+const isRenderOnly = args.includes('--render');
 const taskArg = args.includes('--task') ? args[args.indexOf('--task') + 1] : process.env.WRITING_TASK;
 
 function pickTask() {
@@ -42,12 +50,16 @@ function wordCount(paragraphs) {
   return paragraphs.join(' ').replace(/\*\*/g, '').trim().split(/\s+/).length;
 }
 
+export function posterUrl(sample) {
+  return `https://raw.githubusercontent.com/${REPO}/main/posters/writing/${sample.id}.png`;
+}
+
 export function buildPageContent(sample) {
   const words = wordCount(sample.answer);
   return [
+    { tag: 'figure', children: [{ tag: 'img', attrs: { src: posterUrl(sample) } }] },
     { tag: 'h4', children: [`📝 Writing Task ${sample.task} · Savol`] },
     { tag: 'blockquote', children: [sample.question] },
-    ...(sample.task === 1 ? [{ tag: 'p', children: [{ tag: 'em', children: ['Grafik kanaldagi postda.'] }] }] : []),
     { tag: 'h3', children: [`✅ Band 8+ Sample Answer (${words} words)`] },
     ...sample.answer.map((p) => ({ tag: 'p', children: inlineNodes(p) })),
     { tag: 'hr' },
@@ -78,26 +90,42 @@ export function buildCaption(sample, url) {
     '',
     `📝 <b>Savol:</b> <i>${escapeHtml(sample.question)}</i>`,
     '',
-    `📖 <b><a href="${url}">Band 8+ namuna javobni o'qish →</a></b>`,
+    `📖 <b>Band 8+ namuna javob:</b> pastdagi <b>INSTANT VIEW</b> tugmasini bosing 👇`,
     `💡 Foydali so'zlar <b>bold</b> qilingan, oxirida ${sample.vocabulary.length} tasi o'zbekcha tarjimasi bilan.`,
     '',
     '👉 Telegram: @dilshod_english',
     '📸 Instagram: instagram.com/dilshod.ustoz',
+    '',
+    `<a href="${url}">📄 Namuna javob</a>`,
   ].join('\n');
 }
 
-function renderPoster(sample) {
-  const dir = mkdtempSync(join(tmpdir(), 'writing-'));
-  const input = join(dir, 'sample.json');
-  const output = join(dir, 'poster.png');
+function renderPoster(sample, output) {
+  const input = join(mkdtempSync(join(tmpdir(), 'writing-')), 'sample.json');
   writeFileSync(input, JSON.stringify(sample));
   execFileSync('python3', [RENDER_SCRIPT, input, output], { stdio: 'pipe', timeout: 60_000 });
   return output;
 }
 
+function renderMissingPosters(samples) {
+  mkdirSync(POSTER_DIR, { recursive: true });
+  for (const sample of samples) {
+    const output = join(POSTER_DIR, `${sample.id}.png`);
+    if (!existsSync(output)) {
+      renderPoster(sample, output);
+      console.log(`🖼 Rendered ${output}`);
+    }
+  }
+}
+
 async function main() {
-  const task = pickTask();
   const data = JSON.parse(readFileSync(SAMPLES_FILE, 'utf-8'));
+  if (isRenderOnly) {
+    renderMissingPosters(data.samples);
+    return;
+  }
+
+  const task = pickTask();
   const queue = data.samples.filter((s) => s.task === task);
   const index = data.next_index[task] || 0;
   const sample = queue[index];
@@ -110,13 +138,14 @@ async function main() {
 
   if (!isDryRun) validateConfig();
 
-  const posterPath = renderPoster(sample);
-  console.log(`🖼 Poster: ${posterPath}`);
+  if (!existsSync(join(POSTER_DIR, `${sample.id}.png`))) {
+    throw new Error(`Poster ${sample.id}.png is missing: run --render and commit posters/writing first`);
+  }
+  console.log(`🖼 Poster: ${posterUrl(sample)}`);
 
   if (isDryRun) {
     console.log(JSON.stringify(buildPageContent(sample), null, 1).slice(0, 1500));
-    const caption = buildCaption(sample, 'https://telegra.ph/preview');
-    console.log(`\n${caption}\n\n📏 Caption: ${captionLength(caption)} / ${CAPTION_LIMIT}`);
+    console.log(`\n${buildCaption(sample, 'https://telegra.ph/preview')}`);
     console.log('✅ Dry run complete. Nothing published.');
     return;
   }
@@ -124,7 +153,14 @@ async function main() {
   const url = await createPage(`${sample.title} | IELTS Writing Task ${task} Band 8+`, buildPageContent(sample));
   console.log(`📄 Telegraph page: ${url}`);
 
-  const result = await sendLocalPhoto(posterPath, buildCaption(sample, url));
+  // A text message with a large preview of the Telegraph page: Telegram shows
+  // the poster (the page's first image) and an INSTANT VIEW button under it.
+  const result = await sendMessage(buildCaption(sample, url), {
+    extra: {
+      disable_web_page_preview: undefined,
+      link_preview_options: { url, prefer_large_media: true, show_above_text: true },
+    },
+  });
   console.log(`✅ Published! Message ID: ${result.message_id}`);
 
   sample.telegraph_url = url;

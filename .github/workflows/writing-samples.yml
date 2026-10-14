@@ -47,6 +47,18 @@ jobs:
       - name: Install poster dependencies
         run: pip install -r poster/requirements.txt
 
+      - name: Render and publish missing posters
+        if: github.event.inputs.dry_run != 'true'
+        run: |
+          node src/writing-sample.js --render
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add posters/writing
+          if ! git diff --staged --quiet; then
+            git commit -m "🖼 Render writing sample posters [skip ci]"
+            git pull --rebase && git push
+          fi
+
       - name: Post writing sample
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
