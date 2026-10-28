@@ -1,0 +1,2440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uy vazifasi · Cambridge 15 Test 1 Listening</title>
+  <style>
+    :root {
+      --bg-color: #f4f6f8;
+      --panel-bg: #ffffff;
+      --text-color: #2b2b2b;
+      --border-color: #d1d5db;
+      --primary-color: #006699;
+      --primary-dark: #004d73;
+      --highlight: #ffff80;
+      --flag-color: #ea580c;
+      --success: #16a34a;
+      --error: #dc2626;
+      --font-size: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      user-select: text;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-size: var(--font-size);
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Header */
+    header {
+      background: #1f2937;
+      color: #ffffff;
+      padding: 8px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-title {
+      font-size: 1.05rem;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    .test-badge {
+      background: #0284c7;
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding: 3px 8px;
+      border-radius: 12px;
+    }
+
+    .tg-channel-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: #0088cc;
+      color: #ffffff;
+      padding: 4px 10px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: bold;
+      transition: all 0.2s;
+    }
+
+    .tg-channel-badge:hover {
+      background-color: #006699;
+    }
+
+    .header-center {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+        .audio-cd-box {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 20px;
+      padding: 4px 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .exam-waveform-container {
+      width: 140px;
+      height: 24px;
+      background: #0f172a;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding: 0 4px;
+    }
+
+    .exam-waveform-progress {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 0%;
+      background: rgba(16, 185, 129, 0.25);
+      border-right: 2px solid #10b981;
+      pointer-events: none;
+      transition: width 0.05s linear;
+    }
+
+    .exam-waveform-bars {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1px;
+      pointer-events: none;
+    }
+
+    .exam-wave-col {
+      flex: 1;
+      max-width: 3px;
+      background: #64748b;
+      opacity: 0.55;
+      border-radius: 1px;
+      transition: background 0.08s, opacity 0.08s;
+    }
+
+    .exam-wave-col.active {
+      background: #10b981;
+      opacity: 1;
+    }
+
+    .tab-audio-icon {
+      font-size: 0.85rem;
+      margin-left: 4px;
+      animation: audioSpeakerPulse 1.2s infinite alternate;
+    }
+
+    @keyframes audioSpeakerPulse {
+      0% { opacity: 0.6; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1.15); }
+    }
+
+    .audio-start-btn {
+      background: #10b981;
+      color: #ffffff;
+      border: none;
+      padding: 5px 12px;
+      border-radius: 14px;
+      font-weight: bold;
+      font-size: 0.8rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .audio-start-btn:hover {
+      background: #059669;
+    }
+
+    .audio-start-btn:disabled {
+      background: #475569;
+      cursor: not-allowed;
+    }
+
+    .audio-pulse-indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #94a3b8;
+    }
+
+    .audio-pulse-indicator.playing {
+      background: #22c55e;
+      box-shadow: 0 0 8px #22c55e;
+      animation: pulseAnim 1.5s infinite;
+    }
+
+    @keyframes pulseAnim {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.6; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .audio-time {
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: #cbd5e1;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .timer-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.95rem;
+      font-weight: bold;
+      color: #f8fafc;
+      background: rgba(0,0,0,0.3);
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .btn-top {
+      background: #374151;
+      color: #ffffff;
+      border: 1px solid #4b5563;
+      padding: 5px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: bold;
+      transition: all 0.2s;
+    }
+
+    .btn-top:hover {
+      background: #4b5563;
+    }
+
+    .btn-submit {
+      background: #dc2626;
+      border-color: #b91c1c;
+    }
+
+    .btn-submit:hover {
+      background: #b91c1c;
+    }
+
+    /* Main Container */
+    .main-wrapper {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Section Tabs */
+    .section-nav-tabs {
+      display: flex;
+      background: #e2e8f0;
+      border-bottom: 2px solid #cbd5e1;
+      padding: 0 16px;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+
+    .sec-tab-btn {
+      padding: 10px 20px;
+      border: none;
+      background: #cbd5e1;
+      color: #475569;
+      font-size: 0.9rem;
+      font-weight: bold;
+      cursor: pointer;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .sec-tab-btn:hover {
+      background: #94a3b8;
+      color: #ffffff;
+    }
+
+    .sec-tab-btn.active {
+      background: #ffffff;
+      color: #006699;
+      border-bottom: 2px solid #ffffff;
+      margin-bottom: -2px;
+    }
+
+    /* Section Content Body */
+    .test-content-scroll {
+      flex: 1;
+      overflow-y: auto;
+      padding: 24px;
+      background: #f1f5f9;
+    }
+
+    .section-container {
+      display: none;
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--panel-bg);
+      border-radius: 8px;
+      padding: 28px 36px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      border: 1px solid #e2e8f0;
+    }
+
+    .section-container.active {
+      display: block;
+    }
+
+    .part-title-box {
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+
+    .part-title-box h2 {
+      font-size: 1.35rem;
+      color: #0f172a;
+    }
+
+    .part-sub {
+      color: #64748b;
+      font-size: 0.95rem;
+      margin-top: 4px;
+    }
+
+    .instructions-box {
+      background: #f8fafc;
+      border-left: 4px solid var(--primary-color);
+      padding: 12px 16px;
+      border-radius: 4px;
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .instructions-box strong {
+      color: #0f172a;
+    }
+
+    /* Note Completion Form */
+    .form-table-box {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .form-heading {
+      font-size: 1.15rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .notes-list {
+      list-style: none;
+    }
+
+    .notes-list li {
+      margin-bottom: 14px;
+      line-height: 1.6;
+      color: #1e293b;
+    }
+
+    .notes-sublist {
+      list-style: disc;
+      margin-left: 28px;
+      margin-top: 8px;
+    }
+
+    .notes-sublist li {
+      margin-bottom: 10px;
+    }
+
+    .q-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #e2e8f0;
+      color: #0f172a;
+      font-weight: bold;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      font-size: 0.8rem;
+      margin: 0 4px;
+      border: 1px solid #cbd5e1;
+    }
+
+    .cd-input {
+      border: 1px solid #94a3b8;
+      border-radius: 4px;
+      padding: 5px 10px;
+      font-size: 0.95rem;
+      width: 170px;
+      background: #f8fafc;
+      transition: all 0.15s;
+    }
+
+    .cd-input:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(0,102,153,0.15);
+    }
+
+    /* Multiple Choice Questions */
+    .mc-question-card {
+      margin-bottom: 24px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 16px 20px;
+    }
+
+    .mc-q-text {
+      font-weight: bold;
+      margin-bottom: 12px;
+      color: #0f172a;
+      line-height: 1.5;
+    }
+
+    .mc-options-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .mc-option-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .mc-option-label:hover {
+      background: #f8fafc;
+    }
+
+    .mc-option-label input {
+      margin-top: 3px;
+      cursor: pointer;
+    }
+
+    /* Map Box */
+    .map-display-box {
+      text-align: center;
+      margin: 20px 0;
+      background: #ffffff;
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+    }
+
+    .map-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Matching Box */
+    .matching-options-box {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+    }
+
+    .matching-options-box h4 {
+      margin-bottom: 10px;
+      color: #0f172a;
+      font-size: 0.95rem;
+    }
+
+    .matching-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 8px 16px;
+      font-size: 0.9rem;
+      color: #334155;
+    }
+
+    .matching-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px dashed #e2e8f0;
+    }
+
+    .matching-row:last-child {
+      border-bottom: none;
+    }
+
+    .matching-select {
+      padding: 6px 12px;
+      border-radius: 4px;
+      border: 1px solid #94a3b8;
+      font-weight: bold;
+      background: #ffffff;
+      cursor: pointer;
+    }
+
+    /* Bottom Navigator Bar */
+    .bottom-nav-bar {
+      background: #ffffff;
+      border-top: 1px solid #cbd5e1;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+      box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
+    }
+
+    .palette-container {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .q-bubble {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #e2e8f0;
+      color: #475569;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: bold;
+      cursor: pointer;
+      border: 1px solid #cbd5e1;
+      transition: all 0.15s;
+    }
+
+    .q-bubble:hover {
+      background: #cbd5e1;
+    }
+
+    .q-bubble.answered {
+      background: #0284c7;
+      color: #ffffff;
+      border-color: #0369a1;
+    }
+
+    .q-bubble.flagged {
+      background: var(--flag-color);
+      color: #ffffff;
+      border-color: #c2410c;
+    }
+
+    .q-bubble.active {
+      outline: 2px solid #0f172a;
+      outline-offset: 1px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-flag {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      color: #475569;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s;
+    }
+
+    .btn-flag.flagged {
+      background: #ffedd5;
+      color: #c2410c;
+      border-color: #fb923c;
+    }
+
+    /* Result Modal */
+    .result-modal-backdrop {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(3px);
+    }
+
+    .result-modal-card {
+      background: #ffffff;
+      width: 90%;
+      max-width: 850px;
+      max-height: 90vh;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .modal-header {
+      background: #1f2937;
+      color: #ffffff;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-header h3 {
+      font-size: 1.25rem;
+    }
+
+    .modal-close-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 1.5rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .modal-close-btn:hover {
+      color: #ffffff;
+    }
+
+    .modal-body-scroll {
+      padding: 24px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .score-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .score-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .score-label {
+      font-size: 0.85rem;
+      color: #64748b;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .score-val {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #0f172a;
+      margin-top: 4px;
+    }
+
+    .score-card.band-score {
+      background: #f0fdf4;
+      border-color: #bbf7d0;
+    }
+
+    .score-card.band-score .score-val {
+      color: #16a34a;
+    }
+
+    .modal-tabs {
+      display: flex;
+      gap: 12px;
+      border-bottom: 2px solid #e2e8f0;
+      margin-bottom: 16px;
+    }
+
+    .modal-tab-btn {
+      padding: 8px 16px;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      font-size: 0.95rem;
+      font-weight: bold;
+      color: #64748b;
+      cursor: pointer;
+      margin-bottom: -2px;
+    }
+
+    .modal-tab-btn.active {
+      color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+
+    .review-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .review-table th, .review-table td {
+      padding: 10px 14px;
+      border: 1px solid #e2e8f0;
+      text-align: left;
+    }
+
+    .review-table th {
+      background: #f1f5f9;
+      color: #334155;
+    }
+
+    .review-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 0.75rem;
+    }
+
+    .badge-correct {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .badge-incorrect {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+
+        /* Full Audioscript & Analysis Modal Styles */
+    .script-tabs-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      background: #f1f5f9;
+      padding: 6px;
+      border-radius: 8px;
+    }
+
+    .script-tab-btn {
+      flex: 1;
+      padding: 8px 12px;
+      background: transparent;
+      border: none;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #64748b;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .script-tab-btn.active {
+      background: #ffffff;
+      color: #1e3a8a;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .script-sec-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      padding: 20px 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .script-sec-header {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #1e3a8a;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 10px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .transcript-dialogue p, .transcript-talk p, .transcript-lecture p {
+      margin-bottom: 12px;
+      line-height: 1.7;
+      color: #1e293b;
+      font-size: 0.92rem;
+    }
+
+    .speaker {
+      font-weight: 700;
+      color: #0369a1;
+      margin-right: 6px;
+    }
+
+    .script-ans-hl {
+      background: #fef08a;
+      color: #854d0e;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+      border: 1px solid #facc15;
+      display: inline-block;
+      margin: 1px 0;
+    }
+
+    .script-q-badge {
+      background: #16a34a;
+      color: #ffffff;
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-right: 4px;
+    }
+
+    /* Question Analysis & Traps Cards */
+    .analysis-header-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-top: 24px;
+      margin-bottom: 14px;
+      padding-top: 16px;
+      border-top: 2px dashed #cbd5e1;
+    }
+
+    .evidence-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 5px solid #3b82f6;
+      border-radius: 6px;
+      padding: 14px 18px;
+      margin-bottom: 14px;
+    }
+
+    .evidence-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-weight: bold;
+      font-size: 0.95rem;
+      align-items: center;
+    }
+
+    .evidence-q {
+      color: #0f172a;
+    }
+
+    .evidence-key {
+      background: #16a34a;
+      color: #ffffff;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+    }
+
+    .evidence-quote {
+      font-style: italic;
+      color: #1e293b;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+      font-size: 0.88rem;
+    }
+
+    .evidence-expl {
+      color: #334155;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      margin-bottom: 8px;
+    }
+
+    /* Options Breakdown for MC */
+    .analysis-options-card {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin: 8px 0;
+    }
+
+    .analysis-opt-row {
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 0.86rem;
+    }
+
+    .analysis-opt-row.is-correct {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-left: 4px solid #16a34a;
+    }
+
+    .analysis-opt-row.is-distractor {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-left: 4px solid #dc2626;
+    }
+
+    .analysis-opt-badge {
+      display: inline-block;
+      font-weight: 700;
+      font-size: 0.76rem;
+      padding: 1px 6px;
+      border-radius: 3px;
+      margin-bottom: 3px;
+      text-transform: uppercase;
+    }
+
+    .badge-correct {
+      background: #16a34a;
+      color: #ffffff;
+    }
+
+    .badge-distractor {
+      background: #dc2626;
+      color: #ffffff;
+    }
+
+    .analysis-opt-text {
+      color: #0f172a;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .analysis-opt-quote {
+      font-style: italic;
+      color: #475569;
+      font-size: 0.82rem;
+      margin-bottom: 2px;
+    }
+
+    .analysis-opt-reason {
+      color: #334155;
+      font-size: 0.84rem;
+    }
+
+    /* Traps Row */
+    .analysis-traps-row {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 4px solid #d97706;
+      border-radius: 6px;
+      padding: 8px 12px;
+      margin-top: 6px;
+    }
+
+    .analysis-traps-tag {
+      font-weight: 700;
+      color: #b45309;
+      font-size: 0.84rem;
+      margin-bottom: 2px;
+    }
+
+    .analysis-traps-desc {
+      color: #78350f;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    /* === USER HIGHLIGHT & CONTEXT TOOLBAR === */
+    .user-highlight {
+      background-color: #fef08a !important;
+      color: #0f172a !important;
+      border-radius: 2px;
+      padding: 1px 3px;
+      cursor: pointer;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+      box-shadow: inset 0 -1px 0 rgba(0,0,0,0.12);
+      transition: background-color 0.15s ease;
+    }
+    .user-highlight:hover {
+      background-color: #fde047 !important;
+    }
+
+    .highlight-tooltip {
+      position: absolute;
+      z-index: 999999;
+      display: none;
+      align-items: center;
+      gap: 6px;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 5px 8px;
+      border-radius: 6px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+      font-size: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      pointer-events: auto;
+      user-select: none;
+      animation: hlFadeIn 0.12s ease-out;
+    }
+    @keyframes hlFadeIn {
+      from { opacity: 0; transform: translateY(4px) scale(0.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .highlight-tooltip button {
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.15s;
+    }
+    .highlight-tooltip button:hover {
+      background: #1d4ed8;
+    }
+    .highlight-tooltip button.btn-remove {
+      background: #dc2626;
+    }
+    .highlight-tooltip button.btn-remove:hover {
+      background: #b91c1c;
+    }
+    .highlight-tooltip button.btn-clear-all {
+      background: #475569;
+    }
+    .highlight-tooltip button.btn-clear-all:hover {
+      background: #334155;
+    }
+    .highlight-tooltip button.btn-close-hl {
+      background: transparent;
+      color: #94a3b8;
+      padding: 3px 6px;
+    }
+    .highlight-tooltip button.btn-close-hl:hover {
+      color: #ffffff;
+    }
+
+    .q-group-heading { text-align: center; font-weight: 700; font-size: 1.15rem; margin: 14px 0 10px; color: #1e293b; }
+    .notes-list li.notes-plain, .notes-sublist li.notes-plain { list-style: none; }
+    .notes-subhead { font-weight: 500; }
+    .q-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+    .q-table th, .q-table td { border: 1px solid #94a3b8; padding: 8px 10px; vertical-align: top; text-align: left; line-height: 1.9; }
+    .q-table th { background: #f1f5f9; }
+    .q-table .q-table-title { text-align: center; font-size: 1.05rem; background: #e2e8f0; }
+    .q-form { display: flex; flex-direction: column; gap: 6px; }
+    .q-form-head { font-weight: 700; margin-top: 10px; }
+    .q-form-row { display: grid; grid-template-columns: minmax(180px, 42%) 1fr; gap: 10px; align-items: start; line-height: 1.9; }
+    @media (max-width: 640px) { .q-form-row { grid-template-columns: 1fr; gap: 2px; } }
+  /* mobile-fit v1 */
+    body { height: 100vh; height: 100dvh; }
+    @media (max-width: 760px) {
+      header { flex-wrap: wrap; gap: 6px 8px; padding: 6px 10px; }
+      .header-left { flex-wrap: wrap; gap: 6px; flex: 1 1 auto; min-width: 0; }
+      .brand-title { font-size: 0.85rem; flex: 1 1 100%; }
+      .test-badge, .badge-teacher, .tg-channel-badge, .tg-channel-link { font-size: 0.68rem !important; padding: 2px 7px !important; }
+      .timer-badge { padding: 3px 8px; font-size: 0.85rem; }
+      .btn-top { padding: 5px 10px; font-size: 0.8rem; }
+      .audio-start-btn { padding: 5px 12px; font-size: 0.8rem; }
+      .audio-btn-circle { width: 34px; height: 34px; }
+      .audio-ctrl-btn { padding: 4px 8px; font-size: 0.78rem; }
+      .time-display, .audio-time { font-size: 0.78rem; }
+      .speed-select { padding: 3px 4px; width: auto; }
+      .header-right { flex-wrap: wrap; gap: 6px; flex: 0 0 auto; margin-left: auto; }
+      .header-center { order: 3; flex: 1 1 100%; min-width: 0; }
+      .audio-cd-box { width: 100%; flex-wrap: wrap; gap: 6px 8px; padding: 4px 8px; border-radius: 12px; }
+      .exam-waveform-container { flex: 1 1 60px; width: auto; min-width: 50px; }
+      .btn-hdr { padding: 4px 7px; font-size: 0.72rem; }
+      .audio-bar-panel { flex-wrap: wrap; padding: 6px 10px; gap: 6px 8px; }
+      .waveform-container { order: 10; flex: 1 1 100%; width: auto !important; height: 34px !important; }
+      .section-nav-tabs { padding: 0 6px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .sec-tab-btn { padding: 6px 4px; font-size: 0.74rem; white-space: normal; flex: 1 1 0; min-width: 0; line-height: 1.25; }
+      .section-nav-tabs { gap: 3px; }
+      .test-content-scroll { padding: 10px; }
+      .section-container { padding: 16px 14px; }
+      .bottom-nav-bar { padding: 6px 8px; gap: 8px; padding-bottom: calc(6px + env(safe-area-inset-bottom)); }
+      .palette-container { flex-wrap: nowrap; overflow-x: auto; flex: 1 1 auto; min-width: 0; padding: 3px 2px; -webkit-overflow-scrolling: touch; }
+      .q-bubble { flex: 0 0 auto; width: 32px; height: 32px; }
+      .btn-flag { padding: 6px 8px; font-size: 0.8rem; white-space: nowrap; }
+      .result-modal-card, .modal-card { width: 100%; max-width: 100%; height: 100%; max-height: 100%; border-radius: 0; }
+      .modal-header { padding: 10px 12px; gap: 8px; }
+      .modal-header h3 { font-size: 1rem; }
+      .modal-body-scroll { padding: 12px; }
+      .score-summary-grid { gap: 6px; margin-bottom: 14px; }
+      .score-card { padding: 8px 4px; }
+      .score-val { font-size: 1.3rem; }
+      .modal-tabs { overflow-x: auto; }
+      .modal-tab-btn { white-space: nowrap; }
+      .modal-body-scroll table { font-size: 0.85rem; }
+      .modal-body-scroll th, .modal-body-scroll td { padding: 6px; word-break: break-word; }
+      .modal-body-scroll img { max-width: 100%; height: auto; }
+      input[type="text"], select, textarea { font-size: 16px; }
+    }
+  /* mobile-fit v2 */
+    @media (max-width: 760px) {
+      .form-table-box { padding: 12px 8px; overflow-x: auto; }
+      .q-table th, .q-table td { padding: 6px; line-height: 1.6; }
+      .q-table .cd-input { width: 100%; min-width: 0; }
+      .cd-input { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Audio element -->
+  <audio id="testAudio" preload="auto"></audio>
+
+  <!-- Header -->
+  <header>
+    <div class="header-left">
+      <span class="brand-title">Dilshod ustoz • IELTS Listening</span>
+      <span class="test-badge">Cambridge 15 Test 1</span>
+      <a href="https://t.me/dilshod_english" target="_blank" class="tg-channel-badge">✈ @dilshod_english</a>
+    </div>
+
+    <div class="header-center">
+      <div class="audio-cd-box">
+        <button id="audioControlBtn" class="audio-start-btn" onclick="startListeningTest()">
+          <span>▶</span> Start Audio
+        </button>
+        <div id="audioPulseIndicator" class="audio-pulse-indicator"></div>
+        <span id="audioTrackLabel" style="font-size:0.8rem; color:#e2e8f0; font-weight:bold;">Part 1</span>
+        <div class="exam-waveform-container" title="Audio frequency & progress">
+          <div id="examWaveProgress" class="exam-waveform-progress"></div>
+          <div id="examWaveformBars" class="exam-waveform-bars"></div>
+        </div>
+        <span id="audioTimeDisplay" class="audio-time">00:00 / 00:00</span>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <div class="timer-badge">
+        <span>⏱</span> <span id="testTimerDisplay">40:00</span>
+      </div>
+      <button class="btn-top btn-submit" onclick="submitListeningTest()">Finish Test</button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <div class="main-wrapper">
+    <!-- Section Tabs -->
+    <div class="section-nav-tabs">
+      <button class="sec-tab-btn active" onclick="switchSection(1)">Part 1 (Q1-10) <span id="tabAudioIcon_1" class="tab-audio-icon" style="display:none;">🔊</span></button>
+      <button class="sec-tab-btn" onclick="switchSection(2)">Part 2 (Q11-20) <span id="tabAudioIcon_2" class="tab-audio-icon" style="display:none;">🔊</span></button>
+      <button class="sec-tab-btn" onclick="switchSection(3)">Part 3 (Q21-30) <span id="tabAudioIcon_3" class="tab-audio-icon" style="display:none;">🔊</span></button>
+      <button class="sec-tab-btn" onclick="switchSection(4)">Part 4 (Q31-40) <span id="tabAudioIcon_4" class="tab-audio-icon" style="display:none;">🔊</span></button>
+    </div>
+
+    <!-- Section Content -->
+    <div class="test-content-scroll">
+
+      <!-- SECTION 1 -->
+      <div id="sec1_container" class="section-container active">
+        <div class="part-title-box">
+          <h2>SECTION 1 · Questions 1–10</h2>
+          <div class="part-sub">Bankside Recruitment Agency</div>
+        </div>
+
+        <div class="instructions-box">
+          <strong>Questions 1–10:</strong> Complete the notes below.<br>Write <strong>ONE WORD AND/OR A NUMBER</strong> for each answer.
+        </div>
+
+        <div class="form-table-box">
+          <div class="form-heading">Bankside Recruitment Agency</div>
+          <ul class="notes-list">
+            <li>Address of agency: 497 Eastside, Docklands</li>
+            <li>Name of agent: Becky <span class="q-number">1</span> <input type="text" class="cd-input" id="q1" oninput="handleInput(1)"></li>
+            <li>Phone number: 07866 510333</li>
+            <li>Best to call her in the <span class="q-number">2</span> <input type="text" class="cd-input" id="q2" oninput="handleInput(2)"></li>
+            <li class="notes-head"><strong>Typical jobs</strong>
+              <ul class="notes-sublist">
+                <li>Clerical and admin roles, mainly in the finance industry</li>
+                <li>Must have good <span class="q-number">3</span> <input type="text" class="cd-input" id="q3" oninput="handleInput(3)"> skills</li>
+                <li>Jobs are usually for at least one <span class="q-number">4</span> <input type="text" class="cd-input" id="q4" oninput="handleInput(4)"></li>
+                <li>Pay is usually <span class="q-number">5</span> £ <input type="text" class="cd-input" id="q5" oninput="handleInput(5)"> per hour</li>
+              </ul>
+            </li>
+            <li class="notes-head"><strong>Registration process</strong>
+              <ul class="notes-sublist">
+                <li>Wear a <span class="q-number">6</span> <input type="text" class="cd-input" id="q6" oninput="handleInput(6)"> to the interview</li>
+                <li>Must bring your <span class="q-number">7</span> <input type="text" class="cd-input" id="q7" oninput="handleInput(7)"> to the interview</li>
+                <li>They will ask questions about each applicant's <span class="q-number">8</span> <input type="text" class="cd-input" id="q8" oninput="handleInput(8)"></li>
+              </ul>
+            </li>
+            <li class="notes-head"><strong>Advantages of using an agency</strong>
+              <ul class="notes-sublist">
+                <li>The <span class="q-number">9</span> <input type="text" class="cd-input" id="q9" oninput="handleInput(9)"> you receive at interview will benefit you</li>
+                <li>Will get access to vacancies which are not advertised</li>
+                <li>Less <span class="q-number">10</span> <input type="text" class="cd-input" id="q10" oninput="handleInput(10)"> is involved in applying for jobs</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- SECTION 2 -->
+      <div id="sec2_container" class="section-container">
+        <div class="part-title-box">
+          <h2>SECTION 2 · Questions 11–20</h2>
+          <div class="part-sub">Matthews Island Holidays</div>
+        </div>
+
+        <div class="instructions-box">
+          <strong>Questions 11–14:</strong> Choose the correct letter, <strong>A, B or C</strong>.
+        </div>
+
+        <div class="q-group-heading">Matthews Island Holidays</div>
+
+        <div class="mc-question-card">
+          <div class="mc-q-text"><span class="q-number">11</span> According to the speaker, the company</div>
+          <ul class="mc-options-list">
+            <li><label class="mc-option-label"><input type="radio" name="q11_opt" value="A" onchange="handleRadio(11, 'A')"> <strong>A</strong> has been in business for longer than most of its competitors.</label></li>
+            <li><label class="mc-option-label"><input type="radio" name="q11_opt" value="B" onchange="handleRadio(11, 'B')"> <strong>B</strong> arranges holidays to more destinations than its competitors.</label></li>
+            <li><label class="mc-option-label"><input type="radio" name="q11_opt" value="C" onchange="handleRadio(11, 'C')"> <strong>C</strong> has more customers than its competitors.</label></li>
+          </ul>
+        </div>
+
+        <div class="mc-question-card">
+          <div class="mc-q-text"><span class="q-number">12</span> Where can customers meet the tour manager before travelling to the Isle of Man?</div>
+          <ul class="mc-options-list">
+            <li><label class="mc-option-label"><input type="radio" name="q12_opt" value="A" onchange="handleRadio(12, 'A')"> <strong>A</strong> Liverpool</label></li>
+            <li><label class="mc-option-label"><input type="radio" name="q12_opt" value="B" onchange="handleRadio(12, 'B')"> <strong>B</strong> Heysham</label></li>
+            <li><label class="mc-option-label"><input type="radio" name="q12_opt" value="C" onchange="handleRadio(12, 'C')"> <strong>C</strong> Luton</label></li>
+          </ul>
+        </div>
+
+        <div class="mc-question-card">
+          <div class="mc-q-text"><span class="q-number">13</span> How many lunches are included in the price of the holiday?</div>
+          <ul class="mc-options-list">
+            <li><label class="mc-option-label"><input type="radio" name="q13_opt" value="A" onchange="handleRadio(13, 'A')"> <strong>A</strong> three</label></li>
+            <li><label class="mc-option-label"><input type="radio" name="q13_opt" value="B" onchange="handleRadio(13, 'B')"> <strong>B</strong> four</label></li>
+            <li><label class="mc-option-label"><input type="radio" name="q13_opt" value="C" onchange="handleRadio(13, 'C')"> <strong>C</strong> five</label></li>
+          </ul>
+        </div>
+
+        <div class="mc-question-card">
+          <div class="mc-q-text"><span class="q-number">14</span> Customers have to pay extra for</div>
+          <ul class="mc-options-list">
+            <li><label class="mc-option-label"><input type="radio" name="q14_opt" value="A" onchange="handleRadio(14, 'A')"> <strong>A</strong> guaranteeing themselves a larger room.</label></li>
+            <li><label class="mc-option-label"><input type="radio" name="q14_opt" value="B" onchange="handleRadio(14, 'B')"> <strong>B</strong> booking at short notice.</label></li>
+            <li><label class="mc-option-label"><input type="radio" name="q14_opt" value="C" onchange="handleRadio(14, 'C')"> <strong>C</strong> transferring to another date.</label></li>
+          </ul>
+        </div>
+
+        <div class="instructions-box">
+          <strong>Questions 15–20:</strong> Complete the table below.<br>Write <strong>ONE WORD AND/OR A NUMBER</strong> for each answer.
+        </div>
+
+        <div class="form-table-box">
+          <table class="q-table">
+            <tr><th colspan="3" class="q-table-title">Timetable for Isle of Man holiday</th></tr>
+            <tr><th></th><th>Activity</th><th>Notes</th></tr>
+            <tr>
+              <td>Day 1</td>
+              <td>Arrive</td>
+              <td>Introduction by manager<br>Hotel dining room has view of the <span class="q-number">15</span> <input type="text" class="cd-input" id="q15" oninput="handleInput(15)"></td>
+            </tr>
+            <tr>
+              <td>Day 2</td>
+              <td>Tynwald Exhibition and Peel</td>
+              <td>Tynwald may have been founded in <span class="q-number">16</span> <input type="text" class="cd-input" id="q16" oninput="handleInput(16)"> not 979.</td>
+            </tr>
+            <tr>
+              <td>Day 3</td>
+              <td>Trip to Snaefell</td>
+              <td>Travel along promenade in a tram; train to Laxey; train to the <span class="q-number">17</span> <input type="text" class="cd-input" id="q17" oninput="handleInput(17)"> of Snaefell</td>
+            </tr>
+            <tr>
+              <td>Day 4</td>
+              <td>Free day</td>
+              <td>Company provides a <span class="q-number">18</span> <input type="text" class="cd-input" id="q18" oninput="handleInput(18)"> for local transport and heritage sites.</td>
+            </tr>
+            <tr>
+              <td>Day 5</td>
+              <td>Take the <span class="q-number">19</span> <input type="text" class="cd-input" id="q19" oninput="handleInput(19)"> railway train from Douglas to Port Erin</td>
+              <td>Free time, then coach to Castletown – former <span class="q-number">20</span> <input type="text" class="cd-input" id="q20" oninput="handleInput(20)"> has old castle.</td>
+            </tr>
+            <tr>
+              <td>Day 6</td>
+              <td>Leave</td>
+              <td>Leave the island by ferry or plane</td>
+            </tr>
+          </table>
+        </div>
+
+      </div>
+
+      <!-- SECTION 3 -->
+      <div id="sec3_container" class="section-container">
+        <div class="part-title-box">
+          <h2>SECTION 3 · Questions 21–30</h2>
+          <div class="part-sub">Personality traits and position in the family</div>
+        </div>
+
+        <div class="instructions-box">
+          <strong>Questions 21–26:</strong> What did findings of previous research claim about the personality traits a child is likely to have because of their position in the family?<br>Choose <strong>SIX</strong> answers from the box and write the correct letter, <strong>A–H</strong>, next to Questions 21–26.
+        </div>
+
+        <div class="matching-options-box">
+          <h4>Personality Traits</h4>
+          <div class="matching-grid">
+            <div><strong>A</strong> outgoing</div>
+            <div><strong>B</strong> selfish</div>
+            <div><strong>C</strong> independent</div>
+            <div><strong>D</strong> attention-seeking</div>
+            <div><strong>E</strong> introverted</div>
+            <div><strong>F</strong> co-operative</div>
+            <div><strong>G</strong> caring</div>
+            <div><strong>H</strong> competitive</div>
+          </div>
+        </div>
+
+        <div class="form-table-box">
+          <div class="form-heading">Position in family</div>
+          <div class="matching-row">
+            <span><span class="q-number">21</span> the eldest child</span>
+            <select class="matching-select" id="q21" onchange="handleInput(21)">
+              <option value="">Select...</option>
+              <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option><option value="H">H</option>
+            </select>
+          </div>
+          <div class="matching-row">
+            <span><span class="q-number">22</span> a middle child</span>
+            <select class="matching-select" id="q22" onchange="handleInput(22)">
+              <option value="">Select...</option>
+              <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option><option value="H">H</option>
+            </select>
+          </div>
+          <div class="matching-row">
+            <span><span class="q-number">23</span> the youngest child</span>
+            <select class="matching-select" id="q23" onchange="handleInput(23)">
+              <option value="">Select...</option>
+              <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option><option value="H">H</option>
+            </select>
+          </div>
+          <div class="matching-row">
+            <span><span class="q-number">24</span> a twin</span>
+            <select class="matching-select" id="q24" onchange="handleInput(24)">
+              <option value="">Select...</option>
+              <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option><option value="H">H</option>
+            </select>
+          </div>
+          <div class="matching-row">
+            <span><span class="q-number">25</span> an only child</span>
+            <select class="matching-select" id="q25" onchange="handleInput(25)">
+              <option value="">Select...</option>
+              <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option><option value="H">H</option>
+            </select>
+          </div>
+          <div class="matching-row">
+            <span><span class="q-number">26</span> a child with much older siblings</span>
+            <select class="matching-select" id="q26" onchange="handleInput(26)">
+              <option value="">Select...</option>
+              <option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option><option value="H">H</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="instructions-box">
+          <strong>Questions 27 and 28:</strong> Choose the correct letter, <strong>A, B or C</strong>.
+        </div>
+
+        <div class="mc-question-card">
+          <div class="mc-q-text"><span class="q-number">27</span> What do the speakers say about the evidence relating to birth order and academic success?</div>
+          <ul class="mc-options-list">
+            <li><label class="mc-option-label"><input type="radio" name="q27_opt" value="A" onchange="handleRadio(27, 'A')"> <strong>A</strong> There is conflicting evidence about whether oldest children perform best in intelligence tests.</label></li>
+            <li><label class="mc-option-label"><input type="radio" name="q27_opt" value="B" onchange="handleRadio(27, 'B')"> <strong>B</strong> There is little doubt that birth order has less influence on academic achievement than socio-economic status.</label></li>
+            <li><label class="mc-option-label"><input type="radio" name="q27_opt" value="C" onchange="handleRadio(27, 'C')"> <strong>C</strong> Some studies have neglected to include important factors such as family size.</label></li>
+          </ul>
+        </div>
+
+        <div class="mc-question-card">
+          <div class="mc-q-text"><span class="q-number">28</span> What does Ruth think is surprising about the difference in oldest children's academic performance?</div>
+          <ul class="mc-options-list">
+            <li><label class="mc-option-label"><input type="radio" name="q28_opt" value="A" onchange="handleRadio(28, 'A')"> <strong>A</strong> It is mainly thanks to their roles as teachers for their younger siblings.</label></li>
+            <li><label class="mc-option-label"><input type="radio" name="q28_opt" value="B" onchange="handleRadio(28, 'B')"> <strong>B</strong> The advantages they have only lead to a slightly higher level of achievement.</label></li>
+            <li><label class="mc-option-label"><input type="radio" name="q28_opt" value="C" onchange="handleRadio(28, 'C')"> <strong>C</strong> The extra parental attention they receive at a young age makes little difference.</label></li>
+          </ul>
+        </div>
+
+        <div class="instructions-box">
+          <strong>Questions 29 and 30:</strong> Choose <strong>TWO</strong> letters, <strong>A–E</strong>.
+        </div>
+
+        <div class="mc-question-card">
+          <div class="mc-q-text"><span class="q-number">29</span> &amp; <span class="q-number">30</span> Which <strong>TWO</strong> experiences of sibling rivalry do the speakers agree has been valuable for them?</div>
+          <ul class="mc-options-list">
+            <li><label class="mc-option-label"><input type="checkbox" name="q29_30" value="A" onchange="onMultiCheck(29, 30, this)"> <strong>A</strong> learning to share</label></li>
+            <li><label class="mc-option-label"><input type="checkbox" name="q29_30" value="B" onchange="onMultiCheck(29, 30, this)"> <strong>B</strong> learning to stand up for oneself</label></li>
+            <li><label class="mc-option-label"><input type="checkbox" name="q29_30" value="C" onchange="onMultiCheck(29, 30, this)"> <strong>C</strong> learning to be a good loser</label></li>
+            <li><label class="mc-option-label"><input type="checkbox" name="q29_30" value="D" onchange="onMultiCheck(29, 30, this)"> <strong>D</strong> learning to be tolerant</label></li>
+            <li><label class="mc-option-label"><input type="checkbox" name="q29_30" value="E" onchange="onMultiCheck(29, 30, this)"> <strong>E</strong> learning to say sorry</label></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- SECTION 4 -->
+      <div id="sec4_container" class="section-container">
+        <div class="part-title-box">
+          <h2>SECTION 4 · Questions 31–40</h2>
+          <div class="part-sub">The Eucalyptus Tree in Australia</div>
+        </div>
+
+        <div class="instructions-box">
+          <strong>Questions 31–40:</strong> Complete the notes below.<br>Write <strong>ONE WORD ONLY</strong> for each answer.
+        </div>
+
+        <div class="form-table-box">
+          <div class="form-heading">The Eucalyptus Tree in Australia</div>
+          <ul class="notes-list">
+            <li class="notes-head"><strong>Importance</strong>
+              <ul class="notes-sublist">
+                <li>it provides <span class="q-number">31</span> <input type="text" class="cd-input" id="q31" oninput="handleInput(31)"> and food for a wide range of species</li>
+                <li>its leaves provide <span class="q-number">32</span> <input type="text" class="cd-input" id="q32" oninput="handleInput(32)"> which is used to make a disinfectant</li>
+              </ul>
+            </li>
+            <li class="notes-head"><strong>Reasons for present decline in number</strong></li>
+            <li class="notes-head"><strong>A) Diseases</strong></li>
+            <li class="notes-head"><strong>(i) 'Mundulla Yellows'</strong>
+              <ul class="notes-sublist">
+                <li>Cause – lime used for making <span class="q-number">33</span> <input type="text" class="cd-input" id="q33" oninput="handleInput(33)"> was absorbed</li>
+                <li>– trees were unable to take in necessary iron through their roots</li>
+              </ul>
+            </li>
+            <li class="notes-head"><strong>(ii) 'Bell-miner Associated Die-back'</strong>
+              <ul class="notes-sublist">
+                <li>Cause – <span class="q-number">34</span> <input type="text" class="cd-input" id="q34" oninput="handleInput(34)"> feed on eucalyptus leaves</li>
+                <li>– they secrete a substance containing sugar</li>
+                <li>– bell-miner birds are attracted by this and keep away other species</li>
+              </ul>
+            </li>
+            <li class="notes-head"><strong>B) Bushfires</strong></li>
+            <li class="notes-head"><strong>William Jackson's theory:</strong>
+              <ul class="notes-sublist">
+                <li>high-frequency bushfires have impact on vegetation, resulting in the growth of <span class="q-number">35</span> <input type="text" class="cd-input" id="q35" oninput="handleInput(35)"></li>
+                <li>mid-frequency bushfires result in the growth of eucalyptus forests, because they:</li>
+                <li>– make more <span class="q-number">36</span> <input type="text" class="cd-input" id="q36" oninput="handleInput(36)"> available to the trees</li>
+                <li>– maintain the quality of the <span class="q-number">37</span> <input type="text" class="cd-input" id="q37" oninput="handleInput(37)"></li>
+                <li>low-frequency bushfires result in the growth of '<span class="q-number">38</span> <input type="text" class="cd-input" id="q38" oninput="handleInput(38)"> rainforest', which is:</li>
+                <li>– a <span class="q-number">39</span> <input type="text" class="cd-input" id="q39" oninput="handleInput(39)"> ecosystem</li>
+                <li>– an ideal environment for the <span class="q-number">40</span> <input type="text" class="cd-input" id="q40" oninput="handleInput(40)"> of the bell-miner</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom Question Navigation Palette -->
+    <div class="bottom-nav-bar">
+      <div class="palette-container" id="questionPaletteContainer"></div>
+      <div class="nav-actions">
+        <button id="flagReviewBtn" class="btn-flag" onclick="toggleFlagCurrentQuestion()">
+          <span>⚐</span> Flag Question
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Review Modal -->
+  <div id="resultModal" class="result-modal-backdrop">
+    <div class="result-modal-card">
+      <div class="modal-header">
+        <h3>IELTS Listening Test Results — Cambridge 15 Test 1</h3>
+        <button class="modal-close-btn" onclick="closeResultModal()">&times;</button>
+      </div>
+      <div class="modal-body-scroll">
+        <div class="score-summary-grid">
+          <div class="score-card">
+            <div class="score-label">Raw Score</div>
+            <div class="score-val" id="rawScoreVal">0 / 40</div>
+          </div>
+          <div class="score-card">
+            <div class="score-label">Accuracy</div>
+            <div class="score-val" id="percentVal">0%</div>
+          </div>
+          <div class="score-card band-score">
+            <div class="score-label">IELTS Band Score</div>
+            <div class="score-val" id="bandScoreVal">0.0</div>
+          </div>
+        </div>
+
+        <div class="modal-tabs">
+          <button id="tabBtnReview" class="modal-tab-btn active" onclick="switchModalTab('review')">Question Review</button>
+          <button id="tabBtnAudioscript" class="modal-tab-btn" onclick="switchModalTab('audioscript')">Audioscript</button>
+        </div>
+
+        <div id="modalTabContentReview">
+          <table class="review-table">
+            <thead>
+              <tr>
+                <th style="width: 50px;">Q#</th>
+                <th>Your Answer</th>
+                <th>Correct Key</th>
+                <th style="width: 100px;">Result</th>
+              </tr>
+            </thead>
+            <tbody id="reviewTableBody"></tbody>
+          </table>
+        </div>
+
+        <div id="modalTabContentAudioscript" style="display: none;">
+          <div id="audioscriptEvidenceList"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const embeddedAudios = {"1": "audio/1.m4a", "2": "audio/2.m4a", "3": "audio/3.m4a", "4": "audio/4.m4a"};
+    const answerKeys = {"1": ["Jamieson"], "2": ["afternoon"], "3": ["communication"], "4": ["week"], "5": ["10", "ten"], "6": ["suit"], "7": ["passport"], "8": ["personality"], "9": ["feedback"], "10": ["time"], "11": ["A"], "12": ["B"], "13": ["A"], "14": ["C"], "15": ["river"], "16": ["1422"], "17": ["top"], "18": ["pass"], "19": ["steam"], "20": ["capital"], "21": ["G"], "22": ["F"], "23": ["A"], "24": ["E"], "25": ["B"], "26": ["C"], "27": ["C"], "28": ["A"], "29": ["B", "D"], "30": ["B", "D"], "31": ["shelter"], "32": ["oil"], "33": ["roads"], "34": ["insects"], "35": ["grass", "grasses", "grass(es)"], "36": ["water"], "37": ["soil"], "38": ["dry"], "39": ["simple"], "40": ["nest", "nests", "nest(s)"]};
+    const audioscriptEvidence = {};
+    const fullTranscripts = {"1": "<div class=\"transcript-dialogue\">\n<p><span class=\"speaker\">AMBER:</span> Hello William. This is Amber – you said to phone if I wanted to get more information about the job agency you mentioned. Is now a good time?</p>\n<p><span class=\"speaker\">WILLIAM:</span> Oh, hi Amber. Yes. Fine. So the agency I was talking about is called Bankside – they’re based in Docklands – I can tell you the address now – 497 Eastside.</p>\n<p><span class=\"speaker\">AMBER:</span> OK, thanks. So is there anyone in particular I should speak to there?</p>\n<p><span class=\"speaker\">WILLIAM:</span> The agent I always deal with is called Becky Jamieson.</p>\n<p><span class=\"speaker\">AMBER:</span> Let me write that down – Becky …</p>\n<p><span class=\"speaker\">WILLIAM:</span> <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q1</span> Jamieson</mark> J-A-M-I-E-S-O-N.</p>\n<p><span class=\"speaker\">AMBER:</span> Do you have her direct line?</p>\n<p><span class=\"speaker\">WILLIAM:</span> Yes, it’s in my contacts somewhere – right, here we are: 078 double 6, 510 triple 3. I wouldn’t call her until the <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q2</span> afternoon</mark> if I were you – she’s always really busy in the morning trying to fill last-minute vacancies. She’s really helpful and friendly so I’m sure it would be worth getting in touch with her for an informal chat.</p>\n<p><span class=\"speaker\">AMBER:</span> It’s mainly clerical and admin jobs they deal with, isn’t it?</p>\n<p><span class=\"speaker\">WILLIAM:</span> That’s right. I know you’re hoping to find a full-time job in the media eventually – but Becky mostly recruits temporary staff for the finance sector – which will look good on your CV – and generally pays better too.</p>\n<p><span class=\"speaker\">AMBER:</span> Yeah – I’m just a bit worried because I don’t have much office experience.</p>\n<p><span class=\"speaker\">WILLIAM:</span> I wouldn’t worry. They’ll probably start you as a receptionist, or something like that. So what’s important for that kind of job isn’t so much having business skills or knowing lots of different computer systems – it’s <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q3</span> communication</mark> that really matters – so you’d be fine there. And you’ll pick up office skills really quickly on the job. It’s not that complicated.</p>\n<p><span class=\"speaker\">AMBER:</span> OK good. So how long do people generally need temporary staff for? It would be great if I could get something lasting at least a month.</p>\n<p><span class=\"speaker\">WILLIAM:</span> That shouldn’t be too difficult. But you’re more likely to be offered something for a <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q4</span> week</mark> at first, which might get extended. It’s unusual to be sent somewhere for just a day or two.</p>\n<p><span class=\"speaker\">AMBER:</span> Right. I’ve heard the pay isn’t too bad – better than working in a shop or a restaurant.</p>\n<p><span class=\"speaker\">WILLIAM:</span> Oh yes – definitely. The hourly rate is about <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q5</span> £10,</mark> 11 if you’re lucky.</p>\n<p><span class=\"speaker\">AMBER:</span> That’s pretty good. I was only expecting to get eight or nine pounds an hour.</p>\n<p><span class=\"speaker\">WILLIAM:</span> Do you want me to tell you anything about the registration process?</p>\n<p><span class=\"speaker\">AMBER:</span> Yes, please. I know you have to have an interview.</p>\n<p><span class=\"speaker\">WILLIAM:</span> The interview usually takes about an hour and you should arrange that about a week in advance.</p>\n<p><span class=\"speaker\">AMBER:</span> I suppose I should dress smartly if it’s for office work – I can probably borrow a <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q6</span> suit</mark> from Mum.</p>\n<p><span class=\"speaker\">WILLIAM:</span> Good idea. It’s better to look too smart than too casual.</p>\n<p><span class=\"speaker\">AMBER:</span> Will I need to bring copies of my exam certificates or anything like that?</p>\n<p><span class=\"speaker\">WILLIAM:</span> No – they don’t need to see those, I don’t think.</p>\n<p><span class=\"speaker\">AMBER:</span> What about my <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q7</span> passport?</mark></p>\n<p><span class=\"speaker\">WILLIAM:</span> Oh yes – they will ask to see that.</p>\n<p><span class=\"speaker\">AMBER:</span> OK.</p>\n<p><span class=\"speaker\">WILLIAM:</span> I wouldn’t get stressed about the interview though. It’s just a chance for them to build a relationship with you – so they can try and match you to a job which you’ll like. So there are questions about <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q8</span> personality</mark> that they always ask candidates – fairly basic ones. And they probably won’t ask anything too difficult like what your plans are for the future.</p>\n<p><span class=\"speaker\">AMBER:</span> Hope not.</p>\n<p><span class=\"speaker\">WILLIAM:</span> Anyway, there are lots of benefits to using an agency – for example, the interview will be useful because they’ll give you <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q9</span> feedback</mark> on your performance so you can improve next time.</p>\n<p><span class=\"speaker\">AMBER:</span> And they’ll have access to jobs which aren’t advertised.</p>\n<p><span class=\"speaker\">WILLIAM:</span> Exactly – most temporary jobs aren’t advertised.</p>\n<p><span class=\"speaker\">AMBER:</span> And I expect finding a temporary job this way takes a lot less <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q10</span> time</mark> – it’s much easier than ringing up individual companies.</p>\n<p><span class=\"speaker\">WILLIAM:</span> Yes indeed. Well I think …</p>\n</div>", "2": "<div class=\"transcript-dialogue\">\n<p>Good morning. My name’s Erica Matthews, and I’m the owner of Matthews Island Holidays, a company set up by my parents. Thank you for coming to this presentation, in which I hope to interest you in what we have to offer. We’re a small, family-run company, and we believe in the importance of the personal touch, so we don’t aim to compete with other companies on the number of customers. What we do is build on our <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q11</span> many years’ experience – more than almost any other rail holiday company</mark> – to ensure we provide perfect holidays in a small number of destinations, which we’ve got to know extremely well.</p>\n<p>I’ll start with our six-day Isle of Man holiday. This is a fascinating island in the Irish Sea, with Wales to the south, England to the east, Scotland to the north and Northern Ireland to the west. Our holiday starts in <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q12</span> Heysham, where your tour manager will meet you,</mark> then you’ll travel by ferry to the Isle of Man. Some people prefer to fly from Luton instead, and another popular option is to go by train to Liverpool and take a ferry from there. You have five nights in the hotel, and the price covers five breakfasts and dinners, and <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q13</span> lunch on the three days when there are organised trips:</mark> day four is free, and most people have lunch in a café or restaurant in Douglas.</p>\n<p>The price of the holiday includes the ferry to the Isle of Man, all travel on the island, the hotel, and the meals I’ve mentioned. Incidentally, we try to make booking our holidays as simple and fair as possible, so unlike with many companies, the price is the same whether you book six months in advance or at the last minute, and there’s no supplement for single rooms in hotels. <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q14</span> If you make a booking then need to change the start date, for example because of illness, you’re welcome to change to an alternative date or a different tour, for a small administrative fee.</mark> OK, so what does the holiday consist of? Well, on day one you’ll arrive in time for a short introduction by your tour manager, followed by dinner in the hotel. The dining room looks out at the <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q15</span> river,</mark> close to where it flows into the harbour, and there’s usually plenty of activity going on.</p>\n<p>On day two you’ll take the coach to the small town of Peel, on the way calling in at the Tynwald Exhibition. The Isle of Man isn’t part of the United Kingdom, and it has its own parliament, called Tynwald. It’s claimed that this is the world’s oldest parliament that’s still functioning, and that it dates back to 979. However, the earliest surviving reference to it is from <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q16</span> 1422,</mark> so perhaps it isn’t quite as old as it claims!</p>\n<p>Day three we have a trip to the mountain Snaefell. This begins with a leisurely ride along the promenade in Douglas in a horse-drawn tram. Then you board an electric train which takes you to the fishing village of Laxey. From there it’s an eight-kilometre ride in the Snaefell Mountain Railway to the <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q17</span> top.</mark> Lunch will be in the café, giving you spectacular views of the island. Day four is free for you to explore, using the <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q18</span> pass</mark> which we’ll give you. So you won’t have to pay for travel on local transport, or for entrance to the island’s heritage sites. Or you might just want to take it easy in Douglas and perhaps do a little light shopping.</p>\n<p>The last full day, day five, is for some people the highlight of the holiday, with a ride on the <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q19</span> steam</mark> railway, from Douglas to Port Erin. After some time to explore, a coach will take you to the headland that overlooks the Calf of Man, a small island just off the coast. From there you continue to Castletown, which used to be the <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q20</span> capital</mark> of the Isle of Man, and its mediaeval castle.</p>\n<p>And on day six it’s back to the ferry – or the airport, if you flew to the island – and time to go home.</p>\n<p>Now I’d like to tell you …</p>\n</div>", "3": "<div class=\"transcript-dialogue\">\n<p><span class=\"speaker\">RUTH:</span> Ed, how are you getting on with the reading for our presentation next week?</p>\n<p><span class=\"speaker\">ED:</span> Well, OK, Ruth – but there’s so much of it.</p>\n<p><span class=\"speaker\">RUTH:</span> I know, I hadn’t realised birth order was such a popular area of research.</p>\n<p><span class=\"speaker\">ED:</span> But the stuff on birth order and personality is mostly unreliable. From what I’ve been reading a lot of the claims about how your position in the family determines certain personality traits are just stereotypes, with no robust evidence to support them.</p>\n<p><span class=\"speaker\">RUTH:</span> OK, but that’s an interesting point – we could start by outlining what previous research has shown. There are studies going back over a hundred years.</p>\n<p><span class=\"speaker\">ED:</span> Yeah – so we could just run through some of the typical traits. Like the consensus seems to be that oldest children are generally less well-adjusted because they never get over the arrival of a younger sibling.</p>\n<p><span class=\"speaker\">RUTH:</span> Right, but on a positive note, some studies claimed that <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q21</span> they were thought to be good at nurturing – certainly in the past when people had large families they would have been expected to look after the younger ones.</mark></p>\n<p><span class=\"speaker\">ED:</span> There isn’t such a clear picture for middle children – but one trait that a lot of the studies mention is that they are easier to get on with than older or younger siblings.</p>\n<p><span class=\"speaker\">RUTH:</span> <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q22</span> Generally eager to please and helpful</mark> – although that’s certainly not accurate as far as my family goes – my middle brother was a nightmare – always causing fights and envious of whatever I had.</p>\n<p><span class=\"speaker\">ED:</span> As I said – none of this seems to relate to my own experience. I’m the youngest in my family and I don’t recognise myself in any of the studies I’ve read about. I’m supposed to have been <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q23</span> a sociable and confident child who made friends easily</mark> – but I was actually terribly shy.</p>\n<p><span class=\"speaker\">RUTH:</span> Really? That’s funny. There have been hundreds of studies on twins but mostly about nurture versus nature …</p>\n<p><span class=\"speaker\">ED:</span> There was one on personality, which said that a twin is likely to be <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q24</span> quite shy in social situations</mark> because they always have their twin around to depend on for support.</p>\n<p><span class=\"speaker\">RUTH:</span> My cousins were like that when they were small – they were only interested in each other and found it hard to engage with other kids. They’re fine now though.</p>\n<p><span class=\"speaker\">ED:</span> Only children have had a really bad press – a lot of studies have branded them as <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q25</span> loners who think the world revolves around them</mark> because they’ve never had to fight for their parents’ attention.</p>\n<p><span class=\"speaker\">RUTH:</span> That does seem a bit harsh. One category I hadn’t considered before was children with much older siblings – a couple of studies mentioned that these children <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q26</span> grow up more quickly and are expected to do basic things for themselves – like getting dressed.</mark></p>\n<p><span class=\"speaker\">ED:</span> I can see how that might be true – although I expect they’re sometimes the exact opposite – playing the baby role and clamouring for special treatment.</p>\n<p><span class=\"speaker\">RUTH:</span> What was the problem with most of these studies, do you think?</p>\n<p><span class=\"speaker\">ED:</span> I think it was because in a lot of cases data was collected from only one sibling per family, who rated him or herself and his or her siblings at the same time.</p>\n<p><span class=\"speaker\">RUTH:</span> Mmm. Some of the old research into the relationship between birth order and academic achievement has been proved to be accurate though. Performances in intelligence tests decline slightly from the eldest child to his or her younger siblings. This has been proved in lots of recent studies.</p>\n<p><span class=\"speaker\">ED:</span> Yes. <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q27</span> Although what many of them didn’t take into consideration was family size.</mark> The more siblings there are, the likelier the family is to have a low socio-economic status – which can also account for differences between siblings in academic performance.</p>\n<p><span class=\"speaker\">RUTH:</span> The oldest boy might be given more opportunities than his younger sisters, for example.</p>\n<p><span class=\"speaker\">ED:</span> Exactly.</p>\n<p><span class=\"speaker\">RUTH:</span> But the main reason for the marginally higher academic performance of oldest children is quite surprising, I think. It’s not only that they benefit intellectually from extra attention at a young age – which is what I would have expected. <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q28</span> It’s that they benefit from being teachers for their younger siblings, by verbalising processes.</mark></p>\n<p><span class=\"speaker\">ED:</span> Right, and this gives them status and confidence, which again contribute, in a small way, to better performance. So would you say sibling rivalry has been a useful thing for you?</p>\n<p><span class=\"speaker\">RUTH:</span> I think so – my younger brother was incredibly annoying and we fought a lot but I think this has made me a stronger person. <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q29/Q30</span> I know how to defend myself.</mark> We had some terrible arguments and I would have died rather than apologise to him – but <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q29/Q30</span> we had to put up with each other</mark> and most of the time we co-existed amicably enough.</p>\n<p><span class=\"speaker\">ED:</span> Yes, my situation was pretty similar. But I don’t think having two older brothers made me any less selfish – I was never prepared to let my brothers use any of my stuff …</p>\n<p><span class=\"speaker\">RUTH:</span> That’s perfectly normal, whereas …</p>\n</div>", "4": "<div class=\"transcript-dialogue\">\n<p>Today I’m going to talk about the eucalyptus tree. This is a very common tree here in Australia, where it’s also sometimes called the gum tree. First I’m going to talk about why it’s important, then I’m going to describe some problems it faces at present. Right, well the eucalyptus tree is an important tree for lots of reasons. For example, it gives <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q31</span> shelter</mark> to creatures like birds and bats, and these and other species also depend on it for food, particularly the nectar from its flowers. So it supports biodiversity. It’s useful to us humans too, because we can kill germs with a disinfectant made from <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q32</span> oil</mark> extracted from eucalyptus leaves.</p>\n<p>The eucalyptus grows all over Australia and the trees can live for up to four hundred years. So it’s alarming that all across the country, numbers of eucalyptus are falling because the trees are dying off prematurely. So what are the reasons for this?</p>\n<p>One possible reason is disease. As far back as the 1970s the trees started getting a disease called Mundulla Yellows. The trees’ leaves would gradually turn yellow, then the tree would die. It wasn’t until 2004 that they found the cause of the problem was lime, or calcium hydroxide to give it its proper chemical name, which was being used in the construction of <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q33</span> roads.</mark> The lime was being washed away into the ground and affecting the roots of the eucalyptus trees nearby. What it was doing was preventing the trees from sucking up the iron they needed for healthy growth. When this was injected back into the affected trees, they immediately recovered. But this problem only affected a relatively small number of trees. By 2000, huge numbers of eucalyptus were dying along Australia’s East Coast, of a disease known as Bell-miner Associated Die-back. The bell-miner is a bird, and the disease seems to be common where there are high populations of bell-miners. Again it’s the leaves of the trees that are affected. What happens is that <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q34</span> insects</mark> settle on the leaves and eat their way round them, destroying them as they go, and at the same time they secrete a solution which has sugar in it. The bell-miner birds really like this solution, and in order to get as much as possible, they keep away other creatures that might try to get it. So these birds and insects flourish at the expense of other species, and eventually so much damage is done to the leaves that the tree dies.</p>\n<p>But experts say that trees can start looking sick before any sign of Bell-miner Associated Die-back. So it looks as if the problem might have another explanation. One possibility is that it’s to do with the huge bushfires that we have in Australia. A theory proposed over 40 years ago by ecologist William Jackson is that the frequency of bushfires in a particular region affects the type of vegetation that grows there. If there are very frequent bushfires in a region, this encourages <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q35</span> grass</mark> to grow afterwards, while if the bushfires are rather less frequent, this results in the growth of eucalyptus forests.</p>\n<p>So why is this? Why do fairly frequent bushfires actually support the growth of eucalyptus? Well, one reason is that the fire stops the growth of other species which would consume <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q36</span> water</mark> needed by eucalyptus trees. And there’s another reason. If these other quick-growing species of bushes and plants are allowed to proliferate, they harm the eucalyptus in another way, by affecting the composition of the <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q37</span> soil,</mark> and removing nutrients from it. So some bushfires are actually essential for the eucalyptus to survive as long as they are not too frequent. In fact there’s evidence that Australia’s indigenous people practised regular burning of bush land for thousands of years before the arrival of the Europeans.</p>\n<p>But since Europeans arrived on the continent, the number of bushfires has been strictly controlled. Now scientists believe that this reduced frequency of bushfires to low levels has led to what’s known as <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q38</span> ‘dry</mark> rainforest’, which seems an odd name as usually we associate tropical rainforest with wet conditions. And what’s special about this type of rainforest? Well, unlike tropical rainforest which is a rich ecosystem, this type of ecosystem is usually a <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q39</span> simple</mark> one. It has very thick, dense vegetation, but not much variety of species. The vegetation provides lots of shade, so one species that does find it ideal is the bell-miner bird, which builds its <mark class=\"script-ans-hl\"><span class=\"script-q-badge\">Q40</span> nests</mark> in the undergrowth there. But again that’s not helpful for the eucalyptus tree.</p>\n</div>"};
+
+    const peaksData = {"1": [18.8, 27.6, 26.4, 19.4, 23.9, 30.7, 28.2, 30.7, 29.3, 28.5, 22.5, 22.0, 30.5, 22.2, 7.0, 12.0, 32.0, 23.5, 26.9, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 27.1, 21.5, 15.0, 16.7, 14.1, 22.8, 21.0, 18.2, 17.4, 16.3, 26.0, 15.6, 21.5, 16.3, 19.1, 20.4, 23.0, 24.3, 22.2, 22.2, 19.8, 17.8, 23.2, 22.3, 20.1, 19.1, 17.4, 22.7, 19.4, 18.9, 18.7, 21.1, 15.8, 14.8, 18.0, 24.4, 21.6, 17.9, 16.9, 22.6, 19.0, 19.9, 7.7, 30.4, 24.6, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 27.1, 7.7, 22.3, 17.3, 22.2, 16.3, 17.7, 20.6, 15.5, 21.5, 22.2, 24.4, 18.9, 21.4, 20.3, 24.5, 17.5, 25.5, 20.5, 17.2, 22.1, 19.6, 19.5, 18.8, 19.0, 11.9, 24.7, 26.8, 14.6, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1], "2": [26.9, 28.9, 23.3, 25.6, 20.4, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 25.7, 20.0, 26.7, 25.0, 25.0, 25.3, 27.5, 25.4, 24.3, 25.1, 26.8, 26.1, 24.5, 22.6, 23.0, 24.9, 24.9, 27.8, 27.2, 27.6, 26.5, 27.2, 28.3, 28.0, 26.2, 24.5, 27.4, 28.1, 26.7, 26.2, 25.8, 26.1, 29.1, 26.6, 25.6, 27.7, 22.4, 27.9, 27.3, 26.8, 7.5, 28.1, 24.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 23.2, 22.3, 18.3, 28.0, 29.2, 26.9, 26.2, 32.0, 29.5, 30.8, 27.5, 28.9, 28.1, 29.3, 25.8, 27.3, 29.0, 30.5, 29.0, 28.6, 30.7, 26.9, 30.6, 28.9, 28.6, 25.3, 26.9, 28.6, 30.3, 29.5, 27.4, 27.8, 24.8, 30.4, 29.6, 23.8, 29.9, 27.7, 26.3, 27.6, 24.5, 27.0, 26.6, 21.5, 4.8, 21.7, 24.0, 12.0, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1], "3": [27.4, 27.6, 26.7, 27.2, 18.7, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 18.1, 27.4, 4.3, 25.3, 20.9, 23.3, 20.3, 22.1, 24.4, 16.8, 18.9, 23.9, 23.6, 24.6, 24.3, 23.4, 24.0, 26.2, 22.8, 22.7, 23.8, 24.0, 25.4, 26.5, 17.1, 21.3, 24.3, 24.2, 25.3, 21.2, 25.7, 20.6, 25.7, 24.2, 21.4, 22.6, 26.6, 19.1, 27.6, 24.9, 22.7, 27.1, 19.7, 23.7, 22.2, 21.8, 19.7, 21.4, 24.8, 22.7, 23.0, 27.4, 22.2, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 19.7, 24.9, 19.1, 22.0, 26.8, 27.0, 22.6, 22.8, 20.3, 32.0, 23.7, 23.3, 24.5, 19.7, 27.4, 25.7, 26.0, 19.6, 22.9, 15.3, 20.0, 18.2, 22.1, 22.7, 21.5, 24.1, 26.0, 18.0, 26.2, 17.1, 28.4, 19.0, 21.5, 19.6, 24.7, 25.6, 25.5, 10.0, 23.0, 23.5, 19.7, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1], "4": [28.9, 28.5, 24.9, 26.6, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 28.9, 20.8, 22.5, 26.7, 26.2, 25.3, 27.9, 26.0, 24.0, 25.0, 24.1, 28.8, 26.7, 20.6, 29.9, 28.5, 29.5, 23.6, 25.4, 24.5, 26.1, 28.0, 29.6, 29.8, 27.0, 30.5, 26.1, 27.7, 25.7, 23.6, 26.6, 28.2, 27.0, 27.8, 27.7, 27.2, 30.0, 24.1, 27.2, 22.4, 30.8, 26.5, 27.1, 23.1, 27.8, 7.5, 25.2, 25.7, 27.4, 24.3, 26.6, 25.9, 22.4, 24.9, 28.6, 30.7, 26.7, 24.3, 28.0, 27.5, 30.6, 27.2, 28.2, 29.9, 26.3, 26.5, 29.5, 28.1, 30.2, 30.3, 26.1, 24.9, 29.7, 29.2, 29.8, 24.7, 26.8, 25.6, 25.1, 26.8, 26.5, 32.0, 27.4, 28.2, 23.2, 25.9, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 23.9, 29.9, 21.4]};
+
+    const pairGroups = [[29, 30]];
+
+    let currentViewSec = 1;
+    let currentAudioSec = 1;
+    let currentQ = 1;
+    let userAnswers = {};
+    let flaggedQuestions = new Set();
+    let isTestRunning = false;
+    let testTimeRemaining = 40 * 60; // 40 minutes
+    let timerInterval = null;
+
+    const testAudio = document.getElementById("testAudio");
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    // Section Switching (View Only - does NOT interrupt or change audio)
+    function switchSection(secNum) {
+      currentViewSec = secNum;
+      for (let s = 1; s <= 4; s++) {
+        const el = document.getElementById(`sec${s}_container`);
+        if (el) el.classList.toggle("active", s === secNum);
+      }
+      document.querySelectorAll(".sec-tab-btn").forEach((btn, idx) => {
+        btn.classList.toggle("active", (idx + 1) === secNum);
+      });
+    }
+
+    // Palette Generation
+    function initPalette() {
+      const container = document.getElementById("questionPaletteContainer");
+      container.innerHTML = "";
+      for (let q = 1; q <= 40; q++) {
+        const bubble = document.createElement("div");
+        bubble.className = "q-bubble";
+        bubble.id = `palette_q${q}`;
+        bubble.innerText = q;
+        bubble.onclick = () => jumpToQuestion(q);
+        container.appendChild(bubble);
+      }
+      updatePaletteBubbles();
+    }
+
+    function jumpToQuestion(qNum) {
+      currentQ = qNum;
+      let targetSec = 1;
+      if (qNum >= 31) targetSec = 4;
+      else if (qNum >= 21) targetSec = 3;
+      else if (qNum >= 11) targetSec = 2;
+
+      if (currentViewSec !== targetSec) {
+        switchSection(targetSec);
+      }
+
+      setTimeout(() => {
+        let el = document.getElementById(`q${qNum}`);
+        if (!el) {
+          const radioOrCheck = document.querySelector(`input[name*="q${qNum}"], input[name*="_${qNum}"]`);
+          if (radioOrCheck) {
+            el = radioOrCheck.closest('.mc-question-card, .question-card, .form-row, .ms-question-card') || radioOrCheck;
+          }
+        }
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "center" });
+          if (typeof el.focus === 'function' && el.tagName !== 'DIV') {
+            el.focus();
+          }
+        }
+      }, 100);
+
+      updatePaletteBubbles();
+      updateFlagButtonState();
+    }
+
+    function updatePaletteBubbles() {
+      for (let q = 1; q <= 40; q++) {
+        const bubble = document.getElementById(`palette_q${q}`);
+        if (!bubble) continue;
+
+        const hasVal = userAnswers[q] && userAnswers[q].trim().length > 0;
+        const isFlag = flaggedQuestions.has(q);
+
+        bubble.className = "q-bubble";
+        if (hasVal) bubble.classList.add("answered");
+        if (isFlag) bubble.classList.add("flagged");
+        if (q === currentQ) bubble.classList.add("current");
+      }
+    }
+
+    function updateFlagButtonState() {
+      const flagBtn = document.getElementById("flagReviewBtn") || document.getElementById("btnFlagQuestion");
+      if (flagBtn) {
+        const isFlag = flaggedQuestions.has(currentQ);
+        flagBtn.classList.toggle("flagged", isFlag);
+        flagBtn.classList.toggle("active", isFlag);
+        flagBtn.innerHTML = isFlag ? "🚩 Flagged" : "⚐ Flag Question";
+      }
+    }
+
+    function toggleFlagCurrentQuestion() {
+      if (flaggedQuestions.has(currentQ)) {
+        flaggedQuestions.delete(currentQ);
+      } else {
+        flaggedQuestions.add(currentQ);
+      }
+      updatePaletteBubbles();
+      updateFlagButtonState();
+    }
+
+    function nextQuestion() {
+      if (currentQ < 40) jumpToQuestion(currentQ + 1);
+    }
+
+    function prevQuestion() {
+      if (currentQ > 1) jumpToQuestion(currentQ - 1);
+    }
+
+    function handleInput(qNum, val) {
+      if (val !== undefined && typeof val === 'string') {
+        userAnswers[qNum] = val.trim();
+      } else {
+        const el = document.getElementById(`q${qNum}`);
+        if (el) {
+          userAnswers[qNum] = el.value.trim();
+        }
+      }
+      currentQ = qNum;
+      updatePaletteBubbles();
+      updateFlagButtonState();
+    }
+
+    function handleRadio(qNum, val) {
+      userAnswers[qNum] = (val || "").toString().trim().toUpperCase();
+      currentQ = qNum;
+      updatePaletteBubbles();
+      updateFlagButtonState();
+    }
+
+    function onAnswerInput(qNum, value) {
+      handleInput(qNum, value);
+    }
+
+    function onRadioSelect(qNum, value) {
+      handleRadio(qNum, value);
+    }
+
+    function onMultiCheck(qNum1, qNum2, inputEl) {
+      const name = inputEl.name;
+      const checkedBoxes = document.querySelectorAll(`input[name="${name}"]:checked`);
+      const selectedVals = Array.from(checkedBoxes).map(cb => cb.value);
+
+      if (selectedVals.length > 2) {
+        inputEl.checked = false;
+        alert("You can only select up to 2 options.");
+        return;
+      }
+
+      userAnswers[qNum1] = selectedVals[0] || "";
+      userAnswers[qNum2] = selectedVals[1] || "";
+      updatePaletteBubbles();
+    }
+
+    function renderExamWaveform(secNum) {
+      const container = document.getElementById("examWaveformBars");
+      if (!container) return;
+      container.innerHTML = "";
+      const peaks = peaksData[secNum] || [];
+      peaks.forEach(val => {
+        const bar = document.createElement("div");
+        bar.className = "exam-wave-col";
+        const h = Math.max(2, Math.min(20, Math.round(val * 0.62)));
+        bar.style.height = `${h}px`;
+        container.appendChild(bar);
+      });
+      const progressEl = document.getElementById("examWaveProgress");
+      if (progressEl) progressEl.style.width = "0%";
+    }
+
+    function updateAudioUI() {
+      const lbl = document.getElementById("audioTrackLabel");
+      if (lbl) {
+        lbl.innerText = `Part ${currentAudioSec}`;
+      }
+      for (let s = 1; s <= 4; s++) {
+        const icon = document.getElementById(`tabAudioIcon_${s}`);
+        if (icon) {
+          icon.style.display = (s === currentAudioSec && isTestRunning && !testAudio.paused) ? "inline" : "none";
+        }
+      }
+    }
+
+    // Play Audio Track
+    function playTrack(secNum) {
+      currentAudioSec = secNum;
+      const dataUrl = embeddedAudios[secNum];
+      const fallbackUrl = `Test 1 Section ${secNum}.mp3`;
+
+      if (isMobile) {
+        testAudio.src = dataUrl;
+      } else {
+        if (!testAudio.src || !testAudio.src.startsWith("data:")) {
+          testAudio.src = dataUrl;
+        } else if (testAudio.getAttribute("data-sec") !== secNum.toString()) {
+          testAudio.src = dataUrl;
+        }
+      }
+      testAudio.setAttribute("data-sec", secNum.toString());
+
+      testAudio.onerror = () => {
+        console.warn(`Base64 audio fallback to ${fallbackUrl}`);
+        testAudio.src = fallbackUrl;
+        testAudio.play().catch(e => console.error(e));
+      };
+
+      testAudio.play().then(() => {
+        document.getElementById("audioPulseIndicator").classList.add("playing");
+        document.getElementById("audioControlBtn").innerHTML = `<span>⏸</span> Pause`;
+        updateAudioUI();
+      }).catch(err => {
+        console.error("Audio playback error:", err);
+      });
+
+      renderExamWaveform(secNum);
+    }
+
+    // Audio Start / Pause Toggle
+    function startListeningTest() {
+      const btn = document.getElementById("audioControlBtn");
+      if (!isTestRunning) {
+        isTestRunning = true;
+        currentAudioSec = 1;
+        playTrack(1);
+        startTimer();
+      } else {
+        if (testAudio.paused) {
+          testAudio.play();
+          btn.innerHTML = `<span>⏸</span> Pause`;
+          document.getElementById("audioPulseIndicator").classList.add("playing");
+          updateAudioUI();
+        } else {
+          testAudio.pause();
+          btn.innerHTML = `<span>▶</span> Resume`;
+          document.getElementById("audioPulseIndicator").classList.remove("playing");
+          updateAudioUI();
+        }
+      }
+    }
+
+    // Timer logic
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerInterval = setInterval(() => {
+        if (testTimeRemaining > 0) {
+          testTimeRemaining--;
+          const mins = Math.floor(testTimeRemaining / 60);
+          const secs = testTimeRemaining % 60;
+          document.getElementById("testTimerDisplay").innerText = 
+            `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        } else {
+          clearInterval(timerInterval);
+          submitListeningTest();
+        }
+      }, 1000);
+    }
+
+    testAudio.ontimeupdate = () => {
+      const cur = testAudio.currentTime || 0;
+      const dur = testAudio.duration || 0;
+      const curM = Math.floor(cur / 60).toString().padStart(2, '0');
+      const curS = Math.floor(cur % 60).toString().padStart(2, '0');
+      const durM = Math.floor(dur / 60).toString().padStart(2, '0');
+      const durS = Math.floor(dur % 60).toString().padStart(2, '0');
+      document.getElementById("audioTimeDisplay").innerText = `${curM}:${curS} / ${durM}:${durS}`;
+
+      if (dur > 0) {
+        const pct = (cur / dur) * 100;
+        const progressEl = document.getElementById("examWaveProgress");
+        if (progressEl) progressEl.style.width = `${pct}%`;
+        const peaks = peaksData[currentAudioSec] || [];
+        const barIdx = Math.floor((pct / 100) * peaks.length);
+        document.querySelectorAll('.exam-wave-col').forEach((col, idx) => {
+          if (idx <= barIdx) col.classList.add('active');
+          else col.classList.remove('active');
+        });
+      }
+    };
+
+    testAudio.onended = () => {
+      if (currentAudioSec < 4) {
+        const nextSec = currentAudioSec + 1;
+        if (currentViewSec === currentAudioSec) {
+          switchSection(nextSec);
+        }
+        playTrack(nextSec);
+      } else {
+        document.getElementById("audioPulseIndicator").classList.remove("playing");
+        document.getElementById("audioControlBtn").innerHTML = `<span>✔</span> Finished`;
+        document.getElementById("audioControlBtn").disabled = true;
+        updateAudioUI();
+      }
+    };
+
+    // Check Answers & Calculate IELTS Band
+    function calculateIeltsBand(raw) {
+      if (raw >= 39) return 9.0;
+      if (raw >= 37) return 8.5;
+      if (raw >= 35) return 8.0;
+      if (raw >= 32) return 7.5;
+      if (raw >= 30) return 7.0;
+      if (raw >= 26) return 6.5;
+      if (raw >= 23) return 6.0;
+      if (raw >= 18) return 5.5;
+      if (raw >= 16) return 5.0;
+      if (raw >= 13) return 4.5;
+      if (raw >= 10) return 4.0;
+      if (raw >= 8) return 3.5;
+      return 3.0;
+    }
+
+    function cleanStr(s) {
+      if (!s) return "";
+      return s
+        .toString()
+        .toLowerCase()
+        .trim()
+        .replace(/[£$€]/g, "")
+        .replace(/['".,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function submitListeningTest() {
+      if (testAudio) testAudio.pause();
+      if (timerInterval) clearInterval(timerInterval);
+
+      // DOM harvesting safety net
+      for (let q = 1; q <= 40; q++) {
+        const el = document.getElementById(`q${q}`);
+        if (el && el.value !== undefined && el.value.trim().length > 0) {
+          userAnswers[q] = el.value.trim();
+        }
+        const radioChecked = document.querySelector(`input[name="q${q}_opt"]:checked, input[name="q${q}"]:checked`);
+        if (radioChecked) {
+          userAnswers[q] = radioChecked.value.trim().toUpperCase();
+        }
+      }
+
+      pairGroups.forEach(([a, b]) => {
+        const chk = Array.from(document.querySelectorAll(`input[name="q${a}_${b}"]:checked`)).map(c => c.value.trim().toUpperCase());
+        if (chk.length > 0) { userAnswers[a] = chk[0] || ""; userAnswers[b] = chk[1] || ""; }
+      });
+
+      let rawScore = 0;
+      const tableBody = document.getElementById("reviewTableBody");
+      tableBody.innerHTML = "";
+
+      for (let q = 1; q <= 40; q++) {
+        const userAns = userAnswers[q] || "";
+        const uClean = cleanStr(userAns);
+        const correctList = answerKeys[q] || [];
+        let isCorrect = correctList.some(k => cleanStr(k) === uClean);
+        const pair = pairGroups.find(p => p.includes(q));
+        if (pair && q === pair[1] && uClean && cleanStr(userAnswers[pair[0]]) === uClean) isCorrect = false;
+
+        if (isCorrect) rawScore++;
+
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td><strong>${q}</strong></td>
+          <td>${userAns || '<em style="color:#94a3b8;">No Answer</em>'}</td>
+          <td><strong>${correctList.join(" / ")}</strong></td>
+          <td>
+            <span class="review-badge ${isCorrect ? 'badge-correct' : 'badge-incorrect'}">
+              ${isCorrect ? '✓ Correct' : '✗ Incorrect'}
+            </span>
+          </td>
+        `;
+        tableBody.appendChild(row);
+      }
+
+      document.getElementById("rawScoreVal").innerText = `${rawScore} / 40`;
+      document.getElementById("percentVal").innerText = `${Math.round((rawScore / 40) * 100)}%`;
+      document.getElementById("bandScoreVal").innerText = calculateIeltsBand(rawScore).toFixed(1);
+
+      buildAudioscriptEvidence();
+      switchModalTab("review");
+      document.getElementById("resultModal").style.display = "flex";
+    }
+
+    let currentScriptSec = 1;
+
+    function buildAudioscriptEvidence() {
+      const container = document.getElementById("audioscriptEvidenceList");
+      if (!container) return;
+      container.innerHTML = "";
+
+      // Section Tabs bar
+      const tabsBar = document.createElement("div");
+      tabsBar.className = "script-tabs-bar";
+      for (let s = 1; s <= 4; s++) {
+        const btn = document.createElement("button");
+        btn.className = "script-tab-btn " + (s === currentScriptSec ? "active" : "");
+        btn.id = "scriptTabBtn_" + s;
+        btn.innerText = "Part " + s + " (Q" + (s === 1 ? "1-10" : s === 2 ? "11-20" : s === 3 ? "21-30" : "31-40") + ")";
+        btn.onclick = () => switchScriptSec(s);
+        tabsBar.appendChild(btn);
+      }
+      container.appendChild(tabsBar);
+
+      // Section Containers
+      for (let s = 1; s <= 4; s++) {
+        const secWrap = document.createElement("div");
+        secWrap.id = "scriptSecWrap_" + s;
+        secWrap.style.display = s === currentScriptSec ? "block" : "none";
+
+        // Full Audioscript Box
+        const scriptBox = document.createElement("div");
+        scriptBox.className = "script-sec-box";
+        scriptBox.innerHTML = `
+          <div class="script-sec-header">
+            <span>📜 Part ${s} · To‘liq Audioscript (Full Transcript)</span>
+            <small style="font-size:0.8rem; color:#64748b; font-weight:normal;">Javob kalitlari sariq rangda belgilangan</small>
+          </div>
+          ${fullTranscripts[s] || '<p>Audioscript mavjud emas.</p>'}
+        `;
+        secWrap.appendChild(scriptBox);
+
+        container.appendChild(secWrap);
+      }
+    }
+
+    function switchScriptSec(secNum) {
+      currentScriptSec = secNum;
+      for (let s = 1; s <= 4; s++) {
+        const wrap = document.getElementById("scriptSecWrap_" + s);
+        if (wrap) wrap.style.display = s === secNum ? "block" : "none";
+        const btn = document.getElementById("scriptTabBtn_" + s);
+        if (btn) btn.classList.toggle("active", s === secNum);
+      }
+    }
+
+    function switchModalTab(tabName) {
+      const isReview = tabName === "review";
+      document.getElementById("modalTabContentReview").style.display = isReview ? "block" : "none";
+      document.getElementById("modalTabContentAudioscript").style.display = isReview ? "none" : "block";
+      document.getElementById("tabBtnReview").classList.toggle("active", isReview);
+      document.getElementById("tabBtnAudioscript").classList.toggle("active", !isReview);
+    }
+
+    function closeResultModal() {
+      document.getElementById("resultModal").style.display = "none";
+    }
+
+    // === IELTS USER HIGHLIGHT SYSTEM ===
+    (function initHighlightSystem() {
+      let tooltip = null;
+      let savedRange = null;
+
+      function getTooltip() {
+        if (!tooltip) {
+          tooltip = document.createElement('div');
+          tooltip.className = 'highlight-tooltip';
+          document.body.appendChild(tooltip);
+
+          tooltip.addEventListener('mousedown', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+          });
+          tooltip.addEventListener('touchstart', (e) => {
+            e.stopPropagation();
+          }, { passive: true });
+        }
+        return tooltip;
+      }
+
+      function hideTooltip() {
+        if (tooltip) {
+          tooltip.style.display = 'none';
+          tooltip.innerHTML = '';
+        }
+        savedRange = null;
+      }
+
+      function positionTooltip(rect) {
+        const tt = getTooltip();
+        const scrollX = window.pageXOffset || document.documentElement.scrollLeft;
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        
+        let top = rect.top + scrollY - 40;
+        let left = rect.left + scrollX + (rect.width / 2);
+        
+        if (top < scrollY + 10) {
+          top = rect.bottom + scrollY + 8;
+        }
+        
+        tt.style.top = top + 'px';
+        tt.style.left = left + 'px';
+        tt.style.transform = 'translateX(-50%)';
+        tt.style.display = 'flex';
+      }
+
+      function highlightCurrentSelection() {
+        const selection = window.getSelection();
+        const range = savedRange || (selection && selection.rangeCount > 0 ? selection.getRangeAt(0) : null);
+        if (!range || range.collapsed) return;
+
+        try {
+          applyHighlight(range);
+        } catch (e) {
+          console.warn("Could not apply highlight:", e);
+        }
+
+        if (selection) selection.removeAllRanges();
+        hideTooltip();
+      }
+
+      function applyHighlight(range) {
+        if (range.startContainer === range.endContainer && range.startContainer.nodeType === Node.TEXT_NODE) {
+          const node = range.startContainer;
+          const start = range.startOffset;
+          const end = range.endOffset;
+          if (start === end) return;
+
+          const sub = node.textContent.substring(start, end);
+          if (!sub.trim()) return;
+
+          const after = node.splitText(end);
+          const middle = node.splitText(start);
+          const mark = document.createElement('mark');
+          mark.className = 'user-highlight';
+          mark.textContent = middle.textContent;
+          middle.parentNode.replaceChild(mark, middle);
+          return;
+        }
+
+        const root = range.commonAncestorContainer;
+        const walker = document.createTreeWalker(
+          root.nodeType === Node.TEXT_NODE ? root.parentNode : root,
+          NodeFilter.SHOW_TEXT,
+          {
+            acceptNode: function(node) {
+              if (!node.textContent.trim()) return NodeFilter.FILTER_REJECT;
+              const nr = document.createRange();
+              nr.selectNodeContents(node);
+              if (range.compareBoundaryPoints(Range.END_TO_START, nr) < 0 &&
+                  range.compareBoundaryPoints(Range.START_TO_END, nr) > 0) {
+                return NodeFilter.FILTER_ACCEPT;
+              }
+              return NodeFilter.FILTER_REJECT;
+            }
+          }
+        );
+
+        const nodes = [];
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+
+        nodes.forEach(node => {
+          let s = (node === range.startContainer) ? range.startOffset : 0;
+          let e = (node === range.endContainer) ? range.endOffset : node.textContent.length;
+          if (s >= e) return;
+
+          const sub = node.textContent.substring(s, e);
+          if (!sub.trim()) return;
+
+          const after = node.splitText(e);
+          const middle = node.splitText(s);
+          const mark = document.createElement('mark');
+          mark.className = 'user-highlight';
+          mark.textContent = middle.textContent;
+          middle.parentNode.replaceChild(mark, middle);
+        });
+      }
+
+      function removeHighlightNode(mark) {
+        if (!mark || !mark.parentNode) return;
+        const p = mark.parentNode;
+        while (mark.firstChild) p.insertBefore(mark.firstChild, mark);
+        p.removeChild(mark);
+        p.normalize();
+        hideTooltip();
+      }
+
+      function clearAllHighlights() {
+        const marks = document.querySelectorAll('mark.user-highlight');
+        marks.forEach(mark => {
+          const p = mark.parentNode;
+          while (mark.firstChild) p.insertBefore(mark.firstChild, mark);
+          p.removeChild(mark);
+          p.normalize();
+        });
+        hideTooltip();
+      }
+
+      // Handle selection mouseup
+      document.addEventListener('mouseup', (e) => {
+        if (tooltip && tooltip.contains(e.target)) return;
+
+        setTimeout(() => {
+          const selection = window.getSelection();
+          if (!selection || selection.isCollapsed || !selection.toString().trim()) {
+            if (!e.target.closest('.user-highlight')) {
+              hideTooltip();
+            }
+            return;
+          }
+
+          if (['INPUT', 'TEXTAREA', 'SELECT', 'BUTTON'].includes(e.target.tagName)) {
+            hideTooltip();
+            return;
+          }
+
+          savedRange = selection.getRangeAt(0).cloneRange();
+          const rect = savedRange.getBoundingClientRect();
+          if (rect.width === 0 && rect.height === 0) {
+            hideTooltip();
+            return;
+          }
+
+          const tt = getTooltip();
+          tt.innerHTML = `
+            <button id="hl-btn-apply" title="Highlight (H)">🖍 Highlight</button>
+            <button id="hl-btn-close" class="btn-close-hl" title="Close">✕</button>
+          `;
+          positionTooltip(rect);
+
+          const btnApply = document.getElementById('hl-btn-apply');
+          const btnClose = document.getElementById('hl-btn-close');
+          if (btnApply) btnApply.onclick = highlightCurrentSelection;
+          if (btnClose) btnClose.onclick = () => {
+            selection.removeAllRanges();
+            hideTooltip();
+          };
+        }, 20);
+      });
+
+      // Touch support for mobile devices
+      document.addEventListener('touchend', (e) => {
+        if (tooltip && tooltip.contains(e.target)) return;
+
+        setTimeout(() => {
+          const selection = window.getSelection();
+          if (!selection || selection.isCollapsed || !selection.toString().trim()) {
+            if (!e.target.closest('.user-highlight')) {
+              hideTooltip();
+            }
+            return;
+          }
+
+          if (['INPUT', 'TEXTAREA', 'SELECT', 'BUTTON'].includes(e.target.tagName)) {
+            hideTooltip();
+            return;
+          }
+
+          try {
+            savedRange = selection.getRangeAt(0).cloneRange();
+            const rect = savedRange.getBoundingClientRect();
+            if (rect.width === 0 && rect.height === 0) {
+              hideTooltip();
+              return;
+            }
+
+            const tt = getTooltip();
+            tt.innerHTML = `
+              <button id="hl-btn-apply-touch" title="Highlight">🖍 Highlight</button>
+              <button id="hl-btn-close-touch" class="btn-close-hl" title="Close">✕</button>
+            `;
+            positionTooltip(rect);
+
+            const btnApply = document.getElementById('hl-btn-apply-touch');
+            const btnClose = document.getElementById('hl-btn-close-touch');
+            if (btnApply) btnApply.onclick = highlightCurrentSelection;
+            if (btnClose) btnClose.onclick = () => {
+              selection.removeAllRanges();
+              hideTooltip();
+            };
+          } catch(err) {}
+        }, 100);
+      });
+
+      // Handle click on existing highlight
+      document.addEventListener('click', (e) => {
+        const mark = e.target.closest('.user-highlight');
+        if (mark) {
+          const rect = mark.getBoundingClientRect();
+          const tt = getTooltip();
+          tt.innerHTML = `
+            <button id="hl-btn-remove" class="btn-remove">⌫ Remove</button>
+            <button id="hl-btn-clear" class="btn-clear-all">🧹 Clear All</button>
+            <button id="hl-btn-close" class="btn-close-hl">✕</button>
+          `;
+          positionTooltip(rect);
+
+          const btnRem = document.getElementById('hl-btn-remove');
+          const btnClr = document.getElementById('hl-btn-clear');
+          const btnCls = document.getElementById('hl-btn-close');
+          if (btnRem) btnRem.onclick = () => removeHighlightNode(mark);
+          if (btnClr) btnClr.onclick = clearAllHighlights;
+          if (btnCls) btnCls.onclick = hideTooltip;
+          e.stopPropagation();
+        }
+      });
+
+      // Handle right click contextmenu
+      document.addEventListener('contextmenu', (e) => {
+        const selection = window.getSelection();
+        const mark = e.target.closest('.user-highlight');
+
+        if ((selection && !selection.isCollapsed && selection.toString().trim()) || mark) {
+          e.preventDefault();
+          const tt = getTooltip();
+          const rect = { top: e.clientY, bottom: e.clientY, left: e.clientX, width: 0, height: 0 };
+
+          if (mark) {
+            tt.innerHTML = `
+              <button id="hl-ctx-remove" class="btn-remove">⌫ Remove Highlight</button>
+              <button id="hl-ctx-clear" class="btn-clear-all">🧹 Clear All</button>
+              <button id="hl-ctx-close" class="btn-close-hl">✕</button>
+            `;
+            positionTooltip(rect);
+            const btnRem = document.getElementById('hl-ctx-remove');
+            const btnClr = document.getElementById('hl-ctx-clear');
+            const btnCls = document.getElementById('hl-ctx-close');
+            if (btnRem) btnRem.onclick = () => removeHighlightNode(mark);
+            if (btnClr) btnClr.onclick = clearAllHighlights;
+            if (btnCls) btnCls.onclick = hideTooltip;
+          } else {
+            savedRange = selection.getRangeAt(0).cloneRange();
+            tt.innerHTML = `
+              <button id="hl-ctx-apply">🖍 Highlight</button>
+              <button id="hl-ctx-close" class="btn-close-hl">✕</button>
+            `;
+            positionTooltip(rect);
+            const btnApply = document.getElementById('hl-ctx-apply');
+            const btnCls = document.getElementById('hl-ctx-close');
+            if (btnApply) btnApply.onclick = highlightCurrentSelection;
+            if (btnCls) btnCls.onclick = hideTooltip;
+          }
+        }
+      });
+
+      // Shortcut key H or Alt+H
+      document.addEventListener('keydown', (e) => {
+        if (e.target && ['INPUT', 'TEXTAREA', 'SELECT'].includes(e.target.tagName)) return;
+        if (e.key === 'h' || e.key === 'H' || (e.altKey && (e.key === 'h' || e.key === 'H'))) {
+          const sel = window.getSelection();
+          if (sel && !sel.isCollapsed && sel.toString().trim()) {
+            e.preventDefault();
+            highlightCurrentSelection();
+          }
+        }
+        if (e.key === 'Escape') {
+          hideTooltip();
+        }
+      });
+
+      window.addEventListener('scroll', hideTooltip, true);
+    })();
+
+    window.addEventListener("DOMContentLoaded", () => {
+      initPalette();
+      updateFlagButtonState();
+    });
+  </script>
+<script src="config.js"></script>
+<style>
+  #hwBar{position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#0f172a;color:#e2e8f0;font:14px/1.4 system-ui,sans-serif;padding:8px 14px;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;box-shadow:0 -2px 10px rgba(0,0,0,.25)}
+  #hwBar b{color:#fff}
+  #hwBar button{background:#2563eb;color:#fff;border:0;border-radius:8px;padding:6px 12px;font-weight:600;cursor:pointer}
+  #hwCover{position:fixed;inset:0;z-index:100000;background:rgba(15,23,42,.92);display:none;align-items:center;justify-content:center;padding:16px}
+  #hwCover .card{background:#fff;color:#0f172a;max-width:440px;width:100%;border-radius:14px;padding:22px;font:15px/1.5 system-ui,sans-serif;text-align:center}
+  #hwCover h3{margin:0 0 8px;font-size:19px}
+  #hwCover button{margin-top:14px;background:#2563eb;color:#fff;border:0;border-radius:10px;padding:10px 18px;font-size:15px;font-weight:600;cursor:pointer}
+  body{padding-bottom:46px}
+</style>
+<div id="hwBar">⏳ Yuklanmoqda…</div>
+<div id="hwCover"><div class="card" id="hwCard"></div></div>
+<script>
+(function () {
+  const API = window.HW_API;
+  const KEY = new URLSearchParams(location.search).get("k") || "";
+  const bar = document.getElementById("hwBar");
+  const cover = document.getElementById("hwCover");
+  const card = document.getElementById("hwCard");
+  const LS = "hw_c15t1_" + KEY;
+  let me = null, sent = false, startedAt = null;
+
+  function show(title, body, btn, fn) {
+    card.innerHTML = `<h3>${title}</h3><div>${body}</div>` + (btn ? `<button id="hwBtn">${btn}</button>` : "");
+    cover.style.display = "flex";
+    if (btn) document.getElementById("hwBtn").onclick = fn || (() => { cover.style.display = "none"; });
+  }
+  function hide() { cover.style.display = "none"; }
+
+  function api(params) {
+    return fetch(API + "?" + new URLSearchParams(params), { redirect: "follow" }).then(r => r.json());
+  }
+  function post(body) {
+    return fetch(API, { method: "POST", body: JSON.stringify(body), headers: { "Content-Type": "text/plain;charset=utf-8" }, redirect: "follow" }).then(r => r.json());
+  }
+
+  function collectAnswers() {
+    const out = {};
+    for (let q = 1; q <= 40; q++) out[q] = (userAnswers[q] || "").toString().trim();
+    return out;
+  }
+
+  function sendResult(payload) {
+    bar.innerHTML = "📤 Javoblar ustozga yuborilmoqda…";
+    try { localStorage.setItem(LS, JSON.stringify(payload)); } catch (e) {}
+    post(payload).then(r => {
+      if (r.ok) {
+        sent = true;
+        try { localStorage.setItem(LS + "_done", "1"); localStorage.removeItem(LS); } catch (e) {}
+        bar.innerHTML = `✅ <b>Javoblaringiz ustozga yuborildi</b> (${r.raw}/40). Endi Audioscript bo'limidan xatolaringizni ko'rib, error log yozing.`;
+      } else {
+        bar.innerHTML = `⚠️ ${r.error || "Yuborilmadi"} <button id="hwRetry">Qayta yuborish</button>`;
+        document.getElementById("hwRetry").onclick = () => sendResult(payload);
+      }
+    }).catch(() => {
+      bar.innerHTML = `⚠️ Internet xatosi, javoblar yuborilmadi. <button id="hwRetry">Qayta yuborish</button>`;
+      document.getElementById("hwRetry").onclick = () => sendResult(payload);
+    });
+  }
+
+  // Finish Test: tasdiqlash, keyin asl tekshiruv + serverga yuborish
+  const origSubmit = submitListeningTest;
+  submitListeningTest = function () {
+    if (sent) { origSubmit(); return; }
+    if (!me) { show("Havola tekshirilmagan", "Sahifani yangilab, qayta urinib ko'ring.", "Yopish"); return; }
+    const timeUp = testTimeRemaining <= 0;
+    if (!timeUp && !confirm("Testni yakunlaysizmi? Javoblar ustozga yuboriladi va qayta ishlab bo'lmaydi.")) return;
+    origSubmit();
+    const spent = Math.round((40 * 60 - testTimeRemaining) / 60);
+    sendResult({ k: KEY, answers: collectAnswers(), minutes: spent, started: startedAt, timeUp: timeUp });
+  };
+
+  const origStart = startListeningTest;
+  startListeningTest = function () {
+    if (!me) return;
+    if (!isTestRunning) startedAt = new Date().toISOString();
+    origStart();
+  };
+
+  window.addEventListener("beforeunload", e => {
+    if (isTestRunning && !sent) { e.preventDefault(); e.returnValue = ""; }
+  });
+
+  if (!KEY || !API) { bar.innerHTML = "⛔ Havola noto'g'ri"; show("Havola noto'g'ri", "Telegram'dagi o'zingizning tugmangiz orqali kiring."); return; }
+
+  api({ action: "hello", k: KEY }).then(r => {
+    if (!r.ok) { bar.innerHTML = "⛔ " + (r.error || "Xato"); show("Kirish mumkin emas", r.error || "Xato"); return; }
+    me = r;
+    if (r.submitted) {
+      bar.innerHTML = `✅ <b>${r.name}</b>, siz bu testni topshirgansiz (${r.raw}/40).`;
+      show("Siz allaqachon topshirgansiz", `${r.name}, natijangiz: <b>${r.raw}/40</b>. Endi topic'ingizga error log yozing.`);
+      me = null; return;
+    }
+    if (r.closed) {
+      bar.innerHTML = "⛔ Muddat tugagan";
+      show("Muddat tugagan", "Topshirish muddati (" + r.deadline + ") o'tib ketgan.");
+      me = null; return;
+    }
+    bar.innerHTML = `👤 <b>${r.name}</b> · Muddat: ${r.deadline} · Sahifani yangilamang, javoblar o'chib ketadi`;
+    // oldin yuborilmay qolgan javoblar bo'lsa
+    let pending = null;
+    try { pending = JSON.parse(localStorage.getItem(LS) || "null"); } catch (e) {}
+    if (pending) {
+      show("Yuborilmay qolgan javoblar bor", "Oldingi urinishda javoblaringiz internet sababli yuborilmagan. Hozir yuboramiz.", "Yuborish", () => { hide(); sent = false; sendResult(pending); });
+      return;
+    }
+    show(`Assalomu alaykum, ${r.name}!`,
+      "Cambridge 15, Test 1 · Listening<br><br>🎧 Naushnik taqing. <b>Start Audio</b> bosilgach audio to'xtamasdan 4 part davom etadi, 40 daqiqa vaqt bor.<br>Oxirida <b>Finish Test</b> bosing: javoblaringiz shu yerda tekshiriladi va avtomatik ustozga (topic'ingizga) yuboriladi.<br><br>⚠️ Faqat bir marta topshirish mumkin.",
+      "Tushundim");
+  }).catch(() => {
+    bar.innerHTML = "⚠️ Internet xatosi";
+    show("Internet xatosi", "Ulanishni tekshirib, sahifani yangilang.", "Yangilash", () => location.reload());
+  });
+})();
+</script>
+
+</body>
+</html>

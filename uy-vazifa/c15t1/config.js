@@ -1,0 +1,1 @@
+window.HW_API = "";
