@@ -2362,19 +2362,75 @@
     return out;
   }
 
+  const ST = LS + "_st", RES = LS + "_res";
+  function lsGet(k) { try { return JSON.parse(localStorage.getItem(k) || "null"); } catch (e) { return null; } }
+  function lsSet(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+
+  function saveState() {
+    if (!me || sent) return;
+    lsSet(ST, { a: userAnswers, t: testTimeRemaining, sec: currentAudioSec, pos: testAudio.currentTime || 0,
+                run: isTestRunning, started: startedAt, flags: Array.from(flaggedQuestions || []) });
+  }
+  function fillAnswers(a) {
+    for (let q = 1; q <= 40; q++) {
+      const v = (a[q] || "").toString();
+      if (!v) continue;
+      userAnswers[q] = v;
+      const el = document.getElementById("q" + q);
+      if (el && (el.tagName === "SELECT" || (el.type !== "radio" && el.type !== "checkbox"))) el.value = v;
+      document.querySelectorAll(`input[name="q${q}_opt"], input[name="q${q}"]`).forEach(r => { if (r.value.toUpperCase() === v.toUpperCase()) r.checked = true; });
+    }
+    pairGroups.forEach(([x, y]) => {
+      [a[x], a[y]].forEach(v => { if (!v) return; const cb = document.querySelector(`input[name="q${x}_${y}"][value="${v}"]`); if (cb) cb.checked = true; });
+    });
+    updatePaletteBubbles();
+  }
+  function showTime() {
+    const m = Math.floor(testTimeRemaining / 60), sx = testTimeRemaining % 60;
+    document.getElementById("testTimerDisplay").innerText = `${String(m).padStart(2, "0")}:${String(sx).padStart(2, "0")}`;
+  }
+  function resumeTest(st) {
+    hide();
+    isTestRunning = true;
+    startedAt = st.started || startedAt;
+    const sec = st.sec || 1, pos = st.pos || 0;
+    currentAudioSec = sec;
+    switchSection(sec);
+    testAudio.addEventListener("loadedmetadata", function once() {
+      testAudio.removeEventListener("loadedmetadata", once);
+      try { testAudio.currentTime = Math.max(0, pos - 2); } catch (e) {}
+    });
+    playTrack(sec);
+    startTimer();
+  }
+  function resultBar(raw) {
+    bar.innerHTML = `✅ <b>${me ? me.name : ""}</b> · Natija: <b>${raw}/40</b> · ustozga yuborilgan <button id="hwShow">📄 Kalit va Audioscript</button>`;
+    document.getElementById("hwShow").onclick = () => { document.getElementById("resultModal").style.display = "flex"; };
+  }
+  function showSaved(res) {
+    fillAnswers(res.answers);
+    sent = true;
+    origSubmit();
+  }
+  setInterval(saveState, 2000);
+  document.addEventListener("change", () => setTimeout(saveState, 50));
+  document.addEventListener("input", () => setTimeout(saveState, 50));
+
   function sendResult(payload) {
     bar.innerHTML = "📤 Javoblar ustozga yuborilmoqda…";
     try { localStorage.setItem(LS, JSON.stringify(payload)); } catch (e) {}
     post(payload).then(r => {
       if (r.ok) {
-        sent = true;
-        try { localStorage.setItem(LS + "_done", "1"); localStorage.removeItem(LS); } catch (e) {}
-        bar.innerHTML = `✅ <b>Javoblaringiz ustozga yuborildi</b> (${r.raw}/40). Endi Audioscript bo'limidan xatolaringizni ko'rib, error log yozing.`;
+        try { localStorage.removeItem(LS); } catch (e) {}
+        try { localStorage.removeItem(ST); } catch (e) {}
+        resultBar(r.raw);
       } else {
+        sent = false;
         bar.innerHTML = `⚠️ ${r.error || "Yuborilmadi"} <button id="hwRetry">Qayta yuborish</button>`;
         document.getElementById("hwRetry").onclick = () => sendResult(payload);
       }
     }).catch(() => {
+      sent = false;
       bar.innerHTML = `⚠️ Internet xatosi, javoblar yuborilmadi. <button id="hwRetry">Qayta yuborish</button>`;
       document.getElementById("hwRetry").onclick = () => sendResult(payload);
     });
@@ -2388,6 +2444,8 @@
     const timeUp = testTimeRemaining <= 0;
     if (!timeUp && !confirm("Testni yakunlaysizmi? Javoblar ustozga yuboriladi va qayta ishlab bo'lmaydi.")) return;
     origSubmit();
+    sent = true;
+    lsSet(RES, { answers: collectAnswers() });
     const spent = Math.round((40 * 60 - testTimeRemaining) / 60);
     sendResult({ k: KEY, answers: collectAnswers(), minutes: spent, started: startedAt, timeUp: timeUp });
   };
@@ -2400,7 +2458,7 @@
   };
 
   window.addEventListener("beforeunload", e => {
-    if (isTestRunning && !sent) { e.preventDefault(); e.returnValue = ""; }
+    saveState();
   });
 
   if (!KEY || !API) { bar.innerHTML = "⛔ Havola noto'g'ri"; show("Havola noto'g'ri", "Telegram'dagi o'zingizning tugmangiz orqali kiring."); return; }
@@ -2409,8 +2467,10 @@
     if (!r.ok) { bar.innerHTML = "⛔ " + (r.error || "Xato"); show("Kirish mumkin emas", r.error || "Xato"); return; }
     me = r;
     if (r.submitted) {
+      const res = lsGet(RES);
+      if (res && res.answers) { showSaved(res); resultBar(r.raw); return; }
       bar.innerHTML = `✅ <b>${r.name}</b>, siz bu testni topshirgansiz (${r.raw}/40).`;
-      show("Siz allaqachon topshirgansiz", `${r.name}, natijangiz: <b>${r.raw}/40</b>. Endi topic'ingizga error log yozing.`);
+      show("Siz allaqachon topshirgansiz", `${r.name}, natijangiz: <b>${r.raw}/40</b>. Kalit va audioscript test ishlangan qurilmada (telefon/kompyuter) shu havola orqali ko'rinadi. Endi topic'ingizga error log yozing.`);
       me = null; return;
     }
     if (r.closed) {
@@ -2418,13 +2478,24 @@
       show("Muddat tugagan", "Topshirish muddati (" + r.deadline + ") o'tib ketgan.");
       me = null; return;
     }
-    bar.innerHTML = `👤 <b>${r.name}</b> · Muddat: ${r.deadline} · Sahifani yangilamang, javoblar o'chib ketadi`;
+    bar.innerHTML = `👤 <b>${r.name}</b> · Muddat: ${r.deadline} · Javoblaringiz shu qurilmada saqlanib boradi`;
     // oldin yuborilmay qolgan javoblar bo'lsa
     let pending = null;
     try { pending = JSON.parse(localStorage.getItem(LS) || "null"); } catch (e) {}
     if (pending) {
-      show("Yuborilmay qolgan javoblar bor", "Oldingi urinishda javoblaringiz internet sababli yuborilmagan. Hozir yuboramiz.", "Yuborish", () => { hide(); sent = false; sendResult(pending); });
+      show("Yuborilmay qolgan javoblar bor", "Oldingi urinishda javoblaringiz internet sababli yuborilmagan. Hozir yuboramiz.", "Yuborish", () => { hide(); showSaved({ answers: pending.answers || {} }); sendResult(pending); });
       return;
+    }
+    const st = lsGet(ST);
+    if (st && (st.run || Object.values(st.a || {}).some(v => v))) {
+      fillAnswers(st.a || {});
+      (st.flags || []).forEach(q => flaggedQuestions.add(q));
+      updatePaletteBubbles();
+      if (typeof st.t === "number") { testTimeRemaining = st.t; showTime(); }
+      if (st.run) {
+        show("Davom ettiramiz", `Javoblaringiz saqlangan. Audio Part ${st.sec || 1} dagi joyidan davom etadi, qolgan vaqt: ${Math.floor(testTimeRemaining / 60)} daqiqa.`, "▶ Davom ettirish", () => resumeTest(st));
+        return;
+      }
     }
     show(`Assalomu alaykum, ${r.name}!`,
       "Cambridge 15, Test 1 · Listening<br><br>🎧 Naushnik taqing. <b>Start Audio</b> bosilgach audio to'xtamasdan 4 part davom etadi, 40 daqiqa vaqt bor.<br>Oxirida <b>Finish Test</b> bosing: javoblaringiz shu yerda tekshiriladi va avtomatik ustozga (topic'ingizga) yuboriladi.<br><br>⚠️ Faqat bir marta topshirish mumkin.",
