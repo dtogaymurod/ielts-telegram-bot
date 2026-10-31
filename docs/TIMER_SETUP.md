@@ -1,7 +1,7 @@
 # Postlarni aniq vaqtda chiqarish (cron-job.org)
 
 GitHub'ning o'z jadvali (`schedule`) postlarni 3–6 soat kechiktirib chiqarardi:
-19:30 dagi post 22:30–01:00 da, 12:00 dagi post 17:45–19:15 da chiqardi.
+19:30 dagi post 22:30–01:00 da, 12:00 dagi post esa 17:45–19:15 da chiqardi.
 Shuning uchun jadval o'chirildi. Endi postlarni bepul **cron-job.org** taymeri
 aniq vaqtda ishga tushiradi: u GitHub'ga "hozir chiqar" degan buyruq yuboradi.
 
@@ -17,15 +17,14 @@ Bir marta sozlanadi, taxminan 10 daqiqa oladi.
 
 Tokenni hech kimga yubormang, chatga ham yozmang. U faqat cron-job.org ga kiritiladi.
 
-## 2. cron-job.org da 3 ta vazifa yarating
+## 2. cron-job.org da 2 ta vazifa yarating
 
 https://cron-job.org da bepul ro'yxatdan o'ting, keyin har biri uchun **Create cronjob**:
 
 | # | Title | Vaqt (Asia/Tashkent) | URL oxiri | Body |
 |---|---|---|---|---|
 | 1 | Kundalik post | Har kuni 19:30 | `auto-post.yml/dispatches` | `{"ref":"main"}` |
-| 2 | Writing namunalari | Dushanba va Payshanba 12:00 | `writing-samples.yml/dispatches` | `{"ref":"main","inputs":{"task":"auto"}}` |
-| 3 | Gen Z postlar | Seshanba, Chorshanba, Juma, Shanba 12:00 | `genz-posts.yml/dispatches` | `{"ref":"main","inputs":{"kind":"auto"}}` |
+| 2 | Kunduzgi post | Har kuni 12:00 | `genz-posts.yml/dispatches` | `{"ref":"main","inputs":{"kind":"auto"}}` |
 
 To'liq URL: `https://api.github.com/repos/dtogaymurod/ielts-telegram-bot/actions/workflows/` + URL oxiri.
 

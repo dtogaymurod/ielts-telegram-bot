@@ -3,7 +3,13 @@
     "upgrade": 0,
     "slang": 0,
     "emoji": 0,
-    "truefalse": 0
+    "truefalse": 0,
+    "redflag": 0,
+    "collocation": 0,
+    "band": 0,
+    "pov": 0,
+    "poll": 0,
+    "weekly": 0
   },
   "upgrade": [
     {
@@ -675,6 +681,534 @@
       "correct": false,
       "explanation": "❌ Xato. look forward to + -ing. To‘g‘ri: “I look forward to hearing from you.”",
       "caption": "💡 Ishora: <b>look forward to</b> dan keyin fe'l qaysi shaklda keladi?"
+    }
+  ],
+  "redflag": [
+    {
+      "title": "Writing Task 2 odatlari",
+      "subtitle": "Qaysi biri sizda bor? Rostini ayting",
+      "red": [
+        "Yodlangan kirish gap",
+        "Savolni so‘zma-so‘z ko‘chirish",
+        "250 so‘zdan kam yozish"
+      ],
+      "green": [
+        "Savolni paraphrase qilish",
+        "Har paragrafda 1 asosiy fikr",
+        "5 daqiqa tekshirishga qoldirish"
+      ],
+      "caption": "Nega bu muhim?\n🚩 Yodlangan gapni examiner darrov taniydi va u so‘zlar hisobga olinmaydi.\n🟢 5 daqiqalik tekshiruv 2–3 ta xatoni ushlab qoladi. Bu yarim ballgacha farq qilishi mumkin."
+    },
+    {
+      "title": "Speaking odatlari",
+      "subtitle": "Qaysi biri sizda bor? Rostini ayting",
+      "red": [
+        "Yodlangan javob aytish",
+        "Bir so‘zli javoblar",
+        "Tushunmasa jim qolish"
+      ],
+      "green": [
+        "“Could you repeat that?” deb so‘rash",
+        "Javob + sabab + misol",
+        "Xatoni tuzatib, davom etish"
+      ],
+      "caption": "Nega bu muhim?\n🚩 Examiner yodlangan javobni darrov sezadi va mavzuni almashtiradi.\n🟢 Savolni qayta so‘rash mutlaqo normal, buning uchun ball tushmaydi."
+    },
+    {
+      "title": "Listening odatlari",
+      "subtitle": "Qaysi biri sizda bor? Rostini ayting",
+      "red": [
+        "Oldingi savolda qolib ketish",
+        "Imloga e'tibor bermaslik",
+        "Savollarni oldindan o‘qimaslik"
+      ],
+      "green": [
+        "Pauzada keyingi savollarni o‘qish",
+        "Kalit so‘zlarni chizib qo‘yish",
+        "Birlik va ko‘plikni tekshirish"
+      ],
+      "caption": "Nega bu muhim?\n🚩 Audio faqat bir marta qo‘yiladi. Bitta savolda qolib ketsangiz, keyingi 3–4 savolni ham o‘tkazib yuborasiz.\n🟢 “s” harfi tushib qolsa ham javob xato hisoblanadi."
+    },
+    {
+      "title": "Reading odatlari",
+      "subtitle": "Qaysi biri sizda bor? Rostini ayting",
+      "red": [
+        "Matnni boshidan oxirigacha o‘qish",
+        "Har notanish so‘zda to‘xtash",
+        "Bitta savolga 5 daqiqa"
+      ],
+      "green": [
+        "Avval savollarni o‘qish",
+        "Skimming va scanning",
+        "Har passage uchun 20 daqiqa"
+      ],
+      "caption": "Nega bu muhim?\n🚩 Readingda 60 daqiqada 40 ta savol bor, hamma so‘zni tushunishga vaqt yetmaydi.\n🟢 Har passage uchun 20 daqiqa chegarasi vaqtni boshqarishning eng oddiy usuli."
+    },
+    {
+      "title": "Task 1 odatlari",
+      "subtitle": "Qaysi biri sizda bor? Rostini ayting",
+      "red": [
+        "Har bir raqamni sanab chiqish",
+        "Overview yozmaslik",
+        "O‘z fikrini qo‘shish"
+      ],
+      "green": [
+        "Asosiy trendlarni guruhlash",
+        "2 gaplik Overview",
+        "Faqat grafikdagi ma'lumot"
+      ],
+      "caption": "Nega bu muhim?\n🚩 Task 1 da fikr so‘ralmaydi. “I think this is good” kabi gap Task Achievement balini tushiradi.\n🟢 Overview'siz javob 5.5 dan yuqori baho olishi qiyin."
+    },
+    {
+      "title": "So‘z yodlash odatlari",
+      "subtitle": "Qaysi biri sizda bor? Rostini ayting",
+      "red": [
+        "Ro‘yxatdan 100 ta so‘z yodlash",
+        "Faqat tarjimani yodlash",
+        "Takrorlamaslik"
+      ],
+      "green": [
+        "Kuniga 10 ta so‘z, misol bilan",
+        "Collocation bilan yodlash",
+        "1-3-7 kun takrorlash"
+      ],
+      "caption": "Nega bu muhim?\n🚩 Miya kontekstsiz so‘zni tez unutadi.\n🟢 “make a decision” kabi juftlikda yodlangan so‘z nutqda o‘zi chiqib keladi."
+    },
+    {
+      "title": "Mock test odatlari",
+      "subtitle": "Qaysi biri sizda bor? Rostini ayting",
+      "red": [
+        "Faqat ballga qarash",
+        "Xatolarni tahlil qilmaslik",
+        "Har kuni test ishlash"
+      ],
+      "green": [
+        "Haftada 1–2 ta to‘liq test",
+        "Xatolar daftari",
+        "Real vaqt sharoitida ishlash"
+      ],
+      "caption": "Nega bu muhim?\n🚩 Tahlilsiz test faqat vaqt oladi.\n🟢 Bitta test va 1 soatlik tahlil 3 ta tahlilsiz testdan ko‘proq foyda beradi."
+    },
+    {
+      "title": "Imtihon kuni odatlari",
+      "subtitle": "Qaysi biri sizda bor? Rostini ayting",
+      "red": [
+        "Kechasi uxlamay takrorlash",
+        "Och qoringa borish",
+        "Kech qolish"
+      ],
+      "green": [
+        "7–8 soat uyqu",
+        "Yengil nonushta va suv",
+        "30 daqiqa oldin borish"
+      ],
+      "caption": "Nega bu muhim?\n🚩 Charchagan miya Listening va Readingda diqqatni tez yo‘qotadi.\n🟢 Oxirgi kecha yangi narsa o‘rganmang, yaxshi dam oling."
+    }
+  ],
+  "collocation": [
+    {
+      "title": "Qaysi fe'l to‘g‘ri keladi?",
+      "subtitle": "Collocation: so‘zlar juftligi",
+      "phrase": "_____ a decision",
+      "answer": 0,
+      "bonus": "___ homework · ___ a photo",
+      "caption": "💡 Ishora: “qaror qabul qilmoq”. Bu fe'l biror narsani yaratish ma'nosiga yaqin.\n\nBonus savollarning javobini izohda yozing ✍️",
+      "explanation": "make a decision ✅ Bonus: do homework, take a photo."
+    },
+    {
+      "title": "Qaysi fe'l to‘g‘ri keladi?",
+      "subtitle": "Collocation: so‘zlar juftligi",
+      "phrase": "_____ an effort",
+      "answer": 0,
+      "bonus": "___ a favour · ___ a break",
+      "caption": "💡 Ishora: “harakat qilmoq”. Writing va Speakingda juda ko‘p ishlatiladi.\n\nBonus savollarning javobini izohda yozing ✍️",
+      "explanation": "make an effort ✅ Bonus: do a favour, take a break."
+    },
+    {
+      "title": "Qaysi fe'l to‘g‘ri keladi?",
+      "subtitle": "Collocation: so‘zlar juftligi",
+      "phrase": "_____ research",
+      "answer": 1,
+      "bonus": "___ a profit · ___ notes",
+      "caption": "💡 Ishora: ish yoki vazifani bajarish haqida gap ketganda qaysi fe'l keladi?\n\nBonus savollarning javobini izohda yozing ✍️",
+      "explanation": "do research ✅ “make research” deyish — eng ko‘p uchraydigan xato. Bonus: make a profit, take notes."
+    },
+    {
+      "title": "Qaysi fe'l to‘g‘ri keladi?",
+      "subtitle": "Collocation: so‘zlar juftligi",
+      "phrase": "_____ part in",
+      "answer": 2,
+      "bonus": "___ the dishes · ___ friends",
+      "caption": "💡 Ishora: “qatnashmoq”. Bu fe'l “olmoq” ma'nosiga yaqin.\n\nBonus savollarning javobini izohda yozing ✍️",
+      "explanation": "take part in ✅ Bonus: do the dishes, make friends."
+    },
+    {
+      "title": "Qaysi fe'l to‘g‘ri keladi?",
+      "subtitle": "Collocation: so‘zlar juftligi",
+      "phrase": "_____ a mistake",
+      "answer": 0,
+      "bonus": "___ an exam · ___ exercise",
+      "caption": "💡 Ishora: o‘zbekcha “xato qilmoq”, lekin inglizchada bu “do” emas!\n\nBonus savollarning javobini izohda yozing ✍️",
+      "explanation": "make a mistake ✅ Bonus: take an exam, do exercise."
+    },
+    {
+      "title": "Qaysi fe'l to‘g‘ri keladi?",
+      "subtitle": "Collocation: so‘zlar juftligi",
+      "phrase": "_____ damage",
+      "answer": 1,
+      "bonus": "___ a noise · ___ a seat",
+      "caption": "💡 Ishora: zarar yoki foyda (harm, good) bilan qaysi fe'l keladi?\n\nBonus savollarning javobini izohda yozing ✍️",
+      "explanation": "do damage ✅ (do harm, do good). Bonus: make a noise, take a seat."
+    },
+    {
+      "title": "Qaysi fe'l to‘g‘ri keladi?",
+      "subtitle": "Collocation: so‘zlar juftligi",
+      "phrase": "_____ responsibility",
+      "answer": 2,
+      "bonus": "___ business · ___ sure",
+      "caption": "💡 Ishora: “mas'uliyatni o‘z zimmasiga olmoq”.\n\nBonus savollarning javobini izohda yozing ✍️",
+      "explanation": "take responsibility (for) ✅ Bonus: do business, make sure."
+    },
+    {
+      "title": "Qaysi fe'l to‘g‘ri keladi?",
+      "subtitle": "Collocation: so‘zlar juftligi",
+      "phrase": "_____ progress",
+      "answer": 0,
+      "bonus": "___ a look · ___ your best",
+      "caption": "💡 Ishora: “rivojlanmoq, oldinga siljimoq”. Writing Task 2 da juda foydali.\n\nBonus savollarning javobini izohda yozing ✍️",
+      "explanation": "make progress ✅ “a progress” deyilmaydi. Bonus: take a look, do your best."
+    }
+  ],
+  "band": [
+    {
+      "title": "Bitta savol, ikki xil javob",
+      "subtitle": [
+        "Surib ko‘ring: avval Band 5, keyin Band 8",
+        "Farqni ko‘ryapsizmi?"
+      ],
+      "question": "Describe your hometown.",
+      "band5": "My hometown is Samarkand. It is very beautiful. There are many old buildings. I like it very much.",
+      "band8": "I'm from Samarkand, a city steeped in history. It's renowned for its breathtaking architecture, especially the Registan.",
+      "highlights": [
+        "steeped in history",
+        "renowned for",
+        "breathtaking"
+      ],
+      "caption": "📚 <b>Band 8 so‘zlari tarjimasi:</b>\n▫️ <b>steeped in history</b> — tarixga boy\n▫️ <b>renowned for</b> — … bilan mashhur\n▫️ <b>breathtaking</b> — hayratlanarli\n\n💡 Band 5 javobda oddiy so‘zlar takrorlanadi. Band 8 da esa aniq va kuchli iboralar bor."
+    },
+    {
+      "title": "Bitta savol, ikki xil javob",
+      "subtitle": [
+        "Surib ko‘ring: avval Band 5, keyin Band 8",
+        "Farqni ko‘ryapsizmi?"
+      ],
+      "question": "Do you like your studies?",
+      "band5": "Yes, I like my studies. It is interesting. But sometimes it is very difficult.",
+      "band8": "Overall, I find my course rewarding, although it can be quite demanding during exam periods.",
+      "highlights": [
+        "rewarding",
+        "quite demanding",
+        "exam periods"
+      ],
+      "caption": "📚 <b>Band 8 so‘zlari tarjimasi:</b>\n▫️ <b>rewarding</b> — qoniqish beradigan\n▫️ <b>quite demanding</b> — ancha og‘ir, ko‘p kuch talab qiladigan\n▫️ <b>exam periods</b> — imtihon mavsumi\n\n💡 Band 5 javobda oddiy so‘zlar takrorlanadi. Band 8 da esa aniq va kuchli iboralar bor."
+    },
+    {
+      "title": "Bitta savol, ikki xil javob",
+      "subtitle": [
+        "Surib ko‘ring: avval Band 5, keyin Band 8",
+        "Farqni ko‘ryapsizmi?"
+      ],
+      "question": "How do you usually spend your weekends?",
+      "band5": "On weekends I sleep a lot. Then I meet my friends. We go to cafe.",
+      "band8": "I usually have a lie-in on Saturdays, then catch up with friends over coffee in the city centre.",
+      "highlights": [
+        "have a lie-in",
+        "catch up with",
+        "over coffee"
+      ],
+      "caption": "📚 <b>Band 8 so‘zlari tarjimasi:</b>\n▫️ <b>have a lie-in</b> — kech turmoq, to‘yib uxlamoq\n▫️ <b>catch up with</b> — ko‘rishib, gaplashib olmoq\n▫️ <b>over coffee</b> — qahva ustida\n\n💡 Band 5 javobda oddiy so‘zlar takrorlanadi. Band 8 da esa aniq va kuchli iboralar bor."
+    },
+    {
+      "title": "Bitta savol, ikki xil javob",
+      "subtitle": [
+        "Surib ko‘ring: avval Band 5, keyin Band 8",
+        "Farqni ko‘ryapsizmi?"
+      ],
+      "question": "Does technology make life easier?",
+      "band5": "Yes, technology is very good. We can do many things fast. But it has bad sides too.",
+      "band8": "By and large, yes. It streamlines everyday tasks, though we've become overly dependent on our devices.",
+      "highlights": [
+        "By and large",
+        "streamlines",
+        "overly dependent"
+      ],
+      "caption": "📚 <b>Band 8 so‘zlari tarjimasi:</b>\n▫️ <b>By and large</b> — umuman olganda\n▫️ <b>streamlines</b> — soddalashtiradi\n▫️ <b>overly dependent</b> — haddan tashqari qaram\n\n💡 Band 5 javobda oddiy so‘zlar takrorlanadi. Band 8 da esa aniq va kuchli iboralar bor."
+    },
+    {
+      "title": "Bitta savol, ikki xil javob",
+      "subtitle": [
+        "Surib ko‘ring: avval Band 5, keyin Band 8",
+        "Farqni ko‘ryapsizmi?"
+      ],
+      "question": "Describe a person you admire.",
+      "band5": "I admire my father. He is very kind and hardworking. He helps everyone.",
+      "band8": "I really look up to my father. He's incredibly down-to-earth and has a strong work ethic.",
+      "highlights": [
+        "look up to",
+        "down-to-earth",
+        "work ethic"
+      ],
+      "caption": "📚 <b>Band 8 so‘zlari tarjimasi:</b>\n▫️ <b>look up to</b> — hurmat qilmoq, o‘rnak olmoq\n▫️ <b>down-to-earth</b> — kamtar, oddiy\n▫️ <b>work ethic</b> — mehnatga munosabat\n\n💡 Band 5 javobda oddiy so‘zlar takrorlanadi. Band 8 da esa aniq va kuchli iboralar bor."
+    },
+    {
+      "title": "Bitta savol, ikki xil javob",
+      "subtitle": [
+        "Surib ko‘ring: avval Band 5, keyin Band 8",
+        "Farqni ko‘ryapsizmi?"
+      ],
+      "question": "Is it important to learn English?",
+      "band5": "Yes, English is very important. Many people speak English. It helps to find job.",
+      "band8": "Absolutely. English is the lingua franca of business, so it opens doors to far better career prospects.",
+      "highlights": [
+        "lingua franca",
+        "opens doors",
+        "career prospects"
+      ],
+      "caption": "📚 <b>Band 8 so‘zlari tarjimasi:</b>\n▫️ <b>lingua franca</b> — umumiy muloqot tili\n▫️ <b>opens doors</b> — imkoniyat eshigini ochadi\n▫️ <b>career prospects</b> — martaba istiqbollari\n\n💡 Band 5 javobda oddiy so‘zlar takrorlanadi. Band 8 da esa aniq va kuchli iboralar bor."
+    },
+    {
+      "title": "Bitta savol, ikki xil javob",
+      "subtitle": [
+        "Surib ko‘ring: avval Band 5, keyin Band 8",
+        "Farqni ko‘ryapsizmi?"
+      ],
+      "question": "What kind of music do you like?",
+      "band5": "I like pop music. It is very nice. I listen it every day.",
+      "band8": "I'm really into upbeat pop. It instantly lifts my mood, so it's always on while I study.",
+      "highlights": [
+        "I'm really into",
+        "upbeat",
+        "lifts my mood"
+      ],
+      "caption": "📚 <b>Band 8 so‘zlari tarjimasi:</b>\n▫️ <b>I'm really into</b> — juda yoqtiraman, qiziqaman\n▫️ <b>upbeat</b> — quvnoq, tetik\n▫️ <b>lifts my mood</b> — kayfiyatimni ko‘taradi\n\n💡 Band 5 javobda oddiy so‘zlar takrorlanadi. Band 8 da esa aniq va kuchli iboralar bor."
+    },
+    {
+      "title": "Bitta savol, ikki xil javob",
+      "subtitle": [
+        "Surib ko‘ring: avval Band 5, keyin Band 8",
+        "Farqni ko‘ryapsizmi?"
+      ],
+      "question": "Should students wear uniforms?",
+      "band5": "I think yes. Uniform is good because all students are same. It is cheap.",
+      "band8": "I'd say so. Uniforms create a sense of equality and spare parents the expense of trendy clothes.",
+      "highlights": [
+        "a sense of equality",
+        "spare parents the expense",
+        "trendy"
+      ],
+      "caption": "📚 <b>Band 8 so‘zlari tarjimasi:</b>\n▫️ <b>a sense of equality</b> — tenglik hissi\n▫️ <b>spare parents the expense</b> — ota-onani xarajatdan qutqaradi\n▫️ <b>trendy</b> — zamonaviy, urfdagi\n\n💡 Band 5 javobda oddiy so‘zlar takrorlanadi. Band 8 da esa aniq va kuchli iboralar bor."
+    }
+  ],
+  "pov": [
+    {
+      "question": "Do you like pets?",
+      "bad": "Yes.",
+      "better": "Yes, I'm a huge animal lover. I've had a cat for five years and she's the best company after a long day.",
+      "vocab": [
+        [
+          "a huge animal lover",
+          "hayvonlarni juda yaxshi ko‘radigan odam"
+        ],
+        [
+          "the best company",
+          "eng yaxshi hamroh"
+        ]
+      ],
+      "lesson": "Bir so‘zli javob Fluency balini tushiradi. Formula: <b>javob + sabab + misol</b>."
+    },
+    {
+      "question": "What do you do?",
+      "bad": "I'm student.",
+      "better": "I'm a second-year student at university, majoring in economics. It's demanding, but I really enjoy it.",
+      "vocab": [
+        [
+          "majoring in",
+          "… mutaxassisligi bo‘yicha o‘qimoq"
+        ],
+        [
+          "demanding",
+          "ko‘p kuch talab qiladigan"
+        ]
+      ],
+      "lesson": "“I'm student” emas, “I'm <b>a</b> student”. Artiklni tashlab ketish eng ko‘p uchraydigan xato."
+    },
+    {
+      "question": "Do you like your hometown?",
+      "bad": "Yes, I like. Because it is beautiful.",
+      "better": "Absolutely. It's steeped in history, and I love wandering around the old town in the evenings.",
+      "vocab": [
+        [
+          "steeped in history",
+          "tarixga boy"
+        ],
+        [
+          "wandering around",
+          "sayr qilib yurmoq"
+        ]
+      ],
+      "lesson": "“I like” dan keyin to‘ldiruvchi kerak: I like <b>it</b>. “Because” bilan alohida gap boshlanmaydi."
+    },
+    {
+      "question": "You have one minute to prepare. Please start.",
+      "bad": "(30 soniya gapirib, jim qolasiz) 😶",
+      "better": "I'd like to talk about… What I remember most is… Looking back, I think…",
+      "vocab": [
+        [
+          "What I remember most is",
+          "eng ko‘p esimda qolgani"
+        ],
+        [
+          "Looking back",
+          "hozir ortga qarab o‘ylasam"
+        ]
+      ],
+      "lesson": "Part 2 da 2 daqiqa gapirish kerak. Tayyor “ko‘prik” iboralar gapni tabiiy uzaytiradi."
+    },
+    {
+      "question": "Why do young people use social media so much?",
+      "bad": "I don't know.",
+      "better": "That's an interesting question. I suppose it keeps them connected with friends, and it's also a huge source of entertainment.",
+      "vocab": [
+        [
+          "I suppose",
+          "menimcha (yumshoq fikr)"
+        ],
+        [
+          "a source of entertainment",
+          "ko‘ngilochar manba"
+        ]
+      ],
+      "lesson": "Part 3 da “I don't know” o‘rniga o‘ylanish iborasini ayting va taxmin qiling."
+    },
+    {
+      "question": "Do you enjoy cooking?",
+      "bad": "No.",
+      "better": "Not really, to be honest. I'm hopeless in the kitchen, so I usually leave it to my mum.",
+      "vocab": [
+        [
+          "hopeless in the kitchen",
+          "oshxonada hech narsa uddalay olmaydigan"
+        ],
+        [
+          "leave it to",
+          "birovga qoldirmoq"
+        ]
+      ],
+      "lesson": "“No” ham javob bo‘la oladi, faqat sababini qo‘shing. Salbiy javob ham yaxshi ball oladi."
+    },
+    {
+      "question": "What's the weather like in your country?",
+      "bad": "Weather is very hot.",
+      "better": "It varies a lot. Summers are scorching, often over 40 degrees, while winters can be quite chilly.",
+      "vocab": [
+        [
+          "scorching",
+          "jazirama"
+        ],
+        [
+          "chilly",
+          "salqin, sovuqroq"
+        ]
+      ],
+      "lesson": "“very hot” o‘rniga aniq sifat ishlating. “while” bilan taqqoslash javobni boyitadi."
+    },
+    {
+      "question": "Do you read books?",
+      "bad": "Yes, I read books.",
+      "better": "I do, but mostly on my phone. I've recently got into self-help books, like Atomic Habits.",
+      "vocab": [
+        [
+          "got into",
+          "qiziqib qolmoq"
+        ],
+        [
+          "mostly",
+          "asosan"
+        ]
+      ],
+      "lesson": "Savoldagi so‘zlarni takrorlamang: “I do” deng va yangi ma'lumot qo‘shing."
+    }
+  ],
+  "poll": [
+    {
+      "question": "Sizga qaysi biri qiyinroq?",
+      "options": [
+        "✍️ Writing",
+        "🎙 Speaking"
+      ]
+    },
+    {
+      "question": "IELTS'ga qanday tayyorlanyapsiz?",
+      "options": [
+        "📚 O‘zim mustaqil",
+        "👨‍🏫 O‘quv markazida",
+        "💻 Onlayn kursda",
+        "🤝 Repetitor bilan"
+      ]
+    },
+    {
+      "question": "Kuniga necha soat ingliz tili bilan shug‘ullanasiz?",
+      "options": [
+        "⏱ 30 daqiqadan kam",
+        "🕐 Taxminan 1 soat",
+        "🕑 2 soat",
+        "🔥 3 soat va undan ko‘p"
+      ]
+    },
+    {
+      "question": "Qaysi bo‘limda eng ko‘p ball yo‘qotasiz?",
+      "options": [
+        "🎧 Listening",
+        "📖 Reading",
+        "✍️ Writing",
+        "🗣 Speaking"
+      ]
+    },
+    {
+      "question": "So‘z yodlashning siz uchun eng yaxshi usuli?",
+      "options": [
+        "📱 Ilova (Anki, Quizlet)",
+        "📒 Daftar",
+        "🎬 Film va serial",
+        "📖 Kitob o‘qish"
+      ]
+    },
+    {
+      "question": "Imtihon kunidagi eng katta qo‘rquvingiz?",
+      "options": [
+        "⏰ Vaqt yetmasligi",
+        "😶 Speakingda tutilib qolish",
+        "🎧 Audioni tushunmaslik",
+        "📝 Notanish essay mavzusi"
+      ]
+    },
+    {
+      "question": "Maqsadingiz qaysi band?",
+      "options": [
+        "6.0",
+        "6.5",
+        "7.0",
+        "7.5 va undan yuqori"
+      ]
+    },
+    {
+      "question": "Ingliz tilini qayerda ko‘proq eshitasiz?",
+      "options": [
+        "🎵 Musiqa",
+        "🎬 Film va serial",
+        "📱 TikTok va Reels",
+        "🎧 Podkast"
+      ]
     }
   ]
 }

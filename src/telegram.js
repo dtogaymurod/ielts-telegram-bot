@@ -84,6 +84,41 @@ export async function sendQuiz(question, options, correctIndex, explanation = ''
 }
 
 /**
+ * Send a regular (non-quiz) anonymous poll to the channel
+ * @param {string} question - Poll question (max 300 chars)
+ * @param {string[]} options - Answer options (2-10 items, max 100 chars each)
+ */
+export async function sendPoll(question, options) {
+  return telegramRequest('sendPoll', {
+    chat_id: CHANNEL_ID,
+    question: question,
+    options: options,
+    type: 'regular',
+    is_anonymous: true,
+  });
+}
+
+/**
+ * Send local photos as one album (swipeable carousel) with a caption on the first
+ * @param {string[]} filePaths - 2-10 local photos
+ * @param {string} caption - HTML formatted caption (max 1024 chars)
+ */
+export async function sendLocalAlbum(filePaths, caption = '') {
+  const formData = new FormData();
+  formData.append('chat_id', CHANNEL_ID);
+  const media = filePaths.map((filePath, i) => {
+    formData.append(`photo${i}`, new Blob([readFileSync(filePath)]), `photo${i}.png`);
+    return { type: 'photo', media: `attach://photo${i}`, ...(i === 0 ? { caption, parse_mode: 'HTML' } : {}) };
+  });
+  formData.append('media', JSON.stringify(media));
+
+  const response = await fetch(`${BASE_URL}/sendMediaGroup`, { method: 'POST', body: formData });
+  const data = await response.json();
+  if (!data.ok) throw new Error(`Telegram API error [${data.error_code}]: ${data.description}`);
+  return data.result;
+}
+
+/**
  * Send a photo with caption to the channel
  * @param {string} photoUrl - URL of the photo
  * @param {string} caption - HTML formatted caption (max 1024 chars)

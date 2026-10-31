@@ -1,21 +1,23 @@
 /**
- * Short Gen Z style posts — a prepared bank written in advance.
+ * Daily 12:00 posts — a prepared bank written in advance (content/genz-posts.json).
  *
- * Takes the next unused post of today's kind from content/genz-posts.json,
- * renders its poster (poster/render_genz.py) and sends it to the channel.
- * Emoji riddles and "To'g'ri yoki xato?" are followed by a Telegram quiz
- * that stays open, so subscribers can answer whenever they open the channel.
+ * Each day has one or two kinds; two kinds alternate week by week. Formats
+ * are mixed on purpose so the feed doesn't look the same every day:
+ * poster, poster + quiz, two-slide album, text only, poll only, quiz series.
  *
  * Schedule (Tashkent, 12:00):
- *   Tuesday   — upgrade   (Oddiy vs Band 9)
- *   Wednesday — slang     (TikTok vs IELTS)
- *   Friday    — emoji     (Emoji topishmoq + quiz)
- *   Saturday  — truefalse (To'g'ri yoki xato? + quiz)
+ *   Monday    — band (Band 5 vs 8 album)     ⇄ redflag (Red flag / Green flag)
+ *   Tuesday   — upgrade (Oddiy vs Band 9)
+ *   Wednesday — slang (TikTok vs IELTS)      ⇄ pov (text only)
+ *   Thursday  — collocation (+ quiz)          ⇄ poll (poll only)
+ *   Friday    — emoji (+ quiz)
+ *   Saturday  — truefalse (+ quiz)
+ *   Sunday    — weekly (5 quizzes built from the latest posts)
  *
  * Usage:
  *   node src/genz-post.js                  — post today's kind
  *   node src/genz-post.js --kind emoji     — force a kind
- *   node src/genz-post.js --dry-run        — render the poster, send nothing
+ *   node src/genz-post.js --dry-run        — render everything, send nothing
  */
 
 import { execFileSync } from 'child_process';
@@ -23,26 +25,43 @@ import { mkdtempSync, readFileSync, writeFileSync } from 'fs';
 import { tmpdir } from 'os';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { sendLocalPhoto, sendQuiz, validateConfig } from './telegram.js';
+import { sendLocalAlbum, sendLocalPhoto, sendMessage, sendPoll, sendQuiz, validateConfig } from './telegram.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const POSTS_FILE = join(__dirname, '..', 'content', 'genz-posts.json');
 const RENDER_SCRIPT = join(__dirname, '..', 'poster', 'render_genz.py');
 
-const KINDS_BY_DAY = { 2: 'upgrade', 3: 'slang', 5: 'emoji', 6: 'truefalse' };
+const KINDS_BY_DAY = {
+  0: ['weekly'],
+  1: ['band', 'redflag'],
+  2: ['upgrade'],
+  3: ['slang', 'pov'],
+  4: ['collocation', 'poll'],
+  5: ['emoji'],
+  6: ['truefalse'],
+};
 const FOOTER = ['👉 Telegram: @dilshod_english', '📸 Instagram: instagram.com/dilshod.ustoz'];
 
 const args = process.argv.slice(2);
 const isDryRun = args.includes('--dry-run');
 const kindArg = args.includes('--kind') ? args[args.indexOf('--kind') + 1] : process.env.GENZ_KIND;
 
-function pickKind() {
-  if (kindArg && kindArg !== 'auto') return kindArg;
-  const tashkentDay = new Date(Date.now() + 5 * 60 * 60 * 1000).getUTCDay();
-  return KINDS_BY_DAY[tashkentDay];
+function tashkentNow() {
+  return new Date(Date.now() + 5 * 60 * 60 * 1000);
 }
 
-/** Fill in the fixed title/subtitle for the quiz kinds. */
+/** Weeks since Monday 1970-01-05, in Tashkent time: alternates the paired kinds. */
+export function weekNumber(date = tashkentNow()) {
+  return Math.floor((date.getTime() - Date.UTC(1970, 0, 5)) / (7 * 24 * 60 * 60 * 1000));
+}
+
+function pickKind() {
+  if (kindArg && kindArg !== 'auto') return kindArg;
+  const kinds = KINDS_BY_DAY[tashkentNow().getUTCDay()];
+  return kinds[weekNumber() % kinds.length];
+}
+
+/** Fill in the fixed title/subtitle for the kinds that share one. */
 export function withDefaults(kind, post) {
   const defaults = {
     emoji: { title: 'Bu qaysi so‘z?', subtitle: 'Emojilarga qarab IELTS so‘zini toping' },
@@ -62,14 +81,41 @@ export function buildCaption(post) {
     slang: '📱 <b>TIKTOK vs IELTS</b> 🎓',
     emoji: '🧩 <b>EMOJI TOPISHMOQ</b>',
     truefalse: '🤔 <b>TO‘G‘RI YOKI XATO?</b>',
+    redflag: '🚩 <b>RED FLAG / GREEN FLAG</b> 🟢',
+    collocation: '🧩 <b>MAKE, DO YOKI TAKE?</b>',
+    band: '📈 <b>BAND 5 vs BAND 8</b>',
   };
   const calls = {
     upgrade: "🔖 Saqlab qo'ying va do'stingizga yuboring!",
     slang: '💬 Siz qaysi birini ko‘p ishlatasiz? Izohda yozing 😅',
     emoji: 'Javobingizni pastdagi quizda belgilang 👇',
     truefalse: 'O‘ylab ko‘ring va pastdagi quizda javob bering 👇',
+    redflag: '💬 Nechta red flag sizda bor? Izohda yozing 👇',
+    collocation: 'Asosiy savolga pastdagi quizda javob bering 👇',
+    band: '🔖 Saqlab qo‘ying va Speakingda ishlating!',
   };
   return [headers[post.kind], '', post.caption, '', calls[post.kind], '', ...FOOTER].join('\n');
+}
+
+/** POV goes out as text only, written like a short chat. */
+export function buildPovText(post) {
+  return [
+    '💀 <b>POV: Speaking imtihonida…</b>',
+    '',
+    `🧑‍💼 <b>Examiner:</b> ${post.question}`,
+    `🙂 <b>Siz:</b> ${post.bad}`,
+    '',
+    '😎 <b>Band 7 javob:</b>',
+    `<i>${post.better}</i>`,
+    '',
+    ...post.vocab.map(([word, uz]) => `📚 <b>${word}</b> — ${uz}`),
+    '',
+    `💡 ${post.lesson}`,
+    '',
+    '🎙 Siz qanday javob berardingiz? Ovozli xabar bilan izohda qoldiring 👇',
+    '',
+    ...FOOTER,
+  ].join('\n');
 }
 
 export function buildQuiz(post) {
@@ -89,54 +135,141 @@ export function buildQuiz(post) {
       explanation: post.explanation,
     };
   }
+  if (post.kind === 'collocation') {
+    return {
+      question: 'Rasmdagi bo‘shliqqa qaysi fe\'l mos keladi?',
+      options: ['make', 'do', 'take'],
+      correct: post.answer,
+      explanation: post.explanation,
+    };
+  }
   return null;
 }
 
-function renderPoster(post) {
+/** Rotate options so the right answer isn't always in the same place. */
+function rotate(options, correct, by) {
+  const n = options.length;
+  const shift = by % n;
+  return { options: options.map((_, i) => options[(i + shift) % n]), correct: (correct - shift + n) % n };
+}
+
+/** Sunday quiz series: one question from the latest post of each kind. */
+export function buildWeeklyQuizzes(data, week = weekNumber()) {
+  const latest = (kind) => {
+    const index = (data.next_index[kind] || 0) - 1;
+    return index >= 0 ? withDefaults(kind, data[kind][index]) : null;
+  };
+  const pairQuestion = (post, label) => {
+    const row = week % post.rows.length;
+    const others = post.rows.filter((_, i) => i !== row).slice(0, 3).map(([, better]) => better);
+    const { options, correct } = rotate([post.rows[row][1], ...others], 0, week);
+    return { question: label(post.rows[row][0]), options, correct, explanation: `${post.rows[row][0]} → ${post.rows[row][1]}` };
+  };
+  const quizzes = [];
+  const upgrade = latest('upgrade');
+  if (upgrade) quizzes.push(pairQuestion(upgrade, (plain) => `“${plain}” ning Band 9 varianti qaysi?`));
+  const slang = latest('slang');
+  if (slang) quizzes.push(pairQuestion(slang, (word) => `“${word}” ni IELTSda qanday aytamiz?`));
+  const collocation = latest('collocation');
+  if (collocation) quizzes.push({ ...buildQuiz(collocation), question: `Qaysi fe'l mos keladi? ${collocation.phrase}` });
+  const emoji = latest('emoji');
+  if (emoji) quizzes.push({ ...buildQuiz(emoji), question: `${emoji.emojis.join(' + ')} = ?` });
+  const truefalse = latest('truefalse');
+  if (truefalse) quizzes.push({ ...buildQuiz(truefalse), question: `Bu gap to‘g‘rimi? “${truefalse.sentence}”` });
+  return quizzes.map((q, i) => ({ ...q, question: `${i + 1}/${quizzes.length}. ${q.question}` }));
+}
+
+function renderPosters(post) {
   const dir = mkdtempSync(join(tmpdir(), 'genz-'));
   const input = join(dir, 'post.json');
-  const output = join(dir, 'poster.png');
+  const outputs = post.kind === 'band' ? [join(dir, 'slide1.png'), join(dir, 'slide2.png')] : [join(dir, 'poster.png')];
   writeFileSync(input, JSON.stringify(post));
-  execFileSync('python3', [RENDER_SCRIPT, input, output], { stdio: 'pipe', timeout: 60_000 });
-  return output;
+  execFileSync('python3', [RENDER_SCRIPT, input, ...outputs], { stdio: 'pipe', timeout: 60_000 });
+  return outputs;
+}
+
+/** Turn one bank entry into the list of Telegram messages to send, in order. */
+export function buildMessages(kind, post, data) {
+  if (kind === 'weekly') {
+    const quizzes = buildWeeklyQuizzes(data);
+    if (quizzes.length < 3) return [];
+    return [
+      {
+        type: 'text',
+        text: [
+          '🏆 <b>HAFTA TESTI</b>',
+          '',
+          `So‘nggi postlardan ${quizzes.length} ta savol. Hammasiga javob bering va natijangizni izohda yozing 👇`,
+          '',
+          `🏅 ${quizzes.length}/${quizzes.length} to‘plaganlar izohda ✋ qoldirsin!`,
+        ].join('\n'),
+      },
+      ...quizzes.map((quiz) => ({ type: 'quiz', ...quiz })),
+    ];
+  }
+  if (kind === 'pov') return [{ type: 'text', text: buildPovText(post) }];
+  if (kind === 'poll') return [{ type: 'poll', question: post.question, options: post.options }];
+
+  const posters = renderPosters(post);
+  const messages = [
+    posters.length > 1
+      ? { type: 'album', paths: posters, caption: buildCaption(post) }
+      : { type: 'photo', path: posters[0], caption: buildCaption(post) },
+  ];
+  const quiz = buildQuiz(post);
+  if (quiz) messages.push({ type: 'quiz', ...quiz });
+  return messages;
+}
+
+async function send(message) {
+  switch (message.type) {
+    case 'photo':
+      return sendLocalPhoto(message.path, message.caption);
+    case 'album':
+      return sendLocalAlbum(message.paths, message.caption);
+    case 'text':
+      return sendMessage(message.text, { disablePreview: true });
+    case 'quiz':
+      return sendQuiz(message.question, message.options, message.correct, message.explanation);
+    case 'poll':
+      return sendPoll(message.question, message.options);
+    default:
+      throw new Error(`Unknown message type ${message.type}`);
+  }
 }
 
 async function main() {
   const kind = pickKind();
-  if (!kind) {
-    console.log('ℹ️ No Gen Z post scheduled for today.');
-    return;
-  }
   const data = JSON.parse(readFileSync(POSTS_FILE, 'utf-8'));
-  if (!data[kind]) throw new Error(`Unknown kind "${kind}"`);
-
   const index = data.next_index[kind] || 0;
-  const raw = data[kind][index];
-  if (!raw) {
-    console.log(`ℹ️ No unused "${kind}" posts left. Add more to content/genz-posts.json.`);
-    return;
+
+  let post = null;
+  if (kind !== 'weekly') {
+    if (!data[kind]) throw new Error(`Unknown kind "${kind}"`);
+    if (!data[kind][index]) {
+      console.log(`ℹ️ No unused "${kind}" posts left. Add more to content/genz-posts.json.`);
+      return;
+    }
+    post = withDefaults(kind, data[kind][index]);
   }
-  const post = withDefaults(kind, raw);
   console.log(`✨ ${kind} post #${index + 1}`);
 
-  const poster = renderPoster(post);
-  const caption = buildCaption(post);
-  const quiz = buildQuiz(post);
-  console.log(`🖼 Poster: ${poster}`);
+  const messages = buildMessages(kind, post, data);
+  if (!messages.length) {
+    console.log('ℹ️ Not enough published posts yet to build the weekly quiz.');
+    return;
+  }
 
   if (isDryRun) {
-    console.log(`\n${caption}\n`);
-    if (quiz) console.log('📊 Quiz:', JSON.stringify(quiz, null, 1));
+    for (const message of messages) console.log(JSON.stringify(message, null, 1), '\n');
     console.log('✅ Dry run complete. Nothing published.');
     return;
   }
 
   validateConfig();
-  const photo = await sendLocalPhoto(poster, caption);
-  console.log(`✅ Poster published! Message ID: ${photo.message_id}`);
-  if (quiz) {
-    const poll = await sendQuiz(quiz.question, quiz.options, quiz.correct, quiz.explanation);
-    console.log(`✅ Quiz published! Message ID: ${poll.message_id}`);
+  for (const message of messages) {
+    const result = await send(message);
+    console.log(`✅ ${message.type} published!`, Array.isArray(result) ? '' : `Message ID: ${result.message_id}`);
   }
 
   data.next_index[kind] = index + 1;

@@ -1,13 +1,17 @@
 """Render the short Gen Z style posts (orange brand design).
 
 Usage:
-  python3 poster/render_genz.py post.json out.png
+  python3 poster/render_genz.py post.json out.png [out2.png]
 
 post.json is one entry of content/genz-posts.json plus its "kind":
   upgrade   -> "Oddiy vs Band 9": rows of [plain, band9] word pairs
   slang     -> "TikTok vs IELTS": rows of [slang, formal] pairs
   emoji     -> emoji riddle: "emojis" list + quiz "options"
   truefalse -> "To'g'ri yoki xato?": one "sentence" + quiz
+  redflag   -> three "red" and three "green" habits
+  collocation -> "phrase" with a gap + MAKE / DO / TAKE (+ "bonus" line)
+  band      -> two slides (album): "question" + "band5", then "band8" with
+               its "highlights" in orange; pass two output paths
 
 If poster/assets/avatar.png exists it is drawn as a small round photo in the
 top right corner.
@@ -39,6 +43,9 @@ PILLS = {
     "slang": "TIKTOK vs IELTS",
     "emoji": "EMOJI TOPISHMOQ",
     "truefalse": "TO‘G‘RI YOKI XATO?",
+    "redflag": "RED FLAG / GREEN FLAG",
+    "collocation": "MAKE, DO YOKI TAKE?",
+    "band": "BAND 5 vs BAND 8",
 }
 HEADS = {
     "upgrade": (("😐", "ODDIY"), ("😎", "BAND 9")),
@@ -227,8 +234,111 @@ def draw_truefalse(img, post):
     d.text(((W - d.textlength(note, font=font("bold", 30))) / 2, bottom + 30), note, font=font("bold", 30), fill=WHITE)
 
 
-def render(post):
+def note(d, bottom, text):
+    f = font("bold", 30)
+    d.text(((W - d.textlength(text, font=f)) / 2, bottom + 30), text, font=f, fill=WHITE)
+
+
+def draw_redflag(img, post):
+    top, bottom = 380, 1110
+    card(img, [PAD, top, W - PAD, bottom])
+    d = ImageDraw.Draw(img)
+    y = top + 40
+    for head, mark, colour, bg, items in [
+        ("RED FLAG", "🚩", RED, (255, 241, 240), post["red"]),
+        ("GREEN FLAG", "🟢", GREEN, (236, 250, 242), post["green"]),
+    ]:
+        emoji(img, mark, PAD + 50, y, 50)
+        d.text((PAD + 115, y + 4), head, font=font("black", 40), fill=colour)
+        y += 72
+        for item in items:
+            d.rounded_rectangle([PAD + 40, y, W - PAD - 40, y + 66], radius=20, fill=bg)
+            d.text((PAD + 70, y + 14), item, font=fit(d, item, "semibold", 34, W - 2 * PAD - 140), fill=NAVY)
+            y += 80
+        y += 30
+    note(d, bottom, "Izohda yozing: nechta red flag sizda bor?")
+
+
+def draw_collocation(img, post):
+    top, bottom = 380, 1110
+    card(img, [PAD, top, W - PAD, bottom])
+    d = ImageDraw.Draw(img)
+    emoji(img, "🧩", (W - 110) / 2, top + 50, 110)
+    phrase = post["phrase"]
+    f = fit(d, phrase, "black", 70, W - 2 * PAD - 100, 44)
+    d.text(((W - d.textlength(phrase, font=f)) / 2, top + 210), phrase, font=f, fill=NAVY)
+    bw = (W - 2 * PAD - 140) // 3
+    for i, verb in enumerate(["MAKE", "DO", "TAKE"]):
+        x = PAD + 40 + i * (bw + 30)
+        d.rounded_rectangle([x, top + 380, x + bw, top + 510], radius=30, fill=NAVY)
+        vf = font("black", 48)
+        d.text((x + (bw - d.textlength(verb, font=vf)) / 2, top + 415), verb, font=vf, fill=WHITE)
+    if post.get("bonus"):
+        bonus = f"Bonus: {post['bonus']}"
+        bf = fit(d, bonus, "semibold", 34, W - 2 * PAD - 100)
+        d.text(((W - d.textlength(bonus, font=bf)) / 2, top + 580), bonus, font=bf, fill=GREY)
+    note(d, bottom, "Javob va izoh pastdagi quizda")
+
+
+def draw_answer(img, d, box, label, colour, bg, text, highlights=()):
+    d.rounded_rectangle(box, radius=26, fill=bg)
+    lf = font("black", 28)
+    d.rounded_rectangle([box[0] + 26, box[1] + 26, box[0] + 64 + d.textlength(label, font=lf), box[1] + 76], radius=25, fill=colour)
+    d.text((box[0] + 45, box[1] + 36), label, font=lf, fill=WHITE)
+    # mark highlighted phrases so they survive word wrapping
+    marked = text
+    for phrase in highlights:
+        marked = marked.replace(phrase, "\x01" + phrase.replace(" ", "\x02") + "\x01")
+    size = 54
+    while True:
+        f = font("medium", size)
+        lines = wrap(d, marked.replace("\x01", ""), f, box[2] - box[0] - 80)
+        lh = int(size * 1.4)
+        if box[1] + 110 + len(lines) * lh <= box[3] - 30 or size <= 28:
+            break
+        size -= 2
+    # re-wrap keeping the markers to know which words are highlighted
+    words, on = [], False
+    for token in marked.split(" "):
+        hl = on or token.startswith("\x01")
+        if token.count("\x01") % 2:
+            on = not on
+        words.append((token.replace("\x01", "").replace("\x02", " "), hl))
+    x, y = box[0] + 40, box[1] + 110
+    for word, hl in words:
+        wf = font("black" if hl else "medium", size)
+        w = d.textlength(word, font=wf)
+        if x + w > box[2] - 40:
+            x, y = box[0] + 40, y + lh
+        d.text((x, y), word, font=wf, fill=ORANGE if hl else NAVY)
+        x += w + d.textlength(" ", font=wf)
+
+
+def draw_band(img, post, slide):
+    top, bottom = 380, 1110
+    card(img, [PAD, top, W - PAD, bottom])
+    d = ImageDraw.Draw(img)
+    question = f"“{post['question']}”"
+    qf = fit(d, question, "black", 42, W - 2 * PAD - 80, 30)
+    d.text(((W - d.textlength(question, font=qf)) / 2, top + 40), question, font=qf, fill=NAVY)
+    box = [PAD + 40, top + 120, W - PAD - 40, bottom - 40]
+    if slide == 0:
+        draw_answer(img, d, box, "BAND 5", GREY, (245, 244, 243), post["band5"])
+        note(d, bottom, "Keyingi rasmda Band 8 javob  →")
+    else:
+        draw_answer(img, d, box, "BAND 8", ORANGE, (255, 241, 234), post["band8"], post.get("highlights", ()))
+        note(d, bottom, "Qalin so‘zlarni yozib oling")
+
+
+def render_slides(post):
     kind = post["kind"]
+    if kind == "band":
+        slides = []
+        for i in range(2):
+            img = frame(kind, post["title"], post["subtitle"][i] if isinstance(post["subtitle"], list) else post["subtitle"])
+            draw_band(img, post, i)
+            slides.append(img)
+        return slides
     img = frame(kind, post["title"], post["subtitle"])
     if kind in HEADS:
         draw_pairs(img, kind, post["rows"])
@@ -236,14 +346,23 @@ def render(post):
         draw_emoji(img, post)
     elif kind == "truefalse":
         draw_truefalse(img, post)
+    elif kind == "redflag":
+        draw_redflag(img, post)
+    elif kind == "collocation":
+        draw_collocation(img, post)
     else:
         raise ValueError(f"Unknown post kind: {kind}")
-    return img
+    return [img]
+
+
+def render(post):
+    return render_slides(post)[0]
 
 
 def main():
     post = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
-    render(post).save(sys.argv[2])
+    for img, out in zip(render_slides(post), sys.argv[2:]):
+        img.save(out)
 
 
 if __name__ == "__main__":
