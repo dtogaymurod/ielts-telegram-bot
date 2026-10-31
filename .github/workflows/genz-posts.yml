@@ -1,17 +1,18 @@
 name: IELTS Gen Z Posts
 
 on:
-  schedule:
-    - cron: '0 7 * * 2,3,5,6' # Tue/Wed/Fri/Sat 12:00 Tashkent — Oddiy vs Band 9 / TikTok vs IELTS / Emoji topishmoq / To'g'ri yoki xato
-
+  # Started on time by an external timer (cron-job.org → workflow_dispatch), see docs/TIMER_SETUP.md.
+  # GitHub's own schedule ran these posts 3–6 hours late, so it is switched off.
+  # Tue/Wed/Fri/Sat 12:00 Tashkent — Oddiy vs Band 9 / TikTok vs IELTS / Emoji topishmoq / To'g'ri yoki xato (kind: auto)
   workflow_dispatch:
     inputs:
       kind:
         description: 'Which post type to send'
         required: true
-        default: 'upgrade'
+        default: 'auto'
         type: choice
         options:
+          - auto
           - upgrade
           - slang
           - emoji

@@ -39,3 +39,23 @@ export function renderPoster(postText) {
     return null;
   }
 }
+
+const LONE_WOLF_SCRIPT = join(__dirname, '..', 'poster', 'render_lonewolf.py');
+
+/** Render a Lone Wolf task that has a "poster" block; null on failure. */
+export function renderLoneWolfPoster(task) {
+  try {
+    const dir = mkdtempSync(join(tmpdir(), 'lonewolf-'));
+    const outPath = join(dir, 'poster.png');
+    execFileSync('python3', [LONE_WOLF_SCRIPT, '-', outPath], {
+      input: JSON.stringify(task),
+      stdio: ['pipe', 'pipe', 'pipe'],
+      timeout: 60_000,
+    });
+    return outPath;
+  } catch (error) {
+    const detail = error.stderr?.toString().trim() || error.message;
+    console.warn(`⚠️ Lone Wolf poster rendering failed, posting text only: ${detail}`);
+    return null;
+  }
+}

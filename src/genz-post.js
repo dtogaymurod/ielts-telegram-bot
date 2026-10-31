@@ -37,7 +37,7 @@ const isDryRun = args.includes('--dry-run');
 const kindArg = args.includes('--kind') ? args[args.indexOf('--kind') + 1] : process.env.GENZ_KIND;
 
 function pickKind() {
-  if (kindArg) return kindArg;
+  if (kindArg && kindArg !== 'auto') return kindArg;
   const tashkentDay = new Date(Date.now() + 5 * 60 * 60 * 1000).getUTCDay();
   return KINDS_BY_DAY[tashkentDay];
 }

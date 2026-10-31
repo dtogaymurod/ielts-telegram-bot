@@ -1,18 +1,18 @@
 name: IELTS Writing Samples
 
 on:
-  schedule:
-    - cron: '0 7 * * 1' # Monday 12:00 Tashkent — Writing Task 1 sample
-    - cron: '0 7 * * 4' # Thursday 12:00 Tashkent — Writing Task 2 sample
-
+  # Started on time by an external timer (cron-job.org → workflow_dispatch), see docs/TIMER_SETUP.md.
+  # GitHub's own schedule ran these posts 3–6 hours late, so it is switched off.
+  # Monday 12:00 Tashkent — Task 1, Thursday 12:00 — Task 2 (task: auto)
   workflow_dispatch:
     inputs:
       task:
         description: 'Which task to post'
         required: true
-        default: '2'
+        default: 'auto'
         type: choice
         options:
+          - 'auto'
           - '1'
           - '2'
       dry_run:

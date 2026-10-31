@@ -18,7 +18,7 @@
  */
 
 import { sendMessage, sendLocalPhoto, validateConfig } from './telegram.js';
-import { renderPoster, captionLength, CAPTION_LIMIT } from './poster.js';
+import { renderPoster, renderLoneWolfPoster, captionLength, CAPTION_LIMIT } from './poster.js';
 import { getTimeSlot, getNextSkill, getSkillHackFallback, isLoneWolfDay, getNextLoneWolfPost } from './content-selector.js';
 import { generateDailySkillPost, validatePostCompleteness } from './gemini.js';
 
@@ -49,6 +49,26 @@ async function main() {
       console.log(`🐺 Today is Lone Wolf day (Tue/Thu/Sat)! Publishing task #${loneWolf.post.index}: ${loneWolf.post.title}...`);
       let postText = loneWolf.post.post_text;
       postText = postText.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+
+      // Tasks with a "poster" block go out as a poster (steps) + caption (the rest)
+      if (loneWolf.post.poster && loneWolf.post.caption) {
+        const posterPath = renderLoneWolfPoster(loneWolf.post);
+        if (posterPath) {
+          if (isDryRun || isTest) {
+            console.log(`\n🐺 Poster preview saved: ${posterPath}\n\n${loneWolf.post.caption}\n`);
+            console.log('✅ Dry run complete. No message sent.');
+            return;
+          }
+          try {
+            const result = await sendLocalPhoto(posterPath, loneWolf.post.caption);
+            console.log(`✅ Lone Wolf poster published! Message ID: ${result.message_id}`);
+            loneWolf.advance();
+            return;
+          } catch (error) {
+            console.error('⚠️ Lone Wolf poster send failed, falling back to text post:', error.message);
+          }
+        }
+      }
 
       if (isDryRun || isTest) {
         console.log('\n🐺 ═══ LONE WOLF POST PREVIEW ═══\n');
