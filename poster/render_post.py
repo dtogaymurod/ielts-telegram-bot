@@ -280,6 +280,9 @@ def render(text):
     scale = 1.0
     while scale > 0.6 and render_sections(d, sections, scale, dry=True, top=area_top) > area_bottom:
         scale -= 0.04
+    # the caption no longer repeats the post, so the poster must show all of it
+    if render_sections(d, sections, scale, dry=True, top=area_top) > area_bottom:
+        raise ValueError("Post is too long to fit on the poster")
     # centre the content block vertically in the free area
     height = render_sections(d, sections, scale, dry=True, top=0)
     top = area_top + max(0, (area_bottom - area_top - height) // 2)
