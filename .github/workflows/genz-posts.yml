@@ -1,0 +1,72 @@
+name: IELTS Gen Z Posts
+
+on:
+  schedule:
+    - cron: '0 7 * * 2,3,5,6' # Tue/Wed/Fri/Sat 12:00 Tashkent — Oddiy vs Band 9 / TikTok vs IELTS / Emoji topishmoq / To'g'ri yoki xato
+
+  workflow_dispatch:
+    inputs:
+      kind:
+        description: 'Which post type to send'
+        required: true
+        default: 'upgrade'
+        type: choice
+        options:
+          - upgrade
+          - slang
+          - emoji
+          - truefalse
+      dry_run:
+        description: 'Dry run (render in log, do not post)'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  post-genz:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Setup Python (poster rendering)
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install poster dependencies
+        run: |
+          pip install -r poster/requirements.txt
+          sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-color-emoji
+
+      - name: Post Gen Z post
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          GENZ_KIND: ${{ github.event.inputs.kind }}
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            node src/genz-post.js --dry-run
+          else
+            node src/genz-post.js
+          fi
+
+      - name: Save progress
+        if: success() && github.event.inputs.dry_run != 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add content/genz-posts.json
+          git diff --staged --quiet || git commit -m "✨ Gen Z post published [skip ci]"
+          git pull --rebase && git push || echo "Nothing to push"

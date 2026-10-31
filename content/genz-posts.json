@@ -1,0 +1,179 @@
+{
+  "next_index": { "upgrade": 0, "slang": 0, "emoji": 0, "truefalse": 0 },
+  "upgrade": [
+    {
+      "title": "Hali ham “very good”mi?",
+      "subtitle": "Speaking va Writing uchun darajangizni ko‘taring",
+      "rows": [["very good", "outstanding"], ["very bad", "dreadful"], ["very big", "enormous"], ["very important", "crucial"], ["very tired", "exhausted"], ["very happy", "delighted"]]
+    },
+    {
+      "title": "Phrasal verb o‘rniga 1 ta fe'l",
+      "subtitle": "Writing Task 2 da rasmiyroq yangraydi",
+      "rows": [["get better", "improve"], ["go up", "increase"], ["find out", "discover"], ["think about", "consider"], ["talk about", "discuss"], ["keep", "maintain"]]
+    },
+    {
+      "title": "Speakingda fikr bildirish",
+      "subtitle": "“I think” ni har gapda takrorlamang",
+      "rows": [["I think", "I firmly believe"], ["In my opinion", "From my perspective"], ["I like it", "I'm really into it"], ["I don't like", "I'm not keen on"], ["I agree", "I couldn't agree more"], ["I don't know", "That's a tough one"]]
+    },
+    {
+      "title": "Bog‘lovchilarni almashtiring",
+      "subtitle": "Coherence & Cohesion balingiz uchun",
+      "rows": [["but", "however"], ["so", "consequently"], ["also", "moreover"], ["for example", "for instance"], ["in the end", "ultimately"], ["because of", "owing to"]]
+    },
+    {
+      "title": "Task 1: grafikni tasvirlash",
+      "subtitle": "Chiziqli grafik va jadvallar uchun",
+      "rows": [["went up a lot", "rose sharply"], ["went down", "declined"], ["stayed the same", "remained stable"], ["changed a lot", "fluctuated"], ["was the highest", "peaked"], ["about", "approximately"]]
+    },
+    {
+      "title": "“A lot of” ni unuting",
+      "subtitle": "Miqdorni aniqroq va rasmiyroq ifodalang",
+      "rows": [["a lot of people", "a large number of people"], ["many people", "a significant proportion"], ["some people", "certain individuals"], ["more and more", "an increasing number of"], ["lots of problems", "numerous problems"], ["a small problem", "a minor issue"]]
+    },
+    {
+      "title": "“Good” va “bad” dan voz keching",
+      "subtitle": "Essayda aniqroq sifatlar ishlating",
+      "rows": [["good for health", "beneficial"], ["bad for health", "detrimental"], ["interesting", "fascinating"], ["hard", "challenging"], ["easy", "straightforward"], ["useful", "invaluable"]]
+    },
+    {
+      "title": "Speaking Part 1: “Yes” dan keyin",
+      "subtitle": "Qisqa javob o‘rniga tabiiy boshlang",
+      "rows": [["Yes", "Yes, definitely"], ["No", "Not really, to be honest"], ["Maybe", "It depends, really"], ["Sometimes", "Every now and then"], ["Often", "More often than not"], ["I don't know", "I've never thought about it"]]
+    }
+  ],
+  "slang": [
+    {
+      "title": "Imtihonda bunday xato qilmang!",
+      "subtitle": "Slang ball tushiradi, rasmiy muqobilini ishlating",
+      "rows": [["no cap", "genuinely"], ["lowkey", "to some extent"], ["it's giving…", "it resembles…"], ["that's fire", "that's remarkable"], ["I'm dead", "it was hilarious"], ["mid", "rather mediocre"]]
+    },
+    {
+      "title": "Imtihonda bunday xato qilmang!",
+      "subtitle": "Qisqartmalar chatda bo‘ladi, imtihonda emas",
+      "rows": [["gonna", "going to"], ["wanna", "want to"], ["kinda", "somewhat"], ["gotta", "have to"], ["dunno", "I'm not sure"], ["cuz", "because"]]
+    },
+    {
+      "title": "Imtihonda bunday xato qilmang!",
+      "subtitle": "Joy va ovqat haqida gapirganda",
+      "rows": [["bussin'", "delicious"], ["the vibe", "the atmosphere"], ["it slaps", "it's superb"], ["aesthetic", "visually appealing"], ["sus", "suspicious"], ["overhyped", "overrated"]]
+    },
+    {
+      "title": "Imtihonda bunday xato qilmang!",
+      "subtitle": "Odamlarni tasvirlaganda",
+      "rows": [["bestie", "close friend"], ["rizz", "charisma"], ["salty", "resentful"], ["extra", "over the top"], ["the GOAT", "the best of all time"], ["a legend", "a role model"]]
+    },
+    {
+      "title": "Imtihonda bunday xato qilmang!",
+      "subtitle": "Yutuq va muvaffaqiyatsizlik haqida",
+      "rows": [["a W", "a success"], ["took an L", "faced a setback"], ["she ate", "she performed brilliantly"], ["slay", "excel"], ["glow up", "transformation"], ["a flop", "a failure"]]
+    },
+    {
+      "title": "Imtihonda bunday xato qilmang!",
+      "subtitle": "His-tuyg‘ularni ifodalaganda",
+      "rows": [["lit", "thrilling"], ["chill", "laid-back"], ["I'm broke", "I'm short of money"], ["so random", "unexpected"], ["cringe", "embarrassing"], ["he ghosted me", "he stopped replying"]]
+    },
+    {
+      "title": "Imtihonda bunday xato qilmang!",
+      "subtitle": "Fikr bildirganda",
+      "rows": [["fr fr", "seriously"], ["IMO", "in my view"], ["hits different", "feels special"], ["big yikes", "that's concerning"], ["deadass", "honestly"], ["say less", "I understand"]]
+    },
+    {
+      "title": "Imtihonda bunday xato qilmang!",
+      "subtitle": "Internet tilini akademik tilga o‘giring",
+      "rows": [["touch grass", "spend time outdoors"], ["spill the tea", "share the gossip"], ["main character", "the centre of attention"], ["caught in 4K", "caught red-handed"], ["understood the assignment", "did exactly what was needed"], ["doomscrolling", "endless scrolling"]]
+    }
+  ],
+  "emoji": [
+    {
+      "emojis": ["🧠", "🌪️"],
+      "options": ["mindset", "brainstorm", "headache", "thunderstruck"],
+      "answer": 1,
+      "explanation": "brainstorm — g‘oyalar to‘plash. Writing Task 2 dan oldin 3–5 daqiqa brainstorm qiling!"
+    },
+    {
+      "emojis": ["🍰"],
+      "options": ["a sweet tooth", "a piece of cake", "the icing on the cake", "a cake shop"],
+      "answer": 1,
+      "explanation": "a piece of cake — juda oson. “The test was a piece of cake.” Speakingda ishlating!"
+    },
+    {
+      "emojis": ["🔨", "🧊"],
+      "options": ["break the ice", "cold-hearted", "ice cream", "hit the nail"],
+      "answer": 0,
+      "explanation": "break the ice — tanishuvdagi noqulaylikni yo‘qotmoq. “A joke helped break the ice.”"
+    },
+    {
+      "emojis": ["🐘", "🏠"],
+      "options": ["a white elephant", "home sweet home", "the elephant in the room", "a big house"],
+      "answer": 2,
+      "explanation": "the elephant in the room — hamma biladigan, lekin hech kim gapirmaydigan muammo."
+    },
+    {
+      "emojis": ["🐦", "🐦", "🪨"],
+      "options": ["birds of a feather", "kill two birds with one stone", "a bird's-eye view", "as free as a bird"],
+      "answer": 1,
+      "explanation": "kill two birds with one stone — bitta ish bilan ikki maqsadga erishmoq."
+    },
+    {
+      "emojis": ["🔋", "🔌"],
+      "options": ["run out of steam", "recharge my batteries", "power cut", "plug in"],
+      "answer": 1,
+      "explanation": "recharge my batteries — dam olib, kuch to‘plamoq. Speaking Part 1 dagi “weekend” savollari uchun zo‘r!"
+    },
+    {
+      "emojis": ["🏭", "👣"],
+      "options": ["footpath", "carbon footprint", "industrial zone", "step by step"],
+      "answer": 1,
+      "explanation": "carbon footprint — insonning atrof-muhitga chiqaradigan CO₂ miqdori. Environment essaylari uchun."
+    },
+    {
+      "emojis": ["🌍", "🌡️"],
+      "options": ["climate zone", "heatwave", "global warming", "world record"],
+      "answer": 2,
+      "explanation": "global warming — global isish. Sinonimi: climate change. Writingda ikkalasini almashtirib ishlating."
+    }
+  ],
+  "truefalse": [
+    {
+      "sentence": "I am agree with this opinion.",
+      "correct": false,
+      "explanation": "❌ Xato. agree — fe'l, oldiga “am” qo‘yilmaydi. To‘g‘ri: “I agree with this opinion.”"
+    },
+    {
+      "sentence": "He gave me some useful advices.",
+      "correct": false,
+      "explanation": "❌ Xato. advice sanalmaydigan ot, -s olmaydi. To‘g‘ri: “some useful advice” yoki “a piece of advice”."
+    },
+    {
+      "sentence": "It depends on the situation.",
+      "correct": true,
+      "explanation": "✅ To‘g‘ri! depend doim “on” bilan keladi. “It depends of” deyish xato."
+    },
+    {
+      "sentence": "She explained me the rule.",
+      "correct": false,
+      "explanation": "❌ Xato. explain something TO someone. To‘g‘ri: “She explained the rule to me.”"
+    },
+    {
+      "sentence": "I have been to London last year.",
+      "correct": false,
+      "explanation": "❌ Xato. Aniq o‘tgan vaqt (last year) bilan Past Simple ishlatiladi: “I went to London last year.”"
+    },
+    {
+      "sentence": "The number of students has increased.",
+      "correct": true,
+      "explanation": "✅ To‘g‘ri! “The number of” + birlik fe'l (has). Lekin “A number of students have…”"
+    },
+    {
+      "sentence": "People is becoming more health-conscious.",
+      "correct": false,
+      "explanation": "❌ Xato. people — ko‘plik. To‘g‘ri: “People are becoming more health-conscious.”"
+    },
+    {
+      "sentence": "I look forward to hear from you.",
+      "correct": false,
+      "explanation": "❌ Xato. look forward to + -ing. To‘g‘ri: “I look forward to hearing from you.”"
+    }
+  ]
+}
