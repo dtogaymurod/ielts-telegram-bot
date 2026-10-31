@@ -22,7 +22,7 @@
 import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { sendMessage, sendLocalPhoto, validateConfig } from './telegram.js';
-import { renderPoster, renderLoneWolfPoster, captionLength, CAPTION_LIMIT } from './poster.js';
+import { renderPoster, renderLoneWolfPoster } from './poster.js';
 import {
   getTimeSlot, getNextSkill, getRotationState, getSkillHackFallback, isLoneWolfDay, getNextLoneWolfPost,
   peekLoneWolfPost, markLoneWolfPublished,
@@ -76,20 +76,44 @@ async function writeSkillPost(skill) {
   return postText;
 }
 
-/** Branded poster image with the post as its caption (text-only if rendering fails). */
+const SKILL_ICONS = { LISTENING: '🎧', READING: '📖', WRITING: '✍️', SPEAKING: '🗣️' };
+const SKILL_NAMES = { LISTENING: 'Listening', READING: 'Reading', WRITING: 'Writing', SPEAKING: 'Speaking' };
+const CALLS = [
+  '💬 Siz ham shu xatoga yo‘l qo‘yganmisiz? Izohda yozing 👇',
+  '💬 Bu usulni bilarmidingiz? Izohda ✅ yoki ❌ qoldiring 👇',
+  '💬 Savolingiz bo‘lsa, izohda yozing, javob beraman 👇',
+  '👥 Shu maslahat kerak bo‘ladigan do‘stingizni belgilang!',
+];
+
+/**
+ * The poster already shows the whole post, so the caption only points to it
+ * and adds a call to action instead of repeating the text.
+ */
+export function buildSkillCaption(postText) {
+  const skill = (/IELTS\s+([A-Z]+)/.exec(postText.replace(/<[^>]+>/g, '')) || [])[1] || '';
+  const icon = SKILL_ICONS[skill] || '💡';
+  const name = SKILL_NAMES[skill] ? `${SKILL_NAMES[skill]} ` : '';
+  const day = Math.floor(Date.now() / 86_400_000);
+  return [
+    `${icon} <b>Bugungi ${name}sirri rasmda</b> 👆`,
+    '',
+    '🔖 Saqlab qo‘ying va imtihondan oldin yana bir ko‘zdan kechiring.',
+    CALLS[day % CALLS.length],
+    '',
+    '👉 Telegram: @dilshod_english',
+    '📸 Instagram: instagram.com/dilshod.ustoz',
+  ].join('\n');
+}
+
+/** Branded poster image (the whole post) with a short caption; the full text alone if the poster fails. */
 async function sendSkillPost(postText) {
   const posterPath = renderPoster(postText);
   if (posterPath) {
     console.log('🖼 Sending poster...');
     try {
-      if (captionLength(postText) <= CAPTION_LIMIT) {
-        const result = await sendLocalPhoto(posterPath, postText);
-        console.log(`✅ Poster sent with caption! Message ID: ${result.message_id}`);
-        return;
-      }
-      // Too long for a photo caption: poster first, full text right after
-      await sendLocalPhoto(posterPath, '');
-      console.log('ℹ️ Post is longer than a caption allows, sending the text separately.');
+      const result = await sendLocalPhoto(posterPath, buildSkillCaption(postText));
+      console.log(`✅ Poster sent! Message ID: ${result.message_id}`);
+      return;
     } catch (error) {
       console.error('⚠️ Poster send failed, falling back to text post:', error.message);
     }
@@ -209,7 +233,7 @@ async function main() {
     console.log('\n═════════════════════════════════════\n');
     console.log(`• Scroll-free on mobile: ${charCount <= 850 ? 'YES ✅' : 'NO ⚠️'}`);
     const previewPoster = renderPoster(postText);
-    if (previewPoster) console.log(`🖼 Poster preview saved: ${previewPoster}`);
+    if (previewPoster) console.log(`🖼 Poster preview saved: ${previewPoster}\n\nCaption:\n${buildSkillCaption(postText)}`);
     console.log('✅ Dry run complete. No message sent.');
     return;
   }
