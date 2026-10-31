@@ -1,0 +1,66 @@
+name: IELTS Review (preview & reminder)
+
+on:
+  # Started by the external timer (cron-job.org → workflow_dispatch), see docs/TIMER_SETUP.md.
+  #   21:00 Tashkent — mode: preview (tomorrow's posts go to the admin with ✅ / ❌ buttons)
+  #   09:00 Tashkent — mode: remind  (reminder for posts still waiting)
+  # Does nothing until the TELEGRAM_ADMIN_ID secret is set (see src/review.js).
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'preview (21:00) or remind (09:00)'
+        required: true
+        default: 'preview'
+        type: choice
+        options:
+          - preview
+          - remind
+
+concurrency:
+  group: channel-state
+  cancel-in-progress: false
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Setup Python (poster rendering)
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install poster dependencies
+        run: |
+          pip install -r poster/requirements.txt
+          sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-color-emoji
+
+      - name: Run review step
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          TELEGRAM_ADMIN_ID: ${{ secrets.TELEGRAM_ADMIN_ID }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node src/review.js ${{ github.event.inputs.mode }}
+
+      - name: Save review state
+        if: always()
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add content/*.json
+          git diff --staged --quiet || git commit -m "👀 Review state updated [skip ci]"
+          git pull --rebase && git push || echo "Nothing to push"

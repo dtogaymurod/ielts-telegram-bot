@@ -18,6 +18,10 @@
  *   node src/genz-post.js                  — post today's kind
  *   node src/genz-post.js --kind emoji     — force a kind
  *   node src/genz-post.js --dry-run        — render everything, send nothing
+ *
+ * With review on (TELEGRAM_ADMIN_ID set, see src/review.js) the auto run
+ * publishes only the draft the admin approved the evening before; a forced
+ * --kind still posts straight away.
  */
 
 import { execFileSync } from 'child_process';
@@ -26,6 +30,7 @@ import { tmpdir } from 'os';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { sendLocalAlbum, sendLocalPhoto, sendMessage, sendPoll, sendQuiz, validateConfig } from './telegram.js';
+import { approvedDraft, dateAt, markPublished, openReview, reviewEnabled } from './review.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const POSTS_FILE = join(__dirname, '..', 'content', 'genz-posts.json');
@@ -39,6 +44,18 @@ const KINDS_BY_DAY = {
   4: ['collocation', 'poll'],
   5: ['emoji'],
   6: ['truefalse'],
+};
+const LABELS = {
+  upgrade: 'Oddiy vs Band 9',
+  slang: 'TikTok vs IELTS',
+  emoji: 'Emoji topishmoq',
+  truefalse: 'To‘g‘ri yoki xato?',
+  redflag: 'Red flag / Green flag',
+  collocation: 'Make, do yoki take?',
+  band: 'Band 5 vs Band 8',
+  pov: 'POV (matn)',
+  poll: 'So‘rovnoma',
+  weekly: 'Hafta testi',
 };
 const FOOTER = ['👉 Telegram: @dilshod_english', '📸 Instagram: instagram.com/dilshod.ustoz'];
 
@@ -55,10 +72,13 @@ export function weekNumber(date = tashkentNow()) {
   return Math.floor((date.getTime() - Date.UTC(1970, 0, 5)) / (7 * 24 * 60 * 60 * 1000));
 }
 
-function pickKind() {
-  if (kindArg && kindArg !== 'auto') return kindArg;
-  const kinds = KINDS_BY_DAY[tashkentNow().getUTCDay()];
-  return kinds[weekNumber() % kinds.length];
+const isForced = Boolean(kindArg && kindArg !== 'auto');
+
+/** The day's kind; `date` is a Date whose UTC fields read as Tashkent time. */
+function pickKind(date = tashkentNow()) {
+  if (isForced) return kindArg;
+  const kinds = KINDS_BY_DAY[date.getUTCDay()];
+  return kinds[weekNumber(date) % kinds.length];
 }
 
 /** Fill in the fixed title/subtitle for the kinds that share one. */
@@ -189,9 +209,9 @@ function renderPosters(post) {
 }
 
 /** Turn one bank entry into the list of Telegram messages to send, in order. */
-export function buildMessages(kind, post, data) {
+export function buildMessages(kind, post, data, week = weekNumber()) {
   if (kind === 'weekly') {
-    const quizzes = buildWeeklyQuizzes(data);
+    const quizzes = buildWeeklyQuizzes(data, week);
     if (quizzes.length < 3) return [];
     return [
       {
@@ -238,19 +258,56 @@ async function send(message) {
   }
 }
 
-async function main() {
-  const kind = pickKind();
+async function sendAll(messages) {
+  for (const message of messages) {
+    const result = await send(message);
+    console.log(`✅ ${message.type} sent!`, Array.isArray(result) ? '' : `Message ID: ${result.message_id}`);
+  }
+}
+
+function loadPost(data, kind, index) {
+  if (kind === 'weekly') return null;
+  if (!data[kind]) throw new Error(`Unknown kind "${kind}"`);
+  return data[kind][index] ? withDefaults(kind, data[kind][index]) : undefined;
+}
+
+/** Evening preview for review: tomorrow's 12:00 post (date is YYYY-MM-DD). */
+export async function prepareGenzDraft(date) {
+  const day = dateAt(date);
+  const kind = pickKind(day);
   const data = JSON.parse(readFileSync(POSTS_FILE, 'utf-8'));
   const index = data.next_index[kind] || 0;
+  const post = loadPost(data, kind, index);
+  if (post === undefined) throw new Error(`"${kind}" postlari tugadi, content/genz-posts.json ga yangilarini qo‘shish kerak`);
+  const messages = buildMessages(kind, post, data, weekNumber(day));
+  if (!messages.length) return null;
+  return {
+    slot: '12:00',
+    label: `${LABELS[kind]}${kind === 'weekly' ? '' : ` #${index + 1}`}`,
+    meta: { kind, index },
+    send: () => sendAll(messages),
+  };
+}
 
-  let post = null;
-  if (kind !== 'weekly') {
-    if (!data[kind]) throw new Error(`Unknown kind "${kind}"`);
-    if (!data[kind][index]) {
-      console.log(`ℹ️ No unused "${kind}" posts left. Add more to content/genz-posts.json.`);
-      return;
-    }
-    post = withDefaults(kind, data[kind][index]);
+async function main() {
+  const data = JSON.parse(readFileSync(POSTS_FILE, 'utf-8'));
+  let kind = pickKind();
+  let index = data.next_index[kind] || 0;
+
+  // Review on: publish only what the admin approved last night
+  let review = null;
+  if (reviewEnabled() && !isDryRun && !isForced) {
+    validateConfig();
+    review = await openReview();
+    const draft = await approvedDraft(review, '12:00');
+    if (!draft) return;
+    ({ kind, index } = draft.meta);
+  }
+
+  const post = loadPost(data, kind, index);
+  if (post === undefined) {
+    console.log(`ℹ️ No unused "${kind}" posts left. Add more to content/genz-posts.json.`);
+    return;
   }
   console.log(`✨ ${kind} post #${index + 1}`);
 
@@ -267,13 +324,11 @@ async function main() {
   }
 
   validateConfig();
-  for (const message of messages) {
-    const result = await send(message);
-    console.log(`✅ ${message.type} published!`, Array.isArray(result) ? '' : `Message ID: ${result.message_id}`);
-  }
+  await sendAll(messages);
 
-  data.next_index[kind] = index + 1;
+  data.next_index[kind] = Math.max(data.next_index[kind] || 0, index + 1);
   writeFileSync(POSTS_FILE, JSON.stringify(data, null, 2) + '\n', 'utf-8');
+  if (review) await markPublished(review, '12:00');
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
