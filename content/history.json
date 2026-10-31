@@ -166,7 +166,8 @@
     "Listening Name Spelling Trap",
     "Listening Negative Prefix Trap",
     "Listening Multiple Choice Option Swap Trap",
-    "Listening Ordinal Numbers Trap"
+    "Listening Ordinal Numbers Trap",
+    "Listening Decoy Dates Trap"
   ],
   "generateReadingHack": [
     "False va Not Given farqi",
