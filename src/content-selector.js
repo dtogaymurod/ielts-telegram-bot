@@ -113,11 +113,10 @@ export function getSkillHackFallback(skill) {
 
 /**
  * Check if today is a Lone Wolf scheduled day (Tuesday, Thursday, Saturday) in Tashkent time (UTC+5)
+ * @param {Date} [tashkentTime] - a Date whose UTC fields read as Tashkent time (default: now)
  * @returns {boolean}
  */
-export function isLoneWolfDay() {
-  const now = new Date();
-  const tashkentTime = new Date(now.getTime() + 5 * 60 * 60 * 1000);
+export function isLoneWolfDay(tashkentTime = new Date(Date.now() + 5 * 60 * 60 * 1000)) {
   const day = tashkentTime.getUTCDay(); // 0: Sun, 1: Mon, 2: Tue, 3: Wed, 4: Thu, 5: Fri, 6: Sat
   return day === 2 || day === 4 || day === 6; // Tuesday, Thursday, Saturday
 }
@@ -165,3 +164,24 @@ export function getNextLoneWolfPost() {
   return null;
 }
 
+/**
+ * Peek at the next unpublished Lone Wolf task without changing the queue
+ * @returns {object|null}
+ */
+export function peekLoneWolfPost() {
+  if (!existsSync(LONE_WOLF_FILE)) return null;
+  const data = JSON.parse(readFileSync(LONE_WOLF_FILE, 'utf-8'));
+  return data.posts[data.last_published_index || 0] || null;
+}
+
+/**
+ * Mark a reviewed Lone Wolf task as published (by its "index" number)
+ * @param {number} index
+ */
+export function markLoneWolfPublished(index) {
+  const data = JSON.parse(readFileSync(LONE_WOLF_FILE, 'utf-8'));
+  const position = data.posts.findIndex((post) => post.index === index);
+  data.last_published_index = Math.max(data.last_published_index || 0, position + 1);
+  data.last_published_date = getTashkentDateString();
+  writeFileSync(LONE_WOLF_FILE, JSON.stringify(data, null, 2), 'utf-8');
+}

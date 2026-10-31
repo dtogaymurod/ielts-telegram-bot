@@ -1,10 +1,9 @@
 name: IELTS Channel Auto-Post
 
 on:
-  schedule:
-    - cron: '30 14 * * *' # 19:30 Tashkent (14:30 UTC) — Daily Prime-Time Post (Listening ➡️ Reading ➡️ Writing ➡️ Speaking)
-
-  # Manual trigger for testing
+  # Started on time by an external timer (cron-job.org → workflow_dispatch), see docs/TIMER_SETUP.md.
+  # GitHub's own schedule ran these posts 3–6 hours late, so it is switched off.
+  # Daily 19:30 Tashkent — Prime-Time Post (Listening ➡️ Reading ➡️ Writing ➡️ Speaking)
   workflow_dispatch:
     inputs:
       skill:
@@ -23,6 +22,10 @@ on:
         required: false
         default: false
         type: boolean
+
+concurrency:
+  group: channel-state
+  cancel-in-progress: false
 
 jobs:
   post-to-channel:
@@ -48,12 +51,15 @@ jobs:
           python-version: '3.12'
 
       - name: Install poster dependencies
-        run: pip install -r poster/requirements.txt
+        run: |
+          pip install -r poster/requirements.txt
+          sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-color-emoji
 
       - name: Post to Telegram
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          TELEGRAM_ADMIN_ID: ${{ secrets.TELEGRAM_ADMIN_ID }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           SKILL: ${{ github.event.inputs.skill }}
         run: |
@@ -70,4 +76,4 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add content/*.json
           git diff --staged --quiet || git commit -m "📊 Update skill rotation & content tracking [skip ci]"
-          git push || echo "Nothing to push"
+          git pull --rebase && git push || echo "Nothing to push"

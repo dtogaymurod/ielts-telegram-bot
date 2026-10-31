@@ -10,6 +10,19 @@ const CHANNEL_ID = process.env.TELEGRAM_CHANNEL_ID;
 
 const BASE_URL = `https://api.telegram.org/bot${BOT_TOKEN}`;
 
+// Where the send* helpers post. The review flow points it at the admin's
+// private chat to show a preview, then back at the channel.
+let targetChat = CHANNEL_ID;
+
+export function setTargetChat(chatId) {
+  targetChat = chatId;
+}
+
+/** Polls must be anonymous in a channel and can't be in a private chat. */
+function anonymous() {
+  return targetChat === CHANNEL_ID;
+}
+
 /**
  * Make a request to the Telegram Bot API with retry logic
  */
@@ -49,13 +62,20 @@ async function telegramRequest(method, body, retries = 3) {
 }
 
 /**
+ * Call any Bot API method (used by the review flow for buttons and updates)
+ */
+export async function callApi(method, body) {
+  return telegramRequest(method, body);
+}
+
+/**
  * Send a text message to the channel
  * @param {string} text - HTML formatted text (max 4096 chars)
  * @param {object} options - Additional options
  */
 export async function sendMessage(text, options = {}) {
   return telegramRequest('sendMessage', {
-    chat_id: CHANNEL_ID,
+    chat_id: targetChat,
     text: text,
     parse_mode: 'HTML',
     disable_web_page_preview: options.disablePreview ?? true,
@@ -72,15 +92,50 @@ export async function sendMessage(text, options = {}) {
  */
 export async function sendQuiz(question, options, correctIndex, explanation = '') {
   return telegramRequest('sendPoll', {
-    chat_id: CHANNEL_ID,
+    chat_id: targetChat,
     question: question,
     options: options,
     type: 'quiz',
     correct_option_id: correctIndex,
     explanation: explanation,
     explanation_parse_mode: 'HTML',
-    is_anonymous: true,
+    is_anonymous: anonymous(),
   });
+}
+
+/**
+ * Send a regular (non-quiz) anonymous poll to the channel
+ * @param {string} question - Poll question (max 300 chars)
+ * @param {string[]} options - Answer options (2-10 items, max 100 chars each)
+ */
+export async function sendPoll(question, options) {
+  return telegramRequest('sendPoll', {
+    chat_id: targetChat,
+    question: question,
+    options: options,
+    type: 'regular',
+    is_anonymous: anonymous(),
+  });
+}
+
+/**
+ * Send local photos as one album (swipeable carousel) with a caption on the first
+ * @param {string[]} filePaths - 2-10 local photos
+ * @param {string} caption - HTML formatted caption (max 1024 chars)
+ */
+export async function sendLocalAlbum(filePaths, caption = '') {
+  const formData = new FormData();
+  formData.append('chat_id', targetChat);
+  const media = filePaths.map((filePath, i) => {
+    formData.append(`photo${i}`, new Blob([readFileSync(filePath)]), `photo${i}.png`);
+    return { type: 'photo', media: `attach://photo${i}`, ...(i === 0 ? { caption, parse_mode: 'HTML' } : {}) };
+  });
+  formData.append('media', JSON.stringify(media));
+
+  const response = await fetch(`${BASE_URL}/sendMediaGroup`, { method: 'POST', body: formData });
+  const data = await response.json();
+  if (!data.ok) throw new Error(`Telegram API error [${data.error_code}]: ${data.description}`);
+  return data.result;
 }
 
 /**
@@ -90,7 +145,7 @@ export async function sendQuiz(question, options, correctIndex, explanation = ''
  */
 export async function sendPhoto(photoUrl, caption = '') {
   return telegramRequest('sendPhoto', {
-    chat_id: CHANNEL_ID,
+    chat_id: targetChat,
     photo: photoUrl,
     caption: caption,
     parse_mode: 'HTML',
@@ -105,7 +160,7 @@ export async function sendPhoto(photoUrl, caption = '') {
 export async function sendLocalPhoto(filePath, caption = '') {
   const url = `${BASE_URL}/sendPhoto`;
   const formData = new FormData();
-  formData.append('chat_id', CHANNEL_ID);
+  formData.append('chat_id', targetChat);
   
   const fileBuffer = readFileSync(filePath);
   const blob = new Blob([fileBuffer]);
@@ -149,7 +204,7 @@ export async function sendLocalPhoto(filePath, caption = '') {
 export async function sendDocument(filePath, fileName, caption = '') {
   const url = `${BASE_URL}/sendDocument`;
   const formData = new FormData();
-  formData.append('chat_id', CHANNEL_ID);
+  formData.append('chat_id', targetChat);
   
   const fileBuffer = readFileSync(filePath);
   const blob = new Blob([fileBuffer]);
@@ -197,7 +252,7 @@ export async function sendDocumentByFileId(fileId, caption = '') {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          chat_id: CHANNEL_ID,
+          chat_id: targetChat,
           document: fileId,
           caption,
           parse_mode: 'HTML',
