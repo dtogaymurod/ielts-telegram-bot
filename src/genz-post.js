@@ -42,10 +42,6 @@ function pickKind() {
   return KINDS_BY_DAY[tashkentDay];
 }
 
-function escapeHtml(text) {
-  return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-}
-
 /** Fill in the fixed title/subtitle for the quiz kinds. */
 export function withDefaults(kind, post) {
   const defaults = {
@@ -55,53 +51,31 @@ export function withDefaults(kind, post) {
   return { kind, ...defaults[kind], ...post };
 }
 
+/**
+ * The caption complements the poster instead of repeating it: the poster
+ * shows the words or the question, the caption adds a rule, an example
+ * sentence or a hint (the quiz explanation carries the answer).
+ */
 export function buildCaption(post) {
-  const pairs = () => post.rows.map(([a, b]) => `▫️ ${escapeHtml(a)} → <b>${escapeHtml(b)}</b>`);
-  const parts = {
-    upgrade: () => [
-      '😎 <b>ODDIY vs BAND 9</b>',
-      '━━━━━━━━━━━━━━━━━━━━',
-      '',
-      `<b>${escapeHtml(post.title)}</b> ${escapeHtml(post.subtitle)}:`,
-      '',
-      ...pairs(),
-      '',
-      "🔖 Saqlab qo'ying va do'stingizga yuboring!",
-    ],
-    slang: () => [
-      '📱 <b>TIKTOK vs IELTS</b> 🎓',
-      '━━━━━━━━━━━━━━━━━━━━',
-      '',
-      `<b>${escapeHtml(post.title)}</b> ${escapeHtml(post.subtitle)}:`,
-      '',
-      ...pairs(),
-      '',
-      '💬 Siz qaysi birini ko‘p ishlatasiz? Izohda yozing 😅',
-    ],
-    emoji: () => [
-      '🧩 <b>EMOJI TOPISHMOQ</b>',
-      '━━━━━━━━━━━━━━━━━━━━',
-      '',
-      `${post.emojis.join(' + ')} = ❓`,
-      '',
-      'Bu qaysi IELTS so‘zi yoki iborasi? Pastdagi quizda javob bering 👇',
-    ],
-    truefalse: () => [
-      '🤔 <b>TO‘G‘RI YOKI XATO?</b>',
-      '━━━━━━━━━━━━━━━━━━━━',
-      '',
-      `<i>“${escapeHtml(post.sentence)}”</i>`,
-      '',
-      'Gapni o‘qing va pastdagi quizda javob bering 👇',
-    ],
+  const headers = {
+    upgrade: '😎 <b>ODDIY vs BAND 9</b>',
+    slang: '📱 <b>TIKTOK vs IELTS</b> 🎓',
+    emoji: '🧩 <b>EMOJI TOPISHMOQ</b>',
+    truefalse: '🤔 <b>TO‘G‘RI YOKI XATO?</b>',
   };
-  return [...parts[post.kind](), '', ...FOOTER].join('\n');
+  const calls = {
+    upgrade: "🔖 Saqlab qo'ying va do'stingizga yuboring!",
+    slang: '💬 Siz qaysi birini ko‘p ishlatasiz? Izohda yozing 😅',
+    emoji: 'Javobingizni pastdagi quizda belgilang 👇',
+    truefalse: 'O‘ylab ko‘ring va pastdagi quizda javob bering 👇',
+  };
+  return [headers[post.kind], '', post.caption, '', calls[post.kind], '', ...FOOTER].join('\n');
 }
 
 export function buildQuiz(post) {
   if (post.kind === 'emoji') {
     return {
-      question: `${post.emojis.join(' + ')} = ? Bu qaysi so‘z?`,
+      question: 'Rasmdagi emojilar qaysi so‘z yoki iborani bildiradi?',
       options: post.options,
       correct: post.answer,
       explanation: post.explanation,
@@ -109,7 +83,7 @@ export function buildQuiz(post) {
   }
   if (post.kind === 'truefalse') {
     return {
-      question: `Bu gap to‘g‘rimi?\n“${post.sentence}”`,
+      question: 'Rasmdagi gap to‘g‘rimi?',
       options: ['✅ To‘g‘ri', '❌ Xato'],
       correct: post.correct ? 0 : 1,
       explanation: post.explanation,
