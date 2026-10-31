@@ -259,6 +259,564 @@
         ]
       ],
       "caption": "📌 Part 1 da faqat “Yes” yoki “No” deb to‘xtamang. Boshlovchi iboradan keyin yana 1–2 gap qo‘shing.\n\n🗣 Misol: <i>Do you cook often? — <b>More often than not</b>, yes. I usually make dinner for my family.</i>"
+    },
+    {
+      "title": "His-tuyg‘ularni aniq ayting",
+      "subtitle": "“very sad” o‘rniga bitta kuchli so‘z",
+      "rows": [
+        [
+          "very sad",
+          "devastated"
+        ],
+        [
+          "very angry",
+          "furious"
+        ],
+        [
+          "very scared",
+          "terrified"
+        ],
+        [
+          "very surprised",
+          "astonished"
+        ],
+        [
+          "worried",
+          "anxious"
+        ],
+        [
+          "nervous",
+          "apprehensive"
+        ]
+      ],
+      "caption": "📌 Bu so‘zlar Speaking Part 2 dagi “Describe a time when…” savollarida juda kerak bo‘ladi.\n\n🗣 Misol: <i>I was absolutely <b>terrified</b> before my first exam, but <b>astonished</b> by my result.</i>"
+    },
+    {
+      "title": "Odamni tasvirlang",
+      "subtitle": "“Describe a person” savollari uchun",
+      "rows": [
+        [
+          "nice",
+          "considerate"
+        ],
+        [
+          "funny",
+          "witty"
+        ],
+        [
+          "clever",
+          "bright"
+        ],
+        [
+          "strict",
+          "demanding"
+        ],
+        [
+          "friendly",
+          "approachable"
+        ],
+        [
+          "quiet",
+          "reserved"
+        ]
+      ],
+      "caption": "📌 Bitta sifat yetarli emas: uni misol bilan isbotlang.\n\n🗣 Misol: <i>My teacher is really <b>approachable</b>. You can ask her anything, even after class.</i>"
+    },
+    {
+      "title": "Joyni tasvirlang",
+      "subtitle": "Shahar, park, kafe haqida gapirganda",
+      "rows": [
+        [
+          "nice",
+          "picturesque"
+        ],
+        [
+          "crowded",
+          "bustling"
+        ],
+        [
+          "quiet",
+          "tranquil"
+        ],
+        [
+          "old",
+          "historic"
+        ],
+        [
+          "dirty",
+          "polluted"
+        ],
+        [
+          "modern",
+          "state-of-the-art"
+        ]
+      ],
+      "caption": "📌 <b>bustling</b> ijobiy (jonli, gavjum), <b>crowded</b> esa ko‘pincha salbiy ma'noda keladi.\n\n🗣 Misol: <i>The old town is <b>bustling</b> during the day but surprisingly <b>tranquil</b> at night.</i>"
+    },
+    {
+      "title": "Oddiy fe'llarni kuchaytiring",
+      "subtitle": "Writing Task 2 uchun rasmiy variantlar",
+      "rows": [
+        [
+          "get",
+          "obtain"
+        ],
+        [
+          "give",
+          "provide"
+        ],
+        [
+          "show",
+          "illustrate"
+        ],
+        [
+          "buy",
+          "purchase"
+        ],
+        [
+          "make worse",
+          "exacerbate"
+        ],
+        [
+          "make better",
+          "enhance"
+        ]
+      ],
+      "caption": "📌 Speakingda “get” va “buy” tabiiy. Rasmiy fe'llar ko‘proq Writingga mos.\n\n✍️ Misol: <i>Social media can <b>exacerbate</b> loneliness rather than <b>enhance</b> friendships.</i>"
+    },
+    {
+      "title": "Education mavzusi",
+      "subtitle": "Ta'lim haqidagi essaylar uchun",
+      "rows": [
+        [
+          "learn",
+          "acquire knowledge"
+        ],
+        [
+          "test",
+          "assessment"
+        ],
+        [
+          "teacher",
+          "educator"
+        ],
+        [
+          "homework",
+          "assignments"
+        ],
+        [
+          "good student",
+          "high achiever"
+        ],
+        [
+          "leave school",
+          "drop out"
+        ]
+      ],
+      "caption": "📌 Education IELTS Writing Task 2 dagi eng ko‘p uchraydigan mavzulardan biri.\n\n✍️ Misol: <i>Regular <b>assessment</b> helps <b>educators</b> identify students who might <b>drop out</b>.</i>"
+    },
+    {
+      "title": "Environment mavzusi",
+      "subtitle": "Atrof-muhit essaylari uchun",
+      "rows": [
+        [
+          "rubbish",
+          "waste"
+        ],
+        [
+          "dirty air",
+          "air pollution"
+        ],
+        [
+          "cutting trees",
+          "deforestation"
+        ],
+        [
+          "save energy",
+          "conserve energy"
+        ],
+        [
+          "hot weather",
+          "rising temperatures"
+        ],
+        [
+          "throw away less",
+          "reduce waste"
+        ]
+      ],
+      "caption": "📌 Bu so‘zlar ko‘pincha fe'l bilan juft keladi: <b>tackle</b> air pollution, <b>combat</b> deforestation.\n\n✍️ Misol: <i>Governments must take urgent action to <b>combat deforestation</b>.</i>"
+    },
+    {
+      "title": "Technology mavzusi",
+      "subtitle": "Texnologiya haqida gapirganda",
+      "rows": [
+        [
+          "new technology",
+          "cutting-edge technology"
+        ],
+        [
+          "very useful",
+          "indispensable"
+        ],
+        [
+          "used a lot",
+          "widely used"
+        ],
+        [
+          "addicted",
+          "hooked"
+        ],
+        [
+          "change our life",
+          "transform our lives"
+        ],
+        [
+          "old",
+          "outdated"
+        ]
+      ],
+      "caption": "📌 <b>hooked</b> norasmiy, Speakingga mos. Writingda <b>addicted to</b> yoki <b>dependent on</b> deng.\n\n🗣 Misol: <i>Smartphones have become <b>indispensable</b>, and many teenagers are <b>hooked</b>.</i>"
+    },
+    {
+      "title": "Health mavzusi",
+      "subtitle": "Sog‘liq haqidagi savollar uchun",
+      "rows": [
+        [
+          "fat",
+          "overweight"
+        ],
+        [
+          "eat bad food",
+          "have a poor diet"
+        ],
+        [
+          "do sport",
+          "exercise regularly"
+        ],
+        [
+          "ill",
+          "unwell"
+        ],
+        [
+          "healthy food",
+          "nutritious food"
+        ],
+        [
+          "get fat",
+          "put on weight"
+        ]
+      ],
+      "caption": "📌 “fat” odamga nisbatan qo‘pol eshitiladi. IELTSda doim <b>overweight</b> deng.\n\n✍️ Misol: <i>People who <b>have a poor diet</b> are more likely to <b>put on weight</b>.</i>"
+    },
+    {
+      "title": "Work mavzusi",
+      "subtitle": "Ish va kasb haqida gapirganda",
+      "rows": [
+        [
+          "get a job",
+          "find employment"
+        ],
+        [
+          "big salary",
+          "well-paid"
+        ],
+        [
+          "work hard",
+          "put in long hours"
+        ],
+        [
+          "lose a job",
+          "be made redundant"
+        ],
+        [
+          "stressful job",
+          "high-pressure job"
+        ],
+        [
+          "boss",
+          "line manager"
+        ]
+      ],
+      "caption": "📌 <b>be made redundant</b> — ish qisqarishi tufayli bo‘shatilmoq. “fired” esa aybi uchun bo‘shatilganda.\n\n🗣 Misol: <i>My father has a <b>high-pressure job</b> and often <b>puts in long hours</b>.</i>"
+    },
+    {
+      "title": "Vaqt iboralari",
+      "subtitle": "Writing va Task 1 uchun",
+      "rows": [
+        [
+          "now",
+          "nowadays"
+        ],
+        [
+          "before",
+          "previously"
+        ],
+        [
+          "at the same time",
+          "simultaneously"
+        ],
+        [
+          "every year",
+          "annually"
+        ],
+        [
+          "in the end",
+          "eventually"
+        ],
+        [
+          "very fast",
+          "rapidly"
+        ]
+      ],
+      "caption": "📌 Task 1 da vaqt iboralari trendni aniq ko‘rsatadi.\n\n✍️ Misol: <i>Sales grew <b>rapidly</b> and <b>eventually</b> doubled, while costs rose <b>annually</b>.</i>"
+    },
+    {
+      "title": "Sabab va natija",
+      "subtitle": "Essayda fikrni bog‘lash uchun",
+      "rows": [
+        [
+          "this causes",
+          "this leads to"
+        ],
+        [
+          "because of this",
+          "as a result"
+        ],
+        [
+          "the reason is",
+          "this stems from"
+        ],
+        [
+          "has an effect on",
+          "impacts"
+        ],
+        [
+          "helps",
+          "contributes to"
+        ],
+        [
+          "makes happen",
+          "brings about"
+        ]
+      ],
+      "caption": "📌 <b>leads to</b> va <b>contributes to</b> dan keyin ot yoki -ing keladi: leads to <b>pollution</b>, contributes to <b>improving</b>.\n\n✍️ Misol: <i>Urbanisation <b>leads to</b> congestion, which <b>contributes to</b> air pollution.</i>"
+    },
+    {
+      "title": "Taqqoslash iboralari",
+      "subtitle": "Task 1 va Task 2 uchun",
+      "rows": [
+        [
+          "the same",
+          "identical"
+        ],
+        [
+          "different",
+          "distinct"
+        ],
+        [
+          "like",
+          "similar to"
+        ],
+        [
+          "but",
+          "whereas"
+        ],
+        [
+          "much bigger",
+          "considerably larger"
+        ],
+        [
+          "almost the same",
+          "comparable"
+        ]
+      ],
+      "caption": "📌 <b>whereas</b> ikki qarama-qarshi faktni bitta gapda bog‘laydi.\n\n✍️ Misol: <i>Men preferred football, <b>whereas</b> women's figures were <b>comparable</b> across all sports.</i>"
+    },
+    {
+      "title": "Speakingda o‘ylanish iboralari",
+      "subtitle": "Jim qolish o‘rniga shularni ayting",
+      "rows": [
+        [
+          "Umm…",
+          "Let me think…"
+        ],
+        [
+          "I don't understand",
+          "Could you rephrase that?"
+        ],
+        [
+          "Yes, I think so",
+          "I'd say so"
+        ],
+        [
+          "I'm not sure",
+          "I'm not entirely sure"
+        ],
+        [
+          "Interesting question",
+          "That's a tricky one"
+        ],
+        [
+          "That's all",
+          "…so that's about it"
+        ]
+      ],
+      "caption": "📌 Bu iboralar o‘ylash uchun 2–3 soniya beradi va Fluency balini saqlab qoladi.\n\n🗣 Misol: <i>Hmm, <b>that's a tricky one</b>. <b>I'd say</b> it depends on the person's age.</i>"
+    },
+    {
+      "title": "City mavzusi",
+      "subtitle": "Shahar hayoti haqida gapirganda",
+      "rows": [
+        [
+          "big city",
+          "metropolis"
+        ],
+        [
+          "traffic",
+          "congestion"
+        ],
+        [
+          "many buildings",
+          "densely built-up"
+        ],
+        [
+          "people living there",
+          "residents"
+        ],
+        [
+          "cheap",
+          "affordable"
+        ],
+        [
+          "expensive",
+          "costly"
+        ]
+      ],
+      "caption": "📌 <b>affordable housing</b> — essaylarda juda ko‘p uchraydigan juftlik.\n\n✍️ Misol: <i>Many <b>residents</b> of the <b>metropolis</b> struggle to find <b>affordable</b> housing.</i>"
+    },
+    {
+      "title": "Pul haqida gapirish",
+      "subtitle": "Speaking va Writing uchun",
+      "rows": [
+        [
+          "cheap",
+          "inexpensive"
+        ],
+        [
+          "very expensive",
+          "exorbitant"
+        ],
+        [
+          "save money",
+          "cut costs"
+        ],
+        [
+          "rich",
+          "wealthy"
+        ],
+        [
+          "poor",
+          "low-income"
+        ],
+        [
+          "spend a lot",
+          "splash out"
+        ]
+      ],
+      "caption": "📌 <b>splash out on</b> norasmiy va Speakingda zo‘r eshitiladi. Writingda <b>spend heavily on</b> deng.\n\n🗣 Misol: <i>I rarely <b>splash out</b>, but I bought <b>exorbitant</b> concert tickets last year.</i>"
+    },
+    {
+      "title": "Travel mavzusi",
+      "subtitle": "Sayohat haqidagi savollar uchun",
+      "rows": [
+        [
+          "trip",
+          "excursion"
+        ],
+        [
+          "go abroad",
+          "travel overseas"
+        ],
+        [
+          "see places",
+          "go sightseeing"
+        ],
+        [
+          "beautiful view",
+          "stunning scenery"
+        ],
+        [
+          "hotel",
+          "accommodation"
+        ],
+        [
+          "popular place",
+          "tourist hotspot"
+        ]
+      ],
+      "caption": "📌 <b>accommodation</b> sanalmaydigan ot: “accommodations” ❌. Imlosi ham tez-tez xato yoziladi: ikkita c, ikkita m.\n\n🗣 Misol: <i>We <b>went sightseeing</b> all day and the <b>scenery</b> was <b>stunning</b>.</i>"
+    },
+    {
+      "title": "Sport va hobbi",
+      "subtitle": "Bo‘sh vaqt haqida gapirganda",
+      "rows": [
+        [
+          "do sport",
+          "work out"
+        ],
+        [
+          "start a hobby",
+          "take up a hobby"
+        ],
+        [
+          "like football",
+          "be a keen football fan"
+        ],
+        [
+          "play well",
+          "perform impressively"
+        ],
+        [
+          "very tired",
+          "worn out"
+        ],
+        [
+          "stop doing",
+          "give up"
+        ]
+      ],
+      "caption": "📌 <b>take up</b> — yangi mashg‘ulotni boshlamoq, <b>give up</b> — tashlamoq.\n\n🗣 Misol: <i>I <b>took up</b> swimming last year, and now I <b>work out</b> three times a week.</i>"
+    },
+    {
+      "title": "Essay xulosasi",
+      "subtitle": "Conclusion paragrafi uchun",
+      "rows": [
+        [
+          "So,",
+          "Overall,"
+        ],
+        [
+          "I think both sides",
+          "Having considered both sides,"
+        ],
+        [
+          "As I said",
+          "As discussed above,"
+        ],
+        [
+          "it is good",
+          "it is advantageous"
+        ],
+        [
+          "people must",
+          "it is essential that people"
+        ],
+        [
+          "this problem",
+          "this pressing issue"
+        ]
+      ],
+      "caption": "📌 Xulosada yangi fikr qo‘shmang: faqat pozitsiyangizni boshqa so‘zlar bilan takrorlang.\n\n✍️ Misol: <i><b>Having considered both sides</b>, I believe <b>it is essential that</b> governments act now.</i>"
     }
   ],
   "slang": [
@@ -631,6 +1189,277 @@
       "answer": 2,
       "explanation": "global warming — global isish. Sinonimi: climate change. Writingda ikkalasini almashtirib ishlating.",
       "caption": "💡 Ishora: sayyoramiz yil sayin isib bormoqda…"
+    },
+    {
+      "emojis": [
+        "🌧️",
+        "🐱",
+        "🐶"
+      ],
+      "options": [
+        "raining cats and dogs",
+        "a pet shop",
+        "an animal lover",
+        "a rainy pet"
+      ],
+      "answer": 0,
+      "explanation": "raining cats and dogs — chelaklab yomg‘ir yog‘moq. Kulgili ibora, lekin hozir kamroq ishlatiladi.",
+      "caption": "💡 Ishora: ob-havo juda yomon bo‘lganda aytiladigan kulgili ibora."
+    },
+    {
+      "emojis": [
+        "🐦",
+        "🌅"
+      ],
+      "options": [
+        "a free bird",
+        "an early bird",
+        "a sunrise",
+        "a morning call"
+      ],
+      "answer": 1,
+      "explanation": "an early bird — erta turadigan odam. “I'm an early bird, so I study best in the morning.”",
+      "caption": "💡 Ishora: Speaking Part 1 dagi “Are you a morning person?” savoliga javob."
+    },
+    {
+      "emojis": [
+        "🦉",
+        "🌙"
+      ],
+      "options": [
+        "a night owl",
+        "a moonlight",
+        "a wise man",
+        "a night shift"
+      ],
+      "answer": 0,
+      "explanation": "a night owl — kechasi bedor, kech yotadigan odam. Early bird ning teskarisi.",
+      "caption": "💡 Ishora: o‘tgan haftadagi topishmoqning teskarisi 😉"
+    },
+    {
+      "emojis": [
+        "⏰",
+        "💸"
+      ],
+      "options": [
+        "time flies",
+        "time is money",
+        "pay day",
+        "a waste of money"
+      ],
+      "answer": 1,
+      "explanation": "time is money — vaqt bu pul. Vaqtni behuda sarflamaslik haqida.",
+      "caption": "💡 Ishora: mashhur maqol, vaqtning qadri haqida."
+    },
+    {
+      "emojis": [
+        "🔥",
+        "😩"
+      ],
+      "options": [
+        "a heatwave",
+        "burnout",
+        "a fire drill",
+        "a warm-up"
+      ],
+      "answer": 1,
+      "explanation": "burnout — haddan tashqari charchash. Work va Education essaylari uchun foydali so‘z.",
+      "caption": "💡 Ishora: ko‘p ishlab, butunlay holdan toyish."
+    },
+    {
+      "emojis": [
+        "🛋️",
+        "🥔"
+      ],
+      "options": [
+        "a couch potato",
+        "a lazy chef",
+        "a sofa bed",
+        "a fast food"
+      ],
+      "answer": 0,
+      "explanation": "a couch potato — kun bo‘yi divanda televizor ko‘radigan dangasa odam.",
+      "caption": "💡 Ishora: kun bo‘yi divandan turmaydigan odam."
+    },
+    {
+      "emojis": [
+        "🍎",
+        "👁️"
+      ],
+      "options": [
+        "an eye-opener",
+        "the apple of my eye",
+        "a sharp eye",
+        "an apple a day"
+      ],
+      "answer": 1,
+      "explanation": "the apple of my eye — eng sevimli, ko‘zimning oqu qorasi. “My little sister is the apple of my eye.”",
+      "caption": "💡 Ishora: juda yaxshi ko‘rgan odamingiz haqida aytiladi."
+    },
+    {
+      "emojis": [
+        "🧊",
+        "🏔️"
+      ],
+      "options": [
+        "the tip of the iceberg",
+        "a cold heart",
+        "a snowball effect",
+        "break the ice"
+      ],
+      "answer": 0,
+      "explanation": "the tip of the iceberg — muammoning faqat ko‘rinib turgan kichik qismi. Essaylarda juda foydali.",
+      "caption": "💡 Ishora: muammoning faqat kichik qismi ko‘rinib turganda."
+    },
+    {
+      "emojis": [
+        "🐟",
+        "🏜️"
+      ],
+      "options": [
+        "a big fish",
+        "like a fish out of water",
+        "fishing for compliments",
+        "a dry joke"
+      ],
+      "answer": 1,
+      "explanation": "like a fish out of water — o‘zini begona, noqulay his qilmoq. “On my first day abroad I felt like a fish out of water.”",
+      "caption": "💡 Ishora: notanish joyda o‘zingizni noqulay his qilganda."
+    },
+    {
+      "emojis": [
+        "🔑",
+        "🏆"
+      ],
+      "options": [
+        "a golden key",
+        "the key to success",
+        "a trophy wife",
+        "win-win"
+      ],
+      "answer": 1,
+      "explanation": "the key to success — muvaffaqiyat kaliti. “Consistency is the key to success.”",
+      "caption": "💡 Ishora: Speaking Part 3 dagi “What makes people successful?” savoli uchun."
+    },
+    {
+      "emojis": [
+        "💰",
+        "🌳"
+      ],
+      "options": [
+        "money doesn't grow on trees",
+        "a money tree",
+        "save for a rainy day",
+        "green energy"
+      ],
+      "answer": 0,
+      "explanation": "money doesn't grow on trees — pul osonlikcha topilmaydi.",
+      "caption": "💡 Ishora: ota-onalar bolalariga tez-tez aytadigan gap 😄"
+    },
+    {
+      "emojis": [
+        "👀",
+        "👀"
+      ],
+      "options": [
+        "keep an eye on",
+        "see eye to eye",
+        "an eye for an eye",
+        "eye contact"
+      ],
+      "answer": 1,
+      "explanation": "see eye to eye — bir fikrda bo‘lmoq. “My brother and I don't always see eye to eye.”",
+      "caption": "💡 Ishora: kimdir bilan bir xil fikrda bo‘lish."
+    },
+    {
+      "emojis": [
+        "🌍",
+        "🏘️"
+      ],
+      "options": [
+        "a global village",
+        "a small town",
+        "world peace",
+        "urban sprawl"
+      ],
+      "answer": 0,
+      "explanation": "a global village — internet tufayli bir-biriga yaqinlashgan dunyo. Globalisation essaylari uchun.",
+      "caption": "💡 Ishora: globalizatsiya haqidagi essaylarning sevimli iborasi."
+    },
+    {
+      "emojis": [
+        "🧠",
+        "✈️"
+      ],
+      "options": [
+        "a brainwave",
+        "brain drain",
+        "a flight mode",
+        "mind travel"
+      ],
+      "answer": 1,
+      "explanation": "brain drain — malakali mutaxassislarning chet elga ketishi. Essaylar uchun zo‘r atama.",
+      "caption": "💡 Ishora: aqlli mutaxassislar boshqa davlatga ketib qolganda."
+    },
+    {
+      "emojis": [
+        "☀️",
+        "🔋"
+      ],
+      "options": [
+        "solar power",
+        "a heatwave",
+        "battery life",
+        "daylight saving"
+      ],
+      "answer": 0,
+      "explanation": "solar power — quyosh energiyasi. Sinonimlari: solar energy, renewable energy.",
+      "caption": "💡 Ishora: Energy va Environment essaylari uchun."
+    },
+    {
+      "emojis": [
+        "🏠",
+        "💻"
+      ],
+      "options": [
+        "a home page",
+        "remote work",
+        "a smart home",
+        "online shopping"
+      ],
+      "answer": 1,
+      "explanation": "remote work — masofaviy ish. Sinonimi: working from home.",
+      "caption": "💡 Ishora: pandemiyadan keyin juda ommalashgan ish turi."
+    },
+    {
+      "emojis": [
+        "📱",
+        "⛓️"
+      ],
+      "options": [
+        "a phone chain",
+        "smartphone addiction",
+        "a mobile network",
+        "screen time"
+      ],
+      "answer": 1,
+      "explanation": "smartphone addiction — telefonga qaramlik. Technology essaylarida tez-tez uchraydi.",
+      "caption": "💡 Ishora: telefondan uzila olmaslik."
+    },
+    {
+      "emojis": [
+        "🎓",
+        "💰"
+      ],
+      "options": [
+        "a scholarship",
+        "tuition fees",
+        "a student loan",
+        "a graduation gift"
+      ],
+      "answer": 1,
+      "explanation": "tuition fees — o‘qish uchun to‘lov. “scholarship” esa grant, ya'ni o‘qish uchun beriladigan pul.",
+      "caption": "💡 Ishora: universitetga to‘lanadigan pul."
     }
   ],
   "truefalse": [
@@ -681,6 +1510,114 @@
       "correct": false,
       "explanation": "❌ Xato. look forward to + -ing. To‘g‘ri: “I look forward to hearing from you.”",
       "caption": "💡 Ishora: <b>look forward to</b> dan keyin fe'l qaysi shaklda keladi?"
+    },
+    {
+      "sentence": "I'm interesting in music.",
+      "correct": false,
+      "explanation": "❌ Xato. interesting — biror narsa qiziq, interested — siz qiziqasiz. To‘g‘ri: “I'm interested in music.”",
+      "caption": "💡 Ishora: <b>interesting</b> va <b>interested</b> farqi nimada?"
+    },
+    {
+      "sentence": "She is good at cooking.",
+      "correct": true,
+      "explanation": "✅ To‘g‘ri! good AT + ot yoki -ing. “good in cooking” deyish xato.",
+      "caption": "💡 Ishora: <b>good</b> so‘zidan keyin qaysi predlog keladi?"
+    },
+    {
+      "sentence": "I have 20 years old.",
+      "correct": false,
+      "explanation": "❌ Xato. Yosh “be” bilan aytiladi: “I am 20 years old” yoki shunchaki “I'm 20.”",
+      "caption": "💡 Ishora: inglizchada yosh qaysi fe'l bilan aytiladi?"
+    },
+    {
+      "sentence": "Can you borrow me your pen?",
+      "correct": false,
+      "explanation": "❌ Xato. lend — qarzga bermoq, borrow — qarzga olmoq. To‘g‘ri: “Can you lend me your pen?”",
+      "caption": "💡 Ishora: <b>borrow</b> va <b>lend</b> farqi."
+    },
+    {
+      "sentence": "Everyone has their own opinion.",
+      "correct": true,
+      "explanation": "✅ To‘g‘ri! everyone birlik fe'l oladi (has), lekin “their” ishlatish mumkin va tabiiy.",
+      "caption": "💡 Ishora: <b>everyone</b> birlikmi yoki ko‘plik?"
+    },
+    {
+      "sentence": "He suggested me to apply.",
+      "correct": false,
+      "explanation": "❌ Xato. To‘g‘ri: “He suggested that I apply” yoki “He suggested applying.”",
+      "caption": "💡 Ishora: <b>suggest</b> fe'lidan keyin qanday tuzilma keladi?"
+    },
+    {
+      "sentence": "I live in Tashkent since 2015.",
+      "correct": false,
+      "explanation": "❌ Xato. “since” bilan Present Perfect kerak: “I have lived in Tashkent since 2015.”",
+      "caption": "💡 Ishora: <b>since 2015</b> qaysi zamonni talab qiladi?"
+    },
+    {
+      "sentence": "The informations are useful.",
+      "correct": false,
+      "explanation": "❌ Xato. information sanalmaydi: “The information is useful.”",
+      "caption": "💡 Ishora: <b>information</b> so‘zini sanash mumkinmi?"
+    },
+    {
+      "sentence": "I am used to waking up early.",
+      "correct": true,
+      "explanation": "✅ To‘g‘ri! be used to + -ing — biror narsaga o‘rganib qolmoq.",
+      "caption": "💡 Ishora: <b>be used to</b> dan keyin fe'l qaysi shaklda keladi?"
+    },
+    {
+      "sentence": "It's more better than before.",
+      "correct": false,
+      "explanation": "❌ Xato. better allaqachon qiyosiy daraja, “more” ortiqcha. To‘g‘ri: “much better”.",
+      "caption": "💡 Ishora: <b>better</b> o‘zi qanday daraja?"
+    },
+    {
+      "sentence": "We discussed about the problem.",
+      "correct": false,
+      "explanation": "❌ Xato. discuss predlogsiz keladi: “We discussed the problem.”",
+      "caption": "💡 Ishora: <b>discuss</b> fe'lidan keyin predlog kerakmi?"
+    },
+    {
+      "sentence": "If I would have time, I would go.",
+      "correct": false,
+      "explanation": "❌ Xato. If qismida “would” ishlatilmaydi: “If I had time, I would go.”",
+      "caption": "💡 Ishora: shart gapning <b>if</b> qismida qaysi zamon keladi?"
+    },
+    {
+      "sentence": "Neither of the answers is correct.",
+      "correct": true,
+      "explanation": "✅ To‘g‘ri! “Neither of” + birlik fe'l (is) rasmiy va to‘g‘ri variant.",
+      "caption": "💡 Ishora: <b>neither of</b> birlik fe'l bilan keladimi?"
+    },
+    {
+      "sentence": "My hobby is reading books.",
+      "correct": true,
+      "explanation": "✅ To‘g‘ri! Lekin Speakingda “I'm really into reading” desangiz, yanada tabiiy eshitiladi.",
+      "caption": "💡 Ishora: <b>hobby is</b> dan keyin <b>-ing</b> shakli kela oladimi?"
+    },
+    {
+      "sentence": "I didn't went to school yesterday.",
+      "correct": false,
+      "explanation": "❌ Xato. didn't dan keyin fe'lning 1-shakli keladi: “I didn't go to school yesterday.”",
+      "caption": "💡 Ishora: <b>didn't</b> dan keyin fe'l qaysi shaklda bo‘ladi?"
+    },
+    {
+      "sentence": "There is many reasons for this.",
+      "correct": false,
+      "explanation": "❌ Xato. reasons ko‘plik: “There are many reasons for this.”",
+      "caption": "💡 Ishora: <b>reasons</b> birlikmi yoki ko‘plik?"
+    },
+    {
+      "sentence": "She married with a doctor.",
+      "correct": false,
+      "explanation": "❌ Xato. marry predlogsiz keladi: “She married a doctor.” Yoki: “She got married to a doctor.”",
+      "caption": "💡 Ishora: <b>marry</b> fe'lidan keyin predlog kerakmi?"
+    },
+    {
+      "sentence": "Although it was raining, but we went out.",
+      "correct": false,
+      "explanation": "❌ Xato. although va but bitta gapda birga kelmaydi: “Although it was raining, we went out.”",
+      "caption": "💡 Ishora: <b>although</b> va <b>but</b> bitta gapda birga kela oladimi?"
     }
   ],
   "redflag": [
