@@ -1,5 +1,5 @@
 {
-  "last_update_id": 111952979,
+  "last_update_id": 111952980,
   "drafts": {
     "2026-11-01 19:30": {
       "date": "2026-11-01",
@@ -18,6 +18,33 @@
         12
       ],
       "published_at": "2026-11-01T14:29:35.014Z"
+    },
+    "2026-11-02 12:00": {
+      "date": "2026-11-02",
+      "slot": "12:00",
+      "label": "Dushanba, 02.11 · 12:00 · Red flag / Green flag #1",
+      "meta": {
+        "kind": "redflag",
+        "index": 0
+      },
+      "status": "approved",
+      "created_at": "2026-11-01T15:59:46.506Z",
+      "buttons_message_id": 16,
+      "decided_at": "2026-11-01T16:05:10.941Z"
+    },
+    "2026-11-02 19:30": {
+      "date": "2026-11-02",
+      "slot": "19:30",
+      "label": "Dushanba, 02.11 · 19:30 · Kundalik post (READING)",
+      "meta": {
+        "type": "skill",
+        "skill": "reading",
+        "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Matnni boshidan oxirigacha o'qish:</b>\n60 daqiqada 3 ta uzun matn va 40 ta savol. Har bir matnni to'liq o'qisangiz, vaqt yetmaydi.\n\n💡 <b>To'g'ri strategiya:</b>\nAvval matnni <b>2-3 daqiqada</b> ko'z yugurtirib chiqing: sarlavha, birinchi gaplar. Keyin savolni o'qib, kerakli joyni toping va faqat o'sha qismni diqqat bilan o'qing.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz",
+        "bank_index": 0
+      },
+      "status": "pending",
+      "created_at": "2026-11-01T15:59:51.355Z",
+      "buttons_message_id": 19
     }
   }
 }
