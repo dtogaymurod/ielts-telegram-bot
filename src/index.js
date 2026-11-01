@@ -25,7 +25,7 @@ import { sendMessage, sendLocalPhoto, validateConfig } from './telegram.js';
 import { renderPoster, renderLoneWolfPoster } from './poster.js';
 import {
   getTimeSlot, getNextSkill, getRotationState, getSkillHackFallback, isLoneWolfDay, getNextLoneWolfPost,
-  peekLoneWolfPost, markLoneWolfPublished,
+  peekLoneWolfPost, markLoneWolfPublished, peekDailyPost, markDailyPostUsed,
 } from './content-selector.js';
 import { generateDailySkillPost } from './gemini.js';
 import { approvedDraft, dateAt, markPublished, openReview, reviewEnabled } from './review.js';
@@ -57,8 +57,24 @@ async function sendLoneWolf(post) {
   console.log(`✅ Lone Wolf text sent! Message ID: ${result.message_id}`);
 }
 
-/** Write the day's skill post with Gemini (pre-screened fallback if AI fails), as safe Telegram HTML. */
+/**
+ * The day's skill post as safe Telegram HTML: the next ready-made post from
+ * content/daily-posts.json; Gemini (then the old fallback list) only when
+ * that skill's bank has run out. Returns { text, bankIndex }.
+ */
 async function writeSkillPost(skill) {
+  const ready = peekDailyPost(skill);
+  if (ready) {
+    console.log(`📚 Ready-made ${skill} post #${ready.index + 1} (${ready.remaining - 1} left after this one)`);
+    return { text: ready.text, bankIndex: ready.index };
+  }
+  console.log(`⚠️ No ready-made ${skill} posts left, asking Gemini...`);
+  const text = await writeGeminiPost(skill);
+  return text ? { text, bankIndex: null } : null;
+}
+
+/** Write the day's skill post with Gemini (pre-screened fallback if AI fails), as safe Telegram HTML. */
+async function writeGeminiPost(skill) {
   console.log(`🤖 Generating compact single-screen post for ${skill}...`);
   let postText = await generateDailySkillPost(skill);
 
@@ -148,13 +164,13 @@ export async function prepareDailyDraft(date) {
     };
   }
   const skill = getRotationState().nextSkill || 'listening';
-  const text = await writeSkillPost(skill);
-  if (!text) throw new Error(`${skill} posti uchun matn yozib bo‘lmadi`);
+  const post = await writeSkillPost(skill);
+  if (!post) throw new Error(`${skill} posti uchun matn topilmadi`);
   return {
     slot: SLOT,
     label: `Kundalik post (${skill.toUpperCase()})`,
-    meta: { type: 'skill', skill, text },
-    send: () => sendSkillPost(text),
+    meta: { type: 'skill', skill, text: post.text, bank_index: post.bankIndex },
+    send: () => sendSkillPost(post.text),
   };
 }
 
@@ -173,6 +189,7 @@ async function publishApproved() {
   } else {
     console.log(`🎯 Publishing approved ${draft.meta.skill} post`);
     await sendSkillPost(draft.meta.text);
+    if (draft.meta.bank_index != null) markDailyPostUsed(draft.meta.skill, draft.meta.bank_index);
     getNextSkill(); // advance the rotation now that the post is out
   }
   await markPublished(review, SLOT);
@@ -217,7 +234,8 @@ async function main() {
   const skill = getNextSkill();
   console.log(`🎯 Today's Selected Skill: [${skill.toUpperCase()}]`);
 
-  const postText = await writeSkillPost(skill);
+  const post = await writeSkillPost(skill);
+  const postText = post?.text;
   if (!postText) {
     console.error(`❌ Could not generate or retrieve content for '${skill}'.`);
     process.exit(1);
@@ -239,6 +257,7 @@ async function main() {
   }
 
   await sendSkillPost(postText);
+  if (post.bankIndex != null) markDailyPostUsed(skill, post.bankIndex);
 }
 
 // Run when executed directly (src/review.js imports prepareDailyDraft)
