@@ -104,32 +104,85 @@ async function refreshButtons(key, draft) {
   }
 }
 
+/** Apply one update (a button tap) to the state. Returns the draft key it changed, or null. */
+async function applyUpdate(state, update) {
+  state.last_update_id = Math.max(state.last_update_id, update.update_id);
+  const query = update.callback_query;
+  if (!query) return null;
+  const match = /^r:(ok|no):(.+)$/.exec(query.data || '');
+  const draft = match && state.drafts[match[2]];
+  let answer = '⚠️ Bu post endi o‘zgartirib bo‘lmaydi';
+  let key = null;
+  if (String(query.from.id) !== String(ADMIN_ID)) {
+    answer = '⛔ Faqat admin tasdiqlay oladi';
+  } else if (draft && ['pending', 'approved', 'rejected'].includes(draft.status)) {
+    draft.status = match[1] === 'ok' ? 'approved' : 'rejected';
+    draft.decided_at = new Date().toISOString();
+    answer = draft.status === 'approved' ? '✅ Qabul qilindi: post vaqtida chiqadi' : '❌ Qabul qilindi: post chiqmaydi';
+    key = match[2];
+  }
+  // Stops the spinner on the button. Fails harmlessly for taps older than a few minutes.
+  try {
+    await callApi('answerCallbackQuery', { callback_query_id: query.id, text: answer });
+  } catch {}
+  return key;
+}
+
 /**
  * Read button taps from Telegram, save them, and confirm them so they are
  * not read twice. The admin can change their mind until the post goes out.
+ * `timeout` > 0 waits (long polling) for a tap to arrive.
  */
-async function syncDecisions(state) {
-  const updates = await callApi('getUpdates', { offset: state.last_update_id + 1, timeout: 0, allowed_updates: ['callback_query', 'message'] });
+async function syncDecisions(state, timeout = 0) {
+  const updates = await callApi('getUpdates', { offset: state.last_update_id + 1, timeout, allowed_updates: ['callback_query'] });
   const changed = new Set();
   for (const update of updates) {
-    state.last_update_id = Math.max(state.last_update_id, update.update_id);
-    const query = update.callback_query;
-    if (!query || String(query.from.id) !== String(ADMIN_ID)) continue;
-    const match = /^r:(ok|no):(.+)$/.exec(query.data || '');
-    const draft = match && state.drafts[match[2]];
-    if (!draft || !['pending', 'approved', 'rejected'].includes(draft.status)) continue;
-    draft.status = match[1] === 'ok' ? 'approved' : 'rejected';
-    draft.decided_at = new Date().toISOString();
-    changed.add(match[2]);
+    const key = await applyUpdate(state, update);
+    if (key) changed.add(key);
   }
   if (updates.length) await callApi('getUpdates', { offset: state.last_update_id + 1, timeout: 0 });
   for (const key of changed) await refreshButtons(key, state.drafts[key]);
-  return state;
+  return changed.size;
+}
+
+/**
+ * Stay online and answer button taps right away, until shortly before the
+ * next post time (11:50, 19:20 or 23:59 Tashkent), at most ~5h50m.
+ * Each decision is pushed to GitHub at once by the workflow (see review.yml).
+ */
+async function listen(state) {
+  const tashkentMinutes = () => {
+    const d = new Date(Date.now() + 5 * 60 * 60 * 1000);
+    return d.getUTCHours() * 60 + d.getUTCMinutes();
+  };
+  const stops = [11 * 60 + 50, 19 * 60 + 20, 23 * 60 + 59];
+  const now = tashkentMinutes();
+  const stop = stops.find((m) => m > now + 1);
+  if (!stop) return;
+  const end = Date.now() + Math.min(stop - now, 350) * 60 * 1000;
+  console.log(`👂 Listening for button taps for ${Math.round((end - Date.now()) / 60000)} min`);
+  while (Date.now() < end - 5000) {
+    const wait = Math.max(1, Math.min(50, Math.floor((end - Date.now()) / 1000) - 5));
+    try {
+      if (await syncDecisions(state, wait)) {
+        save(state);
+        if (process.env.REVIEW_SAVE_CMD) {
+          const { execSync } = await import('child_process');
+          try { execSync(process.env.REVIEW_SAVE_CMD, { stdio: 'inherit' }); } catch (error) { console.log(`⚠️ Save failed: ${error.message}`); }
+        }
+      }
+    } catch (error) {
+      console.log(`⚠️ getUpdates failed: ${error.message}`);
+      await new Promise((r) => setTimeout(r, 10000));
+    }
+  }
+  save(state);
 }
 
 /** Load the review state with the latest button taps applied. */
 export async function openReview() {
-  const state = await syncDecisions(load());
+  const state = load();
+  await syncDecisions(state);
   save(state);
   return state;
 }
@@ -226,7 +279,9 @@ async function main() {
   const state = await openReview();
   if (mode === 'preview') await preview(state);
   else if (mode === 'remind') await remind(state);
-  else if (mode !== 'sync') throw new Error('Usage: node src/review.js preview|remind|sync');
+  else if (mode !== 'sync' && mode !== 'listen') throw new Error('Usage: node src/review.js preview|remind|sync|listen');
+  // After sending, stay online so a tap gets an answer right away
+  if (mode !== 'sync' && process.env.REVIEW_LISTEN !== '0') await listen(state);
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
