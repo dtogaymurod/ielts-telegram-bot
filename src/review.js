@@ -224,6 +224,9 @@ export async function submitDraft(state, { date, slot, label, meta, send }) {
     setTargetChat(CHANNEL_ID);
   }
   const draft = { date, slot, label: fullLabel, meta, status: 'pending', created_at: new Date().toISOString() };
+  // A resent preview keeps the old buttons working and updated
+  const previous = state.drafts[key];
+  if (previous?.buttons_message_id) draft.extra_button_ids = [...(previous.extra_button_ids || []), previous.buttons_message_id];
   const message = await sendAdmin(buttonsText(draft), { reply_markup: buttons(key) });
   draft.buttons_message_id = message.message_id;
   state.drafts[key] = draft;
@@ -277,10 +280,12 @@ async function remind(state) {
   save(state);
 }
 
-async function preview(state) {
+/** Tomorrow's posts to the admin. `only` (e.g. "19:30") resends just that slot. */
+async function preview(state, only) {
   const date = tashkentDate(1);
-  const sources = [['./genz-post.js', 'prepareGenzDraft'], ['./index.js', 'prepareDailyDraft']];
-  for (const [file, name] of sources) {
+  const sources = [['./genz-post.js', 'prepareGenzDraft', '12:00'], ['./index.js', 'prepareDailyDraft', '19:30']];
+  for (const [file, name, slot] of sources) {
+    if (only && only !== slot) continue;
     try {
       const prepare = (await import(file))[name];
       const draft = await prepare(date);
@@ -300,7 +305,7 @@ async function main() {
   }
   validateConfig();
   const state = await openReview();
-  if (mode === 'preview') await preview(state);
+  if (mode === 'preview') await preview(state, process.argv[3] || process.env.REVIEW_SLOT || '');
   else if (mode === 'remind') await remind(state);
   else if (mode !== 'sync' && mode !== 'listen') throw new Error('Usage: node src/review.js preview|remind|sync|listen');
   // After sending, stay online so a tap gets an answer right away

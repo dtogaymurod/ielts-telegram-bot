@@ -59,3 +59,22 @@ export function renderLoneWolfPoster(task) {
     return null;
   }
 }
+
+const HACK_SCRIPT = join(__dirname, '..', 'poster', 'render_hack.py');
+
+/** Render a ready-made 19:30 skill post (orange Gen Z design); null on failure. */
+export function renderHackPoster(post) {
+  try {
+    const outPath = join(mkdtempSync(join(tmpdir(), 'hack-')), 'poster.png');
+    execFileSync('python3', [HACK_SCRIPT, '-', outPath], {
+      input: JSON.stringify(post),
+      stdio: ['pipe', 'pipe', 'pipe'],
+      timeout: 60_000,
+    });
+    return outPath;
+  } catch (error) {
+    const detail = error.stderr?.toString().trim() || error.message;
+    console.warn(`⚠️ Skill post poster rendering failed: ${detail}`);
+    return null;
+  }
+}

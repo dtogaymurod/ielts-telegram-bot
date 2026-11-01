@@ -22,10 +22,10 @@
 import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { sendMessage, sendLocalPhoto, validateConfig } from './telegram.js';
-import { renderPoster, renderLoneWolfPoster } from './poster.js';
+import { renderPoster, renderLoneWolfPoster, renderHackPoster } from './poster.js';
 import {
   getTimeSlot, getNextSkill, getRotationState, getSkillHackFallback, isLoneWolfDay, getNextLoneWolfPost,
-  peekLoneWolfPost, markLoneWolfPublished, peekDailyPost, markDailyPostUsed,
+  peekLoneWolfPost, markLoneWolfPublished, peekDailyPost, markDailyPostUsed, getDailyPost,
 } from './content-selector.js';
 import { generateDailySkillPost } from './gemini.js';
 import { approvedDraft, dateAt, markPublished, openReview, reviewEnabled } from './review.js';
@@ -58,15 +58,15 @@ async function sendLoneWolf(post) {
 }
 
 /**
- * The day's skill post as safe Telegram HTML: the next ready-made post from
- * content/daily-posts.json; Gemini (then the old fallback list) only when
- * that skill's bank has run out. Returns { text, bankIndex }.
+ * The day's skill post: the next ready-made post from content/daily-posts.json
+ * ({ hack, bankIndex }); Gemini text (then the old fallback list) only when
+ * that skill's bank has run out ({ text, bankIndex: null }).
  */
 async function writeSkillPost(skill) {
   const ready = peekDailyPost(skill);
   if (ready) {
     console.log(`📚 Ready-made ${skill} post #${ready.index + 1} (${ready.remaining - 1} left after this one)`);
-    return { text: ready.text, bankIndex: ready.index };
+    return { hack: ready.post, bankIndex: ready.index };
   }
   console.log(`⚠️ No ready-made ${skill} posts left, asking Gemini...`);
   const text = await writeGeminiPost(skill);
@@ -121,6 +121,28 @@ export function buildSkillCaption(postText) {
   ].join('\n');
 }
 
+const HACK_FOOTER = ['👉 Telegram: @dilshod_english', '📸 Instagram: instagram.com/dilshod.ustoz'];
+
+/** Ready-made post: orange poster + its own caption (the caption adds to the poster, never repeats it). */
+async function sendHackPost(post) {
+  const caption = [post.caption, '', ...HACK_FOOTER].join('\n');
+  const posterPath = renderHackPoster(post);
+  if (posterPath) {
+    const result = await sendLocalPhoto(posterPath, caption);
+    console.log(`✅ Skill poster sent! Message ID: ${result.message_id}`);
+    return;
+  }
+  // Poster failed: send the same content as text
+  const rows = post.rows.map(([mark, text]) => `${/^[0-9A-Z]{1,2}$/.test(mark) ? `${mark}.` : mark} ${text.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')}`);
+  const result = await sendMessage([`<b>${post.title}</b>`, post.subtitle, '', ...rows, '', caption].join('\n'), {});
+  console.log(`✅ Skill post sent as text. Message ID: ${result.message_id}`);
+}
+
+/** Send whichever kind writeSkillPost returned. */
+function sendDailyPost(post) {
+  return post.hack ? sendHackPost(post.hack) : sendSkillPost(post.text);
+}
+
 /** Branded poster image (the whole post) with a short caption; the full text alone if the poster fails. */
 async function sendSkillPost(postText) {
   const posterPath = renderPoster(postText);
@@ -169,8 +191,10 @@ export async function prepareDailyDraft(date) {
   return {
     slot: SLOT,
     label: `Kundalik post (${skill.toUpperCase()})`,
-    meta: { type: 'skill', skill, text: post.text, bank_index: post.bankIndex },
-    send: () => sendSkillPost(post.text),
+    meta: post.hack
+      ? { type: 'skill', skill, bank_index: post.bankIndex, title: post.hack.title }
+      : { type: 'skill', skill, text: post.text, bank_index: null },
+    send: () => sendDailyPost(post),
   };
 }
 
@@ -188,8 +212,13 @@ async function publishApproved() {
     markLoneWolfPublished(post.index);
   } else {
     console.log(`🎯 Publishing approved ${draft.meta.skill} post`);
-    await sendSkillPost(draft.meta.text);
-    if (draft.meta.bank_index != null) markDailyPostUsed(draft.meta.skill, draft.meta.bank_index);
+    const ready = draft.meta.bank_index != null && getDailyPost(draft.meta.skill, draft.meta.bank_index);
+    if (ready) {
+      await sendHackPost(ready);
+      markDailyPostUsed(draft.meta.skill, draft.meta.bank_index);
+    } else {
+      await sendSkillPost(draft.meta.text);
+    }
     getNextSkill(); // advance the rotation now that the post is out
   }
   await markPublished(review, SLOT);
@@ -235,6 +264,17 @@ async function main() {
   console.log(`🎯 Today's Selected Skill: [${skill.toUpperCase()}]`);
 
   const post = await writeSkillPost(skill);
+  if (post?.hack) {
+    if (preview) {
+      const path = renderHackPoster(post.hack);
+      console.log(`🖼 Poster preview saved: ${path}\n\nCaption:\n${post.hack.caption}`);
+      console.log('✅ Dry run complete. No message sent.');
+      return;
+    }
+    await sendHackPost(post.hack);
+    markDailyPostUsed(skill, post.bankIndex);
+    return;
+  }
   const postText = post?.text;
   if (!postText) {
     console.error(`❌ Could not generate or retrieve content for '${skill}'.`);
@@ -257,7 +297,6 @@ async function main() {
   }
 
   await sendSkillPost(postText);
-  if (post.bankIndex != null) markDailyPostUsed(skill, post.bankIndex);
 }
 
 // Run when executed directly (src/review.js imports prepareDailyDraft)
