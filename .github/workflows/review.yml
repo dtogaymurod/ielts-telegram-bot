@@ -4,17 +4,21 @@ on:
   # Started by the external timer (cron-job.org → workflow_dispatch), see docs/TIMER_SETUP.md.
   #   21:00 Tashkent — mode: preview (tomorrow's posts go to the admin with ✅ / ❌ buttons)
   #   09:00 Tashkent — mode: remind  (reminder for posts still waiting)
+  #   12:05 Tashkent — mode: listen  (only answers button taps)
+  # After sending, every mode stays online until shortly before the next post
+  # time and answers ✅ / ❌ taps right away (src/review.js listen()).
   # Does nothing until the TELEGRAM_ADMIN_ID secret is set (see src/review.js).
   workflow_dispatch:
     inputs:
       mode:
-        description: 'preview (21:00) or remind (09:00)'
+        description: 'preview (21:00), remind (09:00) or listen'
         required: true
         default: 'preview'
         type: choice
         options:
           - preview
           - remind
+          - listen
 
 concurrency:
   group: channel-state
@@ -23,6 +27,7 @@ concurrency:
 jobs:
   review:
     runs-on: ubuntu-latest
+    timeout-minutes: 360
     permissions:
       contents: write
 
@@ -50,6 +55,12 @@ jobs:
 
       - name: Run review step
         env:
+          REVIEW_SAVE_CMD: >-
+            git config --local user.email "github-actions[bot]@users.noreply.github.com" &&
+            git config --local user.name "github-actions[bot]" &&
+            git add content/review.json &&
+            (git diff --staged --quiet || git commit -q -m "👀 Review decision saved [skip ci]") &&
+            git pull -q --rebase && git push -q
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
           TELEGRAM_ADMIN_ID: ${{ secrets.TELEGRAM_ADMIN_ID }}
