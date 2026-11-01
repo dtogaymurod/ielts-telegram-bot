@@ -1,0 +1,1257 @@
+{
+  "_note": "Ready-made 19:30 daily posts (Sun/Mon/Wed/Fri), used in skill rotation instead of Gemini. next = index of the next unused post per skill. Gemini is only a fallback when a skill runs out.",
+  "next": {
+    "listening": 0,
+    "reading": 0,
+    "writing": 0,
+    "speaking": 0
+  },
+  "listening": [
+    {
+      "id": "lis_001",
+      "title": "Birinchi aytilgan javob tuzog'i",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Birinchi aytilgan javob tuzog'i:</b>\nSpiker ko'pincha javobni aytadi-yu, keyin darhol o'zgartiradi:\n<i>\"Let's meet on Tuesday... actually, Wednesday suits me better.\"</i>\n\n💡 <b>Oltin qoida:</b>\n<b>actually</b>, <b>sorry</b>, <b>I mean</b>, <b>on second thoughts</b> so'zlarini eshitsangiz, ruchkani to'xtating. To'g'ri javob deyarli har doim ulardan keyin keladi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_002",
+      "title": "Fifteen yoki fifty?",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Fifteen yoki fifty?:</b>\n<i>-teen</i> va <i>-ty</i> bilan tugaydigan sonlar eng ko'p adashtiradigan joy.\n\n💡 <b>Qanday farqlash kerak:</b>\n<b>fifTEEN</b> da urg'u oxirida, <b>FIFty</b> da boshida bo'ladi. -teen cho'ziqroq eshitiladi: <i>fif-TEEEN</i>. Mashq: kuniga 5 daqiqa 13–19 va 30–90 sonlarini juft qilib tinglang.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_003",
+      "title": "Word limit tuzog'i",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Word limit tuzog'i:</b>\nSavolda <b>NO MORE THAN TWO WORDS</b> deyilgan, siz esa <i>\"a large garden\"</i> deb yozdingiz. Javob to'g'ri bo'lsa ham, ball yo'q.\n\n💡 <b>Oltin qoida:</b>\nLimitni har bo'lim boshida aylana ichiga oling. <b>A/an/the</b> ham so'z hisoblanadi. Raqam (<i>25</i>) bitta son hisoblanadi, so'z emas.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_004",
+      "title": "Ism harflab aytilganda",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Ism harflab aytilganda:</b>\n<i>\"My surname is Thompson, that's T-H-O-M-P-S-O-N.\"</i> Ko'pchilik <b>P</b> harfini tushirib qoldiradi.\n\n💡 <b>Oltin qoida:</b>\nHarflar aytila boshlaganda faqat harflarni yozing, so'zni o'ylamang. <b>Double S</b> = SS, <b>double T</b> = TT. Oxirida harflarni sanab tekshiring.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_005",
+      "title": "Telefon raqamidagi \"oh\"",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Telefon raqamidagi \"oh\":</b>\n<i>\"It's oh-seven-double-four...\"</i> Bu yerda <b>oh</b> harf emas, nol (0)!\n\n💡 <b>Esda tuting:</b>\n<b>oh</b> = 0, <b>double four</b> = 44, <b>triple five</b> = 555. Raqamlarni 3-4 tadan guruhlab yozing, shunda adashmaysiz.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_006",
+      "title": "Savolni oldindan o'qimaslik",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Savolni oldindan o'qimaslik:</b>\nAudio boshlanganda savolni endi o'qiyotgan bo'lsangiz, birinchi javob allaqachon o'tib ketgan.\n\n💡 <b>To'g'ri strategiya:</b>\nHar bo'lim oldidan berilgan 30 soniyada keyingi savollarni o'qing va <b>kalit so'zlarni</b> chizib qo'ying. Bo'sh joyga qanday so'z kelishini taxmin qiling: son, ism, joy yoki fe'l?\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_007",
+      "title": "Bo'sh joyga qanday so'z kerak",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Bo'sh joyga qanday so'z kerak:</b>\n<i>\"The course costs ___ per week.\"</i> Bu yerga faqat <b>narx</b> keladi. Buni audio boshlanmasdan bilishingiz kerak.\n\n💡 <b>Bashorat qilish formulasi:</b>\nBo'sh joy oldi va keyingi so'zlarga qarang: <b>a/an</b> dan keyin birlikdagi ot, <b>many</b> dan keyin ko'plik, <b>at</b> dan keyin vaqt yoki joy. Grammatika javobning yarmini aytib beradi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_008",
+      "title": "Ko'plik qo'shimchasi -s",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Ko'plik qo'shimchasi -s:</b>\n<i>\"Bring two ___.\"</i> Siz <i>\"towel\"</i> deb yozdingiz. Javob <b>towels</b> edi va ball ketdi.\n\n💡 <b>Oltin qoida:</b>\nKo'plikni eshitishga emas, gapning grammatikasiga ishoning. Son, <b>some</b>, <b>several</b>, <b>a few</b> bo'lsa, oxiriga <b>-s</b> qo'shishni tekshiring.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_009",
+      "title": "Xarita savollarida adashish",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Xarita savollarida adashish:</b>\nMap labelling da spiker tez gapiradi, siz esa xaritada hali qayerdaligingizni topolmaysiz.\n\n💡 <b>3 qadamli usul:</b>\n1. Audio oldidan <b>kirish joyini</b> (entrance, you are here) toping.\n2. Yo'nalish so'zlarini eslang: <b>opposite</b>, <b>next to</b>, <b>beyond</b>, <b>to the left of</b>.\n3. Barmog'ingiz bilan spiker yo'lidan yuring.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_010",
+      "title": "Yo'nalish so'zlarini bilmaslik",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Yo'nalish so'zlarini bilmaslik:</b>\n<i>\"The café is diagonally opposite the reception.\"</i> Bu so'zni bilmasangiz, xarita savoli ketadi.\n\n💡 <b>Yodlab oling:</b>\n<b>opposite</b> = qarshisida, <b>adjacent to</b> = yonma-yon, <b>beyond</b> = narida, <b>at the far end</b> = eng oxirida, <b>clockwise</b> = soat mili bo'yicha, <b>halfway along</b> = yo'lning o'rtasida.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_011",
+      "title": "Multiple choice tuzog'i",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Multiple choice tuzog'i:</b>\nSpiker A, B va C variantlarning uchalasini ham tilga oladi. Faqat bittasi to'g'ri.\n\n💡 <b>Oltin qoida:</b>\nEshitilgan so'z emas, <b>ma'no</b> muhim. Ko'pincha noto'g'ri variant so'zma-so'z aytiladi, to'g'risi esa sinonim bilan. <i>\"cheap\"</i> varianti uchun audioda <i>\"it won't cost much\"</i> keladi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_012",
+      "title": "Sinonimlarni tanimaslik",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Sinonimlarni tanimaslik:</b>\nSavolda <i>\"free\"</i>, audioda <i>\"complimentary\"</i>. Kalit so'zni kutib o'tirsangiz, javobni o'tkazib yuborasiz.\n\n💡 <b>Ko'p uchraydigan juftlar:</b>\n<b>free</b> = complimentary, no charge\n<b>cheap</b> = affordable, reasonable\n<b>start</b> = commence, kick off\n<b>problem</b> = issue, drawback\n<b>increase</b> = rise, go up\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_013",
+      "title": "Section 4 da yo'qolib qolish",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Section 4 da yo'qolib qolish:</b>\nMa'ruza 10 savolni uzluksiz o'qiydi, tanaffus yo'q. Bitta javobni o'tkazib yuborsangiz, keyingilari ham ketadi.\n\n💡 <b>Qutqaruvchi qoida:</b>\nJavobni topolmasangiz, <b>darhol keyingi savolga o'ting</b>. Bitta savol uchun 3 tasini yo'qotmang. Signal so'zlarni kuzating: <i>\"Moving on to...\", \"Another factor is...\"</i>\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_014",
+      "title": "Signpost so'zlarni e'tiborsiz qoldirish",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Signpost so'zlarni e'tiborsiz qoldirish:</b>\nMa'ruzachi yangi qismga o'tishini oldindan aytadi, siz esa buni eshitmaysiz.\n\n💡 <b>Bu so'zlar sizning xaritangiz:</b>\n<i>\"First of all...\"</i> boshlanish\n<i>\"Turning now to...\"</i> yangi mavzu\n<i>\"However...\"</i> qarama-qarshi fikr\n<i>\"To sum up...\"</i> xulosa\nUlarni eshitsangiz, savollar ro'yxatida qayerdaligingizni tekshiring.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_015",
+      "title": "Sana yozishda xato",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Sana yozishda xato:</b>\nJavob <i>\"the 3rd of March\"</i>. Siz <i>\"March 3th\"</i> deb yozdingiz va ball yo'qotdingiz.\n\n💡 <b>Xavfsiz format:</b>\nSanani <b>3 March</b> yoki <b>March 3</b> ko'rinishida yozing. Oy nomini to'g'ri yozishni tekshiring: <b>February</b>, <b>Wednesday</b>, <b>September</b> eng ko'p xato qilinadigan so'zlar.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_016",
+      "title": "Imlo xatosi = 0 ball",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Imlo xatosi = 0 ball:</b>\nJavobni to'g'ri eshitdingiz, lekin <i>\"accomodation\"</i> deb yozdingiz. IELTS da bu noto'g'ri javob.\n\n💡 <b>Eng ko'p xato qilinadigan so'zlar:</b>\n<b>accommodation</b> (cc, mm)\n<b>necessary</b> (bitta c, ikkita s)\n<b>environment</b> (n ni unutmang)\n<b>government</b>\n<b>library</b>\nShu ro'yxatni haftada bir marta diktant qiling.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_017",
+      "title": "Pul miqdorini noto'g'ri yozish",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Pul miqdorini noto'g'ri yozish:</b>\n<i>\"It's twelve fifty.\"</i> Bu 1250 emas, <b>£12.50</b>!\n\n💡 <b>Esda tuting:</b>\nNarxlarda <b>twelve fifty</b> = 12.50, <b>a hundred and twenty</b> = 120. Valyuta belgisi (£, $) savolda bo'lsa, uni qayta yozmang. Faqat sonni yozing.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_018",
+      "title": "Vaqtni tushunmaslik",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Vaqtni tushunmaslik:</b>\n<i>\"The tour starts at a quarter to nine.\"</i> Ko'pchilik 9:15 deb yozadi. Aslida <b>8:45</b>.\n\n💡 <b>Vaqt iboralari:</b>\n<b>quarter past nine</b> = 9:15\n<b>quarter to nine</b> = 8:45\n<b>half past six</b> = 6:30\n<b>noon</b> = 12:00, <b>midnight</b> = 00:00\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_019",
+      "title": "\"Not\" so'zini eshitmaslik",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>\"Not\" so'zini eshitmaslik:</b>\n<i>\"The museum is open daily, except on Mondays.\"</i> Savol: qaysi kuni yopiq? Javob <b>Monday</b>.\n\n💡 <b>Inkor signallari:</b>\n<b>except</b>, <b>apart from</b>, <b>rather than</b>, <b>instead of</b>, <b>unless</b> so'zlari ma'noni teskariga aylantiradi. Ularni eshitganda javob o'zgaradi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_020",
+      "title": "Ikki variantni tanlash savoli",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Ikki variantni tanlash savoli:</b>\n<i>\"Choose TWO letters, A–E.\"</i> Siz A va C ni bitta katakka yozdingiz yoki faqat bittasini tanladingiz.\n\n💡 <b>Qoidalar:</b>\nHar bir harf alohida savol hisoblanadi. Tartib muhim emas: <b>A, C</b> yoki <b>C, A</b> bir xil. Ikkalasini aniq bilmasangiz ham, ikkinchi katakni bo'sh qoldirmang.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_021",
+      "title": "Section 3 da kim nima dedi",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Section 3 da kim nima dedi:</b>\nIkki talaba va o'qituvchi bahslashadi. Savol: <i>\"Who suggests changing the topic?\"</i> Siz ovozlarni chalkashtirdingiz.\n\n💡 <b>Ovozni tanish usuli:</b>\nBirinchi daqiqada har bir spikerning ismini va ovozini (erkak/ayol, baland/past) belgilab oling. Fikrga e'tibor bering: <i>\"I'm not convinced\"</i> = rozi emas, <i>\"Fair point\"</i> = rozi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_022",
+      "title": "Rozi bo'lish yoki bo'lmaslikni tushunmaslik",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Rozi bo'lish yoki bo'lmaslikni tushunmaslik:</b>\nSection 3 da talaba <i>\"I suppose so, but...\"</i> deydi. Bu rozilikmi?\n\n💡 <b>Yashirin ma'nolar:</b>\n<i>\"I suppose so, but...\"</i> = aslida rozi emas\n<i>\"That's exactly what I thought\"</i> = to'liq rozi\n<i>\"I'm not so sure\"</i> = rozi emas\n<b>but</b> dan keyingi qism har doim asosiy fikr.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_023",
+      "title": "Flow chart savollari",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Flow chart savollari:</b>\nJarayon bosqichma-bosqich tushuntiriladi, siz esa qaysi qadamda ekaningizni yo'qotasiz.\n\n💡 <b>Oltin qoida:</b>\nFlow chart doim <b>tartib bilan</b> boradi. Vaqt so'zlarini kuzating: <i>first, then, after that, once this is done, finally</i>. Har bir strelka bitta yangi qadam.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_024",
+      "title": "Javobni ikki marta eshitishni kutish",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Javobni ikki marta eshitishni kutish:</b>\n\"Spiker yana aytar\" deb kutasiz. IELTS da audio <b>faqat bir marta</b> qo'yiladi.\n\n💡 <b>Haqiqat:</b>\nJavob bir marta, ko'pincha sinonim bilan aytiladi. Tayyorgarlikda ham Cambridge testlarini <b>bir marta</b> tinglang. Ikkinchi tinglash faqat tahlil uchun.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_025",
+      "title": "Javoblarni ko'chirishga vaqt yo'q",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Javoblarni ko'chirishga vaqt yo'q:</b>\nComputer-delivered IELTS da qog'oz test kabi 10 daqiqa ko'chirish vaqti berilmaydi. Faqat 2 daqiqa tekshirish uchun.\n\n💡 <b>CD imtihon qoidasi:</b>\nJavobni darhol katakka yozing, keyin tuzataman demang. Oxirgi 2 daqiqada faqat <b>imlo</b> va <b>ko'plik -s</b> ni tekshiring.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_026",
+      "title": "Katta-kichik harf",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Katta-kichik harf:</b>\n<i>\"london\"</i> yoki <i>\"LONDON\"</i>, qaysi biri to'g'ri?\n\n💡 <b>Qoida:</b>\nIELTS da katta-kichik harf ball ta'sir qilmaydi. Lekin qog'oz testda <b>hammasini katta harflar bilan</b> yozish xavfsizroq: shunda <i>a</i> va <i>o</i> chalkashmaydi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_027",
+      "title": "Pochta indeksi va manzil",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Pochta indeksi va manzil:</b>\n<i>\"The postcode is CB2 1TN.\"</i> Harf va raqamlar aralash aytilganda adashish oson.\n\n💡 <b>Usul:</b>\nIndeks aytilayotganda faqat belgilarni yozing, ma'nosini o'ylamang. <b>B</b> va <b>P</b>, <b>M</b> va <b>N</b>, <b>G</b> va <b>J</b> harflarini farqlashni oldindan mashq qiling.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_028",
+      "title": "Harflarni chalkashtirish",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Harflarni chalkashtirish:</b>\nIngliz alifbosida <b>A</b> va <b>R</b>, <b>E</b> va <b>I</b>, <b>G</b> va <b>J</b> o'zbek qulog'iga o'xshash eshitiladi.\n\n💡 <b>Esda tuting:</b>\n<b>A</b> = \"ey\", <b>E</b> = \"i:\", <b>I</b> = \"ay\"\n<b>G</b> = \"dji:\", <b>J</b> = \"djey\"\n<b>R</b> = \"a:\", <b>Y</b> = \"uay\"\nKuniga 2 daqiqa ismlarni harflab aytib mashq qiling.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_029",
+      "title": "Tablitsa to'ldirish",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Tablitsa to'ldirish:</b>\nJadvalda 6 ta bo'sh joy. Siz qatorlar bo'yicha o'qiysiz, spiker esa ustunlar bo'yicha gapiradi.\n\n💡 <b>Oltin qoida:</b>\nAudio oldidan jadval <b>sarlavhalarini</b> o'qing va qaysi yo'nalishda borishini aniqlang. Bo'sh joy qaysi ustunda bo'lsa, o'sha turdagi ma'lumotni kuting: narx, vaqt yoki ism.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_030",
+      "title": "Javob sifatida eshitilgan so'zni o'zgartirish",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Javob sifatida eshitilgan so'zni o'zgartirish:</b>\nAudioda <i>\"booking\"</i> deyildi, siz <i>\"reservation\"</i> deb yozdingiz. Bu noto'g'ri.\n\n💡 <b>Oltin qoida:</b>\nListening da javob <b>audiodagi so'zning o'zi</b> bo'lishi kerak. Sinonim savolda bo'ladi, javobda emas. Eshitganingizni aynan yozing.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_031",
+      "title": "Bir xil eshitiladigan so'zlar",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Bir xil eshitiladigan so'zlar:</b>\n<i>\"There's a site near the river\"</i>. Siz <i>\"sight\"</i> deb yozdingiz.\n\n💡 <b>Kontekst qoidasi:</b>\n<b>site</b> (joy) va <b>sight</b> (manzara), <b>weather</b> va <b>whether</b>, <b>pair</b> va <b>pear</b>. Gapning ma'nosiga qarab qaysi biri kerakligini tanlang.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_032",
+      "title": "Ulangan nutq (connected speech)",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Ulangan nutq (connected speech):</b>\n<i>\"Wha-d'ya-wanna-do?\"</i> Bu aslida <i>\"What do you want to do?\"</i>. Kitobdagi inglizcha bilan audio bir xil emas.\n\n💡 <b>Mashq usuli:</b>\n<b>wanna</b> = want to, <b>gonna</b> = going to, <b>lemme</b> = let me. Kuniga 5 daqiqa podkast tinglab, eshitganingizni yozib, transkript bilan solishtiring.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_033",
+      "title": "Kuchsiz shakllarni eshitmaslik",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Kuchsiz shakllarni eshitmaslik:</b>\n<i>\"a cup of tea\"</i> audioda <i>\"a cuppa tea\"</i> bo'lib eshitiladi. <b>of</b>, <b>to</b>, <b>and</b> deyarli yo'qoladi.\n\n💡 <b>Oltin qoida:</b>\nKichik so'zlarni emas, <b>urg'uli so'zlarni</b> tinglang: otlar, fe'llar, sonlar. Javoblar deyarli har doim urg'u tushgan so'zlarda bo'ladi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_034",
+      "title": "Aksentlardan qo'rqish",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Aksentlardan qo'rqish:</b>\nAudioda britancha, avstraliyacha, kanadacha aksentlar keladi. Faqat amerikacha film ko'rgan bo'lsangiz, qiynalasiz.\n\n💡 <b>Tayyorgarlik:</b>\nHaftasiga bir marta <b>BBC</b>, <b>ABC Australia</b> va <b>CBC</b> podkastlaridan 10 daqiqa tinglang. Avstraliyada <i>\"day\"</i> ko'pincha <i>\"die\"</i> kabi eshitiladi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_035",
+      "title": "Diqqat 30 daqiqaga yetmaydi",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Diqqat 30 daqiqaga yetmaydi:</b>\nSection 1 yaxshi o'tdi, Section 4 ga kelib miyangiz charchadi va ball tushdi.\n\n💡 <b>Chidamlilik mashqi:</b>\nUyda to'liq testni <b>to'xtatmasdan</b> 4 bo'lim ketma-ket ishlang. Telefonni boshqa xonaga qo'ying. Haftada 2 marta shunday qilsangiz, imtihonda charchamaysiz.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_036",
+      "title": "Bitta xatodan keyin vahima",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Bitta xatodan keyin vahima:</b>\nBitta javobni o'tkazib yubordingiz va keyingi 3 ta savol davomida o'sha haqda o'ylab o'tirdingiz.\n\n💡 <b>Oltin qoida:</b>\nO'tgan savol o'tdi. Bo'sh joyga taxminiy javob yozing va <b>darhol</b> keyingisiga o'ting. 40 tadan 1 ta xato bilan ham Band 8.5 olish mumkin.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_037",
+      "title": "Javob bo'sh qolsa",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Javob bo'sh qolsa:</b>\nEshitmadingiz va katakni bo'sh qoldirdingiz.\n\n💡 <b>Oltin qoida:</b>\nNoto'g'ri javob uchun ball olinmaydi, lekin minus ham yo'q. Shuning uchun <b>hech qachon bo'sh qoldirmang</b>. Grammatikaga mos mantiqiy so'z yozing, omad kelishi mumkin.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_038",
+      "title": "Ortiqcha so'z yozish",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Ortiqcha so'z yozish:</b>\nJavob <i>\"park\"</i>. Siz ishonch uchun <i>\"the big park\"</i> deb yozdingiz va word limitdan oshdingiz.\n\n💡 <b>Oltin qoida:</b>\nKamroq yozish xavfsizroq. Javob mazmuni bitta so'z bo'lsa, faqat o'sha so'zni yozing. Sifatlarni faqat bo'sh joy grammatikasi talab qilsa qo'shing.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_039",
+      "title": "Raqam va so'z aralash",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Raqam va so'z aralash:</b>\nSavol: <i>ONE WORD AND/OR A NUMBER</i>. Javob <i>\"3 bedrooms\"</i>. Bu ruxsat etilganmi?\n\n💡 <b>Tushuntirish:</b>\nHa, <b>3 bedrooms</b> = bitta raqam va bitta so'z. Ruxsat. Lekin <i>\"three bedrooms\"</i> = ikkita so'z, bu bitta so'z limitidan oshadi. Raqamni son bilan yozing.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_040",
+      "title": "Foiz va kasrlarni tushunmaslik",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Foiz va kasrlarni tushunmaslik:</b>\n<i>\"Roughly a third of the students...\"</i> Javobni 30% deb yozasizmi yoki 33%?\n\n💡 <b>Qoida:</b>\nAudioda nima deyilsa, shuni yozing. <b>a third</b> = one third, <b>a quarter</b> = 25%, <b>half</b> = 50%. Hisob-kitob qilmang, faqat eshitganingizni yozing.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_041",
+      "title": "Ikki o'xshash raqam",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Ikki o'xshash raqam:</b>\n<i>\"Last year 300 people came, this year we expect around 450.\"</i> Savol <b>bu yil</b> haqida.\n\n💡 <b>Oltin qoida:</b>\nRaqam eshitilganda vaqtga qarang: <b>last year</b>, <b>this year</b>, <b>originally</b>, <b>now</b>. Savol qaysi davr haqida ekanini oldindan chizib qo'ying.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_042",
+      "title": "Kitobdagi so'zlar audioda kelmaydi",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Kitobdagi so'zlar audioda kelmaydi:</b>\nMatching savolida variantlar: <i>\"too expensive\"</i>. Audioda esa <i>\"I couldn't afford it\"</i>.\n\n💡 <b>Fikrlash usuli:</b>\nHar bir variant uchun oldindan 1-2 ta sinonim o'ylang. <i>expensive</i> = <i>pricey, cost a fortune, couldn't afford</i>. Shunda audio kelganda tanib olasiz.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_043",
+      "title": "Ma'lumotni noto'g'ri odamga bog'lash",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Ma'lumotni noto'g'ri odamga bog'lash:</b>\nSection 2 da gid 5 ta joy haqida gapiradi. Siz birinchi joy haqidagi ma'lumotni ikkinchisiga yozdingiz.\n\n💡 <b>Usul:</b>\nHar bir joy nomini eshitganda savollar ustida <b>belgi</b> qo'ying. Keyingi joy nomi aytilsa, oldingisi tugadi. Nomlarni kuzatish = yo'l xaritasi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_044",
+      "title": "Shoshilib yozish",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Shoshilib yozish:</b>\nJavobni eshitib, uzun yozishga tushdingiz va keyingi gapni o'tkazib yubordingiz.\n\n💡 <b>Tez yozish usuli:</b>\nAudio paytida qisqartma yozing: <i>accom</i>, <i>gov</i>, <i>env</i>. To'liq va to'g'ri imlo bilan oxirgi 2 daqiqada yozing. Asosiysi, quloq ishlashda davom etsin.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_045",
+      "title": "\"Both\" va \"neither\"",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>\"Both\" va \"neither\":</b>\n<i>\"Neither of the options was suitable.\"</i> Siz ikkalasini ham to'g'ri deb belgiladingiz.\n\n💡 <b>Esda tuting:</b>\n<b>both</b> = ikkalasi ham ha\n<b>neither</b> = ikkalasi ham yo'q\n<b>either</b> = ikkitadan biri\nBu so'zlar MCQ javobini butunlay o'zgartiradi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_046",
+      "title": "Qiyosiy darajalar",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Qiyosiy darajalar:</b>\n<i>\"The new route is longer but much safer.\"</i> Savol: <i>What is the advantage?</i>\n\n💡 <b>Fikrlash:</b>\nQiyoslashda <b>but</b> dan keyin asosiy fikr keladi. Afzallik savoliga <b>safer</b>, kamchilik savoliga <b>longer</b> javob bo'ladi. Savol nimani so'rayotganini aniqlang.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_047",
+      "title": "Oldindan aytilgan reja o'zgaradi",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Oldindan aytilgan reja o'zgaradi:</b>\n<i>\"We were going to hold it in the hall, but it's being repaired, so it'll be in the gym.\"</i>\n\n💡 <b>Signal so'zlar:</b>\n<b>were going to</b>, <b>originally</b>, <b>had planned</b> = eski reja. Javob odatda <b>so</b>, <b>instead</b>, <b>now</b> dan keyin keladi. Eski rejaga aldanmang.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_048",
+      "title": "Imlo tekshirmaslik",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Imlo tekshirmaslik:</b>\nTestdan keyin javoblarni tekshirmadingiz. 3 ta imlo xatosi = 3 ball.\n\n💡 <b>Tekshirish ro'yxati:</b>\n1. Ko'plik <b>-s</b> kerakmi?\n2. So'z soni limitdan oshmadimi?\n3. Ikki harfli so'zlar to'g'rimi (<i>ll, ss, cc</i>)?\n4. Sana va oy nomlari to'g'ri yozilganmi?\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_049",
+      "title": "Sifat va ot tartibi",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Sifat va ot tartibi:</b>\n<i>\"a ___ room\"</i> uchun javob <i>\"double\"</i>. Siz <i>\"room double\"</i> yoki <i>\"doubles\"</i> deb yozdingiz.\n\n💡 <b>Grammatika yordam beradi:</b>\nBo'sh joydan keyin ot bo'lsa, ehtimol sifat kerak: <i>double, quiet, wooden</i>. Bo'sh joy oxirida bo'lsa, ehtimol ot. Grammatikani o'qish = javobning yarmi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_050",
+      "title": "Kitob emas, hayotdan tinglash",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Kitob emas, hayotdan tinglash:</b>\nFaqat Cambridge testlarini qayta-qayta ishlab, javoblarni yodlab oldingiz. Imtihonda yangi audio qiyin bo'ldi.\n\n💡 <b>To'g'ri mashq:</b>\nTestlardan tashqari kuniga 15 daqiqa jonli ingliz tilini tinglang: <b>TED-Ed</b>, <b>BBC 6 Minute English</b>, <b>podkastlar</b>. Quloq yangi ovozlarga o'rganadi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_051",
+      "title": "Diktant mashqini qilmaslik",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Diktant mashqini qilmaslik:</b>\nEshitasiz, tushunasiz, lekin yozganda so'zlar chiqmaydi.\n\n💡 <b>Diktant usuli:</b>\nKuniga 1 daqiqalik audioni oling. Gapma-gap to'xtatib, <b>har bir so'zni</b> yozing. Keyin transkript bilan solishtiring. 2 haftada eshitish va imlo birdan yaxshilanadi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_052",
+      "title": "Shadowing qilmaslik",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Shadowing qilmaslik:</b>\nTez nutqni tushunolmaysiz, chunki o'zingiz bunday tez gapira olmaysiz.\n\n💡 <b>Shadowing usuli:</b>\nQisqa audio qo'ying va spikerdan <b>1 soniya orqada</b> uning gapini takrorlang. Kuniga 5 daqiqa. Og'zingiz ritmni o'rgansa, qulog'ingiz ham uni oson taniydi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_053",
+      "title": "Xatolarni tahlil qilmaslik",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Xatolarni tahlil qilmaslik:</b>\nTest ishladingiz, ballni ko'rdingiz va yopib qo'ydingiz. Keyingi testda ham xuddi shu xatolar.\n\n💡 <b>Xato daftari:</b>\nHar bir xato uchun yozing: <b>nima uchun xato?</b> Imlo, sinonim, distraktor yoki diqqat yo'qolishi. 3 haftada qaysi turdagi xato ko'pligini ko'rasiz va aynan o'shani tuzatasiz.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_054",
+      "title": "Transkriptni o'qimaslik",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Transkriptni o'qimaslik:</b>\nJavob noto'g'ri chiqdi, lekin sababini bilmaysiz.\n\n💡 <b>Oltin qoida:</b>\nHar testdan keyin noto'g'ri savollar uchun audioni <b>transkript bilan</b> qayta tinglang. Javob qayerda aytilganini topib, chizib qo'ying. Eng tez o'sish shu yerda.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_055",
+      "title": "Section 1 ni yengil deb o'ylash",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Section 1 ni yengil deb o'ylash:</b>\nSection 1 oson, deb e'tiborsiz ishladingiz va 3 ta ball ketdi.\n\n💡 <b>Haqiqat:</b>\nBand 7+ uchun Section 1 va 2 da deyarli <b>xatosiz</b> ishlash kerak. Oson savollardagi ball qiyinlaridagi bilan bir xil. Eng ko'p ball imlo va raqamlarda yo'qotiladi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_056",
+      "title": "Nota olishni bilmaslik",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Nota olishni bilmaslik:</b>\nSection 4 da hammasini yozishga harakat qilasiz va hech narsaga ulgurmaysiz.\n\n💡 <b>Qisqa belgilar:</b>\n<b>↑</b> = oshdi, <b>↓</b> = kamaydi, <b>→</b> = olib keladi, <b>≈</b> = taxminan, <b>w/</b> = with, <b>b/c</b> = because. Faqat bo'sh joy uchun kerakli so'zni ushlang.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_057",
+      "title": "Gapning oxirini kutmaslik",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Gapning oxirini kutmaslik:</b>\n<i>\"The deadline is Friday, the 10th... no, sorry, it's been extended to the 17th.\"</i>\n\n💡 <b>Oltin qoida:</b>\nJavobni eshitganingizdan keyin ham <b>gap tugaguncha</b> tinglang. Tuzatish ko'pincha bir soniya keyin keladi. Yozishga shoshilmang, oxirini kuting.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_058",
+      "title": "Bir savolda ikki javob",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Bir savolda ikki javob:</b>\n<i>\"You can pay by card or in cash.\"</i> Bitta so'z kerak, ikkalasini yozdingiz.\n\n💡 <b>Qoida:</b>\nAgar javob variantlari ikkita bo'lsa ham, word limitga qarang. Ikkita javob yozish ko'pincha <b>noto'g'ri</b> deb baholanadi. Savol mazmuniga eng mos bittasini tanlang.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_059",
+      "title": "Qisqartmalarni yozish",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Qisqartmalarni yozish:</b>\nJavob <i>\"Saturday\"</i>, siz <i>\"Sat\"</i> deb yozdingiz.\n\n💡 <b>Qoida:</b>\nKun va oylarni <b>to'liq</b> yozing. Faqat audioda qisqartma aytilsa (<i>BBC, UK, DVD</i>), uni shu ko'rinishda yozish mumkin. Shubha bo'lsa, to'liq yozing.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_060",
+      "title": "Imtihon kuni quloqchinni sozlamaslik",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Imtihon kuni quloqchinni sozlamaslik:</b>\nComputer test boshlandi, ovoz past, lekin siz sozlashni bilmay qoldingiz.\n\n💡 <b>Imtihon oldidan:</b>\nTest boshlanishidan oldin <b>ovozni tekshirish</b> uchun vaqt beriladi. Ovozni o'zingizga moslang va quloqchin mahkam o'tirganini tekshiring. Muammo bo'lsa, darhol qo'l ko'taring.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_061",
+      "title": "Listening ni oxirgi kunga qoldirish",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Listening ni oxirgi kunga qoldirish:</b>\n\"Listening oson, uni keyin qilaman\" deb, tayyorgarlikni oxirgi haftaga qoldirdingiz.\n\n💡 <b>To'g'ri reja:</b>\nQuloq sekin rivojlanadi. Har kuni <b>20 daqiqa</b> tinglash bir haftada bir marta 3 soat tinglashdan foydaliroq. Imtihondan 2 oy oldin har kuni boshlang.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "lis_062",
+      "title": "O'zingizga ishonmaslik",
+      "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>O'zingizga ishonmaslik:</b>\nJavobni eshitdingiz, lekin \"juda oson, tuzoq bo'lsa kerak\" deb boshqasini yozdingiz.\n\n💡 <b>Oltin qoida:</b>\nHamma savol ham tuzoq emas. Agar spiker javobni aniq aytsa va keyin tuzatmasa, <b>birinchi instinktingizga ishoning</b>. Ortiqcha o'ylash ham ball yo'qotadi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    }
+  ],
+  "reading": [
+    {
+      "id": "rea_001",
+      "title": "Matnni boshidan oxirigacha o'qish",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Matnni boshidan oxirigacha o'qish:</b>\n60 daqiqada 3 ta uzun matn va 40 ta savol. Har bir matnni to'liq o'qisangiz, vaqt yetmaydi.\n\n💡 <b>To'g'ri strategiya:</b>\nAvval matnni <b>2-3 daqiqada</b> ko'z yugurtirib chiqing: sarlavha, birinchi gaplar. Keyin savolni o'qib, kerakli joyni toping va faqat o'sha qismni diqqat bilan o'qing.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_002",
+      "title": "True / False / Not Given farqi",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>True / False / Not Given farqi:</b>\nEng ko'p ball yo'qotiladigan savol turi. Ko'pchilik FALSE va NOT GIVEN ni chalkashtiradi.\n\n💡 <b>Oddiy formula:</b>\n<b>TRUE</b>: matn gapni tasdiqlaydi.\n<b>FALSE</b>: matn gapga <i>qarama-qarshi</i> narsa aytadi.\n<b>NOT GIVEN</b>: matnda bu haqda ma'lumot yo'q. O'z bilimingizni qo'shmang!\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_003",
+      "title": "Yes/No/Not Given va T/F/NG",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Yes/No/Not Given va T/F/NG:</b>\nIkkalasi bir xil ko'rinadi, lekin farqi bor.\n\n💡 <b>Farqi:</b>\n<b>True/False/Not Given</b>: matndagi <i>faktlar</i> haqida.\n<b>Yes/No/Not Given</b>: muallifning <i>fikri va qarashlari</i> haqida.\nY/N/NG da muallif nima deb o'ylashini qidiring.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_004",
+      "title": "Kalit so'zni aynan qidirish",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Kalit so'zni aynan qidirish:</b>\nSavolda <i>\"elderly people\"</i>. Matnda bu so'zni qidirasiz, lekin u yo'q. Matnda <i>\"senior citizens\"</i>.\n\n💡 <b>Oltin qoida:</b>\nReading da savollar deyarli har doim <b>sinonim</b> bilan beriladi. Kalit so'z uchun 2-3 ta muqobil o'ylang. Aynan bir xil so'z ko'pincha tuzoq bo'ladi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_005",
+      "title": "Tartib bilan keladigan savollar",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Tartib bilan keladigan savollar:</b>\nQaysi savol turlari matn tartibida keladi, qaysilari yo'q?\n\n💡 <b>Esda tuting:</b>\n<b>Tartib bilan</b>: T/F/NG, Y/N/NG, sentence completion, MCQ.\n<b>Tartibsiz</b>: matching headings, matching information, summary (ba'zan).\nTartibli savolda 5-javobni topsangiz, 6-javob undan keyin.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_006",
+      "title": "Matching Headings tuzog'i",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Matching Headings tuzog'i:</b>\nAbzasda kalit so'zni ko'rib, sarlavhani darhol tanladingiz. Noto'g'ri chiqdi.\n\n💡 <b>Oltin qoida:</b>\nSarlavha abzasning <b>asosiy g'oyasi</b>, bitta detali emas. Abzasning birinchi va oxirgi gapini o'qing. Butun abzas nima haqida? Shu savolga javob bering.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_007",
+      "title": "Matching Headings: qaysi tartibda",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Matching Headings: qaysi tartibda:</b>\nBirinchi abzasdan boshlab hamma sarlavhani solishtirasiz va 15 daqiqa ketadi.\n\n💡 <b>Tezroq usul:</b>\nAvval <b>eng qisqa</b> va eng aniq abzaslarni yeching. Ishlatilgan sarlavhalarni chizib qo'ying. Oxirida qolgan 2-3 ta sarlavhadan tanlash ancha oson bo'ladi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_008",
+      "title": "Word limitni e'tiborsiz qoldirish",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Word limitni e'tiborsiz qoldirish:</b>\n<i>NO MORE THAN TWO WORDS FROM THE PASSAGE</i>. Siz uchta so'z yozdingiz.\n\n💡 <b>Oltin qoida:</b>\nJavobni <b>matndan aynan</b> ko'chiring, o'zgartirmang. So'z sonini sanang. Shakl o'zgartirish (ko'plik, zamon) ham xato bo'lishi mumkin. Imlo ham matndagidek bo'lsin.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_009",
+      "title": "Summary completion: so'z ro'yxatidan",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Summary completion: so'z ro'yxatidan:</b>\nSummary ostida 10 ta so'z, bo'sh joylar 6 ta. Siz ma'noga qarab tanladingiz, grammatika mos kelmadi.\n\n💡 <b>2 qadamli usul:</b>\n1. Bo'sh joyga qanday so'z turi kerak: <b>ot, fe'l, sifat</b>?\n2. Ro'yxatdagi so'zlarni turlarga ajrating. Keyin faqat mos turdagilar orasidan ma'no bo'yicha tanlang.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_010",
+      "title": "Vaqtni noto'g'ri taqsimlash",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Vaqtni noto'g'ri taqsimlash:</b>\nBirinchi matnga 30 daqiqa sarfladingiz, uchinchi matnga 10 daqiqa qoldi. Uchinchi matn esa eng qiyini.\n\n💡 <b>Vaqt rejasi:</b>\n<b>Passage 1</b>: 17 daqiqa\n<b>Passage 2</b>: 20 daqiqa\n<b>Passage 3</b>: 23 daqiqa\nSoatni har bo'lim oxirida tekshiring. Vaqt tugasa, keyingisiga o'ting.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_011",
+      "title": "Bitta savolda tiqilib qolish",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Bitta savolda tiqilib qolish:</b>\nBitta qiyin savol ustida 5 daqiqa o'tirdingiz. Shu vaqtda 4 ta oson savolni yechish mumkin edi.\n\n💡 <b>Oltin qoida:</b>\n1 daqiqada topolmasangiz, <b>belgi qo'yib o'tib keting</b>. Har bir savol bir xil ball. Oxirida vaqt qolsa, qaytib kelasiz. Bo'sh qoldirmang, taxmin qiling.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_012",
+      "title": "Skimming va scanning farqi",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Skimming va scanning farqi:</b>\nIkkalasini bir xil narsa deb o'ylaysiz va ikkalasini ham sekin qilasiz.\n\n💡 <b>Farqi:</b>\n<b>Skimming</b>: umumiy g'oyani tushunish uchun tez o'qish (sarlavha, birinchi gaplar).\n<b>Scanning</b>: aniq narsani qidirish (raqam, ism, sana). Scanning da ko'z so'zlarni o'qimaydi, faqat qidiradi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_013",
+      "title": "Ism va raqamlarni qidirish",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Ism va raqamlarni qidirish:</b>\nSavolda <i>\"1987\"</i> yoki <i>\"Dr Wilson\"</i> bor. Siz matnni boshidan o'qishni boshladingiz.\n\n💡 <b>Scanning sirri:</b>\nRaqamlar, katta harf bilan boshlangan ismlar va qavslar ko'zga <b>oson tashlanadi</b>. Ko'zingizni matn bo'ylab tez yuritib, faqat shu belgini qidiring. 10 soniya yetadi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_014",
+      "title": "Multiple choice tuzog'i",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Multiple choice tuzog'i:</b>\nVariantdagi so'zlar matnda aynan bor. Siz shu variantni tanladingiz va adashdingiz.\n\n💡 <b>Oltin qoida:</b>\nMatndagi so'zlarni aynan takrorlagan variant ko'pincha <b>tuzoq</b>. To'g'ri javob odatda matn ma'nosini <b>boshqa so'zlar bilan</b> beradi. Har bir variantni matn bilan solishtiring.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_015",
+      "title": "\"Some\", \"all\", \"always\" so'zlari",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>\"Some\", \"all\", \"always\" so'zlari:</b>\nMatn: <i>\"Some scientists believe...\"</i>. Savol: <i>\"Scientists believe...\"</i>. Siz TRUE dedingiz.\n\n💡 <b>Miqdor so'zlariga e'tibor:</b>\n<b>some</b>, <b>most</b>, <b>all</b>, <b>always</b>, <b>never</b>, <b>only</b>, <b>usually</b> ma'noni butunlay o'zgartiradi. Savoldagi va matndagi miqdor bir xil bo'lmasa, javob TRUE emas.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_016",
+      "title": "Not Given ni qo'rqib tanlamaslik",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Not Given ni qo'rqib tanlamaslik:</b>\nMatnda javob topilmadi, lekin siz \"bo'lishi kerak\" deb FALSE belgiladingiz.\n\n💡 <b>Oltin qoida:</b>\nAgar matnda gapni tasdiqlovchi ham, inkor qiluvchi ham ma'lumot yo'q bo'lsa, javob <b>NOT GIVEN</b>. Bu javob ham boshqalar kabi tez-tez uchraydi, undan qo'rqmang.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_017",
+      "title": "O'z bilimingizni qo'shish",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>O'z bilimingizni qo'shish:</b>\nSavol: <i>\"The sun is a star.\"</i> Siz buni bilasiz va TRUE dedingiz. Matnda esa bu haqda gap yo'q.\n\n💡 <b>Oltin qoida:</b>\nReading da faqat <b>matn</b> hakam. Hayotda to'g'ri bo'lgan narsa ham matnda yozilmagan bo'lsa, NOT GIVEN. O'z bilimingizni eshik oldida qoldiring.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_018",
+      "title": "Matching information savollari",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Matching information savollari:</b>\n<i>\"Which paragraph contains a reference to...?\"</i> Siz har bir savol uchun butun matnni qayta o'qiysiz.\n\n💡 <b>Tezroq usul:</b>\nBu savollar tartibsiz keladi va eng ko'p vaqt oladi. Ularni <b>oxiriga</b> qoldiring. Boshqa savollarni yechayotganda matnni allaqachon yaxshi bilib olasiz.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_019",
+      "title": "Matching features (odam va fikr)",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Matching features (odam va fikr):</b>\n5 ta olim va 7 ta fikr. Siz har bir fikr uchun matnni boshidan qidirasiz.\n\n💡 <b>Usul:</b>\nAvval matnda har bir olim ismini <b>aylana ichiga</b> oling. Keyin har bir ism atrofidagi 2-3 gapni o'qing va fikrni toping. Bitta ism bir necha marta uchrashi mumkin.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_020",
+      "title": "Sentence endings savollari",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Sentence endings savollari:</b>\nGap boshlanishi va 7 ta tugashi. Ma'no to'g'ri ko'rinadi, lekin grammatika mos emas.\n\n💡 <b>Ikki tomonlama tekshiruv:</b>\nAvval grammatik jihatdan mos kelmaydigan variantlarni olib tashlang. Keyin qolganlarini <b>matn ma'nosi</b> bilan solishtiring. Mantiqan to'g'ri gap matnda yozilmagan bo'lishi mumkin.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_021",
+      "title": "Diagram labelling",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Diagram labelling:</b>\nRasmda mashina qismlari, matnda esa uzun texnik tavsif. Qayerdan boshlashni bilmaysiz.\n\n💡 <b>Usul:</b>\nDiagrammadagi <b>berilgan so'zlarni</b> matndan toping. Javob ular atrofida bo'ladi. Odatda tavsif ma'lum tartib bilan boradi: yuqoridan pastga yoki chapdan o'ngga.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_022",
+      "title": "Notanish so'zlardan qo'rqish",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Notanish so'zlardan qo'rqish:</b>\nMatnda bitta notanish so'z chiqdi va siz to'xtab qoldingiz.\n\n💡 <b>Oltin qoida:</b>\nHar bir so'zni bilish shart emas. Ma'noni <b>kontekstdan</b> taxmin qiling: oldingi va keyingi gapga qarang. Savol aynan shu so'z haqida bo'lmasa, o'tib keting.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_023",
+      "title": "Lug'at ko'rinishidagi so'zlar",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Lug'at ko'rinishidagi so'zlar:</b>\nBa'zan matnda qiyin so'z va uning ma'nosi yonida tushuntirilgan bo'ladi.\n\n💡 <b>Yashirin yordam:</b>\n<b>that is</b>, <b>in other words</b>, <b>known as</b>, <b>i.e.</b>, vergul yoki qavs ichidagi izohlar so'z ma'nosini beradi. Matn sizga yordam berishini ko'ring.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_024",
+      "title": "Bog'lovchilarni tushunmaslik",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Bog'lovchilarni tushunmaslik:</b>\n<i>\"Although the method was cheap, it was rarely used.\"</i> Savol: <i>\"The method was popular.\"</i>\n\n💡 <b>Signal so'zlar:</b>\n<b>although</b>, <b>however</b>, <b>despite</b>, <b>whereas</b> = qarama-qarshilik. <b>therefore</b>, <b>as a result</b> = natija. Ular gap mantiqini ko'rsatadi. Javob: FALSE.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_025",
+      "title": "Javobni matndan o'zgartirib yozish",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Javobni matndan o'zgartirib yozish:</b>\nMatnda <i>\"pollution\"</i>. Siz <i>\"polluted\"</i> deb yozdingiz.\n\n💡 <b>Oltin qoida:</b>\nCompletion savollarida javobni <b>matndagi shaklda</b> ko'chiring. Agar grammatika boshqa shaklni talab qilsa, demak noto'g'ri so'zni tanlagansiz. Boshqa joyni qidiring.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_026",
+      "title": "Passage 3 dan qo'rqish",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Passage 3 dan qo'rqish:</b>\nUchinchi matn eng qiyin, deb unga yetganingizda vahimaga tushasiz.\n\n💡 <b>Haqiqat:</b>\nPassage 3 da ham <b>oson savollar</b> bor: odatda summary yoki MCQ ning birinchi savollari. Avval ularni yeching. Qiyin savolga vaqt sarflab, oson ballni yo'qotmang.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_027",
+      "title": "Savollarni o'qimasdan matnga kirish",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Savollarni o'qimasdan matnga kirish:</b>\nMatnni diqqat bilan o'qidingiz, keyin savollarga qaradingiz va yana qaytadan o'qishga to'g'ri keldi.\n\n💡 <b>To'g'ri tartib:</b>\n1. Savollarni tez o'qing va kalit so'zlarni chizing.\n2. Matnni skim qiling.\n3. Har bir savol uchun kerakli joyni toping. Shunda matnni <b>bir marta</b> o'qiysiz.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_028",
+      "title": "Muallif fikrini topish",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Muallif fikrini topish:</b>\n<i>\"What is the writer's main purpose?\"</i> Siz bitta detalni tanladingiz.\n\n💡 <b>Oltin qoida:</b>\nAsosiy maqsad savollari <b>butun matn</b> haqida. Kirish va xulosa abzaslarini o'qing. Muallif tushuntiryaptimi, tanqid qilyaptimi yoki solishtiryaptimi?\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_029",
+      "title": "Muallif ohangini tushunmaslik",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Muallif ohangini tushunmaslik:</b>\nMuallif <i>\"so-called experts\"</i> deydi. Bu hurmatmi?\n\n💡 <b>Yashirin ma'nolar:</b>\n<b>so-called</b> = shubha yoki istehzo\n<b>admittedly</b> = qisman rozilik\n<b>surprisingly</b> = kutilmagan\n<b>arguably</b> = munozarali fikr\nBu so'zlar Y/N/NG savollarida kalit bo'ladi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_030",
+      "title": "Answer sheet ga ko'chirmaslik",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Answer sheet ga ko'chirmaslik:</b>\nQog'oz testda javoblarni savol varag'iga yozdingiz va vaqt tugadi. Reading da ko'chirish uchun qo'shimcha vaqt yo'q.\n\n💡 <b>Qoida:</b>\nReading da javoblarni <b>darhol</b> answer sheet ga yozing. Listening dan farqli o'laroq, qo'shimcha 10 daqiqa berilmaydi. Computer testda bu muammo yo'q.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_031",
+      "title": "Imlo xatolari",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Imlo xatolari:</b>\nJavobni to'g'ri topdingiz, lekin ko'chirishda harf tushib qoldi.\n\n💡 <b>Oltin qoida:</b>\nJavobni matndan <b>harfma-harf</b> ko'chiring. Computer testda so'zni belgilab, nusxa olish mumkin (Ctrl+C / Ctrl+V). Bu imlo xatosini butunlay yo'q qiladi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_032",
+      "title": "Computer testdagi yordamchi vositalar",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Computer testdagi yordamchi vositalar:</b>\nCD IELTS da matnni belgilash va eslatma yozish mumkin, lekin ko'pchilik bundan foydalanmaydi.\n\n💡 <b>Foydali vositalar:</b>\n<b>Highlight</b>: kalit so'zlarni belgilash.\n<b>Notes</b>: abzasga eslatma qo'shish.\n<b>Copy-paste</b>: javobni xatosiz ko'chirish.\nImtihondan oldin rasmiy demo testda mashq qiling.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_033",
+      "title": "Reading tezligini oshirmaslik",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Reading tezligini oshirmaslik:</b>\nMatnni tushunasiz, lekin juda sekin o'qiysiz.\n\n💡 <b>Tezlik mashqi:</b>\nHar kuni <b>bitta maqola</b> o'qing (BBC, The Guardian, National Geographic). Vaqtni o'lchang. Ichingizda so'zma-so'z talaffuz qilmang, ko'zingiz bilan guruhlab o'qing.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_034",
+      "title": "Faqat test ishlash",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Faqat test ishlash:</b>\nHar kuni test ishlaysiz, lekin ball o'smayapti.\n\n💡 <b>To'g'ri mashq:</b>\nBall <b>tahlilda</b> o'sadi. Har testdan keyin noto'g'ri javoblar uchun matnda isbotni toping. Nima uchun xato qildingiz: sinonim, vaqt yoki tushunmaslik? Shuni yozib boring.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_035",
+      "title": "Akademik so'zlarni bilmaslik",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Akademik so'zlarni bilmaslik:</b>\nMatnda <i>\"significant\"</i>, <i>\"subsequent\"</i>, <i>\"comprise\"</i> kabi so'zlar ko'p. Ular sizni sekinlashtiradi.\n\n💡 <b>Yechim:</b>\n<b>Academic Word List</b> (570 ta so'z) ni o'rganing. Kuniga 10 ta so'z. Bu so'zlar IELTS Reading matnlarining katta qismini tashkil qiladi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_036",
+      "title": "Sana va raqam savollari",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Sana va raqam savollari:</b>\nMatnda bir necha sana bor. Siz birinchi ko'zingizga tushganini yozdingiz.\n\n💡 <b>Oltin qoida:</b>\nRaqamni topganda uning <b>atrofidagi gapni</b> to'liq o'qing. Savol nimani so'rayapti: boshlanish, tugash yoki o'zgarish sanasimi? Matnda bir nechta o'xshash raqam bo'lishi tabiiy.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_037",
+      "title": "Abzasning birinchi gapi",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Abzasning birinchi gapi:</b>\nMatching headings da har bir abzasni to'liq o'qiysiz.\n\n💡 <b>Topic sentence sirri:</b>\nAkademik matnlarda abzasning <b>asosiy g'oyasi</b> ko'pincha birinchi yoki ikkinchi gapda bo'ladi. Avval ularni o'qing. Shubha bo'lsa, oxirgi gapga qarang.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_038",
+      "title": "Paraphrase ni tanimaslik",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Paraphrase ni tanimaslik:</b>\nSavol: <i>\"The project was abandoned.\"</i> Matn: <i>\"Work on the scheme was eventually halted.\"</i>\n\n💡 <b>Fikrlash usuli:</b>\nSavoldagi har bir muhim so'z uchun sinonim qidiring: <b>project</b> = scheme, <b>abandoned</b> = halted. Reading testi asosan <b>sinonimlarni tanish</b> testi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_039",
+      "title": "Tez-tez uchraydigan sinonimlar",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Tez-tez uchraydigan sinonimlar:</b>\nReading matnlarida bir xil so'zlar boshqa ko'rinishda qayta-qayta keladi.\n\n💡 <b>Yodlab oling:</b>\n<b>show</b> = demonstrate, reveal\n<b>cause</b> = lead to, result in\n<b>important</b> = crucial, vital\n<b>increase</b> = rise, growth\n<b>old</b> = ancient, elderly\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_040",
+      "title": "Bo'sh qoldirish",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Bo'sh qoldirish:</b>\nVaqt tugadi va 5 ta savol bo'sh qoldi.\n\n💡 <b>Oltin qoida:</b>\nNoto'g'ri javob uchun minus yo'q. Oxirgi 1 daqiqada hamma bo'sh joyga <b>taxmin</b> yozing. T/F/NG da omad 33%, MCQ da 25%. Bo'sh joy esa 0%.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_041",
+      "title": "Qavs ichidagi ma'lumot",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Qavs ichidagi ma'lumot:</b>\nMatnda <i>\"(see Figure 2)\"</i> yoki <i>\"(Smith, 2019)\"</i>. Siz ularni o'qib vaqt sarflaysiz.\n\n💡 <b>Qoida:</b>\nQavs ichidagi manbalar odatda savolga aloqasi yo'q. Lekin ba'zan ism yoki sana savoli shu yerda bo'ladi. <b>Scanning</b> paytida e'tibor bering, skimming paytida o'tkazib yuboring.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_042",
+      "title": "Uzun gaplarni tushunmaslik",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Uzun gaplarni tushunmaslik:</b>\nBir gap 4 qatordan iborat va oxiriga kelib boshini unutasiz.\n\n💡 <b>Usul:</b>\nGapning <b>egasi</b> va <b>asosiy fe'lini</b> toping. Vergullar orasidagi qismlar qo'shimcha ma'lumot. Avval asosiy fikrni tushuning: kim nima qildi?\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_043",
+      "title": "Summary da tartibni yo'qotish",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Summary da tartibni yo'qotish:</b>\nSummary matnning qaysi qismiga tegishli ekanini topolmayapsiz.\n\n💡 <b>Usul:</b>\nSummary sarlavhasi va birinchi gapini o'qing, keyin matndan <b>o'xshash qismni</b> toping. Summary odatda 1-2 abzasni qamrab oladi va matn tartibida boradi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_044",
+      "title": "Ortiqcha o'ylash",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Ortiqcha o'ylash:</b>\nJavob aniq ko'rinadi, lekin siz \"juda oson\" deb boshqasini tanladingiz.\n\n💡 <b>Oltin qoida:</b>\nMatnda aniq dalil bo'lsa, unga ishoning. Ko'p savollar <b>to'g'ridan-to'g'ri</b> javoblanadi. Tuzoqni hamma joydan qidirish ham vaqt va ball yo'qotadi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_045",
+      "title": "Kalit so'zni noto'g'ri tanlash",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Kalit so'zni noto'g'ri tanlash:</b>\nSavoldan <i>\"the\"</i>, <i>\"important\"</i> kabi umumiy so'zlarni qidirasiz.\n\n💡 <b>Yaxshi kalit so'zlar:</b>\n<b>Ismlar</b>, <b>raqamlar</b>, <b>sanalar</b>, <b>texnik atamalar</b> va noyob so'zlar eng yaxshi kalit so'zlar. Ular matnda sinonimga aylanmaydi va tez topiladi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_046",
+      "title": "Hamma savolni bir xil usulda yechish",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Hamma savolni bir xil usulda yechish:</b>\nT/F/NG ni ham, summary ni ham bir xil o'qish bilan yechasiz.\n\n💡 <b>Har biriga o'z usuli:</b>\n<b>T/F/NG</b>: aniq joyni topib, diqqat bilan solishtiring.\n<b>Headings</b>: umumiy g'oyani oling.\n<b>Completion</b>: scanning va grammatika.\nSavol turini tanib, mos usulni tanlang.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_047",
+      "title": "Bitta savol uchun ikki javob",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Bitta savol uchun ikki javob:</b>\nMCQ da ikkita variant to'g'ri ko'rinadi.\n\n💡 <b>Tanlash usuli:</b>\nHar bir variantni matn bilan <b>so'zma-so'z</b> solishtiring. Ko'pincha bittasi qisman to'g'ri: matnda bor, lekin savolga javob bermaydi. Savol nimani so'rayotganini qayta o'qing.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_048",
+      "title": "Charchoq",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Charchoq:</b>\nUchinchi matnga yetganingizda diqqat tarqaldi va bir gapni 3 marta o'qiysiz.\n\n💡 <b>Chidamlilik:</b>\nUyda to'liq 60 daqiqalik testni <b>tanaffussiz</b> ishlang. Haftada 2 marta. Imtihon kuni yaxshi uxlang va nonushta qiling. Miya ham sportchi kabi tayyorgarlik talab qiladi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_049",
+      "title": "Kirish abzasini o'tkazib yuborish",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Kirish abzasini o'tkazib yuborish:</b>\nVaqtni tejash uchun birinchi abzasni o'qimadingiz.\n\n💡 <b>Nega muhim:</b>\nKirish abzasi matn <b>nima haqida</b> ekanini va qanday tuzilganini aytadi. 30 soniya sarflang. Bu keyingi barcha savollar uchun xarita bo'lib xizmat qiladi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_050",
+      "title": "Matn tuzilishini tushunmaslik",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Matn tuzilishini tushunmaslik:</b>\nMatn qanday tuzilganini bilmasangiz, javobni qayerdan qidirishni bilmaysiz.\n\n💡 <b>Keng tarqalgan tuzilmalar:</b>\n<b>Muammo → sabab → yechim</b>\n<b>Tarix → hozir → kelajak</b>\n<b>Nazariya → dalil → tanqid</b>\nSkimming paytida matn qaysi tuzilmada ekanini aniqlang.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_051",
+      "title": "Tarixiy matnlarda vaqtni chalkashtirish",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Tarixiy matnlarda vaqtni chalkashtirish:</b>\nMatn 1800-yillardan bugungacha boradi. Savol: <i>\"Initially, the device was used for...\"</i>\n\n💡 <b>Vaqt signallari:</b>\n<b>initially</b>, <b>originally</b>, <b>at first</b> = boshida\n<b>later</b>, <b>subsequently</b> = keyin\n<b>nowadays</b>, <b>currently</b> = hozir\nSavoldagi davrga mos qismni toping.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_052",
+      "title": "Sabab va natijani chalkashtirish",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Sabab va natijani chalkashtirish:</b>\nSavol: <i>\"A caused B.\"</i> Matn: <i>\"B led to A.\"</i> Siz TRUE dedingiz.\n\n💡 <b>Oltin qoida:</b>\nSabab-natija yo'nalishiga e'tibor bering. <b>A led to B</b> = A sabab. <b>A resulted from B</b> = B sabab. Yo'nalish teskari bo'lsa, javob FALSE.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_053",
+      "title": "Qiyoslashlarni noto'g'ri tushunish",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Qiyoslashlarni noto'g'ri tushunish:</b>\nMatn: <i>\"Method A is not as effective as Method B.\"</i> Savol: <i>\"Method A is more effective.\"</i>\n\n💡 <b>Diqqat:</b>\n<b>not as ... as</b> = kamroq\n<b>far more</b> = ancha ko'proq\n<b>slightly</b> = biroz\n<b>twice as</b> = ikki barobar\nQiyoslash darajasi savolda va matnda bir xil bo'lishi kerak.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_054",
+      "title": "Ehtimollik so'zlari",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Ehtimollik so'zlari:</b>\nMatn: <i>\"This may help reduce costs.\"</i> Savol: <i>\"This will reduce costs.\"</i>\n\n💡 <b>Oltin qoida:</b>\n<b>may</b>, <b>might</b>, <b>could</b>, <b>possibly</b> = ehtimol. <b>will</b>, <b>definitely</b> = aniq. Matn ehtimol desa, savol aniq desa, javob TRUE emas. Bu Y/N/NG ning sevimli tuzog'i.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_055",
+      "title": "Bir xil so'z, boshqa ma'no",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Bir xil so'z, boshqa ma'no:</b>\nMatnda <i>\"novel\"</i> so'zi bor. Siz uni roman deb tushundingiz, aslida <b>yangi, original</b> degani.\n\n💡 <b>Ko'p ma'noli so'zlar:</b>\n<b>novel</b> = yangi, <b>sound</b> = asosli, <b>bear</b> = chidamoq, <b>fine</b> = juda mayda, <b>issue</b> = son (jurnal). Kontekstga qarab ma'noni tanlang.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_056",
+      "title": "Ingliz tilida o'qimaslik",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Ingliz tilida o'qimaslik:</b>\nFaqat imtihon matnlarini o'qiysiz, boshqa paytda inglizcha hech narsa o'qimaysiz.\n\n💡 <b>Kundalik odat:</b>\nQiziqqan mavzuingizda kuniga <b>15 daqiqa</b> inglizcha o'qing: futbol, texnologiya, tarix. Zavq bilan o'qish tezlik va so'z boyligini testdan ko'ra tezroq oshiradi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_057",
+      "title": "Javob kalitini tekshirmaslik",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Javob kalitini tekshirmaslik:</b>\nBall 25/40 chiqdi va keyingi testga o'tdingiz.\n\n💡 <b>Tahlil usuli:</b>\nHar bir xato uchun matndan javobni isbotlovchi <b>aniq gapni</b> toping va chizing. Sinonim juftini daftarga yozing. 10 testdan keyin sizda shaxsiy sinonim lug'ati bo'ladi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_058",
+      "title": "Graded so'zlar",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Graded so'zlar:</b>\nMatn: <i>\"a slight improvement\"</i>. Savol: <i>\"a significant improvement\"</i>.\n\n💡 <b>Darajaga e'tibor:</b>\n<b>slight</b>, <b>minor</b>, <b>modest</b> = kichik\n<b>significant</b>, <b>dramatic</b>, <b>substantial</b> = katta\nO'zgarish bor, lekin darajasi boshqa. Javob: FALSE.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_059",
+      "title": "Savoldagi barcha qismlarni tekshirmaslik",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Savoldagi barcha qismlarni tekshirmaslik:</b>\nSavol: <i>\"The study was conducted in 2010 in France.\"</i> Matnda 2010 bor, lekin mamlakat Germaniya.\n\n💡 <b>Oltin qoida:</b>\nSavoldagi <b>har bir</b> ma'lumotni tekshiring. Bitta qismi to'g'ri, ikkinchisi noto'g'ri bo'lsa, javob FALSE. Yarim to'g'ri gap TRUE emas.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_060",
+      "title": "Ikki xil ma'lumotni bog'lash",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Ikki xil ma'lumotni bog'lash:</b>\nBa'zi savollarning javobi ikki gapda tarqalgan bo'ladi.\n\n💡 <b>Usul:</b>\nKalit so'zni topganingizdan keyin <b>oldingi va keyingi</b> gapni ham o'qing. <i>this</i>, <i>it</i>, <i>such</i> kabi so'zlar oldingi gapga ishora qiladi. Ma'noni to'liq yig'ing.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_061",
+      "title": "Imtihon oldidan yangi usul sinash",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Imtihon oldidan yangi usul sinash:</b>\nImtihondan bir kun oldin internetda yangi strategiya ko'rib, uni imtihonda qo'lladingiz.\n\n💡 <b>Oltin qoida:</b>\nImtihonda faqat <b>mashq qilgan</b> usulingizdan foydalaning. Yangi usulni kamida 5 ta testda sinab ko'ring. Imtihon tajriba maydoni emas.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "rea_062",
+      "title": "General va Academic farqi",
+      "text": "📖 <b>IELTS READING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>General va Academic farqi:</b>\nGeneral Training Reading Academic dan oson deb o'ylaysiz va tayyorlanmaysiz.\n\n💡 <b>Haqiqat:</b>\nGeneral Reading matnlari oddiyroq, lekin Band uchun <b>ko'proq to'g'ri javob</b> kerak. Academic da 30/40 ≈ Band 7, General da 34/40 ≈ Band 7. Xatoga joy kamroq.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    }
+  ],
+  "writing": [
+    {
+      "id": "wri_001",
+      "title": "Task 1 da overview yozmaslik",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Task 1 da overview yozmaslik:</b>\nGrafikdagi har bir raqamni yozdingiz, lekin umumiy xulosa yo'q. Task Achievement 5.0 dan oshmaydi.\n\n💡 <b>Oltin qoida:</b>\nHar bir Task 1 da <b>Overview</b> bo'lishi shart: 2 ta eng asosiy tendensiya, raqamlarsiz.\n✅ <i>Overall, car use rose steadily, while bus travel declined.</i>\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_002",
+      "title": "Task 1 da fikr bildirish",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Task 1 da fikr bildirish:</b>\n<i>\"This is because people became richer.\"</i> Grafikda sabab yo'q, siz o'zingiz qo'shdingiz.\n\n💡 <b>Qoida:</b>\nTask 1 da faqat <b>ko'rganingizni</b> tasvirlang. Sabab, fikr yoki taxmin yozmang. Faqat ma'lumot, taqqoslash va tendensiya.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_003",
+      "title": "Task 1 introduction ni ko'chirish",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Task 1 introduction ni ko'chirish:</b>\nSavoldagi gapni aynan ko'chirdingiz. Imtihon oluvchi bu so'zlarni hisobga olmaydi.\n\n💡 <b>Paraphrase usuli:</b>\n❌ <i>The graph shows the number of tourists...</i>\n✅ <i>The line chart illustrates how many people visited...</i>\n<b>shows</b> → illustrates, <b>number of</b> → how many.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_004",
+      "title": "O'sish va kamayish fe'llari",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>O'sish va kamayish fe'llari:</b>\nHar gapda <i>\"increased\"</i> va <i>\"decreased\"</i>. Lexical Resource balli tushadi.\n\n💡 <b>Almashtirish uchun:</b>\n<b>Oshdi</b>: rose, climbed, grew, surged\n<b>Kamaydi</b>: fell, dropped, declined, plummeted\n<b>O'zgarmadi</b>: remained stable, levelled off\n<b>Tebrandi</b>: fluctuated\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_005",
+      "title": "O'zgarish darajasini ko'rsatmaslik",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>O'zgarish darajasini ko'rsatmaslik:</b>\n<i>\"Sales increased.\"</i> Qancha? Tez yoki sekin?\n\n💡 <b>Darajani qo'shing:</b>\n<b>Keskin</b>: sharply, dramatically, significantly\n<b>O'rtacha</b>: steadily, considerably\n<b>Sekin</b>: slightly, gradually, marginally\n✅ <i>Sales rose sharply to 500 units.</i>\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_006",
+      "title": "Task 1 da hamma raqamni yozish",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Task 1 da hamma raqamni yozish:</b>\nJadvalda 24 ta raqam bor va siz hammasini yozdingiz. Matn ro'yxatga aylandi.\n\n💡 <b>Oltin qoida:</b>\nFaqat <b>asosiy</b> raqamlarni tanlang: eng katta, eng kichik, boshlanish, tugash va keskin o'zgarishlar. Ma'lumotlarni guruhlab, taqqoslab yozing.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_007",
+      "title": "Taqqoslash qilmaslik",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Taqqoslash qilmaslik:</b>\nHar bir kategoriyani alohida tasvirladingiz, ular orasida bog'liqlik yo'q.\n\n💡 <b>Taqqoslash iboralari:</b>\n<b>whereas</b>, <b>while</b>, <b>in contrast</b>\n<b>twice as much as</b>, <b>three times higher than</b>\n<b>the highest / the lowest</b>\n✅ <i>Men spent twice as much as women.</i>\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_008",
+      "title": "Pie chart tili",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Pie chart tili:</b>\nPie chart da <i>\"increased\"</i> ishlatdingiz, lekin unda vaqt yo'q, faqat ulushlar.\n\n💡 <b>Ulush iboralari:</b>\n<b>accounted for</b> 25%\n<b>made up</b> a quarter\n<b>the largest proportion</b>\n<b>a third / nearly half</b>\n✅ <i>Rent accounted for the largest share of spending.</i>\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_009",
+      "title": "Process diagram",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Process diagram:</b>\nJarayon diagrammasida aktiv nisbatda yozdingiz: <i>\"Workers cut the trees.\"</i>\n\n💡 <b>Passiv zamon:</b>\nJarayonda <b>passiv</b> ishlating: <i>The trees are cut down.</i>\nKetma-ketlik so'zlari: <b>first</b>, <b>next</b>, <b>after that</b>, <b>once</b>, <b>finally</b>. Overview: nechta bosqich va boshlanish/tugash.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_010",
+      "title": "Map task",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Map task:</b>\nIkkita xarita: oldin va keyin. Siz faqat yangi binolarni sanab chiqdingiz.\n\n💡 <b>Xarita tili:</b>\n<b>was demolished</b> = buzildi\n<b>was replaced by</b> = o'rniga qurildi\n<b>was extended</b> = kengaytirildi\n<b>was converted into</b> = aylantirildi\nOverview: hudud qanchalik o'zgardi?\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_011",
+      "title": "Task 1 ga juda ko'p vaqt",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Task 1 ga juda ko'p vaqt:</b>\nTask 1 ga 35 daqiqa sarfladingiz, Task 2 ga 25 daqiqa qoldi. Task 2 esa ikki barobar ko'p ball beradi.\n\n💡 <b>Vaqt qoidasi:</b>\n<b>Task 1</b>: 20 daqiqa, 150+ so'z\n<b>Task 2</b>: 40 daqiqa, 250+ so'z\nTask 2 ni birinchi yozish ham mumkin. Muhimi, 20 daqiqa o'tsa, Task 1 ni tugating.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_012",
+      "title": "So'z sonidan kam yozish",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>So'z sonidan kam yozish:</b>\nTask 2 da 230 so'z yozdingiz. Bu Task Response ballini tushiradi.\n\n💡 <b>Qoida:</b>\nTask 1 <b>150</b>, Task 2 <b>250</b> so'zdan kam bo'lmasin. Lekin juda uzun yozish ham shart emas: Task 2 uchun 270-300 so'z ideal. Sifat miqdordan muhimroq.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_013",
+      "title": "Savolga to'liq javob bermaslik",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Savolga to'liq javob bermaslik:</b>\nSavol: <i>\"Discuss both views and give your opinion.\"</i> Siz faqat bitta fikrni muhokama qildingiz.\n\n💡 <b>Oltin qoida:</b>\nSavolning <b>har bir qismini</b> chizib qo'ying. Ikki fikr = ikki abzas. <i>Give your opinion</i> = kirish va xulosada aniq pozitsiya. Bitta qism tushib qolsa, Band 6 dan oshmaydi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_014",
+      "title": "Task 2 savol turlarini bilmaslik",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Task 2 savol turlarini bilmaslik:</b>\nHar bir savolga bir xil tuzilma bilan javob yozasiz.\n\n💡 <b>4 asosiy tur:</b>\n<b>Opinion</b>: agree or disagree?\n<b>Discussion</b>: discuss both views\n<b>Problem-Solution</b>: causes and solutions\n<b>Advantages-Disadvantages</b>: do benefits outweigh?\nHar biriga o'z tuzilmasi kerak.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_015",
+      "title": "Pozitsiyasiz insho",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Pozitsiyasiz insho:</b>\nSiz ikkala tomonni ham yozdingiz, lekin o'zingiz qaysi tomonda ekaningiz noma'lum.\n\n💡 <b>Aniq pozitsiya:</b>\nKirishda fikringizni aniq ayting va xulosada <b>xuddi shuni</b> takrorlang.\n✅ <i>I strongly believe that the benefits outweigh the drawbacks.</i>\nO'rtada fikr o'zgarmasin.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_016",
+      "title": "Kirish juda uzun",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Kirish juda uzun:</b>\nKirish abzasi 80 so'z. Asosiy fikrlar uchun joy qolmadi.\n\n💡 <b>Ideal kirish: 2 gap:</b>\n1. Savolni <b>paraphrase</b> qiling.\n2. Fikringizni yoki insho rejasini ayting.\nJami 40-50 so'z. Tarix, umumiy gaplar va <i>\"Nowadays\"</i> kerak emas.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_017",
+      "title": "Body abzasida topic sentence yo'q",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Body abzasida topic sentence yo'q:</b>\nAbzas misol bilan boshlanadi. O'quvchi abzas nima haqida ekanini tushunmaydi.\n\n💡 <b>PEEL tuzilmasi:</b>\n<b>P</b>oint: asosiy fikr (1 gap)\n<b>E</b>xplain: tushuntirish\n<b>E</b>xample: aniq misol\n<b>L</b>ink: savolga qaytish\nHar bir body abzas shunday tuzilsin.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_018",
+      "title": "Misol keltirmaslik",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Misol keltirmaslik:</b>\nFikringiz to'g'ri, lekin hech qanday dalil yo'q. Task Response 6.0 da qoladi.\n\n💡 <b>Yaxshi misol:</b>\nAniq va real misol bering:\n✅ <i>For instance, in Finland, where homework is minimal, students consistently rank among the top performers.</i>\nUmumiy gaplar emas, aniq vaziyat.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_019",
+      "title": "Statistika o'ylab topish",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Statistika o'ylab topish:</b>\n<i>\"According to research, 87% of students...\"</i> Bu raqamni o'zingiz to'qidingiz.\n\n💡 <b>Xavfsiz yo'l:</b>\nSoxta statistika ishonchni yo'qotadi. Buning o'rniga <b>shaxsiy yoki umumiy misol</b> bering:\n✅ <i>In my country, many young people...</i>\n✅ <i>A friend of mine who...</i>\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_020",
+      "title": "Xulosada yangi fikr",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Xulosada yangi fikr:</b>\nXulosada birinchi marta yangi argument keltirdingiz.\n\n💡 <b>Qoida:</b>\nXulosa faqat <b>asosiy fikrlarni qisqacha</b> takrorlaydi va pozitsiyangizni tasdiqlaydi. Yangi g'oya qo'shmang. 2 gap yetarli. <i>In conclusion</i> yoki <i>To sum up</i> bilan boshlang.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_021",
+      "title": "Bog'lovchilarni ortiqcha ishlatish",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Bog'lovchilarni ortiqcha ishlatish:</b>\nHar gap <i>Moreover</i>, <i>Furthermore</i>, <i>In addition</i> bilan boshlanadi. Bu mexanik ko'rinadi.\n\n💡 <b>Oltin qoida:</b>\nBog'lovchilar <b>tabiiy</b> bo'lishi kerak. Har gapda emas, faqat fikrlar orasida. Ba'zan <i>This</i>, <i>Such</i>, <i>As a result</i> kabi oddiy bog'lanish yetarli. Coherence balli shunda oshadi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_022",
+      "title": "Bir xil so'zni takrorlash",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Bir xil so'zni takrorlash:</b>\nInshoda <i>\"people\"</i> so'zi 15 marta.\n\n💡 <b>Almashtirish:</b>\n<b>people</b> → individuals, citizens, the public, residents\n<b>important</b> → crucial, essential, vital\n<b>problem</b> → issue, challenge, concern\nLekin ma'nosi aniq mos kelmaydigan sinonim ishlatmang.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_023",
+      "title": "Qisqartmalar",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Qisqartmalar:</b>\n<i>\"Don't\"</i>, <i>\"can't\"</i>, <i>\"it's\"</i>. Akademik yozuvda bu norasmiy.\n\n💡 <b>Qoida:</b>\nTask 2 va Academic Task 1 da <b>to'liq shakl</b> ishlating: <i>do not, cannot, it is</i>. Faqat General Training norasmiy xatida qisqartma mumkin.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_024",
+      "title": "Shaxsiy olmoshlar",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Shaxsiy olmoshlar:</b>\n<i>\"You\"</i> va <i>\"we\"</i> bilan yozasiz: <i>\"You should do sport.\"</i>\n\n💡 <b>Akademik uslub:</b>\n❌ <i>You should exercise more.</i>\n✅ <i>Individuals should exercise more.</i>\n✅ <i>It is advisable to exercise regularly.</i>\n<b>I</b> faqat fikr bildirishda: <i>I believe...</i>\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_025",
+      "title": "Oddiy gaplar",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Oddiy gaplar:</b>\nHamma gaplar qisqa va oddiy. Grammatika balli 6.0 dan oshmaydi.\n\n💡 <b>Murakkab gaplar:</b>\nBand 7+ uchun murakkab tuzilmalar kerak:\n<b>Although</b> X, Y.\n<b>If</b> governments invested..., ...would...\nX, <b>which</b> is..., has...\nLekin xatosiz bo'lsin.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_026",
+      "title": "Shart gaplar",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Shart gaplar:</b>\nShart gaplarni ishlatmaysiz yoki zamonlarni aralashtirasiz.\n\n💡 <b>Formulalar:</b>\n<b>1-tur</b>: If + present, will + verb\n<i>If taxes rise, people will drive less.</i>\n<b>2-tur</b>: If + past, would + verb\n<i>If cities had more parks, residents would be healthier.</i>\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_027",
+      "title": "Artikl xatolari",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Artikl xatolari:</b>\n<i>\"The education is important.\"</i> O'zbek tilida artikl yo'q, shuning uchun bu xato juda ko'p.\n\n💡 <b>Asosiy qoida:</b>\nUmumiy tushunchalar oldidan artikl qo'yilmaydi: <i>Education is important.</i>\nAniq narsa oldidan <b>the</b>: <i>The education system in Uzbekistan...</i>\nBirlikdagi sanaladigan ot oldidan <b>a/an</b>.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_028",
+      "title": "Sanaladigan va sanalmaydigan otlar",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Sanaladigan va sanalmaydigan otlar:</b>\n<i>\"informations\"</i>, <i>\"advices\"</i>, <i>\"researches\"</i> deb yozasiz.\n\n💡 <b>Ko'plik shakli yo'q:</b>\n<b>information</b>, <b>advice</b>, <b>research</b>, <b>equipment</b>, <b>knowledge</b>, <b>evidence</b> sanalmaydi.\n✅ <i>a piece of advice</i>\n✅ <i>much research</i>\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_029",
+      "title": "Subject-verb agreement",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Subject-verb agreement:</b>\n<i>\"The number of students have increased.\"</i> Bu xato.\n\n💡 <b>Qoida:</b>\n<b>The number of</b> + birlik fe'l: <i>The number of students has increased.</i>\n<b>A number of</b> + ko'plik: <i>A number of students have left.</i>\n<b>Everyone</b>, <b>each</b> + birlik fe'l.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_030",
+      "title": "Vergul bilan gaplarni ulash",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Vergul bilan gaplarni ulash:</b>\n<i>\"Technology is useful, it saves time.\"</i> Bu comma splice xatosi.\n\n💡 <b>To'g'ri usullar:</b>\n✅ <i>Technology is useful <b>because</b> it saves time.</i>\n✅ <i>Technology is useful<b>;</b> it saves time.</i>\n✅ <i>Technology is useful. <b>It</b> saves time.</i>\nIkki to'liq gapni faqat vergul bilan ulamang.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_031",
+      "title": "Yodlangan iboralar",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Yodlangan iboralar:</b>\n<i>\"This is a double-edged sword\"</i>, <i>\"Every coin has two sides\"</i>. Imtihon oluvchi bularni yuzlab marta ko'rgan.\n\n💡 <b>Oltin qoida:</b>\nYodlangan iboralar ballni <b>tushiradi</b>. O'z so'zlaringiz bilan tabiiy yozing. Aniq va mantiqiy gap chiroyli klishedan qimmatroq.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_032",
+      "title": "Juda qiyin so'zlar",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Juda qiyin so'zlar:</b>\n<i>\"Ubiquitous\"</i>, <i>\"plethora\"</i>, <i>\"quintessential\"</i> so'zlarini noto'g'ri joyda ishlatdingiz.\n\n💡 <b>Qoida:</b>\nQiyin so'z noto'g'ri ishlatilsa, ball <b>tushadi</b>. Ma'nosini va qo'llanishini aniq bilgan so'zlaringizni ishlating. Collocation to'g'ri bo'lsa, oddiy so'z ham Band 7 beradi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_033",
+      "title": "Collocation xatolari",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Collocation xatolari:</b>\n<i>\"Make a research\"</i>, <i>\"do a mistake\"</i>. So'zlar to'g'ri, birikma noto'g'ri.\n\n💡 <b>To'g'ri birikmalar:</b>\n<b>conduct</b> research\n<b>make</b> a mistake\n<b>pose</b> a threat\n<b>play</b> a role\n<b>meet</b> demand\n<b>raise</b> awareness\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_034",
+      "title": "Insho rejasini tuzmaslik",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Insho rejasini tuzmaslik:</b>\nDarhol yozishni boshladingiz va o'rtada fikr tugab qoldi.\n\n💡 <b>5 daqiqalik reja:</b>\n1. Savol turini aniqlang.\n2. Pozitsiyangizni tanlang.\n3. 2 ta asosiy fikr va har biriga 1 misol yozing.\n4. Keyin yozing. Bu 5 daqiqa 35 daqiqani tejaydi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_035",
+      "title": "Tekshirmasdan topshirish",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Tekshirmasdan topshirish:</b>\nOxirgi so'zni yozdingiz va vaqt tugadi. Matnda 10 ta oddiy xato qoldi.\n\n💡 <b>Oxirgi 3 daqiqa:</b>\nFaqat eng ko'p uchraydigan xatolarni tekshiring:\n• artikllar (a/the)\n• ko'plik -s\n• fe'l zamonlari\n• imlo\nBu 3 daqiqa Grammar ballini 0.5 ga oshirishi mumkin.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_036",
+      "title": "Abzaslarga bo'lmaslik",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Abzaslarga bo'lmaslik:</b>\nButun insho bitta uzun abzas. Coherence balli 5.0.\n\n💡 <b>Ideal tuzilma:</b>\n<b>Kirish</b> (2 gap)\n<b>Body 1</b> (4-5 gap)\n<b>Body 2</b> (4-5 gap)\n<b>Xulosa</b> (2 gap)\nAbzaslar orasida bo'sh qator qoldiring.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_037",
+      "title": "Bitta abzasda ko'p g'oya",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Bitta abzasda ko'p g'oya:</b>\nBitta body abzasda 4 ta turli fikr. Hech biri rivojlanmagan.\n\n💡 <b>Oltin qoida:</b>\n<b>Bitta abzas = bitta asosiy g'oya</b>. Uni chuqur tushuntiring va misol bilan isbotlang. 4 ta yuzaki fikrdan 2 ta chuqur fikr yaxshiroq.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_038",
+      "title": "Advantages / disadvantages tuzilmasi",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Advantages / disadvantages tuzilmasi:</b>\n<i>\"Do the advantages outweigh the disadvantages?\"</i> Siz faqat ro'yxat yozdingiz, javob bermadingiz.\n\n💡 <b>To'g'ri javob:</b>\nBu savol <b>fikr</b> so'raydi. Kirishda ayting: afzalliklar ko'proqmi yoki kamchiliklar? Body 1: kuchsiz tomon. Body 2: kuchli tomon. Xulosada javobni tasdiqlang.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_039",
+      "title": "Problem-solution inshosi",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Problem-solution inshosi:</b>\nMuammolarni yaxshi yozdingiz, lekin yechimlar umumiy: <i>\"The government should do something.\"</i>\n\n💡 <b>Aniq yechim:</b>\nYechim <b>kim</b>, <b>nima</b> va <b>qanday</b> qilishini aytsin:\n✅ <i>Local councils could introduce free bus passes for students, which would reduce traffic near schools.</i>\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_040",
+      "title": "Two-part question",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Two-part question:</b>\n<i>\"Why is this happening? Is it positive or negative?\"</i> Ikkinchi savolga bitta gap yozdingiz.\n\n💡 <b>Muvozanat:</b>\nIkkala savolga ham <b>teng</b> javob bering: har biriga bitta body abzas. Kirishda ikkala savolga ham qisqa javob bering. Bitta qism zaif bo'lsa, Task Response pasayadi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_041",
+      "title": "Mavzudan chetga chiqish",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Mavzudan chetga chiqish:</b>\nSavol <b>onlayn ta'lim</b> haqida, siz esa umuman texnologiya haqida yozdingiz.\n\n💡 <b>Oltin qoida:</b>\nHar bir abzasdan keyin o'zingizga savol bering: <b>bu savolga javobmi?</b> Kalit so'zlarni (yoki sinonimlarini) har bir body abzasida ishlating. Mavzudan chetlashish Band 5 ga tushiradi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_042",
+      "title": "Haddan tashqari umumlashtirish",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Haddan tashqari umumlashtirish:</b>\n<i>\"All young people are addicted to phones.\"</i> Bu mantiqan zaif.\n\n💡 <b>Ehtiyotkor til:</b>\n<b>many</b>, <b>most</b>, <b>a large number of</b>\n<b>tend to</b>, <b>are likely to</b>, <b>often</b>\n✅ <i>Many young people tend to spend excessive time on their phones.</i>\nBu Band 7+ belgisi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_043",
+      "title": "Passiv nisbatni ishlatmaslik",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Passiv nisbatni ishlatmaslik:</b>\nHamma gaplar aktiv: <i>\"People built many factories.\"</i>\n\n💡 <b>Passiv qachon kerak:</b>\nIsh bajaruvchi muhim bo'lmasa, passiv ishlating:\n✅ <i>Many factories were built.</i>\n✅ <i>It is widely believed that...</i>\nAkademik uslub va grammatik xilma-xillik uchun foydali.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_044",
+      "title": "Fikrni tushuntirmaslik",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Fikrni tushuntirmaslik:</b>\n<i>\"Social media is harmful.\"</i> Va keyingi gapga o'tdingiz.\n\n💡 <b>Chuqurlashtirish:</b>\nHar bir fikrdan keyin <b>nima uchun?</b> va <b>natijada nima?</b> savoliga javob bering:\n✅ <i>...because it exposes teenagers to unrealistic images, which can lower their self-esteem.</i>\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_045",
+      "title": "General Training xat tonini adashtirish",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>General Training xat tonini adashtirish:</b>\nDo'stingizga xat <i>\"Dear Sir\"</i> bilan boshlandi. Rahbarga xat esa <i>\"Hi!\"</i> bilan.\n\n💡 <b>3 xil ton:</b>\n<b>Rasmiy</b> (noma'lum odam): Dear Sir/Madam → Yours faithfully\n<b>Yarim rasmiy</b> (rahbar): Dear Mr Smith → Yours sincerely\n<b>Norasmiy</b> (do'st): Hi Tom → Best wishes\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_046",
+      "title": "Xatdagi bullet pointlar",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Xatdagi bullet pointlar:</b>\nGeneral Training xatida 3 ta bullet point bor. Siz ikkitasini yozdingiz.\n\n💡 <b>Oltin qoida:</b>\nHar bir bullet point uchun <b>alohida abzas</b> yozing va to'liq javob bering. Bitta tushib qolsa, Task Achievement 5.0 ga tushadi. Ularni topshiriqda chizib qo'ying.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_047",
+      "title": "Xatning maqsadi noaniq",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Xatning maqsadi noaniq:</b>\nXat 3 abzasdan keyin ham nima uchun yozilgani noma'lum.\n\n💡 <b>Birinchi gap:</b>\nXatning birinchi gapida <b>maqsadni</b> ayting:\n✅ <i>I am writing to complain about...</i>\n✅ <i>I am writing to enquire about...</i>\n✅ <i>I'm writing to tell you some exciting news!</i>\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_048",
+      "title": "Shikoyat xatida haddan oshish",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Shikoyat xatida haddan oshish:</b>\n<i>\"Your service is terrible and you are lazy!\"</i> Bu rasmiy xat uchun juda qo'pol.\n\n💡 <b>Muloyim, lekin qat'iy:</b>\n✅ <i>I was extremely disappointed with...</i>\n✅ <i>I would be grateful if you could...</i>\n✅ <i>I trust this matter will be resolved promptly.</i>\nQat'iyat muloyimlik bilan birga bo'lsin.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_049",
+      "title": "Raqamlarni noto'g'ri yozish",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Raqamlarni noto'g'ri yozish:</b>\n<i>\"The percentage of 30% ...\"</i> yoki <i>\"from 1990 year\"</i>.\n\n💡 <b>To'g'ri shakllar:</b>\n✅ <i>The figure stood at 30%.</i>\n✅ <i>in 1990</i> (year so'zisiz)\n✅ <i>between 2000 and 2010</i>\n✅ <i>from 20% to 35%</i>\n✅ <i>a 15% increase</i>\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_050",
+      "title": "Zamonlarni aralashtirish (Task 1)",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Zamonlarni aralashtirish (Task 1):</b>\nGrafik 2010–2020 yillar haqida, siz esa hozirgi zamonda yozdingiz.\n\n💡 <b>Zamon qoidasi:</b>\n<b>O'tgan yillar</b> → Past Simple: <i>rose, fell</i>\n<b>Kelajak prognozi</b> → <i>is expected to rise</i>, <i>is predicted to</i>\n<b>Vaqtsiz ma'lumot</b> (process, map) → Present Simple\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_051",
+      "title": "Prognoz grafiklari",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Prognoz grafiklari:</b>\nGrafikda 2030-yilgacha bo'lgan prognoz bor. Siz <i>\"will increase\"</i> ni 5 marta takrorladingiz.\n\n💡 <b>Prognoz tili:</b>\n<b>is expected to</b> rise\n<b>is projected to</b> reach\n<b>is predicted to</b> decline\n<b>is likely to</b> remain stable\nXilma-xillik Lexical Resource ballini oshiradi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_052",
+      "title": "Approximately so'zini bilmaslik",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Approximately so'zini bilmaslik:</b>\nGrafikda 49.7% bor. Siz aynan shuni yozdingiz yoki noto'g'ri yaxlitladingiz.\n\n💡 <b>Taxminiy til:</b>\n<b>just under</b> half (49.7%)\n<b>just over</b> a quarter (26%)\n<b>approximately / roughly</b> 30%\n<b>nearly</b> doubled\nTaxminiy til matnni tabiiyroq qiladi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_053",
+      "title": "Imlo xatolari",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Imlo xatolari:</b>\n<i>\"goverment\"</i>, <i>\"enviroment\"</i>, <i>\"beleive\"</i>. Kichik xatolar, lekin ko'p bo'lsa ball ketadi.\n\n💡 <b>Eng ko'p xatolar:</b>\n<b>government</b>, <b>environment</b>, <b>believe</b>, <b>receive</b>, <b>necessary</b>, <b>beginning</b>, <b>advertisement</b>, <b>development</b>. Shu so'zlarni 5 martadan yozib mashq qiling.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_054",
+      "title": "Qo'lyozma tushunarsiz",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Qo'lyozma tushunarsiz:</b>\nQog'oz imtihonda imtihon oluvchi so'zlaringizni o'qiy olmadi.\n\n💡 <b>Qoida:</b>\nO'qib bo'lmaydigan so'z <b>xato</b> deb hisoblanadi. Toza yozing, xatoni bitta chiziq bilan o'chiring. Agar yozuvingiz yomon bo'lsa, <b>Computer IELTS</b> ni tanlang.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_055",
+      "title": "Faqat namunalarni o'qish",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Faqat namunalarni o'qish:</b>\nBand 9 inshosini 50 ta o'qidingiz, lekin o'zingiz deyarli yozmadingiz.\n\n💡 <b>To'g'ri mashq:</b>\nHaftada kamida <b>2 ta insho</b> vaqt bilan yozing. Keyin uni namunaga solishtiring yoki o'qituvchiga tekshirtiring. Yozish faqat yozish orqali rivojlanadi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_056",
+      "title": "Feedback olmaslik",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Feedback olmaslik:</b>\nHar kuni yozasiz, lekin bir xil xatolarni takrorlaysiz.\n\n💡 <b>Xato daftari:</b>\nHar bir tekshirilgan inshodan <b>3 ta asosiy xatoni</b> daftarga yozing. Keyingi inshoda faqat shu 3 ta xatoga e'tibor bering. Shunday qilib har hafta yangi xato yo'qoladi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_057",
+      "title": "Mavzu bo'yicha g'oya yo'q",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Mavzu bo'yicha g'oya yo'q:</b>\nSavolni o'qidingiz va hech narsa yodingizga kelmadi.\n\n💡 <b>G'oya topish usuli:</b>\nMavzuni turli tomondan o'ylang: <b>shaxs</b>, <b>oila</b>, <b>jamiyat</b>, <b>iqtisod</b>, <b>atrof-muhit</b>, <b>davlat</b>. Har biridan bitta ta'sir toping. 1 daqiqada 4-5 g'oya chiqadi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_058",
+      "title": "Asosiy mavzular so'z boyligi",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Asosiy mavzular so'z boyligi:</b>\nIELTS Task 2 mavzulari takrorlanadi, lekin siz ular uchun so'z tayyorlamagansiz.\n\n💡 <b>Top mavzular:</b>\n<b>Ta'lim</b>, <b>texnologiya</b>, <b>atrof-muhit</b>, <b>sog'liq</b>, <b>jinoyat</b>, <b>shahar hayoti</b>, <b>ish va karyera</b>, <b>globallashuv</b>. Har bir mavzu uchun 15 ta kalit so'z va 3 ta misol tayyorlang.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_059",
+      "title": "Ritorik savollar",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Ritorik savollar:</b>\n<i>\"But is this really true? Who knows?\"</i> Inshoda savol berish akademik emas.\n\n💡 <b>Qoida:</b>\nInshoda savol bermang, <b>javob bering</b>.\n❌ <i>Is technology good for children?</i>\n✅ <i>The impact of technology on children remains a subject of debate.</i>\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_060",
+      "title": "Undov belgilari",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Undov belgilari:</b>\n<i>\"This is a huge problem!!!\"</i> Akademik matnda emotsional belgilar.\n\n💡 <b>Qoida:</b>\nTask 2 va Academic Task 1 da <b>undov belgisi</b> ishlatmang. Kuchli fikrni so'z bilan ifodalang: <i>This is a particularly serious problem.</i> Faqat do'stga xatda mumkin.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_061",
+      "title": "Xulosani yozishga ulgurmaslik",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Xulosani yozishga ulgurmaslik:</b>\nVaqt tugadi va xulosa yo'q. Bu Task Response va Coherence ni tushiradi.\n\n💡 <b>Xavfsiz reja:</b>\nVaqt kam qolsa, body abzasni qisqartiring, lekin <b>xulosani albatta yozing</b>. Hatto 1 gap ham bo'lmaganidan yaxshi:\n✅ <i>In conclusion, I firmly believe that...</i>\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "wri_062",
+      "title": "4 mezonni bilmaslik",
+      "text": "✍️ <b>IELTS WRITING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>4 mezonni bilmaslik:</b>\nQanday baholanishini bilmasdan yozasiz.\n\n💡 <b>Baholash mezonlari:</b>\n<b>Task Response</b>: savolga javob\n<b>Coherence & Cohesion</b>: tuzilma va bog'lanish\n<b>Lexical Resource</b>: so'z boyligi\n<b>Grammar</b>: xilma-xillik va aniqlik\nHar biri 25%.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    }
+  ],
+  "speaking": [
+    {
+      "id": "spe_001",
+      "title": "Part 1 da bir so'zli javob",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Part 1 da bir so'zli javob:</b>\n<i>Examiner: \"Do you like reading?\"</i>\n❌ <i>\"Yes.\"</i> Bu Fluency balini darhol tushiradi.\n\n💡 <b>Javob + sabab + misol:</b>\n✅ <i>\"Yes, quite a lot. It helps me switch off after a busy day. At the moment I'm reading a novel by Orhan Pamuk.\"</i>\nPart 1 da har javob 2-3 gap bo'lsin.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_002",
+      "title": "Part 1 da juda uzun javob",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Part 1 da juda uzun javob:</b>\nBitta oddiy savolga 1 daqiqa gapirdingiz. Examiner sizni to'xtatdi.\n\n💡 <b>Ideal uzunlik:</b>\nPart 1 da javob <b>15-20 soniya</b>, ya'ni 2-3 gap. Examiner ko'p savol berishi kerak. Uzun nutqni Part 2 uchun saqlang.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_003",
+      "title": "Yodlangan javoblar",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Yodlangan javoblar:</b>\nExaminer yodlangan javobni darhol sezadi: ohang tekis, tezlik g'ayritabiiy, savolga to'liq mos emas.\n\n💡 <b>Haqiqat:</b>\nYodlangan javob <b>baholanmaydi</b> va examiner mavzuni o'zgartiradi. G'oyalarni tayyorlang, lekin gaplarni har gal yangidan tuzing. Tabiiy xato yodlangan mukammallikdan yaxshi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_004",
+      "title": "\"I don't know\" deyish",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>\"I don't know\" deyish:</b>\nSavol qiyin bo'ldi va siz <i>\"I don't know\"</i> deb to'xtadingiz.\n\n💡 <b>Vaqt yutish iboralari:</b>\n✅ <i>\"That's an interesting question, I've never really thought about it, but...\"</i>\n✅ <i>\"Let me think... I'd probably say...\"</i>\nSpeaking da bilim emas, <b>til</b> baholanadi. Biror narsa o'ylab toping.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_005",
+      "title": "Uzoq pauzalar",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Uzoq pauzalar:</b>\nGap orasida 5 soniya jim qoldingiz. Fluency balli tushadi.\n\n💡 <b>Pauza to'ldiruvchilar:</b>\n<i>\"Well...\"</i>, <i>\"Actually...\"</i>, <i>\"To be honest...\"</i>, <i>\"How can I put it...\"</i>\nUlar tabiiy pauza beradi. Lekin <b>\"emm, aaa\"</b> ni ko'p takrorlamang.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_006",
+      "title": "Part 2 da 1 daqiqa tayyorgarlikni yo'qotish",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Part 2 da 1 daqiqa tayyorgarlikni yo'qotish:</b>\nKartani olib, 1 daqiqa nima yozishni bilmay o'tirdingiz.\n\n💡 <b>1 daqiqalik reja:</b>\nHar bir savol nuqtasiga <b>2-3 kalit so'z</b> yozing, to'liq gap emas. Qo'shimcha: his-tuyg'u va bitta qiziq detal. Bu 2 daqiqa nutq uchun yetarli.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_007",
+      "title": "Part 2 da 2 daqiqa gapira olmaslik",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Part 2 da 2 daqiqa gapira olmaslik:</b>\n1 daqiqadan keyin gap tugab qoldi.\n\n💡 <b>Kengaytirish usuli:</b>\nHar bir nuqta uchun <b>5W</b> ni ishlating: <b>who, what, where, when, why</b>. Keyin his-tuyg'uni qo'shing: <i>\"What I remember most is...\"</i>. Oxirida: <i>\"Looking back...\"</i>.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_008",
+      "title": "Part 2 da hikoya qila olmaslik",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Part 2 da hikoya qila olmaslik:</b>\nFaktlarni ro'yxat qilib aytasiz: <i>\"It was in 2019. It was in Samarkand. It was nice.\"</i>\n\n💡 <b>Hikoya tuzilmasi:</b>\n<b>Boshlanish</b>: qachon va qayerda\n<b>Voqea</b>: nima bo'ldi\n<b>Burilish</b>: kutilmagan narsa\n<b>Xulosa</b>: nega esda qolgan\nHikoya tinglovchini qiziqtiradi va Fluency ni oshiradi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_009",
+      "title": "Part 2 da zamonlarni aralashtirish",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Part 2 da zamonlarni aralashtirish:</b>\nO'tgan voqea haqida gapiryapsiz, lekin hozirgi zamonda.\n\n💡 <b>Zamon qoidasi:</b>\n<i>\"Describe a trip you took\"</i> → <b>Past Simple</b>: <i>we went, I saw</i>.\n<i>\"Describe a place you like\"</i> → <b>Present</b>: <i>I often go</i>.\nKartadagi fe'l zamonini kuzating.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_010",
+      "title": "Part 3 da Part 1 kabi javob",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Part 3 da Part 1 kabi javob:</b>\n<i>\"Why do young people prefer online shopping?\"</i>\n❌ <i>\"Because it's easy.\"</i>\n\n💡 <b>Part 3 formulasi:</b>\n<b>Fikr</b> → <b>sabab</b> → <b>misol</b> → <b>qarama-qarshi tomon</b>\n✅ <i>\"I'd say convenience is the main reason. ... That said, older people still prefer...\"</i>\nPart 3 da 30-45 soniya gapiring.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_011",
+      "title": "Part 3 da shaxsiy javob",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Part 3 da shaxsiy javob:</b>\nSavol jamiyat haqida, siz esa faqat o'zingiz haqingizda gapirdingiz.\n\n💡 <b>Umumlashtirish:</b>\nPart 3 savollari <b>umumiy</b>: jamiyat, avlodlar, davlat. Shunday boshlang:\n✅ <i>\"Generally speaking, people in my country...\"</i>\n✅ <i>\"I think most young people nowadays...\"</i>\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_012",
+      "title": "Savolni tushunmaslik",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Savolni tushunmaslik:</b>\nSavolni tushunmadingiz va taxmin qilib boshqa narsa haqida gapirdingiz.\n\n💡 <b>Qoida:</b>\nQayta so'rash <b>mumkin</b> va ball tushirmaydi:\n✅ <i>\"Sorry, could you repeat the question?\"</i>\n✅ <i>\"Do you mean...?\"</i>\nPart 3 da examiner savolni boshqacha tushuntirishi ham mumkin.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_013",
+      "title": "Talaffuzdan qo'rqish",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Talaffuzdan qo'rqish:</b>\nAksentingiz o'zbekcha va shuning uchun kam gapirasiz.\n\n💡 <b>Haqiqat:</b>\nAksent muammo emas. Muhimi <b>tushunarli</b> bo'lish. Examiner urg'u, intonatsiya va aniq tovushlarni baholaydi. Britancha yoki amerikacha aksent talab qilinmaydi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_014",
+      "title": "W va V tovushlari",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>W va V tovushlari:</b>\n<i>\"Very well\"</i> o'rniga <i>\"wery vell\"</i>. O'zbeklar uchun keng tarqalgan xato.\n\n💡 <b>Mashq:</b>\n<b>W</b>: lablar dumaloq, tishlar tegmaydi (<i>water, we</i>).\n<b>V</b>: yuqori tishlar pastki labga tegadi (<i>very, voice</i>).\nKuniga 2 daqiqa: <i>\"We visited a very wet village.\"</i>\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_015",
+      "title": "TH tovushi",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>TH tovushi:</b>\n<i>\"think\"</i> o'rniga <i>\"sink\"</i> yoki <i>\"tink\"</i>. Ma'no o'zgaradi.\n\n💡 <b>Qanday aytiladi:</b>\nTil uchini <b>tishlar orasiga</b> qo'ying va havo chiqaring.\n<b>θ</b> (jarangsiz): think, three, birthday\n<b>ð</b> (jarangli): this, mother, weather\nOyna oldida mashq qiling.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_016",
+      "title": "So'z urg'usi",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>So'z urg'usi:</b>\n<i>\"deVElopment\"</i> o'rniga <i>\"developMENT\"</i>. Examiner so'zni tanimasligi mumkin.\n\n💡 <b>Ko'p xato qilinadigan so'zlar:</b>\n<b>deVElopment</b>, <b>eCOnomy</b>, <b>PHOtograph</b> lekin <b>phoTOgraphy</b>, <b>COMfortable</b>, <b>VEgetable</b>. Shubha bo'lsa, lug'atda urg'uni tekshiring.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_017",
+      "title": "Monoton ohang",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Monoton ohang:</b>\nHamma gaplar bir xil ohangda, robot kabi. Pronunciation 6.0 da qoladi.\n\n💡 <b>Intonatsiya:</b>\nMuhim so'zlarga <b>urg'u</b> bering: <i>\"I <b>absolutely</b> loved it.\"</i>\nSavol oxirida ohang ko'tariladi, gap oxirida tushadi. Inglizcha podkastni ovoz chiqarib takrorlang.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_018",
+      "title": "Juda tez gapirish",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Juda tez gapirish:</b>\nHayajondan juda tez gapirdingiz va so'zlar bir-biriga qo'shilib ketdi.\n\n💡 <b>Oltin qoida:</b>\nTezlik <b>Fluency</b> emas. Ravonlik bu tekis, uzluksiz nutq. O'rtacha tezlikda gapiring va gaplar orasida qisqa tabiiy pauza qiling. Tushunarlilik birinchi o'rinda.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_019",
+      "title": "O'z-o'zini tuzatavermaslik",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>O'z-o'zini tuzatavermaslik:</b>\nHar xatoda to'xtab, gapni boshidan boshlaysiz.\n\n💡 <b>Qoida:</b>\nKichik xatoni tuzatmang, davom eting. Agar katta xato bo'lsa, <b>tez</b> tuzating: <i>\"...I go, sorry, I went there.\"</i> Doimiy to'xtash Fluency ni ko'proq tushiradi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_020",
+      "title": "Oddiy so'zlar",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Oddiy so'zlar:</b>\n<i>\"good\"</i>, <i>\"bad\"</i>, <i>\"nice\"</i>, <i>\"very\"</i>. Lexical Resource 5.5 da qoladi.\n\n💡 <b>Almashtirish:</b>\n<b>good</b> → fantastic, impressive, worthwhile\n<b>bad</b> → disappointing, awful, frustrating\n<b>very big</b> → enormous, massive\n<b>very interesting</b> → fascinating\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_021",
+      "title": "Idiomalarni noto'g'ri ishlatish",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Idiomalarni noto'g'ri ishlatish:</b>\n<i>\"It's raining cats and dogs\"</i> deyish uchun mavzuni zo'rlab o'zgartirdingiz.\n\n💡 <b>Oltin qoida:</b>\nIdioma faqat <b>tabiiy</b> joyda va to'g'ri ishlatilsa ball beradi. Eskirgan iboralar ballni tushiradi. Zamonaviy iboralar: <i>\"a piece of cake\"</i>, <i>\"once in a blue moon\"</i>, <i>\"on the go\"</i>.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_022",
+      "title": "Phrasal verblarni ishlatmaslik",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Phrasal verblarni ishlatmaslik:</b>\nFaqat rasmiy so'zlar: <i>\"I postponed the meeting.\"</i> Speaking da bu biroz rasmiy.\n\n💡 <b>Tabiiy nutq:</b>\n<b>put off</b> = postpone\n<b>come across</b> = topib olmoq\n<b>look forward to</b> = intiqlik bilan kutmoq\n<b>get on with</b> = yaxshi munosabatda bo'lmoq\n<b>take up</b> = boshlamoq (hobbi)\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_023",
+      "title": "Fikr bildirish iboralari",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Fikr bildirish iboralari:</b>\nHar javob <i>\"I think...\"</i> bilan boshlanadi.\n\n💡 <b>Xilma-xillik:</b>\n<i>\"In my view...\"</i>\n<i>\"As far as I'm concerned...\"</i>\n<i>\"I'd say that...\"</i>\n<i>\"From my perspective...\"</i>\n<i>\"If you ask me...\"</i>\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_024",
+      "title": "Grammatik xilma-xillik yo'q",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Grammatik xilma-xillik yo'q:</b>\nFaqat Present Simple va oddiy gaplar. Grammar 6.0 dan oshmaydi.\n\n💡 <b>Qo'shing:</b>\n<b>Shart gap</b>: <i>If I had more time, I'd travel more.</i>\n<b>Present Perfect</b>: <i>I've been there twice.</i>\n<b>Nisbiy gap</b>: <i>a friend who lives abroad</i>\n<b>Used to</b>: <i>I used to play football.</i>\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_025",
+      "title": "Taqqoslash qila olmaslik",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Taqqoslash qila olmaslik:</b>\n<i>\"Do you prefer the city or the countryside?\"</i>\n❌ <i>\"City.\"</i>\n\n💡 <b>Taqqoslash iboralari:</b>\n✅ <i>\"I'd much rather live in the city, mainly because it's far more convenient. Having said that, the countryside is much less stressful.\"</i>\n<b>much / far / a lot</b> + comparative.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_026",
+      "title": "Kelajak haqida gapira olmaslik",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Kelajak haqida gapira olmaslik:</b>\n<i>\"What will you do after university?\"</i> Faqat <i>\"I will...\"</i> ishlatasiz.\n\n💡 <b>Kelajak tuzilmalari:</b>\n<i>\"I'm planning to...\"</i>\n<i>\"I'm hoping to...\"</i>\n<i>\"I'd love to...\"</i>\n<i>\"I'm thinking of...\"</i>\n<i>\"If everything goes well, I'll...\"</i>\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_027",
+      "title": "O'tmish odatlari",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>O'tmish odatlari:</b>\n<i>\"When I was a child, I play football every day.\"</i>\n\n💡 <b>To'g'ri shakl:</b>\n✅ <i>\"When I was a child, I <b>used to</b> play football every day.\"</i>\n✅ <i>\"We <b>would</b> spend every summer at my grandparents'.\"</i>\nBolalik haqidagi savollarda juda foydali.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_028",
+      "title": "Hobbi savoli",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Hobbi savoli:</b>\n<i>\"What do you do in your free time?\"</i>\n❌ <i>\"I watch films and play games.\"</i>\n\n💡 <b>Kengaytirilgan javob:</b>\n✅ <i>\"I'm really into hiking. I usually head to the mountains near Chimgan at weekends. It's a great way to clear my head after a long week.\"</i>\n<b>into</b>, <b>head to</b>, <b>clear my head</b> = tabiiy til.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_029",
+      "title": "Ish yoki o'qish savoli",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Ish yoki o'qish savoli:</b>\n<i>\"Do you work or study?\"</i> Faqat <i>\"I'm a student\"</i> deb javob berasiz.\n\n💡 <b>Namuna:</b>\n✅ <i>\"I'm currently in my third year at university, majoring in economics. It's quite demanding, but I find it rewarding.\"</i>\n<b>majoring in</b>, <b>demanding</b>, <b>rewarding</b> = Band 7 so'zlar.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_030",
+      "title": "Shahringiz haqida",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Shahringiz haqida:</b>\n<i>\"Tell me about your hometown.\"</i>\n❌ <i>\"Tashkent is big and beautiful.\"</i>\n\n💡 <b>Batafsil javob:</b>\n✅ <i>\"I'm from Tashkent, the capital. It's a bustling city with a mix of Soviet-style buildings and modern skyscrapers. What I like most is the food.\"</i>\nJoyni <b>tasvirlash + shaxsiy fikr</b>.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_031",
+      "title": "Part 2: odamni tasvirlash",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Part 2: odamni tasvirlash:</b>\n<i>\"Describe a person who inspired you.\"</i> Faqat tashqi ko'rinishini tasvirladingiz.\n\n💡 <b>Nimalarni aytish kerak:</b>\n<b>Kim</b> va qanday tanishgansiz\n<b>Xarakteri</b>: <i>generous, determined, easy-going</i>\n<b>Aniq voqea</b>: u nima qilgan\n<b>Sizga ta'siri</b>: <i>\"She made me realise that...\"</i>\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_032",
+      "title": "Part 2: joyni tasvirlash",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Part 2: joyni tasvirlash:</b>\n<i>\"Describe a place you visited.\"</i> Faqat <i>\"It was beautiful\"</i> deb aytdingiz.\n\n💡 <b>5 sezgi usuli:</b>\nNima <b>ko'rdingiz</b>, <b>eshitdingiz</b>, <b>hidladingiz</b>, <b>tatib ko'rdingiz</b>?\n✅ <i>\"The narrow streets were filled with the smell of freshly baked bread.\"</i>\nTinglovchi joyni ko'z oldiga keltirsin.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_033",
+      "title": "Part 2: narsani tasvirlash",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Part 2: narsani tasvirlash:</b>\n<i>\"Describe something you own that is important to you.\"</i> Gapingiz 40 soniyada tugadi.\n\n💡 <b>Kengaytirish:</b>\nNarsaning <b>tarixi</b>: qachon va qanday olgansiz\n<b>Tavsifi</b>: rang, o'lcham, material\n<b>Foydalanish</b>: qachon ishlatasiz\n<b>Ahamiyati</b>: nega qimmatli\nHar biriga 30 soniya.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_034",
+      "title": "Part 2: voqeani tasvirlash",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Part 2: voqeani tasvirlash:</b>\n<i>\"Describe a time when you helped someone.\"</i> Siz voqeani juda umumiy aytdingiz.\n\n💡 <b>Detallar:</b>\nAniq <b>vaqt</b>, <b>joy</b> va <b>dialog</b> qo'shing:\n✅ <i>\"I remember it was a freezing evening last January. An elderly man asked me, 'Could you help me find this address?'\"</i>\nDialog hikoyani jonlantiradi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_035",
+      "title": "Karta savollarini o'tkazib yuborish",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Karta savollarini o'tkazib yuborish:</b>\nPart 2 kartasida 4 ta nuqta bor, siz ikkitasini aytdingiz.\n\n💡 <b>Qoida:</b>\nBarcha nuqtalarni qamrab olishga harakat qiling, ayniqsa oxirgisini: <b>\"and explain why...\"</b>. Bu eng muhim qism va eng ko'p gapirish imkonini beradi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_036",
+      "title": "Examiner to'xtatsa",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Examiner to'xtatsa:</b>\nPart 2 da examiner <i>\"Thank you\"</i> deb to'xtatdi. Siz yomon gapirdim deb o'yladingiz.\n\n💡 <b>Haqiqat:</b>\nBu <b>yaxshi belgi</b>: siz 2 daqiqa to'liq gapirdingiz. Examiner vaqt tugaganda har doim to'xtatadi. Xotirjam qoling va keyingi savolga tayyorlaning.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_037",
+      "title": "Asabiylashish",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Asabiylashish:</b>\nImtihon xonasiga kirdingiz va qo'llaringiz titrayapti.\n\n💡 <b>Tinchlanish usuli:</b>\nImtihondan oldin <b>5 daqiqa</b> inglizcha gapiring (o'zingiz bilan ham bo'ladi). Chuqur nafas oling: 4 soniya nafas olish, 4 soniya ushlash, 4 soniya chiqarish. Examiner dushman emas.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_038",
+      "title": "Examinerga savol berish",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Examinerga savol berish:</b>\n<i>\"What about you? Do you like reading?\"</i> Examiner javob bermaydi va bu noqulay.\n\n💡 <b>Qoida:</b>\nSpeaking bu <b>suhbat-intervyu</b>, oddiy suhbat emas. Examinerga shaxsiy savol bermang. Faqat savolni tushunmasangiz, qayta so'rang. Diqqat sizning javobingizda.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_039",
+      "title": "Fikrni o'zgartirish qo'rquvi",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Fikrni o'zgartirish qo'rquvi:</b>\nPart 3 da bir fikrni boshladingiz, keyin noto'g'ri ekanini tushundingiz.\n\n💡 <b>Tabiiy yo'l:</b>\nFikrni o'zgartirish <b>mumkin</b>:\n✅ <i>\"Actually, on second thoughts, I'd say...\"</i>\n✅ <i>\"Well, it depends. In some cases...\"</i>\nBu tabiiy nutq belgisi va Fluency ga zarar bermaydi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_040",
+      "title": "\"It depends\" bilan to'xtash",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>\"It depends\" bilan to'xtash:</b>\n<i>\"Is it better to work from home?\"</i>\n❌ <i>\"It depends.\"</i> Va jimlik.\n\n💡 <b>To'liq javob:</b>\n✅ <i>\"It depends on the type of job. For people in IT, working from home is ideal because... However, for doctors or teachers, it's simply not possible.\"</i>\n<b>It depends</b> dan keyin har doim misollar keltiring.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_041",
+      "title": "Spekulyatsiya qila olmaslik",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Spekulyatsiya qila olmaslik:</b>\n<i>\"How will education change in the future?\"</i> Javob bera olmadingiz.\n\n💡 <b>Taxmin tili:</b>\n<i>\"I imagine that...\"</i>\n<i>\"It's likely that...\"</i>\n<i>\"There's a good chance that...\"</i>\n<i>\"I wouldn't be surprised if...\"</i>\nPart 3 da bunday savollar ko'p uchraydi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_042",
+      "title": "O'tmish va hozirni taqqoslash",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>O'tmish va hozirni taqqoslash:</b>\n<i>\"How has shopping changed in your country?\"</i> Faqat hozirgi holatni aytdingiz.\n\n💡 <b>Taqqoslash formulasi:</b>\n✅ <i>\"In the past, people used to shop at local bazaars. These days, however, more and more people order online.\"</i>\n<b>used to</b> + <b>these days / nowadays</b> = mukammal juftlik.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_043",
+      "title": "Rozilik va norozilik",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Rozilik va norozilik:</b>\n<i>\"Some people say... Do you agree?\"</i>\n❌ <i>\"Yes, I agree.\"</i>\n\n💡 <b>Nuanslar:</b>\n<i>\"I couldn't agree more.\"</i> = to'liq rozi\n<i>\"I agree to some extent, but...\"</i> = qisman\n<i>\"I see their point, but...\"</i> = muloyim norozilik\nSo'ng, albatta, sabab keltiring.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_044",
+      "title": "Javobni savol so'zlari bilan boshlash",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Javobni savol so'zlari bilan boshlash:</b>\n<i>\"Do you like music?\"</i>\n❌ <i>\"Yes, I like music.\"</i> Savolni takrorladingiz.\n\n💡 <b>Paraphrase:</b>\n✅ <i>\"Absolutely, I'm a big fan, especially of jazz.\"</i>\n✅ <i>\"I can't live without it, to be honest.\"</i>\nSavol so'zlarini takrorlamang, sinonim ishlating. Bu Lexical Resource ni ko'rsatadi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_045",
+      "title": "Kuchsiz boshlanish",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Kuchsiz boshlanish:</b>\nHar javob <i>\"Emm... yes...\"</i> bilan boshlanadi.\n\n💡 <b>Ishonchli boshlash:</b>\n<i>\"Definitely!\"</i>\n<i>\"Not really, to be honest.\"</i>\n<i>\"That's a tough one.\"</i>\n<i>\"Oh, I love that question.\"</i>\nBirinchi so'z ishonch beradi va keyingi gaplar oson keladi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_046",
+      "title": "Faqat o'qib mashq qilish",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Faqat o'qib mashq qilish:</b>\nSpeaking mavzularini o'qiysiz, lekin ovoz chiqarib gapirmaysiz.\n\n💡 <b>To'g'ri mashq:</b>\nHar kuni <b>10 daqiqa ovoz chiqarib</b> gapiring. Part 2 kartasini oling, 1 daqiqa tayyorlaning va 2 daqiqa gapiring. Telefonga yozib oling va qayta tinglang.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_047",
+      "title": "O'zingizni yozib olmaslik",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>O'zingizni yozib olmaslik:</b>\nXatolaringizni bilmaysiz, chunki o'zingizni hech qachon eshitmagansiz.\n\n💡 <b>Yozib olish usuli:</b>\nJavobingizni telefonga yozing. Tinglab, <b>3 narsani</b> belgilang: takrorlangan so'zlar, uzoq pauzalar va grammatik xatolar. Keyin xuddi shu savolga qayta javob bering.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_048",
+      "title": "Sherik bilan mashq qilmaslik",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Sherik bilan mashq qilmaslik:</b>\nYolg'iz tayyorlanasiz va jonli suhbatga o'rganmagansiz.\n\n💡 <b>Mashq usuli:</b>\nDo'stingiz bilan haftada 2 marta <b>examiner va nomzod</b> rolida mashq qiling. Rollarni almashtiring. Bir-biringizga vaqt o'lchang va bitta asosiy xatoni ayting.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_049",
+      "title": "Mavzular bo'yicha so'z yo'q",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Mavzular bo'yicha so'z yo'q:</b>\nPart 1 mavzulari takrorlanadi, lekin har biri uchun so'zingiz kam.\n\n💡 <b>Top Part 1 mavzular:</b>\n<b>Ish/o'qish</b>, <b>uy</b>, <b>shahar</b>, <b>hobbi</b>, <b>musiqa</b>, <b>sport</b>, <b>ovqat</b>, <b>sayohat</b>, <b>telefon</b>, <b>ob-havo</b>. Har biri uchun 10 ta so'z va 1 ta shaxsiy hikoya tayyorlang.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_050",
+      "title": "Bitta hikoyani ko'p mavzuga moslash",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Bitta hikoyani ko'p mavzuga moslash:</b>\nHar Part 2 kartasi uchun yangi hikoya o'ylab topish qiyin.\n\n💡 <b>Aqlli tayyorgarlik:</b>\n5-6 ta <b>universal hikoya</b> tayyorlang: sayohat, muhim odam, qiyin vaziyat, sovg'a, yutuq. Bitta sayohat hikoyasi <i>\"a place\"</i>, <i>\"a happy memory\"</i>, <i>\"a journey\"</i> kartalariga mos keladi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_051",
+      "title": "Haddan tashqari rasmiy til",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Haddan tashqari rasmiy til:</b>\n<i>\"Furthermore, it is my firm conviction that...\"</i> Speaking da bu yozma tilga o'xshaydi.\n\n💡 <b>Suhbat tili:</b>\nSpeaking da <b>tabiiy</b> gapiring:\n❌ <i>Furthermore, moreover</i>\n✅ <i>On top of that, also, plus</i>\n❌ <i>In conclusion</i>\n✅ <i>So, all in all</i>\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_052",
+      "title": "Qisqartmalarni ishlatmaslik",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Qisqartmalarni ishlatmaslik:</b>\n<i>\"I do not know. I am not sure. It is good.\"</i> Robot kabi eshitiladi.\n\n💡 <b>Tabiiy nutq:</b>\nSpeaking da qisqartmalar <b>tabiiy</b>: <i>I'm, don't, it's, I'd, I've, can't</i>. Writing dan farqli o'laroq, bu ballni oshiradi va nutqni ravonroq qiladi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_053",
+      "title": "Chunking: tayyor bo'laklar",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Chunking: tayyor bo'laklar:</b>\nHar gapni so'zma-so'z tuzasiz va sekin gapirasiz.\n\n💡 <b>Tayyor bo'laklar:</b>\n<i>\"to be honest\"</i>, <i>\"as far as I know\"</i>, <i>\"the thing is\"</i>, <i>\"at the end of the day\"</i>, <i>\"when it comes to\"</i>. Bunday bo'laklar miyaga vaqt beradi va nutqni tezlashtiradi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_054",
+      "title": "Ohang bilan qiziqish ko'rsatmaslik",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Ohang bilan qiziqish ko'rsatmaslik:</b>\nSevimli hobbingiz haqida ham zerikkan ohangda gapirdingiz.\n\n💡 <b>Emotsiya:</b>\nQiziqishingizni <b>ohang</b> bilan ko'rsating. Yuzingizda tabassum bo'lsa, ovozingiz ham jonliroq eshitiladi. Examiner muloqot qobiliyatini ham his qiladi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_055",
+      "title": "Ko'z bilan aloqa qilmaslik",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Ko'z bilan aloqa qilmaslik:</b>\nButun intervyu davomida stolga qarab gapirdingiz.\n\n💡 <b>Tana tili:</b>\nKo'z kontakti va tabiiy imo-ishora sizni <b>ishonchli</b> ko'rsatadi va xotirjamlik beradi. To'g'ridan-to'g'ri baholanmaydi, lekin nutq ravonligiga yordam beradi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_056",
+      "title": "Imtihon kuni birinchi marta gapirish",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Imtihon kuni birinchi marta gapirish:</b>\nErtalabdan hech kim bilan gaplashmay imtihonga kirdingiz. Birinchi javoblar qiyin chiqdi.\n\n💡 <b>Isinish:</b>\nImtihondan oldin <b>15 daqiqa</b> inglizcha podkast tinglang va ovoz chiqarib takrorlang. Yo'lda o'zingizga inglizcha gapiring. Til mushaklari ham isinishni talab qiladi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_057",
+      "title": "Band descriptorsni bilmaslik",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Band descriptorsni bilmaslik:</b>\nQanday baholanishini bilmasdan tayyorlanasiz.\n\n💡 <b>4 mezon:</b>\n<b>Fluency & Coherence</b>: ravonlik va mantiq\n<b>Lexical Resource</b>: so'z boyligi\n<b>Grammar</b>: xilma-xillik va aniqlik\n<b>Pronunciation</b>: tushunarlilik\nHar biri 25%.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_058",
+      "title": "Fluency ni noto'g'ri tushunish",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Fluency ni noto'g'ri tushunish:</b>\nFluency = tez gapirish deb o'ylaysiz.\n\n💡 <b>Haqiqiy Fluency:</b>\nFluency bu <b>uzluksiz va mantiqiy</b> nutq. Tezlik emas, ravonlik. Fikrlarni bog'lash: <i>\"The main reason is... Another thing is... So overall...\"</i>. Mantiqiy oqim tezlikdan muhimroq.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_059",
+      "title": "Mavzuni bilmasangiz",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Mavzuni bilmasangiz:</b>\n<i>\"Describe a piece of art you like.\"</i> Siz san'atga umuman qiziqmaysiz.\n\n💡 <b>Qutqaruvchi usul:</b>\nMavzuni o'zingizga <b>yaqinlashtiring</b>: rasm emas, telefoningizdagi sevimli surat, ko'chadagi graffiti yoki kitob muqovasi. Halollik ham mumkin: <i>\"I'm not really into art, but...\"</i>\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_060",
+      "title": "Javobni \"So\" bilan tugatmaslik",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Javobni \"So\" bilan tugatmaslik:</b>\nGapingiz to'satdan tugaydi va examiner davom etasizmi deb kutadi.\n\n💡 <b>Yakunlash iboralari:</b>\n<i>\"So yeah, that's why I love it.\"</i>\n<i>\"So, all in all, it was a great experience.\"</i>\n<i>\"Anyway, that's pretty much it.\"</i>\nAniq yakun examinerga tugaganingizni bildiradi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_061",
+      "title": "Tayyorgarlikni kechiktirish",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Tayyorgarlikni kechiktirish:</b>\n\"Speaking ni oxirida tayyorlayman\" deb qoldirdingiz.\n\n💡 <b>To'g'ri reja:</b>\nSpeaking eng sekin rivojlanadigan ko'nikma. Imtihondan <b>kamida 6-8 hafta</b> oldin har kuni 15 daqiqa gapirishni boshlang. Kunlik odat haftalik marafondan samaraliroq.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    },
+    {
+      "id": "spe_062",
+      "title": "Ingliz tilida o'ylamaslik",
+      "text": "🗣 <b>IELTS SPEAKING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Ingliz tilida o'ylamaslik:</b>\nAvval o'zbekcha o'ylab, keyin tarjima qilasiz. Shuning uchun gap sekin va g'alati chiqadi.\n\n💡 <b>Inglizcha o'ylash mashqi:</b>\nKun davomida atrofingizdagi narsalarni <b>ichingizda inglizcha</b> tasvirlang: <i>\"I'm waiting for the bus. It's late again.\"</i> Kuniga 5 daqiqa. 3 haftada tarjima qilish odati kamayadi.\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
+    }
+  ]
+}

@@ -185,3 +185,23 @@ export function markLoneWolfPublished(index) {
   data.last_published_date = getTashkentDateString();
   writeFileSync(LONE_WOLF_FILE, JSON.stringify(data, null, 2), 'utf-8');
 }
+
+
+// ── Ready-made 19:30 daily posts (content/daily-posts.json) ──────────────
+const DAILY_FILE = join(__dirname, '..', 'content', 'daily-posts.json');
+
+/** The next unused ready-made post for a skill, or null when the bank has run out. */
+export function peekDailyPost(skill) {
+  if (!existsSync(DAILY_FILE)) return null;
+  const bank = JSON.parse(readFileSync(DAILY_FILE, 'utf-8'));
+  const index = bank.next?.[skill] ?? 0;
+  const post = bank[skill]?.[index];
+  return post ? { index, text: post.text, remaining: bank[skill].length - index } : null;
+}
+
+/** Mark a ready-made post as published so the next one comes up. */
+export function markDailyPostUsed(skill, index) {
+  const bank = JSON.parse(readFileSync(DAILY_FILE, 'utf-8'));
+  bank.next[skill] = Math.max(bank.next[skill] ?? 0, index + 1);
+  writeFileSync(DAILY_FILE, JSON.stringify(bank, null, 2) + '\n', 'utf-8');
+}
