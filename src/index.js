@@ -111,7 +111,7 @@ export function buildSkillCaption(postText) {
   const name = SKILL_NAMES[skill] ? `${SKILL_NAMES[skill]} ` : '';
   const day = Math.floor(Date.now() / 86_400_000);
   return [
-    `${icon} <b>Bugungi ${name}sirri rasmda</b> 👆`,
+    `${icon} <b>Bugungi ${name}maslahati rasmda</b> 👆`,
     '',
     '🔖 Saqlab qo‘ying va imtihondan oldin yana bir ko‘zdan kechiring.',
     CALLS[day % CALLS.length],
