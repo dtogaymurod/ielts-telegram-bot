@@ -65,11 +65,14 @@ function sendAdmin(text, extra = {}) {
   return callApi('sendMessage', { chat_id: ADMIN_ID, text, parse_mode: 'HTML', disable_web_page_preview: true, ...extra });
 }
 
-function buttons(key) {
+/** The two buttons; the chosen one is marked so the choice is visible on the buttons themselves. */
+function buttons(key, status = 'pending') {
+  const ok = status === 'approved' ? '✅ Chiqadi ✔️' : '✅ Chiqsin';
+  const no = status === 'rejected' ? '❌ Chiqmaydi ✔️' : '❌ Chiqmasin';
   return {
     inline_keyboard: [[
-      { text: '✅ Chiqsin', callback_data: `r:ok:${key}` },
-      { text: '❌ Chiqmasin', callback_data: `r:no:${key}` },
+      { text: ok, callback_data: `r:ok:${key}` },
+      { text: no, callback_data: `r:no:${key}` },
     ]],
   };
 }
@@ -86,21 +89,32 @@ function buttonsText(draft) {
   return `<b>${draft.label}</b>\nShu post kanalga chiqsinmi?\n\n${STATUS_TEXT[draft.status]}`;
 }
 
-/** Rewrite the buttons message so it shows the current status (buttons stay until the post is done). */
+/**
+ * Rewrite the buttons message so it shows the current status (buttons stay,
+ * with the choice marked, until the post is done). Buttons repeated under a
+ * reminder are updated too.
+ */
 async function refreshButtons(key, draft) {
-  if (!draft.buttons_message_id) return;
   const done = draft.status === 'published' || draft.status === 'skipped';
-  try {
-    await callApi('editMessageText', {
-      chat_id: ADMIN_ID,
-      message_id: draft.buttons_message_id,
-      text: buttonsText(draft),
-      parse_mode: 'HTML',
-      ...(done ? {} : { reply_markup: buttons(key) }),
-    });
-  } catch (error) {
-    // "message is not modified" and similar are harmless
-    if (!/not modified/.test(error.message)) console.log(`⚠️ Could not update buttons for ${key}: ${error.message}`);
+  const markup = done ? { inline_keyboard: [] } : buttons(key, draft.status);
+  const harmless = (error) => {
+    if (!/not modified|not found|can't be edited/.test(error.message)) console.log(`⚠️ Could not update buttons for ${key}: ${error.message}`);
+  };
+  if (draft.buttons_message_id) {
+    try {
+      await callApi('editMessageText', {
+        chat_id: ADMIN_ID,
+        message_id: draft.buttons_message_id,
+        text: buttonsText(draft),
+        parse_mode: 'HTML',
+        reply_markup: markup,
+      });
+    } catch (error) { harmless(error); }
+  }
+  for (const id of draft.extra_button_ids || []) {
+    try {
+      await callApi('editMessageReplyMarkup', { chat_id: ADMIN_ID, message_id: id, reply_markup: markup });
+    } catch (error) { harmless(error); }
   }
 }
 
@@ -118,6 +132,10 @@ async function applyUpdate(state, update) {
   } else if (draft && ['pending', 'approved', 'rejected'].includes(draft.status)) {
     draft.status = match[1] === 'ok' ? 'approved' : 'rejected';
     draft.decided_at = new Date().toISOString();
+    const tapped = query.message?.message_id;
+    if (tapped && tapped !== draft.buttons_message_id && !(draft.extra_button_ids || []).includes(tapped)) {
+      draft.extra_button_ids = [...(draft.extra_button_ids || []), tapped];
+    }
     answer = draft.status === 'approved' ? '✅ Qabul qilindi: post vaqtida chiqadi' : '❌ Qabul qilindi: post chiqmaydi';
     key = match[2];
   }
@@ -146,20 +164,22 @@ async function syncDecisions(state, timeout = 0) {
 }
 
 /**
- * Stay online and answer button taps right away, until shortly before the
- * next post time (11:50, 19:20 or 23:59 Tashkent), at most ~5h50m.
- * Each decision is pushed to GitHub at once by the workflow (see review.yml).
+ * Stay online and answer button taps right away. A run stops shortly before
+ * the next scheduled run (08:55, 11:50, 19:20, 20:55 Tashkent), which starts
+ * listening again when it is done. GitHub ends a job after 6 hours, so a
+ * longer wait stops at ~5h50m and writes .listen-continue: the workflow then
+ * starts the next listening run (see review.yml). Together the bot answers
+ * around the clock, apart from the few minutes a post is being sent.
  */
+const STOPS = [8 * 60 + 55, 11 * 60 + 50, 19 * 60 + 20, 20 * 60 + 55];
+const MAX_MINUTES = 350;
+
 async function listen(state) {
-  const tashkentMinutes = () => {
-    const d = new Date(Date.now() + 5 * 60 * 60 * 1000);
-    return d.getUTCHours() * 60 + d.getUTCMinutes();
-  };
-  const stops = [11 * 60 + 50, 19 * 60 + 20, 23 * 60 + 59];
-  const now = tashkentMinutes();
-  const stop = stops.find((m) => m > now + 1);
-  if (!stop) return;
-  const end = Date.now() + Math.min(stop - now, 350) * 60 * 1000;
+  const d = new Date(Date.now() + 5 * 60 * 60 * 1000);
+  const now = d.getUTCHours() * 60 + d.getUTCMinutes();
+  const stop = STOPS.find((m) => m > now + 1) ?? STOPS[0] + 24 * 60;
+  const capped = stop - now > MAX_MINUTES;
+  const end = Date.now() + Math.min(stop - now, MAX_MINUTES) * 60 * 1000 - d.getUTCSeconds() * 1000;
   console.log(`👂 Listening for button taps for ${Math.round((end - Date.now()) / 60000)} min`);
   while (Date.now() < end - 5000) {
     const wait = Math.max(1, Math.min(50, Math.floor((end - Date.now()) / 1000) - 5));
@@ -177,6 +197,7 @@ async function listen(state) {
     }
   }
   save(state);
+  if (capped) writeFileSync(join(__dirname, '..', '.listen-continue'), '');
 }
 
 /** Load the review state with the latest button taps applied. */
@@ -246,12 +267,14 @@ async function remind(state) {
   const today = tashkentDate();
   const waiting = Object.entries(state.drafts).filter(([key, d]) => key.startsWith(today) && d.status === 'pending');
   for (const [key, draft] of waiting) {
-    await sendAdmin(`⏰ <b>Eslatma:</b> bugungi ${draft.slot} posti hali tasdiqlanmagan.\nTasdiqlamasangiz, kanalga chiqmaydi.`, {
+    const message = await sendAdmin(`⏰ <b>Eslatma:</b> bugungi ${draft.slot} posti hali tasdiqlanmagan.\nTasdiqlamasangiz, kanalga chiqmaydi.`, {
       reply_to_message_id: draft.buttons_message_id,
       reply_markup: buttons(key),
     });
+    draft.extra_button_ids = [...(draft.extra_button_ids || []), message.message_id];
   }
   console.log(`⏰ ${waiting.length} post(s) waiting for approval today.`);
+  save(state);
 }
 
 async function preview(state) {
