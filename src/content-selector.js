@@ -196,7 +196,14 @@ export function peekDailyPost(skill) {
   const bank = JSON.parse(readFileSync(DAILY_FILE, 'utf-8'));
   const index = bank.next?.[skill] ?? 0;
   const post = bank[skill]?.[index];
-  return post ? { index, text: post.text, remaining: bank[skill].length - index } : null;
+  return post ? { index, post: { ...post, skill }, remaining: bank[skill].length - index } : null;
+}
+
+/** A ready-made post by its index (to publish exactly the approved one). */
+export function getDailyPost(skill, index) {
+  if (!existsSync(DAILY_FILE)) return null;
+  const post = JSON.parse(readFileSync(DAILY_FILE, 'utf-8'))[skill]?.[index];
+  return post ? { ...post, skill } : null;
 }
 
 /** Mark a ready-made post as published so the next one comes up. */
