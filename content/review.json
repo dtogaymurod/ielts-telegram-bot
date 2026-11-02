@@ -27,10 +27,11 @@
         "kind": "redflag",
         "index": 0
       },
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-11-01T15:59:46.506Z",
       "buttons_message_id": 16,
-      "decided_at": "2026-11-01T16:05:10.941Z"
+      "decided_at": "2026-11-01T16:05:10.941Z",
+      "published_at": "2026-11-02T07:06:07.140Z"
     },
     "2026-11-02 19:30": {
       "date": "2026-11-02",
