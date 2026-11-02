@@ -43,13 +43,14 @@
         "bank_index": 0,
         "title": "Hammasini o‘qiysizmi?"
       },
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-11-01T16:25:14.300Z",
       "extra_button_ids": [
         19
       ],
       "buttons_message_id": 22,
-      "decided_at": "2026-11-01T16:29:27.261Z"
+      "decided_at": "2026-11-01T16:29:27.261Z",
+      "published_at": "2026-11-02T14:37:07.739Z"
     }
   }
 }
