@@ -104,10 +104,11 @@
         "bank_index": 0,
         "title": "Overview yo‘qmi? Band 5"
       },
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-11-03T15:59:38.491Z",
       "buttons_message_id": 34,
-      "decided_at": "2026-11-03T16:02:29.554Z"
+      "decided_at": "2026-11-03T16:02:29.554Z",
+      "published_at": "2026-11-04T14:29:03.470Z"
     }
   }
 }
