@@ -1,5 +1,5 @@
 {
-  "last_update_id": 111952987,
+  "last_update_id": 111952988,
   "drafts": {
     "2026-11-01 19:30": {
       "date": "2026-11-01",
@@ -136,6 +136,33 @@
       "buttons_message_id": 40,
       "decided_at": "2026-11-04T16:01:20.396Z",
       "published_at": "2026-11-05T14:29:19.336Z"
+    },
+    "2026-11-06 12:00": {
+      "date": "2026-11-06",
+      "slot": "12:00",
+      "label": "Juma, 06.11 · 12:00 · Emoji topishmoq #1",
+      "meta": {
+        "kind": "emoji",
+        "index": 0
+      },
+      "status": "approved",
+      "created_at": "2026-11-05T15:59:59.424Z",
+      "buttons_message_id": 44,
+      "decided_at": "2026-11-05T16:07:41.195Z"
+    },
+    "2026-11-06 19:30": {
+      "date": "2026-11-06",
+      "slot": "19:30",
+      "label": "Juma, 06.11 · 19:30 · Kundalik post (SPEAKING)",
+      "meta": {
+        "type": "skill",
+        "skill": "speaking",
+        "bank_index": 0,
+        "title": "“Yes.” bilan to‘xtamang"
+      },
+      "status": "pending",
+      "created_at": "2026-11-05T16:00:01.060Z",
+      "buttons_message_id": 47
     }
   }
 }
