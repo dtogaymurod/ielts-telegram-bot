@@ -1,5 +1,5 @@
 {
-  "last_update_id": 111952989,
+  "last_update_id": 111952990,
   "drafts": {
     "2026-11-01 19:30": {
       "date": "2026-11-01",
@@ -166,6 +166,31 @@
       "buttons_message_id": 47,
       "decided_at": "2026-11-05T16:07:47.461Z",
       "published_at": "2026-11-06T14:29:39.633Z"
+    },
+    "2026-11-07 12:00": {
+      "date": "2026-11-07",
+      "slot": "12:00",
+      "label": "Shanba, 07.11 · 12:00 · To‘g‘ri yoki xato? #1",
+      "meta": {
+        "kind": "truefalse",
+        "index": 0
+      },
+      "status": "approved",
+      "created_at": "2026-11-06T16:00:05.462Z",
+      "buttons_message_id": 51,
+      "decided_at": "2026-11-06T16:03:13.882Z"
+    },
+    "2026-11-07 19:30": {
+      "date": "2026-11-07",
+      "slot": "19:30",
+      "label": "Shanba, 07.11 · 19:30 · Yolg‘iz bo‘ri #15",
+      "meta": {
+        "type": "lonewolf",
+        "index": 15
+      },
+      "status": "pending",
+      "created_at": "2026-11-06T16:00:07.360Z",
+      "buttons_message_id": 54
     }
   }
 }
