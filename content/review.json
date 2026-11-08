@@ -1,5 +1,5 @@
 {
-  "last_update_id": 111952994,
+  "last_update_id": 111952995,
   "drafts": {
     "2026-11-01 19:30": {
       "date": "2026-11-01",
@@ -223,6 +223,33 @@
       "buttons_message_id": 63,
       "decided_at": "2026-11-07T16:14:08.114Z",
       "published_at": "2026-11-08T14:28:54.458Z"
+    },
+    "2026-11-09 12:00": {
+      "date": "2026-11-09",
+      "slot": "12:00",
+      "label": "Dushanba, 09.11 · 12:00 · Band 5 vs Band 8 #1",
+      "meta": {
+        "kind": "band",
+        "index": 0
+      },
+      "status": "approved",
+      "created_at": "2026-11-08T15:59:41.421Z",
+      "buttons_message_id": 67,
+      "decided_at": "2026-11-08T16:20:04.308Z"
+    },
+    "2026-11-09 19:30": {
+      "date": "2026-11-09",
+      "slot": "19:30",
+      "label": "Dushanba, 09.11 · 19:30 · Kundalik post (READING)",
+      "meta": {
+        "type": "skill",
+        "skill": "reading",
+        "bank_index": 1,
+        "title": "False yoki Not Given?"
+      },
+      "status": "pending",
+      "created_at": "2026-11-08T15:59:42.909Z",
+      "buttons_message_id": 70
     }
   }
 }
