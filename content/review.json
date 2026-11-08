@@ -218,10 +218,11 @@
         "bank_index": 0,
         "title": "Birinchi javob — tuzoq"
       },
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-11-07T15:59:35.381Z",
       "buttons_message_id": 63,
-      "decided_at": "2026-11-07T16:14:08.114Z"
+      "decided_at": "2026-11-07T16:14:08.114Z",
+      "published_at": "2026-11-08T14:28:54.458Z"
     }
   }
 }
