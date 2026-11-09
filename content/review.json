@@ -1,5 +1,5 @@
 {
-  "last_update_id": 111952996,
+  "last_update_id": 111952997,
   "drafts": {
     "2026-11-01 19:30": {
       "date": "2026-11-01",
@@ -253,6 +253,31 @@
       "buttons_message_id": 70,
       "decided_at": "2026-11-08T16:20:23.061Z",
       "published_at": "2026-11-09T14:29:01.286Z"
+    },
+    "2026-11-10 12:00": {
+      "date": "2026-11-10",
+      "slot": "12:00",
+      "label": "Seshanba, 10.11 · 12:00 · Oddiy vs Band 9 #2",
+      "meta": {
+        "kind": "upgrade",
+        "index": 1
+      },
+      "status": "approved",
+      "created_at": "2026-11-09T15:59:34.587Z",
+      "buttons_message_id": 73,
+      "decided_at": "2026-11-09T16:07:03.434Z"
+    },
+    "2026-11-10 19:30": {
+      "date": "2026-11-10",
+      "slot": "19:30",
+      "label": "Seshanba, 10.11 · 19:30 · Yolg‘iz bo‘ri #16",
+      "meta": {
+        "type": "lonewolf",
+        "index": 16
+      },
+      "status": "pending",
+      "created_at": "2026-11-09T15:59:36.108Z",
+      "buttons_message_id": 76
     }
   }
 }
