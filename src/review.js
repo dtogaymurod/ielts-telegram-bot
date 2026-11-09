@@ -13,9 +13,9 @@
  * content/review.json. A post nobody approved is not published and stays
  * first in its queue.
  *
- * Round videos: the admin can also send the bot a video at any time. It
- * comes back as a round video with the same ✅ / ❌ buttons, and ✅ posts it
- * to the channel straight away (src/video-note.js).
+ * Round videos: the admin sends the bot videos at any time; they wait in a
+ * queue and go out every other day at 17:00 after the same 21:00 review (see
+ * "Round videos" below and src/video-note.js).
  *
  * Turned on by the TELEGRAM_ADMIN_ID secret (the admin's numeric user id).
  * Without it the bot posts straight to the channel as before.
@@ -24,8 +24,9 @@
 import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { execSync } from 'child_process';
 import { callApi, setTargetChat, validateConfig } from './telegram.js';
-import { HELP_TEXT, videoInMessage, prepareVideoNote, publishVideoNote } from './video-note.js';
+import { HELP_TEXT, videoInMessage, prepareVideoNote, prepareDriveVideo, publishVideoNote, hasFfmpeg } from './video-note.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REVIEW_FILE = join(__dirname, '..', 'content', 'review.json');
@@ -91,9 +92,7 @@ const STATUS_TEXT = {
 };
 
 function buttonsText(draft) {
-  const question = draft.slot === 'video' ? 'Shu dumaloq video kanalga chiqsinmi? ✅ bossangiz, darhol chiqadi.' : 'Shu post kanalga chiqsinmi?';
-  const status = draft.slot === 'video' && draft.status === 'approved' ? '✅ Tasdiqlandi' : STATUS_TEXT[draft.status];
-  return `<b>${draft.label}</b>\n${question}\n\n${status}`;
+  return `<b>${draft.label}</b>\nShu post kanalga chiqsinmi?\n\n${STATUS_TEXT[draft.status]}`;
 }
 
 /**
@@ -131,6 +130,7 @@ async function applyUpdate(state, update) {
   if (update.message) return handleMessage(state, update.message);
   const query = update.callback_query;
   if (!query) return null;
+  if (/^v:/.test(query.data || '')) return handleQueueButton(state, query);
   const match = /^r:(ok|no):(.+)$/.exec(query.data || '');
   const draft = match && state.drafts[match[2]];
   let answer = '⚠️ Bu post endi o‘zgartirib bo‘lmaydi';
@@ -146,19 +146,6 @@ async function applyUpdate(state, update) {
     }
     answer = draft.status === 'approved' ? '✅ Qabul qilindi: post vaqtida chiqadi' : '❌ Qabul qilindi: post chiqmaydi';
     key = match[2];
-    if (draft.slot === VIDEO_SLOT && draft.status === 'approved') {
-      try {
-        await publishVideoNote(callApi, CHANNEL_ID, draft.meta.file_id);
-        draft.status = 'published';
-        draft.published_at = new Date().toISOString();
-        answer = '📢 Dumaloq video kanalga chiqdi';
-      } catch (error) {
-        console.log(`⚠️ Round video not posted: ${error.message}`);
-        draft.status = 'pending';
-        answer = '⚠️ Kanalga chiqmadi, yana bir bor bosib ko‘ring';
-        try { await sendAdmin(`⚠️ Dumaloq video kanalga chiqmadi: ${error.message}`); } catch {}
-      }
-    }
   }
   // Stops the spinner on the button. Fails harmlessly for taps older than a few minutes.
   try {
@@ -167,44 +154,206 @@ async function applyUpdate(state, update) {
   return key;
 }
 
-const VIDEO_SLOT = 'video';
-
-/**
- * A message from the admin in the private chat: a video becomes a round
- * video preview with ✅ / ❌ buttons. Other people's messages are ignored.
+/*
+ * Round videos. The admin sends the bot videos in the private chat (one or
+ * many at once); each becomes a round video and joins a queue in
+ * content/review.json. At 21:00 the first one in the queue is previewed for
+ * tomorrow with the usual ✅ / ❌ buttons, and the listener posts it to the
+ * channel at VIDEO_TIME if it was approved. Under each queued video there are
+ * buttons to post it now or take it out of the queue.
  */
+export const VIDEO_TIME = '17:00';
+const VIDEO_MINUTES = 17 * 60;
+
+function queueButtons(id) {
+  return {
+    inline_keyboard: [[
+      { text: '📢 Hozir chiqarish', callback_data: `v:now:${id}` },
+      { text: '🗑 Navbatdan olish', callback_data: `v:del:${id}` },
+    ]],
+  };
+}
+
+function shortDate(date) {
+  return `${date.slice(8)}.${date.slice(5, 7)}`;
+}
+
+/** Videos go out every other day (Dilshod's choice): a day after a video day is skipped. */
+const VIDEO_EVERY_DAYS = 2;
+
+function videoDay(state, offset) {
+  return ['pending', 'approved', 'published'].includes(state.drafts[`${tashkentDate(offset)} ${VIDEO_TIME}`]?.status);
+}
+
+/** The Tashkent date the video at `position` (0 = first) is expected to go out. */
+function expectedDate(state, position) {
+  const d = new Date(Date.now() + 5 * 60 * 60 * 1000);
+  const now = d.getUTCHours() * 60 + d.getUTCMinutes();
+  const live = (offset) => ['pending', 'approved'].includes(state.drafts[`${tashkentDate(offset)} ${VIDEO_TIME}`]?.status);
+  let start;
+  if (live(0) && now < VIDEO_MINUTES) start = 0;
+  else if (live(1)) start = 1;
+  else {
+    start = now >= 21 * 60 ? 2 : 1; // tomorrow's review runs at 21:00
+    if (videoDay(state, 0)) start = Math.max(start, VIDEO_EVERY_DAYS);
+  }
+  return tashkentDate(start + position * VIDEO_EVERY_DAYS);
+}
+
+/** A message from the admin in the private chat. Other people's messages are ignored. */
 async function handleMessage(state, message) {
   if (String(message.from?.id) !== String(ADMIN_ID) || message.chat?.type !== 'private') return null;
   const video = videoInMessage(message);
   if (!video) {
     if (/^\/(video|start|help)\b/.test(message.text || '')) await sendAdmin(HELP_TEXT);
+    if (/^\/navbat\b/.test(message.text || '')) await showQueue(state);
     return null;
   }
-  const date = tashkentDate();
-  const key = `${date} ${VIDEO_SLOT}-${message.message_id}`;
-  if (state.drafts[key]) return null;
+  state.videos = state.videos || [];
+  const id = String(message.message_id);
+  if (state.videos.some((v) => v.id === id)) return null;
   console.log(`🎥 Admin sent a ${video.kind}, preparing round video`);
   try {
-    await sendAdmin('⏳ Video qabul qilindi, dumaloq videoga aylantiryapman...', { reply_to_message_id: message.message_id });
     const ready = await prepareVideoNote(callApi, ADMIN_ID, video, message.message_id);
-    const draft = {
-      date,
-      slot: VIDEO_SLOT,
-      label: '🎥 Dumaloq video',
-      meta: { file_id: ready.fileId, duration: Math.round(ready.duration) },
-      status: 'pending',
-      created_at: new Date().toISOString(),
-    };
-    if (ready.notes.length) await sendAdmin(ready.notes.join('\n'));
-    const sent = await sendAdmin(buttonsText(draft), { reply_markup: buttons(key) });
-    draft.buttons_message_id = sent.message_id;
-    state.drafts[key] = draft;
-    return key;
+    state.videos.push({ id, file_id: ready.fileId, duration: Math.round(ready.duration), added_at: new Date().toISOString() });
+    const position = state.videos.length;
+    const lines = [
+      `📥 <b>Navbatga qo‘shildi: ${position}-o‘rin</b>`,
+      `Taxminan ${shortDate(expectedDate(state, position - 1))} kuni soat ${VIDEO_TIME} da chiqadi (oldingi kuni 21:00 da sizga ✅/❌ bilan ko‘rsataman).`,
+      ...ready.notes,
+    ];
+    await sendAdmin(lines.join('\n'), { reply_to_message_id: message.message_id, reply_markup: queueButtons(id) });
+    return '#videos';
   } catch (error) {
     console.log(`⚠️ Round video failed: ${error.message}`);
     try { await sendAdmin(`⚠️ Videoni dumaloq qilib bo‘lmadi.\n${error.message}\n\n${HELP_TEXT}`); } catch {}
     return null;
   }
+}
+
+async function showQueue(state) {
+  const videos = state.videos || [];
+  if (!videos.length) return sendAdmin('📭 Navbatda video yo‘q. Videoni shu chatga yuboring.');
+  const list = videos.map((v, i) => `${i + 1}. ${shortDate(expectedDate(state, i))} · ${v.name ? `${v.name} · ` : ''}${v.duration} soniya`).join('\n');
+  return sendAdmin(`🎥 <b>Navbatda ${videos.length} ta video</b> (kun ora, ${VIDEO_TIME} da bittadan):\n${list}`);
+}
+
+async function postVideo(state, video) {
+  await publishVideoNote(callApi, CHANNEL_ID, video.file_id);
+  state.videos = (state.videos || []).filter((v) => v.id !== video.id);
+  console.log(`📢 Round video ${video.id} posted`);
+}
+
+/** "Post now" / "Remove" under a queued video. */
+async function handleQueueButton(state, query) {
+  const [, action, id] = query.data.split(':');
+  const video = (state.videos || []).find((v) => v.id === id);
+  let answer = '⚠️ Bu video navbatda endi yo‘q';
+  let changed = null;
+  if (String(query.from.id) !== String(ADMIN_ID)) {
+    answer = '⛔ Faqat admin boshqara oladi';
+  } else if (video) {
+    try {
+      if (action === 'now') {
+        await postVideo(state, video);
+        answer = '📢 Dumaloq video kanalga chiqdi';
+      } else {
+        state.videos = state.videos.filter((v) => v.id !== id);
+        answer = '🗑 Navbatdan olib tashlandi';
+      }
+      changed = '#videos';
+      // A preview already made for this video is no longer valid
+      for (const [key, draft] of Object.entries(state.drafts)) {
+        if (draft.meta?.video_id === id && ['pending', 'approved', 'rejected'].includes(draft.status)) {
+          draft.status = action === 'now' ? 'published' : 'rejected';
+          await refreshButtons(key, draft);
+        }
+      }
+      try { await callApi('editMessageReplyMarkup', { chat_id: ADMIN_ID, message_id: query.message.message_id, reply_markup: { inline_keyboard: [] } }); } catch {}
+    } catch (error) {
+      answer = '⚠️ Kanalga chiqmadi, yana bir bor bosib ko‘ring';
+      console.log(`⚠️ Round video not posted: ${error.message}`);
+    }
+  }
+  try { await callApi('answerCallbackQuery', { callback_query_id: query.id, text: answer }); } catch {}
+  return changed;
+}
+
+/**
+ * Videos listed in content/video-import.json ({ "files": [{ "id", "name" }] },
+ * Google Drive files shared with anyone who has the link) join the end of
+ * the queue in the listed order, once each. Runs when a listener starts.
+ */
+const IMPORT_FILE = join(__dirname, '..', 'content', 'video-import.json');
+
+async function importVideos(state, persist) {
+  if (!existsSync(IMPORT_FILE) || !hasFfmpeg()) return;
+  const files = JSON.parse(readFileSync(IMPORT_FILE, 'utf-8')).files || [];
+  state.imported = state.imported || [];
+  const todo = files.filter((f) => !state.imported.includes(f.id));
+  if (!todo.length) return;
+  console.log(`📥 Importing ${todo.length} video(s) from Google Drive`);
+  state.videos = state.videos || [];
+  let added = 0;
+  const failed = [];
+  for (const file of todo) {
+    try {
+      const ready = await prepareDriveVideo(ADMIN_ID, file.id);
+      state.videos.push({ id: `d-${file.id}`, name: file.name, file_id: ready.fileId, duration: Math.round(ready.duration), added_at: new Date().toISOString() });
+      state.imported.push(file.id);
+      added += 1;
+      if (ready.notes.length) console.log(`   ${file.name}: ${ready.notes.join(' ')}`);
+      persist();
+    } catch (error) {
+      console.log(`⚠️ ${file.name}: ${error.message}`);
+      failed.push(`• ${file.name}: ${error.message}`);
+    }
+  }
+  const last = state.videos.length ? shortDate(expectedDate(state, state.videos.length - 1)) : '';
+  const lines = [`📥 <b>Google Drive'dan ${added} ta video navbatga qo‘shildi</b>`, `Navbatda jami ${state.videos.length} ta, kun ora ${VIDEO_TIME} da bittadan, oxirgisi taxminan ${last}.`, '/navbat — ro‘yxatni ko‘rish'];
+  if (failed.length) lines.push('', `⚠️ ${failed.length} tasini ololmadim:`, ...failed.slice(0, 15));
+  await sendAdmin(lines.join('\n'));
+  persist();
+}
+
+/** 21:00: the first video in the queue goes into tomorrow's review. */
+export function prepareVideoDraft(state) {
+  const video = (state.videos || [])[0];
+  if (!video) return null;
+  // Tomorrow is a rest day if today was a video day
+  if (videoDay(state, 0)) return null;
+  return {
+    slot: VIDEO_TIME,
+    label: `🎥 Dumaloq video (navbatda ${state.videos.length} ta)`,
+    meta: { video_id: video.id },
+    send: () => callApi('sendVideoNote', { chat_id: ADMIN_ID, video_note: video.file_id }),
+  };
+}
+
+/** From VIDEO_TIME on: post today's approved video once. Returns true if the state changed. */
+async function publishDueVideo(state) {
+  const d = new Date(Date.now() + 5 * 60 * 60 * 1000);
+  if (d.getUTCHours() * 60 + d.getUTCMinutes() < VIDEO_MINUTES) return false;
+  const key = `${tashkentDate()} ${VIDEO_TIME}`;
+  const draft = state.drafts[key];
+  if (!draft || !['pending', 'approved'].includes(draft.status)) return false;
+  const video = (state.videos || []).find((v) => v.id === draft.meta?.video_id);
+  if (draft.status === 'pending' || !video) {
+    draft.status = 'skipped';
+    await refreshButtons(key, draft);
+    if (video) await sendAdmin(`⏭ Bugungi ${VIDEO_TIME} dumaloq videosi tasdiqlanmagani uchun chiqmadi. U navbatda birinchi bo‘lib qoladi.`);
+    return true;
+  }
+  try {
+    await postVideo(state, video);
+  } catch (error) {
+    console.log(`⚠️ Round video not posted: ${error.message}`);
+    return false; // tried again on the next loop
+  }
+  draft.status = 'published';
+  draft.published_at = new Date().toISOString();
+  await refreshButtons(key, draft);
+  return true;
 }
 
 /**
@@ -220,7 +369,7 @@ async function syncDecisions(state, timeout = 0) {
     if (key) changed.add(key);
   }
   if (updates.length) await callApi('getUpdates', { offset: state.last_update_id + 1, timeout: 0 });
-  for (const key of changed) await refreshButtons(key, state.drafts[key]);
+  for (const key of changed) if (state.drafts[key]) await refreshButtons(key, state.drafts[key]);
   return changed.size;
 }
 
@@ -241,16 +390,19 @@ async function listen(state) {
   const stop = STOPS.find((m) => m > now + 1) ?? STOPS[0] + 24 * 60;
   const capped = stop - now > MAX_MINUTES;
   const end = Date.now() + Math.min(stop - now, MAX_MINUTES) * 60 * 1000 - d.getUTCSeconds() * 1000;
+  const persist = () => {
+    save(state);
+    if (!process.env.REVIEW_SAVE_CMD) return;
+    try { execSync(process.env.REVIEW_SAVE_CMD, { stdio: 'inherit' }); } catch (error) { console.log(`⚠️ Save failed: ${error.message}`); }
+  };
+  try { await importVideos(state, persist); } catch (error) { console.log(`⚠️ Import failed: ${error.message}`); }
   console.log(`👂 Listening for button taps for ${Math.round((end - Date.now()) / 60000)} min`);
   while (Date.now() < end - 5000) {
     const wait = Math.max(1, Math.min(50, Math.floor((end - Date.now()) / 1000) - 5));
     try {
-      if (await syncDecisions(state, wait)) {
-        save(state);
-        if (process.env.REVIEW_SAVE_CMD) {
-          const { execSync } = await import('child_process');
-          try { execSync(process.env.REVIEW_SAVE_CMD, { stdio: 'inherit' }); } catch (error) { console.log(`⚠️ Save failed: ${error.message}`); }
-        }
+      const videoChanged = await publishDueVideo(state);
+      if ((await syncDecisions(state, wait)) || videoChanged) {
+        persist();
       }
     } catch (error) {
       console.log(`⚠️ getUpdates failed: ${error.message}`);
@@ -329,7 +481,7 @@ export async function markPublished(state, slot) {
 /** 09:00: remind about today's posts that still wait for an answer. */
 async function remind(state) {
   const today = tashkentDate();
-  const waiting = Object.entries(state.drafts).filter(([key, d]) => key.startsWith(today) && d.slot !== VIDEO_SLOT && d.status === 'pending');
+  const waiting = Object.entries(state.drafts).filter(([key, d]) => key.startsWith(today) && d.status === 'pending');
   for (const [key, draft] of waiting) {
     const message = await sendAdmin(`⏰ <b>Eslatma:</b> bugungi ${draft.slot} posti hali tasdiqlanmagan.\nTasdiqlamasangiz, kanalga chiqmaydi.`, {
       reply_to_message_id: draft.buttons_message_id,
@@ -354,6 +506,15 @@ async function preview(state, only) {
     } catch (error) {
       console.error(`⚠️ Preview failed (${name}): ${error.message}`);
       await sendAdmin(`⚠️ Ertangi postlardan birini tayyorlab bo‘lmadi: ${error.message}`);
+    }
+  }
+  if (!only || only === VIDEO_TIME) {
+    try {
+      const draft = prepareVideoDraft(state);
+      if (draft) await submitDraft(state, { date, ...draft });
+    } catch (error) {
+      console.error(`⚠️ Video preview failed: ${error.message}`);
+      await sendAdmin(`⚠️ Ertangi dumaloq videoni ko‘rsatib bo‘lmadi: ${error.message}`);
     }
   }
 }

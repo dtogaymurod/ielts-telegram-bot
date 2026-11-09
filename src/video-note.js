@@ -2,8 +2,8 @@
  * Round videos (Telegram "video notes") for the channel.
  *
  * The admin sends the bot a video in the private chat. The bot turns it into
- * a round video (square 640×640, at most 60 seconds), sends it back as a
- * preview with ✅ / ❌ buttons, and on ✅ posts it to the channel right away.
+ * a round video (square 640×640, at most 60 seconds) and sends it back so
+ * the admin sees it. The queue and posting live in src/review.js.
  *
  * Accepted: a regular video, a video sent as a file, or a round video.
  * A video that is not square is cropped to its centre, a longer one is cut
@@ -27,8 +27,10 @@ const MAX_DOWNLOAD = 20 * 1024 * 1024;
 export const HELP_TEXT = [
   '🎥 <b>Dumaloq video chiqarish</b>',
   '',
-  'Videoni shu chatga oddiy video qilib yuboring (yoki fayl qilib, yoki dumaloq video yozib).',
-  'Bot uni dumaloq videoga aylantirib, sizga ko‘rsatadi. ✅ bossangiz, darhol kanalga chiqadi.',
+  'Videolarni shu chatga yuboring: bittadan yoki hammasini birdaniga (oddiy video, fayl yoki dumaloq video).',
+  'Bot har birini dumaloq qilib navbatga qo‘yadi. Kun ora soat 17:00 da navbatdagi bittasi kanalga chiqadi.',
+  'Oldingi kuni 21:00 da uni sizga ✅/❌ bilan ko‘rsataman, tasdiqlamasangiz chiqmaydi.',
+  'Har video tagida: 📢 Hozir chiqarish, 🗑 Navbatdan olish. /navbat — navbatni ko‘rish.',
   '',
   '📐 Eng yaxshisi: kvadrat (640×640), 60 soniyagacha, 20 MB dan kichik.',
   '• Kvadrat bo‘lmasa, o‘rtasi kesib olinadi (tepa/past yoki chetlar ko‘rinmay qoladi).',
@@ -115,11 +117,19 @@ export async function prepareVideoNote(callApi, adminId, video, replyTo) {
     throw new Error('Bot hozir boshqa postni chiqaryapti. 10 daqiqadan keyin videoni qayta yuboring.');
   }
 
+  return convertAndSend(adminId, (dest) => download(callApi, video.file_id, dest), { reply_to_message_id: replyTo });
+}
+
+/**
+ * Fetch a video with `fetchTo(path)`, make it round and send it to the admin.
+ * Returns { fileId, duration, notes }.
+ */
+async function convertAndSend(adminId, fetchTo, extra = {}) {
   const dir = mkdtempSync(join(tmpdir(), 'vnote-'));
   try {
     const input = join(dir, 'in');
     const output = join(dir, 'round.mp4');
-    await download(callApi, video.file_id, input);
+    await fetchTo(input);
     const info = probe(input);
     const notes = [];
     if (info.width !== info.height) {
@@ -132,11 +142,26 @@ export async function prepareVideoNote(callApi, adminId, video, replyTo) {
     convert(input, output);
     const duration = Math.min(info.duration, MAX_SECONDS);
     console.log(`🎥 Round video ready: ${(statSync(output).size / 1048576).toFixed(1)} MB, ${Math.round(duration)}s`);
-    const sent = await uploadVideoNote(adminId, output, duration, { reply_to_message_id: replyTo });
+    const sent = await uploadVideoNote(adminId, output, duration, extra);
     return { fileId: sent.video_note.file_id, duration, notes };
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }
+}
+
+/**
+ * A video from a Google Drive file shared with "anyone with the link"
+ * (no credentials needed). Used for content/video-import.json.
+ */
+export async function prepareDriveVideo(adminId, driveId) {
+  if (!hasFfmpeg()) throw new Error('ffmpeg yo‘q');
+  return convertAndSend(adminId, async (dest) => {
+    const url = `https://drive.usercontent.google.com/download?id=${encodeURIComponent(driveId)}&export=download&confirm=t`;
+    const response = await fetch(url, { redirect: 'follow' });
+    const type = response.headers.get('content-type') || '';
+    if (!response.ok || type.startsWith('text/html')) throw new Error(`Drive fayli ochilmadi (${response.status}). Papka "hamma ko‘ra oladi" bo‘lishi kerak.`);
+    writeFileSync(dest, Buffer.from(await response.arrayBuffer()));
+  }, { disable_notification: true });
 }
 
 /** Post a prepared round video to the channel. */
