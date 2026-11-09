@@ -304,7 +304,8 @@
     "1aXJ78j8CGHOw80pJSpI8wkURbPA-a32S",
     "1etQcpXxT1DTskCiBz32_uy4ITJxkfSbh",
     "17KF0PjUQz8Oa5gVGAHi_Vb3U6R8ThfeI",
-    "1bWxH7YCnlnSfs3WnC7N5VpABzJE_WKn9"
+    "1bWxH7YCnlnSfs3WnC7N5VpABzJE_WKn9",
+    "1c9MD0hZLfDC0HVJitIwITZnrb-fQlYiV"
   ],
   "videos": [
     {
@@ -376,6 +377,13 @@
       "file_id": "DQACAgIAAxkDAANbavIPt-43xEWRQX11ThT9O-Kg_JUAAgi5AAJwA5FLV-WY94rsTR49BA",
       "duration": 60,
       "added_at": "2026-11-09T18:23:51.583Z"
+    },
+    {
+      "id": "d-1c9MD0hZLfDC0HVJitIwITZnrb-fQlYiV",
+      "name": "K_task1_da_buni_qilmang",
+      "file_id": "DQACAgIAAxkDAANcavIPv_sK0hTB24SPU-9xZAQ_CDEAAgq5AAJwA5FLTC938DQh-c49BA",
+      "duration": 60,
+      "added_at": "2026-11-09T18:23:59.489Z"
     }
   ]
 }
