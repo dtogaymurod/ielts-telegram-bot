@@ -291,7 +291,15 @@ async function importVideos(state, persist) {
   const files = JSON.parse(readFileSync(IMPORT_FILE, 'utf-8')).files || [];
   state.imported = state.imported || [];
   const todo = files.filter((f) => !state.imported.includes(f.id));
-  if (!todo.length) return;
+  // Imported videos follow the order of the list (it can be reordered later)
+  const rank = new Map(files.map((f, i) => [`d-${f.id}`, i]));
+  const reorder = () => {
+    const listed = (state.videos || []).filter((v) => rank.has(v.id)).sort((a, b) => rank.get(a.id) - rank.get(b.id));
+    let next = 0;
+    state.videos = (state.videos || []).map((v) => (rank.has(v.id) ? listed[next++] : v));
+  };
+  reorder();
+  if (!todo.length) { persist(); return; }
   console.log(`📥 Importing ${todo.length} video(s) from Google Drive`);
   state.videos = state.videos || [];
   let added = 0;
@@ -302,6 +310,7 @@ async function importVideos(state, persist) {
       state.videos.push({ id: `d-${file.id}`, name: file.name, file_id: ready.fileId, duration: Math.round(ready.duration), added_at: new Date().toISOString() });
       state.imported.push(file.id);
       added += 1;
+      reorder();
       if (ready.notes.length) console.log(`   ${file.name}: ${ready.notes.join(' ')}`);
       persist();
     } catch (error) {
