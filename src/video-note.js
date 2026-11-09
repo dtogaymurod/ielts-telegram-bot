@@ -28,7 +28,7 @@ export const HELP_TEXT = [
   '🎥 <b>Dumaloq video chiqarish</b>',
   '',
   'Videolarni shu chatga yuboring: bittadan yoki hammasini birdaniga (oddiy video, fayl yoki dumaloq video).',
-  'Bot har birini dumaloq qilib navbatga qo‘yadi. Har kuni 17:00 da navbatdagi bittasi kanalga chiqadi.',
+  'Bot har birini dumaloq qilib navbatga qo‘yadi. Kun ora soat 17:00 da navbatdagi bittasi kanalga chiqadi.',
   'Oldingi kuni 21:00 da uni sizga ✅/❌ bilan ko‘rsataman, tasdiqlamasangiz chiqmaydi.',
   'Har video tagida: 📢 Hozir chiqarish, 🗑 Navbatdan olish. /navbat — navbatni ko‘rish.',
   '',

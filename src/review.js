@@ -14,7 +14,7 @@
  * first in its queue.
  *
  * Round videos: the admin sends the bot videos at any time; they wait in a
- * queue and go out one a day at 17:00 after the same 21:00 review (see
+ * queue and go out every other day at 17:00 after the same 21:00 review (see
  * "Round videos" below and src/video-note.js).
  *
  * Turned on by the TELEGRAM_ADMIN_ID secret (the admin's numeric user id).
@@ -178,15 +178,26 @@ function shortDate(date) {
   return `${date.slice(8)}.${date.slice(5, 7)}`;
 }
 
+/** Videos go out every other day (Dilshod's choice): a day after a video day is skipped. */
+const VIDEO_EVERY_DAYS = 2;
+
+function videoDay(state, offset) {
+  return ['pending', 'approved', 'published'].includes(state.drafts[`${tashkentDate(offset)} ${VIDEO_TIME}`]?.status);
+}
+
 /** The Tashkent date the video at `position` (0 = first) is expected to go out. */
 function expectedDate(state, position) {
   const d = new Date(Date.now() + 5 * 60 * 60 * 1000);
   const now = d.getUTCHours() * 60 + d.getUTCMinutes();
   const live = (offset) => ['pending', 'approved'].includes(state.drafts[`${tashkentDate(offset)} ${VIDEO_TIME}`]?.status);
-  let start = 1; // tomorrow: chosen at 21:00 tonight
+  let start;
   if (live(0) && now < VIDEO_MINUTES) start = 0;
-  else if (now >= 21 * 60 && !live(1)) start = 2; // tonight's review already ran
-  return tashkentDate(start + position);
+  else if (live(1)) start = 1;
+  else {
+    start = now >= 21 * 60 ? 2 : 1; // tomorrow's review runs at 21:00
+    if (videoDay(state, 0)) start = Math.max(start, VIDEO_EVERY_DAYS);
+  }
+  return tashkentDate(start + position * VIDEO_EVERY_DAYS);
 }
 
 /** A message from the admin in the private chat. Other people's messages are ignored. */
@@ -224,7 +235,7 @@ async function showQueue(state) {
   const videos = state.videos || [];
   if (!videos.length) return sendAdmin('📭 Navbatda video yo‘q. Videoni shu chatga yuboring.');
   const list = videos.map((v, i) => `${i + 1}. ${shortDate(expectedDate(state, i))} · ${v.name ? `${v.name} · ` : ''}${v.duration} soniya`).join('\n');
-  return sendAdmin(`🎥 <b>Navbatda ${videos.length} ta video</b> (har kuni ${VIDEO_TIME} da bittadan):\n${list}`);
+  return sendAdmin(`🎥 <b>Navbatda ${videos.length} ta video</b> (kun ora, ${VIDEO_TIME} da bittadan):\n${list}`);
 }
 
 async function postVideo(state, video) {
@@ -299,7 +310,7 @@ async function importVideos(state, persist) {
     }
   }
   const last = state.videos.length ? shortDate(expectedDate(state, state.videos.length - 1)) : '';
-  const lines = [`📥 <b>Google Drive'dan ${added} ta video navbatga qo‘shildi</b>`, `Navbatda jami ${state.videos.length} ta, har kuni ${VIDEO_TIME} da bittadan, oxirgisi taxminan ${last}.`, '/navbat — ro‘yxatni ko‘rish'];
+  const lines = [`📥 <b>Google Drive'dan ${added} ta video navbatga qo‘shildi</b>`, `Navbatda jami ${state.videos.length} ta, kun ora ${VIDEO_TIME} da bittadan, oxirgisi taxminan ${last}.`, '/navbat — ro‘yxatni ko‘rish'];
   if (failed.length) lines.push('', `⚠️ ${failed.length} tasini ololmadim:`, ...failed.slice(0, 15));
   await sendAdmin(lines.join('\n'));
   persist();
@@ -309,6 +320,8 @@ async function importVideos(state, persist) {
 export function prepareVideoDraft(state) {
   const video = (state.videos || [])[0];
   if (!video) return null;
+  // Tomorrow is a rest day if today was a video day
+  if (videoDay(state, 0)) return null;
   return {
     slot: VIDEO_TIME,
     label: `🎥 Dumaloq video (navbatda ${state.videos.length} ta)`,
