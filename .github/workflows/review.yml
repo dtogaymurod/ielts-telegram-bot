@@ -57,7 +57,7 @@ jobs:
       - name: Install poster dependencies
         run: |
           pip install -r poster/requirements.txt
-          sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-color-emoji
+          sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-color-emoji ffmpeg
 
       - name: Run review step
         env:
