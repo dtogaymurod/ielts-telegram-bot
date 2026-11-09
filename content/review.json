@@ -232,10 +232,11 @@
         "kind": "band",
         "index": 0
       },
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-11-08T15:59:41.421Z",
       "buttons_message_id": 67,
-      "decided_at": "2026-11-08T16:20:04.308Z"
+      "decided_at": "2026-11-08T16:20:04.308Z",
+      "published_at": "2026-11-09T07:00:18.134Z"
     },
     "2026-11-09 19:30": {
       "date": "2026-11-09",
