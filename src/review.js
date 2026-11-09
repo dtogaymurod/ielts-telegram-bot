@@ -24,8 +24,9 @@
 import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { execSync } from 'child_process';
 import { callApi, setTargetChat, validateConfig } from './telegram.js';
-import { HELP_TEXT, videoInMessage, prepareVideoNote, publishVideoNote } from './video-note.js';
+import { HELP_TEXT, videoInMessage, prepareVideoNote, prepareDriveVideo, publishVideoNote, hasFfmpeg } from './video-note.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REVIEW_FILE = join(__dirname, '..', 'content', 'review.json');
@@ -222,7 +223,7 @@ async function handleMessage(state, message) {
 async function showQueue(state) {
   const videos = state.videos || [];
   if (!videos.length) return sendAdmin('📭 Navbatda video yo‘q. Videoni shu chatga yuboring.');
-  const list = videos.map((v, i) => `${i + 1}. ${shortDate(expectedDate(state, i))} · ${v.duration} soniya`).join('\n');
+  const list = videos.map((v, i) => `${i + 1}. ${shortDate(expectedDate(state, i))} · ${v.name ? `${v.name} · ` : ''}${v.duration} soniya`).join('\n');
   return sendAdmin(`🎥 <b>Navbatda ${videos.length} ta video</b> (har kuni ${VIDEO_TIME} da bittadan):\n${list}`);
 }
 
@@ -265,6 +266,43 @@ async function handleQueueButton(state, query) {
   }
   try { await callApi('answerCallbackQuery', { callback_query_id: query.id, text: answer }); } catch {}
   return changed;
+}
+
+/**
+ * Videos listed in content/video-import.json ({ "files": [{ "id", "name" }] },
+ * Google Drive files shared with anyone who has the link) join the end of
+ * the queue in the listed order, once each. Runs when a listener starts.
+ */
+const IMPORT_FILE = join(__dirname, '..', 'content', 'video-import.json');
+
+async function importVideos(state, persist) {
+  if (!existsSync(IMPORT_FILE) || !hasFfmpeg()) return;
+  const files = JSON.parse(readFileSync(IMPORT_FILE, 'utf-8')).files || [];
+  state.imported = state.imported || [];
+  const todo = files.filter((f) => !state.imported.includes(f.id));
+  if (!todo.length) return;
+  console.log(`📥 Importing ${todo.length} video(s) from Google Drive`);
+  state.videos = state.videos || [];
+  let added = 0;
+  const failed = [];
+  for (const file of todo) {
+    try {
+      const ready = await prepareDriveVideo(ADMIN_ID, file.id);
+      state.videos.push({ id: `d-${file.id}`, name: file.name, file_id: ready.fileId, duration: Math.round(ready.duration), added_at: new Date().toISOString() });
+      state.imported.push(file.id);
+      added += 1;
+      if (ready.notes.length) console.log(`   ${file.name}: ${ready.notes.join(' ')}`);
+      persist();
+    } catch (error) {
+      console.log(`⚠️ ${file.name}: ${error.message}`);
+      failed.push(`• ${file.name}: ${error.message}`);
+    }
+  }
+  const last = state.videos.length ? shortDate(expectedDate(state, state.videos.length - 1)) : '';
+  const lines = [`📥 <b>Google Drive'dan ${added} ta video navbatga qo‘shildi</b>`, `Navbatda jami ${state.videos.length} ta, har kuni ${VIDEO_TIME} da bittadan, oxirgisi taxminan ${last}.`, '/navbat — ro‘yxatni ko‘rish'];
+  if (failed.length) lines.push('', `⚠️ ${failed.length} tasini ololmadim:`, ...failed.slice(0, 15));
+  await sendAdmin(lines.join('\n'));
+  persist();
 }
 
 /** 21:00: the first video in the queue goes into tomorrow's review. */
@@ -339,17 +377,19 @@ async function listen(state) {
   const stop = STOPS.find((m) => m > now + 1) ?? STOPS[0] + 24 * 60;
   const capped = stop - now > MAX_MINUTES;
   const end = Date.now() + Math.min(stop - now, MAX_MINUTES) * 60 * 1000 - d.getUTCSeconds() * 1000;
+  const persist = () => {
+    save(state);
+    if (!process.env.REVIEW_SAVE_CMD) return;
+    try { execSync(process.env.REVIEW_SAVE_CMD, { stdio: 'inherit' }); } catch (error) { console.log(`⚠️ Save failed: ${error.message}`); }
+  };
+  try { await importVideos(state, persist); } catch (error) { console.log(`⚠️ Import failed: ${error.message}`); }
   console.log(`👂 Listening for button taps for ${Math.round((end - Date.now()) / 60000)} min`);
   while (Date.now() < end - 5000) {
     const wait = Math.max(1, Math.min(50, Math.floor((end - Date.now()) / 1000) - 5));
     try {
       const videoChanged = await publishDueVideo(state);
       if ((await syncDecisions(state, wait)) || videoChanged) {
-        save(state);
-        if (process.env.REVIEW_SAVE_CMD) {
-          const { execSync } = await import('child_process');
-          try { execSync(process.env.REVIEW_SAVE_CMD, { stdio: 'inherit' }); } catch (error) { console.log(`⚠️ Save failed: ${error.message}`); }
-        }
+        persist();
       }
     } catch (error) {
       console.log(`⚠️ getUpdates failed: ${error.message}`);
