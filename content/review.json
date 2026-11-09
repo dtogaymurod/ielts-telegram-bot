@@ -293,5 +293,17 @@
       "buttons_message_id": 81,
       "decided_at": "2026-11-09T17:11:13.607Z"
     }
-  }
+  },
+  "imported": [
+    "1uPCHamPeZbhIprwX_bKkB0wu4m0qzIei"
+  ],
+  "videos": [
+    {
+      "id": "d-1uPCHamPeZbhIprwX_bKkB0wu4m0qzIei",
+      "name": "A_task1_oylash_shart_emas",
+      "file_id": "DQACAgIAAxkDAANSavIPb9sa6aBHo2ZEEDTGzKPgB7EAAv64AAJwA5FL-CdX_Mo0dLc9BA",
+      "duration": 60,
+      "added_at": "2026-11-09T18:22:39.600Z"
+    }
+  ]
 }
