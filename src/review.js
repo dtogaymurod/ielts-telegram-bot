@@ -13,6 +13,10 @@
  * content/review.json. A post nobody approved is not published and stays
  * first in its queue.
  *
+ * Round videos: the admin can also send the bot a video at any time. It
+ * comes back as a round video with the same ✅ / ❌ buttons, and ✅ posts it
+ * to the channel straight away (src/video-note.js).
+ *
  * Turned on by the TELEGRAM_ADMIN_ID secret (the admin's numeric user id).
  * Without it the bot posts straight to the channel as before.
  */
@@ -21,6 +25,7 @@ import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { callApi, setTargetChat, validateConfig } from './telegram.js';
+import { HELP_TEXT, videoInMessage, prepareVideoNote, publishVideoNote } from './video-note.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REVIEW_FILE = join(__dirname, '..', 'content', 'review.json');
@@ -86,7 +91,9 @@ const STATUS_TEXT = {
 };
 
 function buttonsText(draft) {
-  return `<b>${draft.label}</b>\nShu post kanalga chiqsinmi?\n\n${STATUS_TEXT[draft.status]}`;
+  const question = draft.slot === 'video' ? 'Shu dumaloq video kanalga chiqsinmi? ✅ bossangiz, darhol chiqadi.' : 'Shu post kanalga chiqsinmi?';
+  const status = draft.slot === 'video' && draft.status === 'approved' ? '✅ Tasdiqlandi' : STATUS_TEXT[draft.status];
+  return `<b>${draft.label}</b>\n${question}\n\n${status}`;
 }
 
 /**
@@ -121,6 +128,7 @@ async function refreshButtons(key, draft) {
 /** Apply one update (a button tap) to the state. Returns the draft key it changed, or null. */
 async function applyUpdate(state, update) {
   state.last_update_id = Math.max(state.last_update_id, update.update_id);
+  if (update.message) return handleMessage(state, update.message);
   const query = update.callback_query;
   if (!query) return null;
   const match = /^r:(ok|no):(.+)$/.exec(query.data || '');
@@ -138,6 +146,19 @@ async function applyUpdate(state, update) {
     }
     answer = draft.status === 'approved' ? '✅ Qabul qilindi: post vaqtida chiqadi' : '❌ Qabul qilindi: post chiqmaydi';
     key = match[2];
+    if (draft.slot === VIDEO_SLOT && draft.status === 'approved') {
+      try {
+        await publishVideoNote(callApi, CHANNEL_ID, draft.meta.file_id);
+        draft.status = 'published';
+        draft.published_at = new Date().toISOString();
+        answer = '📢 Dumaloq video kanalga chiqdi';
+      } catch (error) {
+        console.log(`⚠️ Round video not posted: ${error.message}`);
+        draft.status = 'pending';
+        answer = '⚠️ Kanalga chiqmadi, yana bir bor bosib ko‘ring';
+        try { await sendAdmin(`⚠️ Dumaloq video kanalga chiqmadi: ${error.message}`); } catch {}
+      }
+    }
   }
   // Stops the spinner on the button. Fails harmlessly for taps older than a few minutes.
   try {
@@ -146,13 +167,53 @@ async function applyUpdate(state, update) {
   return key;
 }
 
+const VIDEO_SLOT = 'video';
+
+/**
+ * A message from the admin in the private chat: a video becomes a round
+ * video preview with ✅ / ❌ buttons. Other people's messages are ignored.
+ */
+async function handleMessage(state, message) {
+  if (String(message.from?.id) !== String(ADMIN_ID) || message.chat?.type !== 'private') return null;
+  const video = videoInMessage(message);
+  if (!video) {
+    if (/^\/(video|start|help)\b/.test(message.text || '')) await sendAdmin(HELP_TEXT);
+    return null;
+  }
+  const date = tashkentDate();
+  const key = `${date} ${VIDEO_SLOT}-${message.message_id}`;
+  if (state.drafts[key]) return null;
+  console.log(`🎥 Admin sent a ${video.kind}, preparing round video`);
+  try {
+    await sendAdmin('⏳ Video qabul qilindi, dumaloq videoga aylantiryapman...', { reply_to_message_id: message.message_id });
+    const ready = await prepareVideoNote(callApi, ADMIN_ID, video, message.message_id);
+    const draft = {
+      date,
+      slot: VIDEO_SLOT,
+      label: '🎥 Dumaloq video',
+      meta: { file_id: ready.fileId, duration: Math.round(ready.duration) },
+      status: 'pending',
+      created_at: new Date().toISOString(),
+    };
+    if (ready.notes.length) await sendAdmin(ready.notes.join('\n'));
+    const sent = await sendAdmin(buttonsText(draft), { reply_markup: buttons(key) });
+    draft.buttons_message_id = sent.message_id;
+    state.drafts[key] = draft;
+    return key;
+  } catch (error) {
+    console.log(`⚠️ Round video failed: ${error.message}`);
+    try { await sendAdmin(`⚠️ Videoni dumaloq qilib bo‘lmadi.\n${error.message}\n\n${HELP_TEXT}`); } catch {}
+    return null;
+  }
+}
+
 /**
  * Read button taps from Telegram, save them, and confirm them so they are
  * not read twice. The admin can change their mind until the post goes out.
  * `timeout` > 0 waits (long polling) for a tap to arrive.
  */
 async function syncDecisions(state, timeout = 0) {
-  const updates = await callApi('getUpdates', { offset: state.last_update_id + 1, timeout, allowed_updates: ['callback_query'] });
+  const updates = await callApi('getUpdates', { offset: state.last_update_id + 1, timeout, allowed_updates: ['callback_query', 'message'] });
   const changed = new Set();
   for (const update of updates) {
     const key = await applyUpdate(state, update);
@@ -268,7 +329,7 @@ export async function markPublished(state, slot) {
 /** 09:00: remind about today's posts that still wait for an answer. */
 async function remind(state) {
   const today = tashkentDate();
-  const waiting = Object.entries(state.drafts).filter(([key, d]) => key.startsWith(today) && d.status === 'pending');
+  const waiting = Object.entries(state.drafts).filter(([key, d]) => key.startsWith(today) && d.slot !== VIDEO_SLOT && d.status === 'pending');
   for (const [key, draft] of waiting) {
     const message = await sendAdmin(`⏰ <b>Eslatma:</b> bugungi ${draft.slot} posti hali tasdiqlanmagan.\nTasdiqlamasangiz, kanalga chiqmaydi.`, {
       reply_to_message_id: draft.buttons_message_id,
