@@ -294,6 +294,8 @@ async function importVideos(state, persist) {
   // Imported videos follow the order of the list (it can be reordered later)
   const rank = new Map(files.map((f, i) => [`d-${f.id}`, i]));
   const reorder = () => {
+    // A Drive video taken out of the list leaves the queue too
+    state.videos = (state.videos || []).filter((v) => !v.id.startsWith('d-') || rank.has(v.id));
     const listed = (state.videos || []).filter((v) => rank.has(v.id)).sort((a, b) => rank.get(a.id) - rank.get(b.id));
     let next = 0;
     state.videos = (state.videos || []).map((v) => (rank.has(v.id) ? listed[next++] : v));
