@@ -2,8 +2,8 @@
  * Round videos (Telegram "video notes") for the channel.
  *
  * The admin sends the bot a video in the private chat. The bot turns it into
- * a round video (square 640×640, at most 60 seconds), sends it back as a
- * preview with ✅ / ❌ buttons, and on ✅ posts it to the channel right away.
+ * a round video (square 640×640, at most 60 seconds) and sends it back so
+ * the admin sees it. The queue and posting live in src/review.js.
  *
  * Accepted: a regular video, a video sent as a file, or a round video.
  * A video that is not square is cropped to its centre, a longer one is cut
@@ -27,8 +27,10 @@ const MAX_DOWNLOAD = 20 * 1024 * 1024;
 export const HELP_TEXT = [
   '🎥 <b>Dumaloq video chiqarish</b>',
   '',
-  'Videoni shu chatga oddiy video qilib yuboring (yoki fayl qilib, yoki dumaloq video yozib).',
-  'Bot uni dumaloq videoga aylantirib, sizga ko‘rsatadi. ✅ bossangiz, darhol kanalga chiqadi.',
+  'Videolarni shu chatga yuboring: bittadan yoki hammasini birdaniga (oddiy video, fayl yoki dumaloq video).',
+  'Bot har birini dumaloq qilib navbatga qo‘yadi. Har kuni 17:00 da navbatdagi bittasi kanalga chiqadi.',
+  'Oldingi kuni 21:00 da uni sizga ✅/❌ bilan ko‘rsataman, tasdiqlamasangiz chiqmaydi.',
+  'Har video tagida: 📢 Hozir chiqarish, 🗑 Navbatdan olish. /navbat — navbatni ko‘rish.',
   '',
   '📐 Eng yaxshisi: kvadrat (640×640), 60 soniyagacha, 20 MB dan kichik.',
   '• Kvadrat bo‘lmasa, o‘rtasi kesib olinadi (tepa/past yoki chetlar ko‘rinmay qoladi).',
