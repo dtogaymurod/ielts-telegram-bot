@@ -1,5 +1,5 @@
 {
-  "last_update_id": 111952998,
+  "last_update_id": 111952999,
   "drafts": {
     "2026-11-01 19:30": {
       "date": "2026-11-01",
@@ -279,6 +279,18 @@
       "created_at": "2026-11-09T15:59:36.108Z",
       "buttons_message_id": 76,
       "decided_at": "2026-11-09T16:07:17.231Z"
+    },
+    "2026-11-09 video-78": {
+      "date": "2026-11-09",
+      "slot": "video",
+      "label": "🎥 Dumaloq video",
+      "meta": {
+        "file_id": "DQACAgIAAxkDAANQavH9fTGXTErL_e421FZc6ggak5kAAjS4AAJwA5FLiZ5vLGL3S9g9BA",
+        "duration": 60
+      },
+      "status": "pending",
+      "created_at": "2026-11-09T17:06:06.100Z",
+      "buttons_message_id": 81
     }
   }
 }
