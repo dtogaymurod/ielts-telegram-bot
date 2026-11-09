@@ -315,7 +315,8 @@
     "1xVvH03JCMQU7zN1eph105QyTJpddi2ME",
     "17ihr9St-pUTnvETW1P9jCrdavzE59OTM",
     "19oxF7I18s9C8NwEodQnk_e8_EmLmUCe3",
-    "1-akAAmx3QCI0oHoYaxuDvSbsfmuHkH7H"
+    "1-akAAmx3QCI0oHoYaxuDvSbsfmuHkH7H",
+    "1CckybjYrfeT6AKTRg3fxlJlyrJSTiIi_"
   ],
   "videos": [
     {
@@ -464,6 +465,13 @@
       "file_id": "DQACAgIAAxkDAANmavIQArN7HkARVoy4lOobcE31gxsAAhS5AAJwA5FL39Kw256r9089BA",
       "duration": 35,
       "added_at": "2026-11-09T18:25:07.127Z"
+    },
+    {
+      "id": "d-1CckybjYrfeT6AKTRg3fxlJlyrJSTiIi_",
+      "name": "r1_part2_konspekt",
+      "file_id": "DQACAgIAAxkDAANnavIQCQ0kQBnJ9kTyppf2RrhMYzUAAhW5AAJwA5FLolRBjgZPlVM9BA",
+      "duration": 39,
+      "added_at": "2026-11-09T18:25:13.356Z"
     }
   ]
 }
