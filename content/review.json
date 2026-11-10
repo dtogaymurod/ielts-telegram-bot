@@ -276,10 +276,11 @@
         "type": "lonewolf",
         "index": 16
       },
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-11-09T15:59:36.108Z",
       "buttons_message_id": 76,
-      "decided_at": "2026-11-09T16:07:17.231Z"
+      "decided_at": "2026-11-09T16:07:17.231Z",
+      "published_at": "2026-11-10T14:28:54.840Z"
     },
     "2026-11-09 video-78": {
       "date": "2026-11-09",
