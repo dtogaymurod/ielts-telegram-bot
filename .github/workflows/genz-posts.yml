@@ -60,7 +60,14 @@ jobs:
       - name: Install poster dependencies
         run: |
           pip install -r poster/requirements.txt
-          sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-color-emoji
+          # apt mirrors sometimes fail to resolve on the runner; retry instead of
+          # hanging for an hour and losing the run
+          APT="sudo apt-get -o Acquire::Retries=3 -o Acquire::http::Timeout=20 -o Acquire::https::Timeout=20"
+          for attempt in 1 2 3 4; do
+            $APT update -qq && $APT install -y -qq fonts-noto-color-emoji && break
+            if [ "$attempt" = 4 ]; then echo "apt install failed after 4 attempts"; exit 1; fi
+            sleep 20
+          done
 
       - name: Post Gen Z post
         env:
