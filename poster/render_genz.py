@@ -167,10 +167,17 @@ def draw_pairs(img, kind, rows):
     emoji(img, re_, cx + 30, top + 32, 46)
     d.text((cx + 90, top + 38), rt, font=font("bold", 30), fill=ORANGE)
     y = top + 112
-    for i, (plain, better) in enumerate(rows):
+    icons = any(len(r) > 2 for r in rows)
+    lx = PAD + (128 if icons else 50)
+    for i, row in enumerate(rows):
+        plain, better = row[0], row[1]
         if i:
             d.line([PAD + 40, y - 12, W - PAD - 40, y - 12], fill=LINE, width=2)
-        strike(d, PAD + 50, y + 18, plain, fit(d, plain, "medium", 34, col_w), GREY)
+        if len(row) > 2:
+            d.rounded_rectangle([PAD + 36, y + 2, PAD + 112, y + 78], radius=20, fill=(255, 238, 226))
+            emoji(img, row[2], PAD + 51, y + 17, 46)
+            d = ImageDraw.Draw(img)
+        strike(d, lx, y + 18, plain, fit(d, plain, "medium", 34, cx - lx - 30), GREY)
         d.text((cx + 30, y + 16), better, font=fit(d, better, "black", 38, col_w), fill=NAVY)
         y += row_h
 

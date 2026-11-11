@@ -45,6 +45,20 @@
           "Listen to 13–19 and 30–90 in pairs for 5 minutes a day"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "≠",
+        "items": [
+          [
+            "15",
+            "fifTEEN"
+          ],
+          [
+            "50",
+            "FIFty"
+          ]
+        ]
+      },
       "caption": "This mistake takes the most points in Section 1 😬\n\nMini test: say 14, 40, 17, 70 to a friend in any order. They write. Then switch 🔁\n\nHow many did you get right? Tell us in the comments 👇"
     },
     {
@@ -65,6 +79,11 @@
           "**a / an / the** count as words too"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "a large garden",
+        "right": "garden"
+      },
       "caption": "Real talk: the limit is written at the start of every part, but half of people don't read it 👀\n\nMake it a habit: circle the limit. And remember, a number like <b>25</b> is not a word, it is a number.\n\nHave you made this mistake? 👇"
     },
     {
@@ -85,6 +104,24 @@
           "**double S** = SS, **double T** = TT"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "👂",
+            "hear a letter"
+          ],
+          [
+            "✍️",
+            "write it"
+          ],
+          [
+            "🔁",
+            "next letter"
+          ]
+        ]
+      },
       "caption": "When you hear letters, your brain starts to “guess” the word. Don't let it 🧠\n\nAt the end, count the letters: if the speaker said 8 letters, you need 8 too ✅\n\nCan you spell your name in English? 👇"
     },
     {
@@ -105,6 +142,20 @@
           "**triple five** = 555"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "=",
+        "items": [
+          [
+            "oh",
+            "“oh”"
+          ],
+          [
+            "0",
+            "zero"
+          ]
+        ]
+      },
       "caption": "Phone numbers in Section 1 = free points 🎁\n\nLife hack: write the number in groups of 3–4: <b>07 44 512</b>. This way you don't get lost.\n\nCan you say your phone number in English? Try it 😄"
     },
     {
@@ -129,6 +180,24 @@
           "Guess the answer type: number, name, place"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "👀",
+            "Read"
+          ],
+          [
+            "✏️",
+            "Underline"
+          ],
+          [
+            "🎧",
+            "Listen"
+          ]
+        ]
+      },
       "caption": "Listening = 50% listening, 50% getting ready 🎯\n\nThose 30 seconds are your most important time. Don't waste them checking old answers.\n\nWhat do you do in that time? 👇"
     },
     {
@@ -153,6 +222,13 @@
           "after **at** → a time or a place"
         ]
       ],
+      "visual": {
+        "type": "form",
+        "heading": "ROOM TO RENT · NOTES",
+        "text": "costs ___ per week",
+        "tag": "price?",
+        "icon": "💷"
+      },
       "caption": "If you know the answer type before the audio starts, your ear looks only for that 🔍\n\nChallenge: in your next test, write N (number), P (place) or NM (name) next to each gap ✍️\n\nDid your score change? Tell us in the comments 👇"
     },
     {
@@ -1359,6 +1435,20 @@
           "In Y/N/NG, look for **what the writer thinks**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "📊",
+            "Facts"
+          ],
+          [
+            "💭",
+            "Opinion"
+          ]
+        ]
+      },
       "caption": "In Yes/No questions, watch for phrases like <i>I believe, arguably, it is clear that</i> 👀\n\nThey show the writer's opinion.\n\nDid you know this? ✅ or ❌ 👇"
     },
     {
@@ -1379,6 +1469,20 @@
           "The exact same word is often **a trap**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "=",
+        "items": [
+          [
+            "👵",
+            "elderly"
+          ],
+          [
+            "🧓",
+            "senior citizens"
+          ]
+        ]
+      },
       "caption": "Reading is a synonym hunt 🎯\n\nPractice: find 5 synonym pairs in today's test and write them in your notebook.\n\nWrite your most interesting pair in the comments 👇"
     },
     {
@@ -1399,6 +1503,24 @@
           "Found answer 5? **Answer 6 comes after it**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "5",
+            "Answer 5"
+          ],
+          [
+            "6",
+            "Answer 6"
+          ],
+          [
+            "7",
+            "Answer 7"
+          ]
+        ]
+      },
       "caption": "This rule saves a lot of time ⏱\n\nFor questions that come in order, you don't need to go back and search.\n\nDid you know this? 👇"
     },
     {
@@ -1419,6 +1541,20 @@
           "Read the **first and last** sentences"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "🔤",
+            "One word"
+          ],
+          [
+            "💡",
+            "Main idea"
+          ]
+        ]
+      },
       "caption": "Matching headings is the “trickiest” IELTS question 🦊\n\nAsk yourself: what is the whole paragraph about? Not one detail, but the big picture.\n\nAre headings hard for you? 👇"
     },
     {
@@ -1439,6 +1575,24 @@
           "At the end, choose from the **2–3 that are left**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "📏",
+            "Shortest first"
+          ],
+          [
+            "✂️",
+            "Cross out"
+          ],
+          [
+            "🎯",
+            "Choose the rest"
+          ]
+        ]
+      },
       "caption": "The fewer options you have, the easier the question gets 📉\n\nThis method turns 15 minutes into 8.\n\nWill you try it? 👇"
     },
     {
@@ -1459,6 +1613,11 @@
           "Changing the word form can also be **wrong**"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "a very old building",
+        "right": "old building"
+      },
       "caption": "If the text says <i>pollution</i>, don't write <i>polluted</i> ✍️\n\nIf the grammar needs a different form, you have found the wrong place.\n\nHave you made this mistake? 👇"
     },
     {
@@ -2637,6 +2796,11 @@
           "shows → **illustrates, depicts, compares**"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "shows",
+        "right": "illustrates"
+      },
       "caption": "Paraphrase = showing good vocabulary from the very first sentence ✨\n\nReady pairs: <i>number of → how many</i>, <i>percentage → proportion</i>.\n\nHow do you start? 👇"
     },
     {
@@ -2661,6 +2825,26 @@
           "**fluctuated**"
         ]
       ],
+      "visual": {
+        "type": "lines",
+        "series": [
+          [
+            "rose",
+            "up",
+            "📈"
+          ],
+          [
+            "fell",
+            "down",
+            "📉"
+          ],
+          [
+            "fluctuated",
+            "wave",
+            "〰️"
+          ]
+        ]
+      },
       "caption": "Use a different verb in each sentence, but make sure the meaning fits 🎯\n\n<b>plummeted</b> = fell very fast. Don't use it for a small fall.\n\nSave this 🔖"
     },
     {
@@ -2685,6 +2869,24 @@
           "“Sales rose **sharply** to 500 units.”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "🚀",
+            "sharply"
+          ],
+          [
+            "🚶",
+            "steadily"
+          ],
+          [
+            "🐢",
+            "slightly"
+          ]
+        ]
+      },
       "caption": "Verb + adverb + number = a perfect Task 1 sentence 💯\n\nPractice: today, describe one graph in 3 sentences with this formula.\n\nWrite it in the comments and I will check it 👇"
     },
     {
@@ -2705,6 +2907,27 @@
           "**Sharp changes** and groups"
         ]
       ],
+      "visual": {
+        "type": "bars",
+        "items": [
+          [
+            "the biggest",
+            95
+          ],
+          [
+            "",
+            55
+          ],
+          [
+            "",
+            45
+          ],
+          [
+            "the smallest",
+            15
+          ]
+        ]
+      },
       "caption": "The examiner wants to see that you can choose 🧠\n\nPicking the important information = Band 7.\n\nHow many numbers do you usually write? 👇"
     },
     {
@@ -2729,6 +2952,19 @@
           "“Men spent **twice as much as** women.”"
         ]
       ],
+      "visual": {
+        "type": "bars",
+        "items": [
+          [
+            "men",
+            100
+          ],
+          [
+            "women",
+            50
+          ]
+        ]
+      },
       "caption": "Comparing is the heart of Task 1 ❤️\n\nPut at least 2 comparisons in each body paragraph.\n\nWhat is your favourite comparing phrase? 👇"
     },
     {
@@ -2753,6 +2989,23 @@
           "**a third / nearly half**"
         ]
       ],
+      "visual": {
+        "type": "pie",
+        "items": [
+          [
+            42,
+            "the largest share"
+          ],
+          [
+            33,
+            "a third"
+          ],
+          [
+            25,
+            "a quarter"
+          ]
+        ]
+      },
       "caption": "If there is only one pie chart, don't use verbs of change ⚠️\n\nIf there are two pie charts (2000 and 2020), then you can.\n\nAre pie charts easy or hard for you? 👇"
     },
     {
@@ -3967,6 +4220,20 @@
           "Keep your long talk for **Part 2**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "⏱",
+            "Part 1: 15–20 sec"
+          ],
+          [
+            "🎤",
+            "Part 2: 2 min"
+          ]
+        ]
+      },
       "caption": "In Part 1 the examiner must ask many questions, and time is short ⏱\n\n2–3 sentences = the perfect length.\n\nDo you say too much or too little in Part 1? 👇"
     },
     {
@@ -3987,6 +4254,20 @@
           "Prepare ideas, but make the sentences **new every time**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "🤖",
+            "Memorised"
+          ],
+          [
+            "💬",
+            "Natural"
+          ]
+        ]
+      },
       "caption": "A natural mistake is better than a memorised perfect answer 💯\n\nIf the examiner hears a memorised answer, they change the topic.\n\nHave you ever memorised an answer? 😅"
     },
     {
@@ -4007,6 +4288,24 @@
           "“**Let me think**... I'd probably say...”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🤔",
+            "No idea?"
+          ],
+          [
+            "💬",
+            "“Let me think…”"
+          ],
+          [
+            "🗣",
+            "Keep talking"
+          ]
+        ]
+      },
       "caption": "Think of something to say, even if you make it up 😉\n\nThe examiner tests your English, not your ideas.\n\nSave this 🔖"
     },
     {
@@ -4031,6 +4330,24 @@
           "“**How can I put it**...”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "😶",
+            "Silence"
+          ],
+          [
+            "💬",
+            "“Well…”"
+          ],
+          [
+            "🗣",
+            "Answer"
+          ]
+        ]
+      },
       "caption": "But don't say “umm, ahh” too often ⚠️\n\nThese phrases give your brain 2 seconds, and they sound natural.\n\nWhich one do you use? 👇"
     },
     {
@@ -4051,6 +4368,24 @@
           "Add **a feeling** and one interesting detail"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🃏",
+            "Cue card"
+          ],
+          [
+            "📝",
+            "Key words"
+          ],
+          [
+            "🎤",
+            "2 minutes"
+          ]
+        ]
+      },
       "caption": "This is enough for a 2-minute talk 🎤\n\nPractice: take any Part 2 card, plan for 1 minute, speak for 2 minutes.\n\nHow did it go? 👇"
     },
     {
@@ -4075,6 +4410,24 @@
           "At the end: “**Looking back**...”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "❓",
+            "Who? What?"
+          ],
+          [
+            "📍",
+            "Where? When?"
+          ],
+          [
+            "❤️",
+            "Feeling"
+          ]
+        ]
+      },
       "caption": "5 W questions + a feeling = 2 easy minutes ⏱\n\nMake each point longer with these questions.\n\nCan you speak for 2 minutes? 👇"
     },
     {

@@ -28,11 +28,11 @@ SKILLS = {
 }
 
 
-def steps_layout(d, steps, size, max_w):
+def steps_layout(d, steps, size, max_w, min_h=0):
     f = font("semibold", size)
     blocks = [wrap(d, s, f, max_w) for s in steps]
     line_h = int(size * 1.32)
-    height = sum(len(b) * line_h for b in blocks) + (len(blocks) - 1) * int(size * 0.9)
+    height = sum(max(len(b) * line_h, min_h) for b in blocks) + (len(blocks) - 1) * int(size * 0.9)
     return f, blocks, line_h, height
 
 
@@ -78,23 +78,36 @@ def render(task):
     d.text((PAD + 44, top + 34), "STEP BY STEP", font=font("black", 30), fill=ORANGE)
     area_top, area_bottom = top + 100, bottom - 36
     text_x, max_w = PAD + 124, W - 2 * PAD - 168
+    icons = poster.get("icons")
+    min_h = 72 if icons else 0  # room for the icon tile next to a one-line step
     size = 34
     while True:
-        f, blocks, line_h, height = steps_layout(d, poster["steps"], size, max_w)
+        f, blocks, line_h, height = steps_layout(d, poster["steps"], size, max_w, min_h)
         if height <= area_bottom - area_top or size <= 22:
             break
         size -= 2
     sy = area_top + max(0, (area_bottom - area_top - height) // 2)
     for n, block in enumerate(blocks, 1):
-        r = int(size * 0.78)
-        cy = sy + line_h // 2
-        d.ellipse([PAD + 44, cy - r, PAD + 44 + 2 * r, cy + r], fill=NAVY)
-        nf = font("black", int(size * 0.8))
-        d.text((PAD + 44 + r - d.textlength(str(n), font=nf) / 2, cy - nf.size * 0.62), str(n), font=nf, fill=WHITE)
+        block_h = max(len(block) * line_h, min_h)
+        if icons:
+            cy = sy + block_h // 2
+            d.rounded_rectangle([PAD + 40, cy - 34, PAD + 108, cy + 34], radius=18, fill=(255, 238, 226))
+            emoji(img, icons[n - 1], PAD + 52, cy - 22, 44)
+            d = ImageDraw.Draw(img)
+            d.ellipse([PAD + 28, cy - 46, PAD + 58, cy - 16], fill=NAVY)
+            nf = font("black", 19)
+            d.text((PAD + 43 - d.textlength(str(n), font=nf) / 2, cy - 43), str(n), font=nf, fill=WHITE)
+        else:
+            r = int(size * 0.78)
+            cy = sy + line_h // 2
+            d.ellipse([PAD + 44, cy - r, PAD + 44 + 2 * r, cy + r], fill=NAVY)
+            nf = font("black", int(size * 0.8))
+            d.text((PAD + 44 + r - d.textlength(str(n), font=nf) / 2, cy - nf.size * 0.62), str(n), font=nf, fill=WHITE)
+        ty = sy + (block_h - len(block) * line_h) // 2
         for line in block:
-            d.text((text_x, sy), line, font=f, fill=NAVY)
-            sy += line_h
-        sy += int(size * 0.9)
+            d.text((text_x, ty), line, font=f, fill=NAVY)
+            ty += line_h
+        sy += block_h + int(size * 0.9)
 
     note = "What you need, result and check: in the post text 👇".replace(" 👇", "")
     nf = font("bold", 30)

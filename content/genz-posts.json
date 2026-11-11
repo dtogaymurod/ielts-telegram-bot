@@ -80,27 +80,33 @@
       "rows": [
         [
           "I think",
-          "I firmly believe"
+          "I firmly believe",
+          "💭"
         ],
         [
           "In my opinion",
-          "From my perspective"
+          "From my perspective",
+          "👀"
         ],
         [
           "I like it",
-          "I'm really into it"
+          "I'm really into it",
+          "😍"
         ],
         [
           "I don't like",
-          "I'm not keen on"
+          "I'm not keen on",
+          "👎"
         ],
         [
           "I agree",
-          "I couldn't agree more"
+          "I couldn't agree more",
+          "🤝"
         ],
         [
           "I don't know",
-          "That's a tough one"
+          "That's a tough one",
+          "🤔"
         ]
       ],
       "caption": "📌 “I think” is not wrong, but if you repeat it in every answer, your Lexical Resource score goes down. Use a different phrase each time.\n\n🗣 Example: <i>Do you like reading? — Oh, <b>I'm really into it</b>, especially detective novels.</i>"
@@ -111,27 +117,33 @@
       "rows": [
         [
           "but",
-          "however"
+          "however",
+          "↩️"
         ],
         [
           "so",
-          "consequently"
+          "consequently",
+          "➡️"
         ],
         [
           "also",
-          "moreover"
+          "moreover",
+          "➕"
         ],
         [
           "for example",
-          "for instance"
+          "for instance",
+          "💡"
         ],
         [
           "in the end",
-          "ultimately"
+          "ultimately",
+          "🏁"
         ],
         [
           "because of",
-          "owing to"
+          "owing to",
+          "🔗"
         ]
       ],
       "caption": "📌 Be careful: <b>however</b> usually comes at the start of a new sentence, with a comma after it.\n\n❌ <i>I like it, however it is expensive.</i>\n✅ <i>I like it. <b>However</b>, it is expensive.</i>"
@@ -142,27 +154,33 @@
       "rows": [
         [
           "went up a lot",
-          "rose sharply"
+          "rose sharply",
+          "📈"
         ],
         [
           "went down",
-          "declined"
+          "declined",
+          "📉"
         ],
         [
           "stayed the same",
-          "remained stable"
+          "remained stable",
+          "➖"
         ],
         [
           "changed a lot",
-          "fluctuated"
+          "fluctuated",
+          "〰️"
         ],
         [
           "was the highest",
-          "peaked"
+          "peaked",
+          "🔝"
         ],
         [
           "about",
-          "approximately"
+          "approximately",
+          "🎯"
         ]
       ],
       "caption": "📌 Add an adverb to the verb and your description is clearer: <b>increased steadily</b> (went up at the same speed), <b>dropped slightly</b> (went down a little).\n\n✍️ Example: <i>Sales <b>peaked</b> at 80% in 2015 and then <b>declined</b> gradually.</i>"
@@ -173,27 +191,33 @@
       "rows": [
         [
           "a lot of people",
-          "a large number of people"
+          "a large number of people",
+          "👥"
         ],
         [
           "many people",
-          "a significant proportion"
+          "a significant proportion",
+          "📊"
         ],
         [
           "some people",
-          "certain individuals"
+          "certain individuals",
+          "👤"
         ],
         [
           "more and more",
-          "an increasing number of"
+          "an increasing number of",
+          "📈"
         ],
         [
           "lots of problems",
-          "numerous problems"
+          "numerous problems",
+          "⚠️"
         ],
         [
           "a small problem",
-          "a minor issue"
+          "a minor issue",
+          "🤏"
         ]
       ],
       "caption": "📌 Note: <b>a number of</b> + things you can count (students), <b>an amount of</b> + things you can't count (money).\n\n✍️ Example: <i>A significant proportion of young people work part-time.</i>"
@@ -204,27 +228,33 @@
       "rows": [
         [
           "good for health",
-          "beneficial"
+          "beneficial",
+          "💪"
         ],
         [
           "bad for health",
-          "detrimental"
+          "detrimental",
+          "🤒"
         ],
         [
           "interesting",
-          "fascinating"
+          "fascinating",
+          "🤩"
         ],
         [
           "hard",
-          "challenging"
+          "challenging",
+          "🧗"
         ],
         [
           "easy",
-          "straightforward"
+          "straightforward",
+          "👌"
         ],
         [
           "useful",
-          "invaluable"
+          "invaluable",
+          "🛠"
         ]
       ],
       "caption": "📌 These adjectives often come with a preposition: <b>beneficial to</b>, <b>detrimental to</b>.\n\n✍️ Example: <i>Excessive screen time is <b>detrimental to</b> children's eyesight.</i>"
@@ -235,27 +265,33 @@
       "rows": [
         [
           "Yes",
-          "Yes, definitely"
+          "Yes, definitely",
+          "✅"
         ],
         [
           "No",
-          "Not really, to be honest"
+          "Not really, to be honest",
+          "❌"
         ],
         [
           "Maybe",
-          "It depends, really"
+          "It depends, really",
+          "🤷"
         ],
         [
           "Sometimes",
-          "Every now and then"
+          "Every now and then",
+          "🕐"
         ],
         [
           "Often",
-          "More often than not"
+          "More often than not",
+          "🔁"
         ],
         [
           "I don't know",
-          "I've never thought about it"
+          "I've never thought about it",
+          "🤔"
         ]
       ],
       "caption": "📌 In Part 1, don't stop after “Yes” or “No”. After the opening phrase, add 1–2 more sentences.\n\n🗣 Example: <i>Do you cook often? — <b>More often than not</b>, yes. I usually make dinner for my family.</i>"
@@ -1942,27 +1978,33 @@
       "rows": [
         [
           "gonna",
-          "going to"
+          "going to",
+          "🔜"
         ],
         [
           "wanna",
-          "want to"
+          "want to",
+          "💭"
         ],
         [
           "kinda",
-          "somewhat"
+          "somewhat",
+          "🤏"
         ],
         [
           "gotta",
-          "have to"
+          "have to",
+          "❗"
         ],
         [
           "dunno",
-          "I'm not sure"
+          "I'm not sure",
+          "🤷"
         ],
         [
           "cuz",
-          "because"
+          "because",
+          "🔗"
         ]
       ],
       "caption": "📌 In Speaking you can say “gonna”, but in Writing you must write the full form.\n\n❌ <i>I'm gonna explain why…</i>\n✅ <i>I am <b>going to</b> explain why…</i>"
@@ -1973,27 +2015,33 @@
       "rows": [
         [
           "bussin'",
-          "delicious"
+          "delicious",
+          "😋"
         ],
         [
           "the vibe",
-          "the atmosphere"
+          "the atmosphere",
+          "✨"
         ],
         [
           "it slaps",
-          "it's superb"
+          "it's superb",
+          "🎵"
         ],
         [
           "aesthetic",
-          "visually appealing"
+          "visually appealing",
+          "🎨"
         ],
         [
           "sus",
-          "suspicious"
+          "suspicious",
+          "🤨"
         ],
         [
           "overhyped",
-          "overrated"
+          "overrated",
+          "📢"
         ]
       ],
       "caption": "📌 Very useful in Speaking Part 2 when you describe a café, a restaurant or a place.\n\n❌ <i>The food was bussin' and the vibe was great.</i>\n✅ <i>The food was <b>delicious</b> and <b>the atmosphere</b> was cosy.</i>"
@@ -2004,27 +2052,33 @@
       "rows": [
         [
           "bestie",
-          "close friend"
+          "close friend",
+          "🤝"
         ],
         [
           "rizz",
-          "charisma"
+          "charisma",
+          "😎"
         ],
         [
           "salty",
-          "resentful"
+          "resentful",
+          "😤"
         ],
         [
           "extra",
-          "over the top"
+          "over the top",
+          "🎭"
         ],
         [
           "the GOAT",
-          "the best of all time"
+          "the best of all time",
+          "🐐"
         ],
         [
           "a legend",
-          "a role model"
+          "a role model",
+          "🌟"
         ]
       ],
       "caption": "📌 Ready words for the question “Describe a person you admire”.\n\n✅ <i>My <b>close friend</b> has incredible <b>charisma</b>. She's a real <b>role model</b> for me.</i>"
@@ -2035,27 +2089,33 @@
       "rows": [
         [
           "a W",
-          "a success"
+          "a success",
+          "🏆"
         ],
         [
           "took an L",
-          "faced a setback"
+          "faced a setback",
+          "📉"
         ],
         [
           "she ate",
-          "she performed brilliantly"
+          "she performed brilliantly",
+          "👏"
         ],
         [
           "slay",
-          "excel"
+          "excel",
+          "💪"
         ],
         [
           "glow up",
-          "transformation"
+          "transformation",
+          "🦋"
         ],
         [
           "a flop",
-          "a failure"
+          "a failure",
+          "👎"
         ]
       ],
       "caption": "📌 Use these for the topic “Describe an achievement”.\n\n❌ <i>I took an L in my first test.</i>\n✅ <i>I <b>faced a setback</b> in my first test, but later I <b>excelled</b>.</i>"
