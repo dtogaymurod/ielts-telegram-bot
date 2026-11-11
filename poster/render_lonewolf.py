@@ -47,7 +47,7 @@ def render(task):
     avatar(img)
 
     # series pill + skill badge
-    pill = f"YOLG‘IZ BO‘RI · #{task['index']}"
+    pill = f"LONE WOLF · #{task['index']}"
     pf = font("bold", 26)
     pw = d.textlength(pill, font=pf)
     d.rounded_rectangle([PAD, 146, PAD + pw + 104, 196], radius=25, fill=ORANGE)
@@ -75,7 +75,7 @@ def render(task):
     top, bottom = y + 40, H - 230
     card(img, [PAD, top, W - PAD, bottom])
     d = ImageDraw.Draw(img)
-    d.text((PAD + 44, top + 34), "QADAM-BAQADAM", font=font("black", 30), fill=ORANGE)
+    d.text((PAD + 44, top + 34), "STEP BY STEP", font=font("black", 30), fill=ORANGE)
     area_top, area_bottom = top + 100, bottom - 36
     text_x, max_w = PAD + 124, W - 2 * PAD - 168
     size = 34
@@ -96,7 +96,7 @@ def render(task):
             sy += line_h
         sy += int(size * 0.9)
 
-    note = "Manba, natija va tekshiruv: post matnida 👇".replace(" 👇", "")
+    note = "What you need, result and check: in the post text 👇".replace(" 👇", "")
     nf = font("bold", 30)
     d.text(((W - d.textlength(note, font=nf)) / 2, bottom + 30), note, font=nf, fill=WHITE)
 

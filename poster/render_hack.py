@@ -33,7 +33,7 @@ render_genz.PILLS.update(SKILL_PILLS)
 TOP, BOTTOM = 380, 1110
 TEXT_X = PAD + 132
 TEXT_W = W - PAD - 48 - TEXT_X
-DEFAULT_NOTE = "Saqlab qo‘ying va do‘stingizga yuboring"
+DEFAULT_NOTE = "Save this and send it to a friend"
 
 
 def tokens(text):

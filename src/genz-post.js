@@ -7,7 +7,7 @@
  *
  * Schedule (Tashkent, 12:00):
  *   Monday    — band (Band 5 vs 8 album)     ⇄ redflag (Red flag / Green flag)
- *   Tuesday   — upgrade (Oddiy vs Band 9)
+ *   Tuesday   — upgrade (Basic vs Band 9)
  *   Wednesday — slang (TikTok vs IELTS)      ⇄ pov (text only)
  *   Thursday  — collocation (+ quiz)          ⇄ poll (poll only)
  *   Friday    — emoji (+ quiz)
@@ -84,8 +84,8 @@ function pickKind(date = tashkentNow()) {
 /** Fill in the fixed title/subtitle for the kinds that share one. */
 export function withDefaults(kind, post) {
   const defaults = {
-    emoji: { title: 'Bu qaysi so‘z?', subtitle: 'Emojilarga qarab IELTS so‘zini toping' },
-    truefalse: { title: 'Sizningcha, bu gap to‘g‘rimi?', subtitle: 'O‘zbek o‘quvchilari ko‘p adashadigan gap' },
+    emoji: { title: 'Which word is this?', subtitle: 'Look at the emojis and find the IELTS word' },
+    truefalse: { title: 'Is this sentence correct?', subtitle: 'A very common mistake among learners' },
   };
   return { kind, ...defaults[kind], ...post };
 }
@@ -97,22 +97,22 @@ export function withDefaults(kind, post) {
  */
 export function buildCaption(post) {
   const headers = {
-    upgrade: '😎 <b>ODDIY vs BAND 9</b>',
+    upgrade: '😎 <b>BASIC vs BAND 9</b>',
     slang: '📱 <b>TIKTOK vs IELTS</b> 🎓',
-    emoji: '🧩 <b>EMOJI TOPISHMOQ</b>',
-    truefalse: '🤔 <b>TO‘G‘RI YOKI XATO?</b>',
+    emoji: '🧩 <b>EMOJI RIDDLE</b>',
+    truefalse: '🤔 <b>TRUE OR FALSE?</b>',
     redflag: '🚩 <b>RED FLAG / GREEN FLAG</b> 🟢',
-    collocation: '🧩 <b>MAKE, DO YOKI TAKE?</b>',
+    collocation: '🧩 <b>MAKE, DO OR TAKE?</b>',
     band: '📈 <b>BAND 5 vs BAND 8</b>',
   };
   const calls = {
-    upgrade: "🔖 Saqlab qo'ying va do'stingizga yuboring!",
-    slang: '💬 Siz qaysi birini ko‘p ishlatasiz? Izohda yozing 😅',
-    emoji: 'Javobingizni pastdagi quizda belgilang 👇',
-    truefalse: 'O‘ylab ko‘ring va pastdagi quizda javob bering 👇',
-    redflag: '💬 Nechta red flag sizda bor? Izohda yozing 👇',
-    collocation: 'Asosiy savolga pastdagi quizda javob bering 👇',
-    band: '🔖 Saqlab qo‘ying va Speakingda ishlating!',
+    upgrade: '🔖 Save this and send it to a friend!',
+    slang: '💬 Which one do you use more? Write in the comments 😅',
+    emoji: 'Choose your answer in the quiz below 👇',
+    truefalse: 'Think about it and answer in the quiz below 👇',
+    redflag: '💬 How many red flags do you have? Write in the comments 👇',
+    collocation: 'Answer the main question in the quiz below 👇',
+    band: '🔖 Save this and use it in Speaking!',
   };
   return [headers[post.kind], '', post.caption, '', calls[post.kind], '', ...FOOTER].join('\n');
 }
@@ -120,19 +120,19 @@ export function buildCaption(post) {
 /** POV goes out as text only, written like a short chat. */
 export function buildPovText(post) {
   return [
-    '💀 <b>POV: Speaking imtihonida…</b>',
+    '💀 <b>POV: In the Speaking test…</b>',
     '',
     `🧑‍💼 <b>Examiner:</b> ${post.question}`,
-    `🙂 <b>Siz:</b> ${post.bad}`,
+    `🙂 <b>You:</b> ${post.bad}`,
     '',
-    '😎 <b>Band 7 javob:</b>',
+    '😎 <b>Band 7 answer:</b>',
     `<i>${post.better}</i>`,
     '',
-    ...post.vocab.map(([word, uz]) => `📚 <b>${word}</b> — ${uz}`),
+    ...post.vocab.map(([word, meaning]) => `📚 <b>${word}</b> = ${meaning}`),
     '',
     `💡 ${post.lesson}`,
     '',
-    '🎙 Siz qanday javob berardingiz? Ovozli xabar bilan izohda qoldiring 👇',
+    '🎙 How would you answer? Leave a voice message in the comments 👇',
     '',
     ...FOOTER,
   ].join('\n');
@@ -141,7 +141,7 @@ export function buildPovText(post) {
 export function buildQuiz(post) {
   if (post.kind === 'emoji') {
     return {
-      question: 'Rasmdagi emojilar qaysi so‘z yoki iborani bildiradi?',
+      question: 'Which word or phrase do the emojis in the picture show?',
       options: post.options,
       correct: post.answer,
       explanation: post.explanation,
@@ -149,15 +149,15 @@ export function buildQuiz(post) {
   }
   if (post.kind === 'truefalse') {
     return {
-      question: 'Rasmdagi gap to‘g‘rimi?',
-      options: ['✅ To‘g‘ri', '❌ Xato'],
+      question: 'Is the sentence in the picture correct?',
+      options: ['✅ Correct', '❌ Wrong'],
       correct: post.correct ? 0 : 1,
       explanation: post.explanation,
     };
   }
   if (post.kind === 'collocation') {
     return {
-      question: 'Rasmdagi bo‘shliqqa qaysi fe\'l mos keladi?',
+      question: 'Which verb fits the gap in the picture?',
       options: ['make', 'do', 'take'],
       correct: post.answer,
       explanation: post.explanation,
@@ -187,15 +187,15 @@ export function buildWeeklyQuizzes(data, week = weekNumber()) {
   };
   const quizzes = [];
   const upgrade = latest('upgrade');
-  if (upgrade) quizzes.push(pairQuestion(upgrade, (plain) => `“${plain}” ning Band 9 varianti qaysi?`));
+  if (upgrade) quizzes.push(pairQuestion(upgrade, (plain) => `Which is the Band 9 way to say “${plain}”?`));
   const slang = latest('slang');
-  if (slang) quizzes.push(pairQuestion(slang, (word) => `“${word}” ni IELTSda qanday aytamiz?`));
+  if (slang) quizzes.push(pairQuestion(slang, (word) => `How do we say “${word}” in IELTS?`));
   const collocation = latest('collocation');
-  if (collocation) quizzes.push({ ...buildQuiz(collocation), question: `Qaysi fe'l mos keladi? ${collocation.phrase}` });
+  if (collocation) quizzes.push({ ...buildQuiz(collocation), question: `Which verb fits? ${collocation.phrase}` });
   const emoji = latest('emoji');
   if (emoji) quizzes.push({ ...buildQuiz(emoji), question: `${emoji.emojis.join(' + ')} = ?` });
   const truefalse = latest('truefalse');
-  if (truefalse) quizzes.push({ ...buildQuiz(truefalse), question: `Bu gap to‘g‘rimi? “${truefalse.sentence}”` });
+  if (truefalse) quizzes.push({ ...buildQuiz(truefalse), question: `Is this sentence correct? “${truefalse.sentence}”` });
   return quizzes.map((q, i) => ({ ...q, question: `${i + 1}/${quizzes.length}. ${q.question}` }));
 }
 
@@ -217,11 +217,11 @@ export function buildMessages(kind, post, data, week = weekNumber()) {
       {
         type: 'text',
         text: [
-          '🏆 <b>HAFTA TESTI</b>',
+          '🏆 <b>WEEKLY TEST</b>',
           '',
-          `So‘nggi postlardan ${quizzes.length} ta savol. Hammasiga javob bering va natijangizni izohda yozing 👇`,
+          `${quizzes.length} questions from this week's posts. Answer them all and write your score in the comments 👇`,
           '',
-          `🏅 ${quizzes.length}/${quizzes.length} to‘plaganlar izohda ✋ qoldirsin!`,
+          `🏅 Got ${quizzes.length}/${quizzes.length}? Leave a ✋ in the comments!`,
         ].join('\n'),
       },
       ...quizzes.map((quiz) => ({ type: 'quiz', ...quiz })),

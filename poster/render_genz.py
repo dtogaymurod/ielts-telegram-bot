@@ -7,7 +7,7 @@ post.json is one entry of content/genz-posts.json plus its "kind":
   upgrade   -> "Oddiy vs Band 9": rows of [plain, band9] word pairs
   slang     -> "TikTok vs IELTS": rows of [slang, formal] pairs
   emoji     -> emoji riddle: "emojis" list + quiz "options"
-  truefalse -> "To'g'ri yoki xato?": one "sentence" + quiz
+  truefalse -> "True or false?": one "sentence" + quiz
   redflag   -> three "red" and three "green" habits
   collocation -> "phrase" with a gap + MAKE / DO / TAKE (+ "bonus" line)
   band      -> two slides (album): "question" + "band5", then "band8" with
@@ -39,17 +39,17 @@ GREEN = (52, 199, 120)
 RED = (235, 77, 75)
 
 PILLS = {
-    "upgrade": "ODDIY vs BAND 9",
+    "upgrade": "BASIC vs BAND 9",
     "slang": "TIKTOK vs IELTS",
-    "emoji": "EMOJI TOPISHMOQ",
-    "truefalse": "TO‘G‘RI YOKI XATO?",
+    "emoji": "EMOJI RIDDLE",
+    "truefalse": "TRUE OR FALSE?",
     "redflag": "RED FLAG / GREEN FLAG",
-    "collocation": "MAKE, DO YOKI TAKE?",
+    "collocation": "MAKE, DO OR TAKE?",
     "band": "BAND 5 vs BAND 8",
 }
 HEADS = {
-    "upgrade": (("😐", "ODDIY"), ("😎", "BAND 9")),
-    "slang": (("📱", "TIKTOKDA"), ("🎓", "IELTSDA")),
+    "upgrade": (("😐", "BASIC"), ("😎", "BAND 9")),
+    "slang": (("📱", "ON TIKTOK"), ("🎓", "IN IELTS")),
 }
 
 _emoji_font = None
@@ -197,7 +197,7 @@ def draw_emoji(img, post):
         d.text((PAD + 76, y + 20), f"{letter})", font=font("black", 36), fill=ORANGE)
         d.text((PAD + 140, y + 20), option, font=fit(d, option, "semibold", 36, W - 2 * PAD - 220), fill=NAVY)
         y += 100
-    note = "Javobni pastdagi quizda belgilang"
+    note = "Choose your answer in the quiz below"
     d.text(((W - d.textlength(note, font=font("bold", 30))) / 2, bottom + 30), note, font=font("bold", 30), fill=WHITE)
 
 
@@ -221,7 +221,7 @@ def draw_truefalse(img, post):
         d.text(((W - d.textlength(line, font=f)) / 2, y), line, font=f, fill=NAVY)
         y += lh
     bw = (W - 2 * PAD - 120) // 2
-    for i, (label, colour, mark) in enumerate([("TO‘G‘RI", GREEN, "✅"), ("XATO", RED, "❌")]):
+    for i, (label, colour, mark) in enumerate([("CORRECT", GREEN, "✅"), ("WRONG", RED, "❌")]):
         x = PAD + 40 + i * (bw + 40)
         d.rounded_rectangle([x, bottom - 200, x + bw, bottom - 70], radius=32, fill=colour)
         lf = font("black", 44)
@@ -230,7 +230,7 @@ def draw_truefalse(img, post):
         d.ellipse([ex - 6, bottom - 167, ex + 58, bottom - 103], fill=WHITE)
         emoji(img, mark, ex + 4, bottom - 157, 44)
         d.text((ex + 72, bottom - 162), label, font=lf, fill=WHITE)
-    note = "Javob va izoh pastdagi quizda"
+    note = "Answer and explanation in the quiz below"
     d.text(((W - d.textlength(note, font=font("bold", 30))) / 2, bottom + 30), note, font=font("bold", 30), fill=WHITE)
 
 
@@ -256,7 +256,7 @@ def draw_redflag(img, post):
             d.text((PAD + 70, y + 14), item, font=fit(d, item, "semibold", 34, W - 2 * PAD - 140), fill=NAVY)
             y += 80
         y += 30
-    note(d, bottom, "Izohda yozing: nechta red flag sizda bor?")
+    note(d, bottom, "Comment: how many red flags do you have?")
 
 
 def draw_collocation(img, post):
@@ -277,7 +277,7 @@ def draw_collocation(img, post):
         bonus = f"Bonus: {post['bonus']}"
         bf = fit(d, bonus, "semibold", 34, W - 2 * PAD - 100)
         d.text(((W - d.textlength(bonus, font=bf)) / 2, top + 580), bonus, font=bf, fill=GREY)
-    note(d, bottom, "Javob va izoh pastdagi quizda")
+    note(d, bottom, "Answer and explanation in the quiz below")
 
 
 def draw_answer(img, d, box, label, colour, bg, text, highlights=()):
@@ -324,10 +324,10 @@ def draw_band(img, post, slide):
     box = [PAD + 40, top + 120, W - PAD - 40, bottom - 40]
     if slide == 0:
         draw_answer(img, d, box, "BAND 5", GREY, (245, 244, 243), post["band5"])
-        note(d, bottom, "Keyingi rasmda Band 8 javob  →")
+        note(d, bottom, "Band 8 answer in the next picture  →")
     else:
         draw_answer(img, d, box, "BAND 8", ORANGE, (255, 241, 234), post["band8"], post.get("highlights", ()))
-        note(d, bottom, "Qalin so‘zlarni yozib oling")
+        note(d, bottom, "Write down the words in bold")
 
 
 def render_slides(post):
