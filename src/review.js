@@ -332,10 +332,10 @@ async function importVideos(state, persist) {
 }
 
 /** 21:00: the first video in the queue goes into tomorrow's review. */
-export function prepareVideoDraft(state) {
+export function prepareVideoDraft(state, date = tashkentDate(1)) {
   const video = (state.videos || [])[0];
   if (!video) return null;
-  if (!isVideoDay(1)) return null; // only on video weekdays
+  if (!VIDEO_WEEKDAYS.includes(dateAt(date).getUTCDay())) return null; // only on video weekdays
   return {
     slot: VIDEO_TIME,
     label: `🎥 Dumaloq video (navbatda ${state.videos.length} ta)`,
@@ -509,7 +509,8 @@ async function remind(state) {
 
 /** Tomorrow's posts to the admin. `only` (e.g. "19:30") resends just that slot. */
 async function preview(state, only) {
-  const date = tashkentDate(1);
+  // REVIEW_DATE (YYYY-MM-DD) catches up a missed evening preview, e.g. today's posts after midnight
+  const date = /^\d{4}-\d{2}-\d{2}$/.test(process.env.REVIEW_DATE || '') ? process.env.REVIEW_DATE : tashkentDate(1);
   const sources = [['./genz-post.js', 'prepareGenzDraft', '12:00'], ['./index.js', 'prepareDailyDraft', '19:30']];
   for (const [file, name, slot] of sources) {
     if (only && only !== slot) continue;
@@ -524,7 +525,7 @@ async function preview(state, only) {
   }
   if (!only || only === VIDEO_TIME) {
     try {
-      const draft = prepareVideoDraft(state);
+      const draft = prepareVideoDraft(state, date);
       if (draft) await submitDraft(state, { date, ...draft });
     } catch (error) {
       console.error(`⚠️ Video preview failed: ${error.message}`);
