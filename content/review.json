@@ -319,10 +319,11 @@
         "bank_index": 1,
         "title": "Task 1 da fikr yo‘q"
       },
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-11-10T15:59:51.397Z",
       "buttons_message_id": 132,
-      "decided_at": "2026-11-10T16:28:06.505Z"
+      "decided_at": "2026-11-10T16:28:06.505Z",
+      "published_at": "2026-11-11T14:32:22.935Z"
     }
   },
   "imported": [

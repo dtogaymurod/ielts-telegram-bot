@@ -3,7 +3,7 @@
   "next": {
     "listening": 1,
     "reading": 2,
-    "writing": 1,
+    "writing": 2,
     "speaking": 1
   },
   "listening": [
