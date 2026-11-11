@@ -9,8 +9,8 @@
   "listening": [
     {
       "id": "lis_001",
-      "title": "Birinchi javob — tuzoq",
-      "subtitle": "Spiker javobni aytadi, keyin o‘zgartiradi",
+      "title": "The first answer is a trap",
+      "subtitle": "The speaker says one answer, then changes it",
       "rows": [
         [
           "🎧",
@@ -18,14 +18,14 @@
         ],
         [
           "❌",
-          "Tuesday deb yozib, keyingi savolga o‘tish"
+          "Writing Tuesday and moving to the next question"
         ],
         [
           "✅",
-          "**actually, sorry, I mean** dan keyin kuting"
+          "Wait after **actually, sorry, I mean**"
         ]
       ],
-      "caption": "POV: “Tuesday” deb yozdingiz, spiker esa fikrini o‘zgartirdi 💀\n\nYana bir signal: <b>“on second thoughts”</b>. Shuni eshitsangiz, ruchkani to‘xtating ✋\n\nSiz ham shu tuzoqqa tushganmisiz? Izohda yozing 👇"
+      "caption": "POV: you wrote “Tuesday”, but the speaker changed their mind 💀\n\nOne more signal: <b>“on second thoughts”</b>. When you hear it, stop your pen ✋\n\nHas this trap ever caught you? Tell us in the comments 👇"
     },
     {
       "id": "lis_002",
@@ -1299,47 +1299,47 @@
   "reading": [
     {
       "id": "rea_001",
-      "title": "Hammasini o‘qiysizmi?",
-      "subtitle": "60 daqiqa, 3 matn, 40 savol. Vaqt yetmaydi",
+      "title": "Do you read everything?",
+      "subtitle": "60 minutes, 3 texts, 40 questions. Not enough time",
       "rows": [
         [
           "❌",
-          "Matnni boshidan oxirigacha so‘zma-so‘z o‘qish"
+          "Reading the text word by word from start to end"
         ],
         [
           "1",
-          "**2–3 daqiqa** skim: sarlavha va birinchi gaplar"
+          "Skim for **2–3 minutes**: the title and the first sentences"
         ],
         [
           "2",
-          "Savolni o‘qing, **kalit so‘zni** chizing"
+          "Read the question and underline the **key word**"
         ],
         [
           "3",
-          "Faqat kerakli abzasni diqqat bilan o‘qing"
+          "Read carefully only the paragraph you need"
         ]
       ],
-      "caption": "Real talk: Reading tezlik testi emas, <b>qidiruv</b> testi 🔍\n\nBugungi challenge: keyingi testda soat qo‘ying va har matnga 20 daqiqadan oshirmang ⏱\n\nUddalasangiz, izohga ✅ qo‘ying 👇"
+      "caption": "Real talk: Reading is not a speed test, it is a <b>search</b> test 🔍\n\nToday's challenge: in your next test, use a timer and spend no more than 20 minutes on each text ⏱\n\nIf you do it, put ✅ in the comments 👇"
     },
     {
       "id": "rea_002",
-      "title": "False yoki Not Given?",
-      "subtitle": "Eng ko‘p ball yo‘qotiladigan savol turi",
+      "title": "False or Not Given?",
+      "subtitle": "The question type where people lose the most points",
       "rows": [
         [
           "✅",
-          "**TRUE**: matn gapni tasdiqlaydi"
+          "**TRUE**: the text agrees with the sentence"
         ],
         [
           "❌",
-          "**FALSE**: matn teskarisini aytadi"
+          "**FALSE**: the text says the opposite"
         ],
         [
           "🤷",
-          "**NOT GIVEN**: matnda bu haqda gap yo‘q"
+          "**NOT GIVEN**: the text says nothing about it"
         ]
       ],
-      "caption": "Oltin qoida: o‘z bilimingizni qo‘shmang, faqat matnga ishoning 📄\n\nFALSE uchun matnda <b>qarshi dalil</b> bo‘lishi shart. Dalil yo‘q bo‘lsa = NOT GIVEN.\n\nSiz eng ko‘p qaysi birida adashasiz? 👇"
+      "caption": "The golden rule: don't add what you know, trust only the text 📄\n\nFor FALSE, the text must have <b>proof of the opposite</b>. No proof = NOT GIVEN.\n\nWhich one do you get wrong the most? 👇"
     },
     {
       "id": "rea_003",
@@ -2581,28 +2581,28 @@
   "writing": [
     {
       "id": "wri_001",
-      "title": "Overview yo‘qmi? Band 5",
-      "subtitle": "Task 1 da eng muhim gap",
+      "title": "No overview? Band 5",
+      "subtitle": "The most important sentence in Task 1",
       "rows": [
         [
           "❌",
-          "Grafikdagi har bir raqamni ketma-ket yozish"
+          "Writing every number from the graph one by one"
         ],
         [
           "✅",
-          "**2 ta asosiy tendensiya**, raqamsiz"
+          "**2 main trends**, with no numbers"
         ],
         [
           "✍️",
           "“**Overall**, car use rose steadily, while bus travel declined.”"
         ]
       ],
-      "caption": "Overview bo‘lmasa, Task Achievement 5.0 dan oshmaydi 😬\n\nOdat qiling: grafikka 1 daqiqa qarang va o‘zingizga savol bering: <b>eng katta o‘zgarish nima?</b>\n\nOverview yozasizmi? 👇"
+      "caption": "With no overview, your Task Achievement stays at 5.0 or lower 😬\n\nMake it a habit: look at the graph for 1 minute and ask yourself: <b>what is the biggest change?</b>\n\nDo you write an overview? 👇"
     },
     {
       "id": "wri_002",
-      "title": "Task 1 da fikr yo‘q",
-      "subtitle": "Ko‘rganingizni yozing, xolos",
+      "title": "No opinions in Task 1",
+      "subtitle": "Just write what you see",
       "rows": [
         [
           "❌",
@@ -2610,14 +2610,14 @@
         ],
         [
           "✅",
-          "Faqat **ma‘lumot, taqqoslash, tendensiya**"
+          "Only **data, comparisons and trends**"
         ],
         [
           "💡",
-          "Sabab va taxmin = **Task 2** uchun"
+          "Reasons and guesses are for **Task 2**"
         ]
       ],
-      "caption": "Grafikda sabab yozilmagan bo‘lsa, siz ham yozmang 🙅\n\nTask 1 — jurnalist emas, kamera kabi ishlang 📸\n\nShu xatoni qilganmisiz? 👇"
+      "caption": "If the graph gives no reason, you should not give one 🙅\n\nIn Task 1, work like a camera, not like a journalist 📸\n\nHave you made this mistake? 👇"
     },
     {
       "id": "wri_003",
@@ -3927,8 +3927,8 @@
   "speaking": [
     {
       "id": "spe_001",
-      "title": "“Yes.” bilan to‘xtamang",
-      "subtitle": "Part 1 da bir so‘zli javob Fluency ni o‘ldiradi",
+      "title": "Don't stop at “Yes.”",
+      "subtitle": "A one-word answer in Part 1 kills your Fluency",
       "rows": [
         [
           "❌",
@@ -3936,18 +3936,18 @@
         ],
         [
           "1",
-          "**Javob:** “Honestly, I love it.”"
+          "**Answer:** “Honestly, I love it.”"
         ],
         [
           "2",
-          "**Sabab:** “It helps me relax after work.”"
+          "**Reason:** “It helps me relax after work.”"
         ],
         [
           "3",
-          "**Misol:** “Last week I made plov for my family.”"
+          "**Example:** “Last week I made plov for my family.”"
         ]
       ],
-      "caption": "Formula oddiy: <b>javob + sabab + misol</b> = 15–20 soniya 🎯\n\nMashq: “Do you like music?” savoliga shu formulada javob yozing yoki ovozli xabar qoldiring 🎙\n\nEng zo‘r javobni keyingi postda ko‘rsataman 👀"
+      "caption": "The formula is simple: <b>answer + reason + example</b> = 15–20 seconds 🎯\n\nPractice: answer “Do you like music?” with this formula in the comments, or leave a voice message 🎙\n\nI will show the best answer in the next post 👀"
     },
     {
       "id": "spe_002",

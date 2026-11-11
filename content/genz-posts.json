@@ -13,8 +13,8 @@
   },
   "upgrade": [
     {
-      "title": "Hali ham “very good”mi?",
-      "subtitle": "Speaking va Writing uchun darajangizni ko‘taring",
+      "title": "Still saying “very good”?",
+      "subtitle": "Use stronger words in Speaking and Writing",
       "rows": [
         [
           "very good",
@@ -41,11 +41,11 @@
           "delighted"
         ]
       ],
-      "caption": "📌 Qoida: “very + oddiy sifat” o‘rniga bitta kuchli sifat ishlating. Bunday sifatlar oldiga “very” qo‘yilmaydi: ❌ very exhausted → ✅ <b>absolutely</b> exhausted.\n\n🗣 Misol: <i>I was <b>exhausted</b> after the exam, but <b>delighted</b> with my score.</i>"
+      "caption": "📌 Rule: use one strong adjective, not “very + a basic adjective”. Don't put “very” before strong adjectives: ❌ very exhausted → ✅ <b>absolutely</b> exhausted.\n\n🗣 Example: <i>I was <b>exhausted</b> after the exam, but <b>delighted</b> with my score.</i>"
     },
     {
-      "title": "Phrasal verb o‘rniga 1 ta fe'l",
-      "subtitle": "Writing Task 2 da rasmiyroq yangraydi",
+      "title": "1 verb in place of a phrasal verb",
+      "subtitle": "It sounds more formal in Writing Task 2",
       "rows": [
         [
           "get better",
@@ -72,7 +72,7 @@
           "maintain"
         ]
       ],
-      "caption": "📌 Speakingda phrasal verb'lar tabiiy va yaxshi. Lekin Writing Task 2 da bitta rasmiy fe'l kuchliroq yangraydi.\n\n✍️ Misol: <i>Governments should <b>consider</b> ways to <b>improve</b> public transport.</i>"
+      "caption": "📌 In Speaking, phrasal verbs are natural and good. But in Writing Task 2, one formal verb sounds stronger.\n\n✍️ Example: <i>Governments should <b>consider</b> ways to <b>improve</b> public transport.</i>"
     },
     {
       "title": "Giving your opinion in Speaking",
@@ -1906,8 +1906,8 @@
   ],
   "slang": [
     {
-      "title": "Imtihonda bunday xato qilmang!",
-      "subtitle": "Slang ball tushiradi, rasmiy muqobilini ishlating",
+      "title": "Don't make this mistake in the exam!",
+      "subtitle": "Slang lowers your score, so use the formal option",
       "rows": [
         [
           "no cap",
@@ -1934,7 +1934,7 @@
           "rather mediocre"
         ]
       ],
-      "caption": "📌 Examiner slangni noo‘rin uslub deb baholaydi va Lexical Resource bali tushadi.\n\n❌ <i>The movie was mid, no cap.</i>\n✅ <i>Honestly, the film was <b>rather mediocre</b>.</i>"
+      "caption": "📌 The examiner sees slang as the wrong style, and your Lexical Resource score goes down.\n\n❌ <i>The movie was mid, no cap.</i>\n✅ <i>Honestly, the film was <b>rather mediocre</b>.</i>"
     },
     {
       "title": "Don't make this mistake in the exam!",
@@ -2880,8 +2880,8 @@
         "thunderstruck"
       ],
       "answer": 1,
-      "explanation": "brainstorm — g‘oyalar to‘plash. Writing Task 2 dan oldin 3–5 daqiqa brainstorm qiling!",
-      "caption": "💡 Ishora: Writing Task 2 ni boshlashdan oldin aynan shuni qilish kerak."
+      "explanation": "brainstorm = to collect ideas. Brainstorm for 3–5 minutes before Writing Task 2!",
+      "caption": "💡 Hint: this is exactly what you should do before you start Writing Task 2."
     },
     {
       "emojis": [
@@ -3791,8 +3791,8 @@
     {
       "sentence": "I am agree with this opinion.",
       "correct": false,
-      "explanation": "❌ Xato. agree — fe'l, oldiga “am” qo‘yilmaydi. To‘g‘ri: “I agree with this opinion.”",
-      "caption": "💡 Ishora: <b>agree</b> fe'lmi yoki sifat?"
+      "explanation": "❌ Wrong. “agree” is a verb, so we don't put “am” before it. Correct: “I agree with this opinion.”",
+      "caption": "💡 Hint: is <b>agree</b> a verb or an adjective?"
     },
     {
       "sentence": "He gave me some useful advices.",
@@ -4157,19 +4157,19 @@
   ],
   "redflag": [
     {
-      "title": "Writing Task 2 odatlari",
-      "subtitle": "Qaysi biri sizda bor? Rostini ayting",
+      "title": "Writing Task 2 habits",
+      "subtitle": "Which ones do you have? Be honest",
       "red": [
-        "Yodlangan kirish gap",
-        "Savolni so‘zma-so‘z ko‘chirish",
-        "250 so‘zdan kam yozish"
+        "A memorised first sentence",
+        "Copying the question word for word",
+        "Writing under 250 words"
       ],
       "green": [
-        "Savolni paraphrase qilish",
-        "Har paragrafda 1 asosiy fikr",
-        "5 daqiqa tekshirishga qoldirish"
+        "Paraphrasing the question",
+        "1 main idea in each paragraph",
+        "Leaving 5 minutes for checking"
       ],
-      "caption": "Nega bu muhim?\n🚩 Yodlangan gapni examiner darrov taniydi va u so‘zlar hisobga olinmaydi.\n🟢 5 daqiqalik tekshiruv 2–3 ta xatoni ushlab qoladi. Bu yarim ballgacha farq qilishi mumkin."
+      "caption": "Why does this matter?\n🚩 The examiner knows a memorised sentence at once, and those words are not counted.\n🟢 A 5-minute check catches 2–3 mistakes. That can change your score by half a band."
     },
     {
       "title": "Speaking habits",
@@ -4905,10 +4905,10 @@
   ],
   "band": [
     {
-      "title": "Bitta savol, ikki xil javob",
+      "title": "One question, two answers",
       "subtitle": [
-        "Surib ko‘ring: avval Band 5, keyin Band 8",
-        "Farqni ko‘ryapsizmi?"
+        "Swipe: first Band 5, then Band 8",
+        "Can you see the difference?"
       ],
       "question": "Describe your hometown.",
       "band5": "My hometown is Samarkand. It is very beautiful. There are many old buildings. I like it very much.",
@@ -4918,7 +4918,7 @@
         "renowned for",
         "breathtaking"
       ],
-      "caption": "📚 <b>Band 8 so‘zlari tarjimasi:</b>\n▫️ <b>steeped in history</b> — tarixga boy\n▫️ <b>renowned for</b> — … bilan mashhur\n▫️ <b>breathtaking</b> — hayratlanarli\n\n💡 Band 5 javobda oddiy so‘zlar takrorlanadi. Band 8 da esa aniq va kuchli iboralar bor."
+      "caption": "📚 <b>What the Band 8 words mean:</b>\n▫️ <b>steeped in history</b> = having a lot of history\n▫️ <b>renowned for</b> = famous for\n▫️ <b>breathtaking</b> = very beautiful and surprising\n\n💡 The Band 5 answer repeats basic words. The Band 8 answer uses exact, strong phrases."
     },
     {
       "title": "One question, two answers",
@@ -5398,14 +5398,14 @@
       "vocab": [
         [
           "a huge animal lover",
-          "hayvonlarni juda yaxshi ko‘radigan odam"
+          "a person who loves animals very much"
         ],
         [
           "the best company",
-          "eng yaxshi hamroh"
+          "the nicest one to spend time with"
         ]
       ],
-      "lesson": "Bir so‘zli javob Fluency balini tushiradi. Formula: <b>javob + sabab + misol</b>."
+      "lesson": "A one-word answer lowers your Fluency score. Formula: <b>answer + reason + example</b>."
     },
     {
       "question": "What do you do?",
