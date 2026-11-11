@@ -24,6 +24,10 @@ on:
         description: 'preview only: resend just this slot (12:00 or 19:30); empty = both'
         required: false
         default: ''
+      date:
+        description: 'preview only: date to preview (YYYY-MM-DD); empty = tomorrow'
+        required: false
+        default: ''
 
 concurrency:
   group: channel-state
@@ -72,6 +76,7 @@ jobs:
           TELEGRAM_ADMIN_ID: ${{ secrets.TELEGRAM_ADMIN_ID }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           REVIEW_SLOT: ${{ github.event.inputs.slot }}
+          REVIEW_DATE: ${{ github.event.inputs.date }}
         run: node src/review.js ${{ github.event.inputs.mode }}
 
       - name: Save review state
