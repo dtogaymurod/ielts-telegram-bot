@@ -11,6 +11,8 @@ post.json is one entry of content/daily-posts.json plus its "skill":
 
 Each row is a marker (an emoji, or a number shown in an orange circle) and
 a short text. **word** is drawn bold in orange. The text shrinks to fit.
+An optional "visual" (see visuals.py) adds a small picture above the rows;
+it is left out when the text would become too small next to it.
 """
 import json
 import sys
@@ -20,6 +22,7 @@ from PIL import ImageDraw
 
 import render_genz
 from render_genz import NAVY, ORANGE, WHITE, card, emoji, frame, note
+import visuals
 from render_post import PAD, H, W, font
 
 SKILL_PILLS = {
@@ -33,7 +36,7 @@ render_genz.PILLS.update(SKILL_PILLS)
 TOP, BOTTOM = 380, 1110
 TEXT_X = PAD + 132
 TEXT_W = W - PAD - 48 - TEXT_X
-DEFAULT_NOTE = "Saqlab qo‘ying va do‘stingizga yuboring"
+DEFAULT_NOTE = "Save this and send it to a friend"
 
 
 def tokens(text):
@@ -79,17 +82,25 @@ def render(post):
     card(img, [PAD, TOP, W - PAD, BOTTOM])
     d = ImageDraw.Draw(img)
     rows = post["rows"]
-    inner = BOTTOM - TOP - 100
+    visual = post.get("visual")
     size = 50
     while True:
+        vis_h = visuals.HEIGHT + 30 if visual else 0
+        inner = BOTTOM - TOP - 100 - vis_h
         blocks, line_h, gap, height = measure(d, rows, size)
         if height <= inner or size <= 26:
+            if visual and (height > inner or size < 32):
+                # the picture leaves too little room for this text: drop it
+                visual, size = None, 50
+                continue
             break
         size -= 2
     if height > inner:
         raise ValueError(f"Post is too long to fit on the poster: {post['title']}")
 
-    y = TOP + 50 + (inner - height) // 2
+    if visual:
+        d = visuals.draw(img, visual, [PAD + 36, TOP + 36, W - PAD - 36, TOP + 36 + visuals.HEIGHT])
+    y = TOP + 50 + vis_h + (inner - height) // 2
     for (marker, _), (lines, reg, bold, space) in zip(rows, blocks):
         mid = y + line_h // 2
         if len(marker) <= 2 and marker.isalnum():
@@ -97,7 +108,9 @@ def render(post):
             nf = font("black", 36)
             d.text((PAD + 74 - d.textlength(marker, font=nf) / 2, mid - 22), marker, font=nf, fill=WHITE)
         else:
-            emoji(img, marker, PAD + 46, mid - 28, 56)
+            tint = {"❌": (255, 232, 230), "✅": (226, 247, 235)}.get(marker, (255, 238, 226))
+            d.rounded_rectangle([PAD + 36, mid - 40, PAD + 116, mid + 40], radius=22, fill=tint)
+            emoji(img, marker, PAD + 52, mid - 24, 48)
         d = ImageDraw.Draw(img)
         for line in lines:
             x = TEXT_X

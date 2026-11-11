@@ -95,10 +95,10 @@ async function writeGeminiPost(skill) {
 const SKILL_ICONS = { LISTENING: '🎧', READING: '📖', WRITING: '✍️', SPEAKING: '🗣️' };
 const SKILL_NAMES = { LISTENING: 'Listening', READING: 'Reading', WRITING: 'Writing', SPEAKING: 'Speaking' };
 const CALLS = [
-  '💬 Siz ham shu xatoga yo‘l qo‘yganmisiz? Izohda yozing 👇',
-  '💬 Bu usulni bilarmidingiz? Izohda ✅ yoki ❌ qoldiring 👇',
-  '💬 Savolingiz bo‘lsa, izohda yozing, javob beraman 👇',
-  '👥 Shu maslahat kerak bo‘ladigan do‘stingizni belgilang!',
+  '💬 Have you made this mistake too? Write in the comments 👇',
+  '💬 Did you know this tip? Leave ✅ or ❌ in the comments 👇',
+  '💬 Got a question? Write it in the comments and I will answer 👇',
+  '👥 Tag a friend who needs this tip!',
 ];
 
 /**
@@ -111,9 +111,9 @@ export function buildSkillCaption(postText) {
   const name = SKILL_NAMES[skill] ? `${SKILL_NAMES[skill]} ` : '';
   const day = Math.floor(Date.now() / 86_400_000);
   return [
-    `${icon} <b>Bugungi ${name}maslahati rasmda</b> 👆`,
+    `${icon} <b>Today's ${name}tip is in the picture</b> 👆`,
     '',
-    '🔖 Saqlab qo‘ying va imtihondan oldin yana bir ko‘zdan kechiring.',
+    '🔖 Save it and look at it again before the exam.',
     CALLS[day % CALLS.length],
     '',
     '👉 Telegram: @dilshod_english',
