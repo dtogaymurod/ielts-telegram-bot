@@ -324,6 +324,41 @@
       "buttons_message_id": 132,
       "decided_at": "2026-11-10T16:28:06.505Z",
       "published_at": "2026-11-11T14:32:22.935Z"
+    },
+    "2026-11-12 12:00": {
+      "date": "2026-11-12",
+      "slot": "12:00",
+      "label": "Payshanba, 12.11 · 12:00 · Make, do yoki take? #1",
+      "meta": {
+        "kind": "collocation",
+        "index": 0
+      },
+      "status": "pending",
+      "created_at": "2026-11-11T19:06:18.370Z",
+      "buttons_message_id": 136
+    },
+    "2026-11-12 19:30": {
+      "date": "2026-11-12",
+      "slot": "19:30",
+      "label": "Payshanba, 12.11 · 19:30 · Yolg‘iz bo‘ri #17",
+      "meta": {
+        "type": "lonewolf",
+        "index": 17
+      },
+      "status": "pending",
+      "created_at": "2026-11-11T19:06:19.925Z",
+      "buttons_message_id": 139
+    },
+    "2026-11-12 17:00": {
+      "date": "2026-11-12",
+      "slot": "17:00",
+      "label": "Payshanba, 12.11 · 17:00 · 🎥 Dumaloq video (navbatda 38 ta)",
+      "meta": {
+        "video_id": "d-1uGtcRvIbXTLpPiBwxih9bRaqzR2W40YX"
+      },
+      "status": "pending",
+      "created_at": "2026-11-11T19:06:20.453Z",
+      "buttons_message_id": 142
     }
   },
   "imported": [
