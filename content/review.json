@@ -365,6 +365,46 @@
       "buttons_message_id": 142,
       "decided_at": "2026-11-11T19:07:09.907Z",
       "published_at": "2026-11-12T12:00:41.441Z"
+    },
+    "2026-11-13 12:00": {
+      "date": "2026-11-13",
+      "slot": "12:00",
+      "label": "Juma, 13.11 · 12:00 · Emoji topishmoq #2",
+      "meta": {
+        "kind": "emoji",
+        "index": 1
+      },
+      "status": "pending",
+      "created_at": "2026-11-12T15:59:12.514Z",
+      "buttons_message_id": 146
+    },
+    "2026-11-13 19:30": {
+      "date": "2026-11-13",
+      "slot": "19:30",
+      "label": "Juma, 13.11 · 19:30 · Kundalik post (SPEAKING)",
+      "meta": {
+        "type": "skill",
+        "skill": "speaking",
+        "bank_index": 1,
+        "title": "Part 1: 1 minute is too long"
+      },
+      "status": "pending",
+      "created_at": "2026-11-12T15:59:14.383Z",
+      "buttons_message_id": 149
+    },
+    "2026-11-13 18:00": {
+      "date": "2026-11-13",
+      "slot": "18:00",
+      "label": "Juma, 13.11 · 18:00 · 🟢 Multilevel kanal · Multilevel: 4 qism (bazada 414 ta qoldi)",
+      "meta": {
+        "multilevel_index": 0,
+        "post_id": "ml_001",
+        "photo": "AgACAgIAAxkDAAOXavXiUwABZQ7S3irdIolynBEAAVDUEwACoR1rG8NQqUtz8lx-XjGJPgEAAwIAA3cAAz0E",
+        "caption": "<b>Multilevel: 4 qism</b>\n\nKanalga xuş kelibsiz! 🎉 Bu yerda har kuni Multilevel imtihoniga oid bitta foydali post çiqadi.\n\nBugun eng muhimidan boşlaymiz: imtihon qanday tuzilgan.\n\n🎧 <b>Listening</b>: audio tinglab, savollarga javob berasiz\n📖 <b>Reading</b>: matnlar va har xil turdagi savollar\n✍️ <b>Writing</b>: 2 ta xat (norasmiy va rasmiy) + esse\n🗣 <b>Speaking</b>: savollar, rasmlarni soliştiriş va fikr bildiriş\n\nSaqlab qöying, imtihondan oldin kerak böladi 📌"
+      },
+      "status": "pending",
+      "created_at": "2026-11-12T15:59:15.688Z",
+      "buttons_message_id": 152
     }
   },
   "imported": [
