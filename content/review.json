@@ -1,5 +1,5 @@
 {
-  "last_update_id": 111953008,
+  "last_update_id": 111953009,
   "drafts": {
     "2026-11-01 19:30": {
       "date": "2026-11-01",
@@ -404,9 +404,10 @@
         "photo": "AgACAgIAAxkDAAOXavXiUwABZQ7S3irdIolynBEAAVDUEwACoR1rG8NQqUtz8lx-XjGJPgEAAwIAA3cAAz0E",
         "caption": "<b>Multilevel: 4 qism</b>\n\nKanalga xuş kelibsiz! 🎉 Bu yerda har kuni Multilevel imtihoniga oid bitta foydali post çiqadi.\n\nBugun eng muhimidan boşlaymiz: imtihon qanday tuzilgan.\n\n🎧 <b>Listening</b>: audio tinglab, savollarga javob berasiz\n📖 <b>Reading</b>: matnlar va har xil turdagi savollar\n✍️ <b>Writing</b>: 2 ta xat (norasmiy va rasmiy) + esse\n🗣 <b>Speaking</b>: savollar, rasmlarni soliştiriş va fikr bildiriş\n\nSaqlab qöying, imtihondan oldin kerak böladi 📌"
       },
-      "status": "pending",
+      "status": "approved",
       "created_at": "2026-11-12T15:59:15.688Z",
-      "buttons_message_id": 152
+      "buttons_message_id": 152,
+      "decided_at": "2026-11-12T16:01:09.458Z"
     }
   },
   "imported": [
