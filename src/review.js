@@ -17,6 +17,9 @@
  * queue and go out on Mondays and Thursdays at 17:00 after the same 21:00 review (see
  * "Round videos" below and src/video-note.js).
  *
+ * Multilevel channel: one post a day at 18:00 to @dilshod_multilevel, previewed
+ * at 21:00 with the others and posted by the listener (src/multilevel.js).
+ *
  * Turned on by the TELEGRAM_ADMIN_ID secret (the admin's numeric user id).
  * Without it the bot posts straight to the channel as before.
  */
@@ -26,6 +29,7 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 import { callApi, setTargetChat, validateConfig } from './telegram.js';
+import { MULTILEVEL_TIME, MULTILEVEL_MINUTES, prepareMultilevelDraft, publishMultilevel } from './multilevel.js';
 import { HELP_TEXT, videoInMessage, prepareVideoNote, prepareDriveVideo, publishVideoNote, hasFfmpeg } from './video-note.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -370,6 +374,37 @@ async function publishDueVideo(state) {
   return true;
 }
 
+/** From MULTILEVEL_TIME on: post today's approved Multilevel post once. Returns true if the state changed. */
+async function publishDueMultilevel(state) {
+  const d = new Date(Date.now() + 5 * 60 * 60 * 1000);
+  if (d.getUTCHours() * 60 + d.getUTCMinutes() < MULTILEVEL_MINUTES) return false;
+  const key = `${tashkentDate()} ${MULTILEVEL_TIME}`;
+  const draft = state.drafts[key];
+  if (!draft || !['pending', 'approved'].includes(draft.status)) return false;
+  if (draft.status === 'pending') {
+    draft.status = 'skipped';
+    await refreshButtons(key, draft);
+    await sendAdmin(`⏭ Bugungi ${MULTILEVEL_TIME} Multilevel posti tasdiqlanmagani uchun chiqmadi. U navbatda birinchi bo‘lib qoladi.`);
+    return true;
+  }
+  try {
+    await publishMultilevel(state, draft);
+  } catch (error) {
+    console.log(`⚠️ Multilevel post not published: ${error.message}`);
+    // Tried again on the next loop; the admin hears about it once
+    if (!draft.error_sent) {
+      draft.error_sent = true;
+      try { await sendAdmin(`⚠️ Multilevel kanalga post chiqmadi: ${error.message}\nBot @dilshod_multilevel kanalida admin ekanini tekshiring. Qayta urinib ko‘raman.`); } catch {}
+      return true;
+    }
+    return false;
+  }
+  draft.status = 'published';
+  draft.published_at = new Date().toISOString();
+  await refreshButtons(key, draft);
+  return true;
+}
+
 /**
  * Read button taps from Telegram, save them, and confirm them so they are
  * not read twice. The admin can change their mind until the post goes out.
@@ -415,7 +450,8 @@ async function listen(state) {
     const wait = Math.max(1, Math.min(50, Math.floor((end - Date.now()) / 1000) - 5));
     try {
       const videoChanged = await publishDueVideo(state);
-      if ((await syncDecisions(state, wait)) || videoChanged) {
+      const multilevelChanged = await publishDueMultilevel(state);
+      if ((await syncDecisions(state, wait)) || videoChanged || multilevelChanged) {
         persist();
       }
     } catch (error) {
@@ -531,6 +567,18 @@ async function preview(state, only) {
       console.error(`⚠️ Video preview failed: ${error.message}`);
       await sendAdmin(`⚠️ Ertangi dumaloq videoni ko‘rsatib bo‘lmadi: ${error.message}`);
     }
+  }
+  if (!only || only === MULTILEVEL_TIME) await previewMultilevel(state, date);
+}
+
+async function previewMultilevel(state, date) {
+  try {
+    const draft = prepareMultilevelDraft(state);
+    if (draft) await submitDraft(state, { date, ...draft });
+    else await sendAdmin('📭 Multilevel kanal uchun postlar bazasi tugadi. Yangi postlar kerak.');
+  } catch (error) {
+    console.error(`⚠️ Multilevel preview failed: ${error.message}`);
+    await sendAdmin(`⚠️ Ertangi Multilevel postini tayyorlab bo‘lmadi: ${error.message}`);
   }
 }
 

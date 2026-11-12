@@ -21,7 +21,7 @@ on:
           - remind
           - listen
       slot:
-        description: 'preview only: resend just this slot (12:00 or 19:30); empty = both'
+        description: 'preview only: resend just this slot (12:00, 17:00, 18:00 or 19:30); empty = all'
         required: false
         default: ''
       date:
