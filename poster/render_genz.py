@@ -52,7 +52,7 @@ THEMES = {
               "tint": (220, 245, 235), "soft": (235, 250, 243), "sub": (214, 245, 232),
               "insta": (214, 245, 232), "rule": (120, 210, 175),
               "shadow": (0, 50, 30, 80), "exam": "MULTILEVEL", "handle": "@dilshod_multilevel",
-              "avatar": "avatar-multilevel.png"},
+              "avatar": "avatar-multilevel.png", "brand": "DILŞOD USTOZ"},  # new Uzbek alphabet
 }
 THEME = THEMES["orange"]
 EXAM = "IELTS"
@@ -165,8 +165,9 @@ def frame(kind, title, subtitle):
         d.line([0, y, W, y], fill=tuple(int(a + (b - a) * t) for a, b in zip(top, bottom)))
 
     bf = font("black", 40)
-    d.text((PAD, 82), BRAND, font=bf, fill=WHITE)
-    d.text((PAD + d.textlength(BRAND + " ", font=bf), 82), f"| {EXAM}", font=bf, fill=NAVY)
+    brand = THEME.get("brand", BRAND)
+    d.text((PAD, 82), brand, font=bf, fill=WHITE)
+    d.text((PAD + d.textlength(brand + " ", font=bf), 82), f"| {EXAM}", font=bf, fill=NAVY)
     pill = PILLS[kind]
     pf = font("bold", 24)
     pw = d.textlength(pill, font=pf)

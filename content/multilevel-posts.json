@@ -1,25 +1,25 @@
 {
- "_note": "Multilevel channel (@dilshod_multilevel), one post a day at 18:00 Tashkent. Picture-first posters (poster/render_visual.py, art types listed there); the explanation is the caption: Uzbek with English examples. theme = poster colours (poster/render_genz.py THEMES). Which post is next lives in content/review.json (multilevel.next).",
+ "_note": "Uzbek text uses the new Uzbek Latin alphabet (ö, ğ, ş, ç), Dilshod's choice. Multilevel channel (@dilshod_multilevel), one post a day at 18:00 Tashkent. Picture-first posters (poster/render_visual.py, art types listed there); the explanation is the caption: Uzbek with English examples. theme = poster colours (poster/render_genz.py THEMES). Which post is next lives in content/review.json (multilevel.next).",
  "theme": "green",
- "note": "Tushuntirish post matnida",
+ "note": "Tuşuntiriş post matnida",
  "posts": [
   {
    "id": "ml_001",
    "pill": "TEST FORMATI",
    "title": "Multilevel: 4 qism",
-   "subtitle": "Imtihonda nima bo'lishini oldindan bilib oling",
+   "subtitle": "Imtihonda nima bölişini oldindan bilib oling",
    "art": {
     "type": "grid",
     "items": [
      [
       "🎧",
       "Listening",
-      "tinglash"
+      "tinglaş"
      ],
      [
       "📖",
       "Reading",
-      "o'qish"
+      "öqiş"
      ],
      [
       "✍️",
@@ -29,17 +29,17 @@
      [
       "🗣",
       "Speaking",
-      "gapirish"
+      "gapiriş"
      ]
     ]
    },
-   "caption": "<b>Multilevel: 4 qism</b>\n\nKanalga xush kelibsiz! 🎉 Bu yerda har kuni Multilevel imtihoniga oid bitta foydali post chiqadi.\n\nBugun eng muhimidan boshlaymiz: imtihon qanday tuzilgan.\n\n🎧 <b>Listening</b>: audio tinglab, savollarga javob berasiz\n📖 <b>Reading</b>: matnlar va har xil turdagi savollar\n✍️ <b>Writing</b>: 2 ta xat (norasmiy va rasmiy) + esse\n🗣 <b>Speaking</b>: savollar, rasmlarni solishtirish va fikr bildirish\n\nSaqlab qo'ying, imtihondan oldin kerak bo'ladi 📌"
+   "caption": "<b>Multilevel: 4 qism</b>\n\nKanalga xuş kelibsiz! 🎉 Bu yerda har kuni Multilevel imtihoniga oid bitta foydali post çiqadi.\n\nBugun eng muhimidan boşlaymiz: imtihon qanday tuzilgan.\n\n🎧 <b>Listening</b>: audio tinglab, savollarga javob berasiz\n📖 <b>Reading</b>: matnlar va har xil turdagi savollar\n✍️ <b>Writing</b>: 2 ta xat (norasmiy va rasmiy) + esse\n🗣 <b>Speaking</b>: savollar, rasmlarni soliştiriş va fikr bildiriş\n\nSaqlab qöying, imtihondan oldin kerak böladi 📌"
   },
   {
    "id": "ml_002",
    "pill": "WRITING · XAT",
    "title": "Norasmiy xat: 3 qadam",
-   "subtitle": "Do'stga xat. Qisqa, lekin hamma savolga javob bering",
+   "subtitle": "Döstga xat. Qisqa, lekin hamma savolga javob bering",
    "art": {
     "type": "letter",
     "lines": [
@@ -49,7 +49,7 @@
      ],
      [
       "Thanks for your letter!",
-      "boshlash"
+      "boşlaş"
      ],
      [
       ""
@@ -64,20 +64,20 @@
      ]
     ]
    },
-   "caption": "<b>Norasmiy xat: 3 qadam</b>\n\nNorasmiy xatda eng ko'p ball savollardan birini unutib qo'yganda ketadi 😬\n\nYozib bo'lgach, topshiriqdagi savollarni bittalab belgilab chiqing ✔️\n\n1. Salomlashing: <b>Hi Tom</b>, <b>Thanks for your letter!</b>\n2. Topshiriqdagi <b>har bir savolga</b> bittadan gap bilan javob bering\n3. Iliq yakunlang: <b>Write back soon!</b>, <b>Take care</b>\n❌ Rasmiy so'zlar ishlatmang: <b>Dear Sir</b> bu yerda xato\n\nDo'stingizga yuboring, u ham Multilevel topshiryaptimi? 👀"
+   "caption": "<b>Norasmiy xat: 3 qadam</b>\n\nNorasmiy xatda eng köp ball savollardan birini unutib qöyganda ketadi 😬\n\nYozib bölgaç, topşiriqdagi savollarni bittalab belgilab çiqing ✔️\n\n1. Salomlaşing: <b>Hi Tom</b>, <b>Thanks for your letter!</b>\n2. Topşiriqdagi <b>har bir savolga</b> bittadan gap bilan javob bering\n3. Iliq yakunlang: <b>Write back soon!</b>, <b>Take care</b>\n❌ Rasmiy sözlar işlatmang: <b>Dear Sir</b> bu yerda xato\n\nDöstingizga yuboring, u ham Multilevel topşiryaptimi? 👀"
   },
   {
    "id": "ml_003",
    "pill": "SPEAKING · PART 1",
-   "title": "2 ta rasmni solishtirish",
-   "subtitle": "Shu 3 ta ibora bilan javobingiz tayyor",
+   "title": "2 ta rasmni soliştiriş",
+   "subtitle": "Şu 3 ta ibora bilan javobingiz tayyor",
    "art": {
     "type": "steps",
     "items": [
      [
       "🖼",
       "Both pictures show ...",
-      "o'xshashlik"
+      "öxşaşlik"
      ],
      [
       "⚖️",
@@ -87,17 +87,17 @@
      [
       "❤️",
       "I'd prefer ... because ...",
-      "o'z fikringiz"
+      "öz fikringiz"
      ]
     ]
    },
-   "caption": "<b>2 ta rasmni solishtirish</b>\n\nRasmlarni solishtirishda ko'pchilik faqat ko'rganini sanab chiqadi. Imtihonchi esa solishtirishni va fikringizni kutadi 🎯\n\nShu 3 iborani bugun ovoz chiqarib 3 marta ayting 🔁\n\n1. <b>Both pictures show</b> ... (ikkalasida ham ...)\n2. <b>In the first picture</b> ..., <b>while in the second</b> ... (birinchisida ..., ikkinchisida esa ...)\n3. <b>I'd prefer</b> the first one <b>because</b> ... (men birinchisini tanlardim, chunki ...)\n💡 Faqat tasvirlamang: <b>farqini</b> va <b>o'z fikringizni</b> ham ayting\n\nIzohlarda o'z misolingizni yozing, tekshirib beraman 👇"
+   "caption": "<b>2 ta rasmni soliştiriş</b>\n\nRasmlarni soliştirişda köpçilik faqat körganini sanab çiqadi. Imtihonçi esa soliştirişni va fikringizni kutadi 🎯\n\nŞu 3 iborani bugun ovoz çiqarib 3 marta ayting 🔁\n\n1. <b>Both pictures show</b> ... (ikkalasida ham ...)\n2. <b>In the first picture</b> ..., <b>while in the second</b> ... (birinçisida ..., ikkinçisida esa ...)\n3. <b>I'd prefer</b> the first one <b>because</b> ... (men birinçisini tanlardim, çunki ...)\n💡 Faqat tasvirlamang: <b>farqini</b> va <b>öz fikringizni</b> ham ayting\n\nIzohlarda öz misolingizni yozing, tekşirib beraman 👇"
   },
   {
    "id": "ml_004",
    "pill": "READING",
    "title": "Reading'da vaqt yetmayaptimi?",
-   "subtitle": "Matnni boshidan oxirigacha o'qish shart emas",
+   "subtitle": "Matnni boşidan oxirigaça öqiş şart emas",
    "art": {
     "type": "versus",
     "left": {
@@ -105,11 +105,11 @@
      "items": [
       [
        "🐢",
-       "har so'zni o'qish"
+       "har sözni öqiş"
       ],
       [
        "📚",
-       "tarjima qilish"
+       "tarjima qiliş"
       ]
      ]
     },
@@ -122,28 +122,28 @@
       ],
       [
        "🔍",
-       "kalit so'z"
+       "kalit söz"
       ]
      ]
     }
    },
-   "caption": "<b>Reading'da vaqt yetmayaptimi?</b>\n\nReading'da eng katta dushman bu vaqt ⏳\n\nBugun bitta matnni taymer bilan ishlab ko'ring va natijani izohda yozing 👇\n\n❌ Har bir so'zni tarjima qilib o'qish\n✅ Avval <b>savolni</b> o'qing, keyin matndan <b>kalit so'zni</b> qidiring\n✅ Qiyin savolda to'xtab qolmang, <b>keyinroq qayting</b>\n💡 Har kuni 1 ta matnni <b>taymer</b> bilan ishlang\n\nQaysi biri siz uchun yangi bo'ldi? Izohda yozing 👇"
+   "caption": "<b>Reading'da vaqt yetmayaptimi?</b>\n\nReading'da eng katta duşman bu vaqt ⏳\n\nBugun bitta matnni taymer bilan işlab köring va natijani izohda yozing 👇\n\n❌ Har bir sözni tarjima qilib öqiş\n✅ Avval <b>savolni</b> öqing, keyin matndan <b>kalit sözni</b> qidiring\n✅ Qiyin savolda töxtab qolmang, <b>keyinroq qayting</b>\n💡 Har kuni 1 ta matnni <b>taymer</b> bilan işlang\n\nQaysi biri siz uçun yangi böldi? Izohda yozing 👇"
   },
   {
    "id": "ml_005",
    "pill": "LISTENING",
-   "title": "Audio boshlanmasdan oldin",
-   "subtitle": "Shu 20 soniya ballingizni ko'taradi",
+   "title": "Audio boşlanmasdan oldin",
+   "subtitle": "Şu 20 soniya ballingizni kötaradi",
    "art": {
     "type": "steps",
     "items": [
      [
       "👀",
-      "Savollarni o'qing"
+      "Savollarni öqing"
      ],
      [
       "🔑",
-      "Kalit so'zlarni belgilang"
+      "Kalit sözlarni belgilang"
      ],
      [
       "🔮",
@@ -151,13 +151,13 @@
      ]
     ]
    },
-   "caption": "<b>Audio boshlanmasdan oldin</b>\n\nKo'pchilik audio boshlanguncha kutib o'tiradi. Aslida eng muhim ish shu paytda qilinadi 🎧\n\n1. Savollarni o'qib, <b>kalit so'zlarni</b> belgilang\n2. Bo'sh joyga nima kerakligini taxmin qiling: <b>son</b>, <b>ism</b> yoki <b>sana</b>?\n3. Variantlardagi <b>farqni</b> oldindan ko'ring\n💡 Audio boshlangach, savolga emas, <b>tinglashga</b> e'tibor bering\n\nSaqlab qo'ying, imtihondan oldin kerak bo'ladi 📌"
+   "caption": "<b>Audio boşlanmasdan oldin</b>\n\nKöpçilik audio boşlangunça kutib ötiradi. Aslida eng muhim iş şu paytda qilinadi 🎧\n\n1. Savollarni öqib, <b>kalit sözlarni</b> belgilang\n2. Böş joyga nima kerakligini taxmin qiling: <b>son</b>, <b>ism</b> yoki <b>sana</b>?\n3. Variantlardagi <b>farqni</b> oldindan köring\n💡 Audio boşlangaç, savolga emas, <b>tinglaşga</b> e'tibor bering\n\nSaqlab qöying, imtihondan oldin kerak böladi 📌"
   },
   {
    "id": "ml_006",
    "pill": "GRAMMATIKA",
    "title": "since yoki for?",
-   "subtitle": "Present Perfect'dagi eng ko'p uchraydigan xato",
+   "subtitle": "Present Perfect'dagi eng köp uçraydigan xato",
    "art": {
     "type": "timeline",
     "marks": [
@@ -173,23 +173,23 @@
      ],
      [
       "📍",
-      "since + boshlangan payt"
+      "since + boşlangan payt"
      ]
     ]
    },
-   "caption": "<b>since yoki for?</b>\n\nSpeaking'da \"since 5 years\" deyish juda ko'p uchraydi 😅\n\nIzohda o'zingiz haqingizda since va for bilan bittadan gap yozing 👇\n\n⏱ <b>for</b> + muddat: for <b>three years</b>, for <b>a week</b>\n📍 <b>since</b> + boshlangan payt: since <b>2020</b>, since <b>Monday</b>\n✅ I have lived here <b>for</b> five years.\n✅ I have lived here <b>since</b> 2021.\n\nDo'stingizga yuboring, u ham Multilevel topshiryaptimi? 👀"
+   "caption": "<b>since yoki for?</b>\n\nSpeaking'da \"since 5 years\" deyiş juda köp uçraydi 😅\n\nIzohda özingiz haqingizda since va for bilan bittadan gap yozing 👇\n\n⏱ <b>for</b> + muddat: for <b>three years</b>, for <b>a week</b>\n📍 <b>since</b> + boşlangan payt: since <b>2020</b>, since <b>Monday</b>\n✅ I have lived here <b>for</b> five years.\n✅ I have lived here <b>since</b> 2021.\n\nDöstingizga yuboring, u ham Multilevel topşiryaptimi? 👀"
   },
   {
    "id": "ml_007",
    "pill": "WRITING · ESSE",
-   "title": "Esse uchun 4 ta paragraf",
-   "subtitle": "Multilevel essesining eng oson tuzilishi",
+   "title": "Esse uçun 4 ta paragraf",
+   "subtitle": "Multilevel essesining eng oson tuzilişi",
    "art": {
     "type": "steps",
     "items": [
      [
       "🚪",
-      "Kirish",
+      "Kiriş",
       "fikringiz"
      ],
      [
@@ -209,13 +209,13 @@
      ]
     ]
    },
-   "caption": "<b>Esse uchun 4 ta paragraf</b>\n\nTuzilishi aniq esseni o'qish oson, imtihonchi ham buni yaxshi ko'radi ✍️\n\nSaqlab qo'ying, keyingi postlarda har bir paragrafni alohida ko'ramiz 📌\n\n1. <b>Kirish</b>: mavzuni o'z so'zingiz bilan ayting va fikringizni bildiring\n2. <b>1-sabab</b> + misol\n3. <b>2-sabab</b> + misol\n4. <b>Xulosa</b>: fikringizni boshqa so'zlar bilan qaytaring\n\nIzohlarda o'z misolingizni yozing, tekshirib beraman 👇"
+   "caption": "<b>Esse uçun 4 ta paragraf</b>\n\nTuzilişi aniq esseni öqiş oson, imtihonçi ham buni yaxşi köradi ✍️\n\nSaqlab qöying, keyingi postlarda har bir paragrafni alohida köramiz 📌\n\n1. <b>Kiriş</b>: mavzuni öz sözingiz bilan ayting va fikringizni bildiring\n2. <b>1-sabab</b> + misol\n3. <b>2-sabab</b> + misol\n4. <b>Xulosa</b>: fikringizni boşqa sözlar bilan qaytaring\n\nIzohlarda öz misolingizni yozing, tekşirib beraman 👇"
   },
   {
    "id": "ml_008",
-   "pill": "SO'Z BOYLIGI",
-   "title": "very good o'rniga",
-   "subtitle": "Oddiy so'zni kuchliroq so'zga almashtiring",
+   "pill": "SÖZ BOYLIGI",
+   "title": "very good örniga",
+   "subtitle": "Oddiy sözni kuçliroq sözga almaştiring",
    "art": {
     "type": "grid",
     "items": [
@@ -241,13 +241,13 @@
      ]
     ]
    },
-   "caption": "<b>very good o'rniga</b>\n\n\"very\" so'zini haddan ko'p ishlatish darajangizni pasaytirib ko'rsatadi 📉\n\nBugun Speaking'da shulardan bittasini albatta ishlating 💪\n\n😐 very good → <b>excellent</b>, <b>outstanding</b>\n😐 very bad → <b>terrible</b>, <b>awful</b>\n😐 very big → <b>huge</b>, <b>enormous</b>\n😐 very tired → <b>exhausted</b>\n\nQaysi biri siz uchun yangi bo'ldi? Izohda yozing 👇"
+   "caption": "<b>very good örniga</b>\n\n\"very\" sözini haddan köp işlatiş darajangizni pasaytirib körsatadi 📉\n\nBugun Speaking'da şulardan bittasini albatta işlating 💪\n\n😐 very good → <b>excellent</b>, <b>outstanding</b>\n😐 very bad → <b>terrible</b>, <b>awful</b>\n😐 very big → <b>huge</b>, <b>enormous</b>\n😐 very tired → <b>exhausted</b>\n\nQaysi biri siz uçun yangi böldi? Izohda yozing 👇"
   },
   {
    "id": "ml_009",
    "pill": "SPEAKING · PART 1",
-   "title": "Shaxsiy savollarga javob",
-   "subtitle": "Bir so'zli javob bermang: 2–3 gap yetarli",
+   "title": "Şaxsiy savollarga javob",
+   "subtitle": "Bir sözli javob bermang: 2–3 gap yetarli",
    "art": {
     "type": "steps",
     "items": [
@@ -268,12 +268,12 @@
      ]
     ]
    },
-   "caption": "<b>Shaxsiy savollarga javob</b>\n\nJavob + sabab + misol. Shu formula birinchi qismdagi har qanday savolga ishlaydi 🔑\n\n❌ Do you like reading? → <b>Yes.</b>\n✅ <b>Yes, I do.</b> Javob bering\n✅ <b>Sabab</b> ayting: because it helps me relax\n✅ <b>Misol</b> keltiring: right now I'm reading a novel by ...\n\nSaqlab qo'ying, imtihondan oldin kerak bo'ladi 📌"
+   "caption": "<b>Şaxsiy savollarga javob</b>\n\nJavob + sabab + misol. Şu formula birinçi qismdagi har qanday savolga işlaydi 🔑\n\n❌ Do you like reading? → <b>Yes.</b>\n✅ <b>Yes, I do.</b> Javob bering\n✅ <b>Sabab</b> ayting: because it helps me relax\n✅ <b>Misol</b> keltiring: right now I'm reading a novel by ...\n\nSaqlab qöying, imtihondan oldin kerak böladi 📌"
   },
   {
    "id": "ml_010",
    "pill": "LISTENING",
-   "title": "Sonlarni adashtirmang",
+   "title": "Sonlarni adaştirmang",
    "subtitle": "15 yoki 50? Listening'dagi klassik tuzoq",
    "art": {
     "type": "grid",
@@ -281,21 +281,21 @@
      [
       "🔔",
       "fifTEEN = 15",
-      "urg'u oxirida"
+      "urğu oxirida"
      ],
      [
       "⚡",
       "FIFty = 50",
-      "urg'u boshida"
+      "urğu boşida"
      ]
     ]
    },
-   "caption": "<b>Sonlarni adashtirmang</b>\n\nSonlar va sanalar Listening'da eng ko'p ball olib ketadi 😬\n\nDo'stingizga 14, 40, 17, 70 ni aralash ayting, u yozsin. Keyin almashing 🔁\n\n1. fif<b>TEEN</b>: urg'u oxirida, cho'ziq tovush\n2. <b>FIF</b>ty: urg'u boshida, qisqa tovush\n⚠️ Telefon raqamlarida <b>double 5</b> = 55, <b>oh</b> = 0\n💡 Har kuni 13–19 va 30–90 juftlarini tinglab mashq qiling\n\nDo'stingizga yuboring, u ham Multilevel topshiryaptimi? 👀"
+   "caption": "<b>Sonlarni adaştirmang</b>\n\nSonlar va sanalar Listening'da eng köp ball olib ketadi 😬\n\nDöstingizga 14, 40, 17, 70 ni aralaş ayting, u yozsin. Keyin almaşing 🔁\n\n1. fif<b>TEEN</b>: urğu oxirida, çöziq tovuş\n2. <b>FIF</b>ty: urğu boşida, qisqa tovuş\n⚠️ Telefon raqamlarida <b>double 5</b> = 55, <b>oh</b> = 0\n💡 Har kuni 13–19 va 30–90 juftlarini tinglab maşq qiling\n\nDöstingizga yuboring, u ham Multilevel topşiryaptimi? 👀"
   },
   {
    "id": "ml_011",
    "pill": "WRITING · XAT",
-   "title": "Rasmiy xatni boshlash",
+   "title": "Rasmiy xatni boşlaş",
    "subtitle": "Rasmiy xat norasmiydan butunlay farq qiladi",
    "art": {
     "type": "letter",
@@ -317,24 +317,24 @@
      ]
     ]
    },
-   "caption": "<b>Rasmiy xatni boshlash</b>\n\nRasmiy xatda birinchi gapdanoq nima uchun yozayotganingiz aniq bo'lsin 🎯\n\n✅ <b>Dear Sir or Madam,</b> (ismini bilmasangiz)\n✅ <b>Dear Mr Brown,</b> (ismini bilsangiz)\n✅ Maqsadni darrov ayting: <b>I am writing to complain about</b> ...\n❌ <b>Hi</b>, <b>How are you?</b>, qisqartmalar (I'm, don't) ishlatmang\n\nIzohlarda o'z misolingizni yozing, tekshirib beraman 👇"
+   "caption": "<b>Rasmiy xatni boşlaş</b>\n\nRasmiy xatda birinçi gapdanoq nima uçun yozayotganingiz aniq bölsin 🎯\n\n✅ <b>Dear Sir or Madam,</b> (ismini bilmasangiz)\n✅ <b>Dear Mr Brown,</b> (ismini bilsangiz)\n✅ Maqsadni darrov ayting: <b>I am writing to complain about</b> ...\n❌ <b>Hi</b>, <b>How are you?</b>, qisqartmalar (I'm, don't) işlatmang\n\nIzohlarda öz misolingizni yozing, tekşirib beraman 👇"
   },
   {
    "id": "ml_012",
    "pill": "TEST FORMATI",
    "title": "Ball va daraja",
-   "subtitle": "Natijangiz qaysi darajaga to'g'ri keladi?",
+   "subtitle": "Natijangiz qaysi darajaga töğri keladi?",
    "art": {
     "type": "stairs",
     "icon": "🚩",
     "items": [
      [
       "B1",
-      "o'rta daraja"
+      "örta daraja"
      ],
      [
       "B2",
-      "o'rtadan yuqori"
+      "örtadan yuqori"
      ],
      [
       "C1",
@@ -342,13 +342,13 @@
      ]
     ]
    },
-   "caption": "<b>Ball va daraja</b>\n\nSizning maqsadingiz qaysi daraja? B1, B2 yoki C1? Izohda yozing 👇\n\n🔵 <b>B1</b>: o'rta daraja, kundalik mavzularda erkin gapira olasiz\n🟢 <b>B2</b>: o'rtadan yuqori, murakkab mavzularni ham tushunasiz\n🟣 <b>C1</b>: yuqori daraja, ingliz tilida erkin ishlay olasiz\n💡 Avval <b>maqsad darajangizni</b> belgilang, keyin reja tuzing\n\nQaysi biri siz uchun yangi bo'ldi? Izohda yozing 👇"
+   "caption": "<b>Ball va daraja</b>\n\nSizning maqsadingiz qaysi daraja? B1, B2 yoki C1? Izohda yozing 👇\n\n🔵 <b>B1</b>: örta daraja, kundalik mavzularda erkin gapira olasiz\n🟢 <b>B2</b>: örtadan yuqori, murakkab mavzularni ham tuşunasiz\n🟣 <b>C1</b>: yuqori daraja, ingliz tilida erkin işlay olasiz\n💡 Avval <b>maqsad darajangizni</b> belgilang, keyin reja tuzing\n\nQaysi biri siz uçun yangi böldi? Izohda yozing 👇"
   },
   {
    "id": "ml_013",
    "pill": "READING",
-   "title": "Kalit so'z sinonimi",
-   "subtitle": "Matnda savoldagi so'z emas, uning sinonimi bo'ladi",
+   "title": "Kalit söz sinonimi",
+   "subtitle": "Matnda savoldagi söz emas, uning sinonimi böladi",
    "art": {
     "type": "versus",
     "left": {
@@ -380,50 +380,50 @@
      "mark": "📖"
     }
    },
-   "caption": "<b>Kalit so'z sinonimi</b>\n\nSavoldagi so'zni matndan aynan topa olmayapsizmi? Sinonimini qidiring 🔍\n\nBu Reading'dagi eng muhim ko'nikma.\n\n❓ Savolda: <b>expensive</b>\n📖 Matnda: <b>costs a lot</b>, <b>not cheap</b>, <b>pricey</b>\n❓ Savolda: <b>started</b>\n📖 Matnda: <b>began</b>, <b>was founded</b>, <b>opened</b>\n\nSaqlab qo'ying, imtihondan oldin kerak bo'ladi 📌"
+   "caption": "<b>Kalit söz sinonimi</b>\n\nSavoldagi sözni matndan aynan topa olmayapsizmi? Sinonimini qidiring 🔍\n\nBu Reading'dagi eng muhim könikma.\n\n❓ Savolda: <b>expensive</b>\n📖 Matnda: <b>costs a lot</b>, <b>not cheap</b>, <b>pricey</b>\n❓ Savolda: <b>started</b>\n📖 Matnda: <b>began</b>, <b>was founded</b>, <b>opened</b>\n\nSaqlab qöying, imtihondan oldin kerak böladi 📌"
   },
   {
    "id": "ml_014",
    "pill": "SPEAKING · PART 2",
-   "title": "Tayyorlanish uchun 1 daqiqa",
-   "subtitle": "Shu vaqtni qanday ishlatish kerak?",
+   "title": "Tayyorlaniş uçun 1 daqiqa",
+   "subtitle": "Şu vaqtni qanday işlatiş kerak?",
    "art": {
     "type": "steps",
     "items": [
      [
       "📝",
-      "2–3 so'z yozing",
-      "to'liq gap emas"
+      "2–3 söz yozing",
+      "töliq gap emas"
      ],
      [
       "💡",
-      "Misol o'ylang"
+      "Misol öylang"
      ],
      [
       "🎬",
-      "Birinchi gapni tayyorlang"
+      "Birinçi gapni tayyorlang"
      ]
     ]
    },
-   "caption": "<b>Tayyorlanish uchun 1 daqiqa</b>\n\nBir daqiqa kam tuyuladi, lekin to'g'ri ishlatsangiz yetarli ⏱\n\nUyda taymer bilan sinab ko'ring.\n\n1. Har bir savolga <b>2–3 so'z</b> yozing, to'liq gap emas\n2. Har savolga bitta <b>misol</b> yoki <b>voqea</b> o'ylang\n3. Boshlash uchun bitta gap tayyorlang: <b>I'd like to talk about</b> ...\n❌ Matnni to'liq yozib, keyin o'qib bermang\n\nDo'stingizga yuboring, u ham Multilevel topshiryaptimi? 👀"
+   "caption": "<b>Tayyorlaniş uçun 1 daqiqa</b>\n\nBir daqiqa kam tuyuladi, lekin töğri işlatsangiz yetarli ⏱\n\nUyda taymer bilan sinab köring.\n\n1. Har bir savolga <b>2–3 söz</b> yozing, töliq gap emas\n2. Har savolga bitta <b>misol</b> yoki <b>voqea</b> öylang\n3. Boşlaş uçun bitta gap tayyorlang: <b>I'd like to talk about</b> ...\n❌ Matnni töliq yozib, keyin öqib bermang\n\nDöstingizga yuboring, u ham Multilevel topşiryaptimi? 👀"
   },
   {
    "id": "ml_015",
    "pill": "GRAMMATIKA",
-   "title": "Solishtirish: -er yoki more?",
-   "subtitle": "Solishtirishda eng ko'p xato qilinadigan joy",
+   "title": "Soliştiriş: -er yoki more?",
+   "subtitle": "Soliştirişda eng köp xato qilinadigan joy",
    "art": {
     "type": "grid",
     "items": [
      [
       "🐭",
       "cheaper",
-      "qisqa so'z + er"
+      "qisqa söz + er"
      ],
      [
       "💎",
       "more expensive",
-      "uzun so'z + more"
+      "uzun söz + more"
      ],
      [
       "👍",
@@ -437,13 +437,13 @@
      ]
     ]
    },
-   "caption": "<b>Solishtirish: -er yoki more?</b>\n\nRasmlarni solishtirishda solishtirma darajasiz gapirib bo'lmaydi 🖼\n\nIzohda ikki shaharni solishtirib bitta gap yozing 👇\n\n✅ Qisqa so'z: cheap → <b>cheaper</b>, big → <b>bigger</b>\n✅ Uzun so'z: expensive → <b>more expensive</b>\n⚠️ good → <b>better</b>, bad → <b>worse</b>\n❌ <b>more better</b>, <b>more cheaper</b> deb aytmang\n\nIzohlarda o'z misolingizni yozing, tekshirib beraman 👇"
+   "caption": "<b>Soliştiriş: -er yoki more?</b>\n\nRasmlarni soliştirişda soliştirma darajasiz gapirib bölmaydi 🖼\n\nIzohda ikki şaharni soliştirib bitta gap yozing 👇\n\n✅ Qisqa söz: cheap → <b>cheaper</b>, big → <b>bigger</b>\n✅ Uzun söz: expensive → <b>more expensive</b>\n⚠️ good → <b>better</b>, bad → <b>worse</b>\n❌ <b>more better</b>, <b>more cheaper</b> deb aytmang\n\nIzohlarda öz misolingizni yozing, tekşirib beraman 👇"
   },
   {
    "id": "ml_016",
-   "pill": "SO'Z BOYLIGI",
-   "title": "Fikr bildirish iboralari",
-   "subtitle": "I think o'rniga ishlating",
+   "pill": "SÖZ BOYLIGI",
+   "title": "Fikr bildiriş iboralari",
+   "subtitle": "I think örniga işlating",
    "art": {
     "type": "bubbles",
     "items": [
@@ -461,12 +461,12 @@
      ]
     ]
    },
-   "caption": "<b>Fikr bildirish iboralari</b>\n\n\"I think\" xato emas, lekin har gapda takrorlansa zerikarli eshitiladi 🙃\n\nSaqlab qo'ying va Speaking'da almashtirib ishlating 📌\n\n💬 <b>In my opinion</b>, ...\n💬 <b>From my point of view</b>, ...\n💬 <b>I strongly believe that</b> ...\n💬 <b>As far as I'm concerned</b>, ...\n\nQaysi biri siz uchun yangi bo'ldi? Izohda yozing 👇"
+   "caption": "<b>Fikr bildiriş iboralari</b>\n\n\"I think\" xato emas, lekin har gapda takrorlansa zerikarli eşitiladi 🙃\n\nSaqlab qöying va Speaking'da almaştirib işlating 📌\n\n💬 <b>In my opinion</b>, ...\n💬 <b>From my point of view</b>, ...\n💬 <b>I strongly believe that</b> ...\n💬 <b>As far as I'm concerned</b>, ...\n\nQaysi biri siz uçun yangi böldi? Izohda yozing 👇"
   },
   {
    "id": "ml_017",
    "pill": "WRITING · ESSE",
-   "title": "Esse kirishini yozish",
+   "title": "Esse kirişini yoziş",
    "subtitle": "2 ta gap yetarli",
    "art": {
     "type": "steps",
@@ -474,7 +474,7 @@
      [
       "🔄",
       "Mavzuni qayta ayting",
-      "o'z so'zingiz bilan"
+      "öz sözingiz bilan"
      ],
      [
       "🎯",
@@ -483,13 +483,13 @@
      ]
     ]
    },
-   "caption": "<b>Esse kirishini yozish</b>\n\nKirish qisqa va aniq bo'lsa, imtihonchi darrov fikringizni tushunadi ✍️\n\n1. Mavzuni <b>o'z so'zingiz bilan</b> qayta ayting\n2. Fikringizni aniq bildiring: <b>I believe that</b> ...\n❌ Topshiriqni so'zma-so'z ko'chirmang\n💡 Kirishda misol keltirmang, ularni <b>asosiy qismga</b> qoldiring\n\nSaqlab qo'ying, imtihondan oldin kerak bo'ladi 📌"
+   "caption": "<b>Esse kirişini yoziş</b>\n\nKiriş qisqa va aniq bölsa, imtihonçi darrov fikringizni tuşunadi ✍️\n\n1. Mavzuni <b>öz sözingiz bilan</b> qayta ayting\n2. Fikringizni aniq bildiring: <b>I believe that</b> ...\n❌ Topşiriqni sözma-söz köçirmang\n💡 Kirişda misol keltirmang, ularni <b>asosiy qismga</b> qoldiring\n\nSaqlab qöying, imtihondan oldin kerak böladi 📌"
   },
   {
    "id": "ml_018",
    "pill": "LISTENING",
-   "title": "Xaritadagi yo'nalishlar",
-   "subtitle": "Map savollarida shu so'zlarni bilish shart",
+   "title": "Xaritadagi yönalişlar",
+   "subtitle": "Map savollarida şu sözlarni biliş şart",
    "art": {
     "type": "map",
     "items": [
@@ -511,13 +511,13 @@
      ]
     ]
    },
-   "caption": "<b>Xaritadagi yo'nalishlar</b>\n\nXarita savollarida bitta so'zni tushunmasangiz, butun yo'l adashib ketadi 🗺\n\nUyingizdan maktabgacha yo'lni shu so'zlar bilan izohda tushuntiring 👇\n\n➡️ <b>opposite</b> = ro'parasida\n↔️ <b>next to</b> = yonida, <b>between</b> = o'rtasida\n🔄 <b>turn left/right</b> = chapga/o'ngga buriling\n⬆️ <b>go straight on</b> = to'g'riga yuring\n\nDo'stingizga yuboring, u ham Multilevel topshiryaptimi? 👀"
+   "caption": "<b>Xaritadagi yönalişlar</b>\n\nXarita savollarida bitta sözni tuşunmasangiz, butun yöl adaşib ketadi 🗺\n\nUyingizdan maktabgaça yölni şu sözlar bilan izohda tuşuntiring 👇\n\n➡️ <b>opposite</b> = röparasida\n↔️ <b>next to</b> = yonida, <b>between</b> = örtasida\n🔄 <b>turn left/right</b> = çapga/öngga buriling\n⬆️ <b>go straight on</b> = töğriga yuring\n\nDöstingizga yuboring, u ham Multilevel topşiryaptimi? 👀"
   },
   {
    "id": "ml_019",
    "pill": "SPEAKING · PART 3",
-   "title": "Ikki tomonni ko'rish",
-   "subtitle": "Fikr bildirishda faqat bir tomonni gapirmang",
+   "title": "Ikki tomonni köriş",
+   "subtitle": "Fikr bildirişda faqat bir tomonni gapirmang",
    "art": {
     "type": "versus",
     "left": {
@@ -535,7 +535,7 @@
      "mark": "👍"
     },
     "right": {
-     "head": "Boshqa tomondan",
+     "head": "Boşqa tomondan",
      "items": [
       [
        "💬",
@@ -549,13 +549,13 @@
      "mark": "👎"
     }
    },
-   "caption": "<b>Ikki tomonni ko'rish</b>\n\nIkkala tomonni ko'rsatib, keyin o'z fikringizni aytsangiz, javobingiz ancha kuchli bo'ladi 💪\n\n1. <b>On the one hand</b>, ... (bir tomondan ...)\n2. <b>On the other hand</b>, ... (boshqa tomondan ...)\n3. <b>Overall, I think</b> ... (umuman olganda, menimcha ...)\n💡 Har bir fikrga bitta <b>misol</b> qo'shing\n\nIzohlarda o'z misolingizni yozing, tekshirib beraman 👇"
+   "caption": "<b>Ikki tomonni köriş</b>\n\nIkkala tomonni körsatib, keyin öz fikringizni aytsangiz, javobingiz ança kuçli böladi 💪\n\n1. <b>On the one hand</b>, ... (bir tomondan ...)\n2. <b>On the other hand</b>, ... (boşqa tomondan ...)\n3. <b>Overall, I think</b> ... (umuman olganda, menimça ...)\n💡 Har bir fikrga bitta <b>misol</b> qöşing\n\nIzohlarda öz misolingizni yozing, tekşirib beraman 👇"
   },
   {
    "id": "ml_020",
    "pill": "TAYYORGARLIK",
    "title": "Har kuni 20 daqiqa",
-   "subtitle": "Imtihongacha 1 oy qolgan bo'lsa",
+   "subtitle": "Imtihongaça 1 oy qolgan bölsa",
    "art": {
     "type": "clock",
     "centre": "20 min",
@@ -582,7 +582,7 @@
      ]
     ]
    },
-   "caption": "<b>Har kuni 20 daqiqa</b>\n\nHar kuni oz-ozdan qilingan mashq bir kunda 5 soat o'tirishdan foydaliroq 📈\n\nBugundan boshlaysizmi? ✋\n\n🎧 <b>5 daqiqa</b>: bitta audio tinglash\n📖 <b>5 daqiqa</b>: bitta qisqa matn o'qish\n✍️ <b>5 daqiqa</b>: 3–4 gap yozish\n🗣 <b>5 daqiqa</b>: bitta savolga ovoz chiqarib javob berish\n\nQaysi biri siz uchun yangi bo'ldi? Izohda yozing 👇"
+   "caption": "<b>Har kuni 20 daqiqa</b>\n\nHar kuni oz-ozdan qilingan maşq bir kunda 5 soat ötirişdan foydaliroq 📈\n\nBugundan boşlaysizmi? ✋\n\n🎧 <b>5 daqiqa</b>: bitta audio tinglaş\n📖 <b>5 daqiqa</b>: bitta qisqa matn öqiş\n✍️ <b>5 daqiqa</b>: 3–4 gap yoziş\n🗣 <b>5 daqiqa</b>: bitta savolga ovoz çiqarib javob beriş\n\nQaysi biri siz uçun yangi böldi? Izohda yozing 👇"
   },
   {
    "id": "ml_021",
@@ -595,7 +595,7 @@
      [
       "🐕",
       "a dog",
-      "birinchi marta"
+      "birinçi marta"
      ],
      [
       "🎯",
@@ -605,17 +605,17 @@
      [
       "🍎",
       "an apple",
-      "unli tovush"
+      "unli tovuş"
      ]
     ]
    },
-   "caption": "<b>a, an yoki the?</b>\n\nArtikl kichik so'z, lekin xatda va essedagi xatolarning katta qismi shu yerda 😅\n\n1. <b>a / an</b>: birinchi marta tilga olinganda: I saw <b>a</b> dog.\n2. <b>the</b>: ikkalamiz biladigan narsa: <b>The</b> dog was big.\n⚠️ <b>an</b> unli tovushdan oldin: <b>an</b> hour, <b>an</b> apple\n❌ Umumiy gapda artikl yo'q: I like <b>music</b>.\n\nSaqlab qo'ying, imtihondan oldin kerak bo'ladi 📌"
+   "caption": "<b>a, an yoki the?</b>\n\nArtikl kiçik söz, lekin xatda va essedagi xatolarning katta qismi şu yerda 😅\n\n1. <b>a / an</b>: birinçi marta tilga olinganda: I saw <b>a</b> dog.\n2. <b>the</b>: ikkalamiz biladigan narsa: <b>The</b> dog was big.\n⚠️ <b>an</b> unli tovuşdan oldin: <b>an</b> hour, <b>an</b> apple\n❌ Umumiy gapda artikl yöq: I like <b>music</b>.\n\nSaqlab qöying, imtihondan oldin kerak böladi 📌"
   },
   {
    "id": "ml_022",
    "pill": "READING",
    "title": "True, False yoki Not Given?",
-   "subtitle": "Eng chalkash savol turini tushunib oling",
+   "subtitle": "Eng çalkaş savol turini tuşunib oling",
    "art": {
     "type": "grid",
     "items": [
@@ -632,16 +632,16 @@
      [
       "🤷",
       "Not Given",
-      "ma'lumot yo'q"
+      "ma'lumot yöq"
      ]
     ]
    },
-   "caption": "<b>True, False yoki Not Given?</b>\n\nFalse bilan Not Given'ni adashtirish eng ko'p uchraydigan xato 🎯\n\nSaqlab qo'ying 📌\n\n✅ <b>True</b>: matnda xuddi shu ma'no bor\n❌ <b>False</b>: matnda <b>teskari</b> ma'no bor\n🤷 <b>Not Given</b>: matnda bu haqda <b>umuman ma'lumot yo'q</b>\n💡 O'z bilimingizga emas, faqat <b>matnga</b> tayaning\n\nDo'stingizga yuboring, u ham Multilevel topshiryaptimi? 👀"
+   "caption": "<b>True, False yoki Not Given?</b>\n\nFalse bilan Not Given'ni adaştiriş eng köp uçraydigan xato 🎯\n\nSaqlab qöying 📌\n\n✅ <b>True</b>: matnda xuddi şu ma'no bor\n❌ <b>False</b>: matnda <b>teskari</b> ma'no bor\n🤷 <b>Not Given</b>: matnda bu haqda <b>umuman ma'lumot yöq</b>\n💡 Öz bilimingizga emas, faqat <b>matnga</b> tayaning\n\nDöstingizga yuboring, u ham Multilevel topşiryaptimi? 👀"
   },
   {
    "id": "ml_023",
    "pill": "WRITING · XAT",
-   "title": "Rasmiy xatni tugatish",
+   "title": "Rasmiy xatni tugatiş",
    "subtitle": "Oxirgi gaplar ham ball beradi",
    "art": {
     "type": "letter",
@@ -663,13 +663,13 @@
      ]
     ]
    },
-   "caption": "<b>Rasmiy xatni tugatish</b>\n\nBoshlanish va tugatish bir-biriga mos bo'lishi kerak: Dear Sir → Yours faithfully ✍️\n\n✅ <b>I look forward to hearing from you.</b>\n✅ <b>Yours faithfully,</b> (Dear Sir or Madam bilan boshlansa)\n✅ <b>Yours sincerely,</b> (ism bilan boshlansa)\n❌ <b>Love</b>, <b>See you soon</b> faqat norasmiy xatda\n\nIzohlarda o'z misolingizni yozing, tekshirib beraman 👇"
+   "caption": "<b>Rasmiy xatni tugatiş</b>\n\nBoşlaniş va tugatiş bir-biriga mos bölişi kerak: Dear Sir → Yours faithfully ✍️\n\n✅ <b>I look forward to hearing from you.</b>\n✅ <b>Yours faithfully,</b> (Dear Sir or Madam bilan boşlansa)\n✅ <b>Yours sincerely,</b> (ism bilan boşlansa)\n❌ <b>Love</b>, <b>See you soon</b> faqat norasmiy xatda\n\nIzohlarda öz misolingizni yozing, tekşirib beraman 👇"
   },
   {
    "id": "ml_024",
    "pill": "SPEAKING · PART 2",
    "title": "2 daqiqa gapira olmayapsizmi?",
-   "subtitle": "Javobni uzaytirishning oson yo'li",
+   "subtitle": "Javobni uzaytirişning oson yöli",
    "art": {
     "type": "steps",
     "items": [
@@ -679,11 +679,11 @@
      ],
      [
       "📍",
-      "Qachon va qayerda?"
+      "Qaçon va qayerda?"
      ],
      [
       "🎬",
-      "Nima bo'ldi?"
+      "Nima böldi?"
      ],
      [
       "❤️",
@@ -691,13 +691,13 @@
      ]
     ]
    },
-   "caption": "<b>2 daqiqa gapira olmayapsizmi?</b>\n\nHar bir savolga shu 4 savol bilan javob bersangiz, 2 daqiqa tez o'tib ketadi ⏱\n\n1. <b>Nima?</b> Mavzuni ayting\n2. <b>Qachon va qayerda?</b> Vaziyatni tasvirlang\n3. <b>Nima bo'ldi?</b> Voqeani gapirib bering\n4. <b>Nima his qildingiz?</b> Fikr va hisni ayting\n\nQaysi biri siz uchun yangi bo'ldi? Izohda yozing 👇"
+   "caption": "<b>2 daqiqa gapira olmayapsizmi?</b>\n\nHar bir savolga şu 4 savol bilan javob bersangiz, 2 daqiqa tez ötib ketadi ⏱\n\n1. <b>Nima?</b> Mavzuni ayting\n2. <b>Qaçon va qayerda?</b> Vaziyatni tasvirlang\n3. <b>Nima böldi?</b> Voqeani gapirib bering\n4. <b>Nima his qildingiz?</b> Fikr va hisni ayting\n\nQaysi biri siz uçun yangi böldi? Izohda yozing 👇"
   },
   {
    "id": "ml_025",
-   "pill": "SO'Z BOYLIGI",
-   "title": "Bog'lovchilar: sabab",
-   "subtitle": "because'dan boshqa nima bor?",
+   "pill": "SÖZ BOYLIGI",
+   "title": "Boğlovçilar: sabab",
+   "subtitle": "because'dan boşqa nima bor?",
    "art": {
     "type": "grid",
     "items": [
@@ -719,17 +719,17 @@
      [
       "➡️",
       "That's why",
-      "shuning uchun"
+      "şuning uçun"
      ]
     ]
    },
-   "caption": "<b>Bog'lovchilar: sabab</b>\n\nBog'lovchilarni almashtirib ishlatish essedagi ballni sezilarli ko'taradi 📈\n\n🔗 <b>because</b> + gap: because it is cheap\n🔗 <b>because of</b> + ot: because of the price\n🔗 <b>since</b> / <b>as</b> + gap (rasmiyroq)\n🔗 <b>That's why</b> ... (shuning uchun ...)\n\nSaqlab qo'ying, imtihondan oldin kerak bo'ladi 📌"
+   "caption": "<b>Boğlovçilar: sabab</b>\n\nBoğlovçilarni almaştirib işlatiş essedagi ballni sezilarli kötaradi 📈\n\n🔗 <b>because</b> + gap: because it is cheap\n🔗 <b>because of</b> + ot: because of the price\n🔗 <b>since</b> / <b>as</b> + gap (rasmiyroq)\n🔗 <b>That's why</b> ... (şuning uçun ...)\n\nSaqlab qöying, imtihondan oldin kerak böladi 📌"
   },
   {
    "id": "ml_026",
    "pill": "LISTENING",
-   "title": "Ma'lumotni to'g'irlash",
-   "subtitle": "Gapiruvchi fikrini o'zgartirsa, ehtiyot bo'ling",
+   "title": "Ma'lumotni töğirlaş",
+   "subtitle": "Gapiruvçi fikrini özgartirsa, ehtiyot böling",
    "art": {
     "type": "bubbles",
     "items": [
@@ -747,13 +747,13 @@
      ]
     ]
    },
-   "caption": "<b>Ma'lumotni to'g'irlash</b>\n\nListening'da birinchi eshitgan javobingiz har doim ham to'g'ri bo'lavermaydi 🎧\n\n⚠️ <b>Actually</b>, ... (aslida ...)\n⚠️ <b>Sorry, I mean</b> ... (kechirasiz, demoqchimanki ...)\n⚠️ <b>No, wait</b> ... (yo'q, to'xtang ...)\n💡 Bunday so'zdan keyin kelgan javob odatda <b>to'g'ri</b> javob\n\nDo'stingizga yuboring, u ham Multilevel topshiryaptimi? 👀"
+   "caption": "<b>Ma'lumotni töğirlaş</b>\n\nListening'da birinçi eşitgan javobingiz har doim ham töğri bölavermaydi 🎧\n\n⚠️ <b>Actually</b>, ... (aslida ...)\n⚠️ <b>Sorry, I mean</b> ... (keçirasiz, demoqçimanki ...)\n⚠️ <b>No, wait</b> ... (yöq, töxtang ...)\n💡 Bunday sözdan keyin kelgan javob odatda <b>töğri</b> javob\n\nDöstingizga yuboring, u ham Multilevel topşiryaptimi? 👀"
   },
   {
    "id": "ml_027",
    "pill": "WRITING · ESSE",
    "title": "Asosiy paragraf formulasi",
-   "subtitle": "Har bir paragrafda 3 qism bo'lsin",
+   "subtitle": "Har bir paragrafda 3 qism bölsin",
    "art": {
     "type": "steps",
     "items": [
@@ -764,7 +764,7 @@
      ],
      [
       "🔍",
-      "Tushuntirish",
+      "Tuşuntiriş",
       "This is because ..."
      ],
      [
@@ -774,13 +774,13 @@
      ]
     ]
    },
-   "caption": "<b>Asosiy paragraf formulasi</b>\n\nFikr + tushuntirish + misol. Shu formula essedagi har qanday paragrafga ishlaydi ✍️\n\n1. <b>Asosiy gap</b>: Firstly, ... (bu paragraf nima haqida)\n2. <b>Tushuntirish</b>: This is because ...\n3. <b>Misol</b>: For example, ...\n💡 Bitta paragrafda faqat <b>bitta fikr</b>\n\nIzohlarda o'z misolingizni yozing, tekshirib beraman 👇"
+   "caption": "<b>Asosiy paragraf formulasi</b>\n\nFikr + tuşuntiriş + misol. Şu formula essedagi har qanday paragrafga işlaydi ✍️\n\n1. <b>Asosiy gap</b>: Firstly, ... (bu paragraf nima haqida)\n2. <b>Tuşuntiriş</b>: This is because ...\n3. <b>Misol</b>: For example, ...\n💡 Bitta paragrafda faqat <b>bitta fikr</b>\n\nIzohlarda öz misolingizni yozing, tekşirib beraman 👇"
   },
   {
    "id": "ml_028",
    "pill": "GRAMMATIKA",
    "title": "used to",
-   "subtitle": "O'tmishdagi odatlar haqida gapirish",
+   "subtitle": "Ötmişdagi odatlar haqida gapiriş",
    "art": {
     "type": "versus",
     "left": {
@@ -812,13 +812,13 @@
      "mark": "▶️"
     }
    },
-   "caption": "<b>used to</b>\n\nIzohda used to bilan bolaligingiz haqida bitta gap yozing 👇\n\n✅ I <b>used to</b> play football every day. (endi o'ynamayman)\n❓ <b>Did you use to</b> live in a village?\n❌ I <b>didn't use to</b> like vegetables.\n💡 Speaking'da bolaligingiz haqida so'rashsa, juda qo'l keladi\n\nQaysi biri siz uchun yangi bo'ldi? Izohda yozing 👇"
+   "caption": "<b>used to</b>\n\nIzohda used to bilan bolaligingiz haqida bitta gap yozing 👇\n\n✅ I <b>used to</b> play football every day. (endi öynamayman)\n❓ <b>Did you use to</b> live in a village?\n❌ I <b>didn't use to</b> like vegetables.\n💡 Speaking'da bolaligingiz haqida söraşsa, juda qöl keladi\n\nQaysi biri siz uçun yangi böldi? Izohda yozing 👇"
   },
   {
    "id": "ml_029",
    "pill": "SPEAKING · PART 1",
-   "title": "Vaqt yutish iboralari",
-   "subtitle": "O'ylash uchun bir necha soniya kerak bo'lsa",
+   "title": "Vaqt yutiş iboralari",
+   "subtitle": "Öylaş uçun bir neça soniya kerak bölsa",
    "art": {
     "type": "bubbles",
     "items": [
@@ -836,19 +836,19 @@
      ]
     ]
    },
-   "caption": "<b>Vaqt yutish iboralari</b>\n\nJim turishdan ko'ra shu iboralardan birini aytish yaxshiroq. Lekin har savolda emas 😉\n\n💬 <b>That's an interesting question.</b>\n💬 <b>Let me think for a second.</b>\n💬 <b>I've never really thought about it, but</b> ...\n❌ Uzoq <b>jim turish</b> yoki <b>eee...</b> deyish\n\nSaqlab qo'ying, imtihondan oldin kerak bo'ladi 📌"
+   "caption": "<b>Vaqt yutiş iboralari</b>\n\nJim turişdan köra şu iboralardan birini aytiş yaxşiroq. Lekin har savolda emas 😉\n\n💬 <b>That's an interesting question.</b>\n💬 <b>Let me think for a second.</b>\n💬 <b>I've never really thought about it, but</b> ...\n❌ Uzoq <b>jim turiş</b> yoki <b>eee...</b> deyiş\n\nSaqlab qöying, imtihondan oldin kerak böladi 📌"
   },
   {
    "id": "ml_030",
    "pill": "READING",
-   "title": "Sarlavhani tanlash",
-   "subtitle": "Paragrafga sarlavha topishning sirri",
+   "title": "Sarlavhani tanlaş",
+   "subtitle": "Paragrafga sarlavha topişning sirri",
    "art": {
     "type": "steps",
     "items": [
      [
       "👀",
-      "Birinchi va oxirgi gap"
+      "Birinçi va oxirgi gap"
      ],
      [
       "💭",
@@ -860,20 +860,20 @@
      ]
     ]
    },
-   "caption": "<b>Sarlavhani tanlash</b>\n\nSarlavha butun paragrafning ma'nosini aytadi, bitta detalni emas 🎯\n\n1. Paragrafning <b>birinchi va oxirgi gapini</b> o'qing\n2. Asosiy fikrni o'zingizga <b>bir gap</b> bilan ayting\n3. Unga eng yaqin sarlavhani tanlang\n⚠️ Matndagi so'z sarlavhada aynan bo'lsa, bu <b>tuzoq</b> bo'lishi mumkin\n\nDo'stingizga yuboring, u ham Multilevel topshiryaptimi? 👀"
+   "caption": "<b>Sarlavhani tanlaş</b>\n\nSarlavha butun paragrafning ma'nosini aytadi, bitta detalni emas 🎯\n\n1. Paragrafning <b>birinçi va oxirgi gapini</b> öqing\n2. Asosiy fikrni özingizga <b>bir gap</b> bilan ayting\n3. Unga eng yaqin sarlavhani tanlang\n⚠️ Matndagi söz sarlavhada aynan bölsa, bu <b>tuzoq</b> bölişi mumkin\n\nDöstingizga yuboring, u ham Multilevel topşiryaptimi? 👀"
   },
   {
    "id": "ml_031",
-   "pill": "SO'Z BOYLIGI",
+   "pill": "SÖZ BOYLIGI",
    "title": "Ta'lim mavzusi",
-   "subtitle": "Speaking va essedagi eng mashhur mavzu",
+   "subtitle": "Speaking va essedagi eng maşhur mavzu",
    "art": {
     "type": "grid",
     "items": [
      [
       "💵",
       "tuition fees",
-      "o'qish to'lovi"
+      "öqiş tölovi"
      ],
      [
       "🎓",
@@ -892,12 +892,12 @@
      ]
     ]
    },
-   "caption": "<b>Ta'lim mavzusi</b>\n\nShu so'zlar bilan izohda o'zingiz haqingizda bitta gap yozing 👇\n\n📚 <b>tuition fees</b> = o'qish to'lovi\n🎓 <b>higher education</b> = oliy ta'lim\n💻 <b>distance learning</b> = masofaviy ta'lim\n📝 <b>to graduate from</b> = ... ni tamomlamoq\n\nIzohlarda o'z misolingizni yozing, tekshirib beraman 👇"
+   "caption": "<b>Ta'lim mavzusi</b>\n\nŞu sözlar bilan izohda özingiz haqingizda bitta gap yozing 👇\n\n📚 <b>tuition fees</b> = öqiş tölovi\n🎓 <b>higher education</b> = oliy ta'lim\n💻 <b>distance learning</b> = masofaviy ta'lim\n📝 <b>to graduate from</b> = ... ni tamomlamoq\n\nIzohlarda öz misolingizni yozing, tekşirib beraman 👇"
   },
   {
    "id": "ml_032",
    "pill": "SPEAKING · PART 3",
-   "title": "Fikrni kuchaytirish",
+   "title": "Fikrni kuçaytiriş",
    "subtitle": "Asos va misol bilan gapiring",
    "art": {
     "type": "steps",
@@ -919,13 +919,13 @@
      ]
     ]
    },
-   "caption": "<b>Fikrni kuchaytirish</b>\n\nFikr + sabab + misol. Speaking'ning oxirgi qismida eng ko'p ball beradigan formula 💪\n\n1. Fikr: <b>I believe</b> online learning <b>is useful</b>\n2. Sabab: <b>because</b> it saves time\n3. Misol: <b>For instance</b>, my brother studies while travelling\n💡 Faqat fikr aytish yetmaydi, <b>nega</b> ekanini ko'rsating\n\nQaysi biri siz uchun yangi bo'ldi? Izohda yozing 👇"
+   "caption": "<b>Fikrni kuçaytiriş</b>\n\nFikr + sabab + misol. Speaking'ning oxirgi qismida eng köp ball beradigan formula 💪\n\n1. Fikr: <b>I believe</b> online learning <b>is useful</b>\n2. Sabab: <b>because</b> it saves time\n3. Misol: <b>For instance</b>, my brother studies while travelling\n💡 Faqat fikr aytiş yetmaydi, <b>nega</b> ekanini körsating\n\nQaysi biri siz uçun yangi böldi? Izohda yozing 👇"
   },
   {
    "id": "ml_033",
    "pill": "WRITING · XAT",
-   "title": "Xat uchun so'z soni",
-   "subtitle": "Ko'p yozish ham, kam yozish ham zarar",
+   "title": "Xat uçun söz soni",
+   "subtitle": "Köp yoziş ham, kam yoziş ham zarar",
    "art": {
     "type": "versus",
     "left": {
@@ -937,12 +937,12 @@
       ],
       [
        "📈",
-       "juda ko'p"
+       "juda köp"
       ]
      ]
     },
     "right": {
-     "head": "To'g'ri",
+     "head": "Töğri",
      "items": [
       [
        "🎯",
@@ -950,17 +950,17 @@
       ],
       [
        "🔢",
-       "sanab mashq qiling"
+       "sanab maşq qiling"
       ]
      ]
     }
    },
-   "caption": "<b>Xat uchun so'z soni</b>\n\nBir qatorda taxminan nechta so'z yozasiz? Shuni bilsangiz, imtihonda sanash shart bo'lmaydi 📏\n\n⚠️ Kam yozsangiz, savollarga <b>to'liq javob bera olmaysiz</b>\n⚠️ Juda ko'p yozsangiz, <b>xato</b> ko'payadi va <b>vaqt</b> yetmaydi\n✅ Topshiriqda berilgan so'z sonini <b>aniq kuzating</b>\n💡 Mashqda so'zlarni sanab, o'z hajmingizni his qiling\n\nSaqlab qo'ying, imtihondan oldin kerak bo'ladi 📌"
+   "caption": "<b>Xat uçun söz soni</b>\n\nBir qatorda taxminan neçta söz yozasiz? Şuni bilsangiz, imtihonda sanaş şart bölmaydi 📏\n\n⚠️ Kam yozsangiz, savollarga <b>töliq javob bera olmaysiz</b>\n⚠️ Juda köp yozsangiz, <b>xato</b> köpayadi va <b>vaqt</b> yetmaydi\n✅ Topşiriqda berilgan söz sonini <b>aniq kuzating</b>\n💡 Maşqda sözlarni sanab, öz hajmingizni his qiling\n\nSaqlab qöying, imtihondan oldin kerak böladi 📌"
   },
   {
    "id": "ml_034",
    "pill": "GRAMMATIKA",
-   "title": "Shart gaplar: if",
+   "title": "Şart gaplar: if",
    "subtitle": "Ikki eng kerakli tur",
    "art": {
     "type": "grid",
@@ -977,13 +977,13 @@
      ]
     ]
    },
-   "caption": "<b>Shart gaplar: if</b>\n\nIzohda yozing: If I had a million dollars, I would ... 👇\n\n1. <b>Real</b>: If it <b>rains</b>, I <b>will</b> stay at home.\n2. <b>Xayoliy</b>: If I <b>had</b> money, I <b>would</b> travel.\n❌ If I <b>will</b> have time ... deb aytmang\n💡 Speaking'da \"what would you do if ...\" savollari juda ko'p\n\nDo'stingizga yuboring, u ham Multilevel topshiryaptimi? 👀"
+   "caption": "<b>Şart gaplar: if</b>\n\nIzohda yozing: If I had a million dollars, I would ... 👇\n\n1. <b>Real</b>: If it <b>rains</b>, I <b>will</b> stay at home.\n2. <b>Xayoliy</b>: If I <b>had</b> money, I <b>would</b> travel.\n❌ If I <b>will</b> have time ... deb aytmang\n💡 Speaking'da \"what would you do if ...\" savollari juda köp\n\nDöstingizga yuboring, u ham Multilevel topşiryaptimi? 👀"
   },
   {
    "id": "ml_035",
    "pill": "LISTENING",
    "title": "Imlo muhim!",
-   "subtitle": "To'g'ri eshitib, noto'g'ri yozish ham xato",
+   "subtitle": "Töğri eşitib, notöğri yoziş ham xato",
    "art": {
     "type": "grid",
     "items": [
@@ -1000,11 +1000,11 @@
      [
       "✅",
       "Wednesday",
-      "imloni tekshiring"
+      "imloni tekşiring"
      ]
     ]
    },
-   "caption": "<b>Imlo muhim!</b>\n\nBitta harf xato bo'lsa ham javob xato hisoblanadi 😬\n\nIngliz alifbosini tez aytish mashqini qiling 🔤\n\n⚠️ Ismlar harflab aytiladi: <b>B-R-O-W-N</b>\n⚠️ <b>double L</b> = LL\n✅ Ko'p uchraydigan so'zlar: <b>accommodation</b>, <b>library</b>, <b>Wednesday</b>\n💡 Javobni yozgach, <b>imlosini tekshiring</b>\n\nIzohlarda o'z misolingizni yozing, tekshirib beraman 👇"
+   "caption": "<b>Imlo muhim!</b>\n\nBitta harf xato bölsa ham javob xato hisoblanadi 😬\n\nIngliz alifbosini tez aytiş maşqini qiling 🔤\n\n⚠️ Ismlar harflab aytiladi: <b>B-R-O-W-N</b>\n⚠️ <b>double L</b> = LL\n✅ Köp uçraydigan sözlar: <b>accommodation</b>, <b>library</b>, <b>Wednesday</b>\n💡 Javobni yozgaç, <b>imlosini tekşiring</b>\n\nIzohlarda öz misolingizni yozing, tekşirib beraman 👇"
   },
   {
    "id": "ml_036",
@@ -1020,21 +1020,21 @@
      ],
      [
       "✍️",
-      "To'g'risini yozing"
+      "Töğrisini yozing"
      ],
      [
       "🔁",
-      "Har hafta qayta o'qing"
+      "Har hafta qayta öqing"
      ]
     ]
    },
-   "caption": "<b>Xatolar daftari</b>\n\nBu oddiy odat ballingizni boshqa har qanday kitobdan tezroq ko'taradi 📈\n\n📒 Har mashqdan keyin xatolaringizni <b>daftarga</b> yozing\n✍️ Yonida <b>to'g'ri variantni</b> yozing\n🔁 Har hafta oxirida daftarni <b>qayta o'qing</b>\n💡 Eng ko'p takrorlanadigan xato = eng birinchi o'rganiladigan mavzu\n\nQaysi biri siz uchun yangi bo'ldi? Izohda yozing 👇"
+   "caption": "<b>Xatolar daftari</b>\n\nBu oddiy odat ballingizni boşqa har qanday kitobdan tezroq kötaradi 📈\n\n📒 Har maşqdan keyin xatolaringizni <b>daftarga</b> yozing\n✍️ Yonida <b>töğri variantni</b> yozing\n🔁 Har hafta oxirida daftarni <b>qayta öqing</b>\n💡 Eng köp takrorlanadigan xato = eng birinçi örganiladigan mavzu\n\nQaysi biri siz uçun yangi böldi? Izohda yozing 👇"
   },
   {
    "id": "ml_037",
    "pill": "WRITING · ESSE",
    "title": "Esse xulosasi",
-   "subtitle": "Yangi fikr qo'shmang",
+   "subtitle": "Yangi fikr qöşmang",
    "art": {
     "type": "versus",
     "left": {
@@ -1059,18 +1059,18 @@
       ],
       [
        "🔄",
-       "fikrni qaytarish"
+       "fikrni qaytariş"
       ]
      ]
     }
    },
-   "caption": "<b>Esse xulosasi</b>\n\nXulosa 2–3 gapdan oshmasin. Uning vazifasi faqat aytganlaringizni yakunlash ✍️\n\n✅ <b>In conclusion</b>, / <b>To sum up</b>, bilan boshlang\n✅ Fikringizni <b>boshqa so'zlar</b> bilan qaytaring\n✅ Asosiy sabablarni <b>qisqacha</b> eslating\n❌ Xulosada <b>yangi fikr</b> yoki <b>yangi misol</b> keltirmang\n\nSaqlab qo'ying, imtihondan oldin kerak bo'ladi 📌"
+   "caption": "<b>Esse xulosasi</b>\n\nXulosa 2–3 gapdan oşmasin. Uning vazifasi faqat aytganlaringizni yakunlaş ✍️\n\n✅ <b>In conclusion</b>, / <b>To sum up</b>, bilan boşlang\n✅ Fikringizni <b>boşqa sözlar</b> bilan qaytaring\n✅ Asosiy sabablarni <b>qisqaça</b> eslating\n❌ Xulosada <b>yangi fikr</b> yoki <b>yangi misol</b> keltirmang\n\nSaqlab qöying, imtihondan oldin kerak böladi 📌"
   },
   {
    "id": "ml_038",
-   "pill": "SO'Z BOYLIGI",
+   "pill": "SÖZ BOYLIGI",
    "title": "Texnologiya mavzusi",
-   "subtitle": "Har imtihonda chiqadigan mavzu",
+   "subtitle": "Har imtihonda çiqadigan mavzu",
    "art": {
     "type": "grid",
     "items": [
@@ -1096,13 +1096,13 @@
      ]
     ]
    },
-   "caption": "<b>Texnologiya mavzusi</b>\n\nKuniga qancha screen time'ingiz bor? Izohda yozing 👇\n\n📱 <b>addicted to</b> = ... ga qaram\n🌐 <b>social media</b> = ijtimoiy tarmoqlar\n🤖 <b>artificial intelligence</b> = sun'iy intellekt\n⏳ <b>screen time</b> = ekranda o'tkazilgan vaqt\n\nDo'stingizga yuboring, u ham Multilevel topshiryaptimi? 👀"
+   "caption": "<b>Texnologiya mavzusi</b>\n\nKuniga qança screen time'ingiz bor? Izohda yozing 👇\n\n📱 <b>addicted to</b> = ... ga qaram\n🌐 <b>social media</b> = ijtimoiy tarmoqlar\n🤖 <b>artificial intelligence</b> = sun'iy intellekt\n⏳ <b>screen time</b> = ekranda ötkazilgan vaqt\n\nDöstingizga yuboring, u ham Multilevel topşiryaptimi? 👀"
   },
   {
    "id": "ml_039",
    "pill": "SPEAKING · PART 2",
-   "title": "Hikoya uchun o'tgan zamon",
-   "subtitle": "Voqea aytganda zamonni almashtirmang",
+   "title": "Hikoya uçun ötgan zamon",
+   "subtitle": "Voqea aytganda zamonni almaştirmang",
    "art": {
     "type": "versus",
     "left": {
@@ -1119,7 +1119,7 @@
      ]
     },
     "right": {
-     "head": "To'g'ri",
+     "head": "Töğri",
      "items": [
       [
        "👍",
@@ -1132,13 +1132,13 @@
      ]
     }
    },
-   "caption": "<b>Hikoya uchun o'tgan zamon</b>\n\nO'tgan zamonni noto'g'ri ishlatish Speaking'dagi grammatika ballini tushiradi 📉\n\nIzohda o'tgan hafta nima qilganingizni 2 gapda yozing 👇\n\n✅ Last summer I <b>went</b> to Samarkand.\n✅ While we <b>were walking</b>, it <b>started</b> to rain.\n❌ Yesterday I <b>go</b> to the park.\n💡 Gapirayotganda <b>zamonga e'tibor bering</b>\n\nIzohlarda o'z misolingizni yozing, tekshirib beraman 👇"
+   "caption": "<b>Hikoya uçun ötgan zamon</b>\n\nÖtgan zamonni notöğri işlatiş Speaking'dagi grammatika ballini tuşiradi 📉\n\nIzohda ötgan hafta nima qilganingizni 2 gapda yozing 👇\n\n✅ Last summer I <b>went</b> to Samarkand.\n✅ While we <b>were walking</b>, it <b>started</b> to rain.\n❌ Yesterday I <b>go</b> to the park.\n💡 Gapirayotganda <b>zamonga e'tibor bering</b>\n\nIzohlarda öz misolingizni yozing, tekşirib beraman 👇"
   },
   {
    "id": "ml_040",
    "pill": "READING",
-   "title": "Bo'sh joyni to'ldirish",
-   "subtitle": "Gap ichida qaysi so'z yetishmayapti?",
+   "title": "Böş joyni töldiriş",
+   "subtitle": "Gap içida qaysi söz yetişmayapti?",
    "art": {
     "type": "grid",
     "items": [
@@ -1154,13 +1154,13 @@
      ]
     ]
    },
-   "caption": "<b>Bo'sh joyni to'ldirish</b>\n\nGrammatikani bilish Reading'da ham ball beradi 🎯\n\n1. Bo'sh joydan oldin <b>a/an</b> bo'lsa, keyin <b>ot</b> keladi\n2. Bo'sh joydan oldin <b>to</b> bo'lsa, ko'pincha <b>fe'l</b> keladi\n3. Gapni to'liq o'qing, <b>ma'no</b> mos kelsin\n💡 Javobni qo'ygach, gapni <b>qayta o'qib</b> tekshiring\n\nQaysi biri siz uchun yangi bo'ldi? Izohda yozing 👇"
+   "caption": "<b>Böş joyni töldiriş</b>\n\nGrammatikani biliş Reading'da ham ball beradi 🎯\n\n1. Böş joydan oldin <b>a/an</b> bölsa, keyin <b>ot</b> keladi\n2. Böş joydan oldin <b>to</b> bölsa, köpinça <b>fe'l</b> keladi\n3. Gapni töliq öqing, <b>ma'no</b> mos kelsin\n💡 Javobni qöygaç, gapni <b>qayta öqib</b> tekşiring\n\nQaysi biri siz uçun yangi böldi? Izohda yozing 👇"
   },
   {
    "id": "ml_041",
    "pill": "GRAMMATIKA",
    "title": "Majhul nisbat",
-   "subtitle": "Passive: ish kim tomonidan emas, nima bo'lgani muhim",
+   "subtitle": "Passive: iş kim tomonidan emas, nima bölgani muhim",
    "art": {
     "type": "grid",
     "items": [
@@ -1181,7 +1181,7 @@
      ]
     ]
    },
-   "caption": "<b>Majhul nisbat</b>\n\nEssede passive gaplar yozuvingizni rasmiyroq qiladi ✍️\n\n✅ The bridge <b>was built</b> in 1990.\n✅ English <b>is spoken</b> all over the world.\n🔧 Formula: <b>be</b> + <b>3-shakl</b> (V3)\n💡 Rasmiy xat va essede juda foydali\n\nSaqlab qo'ying, imtihondan oldin kerak bo'ladi 📌"
+   "caption": "<b>Majhul nisbat</b>\n\nEssede passive gaplar yozuvingizni rasmiyroq qiladi ✍️\n\n✅ The bridge <b>was built</b> in 1990.\n✅ English <b>is spoken</b> all over the world.\n🔧 Formula: <b>be</b> + <b>3-şakl</b> (V3)\n💡 Rasmiy xat va essede juda foydali\n\nSaqlab qöying, imtihondan oldin kerak böladi 📌"
   },
   {
    "id": "ml_042",
@@ -1205,13 +1205,13 @@
      ]
     ]
    },
-   "caption": "<b>Sevimli narsa haqida</b>\n\nSevimli taomingiz qaysi? Shu 3 ta ibora bilan izohda javob bering 👇\n\n1. <b>My favourite</b> ... <b>is</b> ...\n2. <b>I've liked it since</b> I was a child.\n3. <b>What I love most about it is</b> ...\n💡 Javobga <b>shaxsiy tajriba</b> qo'shing\n\nDo'stingizga yuboring, u ham Multilevel topshiryaptimi? 👀"
+   "caption": "<b>Sevimli narsa haqida</b>\n\nSevimli taomingiz qaysi? Şu 3 ta ibora bilan izohda javob bering 👇\n\n1. <b>My favourite</b> ... <b>is</b> ...\n2. <b>I've liked it since</b> I was a child.\n3. <b>What I love most about it is</b> ...\n💡 Javobga <b>şaxsiy tajriba</b> qöşing\n\nDöstingizga yuboring, u ham Multilevel topşiryaptimi? 👀"
   },
   {
    "id": "ml_043",
    "pill": "LISTENING",
-   "title": "Chalg'ituvchi javoblar",
-   "subtitle": "Audio'da hamma variant eshitiladi",
+   "title": "Çalğituvçi javoblar",
+   "subtitle": "Audio'da hamma variant eşitiladi",
    "art": {
     "type": "bubbles",
     "items": [
@@ -1229,13 +1229,13 @@
      ]
     ]
    },
-   "caption": "<b>Chalg'ituvchi javoblar</b>\n\n\"but\" so'zidan keyin javob ko'pincha o'zgaradi 🎧\n\n⚠️ Audio'da ko'pincha <b>barcha variantlar</b> tilga olinadi\n✅ Qaysi biri <b>rad etilganini</b> kuzating\n✅ <b>but</b>, <b>however</b>, <b>unfortunately</b> so'zlariga diqqat\n💡 Birinchi eshitganingizni darrov belgilamang\n\nIzohlarda o'z misolingizni yozing, tekshirib beraman 👇"
+   "caption": "<b>Çalğituvçi javoblar</b>\n\n\"but\" sözidan keyin javob köpinça özgaradi 🎧\n\n⚠️ Audio'da köpinça <b>barça variantlar</b> tilga olinadi\n✅ Qaysi biri <b>rad etilganini</b> kuzating\n✅ <b>but</b>, <b>however</b>, <b>unfortunately</b> sözlariga diqqat\n💡 Birinçi eşitganingizni darrov belgilamang\n\nIzohlarda öz misolingizni yozing, tekşirib beraman 👇"
   },
   {
    "id": "ml_044",
    "pill": "WRITING · XAT",
-   "title": "Shikoyat xati",
-   "subtitle": "Rasmiy xatning eng ko'p uchraydigan turi",
+   "title": "Şikoyat xati",
+   "subtitle": "Rasmiy xatning eng köp uçraydigan turi",
    "art": {
     "type": "letter",
     "lines": [
@@ -1259,30 +1259,30 @@
      ]
     ]
    },
-   "caption": "<b>Shikoyat xati</b>\n\nMuammo + tafsilot + talab. Shikoyat xati tayyor ✍️\n\n1. Muammo: <b>I am writing to complain about</b> ...\n2. Tafsilot: <b>The problem is that</b> ...\n3. Talab: <b>I would like you to</b> ...\n💡 Muloyim lekin aniq bo'ling, <b>qo'pol</b> so'z ishlatmang\n\nQaysi biri siz uchun yangi bo'ldi? Izohda yozing 👇"
+   "caption": "<b>Şikoyat xati</b>\n\nMuammo + tafsilot + talab. Şikoyat xati tayyor ✍️\n\n1. Muammo: <b>I am writing to complain about</b> ...\n2. Tafsilot: <b>The problem is that</b> ...\n3. Talab: <b>I would like you to</b> ...\n💡 Muloyim lekin aniq böling, <b>qöpol</b> söz işlatmang\n\nQaysi biri siz uçun yangi böldi? Izohda yozing 👇"
   },
   {
    "id": "ml_045",
-   "pill": "SO'Z BOYLIGI",
+   "pill": "SÖZ BOYLIGI",
    "title": "Atrof-muhit mavzusi",
-   "subtitle": "Essedagi eng mashhur mavzulardan biri",
+   "subtitle": "Essedagi eng maşhur mavzulardan biri",
    "art": {
     "type": "grid",
     "items": [
      [
       "🏭",
       "pollution",
-      "ifloslanish"
+      "ifloslaniş"
      ],
      [
       "♻️",
       "recycle",
-      "qayta ishlash"
+      "qayta işlaş"
      ],
      [
       "🌡",
       "climate change",
-      "iqlim o'zgarishi"
+      "iqlim özgarişi"
      ],
      [
       "🚌",
@@ -1291,13 +1291,13 @@
      ]
     ]
    },
-   "caption": "<b>Atrof-muhit mavzusi</b>\n\nShaharingizdagi eng katta ekologik muammo nima? Izohda inglizcha yozing 👇\n\n🌍 <b>pollution</b> = ifloslanish\n♻️ <b>recycle</b> = qayta ishlash\n🌡 <b>climate change</b> = iqlim o'zgarishi\n🚗 <b>public transport</b> = jamoat transporti\n\nSaqlab qo'ying, imtihondan oldin kerak bo'ladi 📌"
+   "caption": "<b>Atrof-muhit mavzusi</b>\n\nŞaharingizdagi eng katta ekologik muammo nima? Izohda inglizça yozing 👇\n\n🌍 <b>pollution</b> = ifloslaniş\n♻️ <b>recycle</b> = qayta işlaş\n🌡 <b>climate change</b> = iqlim özgarişi\n🚗 <b>public transport</b> = jamoat transporti\n\nSaqlab qöying, imtihondan oldin kerak böladi 📌"
   },
   {
    "id": "ml_046",
    "pill": "SPEAKING · PART 3",
-   "title": "Rozi emasligingizni aytish",
-   "subtitle": "Muloyim tarzda qarshi fikr bildiring",
+   "title": "Rozi emasligingizni aytiş",
+   "subtitle": "Muloyim tarzda qarşi fikr bildiring",
    "art": {
     "type": "bubbles",
     "items": [
@@ -1315,13 +1315,13 @@
      ]
     ]
    },
-   "caption": "<b>Rozi emasligingizni aytish</b>\n\nMuloyim ohangda qarshi fikr bildirish ham til darajasini ko'rsatadi 💬\n\n💬 <b>I see your point, but</b> ...\n💬 <b>That may be true, however</b> ...\n💬 <b>I'm not sure I agree, because</b> ...\n❌ <b>You are wrong</b> deb aytmang\n\nDo'stingizga yuboring, u ham Multilevel topshiryaptimi? 👀"
+   "caption": "<b>Rozi emasligingizni aytiş</b>\n\nMuloyim ohangda qarşi fikr bildiriş ham til darajasini körsatadi 💬\n\n💬 <b>I see your point, but</b> ...\n💬 <b>That may be true, however</b> ...\n💬 <b>I'm not sure I agree, because</b> ...\n❌ <b>You are wrong</b> deb aytmang\n\nDöstingizga yuboring, u ham Multilevel topşiryaptimi? 👀"
   },
   {
    "id": "ml_047",
    "pill": "TAYYORGARLIK",
    "title": "Imtihon kuni",
-   "subtitle": "Shu narsalarni unutmang",
+   "subtitle": "Şu narsalarni unutmang",
    "art": {
     "type": "grid",
     "items": [
@@ -1335,15 +1335,15 @@
      ],
      [
       "😴",
-      "Yaxshi uxlang"
+      "Yaxşi uxlang"
      ],
      [
       "💧",
-      "Suv va nonushta"
+      "Suv va nonuşta"
      ]
     ]
    },
-   "caption": "<b>Imtihon kuni</b>\n\nKo'p narsa bilimga emas, imtihon kunidagi holatingizga ham bog'liq 🙌\n\nImtihoningiz qachon? Izohda yozing, omad tilaymiz 🍀\n\n🪪 <b>Pasport</b> va ro'yxatdan o'tganlik ma'lumoti\n⏰ Imtihon joyiga <b>erta boring</b>\n😴 Oldingi kecha <b>yaxshi uxlang</b>, kechgacha o'tirmang\n💧 Suv iching, yengil <b>nonushta</b> qiling\n\nIzohlarda o'z misolingizni yozing, tekshirib beraman 👇"
+   "caption": "<b>Imtihon kuni</b>\n\nKöp narsa bilimga emas, imtihon kunidagi holatingizga ham boğliq 🙌\n\nImtihoningiz qaçon? Izohda yozing, omad tilaymiz 🍀\n\n🪪 <b>Pasport</b> va röyxatdan ötganlik ma'lumoti\n⏰ Imtihon joyiga <b>erta boring</b>\n😴 Oldingi keça <b>yaxşi uxlang</b>, keçgaça ötirmang\n💧 Suv içing, yengil <b>nonuşta</b> qiling\n\nIzohlarda öz misolingizni yozing, tekşirib beraman 👇"
   },
   {
    "id": "ml_048",
@@ -1381,19 +1381,19 @@
      "mark": "🔁"
     }
    },
-   "caption": "<b>Present Perfect yoki Past Simple?</b>\n\nIzohda yozing: Have you ever ...? savoliga bitta javob 👇\n\n✅ I <b>visited</b> Bukhara <b>last year</b>. (vaqt aniq)\n✅ I <b>have visited</b> Bukhara <b>twice</b>. (vaqt aytilmagan)\n⚠️ <b>yesterday</b>, <b>in 2020</b>, <b>ago</b> → Past Simple\n⚠️ <b>ever</b>, <b>never</b>, <b>already</b>, <b>yet</b> → Present Perfect\n\nQaysi biri siz uchun yangi bo'ldi? Izohda yozing 👇"
+   "caption": "<b>Present Perfect yoki Past Simple?</b>\n\nIzohda yozing: Have you ever ...? savoliga bitta javob 👇\n\n✅ I <b>visited</b> Bukhara <b>last year</b>. (vaqt aniq)\n✅ I <b>have visited</b> Bukhara <b>twice</b>. (vaqt aytilmagan)\n⚠️ <b>yesterday</b>, <b>in 2020</b>, <b>ago</b> → Past Simple\n⚠️ <b>ever</b>, <b>never</b>, <b>already</b>, <b>yet</b> → Present Perfect\n\nQaysi biri siz uçun yangi böldi? Izohda yozing 👇"
   },
   {
    "id": "ml_049",
    "pill": "READING",
-   "title": "Ko'p tanlovli savollar",
-   "subtitle": "To'rtta variantdan to'g'risini topish",
+   "title": "Köp tanlovli savollar",
+   "subtitle": "Törtta variantdan töğrisini topiş",
    "art": {
     "type": "steps",
     "items": [
      [
       "❓",
-      "Avval savolni o'qing"
+      "Avval savolni öqing"
      ],
      [
       "🔍",
@@ -1401,17 +1401,17 @@
      ],
      [
       "✂️",
-      "Xato variantlarni o'chiring"
+      "Xato variantlarni öçiring"
      ]
     ]
    },
-   "caption": "<b>Ko'p tanlovli savollar</b>\n\nNoto'g'ri variantlarni chiqarib tashlash to'g'risini topishdan osonroq 🎯\n\n1. Avval savolni o'qing, variantlarni <b>keyin</b>\n2. Matndan javob joyini toping\n3. Aniq <b>noto'g'ri</b> variantlarni chiqarib tashlang\n⚠️ <b>always</b>, <b>never</b>, <b>only</b> so'zlari bor variant ko'pincha xato\n\nSaqlab qo'ying, imtihondan oldin kerak bo'ladi 📌"
+   "caption": "<b>Köp tanlovli savollar</b>\n\nNotöğri variantlarni çiqarib taşlaş töğrisini topişdan osonroq 🎯\n\n1. Avval savolni öqing, variantlarni <b>keyin</b>\n2. Matndan javob joyini toping\n3. Aniq <b>notöğri</b> variantlarni çiqarib taşlang\n⚠️ <b>always</b>, <b>never</b>, <b>only</b> sözlari bor variant köpinça xato\n\nSaqlab qöying, imtihondan oldin kerak böladi 📌"
   },
   {
    "id": "ml_050",
    "pill": "WRITING · ESSE",
-   "title": "Esseda misol keltirish",
-   "subtitle": "Misolsiz fikr kuchsiz ko'rinadi",
+   "title": "Esseda misol keltiriş",
+   "subtitle": "Misolsiz fikr kuçsiz körinadi",
    "art": {
     "type": "grid",
     "items": [
@@ -1429,12 +1429,12 @@
      ]
     ]
    },
-   "caption": "<b>Esseda misol keltirish</b>\n\nO'zbekistondan misol keltirsangiz ham bo'ladi, asosiysi mavzuga mos bo'lsin ✍️\n\n💬 <b>For example</b>, ...\n💬 <b>For instance</b>, ...\n💬 <b>such as</b> + ot: such as <b>buses and trains</b>\n💡 Misol <b>hayotiy</b> va mavzuga <b>aniq mos</b> bo'lsin\n\nDo'stingizga yuboring, u ham Multilevel topshiryaptimi? 👀"
+   "caption": "<b>Esseda misol keltiriş</b>\n\nÖzbekistondan misol keltirsangiz ham böladi, asosiysi mavzuga mos bölsin ✍️\n\n💬 <b>For example</b>, ...\n💬 <b>For instance</b>, ...\n💬 <b>such as</b> + ot: such as <b>buses and trains</b>\n💡 Misol <b>hayotiy</b> va mavzuga <b>aniq mos</b> bölsin\n\nDöstingizga yuboring, u ham Multilevel topşiryaptimi? 👀"
   },
   {
    "id": "ml_051",
    "pill": "SPEAKING · PART 2",
-   "title": "Rasmni tasvirlash",
+   "title": "Rasmni tasvirlaş",
    "subtitle": "Rasm bilan berilgan savolda",
    "art": {
     "type": "steps",
@@ -1453,45 +1453,45 @@
      ]
     ]
    },
-   "caption": "<b>Rasmni tasvirlash</b>\n\nRasm faqat boshlanish uchun. Asosiy ball savollarga bergan javobingizdan keladi 🖼\n\n1. <b>In this picture I can see</b> ...\n2. <b>In the background / foreground</b> ... (orqa / old tomonda)\n3. <b>It looks like</b> ... (... ga o'xshaydi)\n💡 Tasvirlab bo'lgach, <b>savolga</b> o'ting\n\nIzohlarda o'z misolingizni yozing, tekshirib beraman 👇"
+   "caption": "<b>Rasmni tasvirlaş</b>\n\nRasm faqat boşlaniş uçun. Asosiy ball savollarga bergan javobingizdan keladi 🖼\n\n1. <b>In this picture I can see</b> ...\n2. <b>In the background / foreground</b> ... (orqa / old tomonda)\n3. <b>It looks like</b> ... (... ga öxşaydi)\n💡 Tasvirlab bölgaç, <b>savolga</b> öting\n\nIzohlarda öz misolingizni yozing, tekşirib beraman 👇"
   },
   {
    "id": "ml_052",
-   "pill": "SO'Z BOYLIGI",
-   "title": "Sog'liq mavzusi",
-   "subtitle": "Speaking'da tez-tez so'raladi",
+   "pill": "SÖZ BOYLIGI",
+   "title": "Soğliq mavzusi",
+   "subtitle": "Speaking'da tez-tez söraladi",
    "art": {
     "type": "grid",
     "items": [
      [
       "🥗",
       "a balanced diet",
-      "muvozanatli ovqatlanish"
+      "muvozanatli ovqatlaniş"
      ],
      [
       "🏃",
       "keep fit",
-      "baquvvat bo'lmoq"
+      "baquvvat bölmoq"
      ],
      [
       "😰",
       "stress",
-      "zo'riqish"
+      "zöriqiş"
      ],
      [
       "🩺",
       "check-up",
-      "tibbiy ko'rik"
+      "tibbiy körik"
      ]
     ]
    },
-   "caption": "<b>Sog'liq mavzusi</b>\n\nSiz qanday qilib keep fit qilasiz? Izohda yozing 👇\n\n🥗 <b>a balanced diet</b> = muvozanatli ovqatlanish\n🏃 <b>to keep fit</b> = sog'lom va baquvvat bo'lmoq\n😰 <b>stress</b> = asabiylik, zo'riqish\n🩺 <b>to have a check-up</b> = tibbiy ko'rikdan o'tmoq\n\nQaysi biri siz uchun yangi bo'ldi? Izohda yozing 👇"
+   "caption": "<b>Soğliq mavzusi</b>\n\nSiz qanday qilib keep fit qilasiz? Izohda yozing 👇\n\n🥗 <b>a balanced diet</b> = muvozanatli ovqatlaniş\n🏃 <b>to keep fit</b> = soğlom va baquvvat bölmoq\n😰 <b>stress</b> = asabiylik, zöriqiş\n🩺 <b>to have a check-up</b> = tibbiy körikdan ötmoq\n\nQaysi biri siz uçun yangi böldi? Izohda yozing 👇"
   },
   {
    "id": "ml_053",
    "pill": "LISTENING",
-   "title": "Tinglash mashqi",
-   "subtitle": "Uyda Listening'ni qanday kuchaytirish mumkin?",
+   "title": "Tinglaş maşqi",
+   "subtitle": "Uyda Listening'ni qanday kuçaytiriş mumkin?",
    "art": {
     "type": "steps",
     "items": [
@@ -1513,12 +1513,12 @@
      ]
     ]
    },
-   "caption": "<b>Tinglash mashqi</b>\n\nKo'p tinglash emas, to'g'ri tinglash natija beradi 🎧\n\n1. Qisqa audio tanlang: <b>2–3 daqiqa</b>\n2. Birinchi marta <b>matnsiz</b> tinglang\n3. Ikkinchi marta <b>matn bilan</b> tinglab, tushunmaganingizni belgilang\n4. Uchinchi marta yana <b>matnsiz</b> tinglang\n\nSaqlab qo'ying, imtihondan oldin kerak bo'ladi 📌"
+   "caption": "<b>Tinglaş maşqi</b>\n\nKöp tinglaş emas, töğri tinglaş natija beradi 🎧\n\n1. Qisqa audio tanlang: <b>2–3 daqiqa</b>\n2. Birinçi marta <b>matnsiz</b> tinglang\n3. Ikkinçi marta <b>matn bilan</b> tinglab, tuşunmaganingizni belgilang\n4. Uçinçi marta yana <b>matnsiz</b> tinglang\n\nSaqlab qöying, imtihondan oldin kerak böladi 📌"
   },
   {
    "id": "ml_054",
    "pill": "SPEAKING · PART 1",
-   "title": "Qisqa javob tuzog'i",
+   "title": "Qisqa javob tuzoği",
    "subtitle": "Do you ...? savoliga faqat yes/no yetmaydi",
    "art": {
     "type": "bubbles",
@@ -1537,7 +1537,7 @@
      ]
     ]
    },
-   "caption": "<b>Qisqa javob tuzog'i</b>\n\nQisqa javob = kam ball. Har bir savolga kamida 2–3 gap qo'shing 🗣\n\n❌ Do you work or study? → <b>I study.</b>\n✅ <b>I'm a student at</b> ... <b>I'm studying</b> ...\n✅ <b>I chose it because</b> ...\n💡 Har javob <b>20–30 soniya</b> atrofida bo'lsin\n\nDo'stingizga yuboring, u ham Multilevel topshiryaptimi? 👀"
+   "caption": "<b>Qisqa javob tuzoği</b>\n\nQisqa javob = kam ball. Har bir savolga kamida 2–3 gap qöşing 🗣\n\n❌ Do you work or study? → <b>I study.</b>\n✅ <b>I'm a student at</b> ... <b>I'm studying</b> ...\n✅ <b>I chose it because</b> ...\n💡 Har javob <b>20–30 soniya</b> atrofida bölsin\n\nDöstingizga yuboring, u ham Multilevel topşiryaptimi? 👀"
   },
   {
    "id": "ml_055",
@@ -1575,17 +1575,17 @@
      "mark": "💧"
     }
    },
-   "caption": "<b>Sanoqli va sanoqsiz otlar</b>\n\n\"informations\" va \"advices\" eng ko'p uchraydigan xatolar 😅 Saqlab qo'ying 📌\n\n🔢 <b>many</b> + sanoqli: many <b>books</b>, many <b>people</b>\n💧 <b>much</b> + sanoqsiz: much <b>water</b>, much <b>time</b>\n✅ <b>a lot of</b> ikkalasiga ham mos\n⚠️ <b>information</b>, <b>advice</b>, <b>news</b> sanoqsiz, <b>-s</b> qo'shilmaydi\n\nIzohlarda o'z misolingizni yozing, tekshirib beraman 👇"
+   "caption": "<b>Sanoqli va sanoqsiz otlar</b>\n\n\"informations\" va \"advices\" eng köp uçraydigan xatolar 😅 Saqlab qöying 📌\n\n🔢 <b>many</b> + sanoqli: many <b>books</b>, many <b>people</b>\n💧 <b>much</b> + sanoqsiz: much <b>water</b>, much <b>time</b>\n✅ <b>a lot of</b> ikkalasiga ham mos\n⚠️ <b>information</b>, <b>advice</b>, <b>news</b> sanoqsiz, <b>-s</b> qöşilmaydi\n\nIzohlarda öz misolingizni yozing, tekşirib beraman 👇"
   },
   {
    "id": "ml_056",
    "pill": "WRITING · XAT",
    "title": "Taklif xati",
-   "subtitle": "Biror narsani taklif qilish yoki so'rash",
+   "subtitle": "Biror narsani taklif qiliş yoki söraş",
    "art": {
     "type": "versus",
     "left": {
-     "head": "Do'stga",
+     "head": "Döstga",
      "items": [
       [
        "💡",
@@ -1613,13 +1613,13 @@
      "mark": "👔"
     }
    },
-   "caption": "<b>Taklif xati</b>\n\nBir xil fikr, ikki xil uslub. Kimga yozayotganingiz hammasini hal qiladi ✍️\n\n💬 Norasmiy: <b>Why don't we</b> ...? / <b>How about</b> ...?\n💬 Rasmiy: <b>I would like to suggest that</b> ...\n💬 Rasmiy so'rov: <b>Could you please</b> ...?\n💡 Avval xat <b>kimga</b> yozilayotganini aniqlang\n\nQaysi biri siz uchun yangi bo'ldi? Izohda yozing 👇"
+   "caption": "<b>Taklif xati</b>\n\nBir xil fikr, ikki xil uslub. Kimga yozayotganingiz hammasini hal qiladi ✍️\n\n💬 Norasmiy: <b>Why don't we</b> ...? / <b>How about</b> ...?\n💬 Rasmiy: <b>I would like to suggest that</b> ...\n💬 Rasmiy sörov: <b>Could you please</b> ...?\n💡 Avval xat <b>kimga</b> yozilayotganini aniqlang\n\nQaysi biri siz uçun yangi böldi? Izohda yozing 👇"
   },
   {
    "id": "ml_057",
    "pill": "SPEAKING · PART 3",
-   "title": "Xulosa qilish",
-   "subtitle": "Javobingizni chiroyli yakunlang",
+   "title": "Xulosa qiliş",
+   "subtitle": "Javobingizni çiroyli yakunlang",
    "art": {
     "type": "bubbles",
     "items": [
@@ -1637,13 +1637,13 @@
      ]
     ]
    },
-   "caption": "<b>Xulosa qilish</b>\n\nJavobni xulosasiz to'xtatib qo'yish taassurotni buzadi. Bitta yakuniy gap yetarli 🎯\n\n💬 <b>All in all</b>, I think ...\n💬 <b>To sum up</b>, ...\n💬 <b>That's why I believe</b> ...\n💡 Yakuniy gap birinchi aytgan fikringiz bilan <b>mos</b> bo'lsin\n\nSaqlab qo'ying, imtihondan oldin kerak bo'ladi 📌"
+   "caption": "<b>Xulosa qiliş</b>\n\nJavobni xulosasiz töxtatib qöyiş taassurotni buzadi. Bitta yakuniy gap yetarli 🎯\n\n💬 <b>All in all</b>, I think ...\n💬 <b>To sum up</b>, ...\n💬 <b>That's why I believe</b> ...\n💡 Yakuniy gap birinçi aytgan fikringiz bilan <b>mos</b> bölsin\n\nSaqlab qöying, imtihondan oldin kerak böladi 📌"
   },
   {
    "id": "ml_058",
    "pill": "TAYYORGARLIK",
-   "title": "Mock test qilish",
-   "subtitle": "Haqiqiy imtihondan oldin o'zingizni sinang",
+   "title": "Mock test qiliş",
+   "subtitle": "Haqiqiy imtihondan oldin özingizni sinang",
    "art": {
     "type": "grid",
     "items": [
@@ -1661,11 +1661,11 @@
      ],
      [
       "🎯",
-      "Zaif qismni mashq qiling"
+      "Zaif qismni maşq qiling"
      ]
     ]
    },
-   "caption": "<b>Mock test qilish</b>\n\nOyiga kamida bitta mock test qiling va natijani kuzating 📈\n\nOxirgi mock natijangiz qanday bo'ldi? 👇\n\n⏱ To'liq testni <b>haqiqiy vaqt</b> bilan ishlang\n📵 Telefonni o'chiring, <b>tanaffus</b> qilmang\n📊 Har qismdan <b>nechta</b> to'g'ri ekanini yozib boring\n💡 Eng past qism = keyingi haftaning <b>asosiy mashqi</b>\n\nDo'stingizga yuboring, u ham Multilevel topshiryaptimi? 👀"
+   "caption": "<b>Mock test qiliş</b>\n\nOyiga kamida bitta mock test qiling va natijani kuzating 📈\n\nOxirgi mock natijangiz qanday böldi? 👇\n\n⏱ Töliq testni <b>haqiqiy vaqt</b> bilan işlang\n📵 Telefonni öçiring, <b>tanaffus</b> qilmang\n📊 Har qismdan <b>neçta</b> töğri ekanini yozib boring\n💡 Eng past qism = keyingi haftaning <b>asosiy maşqi</b>\n\nDöstingizga yuboring, u ham Multilevel topşiryaptimi? 👀"
   }
  ]
 }
