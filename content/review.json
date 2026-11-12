@@ -1,5 +1,5 @@
 {
-  "last_update_id": 111953006,
+  "last_update_id": 111953007,
   "drafts": {
     "2026-11-01 19:30": {
       "date": "2026-11-01",
@@ -374,9 +374,10 @@
         "kind": "emoji",
         "index": 1
       },
-      "status": "pending",
+      "status": "approved",
       "created_at": "2026-11-12T15:59:12.514Z",
-      "buttons_message_id": 146
+      "buttons_message_id": 146,
+      "decided_at": "2026-11-12T16:00:36.337Z"
     },
     "2026-11-13 19:30": {
       "date": "2026-11-13",
