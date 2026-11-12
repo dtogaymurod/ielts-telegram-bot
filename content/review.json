@@ -333,10 +333,11 @@
         "kind": "collocation",
         "index": 0
       },
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-11-11T19:06:18.370Z",
       "buttons_message_id": 136,
-      "decided_at": "2026-11-11T19:06:43.282Z"
+      "decided_at": "2026-11-11T19:06:43.282Z",
+      "published_at": "2026-11-12T06:59:11.299Z"
     },
     "2026-11-12 19:30": {
       "date": "2026-11-12",
