@@ -37,6 +37,9 @@ for ch in json.loads((HERE / "channels.json").read_text()):
     print(chat, "rights:", {k: r.get(k) for k in ("status", "can_change_info", "can_post_messages", "can_edit_messages")})
     d = call("setChatDescription", {"chat_id": chat, "description": ch["description"]})
     print(chat, "description:", d.get("ok"), d.get("description", ""))
+    if ch.get("post") is False:  # welcome post already published
+        failed |= not d.get("ok")
+        continue
     p = call("sendPhoto", {"chat_id": chat, "caption": ch["caption"]}, {"photo": HERE / ch["photo"]})
     print(chat, "welcome post:", p.get("ok"), p.get("description", ""))
     if p.get("ok"):
