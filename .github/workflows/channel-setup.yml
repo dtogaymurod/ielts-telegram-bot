@@ -1,0 +1,14 @@
+name: Channel setup (one-off)
+on:
+  push:
+    branches: [claude/project-thread-8a45e3]
+    paths: [scripts/channel-setup/channels.json]
+  workflow_dispatch:
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/channel-setup/setup.py
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
