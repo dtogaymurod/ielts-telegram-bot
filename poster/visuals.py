@@ -21,7 +21,7 @@ COLOURS = [ORANGE, NAVY, GREEN, GREY]
 
 
 def is_text(icon):
-    return all(ord(c) < 0x2190 for c in icon)
+    return all(ord(c) < 0x2300 for c in icon)
 
 
 def flow(img, d, v, box):
@@ -52,25 +52,32 @@ def flow(img, d, v, box):
 
 
 def swap(img, d, v, box):
+    pairs = ((v["wrong"], RED, (255, 232, 230), "❌"), (v["right"], GREEN, (226, 247, 235), "✅"))
     mid = (box[0] + box[2]) / 2
     half = mid - box[0] - 70
-    cy = (box[1] + box[3]) / 2
-    for text, colour, tint, mark, x0 in (
-        (v["wrong"], RED, (255, 232, 230), "❌", box[0] + 30),
-        (v["right"], GREEN, (226, 247, 235), "✅", mid + 40),
-    ):
-        d.rounded_rectangle([x0, cy - 62, x0 + half, cy + 62], radius=24, fill=WHITE, outline=tint, width=6)
+    probe = font("black", 32)
+    stacked = any(d.textlength(text, font=probe) > half - 110 for text, *_ in pairs)
+    if stacked:  # long phrases: one above the other, full width
+        width, tile_h = box[2] - box[0] - 60, 84
+        spots = [(box[0] + 30, box[1] + 24 + tile_h / 2), (box[0] + 30, box[3] - 24 - tile_h / 2)]
+    else:
+        width, tile_h = half, 124
+        cy = (box[1] + box[3]) / 2
+        spots = [(box[0] + 30, cy), (mid + 40, cy)]
+    for (text, colour, tint, mark), (x0, cy) in zip(pairs, spots):
+        d.rounded_rectangle([x0, cy - tile_h / 2, x0 + width, cy + tile_h / 2], radius=24, fill=WHITE, outline=tint, width=6)
         emoji(img, mark, x0 + 22, cy - 22, 44)
         d = ImageDraw.Draw(img)
-        f = fit(d, text, "black", 44, half - 110, 24)
+        f = fit(d, text, "black", 44, width - 110, 24)
         b = d.textbbox((0, 0), text, font=f)
         tx, ty = x0 + 84, cy - (b[1] + b[3]) / 2
         d.text((tx, ty), text, font=f, fill=NAVY if colour == GREEN else GREY)
         if colour == RED:
             d.line([tx - 4, cy, tx + b[2] + 4, cy], fill=RED, width=4)
-    af = font("black", 46)
-    b = d.textbbox((0, 0), "→", font=af)
-    d.text((mid - 15 - (b[0] + b[2]) / 2, cy - (b[1] + b[3]) / 2), "→", font=af, fill=ORANGE)
+    if not stacked:
+        af = font("black", 46)
+        b = d.textbbox((0, 0), "→", font=af)
+        d.text((mid - 15 - (b[0] + b[2]) / 2, spots[0][1] - (b[1] + b[3]) / 2), "→", font=af, fill=ORANGE)
     return d
 
 

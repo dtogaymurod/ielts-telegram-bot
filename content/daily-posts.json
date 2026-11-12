@@ -249,6 +249,11 @@
           "**some, several, a few** + plural"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "two towel",
+        "right": "two towels"
+      },
       "caption": "You often can't hear the -s, but grammar still needs it 👀\n\nRule: trust the sentence, not your ear. If there is a number or “some”, check the -s.\n\nHow many points has this mistake cost you? 😅"
     },
     {
@@ -269,6 +274,24 @@
           "Follow the speaker's path with your finger"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🚪",
+            "Entrance"
+          ],
+          [
+            "🧭",
+            "Directions"
+          ],
+          [
+            "👆",
+            "Follow"
+          ]
+        ]
+      },
       "caption": "Map questions are the “boss level” of Section 2 🗺\n\nTip: don't think north is always at the top. Start walking from the place where the speaker starts.\n\nDo you love or hate map questions? 👇"
     },
     {
@@ -293,6 +316,24 @@
           "**at the far end** = at the very end"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🏦",
+            "bank"
+          ],
+          [
+            "↔️",
+            "opposite"
+          ],
+          [
+            "🏤",
+            "post office"
+          ]
+        ]
+      },
       "caption": "Bonus words: <b>clockwise</b> = the way a clock's hands move, <b>halfway along</b> = in the middle of the road 🧭\n\nSave this and look at it again before your exam 🔖\n\nWhich word would you add? 👇"
     },
     {
@@ -313,6 +354,20 @@
           "The right answer often comes as a **synonym**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "🔤",
+            "the word"
+          ],
+          [
+            "💡",
+            "the meaning"
+          ]
+        ]
+      },
       "caption": "Example: the option says “cheap”, but the audio says <i>“it won't cost much”</i> 💸\n\nThe wrong option is often said word for word. The right one is said in a different way. Remember this trap.\n\nAre multiple choice questions hard for you? 👇"
     },
     {
@@ -337,6 +392,20 @@
           "problem → **issue, drawback**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "=",
+        "items": [
+          [
+            "🆓",
+            "free"
+          ],
+          [
+            "🎁",
+            "complimentary"
+          ]
+        ]
+      },
       "caption": "Listening is really a synonym game 🎮\n\nAfter each test, write 5 new pairs in your notebook. In 1 month you will have 100 📒\n\nWhat is your favourite pair? 👇"
     },
     {
@@ -357,6 +426,24 @@
           "“**Moving on to...**” = a new question is near"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "❓",
+            "Can't find it"
+          ],
+          [
+            "⏭️",
+            "Move on"
+          ],
+          [
+            "✅",
+            "Next answer"
+          ]
+        ]
+      },
       "caption": "Losing 3 questions because of 1 is the most expensive mistake 💀\n\nPractice: when you listen to a lecture and hear a signal word, tap the table once with your finger. It keeps you focused 👆\n\nHow does Section 4 go for you? 👇"
     },
     {
@@ -381,6 +468,24 @@
           "“**To sum up**...” → the ending"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "1️⃣",
+            "First of all"
+          ],
+          [
+            "↪️",
+            "Turning to"
+          ],
+          [
+            "🏁",
+            "To sum up"
+          ]
+        ]
+      },
       "caption": "When you hear these words, check where you are in the question list ✅\n\nThen you never panic and think “which question am I on?”\n\nWhich other signal words do you know? 👇"
     },
     {
@@ -401,6 +506,11 @@
           "Check the spelling of **February, Wednesday**"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "March 3th",
+        "right": "3 March"
+      },
       "caption": "Months and days are where most spelling mistakes happen 📅\n\nQuick test: write Wednesday, February and September now, then check. All correct? 😏\n\nWrite your result in the comments 👇"
     },
     {
@@ -425,6 +535,20 @@
           "**government**, **library**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "cc",
+            "aCCommodation"
+          ],
+          [
+            "mm",
+            "accoMModation"
+          ]
+        ]
+      },
       "caption": "These words appear at least once in every Cambridge book 📚\n\nOnce a week, do a small dictation: a friend says the words, you write. 5 minutes is enough.\n\nWhich word do you always get wrong? 👇"
     },
     {
@@ -445,6 +569,11 @@
           "If £ or $ is in the question, **don't write it again**"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "1250",
+        "right": "£12.50"
+      },
       "caption": "Prices are a favourite topic in Section 1 💷\n\nOne more example: <i>“a hundred and twenty”</i> = 120, and <i>“one twenty”</i> can be 120 too. Look at the context.\n\nHave prices ever confused you? 👇"
     },
     {
@@ -469,6 +598,20 @@
           "**noon** = 12:00"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "≠",
+        "items": [
+          [
+            "🕘",
+            "quarter past"
+          ],
+          [
+            "🕗",
+            "quarter to"
+          ]
+        ]
+      },
       "caption": "This mistake is very common, because many languages don't say time this way 🤯\n\nHow to remember: <b>to</b> = “before”, so there are 15 minutes left before 9.\n\nWhat time is it now? Write it in English 👇"
     },
     {
@@ -489,6 +632,20 @@
           "**apart from, rather than, unless** work the same way"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "📅",
+            "Open daily"
+          ],
+          [
+            "🚫",
+            "except Monday"
+          ]
+        ]
+      },
       "caption": "These words are small, but they turn the answer 180° 🔄\n\nUnderline them on the question paper too. If the question has “NOT”, it is written in capital letters.\n\nWhich other “dangerous” words do you know? 👇"
     },
     {
@@ -509,6 +666,20 @@
           "If you know only one, **don't leave the other empty**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "=",
+        "items": [
+          [
+            "A, C",
+            "your answer"
+          ],
+          [
+            "C, A",
+            "also correct"
+          ]
+        ]
+      },
       "caption": "An empty box = 0 for sure. A guess = a 20–25% chance 🎲\n\nThe maths is on your side 😄\n\nAre these questions easy or hard for you? 👇"
     },
     {
@@ -529,6 +700,24 @@
           "“**Fair point**” = agrees"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "👩",
+            "Anna"
+          ],
+          [
+            "👨",
+            "Ben"
+          ],
+          [
+            "🎓",
+            "Tutor"
+          ]
+        ]
+      },
       "caption": "In Section 3 you listen for <b>opinions</b>, not single words 🎭\n\nPractice: when two people argue in a podcast, write down who agrees with who.\n\nHow is Section 3 for you? 👇"
     },
     {
@@ -553,6 +742,24 @@
           "The main idea comes after **but**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🙂",
+            "“I suppose so”"
+          ],
+          [
+            "✋",
+            "“but…”"
+          ],
+          [
+            "👎",
+            "= no"
+          ]
+        ]
+      },
       "caption": "British people don't like to say a direct “no” 🫖\n\nSo knowing these soft phrases gives you points in Section 3.\n\nWhich other “soft no” do you know? 👇"
     },
     {
@@ -573,6 +780,24 @@
           "Each arrow = **one new step**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "1️⃣",
+            "first"
+          ],
+          [
+            "2️⃣",
+            "then"
+          ],
+          [
+            "3️⃣",
+            "finally"
+          ]
+        ]
+      },
       "caption": "In flow chart questions the answers come in order. They don't jump ✅\n\nIf you found answer 3, answer 4 comes after it. Don't look back.\n\nDo flow charts feel easy to you? 👇"
     },
     {
@@ -593,6 +818,24 @@
           "The second listening is only for **checking your mistakes**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "▶️",
+            "Play once"
+          ],
+          [
+            "✍️",
+            "Answer"
+          ],
+          [
+            "🔍",
+            "Check"
+          ]
+        ]
+      },
       "caption": "Practise like it is the real exam. Then the real exam feels like practice 💪\n\nToday, listen to one Section once, then check with the transcript.\n\nWhat was your result? 👇"
     },
     {
@@ -613,6 +856,20 @@
           "Last 2 minutes: **spelling + plural -s**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "📝",
+            "Paper: 10 min"
+          ],
+          [
+            "💻",
+            "Computer: 2 min"
+          ]
+        ]
+      },
       "caption": "Computer-delivered IELTS is getting more popular 💻\n\nPractise on a computer at home too. Do the official demo test at least once.\n\nWhich format did you choose? 👇"
     },
     {
@@ -633,6 +890,20 @@
           "Then **a** and **o** don't look the same"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "=",
+        "items": [
+          [
+            "ABC",
+            "LONDON"
+          ],
+          [
+            "Abc",
+            "London"
+          ]
+        ]
+      },
       "caption": "A small detail, but if your handwriting is hard to read, you can lose points ✍️\n\nOn the computer test this is not a problem. The keyboard does the job.\n\nHow do you write? 👇"
     },
     {
@@ -653,6 +924,20 @@
           "Practise **G / J** before the exam"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "≠",
+        "items": [
+          [
+            "B",
+            "“bee”"
+          ],
+          [
+            "P",
+            "“pee”"
+          ]
+        ]
+      },
       "caption": "Postcodes and addresses come up often in Section 1 🏠\n\nPractice: find some UK postcodes online and read them to a friend as a dictation.\n\nWhich letters do you mix up? 👇"
     },
     {
@@ -673,6 +958,24 @@
           "**R** = “ar”, **Y** = “why”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "≠",
+        "items": [
+          [
+            "A",
+            "“ay”"
+          ],
+          [
+            "E",
+            "“ee”"
+          ],
+          [
+            "I",
+            "“eye”"
+          ]
+        ]
+      },
       "caption": "When a name is spelled out, these letters cause the most mistakes 😵‍💫\n\n2 minutes a day: spell your name and your friends' names in English.\n\nSpell your name in the comments 👇"
     },
     {
@@ -693,6 +996,24 @@
           "Look at the empty column and expect **that type of information**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "📋",
+            "Headings"
+          ],
+          [
+            "↔️",
+            "Direction"
+          ],
+          [
+            "🎯",
+            "Answer type"
+          ]
+        ]
+      },
       "caption": "In table questions the speaker often goes down the column, but you read across the row 🔀\n\nIf you know the direction first, half the job is done.\n\nHow are table questions for you? 👇"
     },
     {
@@ -713,6 +1034,11 @@
           "Answer = **the exact word** from the audio"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "reservation",
+        "right": "booking"
+      },
       "caption": "In Listening, don't be creative. Just copy 📝\n\nIt is the same in Reading: the answer is taken exactly from the text.\n\nHave you made this mistake? 👇"
     },
     {
@@ -737,6 +1063,20 @@
           "Choose by the **meaning** of the sentence"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "≠",
+        "items": [
+          [
+            "📍",
+            "site"
+          ],
+          [
+            "👀",
+            "sight"
+          ]
+        ]
+      },
       "caption": "Homophones are the hidden enemy of Listening 🥷\n\nMore examples: <b>buy / by</b>, <b>right / write</b>, <b>hour / our</b>.\n\nWrite a homophone you know 👇"
     },
     {
@@ -761,6 +1101,20 @@
           "“**Wha-d'ya** wanna do?” = What do you want to do?"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "=",
+        "items": [
+          [
+            "🗣",
+            "wanna"
+          ],
+          [
+            "📖",
+            "want to"
+          ]
+        ]
+      },
       "caption": "In real life nobody speaks like a textbook 😄\n\nPractice: listen to a podcast for 5 minutes a day, write what you hear and compare it with the transcript.\n\nWhich short form tricks you the most? 👇"
     },
     {
@@ -781,6 +1135,20 @@
           "Listen for the **stressed words**: nouns, verbs, numbers"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🔉",
+            "of, to, and"
+          ],
+          [
+            "🔊",
+            "nouns, verbs"
+          ]
+        ]
+      },
       "caption": "The answers are almost always in the stressed words 🎯\n\nSo don't panic if you did not hear “of”. Nouns and numbers are what matter.\n\nWhat do you listen for? 👇"
     },
     {
@@ -805,6 +1173,24 @@
           "**10 minutes** of each every week"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "🇬🇧",
+            "British"
+          ],
+          [
+            "🇦🇺",
+            "Australian"
+          ],
+          [
+            "🇨🇦",
+            "Canadian"
+          ]
+        ]
+      },
       "caption": "If you only watch American films, an Australian speaker will surprise you in the exam 🦘\n\nTrain your ear with different accents.\n\nWhich accent is the hardest for you? 👇"
     },
     {
@@ -825,6 +1211,24 @@
           "Put your phone in **another room**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🎧",
+            "30 minutes"
+          ],
+          [
+            "🚫",
+            "No stops"
+          ],
+          [
+            "📵",
+            "No phone"
+          ]
+        ]
+      },
       "caption": "Focus is like a muscle: it gets stronger when you train it 💪\n\nA full test 2 times a week = you don't get tired in the exam.\n\nHow many minutes can you stay focused? 👇"
     },
     {
@@ -845,6 +1249,24 @@
           "Even with 1 mistake out of 40, **Band 8.5** is possible"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "😬",
+            "1 mistake"
+          ],
+          [
+            "✍️",
+            "Guess"
+          ],
+          [
+            "➡️",
+            "Move on"
+          ]
+        ]
+      },
       "caption": "Listening is a marathon, not a sprint 🏃\n\nDon't lose the whole section because of one question. Take a deep breath and go to the next one.\n\nHave you ever panicked in the exam? 👇"
     },
     {
@@ -865,6 +1287,20 @@
           "Empty = 0%. A guess = **a chance**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "⬜",
+            "Empty = 0%"
+          ],
+          [
+            "🎲",
+            "Guess = a chance"
+          ]
+        ]
+      },
       "caption": "In IELTS there is no “I don't know”. There is only a guess 😎\n\nA word that fits the grammar and the context is often right.\n\nDo you guess? 👇"
     },
     {
@@ -885,6 +1321,11 @@
           "Add an adjective only if the **grammar** needs it"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "the big park",
+        "right": "park"
+      },
       "caption": "An extra word = an extra risk ⚠️\n\nEven if the word limit lets you write more, write only what is needed.\n\nHave you made this mistake? 👇"
     },
     {
@@ -905,6 +1346,11 @@
           "Write numbers **as digits**"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "three bedrooms",
+        "right": "3 bedrooms"
+      },
       "caption": "Writing a number as a word can push you over the limit 🔢\n\nDigits are faster and safer.\n\nDid you know this? ✅ or ❌ 👇"
     },
     {
@@ -925,6 +1371,24 @@
           "Write what you hear, **don't calculate**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "👂",
+            "“a third”"
+          ],
+          [
+            "✍️",
+            "a third"
+          ],
+          [
+            "🚫",
+            "no maths"
+          ]
+        ]
+      },
       "caption": "Listening is not a maths test 🧮\n\nUseful pairs: <b>a quarter</b> = 25%, <b>half</b> = 50%, <b>three quarters</b> = 75%.\n\nHave you ever calculated and got it wrong? 👇"
     },
     {
@@ -945,6 +1409,20 @@
           "Underline the **time** in the question"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "⏮️",
+            "Last year: 300"
+          ],
+          [
+            "⏺️",
+            "This year: 450"
+          ]
+        ]
+      },
       "caption": "When you hear a number, don't write it at once. Check the time ⏳\n\nSignal words: <b>originally, now, last year, this year</b>.\n\nHas this trap caught you? 👇"
     },
     {
@@ -965,6 +1443,20 @@
           "= **couldn't afford it**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "=",
+        "items": [
+          [
+            "💰",
+            "too expensive"
+          ],
+          [
+            "😮",
+            "cost a fortune"
+          ]
+        ]
+      },
       "caption": "In matching questions the options are never said word for word 🔁\n\nIf you think of synonyms first, you will know them when the audio comes.\n\nAdd one more synonym 👇"
     },
     {
@@ -985,6 +1477,24 @@
           "Following the names = your **road map**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🏛",
+            "Museum"
+          ],
+          [
+            "🌳",
+            "Park"
+          ],
+          [
+            "🏰",
+            "Castle"
+          ]
+        ]
+      },
       "caption": "Section 2 has a lot of information, but the order is clear 🗂\n\nThe place names are your “chapter titles”.\n\nHow do you do Section 2? 👇"
     },
     {
@@ -1005,6 +1515,20 @@
           "Write the full spelling **in the last minute**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "=",
+        "items": [
+          [
+            "📝",
+            "accom"
+          ],
+          [
+            "🏨",
+            "accommodation"
+          ]
+        ]
+      },
       "caption": "Let your ear keep working and your hand write faster ✍️⚡\n\nYou need this less on the computer test, but it helps a lot on the paper test.\n\nWhat short forms do you use? 👇"
     },
     {
@@ -1025,6 +1549,24 @@
           "**either** = one of the two"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "≠",
+        "items": [
+          [
+            "✌️",
+            "both"
+          ],
+          [
+            "🚫",
+            "neither"
+          ],
+          [
+            "☝️",
+            "either"
+          ]
+        ]
+      },
       "caption": "“Neither of the options was suitable” = the two options were both no good 🙅\n\nWhen you hear these words, think about the options again.\n\nDo you mix these words up? 👇"
     },
     {
@@ -1045,6 +1587,24 @@
           "Disadvantage → **longer**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🐢",
+            "longer"
+          ],
+          [
+            "↩️",
+            "but"
+          ],
+          [
+            "🛡",
+            "safer"
+          ]
+        ]
+      },
       "caption": "Find out what the question asks: advantage or disadvantage? 🎯\n\nOne sentence has two answers, but only one fits the question.\n\nAre these questions hard? 👇"
     },
     {
@@ -1065,6 +1625,11 @@
           "“...in the hall, but it's being repaired, **so** the gym.”"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "the hall",
+        "right": "the gym"
+      },
       "caption": "Answer: <b>gym</b>, not hall 🏟\n\nIELTS loves changing plans.\n\nHas this trap caught you? 👇"
     },
     {
@@ -1089,6 +1654,24 @@
           "**Spelling** of dates and months"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "s",
+            "Plural -s"
+          ],
+          [
+            "🔢",
+            "Word limit"
+          ],
+          [
+            "🔤",
+            "Spelling"
+          ]
+        ]
+      },
       "caption": "3 spelling mistakes = 3 points = a different band 😱\n\nSave this list and use it after every test 🔖\n\nDo you check your answers? 👇"
     },
     {
@@ -1109,6 +1692,13 @@
           "Gap at the end → probably a **noun**"
         ]
       ],
+      "visual": {
+        "type": "form",
+        "heading": "HOTEL BOOKING",
+        "text": "a ___ room",
+        "tag": "adjective?",
+        "icon": "🛏"
+      },
       "caption": "Reading the grammar = finding half of the answer 🧩\n\nThis works in Listening and in Reading.\n\nDoes grammar help you? 👇"
     },
     {
@@ -1129,6 +1719,24 @@
           "**TED-Ed, BBC 6 Minute English**, podcasts"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "📝",
+            "Tests"
+          ],
+          [
+            "🎙",
+            "Podcasts"
+          ],
+          [
+            "📺",
+            "Videos"
+          ]
+        ]
+      },
       "caption": "Your ear needs to get used to new voices 👂\n\nTests are for the exam format. Podcasts are for real listening.\n\nWhich podcast do you listen to? Share it 👇"
     },
     {
@@ -1149,6 +1757,24 @@
           "**Compare** with the transcript"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "▶️",
+            "Play"
+          ],
+          [
+            "⏸️",
+            "Stop"
+          ],
+          [
+            "✍️",
+            "Write"
+          ]
+        ]
+      },
       "caption": "In 2 weeks your listening and your spelling get better together 📈\n\nThe simplest exercise, and the one people do the least.\n\nWill you try it today? 👇"
     },
     {
@@ -1169,6 +1795,24 @@
           "**5 minutes** a day is enough"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🎧",
+            "Listen"
+          ],
+          [
+            "🗣",
+            "Repeat"
+          ],
+          [
+            "🔁",
+            "Every day"
+          ]
+        ]
+      },
       "caption": "When your mouth learns the rhythm, your ear knows it too 🎶\n\nBonus: your Speaking pronunciation gets better as well.\n\nHave you tried shadowing? 👇"
     },
     {
@@ -1189,6 +1833,24 @@
           "In 3 weeks you will see your **main mistake type**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "❌",
+            "Mistake"
+          ],
+          [
+            "📒",
+            "Why?"
+          ],
+          [
+            "📈",
+            "Pattern"
+          ]
+        ]
+      },
       "caption": "Your score grows when you study your mistakes, not when you just do tests 🚀\n\nYour own mistake notebook is the strongest study tool.\n\nDo you have one? 👇"
     },
     {
@@ -1209,6 +1871,24 @@
           "**Underline** where the answer is said"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "❌",
+            "Wrong answer"
+          ],
+          [
+            "📄",
+            "Transcript"
+          ],
+          [
+            "✏️",
+            "Underline"
+          ]
+        ]
+      },
       "caption": "This is where you grow the fastest 📈\n\nEvery test = 30 minutes of work + 15 minutes of checking.\n\nDo you check your mistakes? 👇"
     },
     {
@@ -1229,6 +1909,24 @@
           "Most points are lost on **spelling and numbers**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "=",
+        "items": [
+          [
+            "🙂",
+            "Easy question"
+          ],
+          [
+            "😰",
+            "Hard question"
+          ],
+          [
+            "1",
+            "point each"
+          ]
+        ]
+      },
       "caption": "Section 1 is free points. Don't give them away 🎁\n\nGive even the easiest question your full attention.\n\nHow many mistakes do you usually make in Section 1? 👇"
     },
     {
@@ -1249,6 +1947,24 @@
           "**w/** = with, **b/c** = because"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "↑",
+            "went up"
+          ],
+          [
+            "↓",
+            "went down"
+          ],
+          [
+            "b/c",
+            "because"
+          ]
+        ]
+      },
       "caption": "Catch only the word you need for the gap and shorten the rest ⚡\n\nThese symbols will help you at university too 🎓\n\nWhat is your favourite symbol? 👇"
     },
     {
@@ -1269,6 +1985,11 @@
           "Wait **until the sentence ends**"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "the 10th",
+        "right": "the 17th"
+      },
       "caption": "People who hurry lose points ⏸\n\nYou heard the answer? Great. Now wait 1 second.\n\nHas this happened to you? 👇"
     },
     {
@@ -1289,6 +2010,11 @@
           "Choose the one that **fits the question best**"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "card or cash",
+        "right": "cash"
+      },
       "caption": "Two answers are usually marked as wrong ⚠️\n\nRead the question again: what exactly does it ask?\n\nHas this happened to you? 👇"
     },
     {
@@ -1309,6 +2035,11 @@
           "Only if you hear them in the audio: **BBC, UK, DVD**"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "Sat",
+        "right": "Saturday"
+      },
       "caption": "If you are not sure, write the full word ✍️\n\nThe full word takes 2 seconds. A mistake costs 1 point.\n\nWhich month do you always spell wrong? 👇"
     },
     {
@@ -1329,6 +2060,24 @@
           "If there is a problem, **raise your hand at once**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🎧",
+            "Sound check"
+          ],
+          [
+            "🔊",
+            "Volume"
+          ],
+          [
+            "✋",
+            "Raise hand"
+          ]
+        ]
+      },
       "caption": "On exam day, small things make a big difference 🎧\n\nDon't be shy: if the sound is bad, you have the right to say so.\n\nHave you had this problem in an exam? 👇"
     },
     {
@@ -1349,6 +2098,20 @@
           "Start **2 months before** the exam"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "😩",
+            "3 hours a week"
+          ],
+          [
+            "💪",
+            "20 min a day"
+          ]
+        ]
+      },
       "caption": "A daily habit is much stronger than a weekly marathon 🔥\n\nStart today: 20 minutes, phone off.\n\nHow many minutes a day do you listen? 👇"
     },
     {
@@ -1369,6 +2132,20 @@
           "Not every question is **a trap**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "👂",
+            "Heard it clearly"
+          ],
+          [
+            "✅",
+            "Keep it"
+          ]
+        ]
+      },
       "caption": "Thinking too much also costs points 🧠💥\n\nSometimes IELTS asks a simple question and wants a simple answer.\n\nDo you think too much? 👇"
     }
   ],
@@ -1638,6 +2415,24 @@
           "Choose **by meaning** only from the right type"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "N",
+            "noun"
+          ],
+          [
+            "V",
+            "verb"
+          ],
+          [
+            "Adj",
+            "adjective"
+          ]
+        ]
+      },
       "caption": "Grammar cuts the options in half ✂️\n\nAfter that, choosing is much easier.\n\nDo you like summary questions? 👇"
     },
     {
@@ -1662,6 +2457,24 @@
           "When the time is up, **move to the next one**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "17'",
+            "Passage 1"
+          ],
+          [
+            "20'",
+            "Passage 2"
+          ],
+          [
+            "23'",
+            "Passage 3"
+          ]
+        ]
+      },
       "caption": "Passage 3 is the hardest, so keep the most time for it 🧗\n\nCheck the clock at the end of each part.\n\nHow do you plan your time? 👇"
     },
     {
@@ -1682,6 +2495,24 @@
           "Every question gives **the same point**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "⏱",
+            "1 minute"
+          ],
+          [
+            "📌",
+            "Mark it"
+          ],
+          [
+            "➡️",
+            "Move on"
+          ]
+        ]
+      },
       "caption": "A hard question does not give more points 🤷\n\nIf you have time at the end, come back. If not, write a guess.\n\nWhich question type makes you stuck? 👇"
     },
     {
@@ -1702,6 +2533,20 @@
           "In scanning your eyes **don't read**, they only search"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "👀",
+            "Skimming"
+          ],
+          [
+            "🔍",
+            "Scanning"
+          ]
+        ]
+      },
       "caption": "If you can do them fast, you will have enough time in Reading ⚡\n\nScanning practice: find all the numbers in a news article in 30 seconds.\n\nDid you do it? 👇"
     },
     {
@@ -1726,6 +2571,24 @@
           "10 seconds is enough"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "🔢",
+            "Numbers"
+          ],
+          [
+            "🔠",
+            "Names"
+          ],
+          [
+            "📎",
+            "Brackets"
+          ]
+        ]
+      },
       "caption": "If the question has “1987” or “Dr Wilson”, don't read the text from the start 🙅\n\nMove your eyes over the text and look only for that.\n\nDo you scan? 👇"
     },
     {
@@ -1746,6 +2609,20 @@
           "**Compare** every option with the text"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "📋",
+            "Same words"
+          ],
+          [
+            "🔁",
+            "Same meaning"
+          ]
+        ]
+      },
       "caption": "IELTS loves to trick you with words you know 🎣\n\nA word you know is not always the right answer.\n\nHas this trap caught you? 👇"
     },
     {
@@ -1770,6 +2647,20 @@
           "**most, all, always, only, never**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "≠",
+        "items": [
+          [
+            "🤏",
+            "some"
+          ],
+          [
+            "💯",
+            "all"
+          ]
+        ]
+      },
       "caption": "A small word, a big difference 🔬\n\nAlways compare the amount in the question and in the text.\n\nWhich other “dangerous” words do you know? 👇"
     },
     {
@@ -1790,6 +2681,20 @@
           "This answer comes up **often** too"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "≠",
+        "items": [
+          [
+            "❌",
+            "says the opposite"
+          ],
+          [
+            "🤷",
+            "says nothing"
+          ]
+        ]
+      },
       "caption": "NOT GIVEN does not mean “I could not find it”. It means “it is not in the text” 🕵️\n\nCheck the text well, then choose it with confidence.\n\nIs NOT GIVEN hard for you? 👇"
     },
     {
@@ -1810,6 +2715,20 @@
           "The text says nothing about it → **NOT GIVEN**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "≠",
+        "items": [
+          [
+            "🧠",
+            "What you know"
+          ],
+          [
+            "📄",
+            "What the text says"
+          ]
+        ]
+      },
       "caption": "In Reading the only judge is the text ⚖️\n\nLeave what you know at the door 🚪\n\nHave you made this mistake? 👇"
     },
     {
@@ -1830,6 +2749,20 @@
           "By then you **already** know the text well"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "1️⃣",
+            "Other questions"
+          ],
+          [
+            "2️⃣",
+            "Matching info"
+          ]
+        ]
+      },
       "caption": "These questions don't come in order and take the most time ⏳\n\nDo the other questions first and get to know the text.\n\nWhat order do you use? 👇"
     },
     {
@@ -1850,6 +2783,24 @@
           "One name can appear **more than once**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "⭕",
+            "Circle names"
+          ],
+          [
+            "📖",
+            "Read around"
+          ],
+          [
+            "🔗",
+            "Match"
+          ]
+        ]
+      },
       "caption": "In matching features questions, getting ready is half the win 🏆\n\nMarking the names takes 1 minute but saves 5.\n\nWill you try it? 👇"
     },
     {
@@ -1870,6 +2821,20 @@
           "A sentence can sound logical but **not be in the text**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🔧",
+            "Grammar fits?"
+          ],
+          [
+            "💡",
+            "Meaning fits?"
+          ]
+        ]
+      },
       "caption": "A two-step check = fewer mistakes ✅\n\nGrammar is the fastest filter.\n\nHow are these questions for you? 👇"
     },
     {
@@ -1890,6 +2855,24 @@
           "The description usually goes **in order**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🏷",
+            "Labels"
+          ],
+          [
+            "🔍",
+            "Find in text"
+          ],
+          [
+            "✍️",
+            "Answer nearby"
+          ]
+        ]
+      },
       "caption": "From top to bottom, or from left to right 🧭\n\nDiagram questions are often some of the easiest points.\n\nDo you like diagram questions? 👇"
     },
     {
@@ -1910,6 +2893,24 @@
           "If the question is not about that word, **move on**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "❓",
+            "New word"
+          ],
+          [
+            "🧩",
+            "Guess from context"
+          ],
+          [
+            "➡️",
+            "Move on"
+          ]
+        ]
+      },
       "caption": "Even in our own language we don't know every word, but we still understand 😉\n\nThe sentences before and after often explain the meaning.\n\nDo you use the dictionary a lot? 👇"
     },
     {
@@ -1930,6 +2931,20 @@
           "An explanation between commas or in **brackets**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "=",
+        "items": [
+          [
+            "🧐",
+            "hard word"
+          ],
+          [
+            "💬",
+            "“that is…”"
+          ]
+        ]
+      },
       "caption": "The text wants to help you. Just notice these signals 🤝\n\nAcademic texts have a lot of these explanations.\n\nHave you noticed this? 👇"
     },
     {
@@ -1950,6 +2965,24 @@
           "**however, despite, whereas** = an opposite idea"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🏷",
+            "Although cheap"
+          ],
+          [
+            "↩️",
+            "…"
+          ],
+          [
+            "📉",
+            "rarely used"
+          ]
+        ]
+      },
       "caption": "Linking words are the road signs of the text 🚦\n\n<b>therefore, as a result</b> = a result. Watch for them too.\n\nWhich other linking words do you know? 👇"
     },
     {
@@ -1970,6 +3003,11 @@
           "If the form doesn't fit, **look in another place**"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "polluted",
+        "right": "pollution"
+      },
       "caption": "In completion questions the answer is always ready in the text 📦\n\nYou need to find it, not make it.\n\nHave you made this mistake? 👇"
     },
     {
@@ -1990,6 +3028,24 @@
           "Losing **easy points** because of one hard question"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "📄",
+            "Passage 3"
+          ],
+          [
+            "🙂",
+            "Easy ones first"
+          ],
+          [
+            "🏆",
+            "Easy points"
+          ]
+        ]
+      },
       "caption": "Don't panic when you see Passage 3 😌\n\nIt is longer, but half of the questions are of medium difficulty.\n\nHow is Passage 3 for you? 👇"
     },
     {
@@ -2010,6 +3066,24 @@
           "Find the **right place** for each question"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "❓",
+            "Questions"
+          ],
+          [
+            "👀",
+            "Skim"
+          ],
+          [
+            "📍",
+            "Find the place"
+          ]
+        ]
+      },
       "caption": "This way you read the text once and have enough time ⏰\n\nIt is the simplest method, and it works best.\n\nWhat order do you use? 👇"
     },
     {
@@ -2030,6 +3104,20 @@
           "Is the writer **explaining or criticising**?"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "🔝",
+            "First paragraph"
+          ],
+          [
+            "🔚",
+            "Last paragraph"
+          ]
+        ]
+      },
       "caption": "This question is about the whole text, not one paragraph 🌍\n\nLook at the big picture.\n\nAre these questions easy or hard for you? 👇"
     },
     {
@@ -2054,6 +3142,20 @@
           "**arguably** = people may disagree"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "=",
+        "items": [
+          [
+            "😏",
+            "so-called"
+          ],
+          [
+            "🤨",
+            "“I doubt it”"
+          ]
+        ]
+      },
       "caption": "These words are the key in Yes/No/Not Given questions 🔑\n\nWhat does the writer believe? What does the writer doubt? These words tell you.\n\nSave this 🔖"
     },
     {
@@ -2074,6 +3176,20 @@
           "On the **computer test** this is not a problem"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "📝",
+            "Paper: no extra time"
+          ],
+          [
+            "💻",
+            "Computer: no problem"
+          ]
+        ]
+      },
       "caption": "Not like Listening: in Reading you get 0 minutes to copy answers ⏰\n\nMany people find this out in the exam 😱\n\nDid you know? 👇"
     },
     {
@@ -2094,6 +3210,24 @@
           "Spelling mistakes are **gone**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🖱",
+            "Select"
+          ],
+          [
+            "Ctrl+C",
+            "Copy"
+          ],
+          [
+            "Ctrl+V",
+            "Paste"
+          ]
+        ]
+      },
       "caption": "This is one of the biggest advantages of computer IELTS 💻\n\nTry it at home in the official demo test.\n\nWhich format did you choose? 👇"
     },
     {
@@ -2114,6 +3248,24 @@
           "**Copy-paste**: copy with no mistakes"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "🖍",
+            "Highlight"
+          ],
+          [
+            "📝",
+            "Notes"
+          ],
+          [
+            "📋",
+            "Copy-paste"
+          ]
+        ]
+      },
       "caption": "Don't see these tools for the first time on exam day 🙈\n\nPractise with the official demo test first.\n\nWhich tool do you use? 👇"
     },
     {
@@ -2134,6 +3286,24 @@
           "Don't say **every word** in your head"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "📰",
+            "1 article"
+          ],
+          [
+            "⏱",
+            "Time it"
+          ],
+          [
+            "📈",
+            "Faster"
+          ]
+        ]
+      },
       "caption": "Learn to read groups of words with your eyes 👀\n\nIn 1 month you will be much faster.\n\nHow many minutes do you need for one article? 👇"
     },
     {
@@ -2154,6 +3324,24 @@
           "The reason: **a synonym, time, or not understanding**?"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "❌",
+            "Mistake"
+          ],
+          [
+            "🔍",
+            "Find the proof"
+          ],
+          [
+            "💡",
+            "Find the reason"
+          ]
+        ]
+      },
       "caption": "Your score grows when you study your mistakes, not when you do more tests 📈\n\n1 test + 20 minutes of checking > 3 tests with no checking.\n\nDo you check your mistakes? 👇"
     },
     {
@@ -2174,6 +3362,24 @@
           "A **big part** of Reading texts is made of these words"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "=",
+        "items": [
+          [
+            "10",
+            "words a day"
+          ],
+          [
+            "📅",
+            "57 days"
+          ],
+          [
+            "570",
+            "words"
+          ]
+        ]
+      },
       "caption": "You can learn the whole list in 2 months 🗓\n\nThese words give you points in Writing too.\n\nHave you heard of the AWL? 👇"
     },
     {
@@ -2194,6 +3400,24 @@
           "Is it the start date, the end date or a **date of change**?"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🔢",
+            "A number"
+          ],
+          [
+            "↔️",
+            "Whole sentence"
+          ],
+          [
+            "✅",
+            "Answer"
+          ]
+        ]
+      },
       "caption": "Similar numbers are a natural trap 🪤\n\nUnderline what the question really asks.\n\nHas this trap caught you? 👇"
     },
     {
@@ -2214,6 +3438,24 @@
           "If you are not sure, look at the **last sentence**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "1️⃣",
+            "First sentence"
+          ],
+          [
+            "2️⃣",
+            "Second"
+          ],
+          [
+            "🔚",
+            "Last"
+          ]
+        ]
+      },
       "caption": "Academic texts are written with this rule 📐\n\nIt saves a lot of time in headings questions.\n\nDid you know this? 👇"
     },
     {
@@ -2234,6 +3476,20 @@
           "project = scheme, abandoned = halted"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "=",
+        "items": [
+          [
+            "🛑",
+            "abandoned"
+          ],
+          [
+            "✋",
+            "halted"
+          ]
+        ]
+      },
       "caption": "The Reading test is really a paraphrase test 🔁\n\nWrite down 5 pairs after each test.\n\nWhich pair did you find today? 👇"
     },
     {
@@ -2258,6 +3514,20 @@
           "increase = **rise, growth**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "=",
+        "items": [
+          [
+            "👁",
+            "show"
+          ],
+          [
+            "🔦",
+            "reveal"
+          ]
+        ]
+      },
       "caption": "If you know these pairs, many questions open up 🔓\n\nSave this and repeat it before your exam 🔖\n\nAdd one more pair 👇"
     },
     {
@@ -2282,6 +3552,20 @@
           "In the last minute, write **a guess** for all of them"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "⬜",
+            "Empty = 0%"
+          ],
+          [
+            "🎲",
+            "Guess = 25–33%"
+          ]
+        ]
+      },
       "caption": "You don't lose points for wrong answers, so a guess is a free chance 😎\n\nThe maths is on your side.\n\nDo you guess? 👇"
     },
     {
@@ -2302,6 +3586,20 @@
           "Sometimes the **name or date** you need is there"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "👀",
+            "Skimming: skip"
+          ],
+          [
+            "🔍",
+            "Scanning: look"
+          ]
+        ]
+      },
       "caption": "Brackets usually show a source, but sometimes they hold the answer 🎁\n\nDecide by the question type.\n\nHave you noticed this? 👇"
     },
     {
@@ -2322,6 +3620,24 @@
           "The part between commas is **extra** information"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "👤",
+            "Subject"
+          ],
+          [
+            "⚡",
+            "Main verb"
+          ],
+          [
+            "➕",
+            "Extra part"
+          ]
+        ]
+      },
       "caption": "First the main idea: who did what? Then the details 🧩\n\nAcademic sentences are long, but their structure is simple.\n\nAre long sentences hard for you? 👇"
     },
     {
@@ -2342,6 +3658,24 @@
           "A summary usually covers **1–2 paragraphs**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "📋",
+            "Summary title"
+          ],
+          [
+            "🔍",
+            "Similar part"
+          ],
+          [
+            "📍",
+            "1–2 paragraphs"
+          ]
+        ]
+      },
       "caption": "The summary often follows the order of the text ➡️\n\nWhen you find the first answer, the others are close.\n\nDo you like summary questions? 👇"
     },
     {
@@ -2362,6 +3696,20 @@
           "Many questions are answered **directly**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "📄",
+            "Clear proof"
+          ],
+          [
+            "🤝",
+            "Trust it"
+          ]
+        ]
+      },
       "caption": "Looking for traps everywhere also costs points 🧠💥\n\nThere is proof = there is an answer.\n\nDo you think too much? 👇"
     },
     {
@@ -2386,6 +3734,24 @@
           "Common words: important, people"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "🔠",
+            "Names"
+          ],
+          [
+            "🔢",
+            "Numbers"
+          ],
+          [
+            "🔬",
+            "Terms"
+          ]
+        ]
+      },
       "caption": "Rare words don't turn into synonyms in the text, so you find them fast 🎯\n\nChoosing key words is the first Reading skill.\n\nHow do you choose them? 👇"
     },
     {
@@ -2406,6 +3772,24 @@
           "**Completion**: scanning + grammar"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "🔬",
+            "T/F/NG"
+          ],
+          [
+            "🌍",
+            "Headings"
+          ],
+          [
+            "🔍",
+            "Completion"
+          ]
+        ]
+      },
       "caption": "Know the question type and choose the right method 🛠\n\nThis is the secret of going from Band 6 to Band 7.\n\nWhich question type is the hardest for you? 👇"
     },
     {
@@ -2426,6 +3810,20 @@
           "Read again **what the question asks**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "✅",
+            "Fully right"
+          ],
+          [
+            "🌓",
+            "Partly right"
+          ]
+        ]
+      },
       "caption": "Partly right = wrong ❌\n\nThe right answer answers the whole question.\n\nDoes this happen to you a lot? 👇"
     },
     {
@@ -2446,6 +3844,24 @@
           "**Sleep well** before the exam"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "⏱",
+            "60 minutes"
+          ],
+          [
+            "🚫",
+            "No break"
+          ],
+          [
+            "😴",
+            "Good sleep"
+          ]
+        ]
+      },
       "caption": "Your brain is like an athlete: it needs training 🏋️\n\nBreakfast matters too: it is hard to focus when you are hungry 🍳\n\nHow many minutes can you read with full focus? 👇"
     },
     {
@@ -2466,6 +3882,20 @@
           "It also shows the **structure** of the text"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "📖",
+            "Introduction"
+          ],
+          [
+            "🗺",
+            "Map of the text"
+          ]
+        ]
+      },
       "caption": "Spend 30 seconds and all the next questions get easier 🗺\n\nIt is the cheapest investment.\n\nDo you read the introduction? 👇"
     },
     {
@@ -2486,6 +3916,24 @@
           "**Theory → proof → criticism**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "⚠️",
+            "Problem"
+          ],
+          [
+            "🔎",
+            "Cause"
+          ],
+          [
+            "🛠",
+            "Solution"
+          ]
+        ]
+      },
       "caption": "When you skim, find out which structure the text has 🧭\n\nThen you know where to go when a question comes.\n\nHave you tried this? 👇"
     },
     {
@@ -2506,6 +3954,24 @@
           "**nowadays, currently** = now"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "⏮️",
+            "initially"
+          ],
+          [
+            "⏭️",
+            "later"
+          ],
+          [
+            "⏺️",
+            "nowadays"
+          ]
+        ]
+      },
       "caption": "Find the part that fits the time in the question 📅\n\nIn history texts these signals are the address of the answer.\n\nSave this 🔖"
     },
     {
@@ -2526,6 +3992,20 @@
           "If the direction is the opposite = **FALSE**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "A",
+            "cause"
+          ],
+          [
+            "B",
+            "result"
+          ]
+        ]
+      },
       "caption": "Look at which way the arrow points 🏹\n\nThis is a favourite T/F/NG trap.\n\nHas this trap caught you? 👇"
     },
     {
@@ -2550,6 +4030,27 @@
           "**twice as** = two times"
         ]
       ],
+      "visual": {
+        "type": "bars",
+        "items": [
+          [
+            "as much",
+            60
+          ],
+          [
+            "slightly more",
+            68
+          ],
+          [
+            "far more",
+            90
+          ],
+          [
+            "twice as",
+            120
+          ]
+        ]
+      },
       "caption": "Text: <i>A is not as effective as B</i>. Question: <i>A is more effective</i> → FALSE ❌\n\nAlways underline the words that show how much.\n\nWhich other comparing phrases do you know? 👇"
     },
     {
@@ -2570,6 +4071,20 @@
           "The text says maybe, the question says for sure → **not TRUE**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "≠",
+        "items": [
+          [
+            "🤔",
+            "may"
+          ],
+          [
+            "💯",
+            "will"
+          ]
+        ]
+      },
       "caption": "This is the favourite trap of Yes/No/Not Given 🪤\n\nLook at how sure the writer is.\n\nDid you know this? 👇"
     },
     {
@@ -2594,6 +4109,20 @@
           "**fine** = very small or thin"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "≠",
+        "items": [
+          [
+            "📖",
+            "novel = a book"
+          ],
+          [
+            "✨",
+            "novel = new"
+          ]
+        ]
+      },
       "caption": "Choose the meaning from the context 🔍\n\nBonus: an <b>issue</b> can also be one copy of a magazine.\n\nWhich other “tricky” words do you know? 👇"
     },
     {
@@ -2614,6 +4143,24 @@
           "Your speed and vocabulary **grow on their own**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "⚽",
+            "What you like"
+          ],
+          [
+            "📅",
+            "15 min a day"
+          ],
+          [
+            "📈",
+            "Speed grows"
+          ]
+        ]
+      },
       "caption": "Your brain doesn't get tired when you read something interesting 🧠✨\n\nToday, read one English article about your favourite topic.\n\nWhich topic will you choose? 👇"
     },
     {
@@ -2634,6 +4181,24 @@
           "After 10 tests = **your own word list**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "❌",
+            "Mistake"
+          ],
+          [
+            "🔁",
+            "Synonym pair"
+          ],
+          [
+            "📒",
+            "Notebook"
+          ]
+        ]
+      },
       "caption": "This list is more useful than any list on the internet 📒\n\nBecause it is made from your own mistakes.\n\nWill you start today? 👇"
     },
     {
@@ -2654,6 +4219,19 @@
           "“slight” vs “significant” → **FALSE**"
         ]
       ],
+      "visual": {
+        "type": "bars",
+        "items": [
+          [
+            "slight",
+            25
+          ],
+          [
+            "significant",
+            95
+          ]
+        ]
+      },
       "caption": "Words that show size come up a lot in T/F/NG 📏\n\nCompare the size in the question and in the text.\n\nSave this 🔖"
     },
     {
@@ -2674,6 +4252,11 @@
           "Answer: **FALSE**"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "France",
+        "right": "Germany"
+      },
       "caption": "Check each piece of information in the question one by one ✅✅\n\nIf one part is wrong, the whole sentence is wrong.\n\nHave you made this mistake? 👇"
     },
     {
@@ -2694,6 +4277,24 @@
           "Find out what **this, it, such** mean here"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "⬅️",
+            "Sentence before"
+          ],
+          [
+            "🔑",
+            "Key word"
+          ],
+          [
+            "➡️",
+            "Sentence after"
+          ]
+        ]
+      },
       "caption": "Sometimes the answer is not in one sentence. It is spread over two 🧩\n\nPut the full meaning together.\n\nHave you seen this? 👇"
     },
     {
@@ -2714,6 +4315,20 @@
           "Try a new method in **5 tests** first"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "🆕",
+            "New method"
+          ],
+          [
+            "💪",
+            "Practised method"
+          ]
+        ]
+      },
       "caption": "The exam is not a place for experiments 🧪\n\nA method you trust = a calm mind.\n\nWhat do you do before an exam? 👇"
     },
     {
@@ -2734,6 +4349,20 @@
           "In General there is **less room for mistakes**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "📘",
+            "Academic: 30/40"
+          ],
+          [
+            "📗",
+            "General: 34/40"
+          ]
+        ]
+      },
       "caption": "Thinking General Training is easy and not preparing is a big mistake 😬\n\nTake both formats seriously.\n\nWhich format will you take? 👇"
     }
   ],
@@ -3026,6 +4655,11 @@
           "**first, next, once, finally**"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "Workers cut the trees",
+        "right": "The trees are cut down"
+      },
       "caption": "Overview: how many steps, where it starts and where it ends 🔄\n\nA process diagram is the easiest Task 1 to prepare for.\n\nDo you like process tasks? 👇"
     },
     {
@@ -3050,6 +4684,24 @@
           "**was converted into** = was changed into"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🏚",
+            "old factory"
+          ],
+          [
+            "🏗",
+            "was replaced by"
+          ],
+          [
+            "🏢",
+            "new flats"
+          ]
+        ]
+      },
       "caption": "Overview: how much did the area change? Did it become more like a city? 🏙\n\nMap tasks are rare, but they are hard if you are not ready.\n\nSave this 🔖"
     },
     {
@@ -3070,6 +4722,20 @@
           "You can also write Task 2 **first**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "20'",
+            "Task 1"
+          ],
+          [
+            "40'",
+            "Task 2"
+          ]
+        ]
+      },
       "caption": "20 minutes are over? Finish Task 1, even if it is not perfect ⏰\n\nEvery point in Task 2 is worth more.\n\nWhich task do you start with? 👇"
     },
     {
@@ -3090,6 +4756,23 @@
           "Quality matters more than **quantity**"
         ]
       ],
+      "visual": {
+        "type": "bars",
+        "items": [
+          [
+            "230 words",
+            230
+          ],
+          [
+            "250 minimum",
+            250
+          ],
+          [
+            "270–300 best",
+            290
+          ]
+        ]
+      },
       "caption": "You don't need to write too much: 400 words = more mistakes 😅\n\nFind out how many words you write in one line by hand.\n\nHow many words do you usually write? 👇"
     },
     {
@@ -3110,6 +4793,24 @@
           "Your opinion = **in the introduction and conclusion**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "👁",
+            "View 1"
+          ],
+          [
+            "👁",
+            "View 2"
+          ],
+          [
+            "💭",
+            "Your opinion"
+          ]
+        ]
+      },
       "caption": "If you miss one part, you can't get more than Band 6 🚧\n\nReading the question twice takes 30 seconds, but it saves your band.\n\nDo you underline the question? 👇"
     },
     {
@@ -3134,6 +4835,28 @@
           "**Advantages-Disadvantages**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "💭",
+            "Opinion"
+          ],
+          [
+            "⚖️",
+            "Discussion"
+          ],
+          [
+            "🛠",
+            "Problem"
+          ],
+          [
+            "➕",
+            "Adv/Disadv"
+          ]
+        ]
+      },
       "caption": "Find the question type in 10 seconds, then make a plan 🗺\n\nThe same template for every question = Task Response 6.\n\nWhich type is the hardest for you? 👇"
     },
     {
@@ -3158,6 +4881,24 @@
           "“I **strongly believe** that...”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "=",
+        "items": [
+          [
+            "🚪",
+            "Introduction"
+          ],
+          [
+            "🎯",
+            "Same position"
+          ],
+          [
+            "🏁",
+            "Conclusion"
+          ]
+        ]
+      },
       "caption": "The examiner looks for your opinion 🔎\n\nIf your opinion changes in the middle, your Coherence score goes down too.\n\nDo you choose a clear position? 👇"
     },
     {
@@ -3178,6 +4919,20 @@
           "**40–50 words** in total"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "🔁",
+            "Paraphrase"
+          ],
+          [
+            "💭",
+            "Your opinion"
+          ]
+        ]
+      },
       "caption": "You don't need a long introduction with history and “Nowadays” 🙅\n\nMost points are in the body paragraphs.\n\nHow many sentences is your introduction? 👇"
     },
     {
@@ -3202,6 +4957,28 @@
           "**Link**: go back to the question"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "P",
+            "Point"
+          ],
+          [
+            "E",
+            "Explain"
+          ],
+          [
+            "E",
+            "Example"
+          ],
+          [
+            "L",
+            "Link"
+          ]
+        ]
+      },
       "caption": "Every body paragraph in this order = Coherence 7+ 🧱\n\nToday's practice: write one paragraph with PEEL.\n\nPost it in the comments and I will look at it 👇"
     },
     {
@@ -3222,6 +4999,20 @@
           "“In **Finland**, where homework is minimal, students rank among the best.”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "💡",
+            "Idea"
+          ],
+          [
+            "🇫🇮",
+            "Real example"
+          ]
+        ]
+      },
       "caption": "Not general sentences, but a real situation 🎯\n\nAn example can be a country, a study or your own experience.\n\nWhat is your favourite example? 👇"
     },
     {
@@ -3242,6 +5033,11 @@
           "“**A friend of mine** who...”"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "87% of students",
+        "right": "many young people"
+      },
       "caption": "The examiner sees fake statistics at once 🕵️\n\nA personal or general example is safer and easier to believe.\n\nHave you ever made up a statistic? 😅"
     },
     {
@@ -3262,6 +5058,24 @@
           "Confirm your **position**. 2 sentences are enough"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🚪",
+            "Intro"
+          ],
+          [
+            "🧱",
+            "Body"
+          ],
+          [
+            "🏁",
+            "No new ideas"
+          ]
+        ]
+      },
       "caption": "Start with <i>In conclusion</i> or <i>To sum up</i> and finish in 2 sentences 🏁\n\nThe conclusion is a short summary of your ideas, not a new chapter.\n\nHow many sentences is your conclusion? 👇"
     },
     {
@@ -3282,6 +5096,20 @@
           "Sometimes **This, Such, As a result** is enough"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "🤖",
+            "Moreover × 5"
+          ],
+          [
+            "✍️",
+            "Only between ideas"
+          ]
+        ]
+      },
       "caption": "Coherence = a natural flow, not a list of linking words 🌊\n\nPractice: take out half of the linking words from your essay and read it again.\n\nIs it better? 👇"
     },
     {
@@ -3302,6 +5130,24 @@
           "problem → **issue, challenge, concern**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "=",
+        "items": [
+          [
+            "👥",
+            "people"
+          ],
+          [
+            "🧑",
+            "individuals"
+          ],
+          [
+            "🏛",
+            "citizens"
+          ]
+        ]
+      },
       "caption": "But don't use a synonym if the meaning does not really fit ⚠️\n\nA correct synonym > a beautiful synonym.\n\nWhich word do you repeat the most? 👇"
     },
     {
@@ -3322,6 +5168,11 @@
           "Short forms are OK only in **a letter to a friend**"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "don't",
+        "right": "do not"
+      },
       "caption": "A small detail, but the examiner sees it 👀\n\nWhen you finish, look for apostrophes (') and check them.\n\nDo you make this mistake? 👇"
     },
     {
@@ -3346,6 +5197,11 @@
           "Use **I** only for your opinion: I believe..."
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "You should",
+        "right": "Individuals should"
+      },
       "caption": "Academic style = not personal, but clear 🎓\n\nThis makes your Task 2 sound more formal at once.\n\nDo you use “you”? 👇"
     },
     {
@@ -3370,6 +5226,24 @@
           "But write them **with no mistakes**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "↩️",
+            "Although"
+          ],
+          [
+            "❓",
+            "If"
+          ],
+          [
+            "🔗",
+            "which"
+          ]
+        ]
+      },
       "caption": "A complex sentence with a mistake = a low score. A simple sentence with no mistakes = a medium score 🤔\n\nUse a mix of the two.\n\nWhat is your favourite complex structure? 👇"
     },
     {
@@ -3394,6 +5268,20 @@
           "If cities **had** more parks, residents **would** be healthier."
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "If",
+            "+ present"
+          ],
+          [
+            "will",
+            "+ verb"
+          ]
+        ]
+      },
       "caption": "“If” sentences are perfect for giving solutions in Task 2 💡\n\nUse at least 1 in every essay.\n\nWrite an example and I will check it 👇"
     },
     {
@@ -3414,6 +5302,11 @@
           "“**The** education system **in Uzbekistan**...” (specific)"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "The education",
+        "right": "Education"
+      },
       "caption": "A general idea = no article. A specific thing = the 🎯\n\nThis rule can raise your Grammar score by 0.5.\n\nAre articles hard for you? 👇"
     },
     {
@@ -3434,6 +5327,11 @@
           "**a piece of** advice, **much** research"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "informations",
+        "right": "information"
+      },
       "caption": "<i>informations, advices, researches</i> are some of the most common mistakes 😬\n\nSave this and look for these words when you check your essay 🔖\n\nWhich one did you get wrong before? 👇"
     },
     {
@@ -3454,6 +5352,20 @@
           "**everyone, each** + singular verb"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "1",
+            "The number of"
+          ],
+          [
+            "has",
+            "singular verb"
+          ]
+        ]
+      },
       "caption": "“The number of” is used a lot in Task 1, so this mistake is expensive 💸\n\nThe number = one number, so the verb is singular.\n\nDid you know this? 👇"
     },
     {
@@ -3478,6 +5390,11 @@
           "...useful. **It** saves time."
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "useful, it saves",
+        "right": "useful because it saves"
+      },
       "caption": "You can't join two full sentences with only a comma 🚫\n\nUse a linking word, a semicolon or a full stop.\n\nDo you make this mistake? 👇"
     },
     {
@@ -3498,6 +5415,20 @@
           "Write **naturally** in your own words"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "🪙",
+            "Clichés"
+          ],
+          [
+            "✍️",
+            "Your own words"
+          ]
+        ]
+      },
       "caption": "The examiner has seen these phrases hundreds of times 🥱\n\nA clear and logical sentence is worth more than a pretty cliché.\n\nWhich cliché have you used? 😅"
     },
     {
@@ -3518,6 +5449,20 @@
           "The right **collocation** + a simple word = Band 7"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "🤯",
+            "Hard word"
+          ],
+          [
+            "👌",
+            "Word you know"
+          ]
+        ]
+      },
       "caption": "A hard word used in the wrong way lowers your score 📉\n\nBefore you use a new word in an essay, see it in 3 example sentences.\n\nHave you tried using hard words? 👇"
     },
     {
@@ -3542,6 +5487,11 @@
           "**raise** awareness"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "make research",
+        "right": "conduct research"
+      },
       "caption": "Collocations are the key to Band 7 and 8 🔑\n\nBonus: <b>meet demand</b>, <b>make a mistake</b>, <b>take measures</b>.\n\nSave this 🔖"
     },
     {
@@ -3566,6 +5516,28 @@
           "Then **write**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "❓",
+            "Type"
+          ],
+          [
+            "🎯",
+            "Position"
+          ],
+          [
+            "💡",
+            "2 ideas"
+          ],
+          [
+            "✍️",
+            "Write"
+          ]
+        ]
+      },
       "caption": "These 5 minutes save 35 minutes ⏳\n\nPeople who plan don't cross out and start again.\n\nDo you make a plan? 👇"
     },
     {
@@ -3590,6 +5562,28 @@
           "**Spelling**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "a/the",
+            "Articles"
+          ],
+          [
+            "-s",
+            "Plurals"
+          ],
+          [
+            "🕐",
+            "Tenses"
+          ],
+          [
+            "🔤",
+            "Spelling"
+          ]
+        ]
+      },
       "caption": "These 3 minutes can raise your Grammar score by 0.5 📈\n\nLook only for the mistakes you often make.\n\nDo you leave time for checking? 👇"
     },
     {
@@ -3614,6 +5608,28 @@
           "**Conclusion**: 2 sentences"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🚪",
+            "Intro"
+          ],
+          [
+            "🧱",
+            "Body 1"
+          ],
+          [
+            "🧱",
+            "Body 2"
+          ],
+          [
+            "🏁",
+            "Conclusion"
+          ]
+        ]
+      },
       "caption": "Leave an empty line between paragraphs 👀\n\nThe examiner sees the structure the moment they look at your essay.\n\nHow many paragraphs does your essay have? 👇"
     },
     {
@@ -3634,6 +5650,20 @@
           "Prove it with **an example**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "4",
+            "thin ideas"
+          ],
+          [
+            "1",
+            "deep idea"
+          ]
+        ]
+      },
       "caption": "Depth matters more than the number of ideas 🌊\n\nFor Task Response 7+ your ideas must be fully developed.\n\nHow many ideas do you write? 👇"
     },
     {
@@ -3658,6 +5688,19 @@
           "Confirm your **answer** in the conclusion"
         ]
       ],
+      "visual": {
+        "type": "bars",
+        "items": [
+          [
+            "disadvantages",
+            45
+          ],
+          [
+            "advantages",
+            90
+          ]
+        ]
+      },
       "caption": "When you see the word “outweigh”, you need a clear answer ⚖️\n\nJust listing advantages and disadvantages = Band 6.\n\nHow is this question type for you? 👇"
     },
     {
@@ -3682,6 +5725,24 @@
           "“Councils could introduce **free bus passes** for students.”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "👤",
+            "Who?"
+          ],
+          [
+            "🛠",
+            "What?"
+          ],
+          [
+            "🎯",
+            "Result?"
+          ]
+        ]
+      },
       "caption": "A clear solution = a high Task Response 🛠\n\nA general solution does not convince the examiner.\n\nWhat is your best solution example? 👇"
     },
     {
@@ -3702,6 +5763,20 @@
           "A short answer to **the two questions** in the introduction"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "❓",
+            "Question 1"
+          ],
+          [
+            "❓",
+            "Question 2"
+          ]
+        ]
+      },
       "caption": "If one part is weak, your Task Response goes down 📉\n\nBalance is the key.\n\nAre two-part questions hard for you? 👇"
     },
     {
@@ -3722,6 +5797,24 @@
           "Going off topic = **Band 5**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "❓",
+            "Question"
+          ],
+          [
+            "🎯",
+            "Key words"
+          ],
+          [
+            "✅",
+            "On topic"
+          ]
+        ]
+      },
       "caption": "Underline the exact topic of the question and stay with it 🎯\n\nWriting about a wide topic is easy, but it gives no points.\n\nHave you made this mistake? 👇"
     },
     {
@@ -3742,6 +5835,11 @@
           "**most, often, are likely to**"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "All young people",
+        "right": "Many young people"
+      },
       "caption": "Careful language = a sign of Band 7+ 🎓\n\nAcademic writing has very few 100% statements.\n\nDo you use “all” a lot? 👇"
     },
     {
@@ -3762,6 +5860,11 @@
           "“**It is widely believed** that...”"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "People built factories",
+        "right": "Factories were built"
+      },
       "caption": "When it is not important who does the action, use the passive 🔄\n\nIt shows that you can use different grammar.\n\nDo you use the passive? 👇"
     },
     {
@@ -3786,6 +5889,24 @@
           "“...because it shows unrealistic images, which **can lower** self-esteem.”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "💡",
+            "Idea"
+          ],
+          [
+            "❓",
+            "Why?"
+          ],
+          [
+            "➡️",
+            "Result"
+          ]
+        ]
+      },
       "caption": "Answer these two questions after every idea = a deep paragraph 🧠\n\nThis is the fastest way to raise your Task Response.\n\nWill you try it? 👇"
     },
     {
@@ -3806,6 +5927,24 @@
           "**Informal**: Hi Tom → Best wishes"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "🎩",
+            "Formal"
+          ],
+          [
+            "👔",
+            "Semi-formal"
+          ],
+          [
+            "👋",
+            "Informal"
+          ]
+        ]
+      },
       "caption": "“Dear Sir” to a friend is funny. “Hi!” to a manager is dangerous 😅\n\nFirst find out who you are writing to.\n\nWhich tone is hard for you? 👇"
     },
     {
@@ -3826,6 +5965,20 @@
           "**Underline** them in the task"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "=",
+        "items": [
+          [
+            "3",
+            "bullet points"
+          ],
+          [
+            "3",
+            "paragraphs"
+          ]
+        ]
+      },
       "caption": "This is the most common mistake in the General Training letter 📮\n\nWhen you finish, check all 3 bullets ✅✅✅\n\nAre you taking General? 👇"
     },
     {
@@ -3846,6 +5999,20 @@
           "“I'm writing to tell you some **exciting news**!”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "✉️",
+            "First sentence"
+          ],
+          [
+            "🎯",
+            "Reason for writing"
+          ]
+        ]
+      },
       "caption": "The first sentence tells the reader what the letter is about 📬\n\nThis matters for Task Achievement.\n\nHow do you start? 👇"
     },
     {
@@ -3866,6 +6033,11 @@
           "“I **trust** this matter will be resolved **promptly**.”"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "You are lazy!",
+        "right": "I was disappointed"
+      },
       "caption": "Be firm and polite together 🤝\n\nA rude tone = low Task Achievement.\n\nSave this 🔖"
     },
     {
@@ -3890,6 +6062,11 @@
           "“a **15% increase**”"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "from 1990 year",
+        "right": "in 1990"
+      },
       "caption": "Task 1 has a lot of numbers, so there can be a lot of mistakes 🔢\n\nLearn these 4 forms by heart.\n\nWhich one did you get wrong before? 👇"
     },
     {
@@ -3910,6 +6087,24 @@
           "**No time** (process, map) → Present Simple"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "⏮️",
+            "Past Simple"
+          ],
+          [
+            "⏺️",
+            "Present Simple"
+          ],
+          [
+            "⏭️",
+            "is expected to"
+          ]
+        ]
+      },
       "caption": "Choose the tense by the years on the graph 📅\n\nA tense mistake hurts the whole text.\n\nHave you made this mistake? 👇"
     },
     {
@@ -3934,6 +6129,21 @@
           "**is likely to** remain stable"
         ]
       ],
+      "visual": {
+        "type": "lines",
+        "series": [
+          [
+            "now",
+            "flat",
+            "📍"
+          ],
+          [
+            "is expected to rise",
+            "up",
+            "🔮"
+          ]
+        ]
+      },
       "caption": "Different phrases = better Lexical Resource ⬆️\n\nGraphs about the future (2030, 2050) come up often.\n\nSave this 🔖"
     },
     {
@@ -3958,6 +6168,19 @@
           "**nearly** doubled"
         ]
       ],
+      "visual": {
+        "type": "pie",
+        "items": [
+          [
+            49.7,
+            "just under half"
+          ],
+          [
+            50.3,
+            "the rest"
+          ]
+        ]
+      },
       "caption": "“About” language makes your text more natural 🌿\n\nUse a mix of exact numbers and “about” phrases.\n\nDo you use these phrases? 👇"
     },
     {
@@ -3982,6 +6205,24 @@
           "**advertisement, development**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "n",
+            "goverNment"
+          ],
+          [
+            "ie",
+            "belIEve"
+          ],
+          [
+            "ei",
+            "recEIve"
+          ]
+        ]
+      },
       "caption": "Write each of these words 5 times ✏️\n\nYou need them in almost every Task 2.\n\nWhich one do you always get wrong? 👇"
     },
     {
@@ -4002,6 +6243,24 @@
           "Bad handwriting? Choose **computer IELTS**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "😵",
+            "Messy"
+          ],
+          [
+            "✍️",
+            "Clear"
+          ],
+          [
+            "💻",
+            "Computer"
+          ]
+        ]
+      },
       "caption": "The examiner does not guess: if they can't read it, it does not count 🙈\n\nThe computer test has no such problem, and it shows your word count.\n\nWhich format did you choose? 👇"
     },
     {
@@ -4022,6 +6281,20 @@
           "Then compare **with a sample**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "📖",
+            "Reading 50 essays"
+          ],
+          [
+            "✍️",
+            "Writing 2 a week"
+          ]
+        ]
+      },
       "caption": "Writing gets better only by writing ✍️\n\nToday, take 40 minutes and write one Task 2.\n\nIf you write it, put ✅ in the comments 👇"
     },
     {
@@ -4042,6 +6315,24 @@
           "Every week **one mistake** goes away"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "✍️",
+            "Essay"
+          ],
+          [
+            "3",
+            "main mistakes"
+          ],
+          [
+            "📉",
+            "Fewer each week"
+          ]
+        ]
+      },
       "caption": "With no feedback, mistakes become habits 🔁\n\nA teacher, a friend or you: someone must check.\n\nWhat is your most common mistake? 👇"
     },
     {
@@ -4066,6 +6357,28 @@
           "**The environment** and **the government**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "👤",
+            "Person"
+          ],
+          [
+            "👪",
+            "Society"
+          ],
+          [
+            "💰",
+            "Economy"
+          ],
+          [
+            "🌍",
+            "Environment"
+          ]
+        ]
+      },
       "caption": "Think about the topic from these sides and find one effect for each 🧠\n\nYou get 4–5 ideas in 1 minute.\n\nTry it: write 3 ideas about “Online shopping” 👇"
     },
     {
@@ -4090,6 +6403,28 @@
           "**Work**, **globalisation**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "📚",
+            "Education"
+          ],
+          [
+            "🌳",
+            "Environment"
+          ],
+          [
+            "🏙",
+            "City life"
+          ],
+          [
+            "💼",
+            "Work"
+          ]
+        ]
+      },
       "caption": "Get 15 key words and 3 examples ready for each topic 📒\n\nEven if you get a new topic in the exam, these words will help.\n\nWhich topic is the hardest for you? 👇"
     },
     {
@@ -4110,6 +6445,20 @@
           "“The impact of technology on children **remains a subject of debate**.”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "❓",
+            "Asking"
+          ],
+          [
+            "💬",
+            "Answering"
+          ]
+        ]
+      },
       "caption": "An essay is a place for answers, not questions ❓➡️❗\n\nWrite the same idea as a statement.\n\nHave you made this mistake? 👇"
     },
     {
@@ -4130,6 +6479,11 @@
           "Exclamation marks only in **a letter to a friend**"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "a huge problem!!!",
+        "right": "a particularly serious problem"
+      },
       "caption": "An academic text is calm but strong 💪\n\nShow a strong idea with strong words, not with marks.\n\nDo you use exclamation marks? 😅"
     },
     {
@@ -4150,6 +6504,24 @@
           "Even 1 sentence helps: “**In conclusion**, I firmly believe...”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🚪",
+            "Intro"
+          ],
+          [
+            "🧱",
+            "Shorter body"
+          ],
+          [
+            "🏁",
+            "Conclusion"
+          ]
+        ]
+      },
       "caption": "Never hand in an essay with no conclusion 🏁\n\nIn the last 5 minutes, check that your conclusion is there.\n\nHas this happened to you? 👇"
     },
     {
@@ -4174,6 +6546,28 @@
           "**Grammar**: range and accuracy"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "🎯",
+            "Task"
+          ],
+          [
+            "🧱",
+            "Coherence"
+          ],
+          [
+            "📚",
+            "Vocabulary"
+          ],
+          [
+            "🧩",
+            "Grammar"
+          ]
+        ]
+      },
       "caption": "Each one is 25%. If you forget one, your whole score goes down ⚖️\n\nMark your own essay from these 4 sides.\n\nWhich one is your strongest? 👇"
     }
   ],
@@ -4452,6 +6846,28 @@
           "**The ending**: why you remember it"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🌅",
+            "Start"
+          ],
+          [
+            "⚡",
+            "Event"
+          ],
+          [
+            "😲",
+            "Surprise"
+          ],
+          [
+            "🏁",
+            "Ending"
+          ]
+        ]
+      },
       "caption": "A story is interesting to listen to, and it helps your Fluency 📖\n\nThe examiner is a person too and likes a good story 😄\n\nWhat is your best story about? 👇"
     },
     {
@@ -4472,6 +6888,20 @@
           "Watch the **verb tense** on the card"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "⏮️",
+            "took = past"
+          ],
+          [
+            "⏺️",
+            "like = present"
+          ]
+        ]
+      },
       "caption": "The card tells you which tense to use 🃏\n\nA tense mistake lowers your Grammar score.\n\nHave you made this mistake? 👇"
     },
     {
@@ -4496,6 +6926,28 @@
           "**The other side**: “That said...”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "💭",
+            "Opinion"
+          ],
+          [
+            "❓",
+            "Reason"
+          ],
+          [
+            "⭐",
+            "Example"
+          ],
+          [
+            "↩️",
+            "Other side"
+          ]
+        ]
+      },
       "caption": "In Part 3, speak for 30–45 seconds 🎙\n\nHere the examiner looks at how deeply you can think.\n\nIs Part 3 hard for you? 👇"
     },
     {
@@ -4516,6 +6968,20 @@
           "“I think **most young people** nowadays...”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "🙋",
+            "Only me"
+          ],
+          [
+            "👥",
+            "People in general"
+          ]
+        ]
+      },
       "caption": "Part 3 questions are about society, generations and governments 🌍\n\nA personal example is OK, but after a general idea.\n\nDid you know this difference? 👇"
     },
     {
@@ -4536,6 +7002,24 @@
           "This **does not lower** your score"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "❓",
+            "Not clear?"
+          ],
+          [
+            "🙏",
+            "“Could you repeat?”"
+          ],
+          [
+            "✅",
+            "No penalty"
+          ]
+        ]
+      },
       "caption": "Answering the wrong question is much worse than asking again 🙅\n\nIn Part 3 the examiner can also explain the question in a different way.\n\nAre you shy to ask again? 👇"
     },
     {
@@ -4556,6 +7040,24 @@
           "You can get **Band 8** with your own accent"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "🎯",
+            "Stress"
+          ],
+          [
+            "🎵",
+            "Intonation"
+          ],
+          [
+            "🔊",
+            "Clear sounds"
+          ]
+        ]
+      },
       "caption": "Speaking less because you are afraid of your accent is the biggest mistake 🤐\n\nSpeak more, speak more clearly.\n\nDoes your accent worry you? 👇"
     },
     {
@@ -4576,6 +7078,20 @@
           "Practice: “**We visited a very wet village**.”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "≠",
+        "items": [
+          [
+            "W",
+            "round lips"
+          ],
+          [
+            "V",
+            "teeth on lip"
+          ]
+        ]
+      },
       "caption": "Practise for 2 minutes a day in front of a mirror 🪞\n\nIn 1 week you will hear the difference.\n\nSay this sentence in a voice message and I will check it 🎙"
     },
     {
@@ -4596,6 +7112,20 @@
           "**ð** (with voice): this, mother, weather"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "≠",
+        "items": [
+          [
+            "θ",
+            "think"
+          ],
+          [
+            "ð",
+            "this"
+          ]
+        ]
+      },
       "caption": "A TH mistake changes the meaning: <i>think</i> and <i>sink</i> 🚢\n\nPractise in front of a mirror. You should see your tongue.\n\nCan you say “Three thousand thirty-three”? 😄"
     },
     {
@@ -4616,6 +7146,20 @@
           "**COM**fortable, **VE**getable"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "≠",
+        "items": [
+          [
+            "PHO",
+            "PHOtograph"
+          ],
+          [
+            "TO",
+            "phoTOgraphy"
+          ]
+        ]
+      },
       "caption": "If you are not sure, check the stress in a dictionary 📖\n\nThe Cambridge Dictionary has audio for every word.\n\nWhich word do you always get wrong? 👇"
     },
     {
@@ -4636,6 +7180,21 @@
           "It **goes down** at the end of a sentence"
         ]
       ],
+      "visual": {
+        "type": "lines",
+        "series": [
+          [
+            "question",
+            "up",
+            "❓"
+          ],
+          [
+            "sentence",
+            "down",
+            "💬"
+          ]
+        ]
+      },
       "caption": "Repeat an English podcast out loud and copy the tone too 🎶\n\nIntonation is the secret of Band 7 pronunciation.\n\nHave you ever recorded your voice and listened to it? 👇"
     },
     {
@@ -4656,6 +7215,20 @@
           "A **short natural pause** between sentences"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "🏎",
+            "Fast"
+          ],
+          [
+            "🌊",
+            "Smooth"
+          ]
+        ]
+      },
       "caption": "Being clear comes first 🥇\n\nIf the examiner can't understand you, even the best words give no points.\n\nDo you speak fast? 👇"
     },
     {
@@ -4676,6 +7249,20 @@
           "A big mistake: fix it **fast**: “I go, sorry, I **went**.”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🙊",
+            "Small mistake"
+          ],
+          [
+            "➡️",
+            "Keep going"
+          ]
+        ]
+      },
       "caption": "Fluency matters more than being perfect 🌊\n\nNative speakers make mistakes too, and they keep going.\n\nDo you correct yourself a lot? 👇"
     },
     {
@@ -4700,6 +7287,20 @@
           "very interesting → **fascinating**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "=",
+        "items": [
+          [
+            "🙂",
+            "good"
+          ],
+          [
+            "🤩",
+            "fantastic"
+          ]
+        ]
+      },
       "caption": "One strong adjective is better than “very + a basic adjective” 💪\n\nToday, use 2 of these words in a conversation.\n\nWhich ones will you choose? 👇"
     },
     {
@@ -4720,6 +7321,20 @@
           "**a piece of cake, once in a blue moon, on the go**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "🐱",
+            "cats and dogs"
+          ],
+          [
+            "🍰",
+            "a piece of cake"
+          ]
+        ]
+      },
       "caption": "A wrong idiom is worse than no idiom 😬\n\nChoose modern phrases that people really use.\n\nWhat is your favourite idiom? 👇"
     },
     {
@@ -4744,6 +7359,20 @@
           "**take up** = start (a hobby)"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "=",
+        "items": [
+          [
+            "⏳",
+            "put off"
+          ],
+          [
+            "📅",
+            "do later"
+          ]
+        ]
+      },
       "caption": "Phrasal verbs make your speech natural and raise your vocabulary score 📈\n\nBonus: <b>get on with</b> = have a good relationship with.\n\nSave this 🔖"
     },
     {
@@ -4768,6 +7397,20 @@
           "“**If you ask me**...”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "=",
+        "items": [
+          [
+            "💭",
+            "I think"
+          ],
+          [
+            "👁",
+            "In my view"
+          ]
+        ]
+      },
       "caption": "Different phrases = better Lexical Resource ⬆️\n\nMake it a habit to start each Part 3 answer in a new way.\n\nWhich one do you use the most? 👇"
     },
     {
@@ -4788,6 +7431,24 @@
           "**Used to**: I used to play football."
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "❓",
+            "If"
+          ],
+          [
+            "✅",
+            "Present Perfect"
+          ],
+          [
+            "⏮️",
+            "Used to"
+          ]
+        ]
+      },
       "caption": "Different tenses and structures = Band 7 grammar 🎓\n\nBonus: a relative clause, like <i>a friend who lives abroad</i>.\n\nWhich structure do you use the most? 👇"
     },
     {
@@ -4808,6 +7469,20 @@
           "“**Having said that**, the countryside is **much less** stressful.”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "🏙",
+            "City"
+          ],
+          [
+            "🌾",
+            "Countryside"
+          ]
+        ]
+      },
       "caption": "<b>much / far / a lot</b> + a comparative = a strong comparison 💪\n\nTalking about the two sides is a sign of Band 7.\n\nWhere would you like to live? Write in English 👇"
     },
     {
@@ -4832,6 +7507,24 @@
           "“**If everything goes well**, I'll...”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "🗓",
+            "planning to"
+          ],
+          [
+            "🤞",
+            "hoping to"
+          ],
+          [
+            "😍",
+            "love to"
+          ]
+        ]
+      },
       "caption": "4 ways to start your answer to “What will you do after university?” 🚀\n\nDifferent structures show the examiner your grammar range.\n\nWhat is your plan? Write in English 👇"
     },
     {
@@ -4852,6 +7545,11 @@
           "“We **would** spend every summer at my grandparents'.”"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "I play football",
+        "right": "I used to play football"
+      },
       "caption": "Questions about childhood come up a lot in Part 1 and Part 2 🧒\n\n“Used to” and “would” are your best friends.\n\nWhat did you do as a child? Write in English 👇"
     },
     {
@@ -4872,6 +7570,24 @@
           "“It's a great way to **clear my head**.”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🥾",
+            "Hobby"
+          ],
+          [
+            "📍",
+            "Where"
+          ],
+          [
+            "😌",
+            "Why"
+          ]
+        ]
+      },
       "caption": "<b>into, head to, clear my head</b> = natural, living language 🏔\n\nPrepare 3 sentences like these about your own hobby.\n\nWhat is your hobby? 👇"
     },
     {
@@ -4892,6 +7608,24 @@
           "“It's quite **demanding**, but I find it **rewarding**.”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🎓",
+            "Student"
+          ],
+          [
+            "📚",
+            "Subject"
+          ],
+          [
+            "💬",
+            "Opinion"
+          ]
+        ]
+      },
       "caption": "This is the first question of Part 1, so it is your first impression ✨\n\n<b>demanding, rewarding</b> = Band 7 words.\n\nWhat do you study, or where do you work? Write in English 👇"
     },
     {
@@ -4912,6 +7646,24 @@
           "“**What I like most** is the food.”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "🏙",
+            "bustling"
+          ],
+          [
+            "🏢",
+            "skyscrapers"
+          ],
+          [
+            "🍲",
+            "food"
+          ]
+        ]
+      },
       "caption": "Formula: describe the place + give your own opinion 🏙\n\nPrepare an answer like this about your own city.\n\nWhere are you from? 👇"
     },
     {
@@ -4936,6 +7688,28 @@
           "**The effect on you**: “She made me realise that...”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "👤",
+            "Who"
+          ],
+          [
+            "💎",
+            "Character"
+          ],
+          [
+            "📖",
+            "Event"
+          ],
+          [
+            "❤️",
+            "Effect"
+          ]
+        ]
+      },
       "caption": "“Describe a person who inspired you” is one of the most common cards 🌟\n\nPrepare one person before the exam.\n\nWho inspires you? 👇"
     },
     {
@@ -4960,6 +7734,24 @@
           "“The streets were filled with **the smell of freshly baked bread**.”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "👀",
+            "See"
+          ],
+          [
+            "👂",
+            "Hear"
+          ],
+          [
+            "👃",
+            "Smell"
+          ]
+        ]
+      },
       "caption": "The 5 senses method = the examiner can see the place in their mind 🖼\n\nIt raises your Lexical Resource at once.\n\nDescribe your favourite place in one sentence 👇"
     },
     {
@@ -4984,6 +7776,28 @@
           "**Value**: why it matters to you"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "📜",
+            "History"
+          ],
+          [
+            "🎨",
+            "Description"
+          ],
+          [
+            "🛠",
+            "Use"
+          ],
+          [
+            "💎",
+            "Value"
+          ]
+        ]
+      },
       "caption": "30 seconds for each = 2 minutes ⏱\n\nPrepare one object for “Something you own that is important to you”.\n\nWhat important thing do you own? 👇"
     },
     {
@@ -5004,6 +7818,24 @@
           "**Dialogue**: “He asked me, ‘Could you help me?’”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "📅",
+            "Time"
+          ],
+          [
+            "📍",
+            "Place"
+          ],
+          [
+            "💬",
+            "Dialogue"
+          ]
+        ]
+      },
       "caption": "Dialogue makes your story feel like a film 🎬\n\nTry it with “Describe a time when you helped someone”.\n\nHave you ever helped someone? 👇"
     },
     {
@@ -5024,6 +7856,28 @@
           "**Explain why** gives you the most to say"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "1",
+            "Point"
+          ],
+          [
+            "2",
+            "Point"
+          ],
+          [
+            "3",
+            "Point"
+          ],
+          [
+            "❓",
+            "Explain why"
+          ]
+        ]
+      },
       "caption": "“Explain why” = feelings and opinions = the most points 🎯\n\nDon't leave it for the end. You may run out of time.\n\nDo you get to the last point? 👇"
     },
     {
@@ -5044,6 +7898,20 @@
           "The examiner **always** stops you when time is up"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "=",
+        "items": [
+          [
+            "✋",
+            "Examiner stops you"
+          ],
+          [
+            "⏱",
+            "2 minutes done"
+          ]
+        ]
+      },
       "caption": "Stay calm and get ready for the next question 😌\n\nBeing stopped is a sign of success.\n\nDid you know this? 👇"
     },
     {
@@ -5064,6 +7932,24 @@
           "The examiner **is not your enemy**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "4",
+            "breathe in"
+          ],
+          [
+            "4",
+            "hold"
+          ],
+          [
+            "4",
+            "breathe out"
+          ]
+        ]
+      },
       "caption": "Feeling nervous is normal, and you can control it 🧘\n\nAfter the first 2 minutes you usually calm down.\n\nDo you get nervous in exams? 👇"
     },
     {
@@ -5084,6 +7970,20 @@
           "Ask only if you **don't understand** the question"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "🎤",
+            "Interview"
+          ],
+          [
+            "☕",
+            "Chat"
+          ]
+        ]
+      },
       "caption": "The examiner will not answer, and it feels uncomfortable 😶\n\nKeep the focus on your own answer.\n\nDid you know this? 👇"
     },
     {
@@ -5104,6 +8004,24 @@
           "This is a sign of **natural speech**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🤔",
+            "First idea"
+          ],
+          [
+            "↩️",
+            "“On second thoughts”"
+          ],
+          [
+            "💡",
+            "Better idea"
+          ]
+        ]
+      },
       "caption": "Changing your mind does not hurt your Fluency 🔄\n\nNative speakers do it too.\n\nSave this 🔖"
     },
     {
@@ -5124,6 +8042,24 @@
           "“**For people in IT**... **However, for doctors**...”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🤷",
+            "It depends"
+          ],
+          [
+            "➡️",
+            "on what?"
+          ],
+          [
+            "💬",
+            "Explain"
+          ]
+        ]
+      },
       "caption": "After “it depends”, always give examples 📋\n\nThis is a perfect structure for Part 3.\n\nDo you use “it depends” a lot? 👇"
     },
     {
@@ -5148,6 +8084,24 @@
           "“**I wouldn't be surprised if**...”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "⏺️",
+            "Now"
+          ],
+          [
+            "🔮",
+            "“It's likely that…”"
+          ],
+          [
+            "🚀",
+            "Future"
+          ]
+        ]
+      },
       "caption": "Part 3 has a lot of these questions 🚀\n\nIf you know these phrases, a hard question becomes easy.\n\nHow do you think education will change? Write in English 👇"
     },
     {
@@ -5168,6 +8122,20 @@
           "**used to + these days** = a perfect pair"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "⏮️",
+            "used to"
+          ],
+          [
+            "⏺️",
+            "these days"
+          ]
+        ]
+      },
       "caption": "Questions about change are a Part 3 classic 🔄\n\nUse this formula for any topic.\n\nWhat has changed in your city? 👇"
     },
     {
@@ -5188,6 +8156,23 @@
           "“**I see their point**, but...” = a polite way to disagree"
         ]
       ],
+      "visual": {
+        "type": "bars",
+        "items": [
+          [
+            "partly agree",
+            45
+          ],
+          [
+            "agree",
+            75
+          ],
+          [
+            "couldn't agree more",
+            100
+          ]
+        ]
+      },
       "caption": "Showing the level = careful thinking = a higher score 🎓\n\nThen, of course, give a reason.\n\nWhich one do you use? 👇"
     },
     {
@@ -5208,6 +8193,11 @@
           "“I **can't live without it**, to be honest.”"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "Yes, I like music",
+        "right": "Absolutely, I'm a big fan"
+      },
       "caption": "A synonym = a chance to show your Lexical Resource 🎯\n\nListen to the question and answer it in different words.\n\nDo you like music? Answer in English 👇"
     },
     {
@@ -5232,6 +8222,11 @@
           "“**Oh, I love that question**.”"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "Umm... yes...",
+        "right": "Definitely!"
+      },
       "caption": "The first word gives you confidence, and the next sentences come easily 🚀\n\nLearn these 4 starts. They fit any question.\n\nWhich one do you like? 👇"
     },
     {
@@ -5252,6 +8247,20 @@
           "A Part 2 card: **1 minute to plan, 2 minutes to speak**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "🤫",
+            "In your head"
+          ],
+          [
+            "🗣",
+            "Out loud"
+          ]
+        ]
+      },
       "caption": "Record it on your phone and listen again 🔁\n\nSpeaking gets better only by speaking.\n\nWill you speak for 10 minutes today? 👇"
     },
     {
@@ -5272,6 +8281,24 @@
           "Answer the same question **again**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🎙",
+            "Record"
+          ],
+          [
+            "👂",
+            "Listen"
+          ],
+          [
+            "🔁",
+            "Again"
+          ]
+        ]
+      },
       "caption": "Hearing your own voice for the first time is strange, but very useful 😅\n\nThe second try is always better.\n\nHave you tried it? 👇"
     },
     {
@@ -5292,6 +8319,24 @@
           "Use a timer and tell each other **one main mistake**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🎓",
+            "Examiner"
+          ],
+          [
+            "🔄",
+            "Switch"
+          ],
+          [
+            "🙋",
+            "Candidate"
+          ]
+        ]
+      },
       "caption": "A speaking partner = the best free teacher 🤝\n\nIf you are looking for a partner, find each other in the comments 👇\n\nWho is looking for a partner?"
     },
     {
@@ -5316,6 +8361,28 @@
           "**Phones, weather**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "🏠",
+            "Home"
+          ],
+          [
+            "🎵",
+            "Hobbies"
+          ],
+          [
+            "🍜",
+            "Food"
+          ],
+          [
+            "📱",
+            "Phones"
+          ]
+        ]
+      },
       "caption": "Prepare 10 words and 1 personal story for each one 📒\n\nPart 1 = easy points, if you are ready.\n\nWhich topic is the hardest for you? 👇"
     },
     {
@@ -5340,6 +8407,28 @@
           "A story about a **present** or a **success**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "🧳",
+            "Travel"
+          ],
+          [
+            "🌟",
+            "Person"
+          ],
+          [
+            "🧗",
+            "Challenge"
+          ],
+          [
+            "🎁",
+            "Present"
+          ]
+        ]
+      },
       "caption": "One travel story fits the cards “a place”, “a happy memory” and “a journey” 🔁\n\n5–6 stories = ready for 50+ cards.\n\nWhat is your story for every card? 👇"
     },
     {
@@ -5364,6 +8453,11 @@
           "**So, all in all**"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "Furthermore",
+        "right": "On top of that"
+      },
       "caption": "Speaking is a conversation, not an essay 🗣\n\nWriting phrases sound strange when you speak.\n\nHave you used “moreover” in Speaking? 😅"
     },
     {
@@ -5384,6 +8478,11 @@
           "In Speaking, short forms **help your score**"
         ]
       ],
+      "visual": {
+        "type": "swap",
+        "wrong": "I do not know",
+        "right": "I don't know"
+      },
       "caption": "No short forms in Writing, but in Speaking, yes ✅\n\nThey make your speech smooth and natural.\n\nDid you know this? 👇"
     },
     {
@@ -5408,6 +8507,24 @@
           "“**at the end of the day**”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "🧱",
+            "to be honest"
+          ],
+          [
+            "🧱",
+            "the thing is"
+          ],
+          [
+            "🧱",
+            "when it comes to"
+          ]
+        ]
+      },
       "caption": "These chunks give your brain time and make you speak faster ⚡\n\nLearn and use 2 new chunks a day.\n\nWhich chunk do you use the most? 👇"
     },
     {
@@ -5428,6 +8545,20 @@
           "A smile = a **livelier** voice"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "😐",
+            "Flat voice"
+          ],
+          [
+            "😊",
+            "Lively voice"
+          ]
+        ]
+      },
       "caption": "The examiner also feels how well you communicate 🎭\n\nIt comes naturally when you talk about something you like.\n\nWhat topic makes your eyes light up? 👇"
     },
     {
@@ -5448,6 +8579,20 @@
           "It is not marked directly, but it helps you **speak smoothly**"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "👇",
+            "The table"
+          ],
+          [
+            "👀",
+            "The examiner"
+          ]
+        ]
+      },
       "caption": "Looking confident helps you speak with confidence 💪\n\nWhen you practise, look at your partner too.\n\nIs eye contact hard for you? 👇"
     },
     {
@@ -5468,6 +8613,24 @@
           "Talk to yourself **in English** on the way"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🎧",
+            "Listen"
+          ],
+          [
+            "🗣",
+            "Repeat"
+          ],
+          [
+            "🚶",
+            "Talk on the way"
+          ]
+        ]
+      },
       "caption": "Your speaking muscles need a warm-up too 🏃\n\nAn athlete does not start a game with no warm-up. You should not start the exam that way.\n\nWhat do you do before an exam? 👇"
     },
     {
@@ -5492,6 +8655,28 @@
           "**Pronunciation**: being easy to understand"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "+",
+        "items": [
+          [
+            "🌊",
+            "Fluency"
+          ],
+          [
+            "📚",
+            "Vocabulary"
+          ],
+          [
+            "🧩",
+            "Grammar"
+          ],
+          [
+            "🔊",
+            "Pronunciation"
+          ]
+        ]
+      },
       "caption": "Each one is 25% ⚖️\n\nRecord yourself and give a mark from 1 to 9 for each one.\n\nWhich one is your strongest? 👇"
     },
     {
@@ -5512,6 +8697,24 @@
           "“**Another thing is**... **So overall**...”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "💡",
+            "Idea"
+          ],
+          [
+            "🔗",
+            "“Another thing is…”"
+          ],
+          [
+            "💡",
+            "Idea"
+          ]
+        ]
+      },
       "caption": "A logical flow matters more than speed 🧠\n\nLinking phrases keep your speech in order.\n\nHow do you link your ideas? 👇"
     },
     {
@@ -5532,6 +8735,24 @@
           "Be honest: “I'm **not really into** art, but...”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "🎨",
+            "Art?"
+          ],
+          [
+            "🔄",
+            "Closer to you"
+          ],
+          [
+            "📱",
+            "A photo"
+          ]
+        ]
+      },
       "caption": "You can link any card to your own life 🔗\n\nBeing creative is the secret weapon of Speaking.\n\nWhat was your hardest card? 👇"
     },
     {
@@ -5552,6 +8773,24 @@
           "“**Anyway**, that's pretty much it.”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "💬",
+            "Talk"
+          ],
+          [
+            "🏁",
+            "“So, all in all…”"
+          ],
+          [
+            "✅",
+            "Clear ending"
+          ]
+        ]
+      },
       "caption": "A clear ending tells the examiner that you have finished ✅\n\nNo uncomfortable silence, just a nice full stop.\n\nSave this 🔖"
     },
     {
@@ -5572,6 +8811,24 @@
           "Speak for **15 minutes** every day"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "→",
+        "items": [
+          [
+            "📅",
+            "6–8 weeks before"
+          ],
+          [
+            "🗣",
+            "15 min a day"
+          ],
+          [
+            "📈",
+            "Progress"
+          ]
+        ]
+      },
       "caption": "A daily habit works better than a weekly marathon 🔥\n\nStart today: 15 minutes, any topic.\n\nHow many weeks are left before your exam? 👇"
     },
     {
@@ -5592,6 +8849,20 @@
           "“I'm waiting for the bus. **It's late again**.”"
         ]
       ],
+      "visual": {
+        "type": "flow",
+        "sep": "vs",
+        "items": [
+          [
+            "🔤",
+            "Translate"
+          ],
+          [
+            "🧠",
+            "Think in English"
+          ]
+        ]
+      },
       "caption": "5 minutes a day = in 3 weeks you translate less 🧠\n\nIt is the simplest exercise, and the strongest.\n\nDescribe what is around you now in one English sentence 👇"
     }
   ]

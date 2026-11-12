@@ -15,6 +15,7 @@ An optional "visual" (see visuals.py) adds a small picture above the rows;
 it is left out when the text would become too small next to it.
 """
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -62,6 +63,11 @@ def layout(d, text, size):
         if line and not glue and width + space + w > TEXT_W:
             lines.append(line)
             line, width = [], 0
+        elif glue and len(line) > 1 and width + w > TEXT_W:
+            # a glued tail ("...”") would stick out: take the word it belongs to along
+            last = line.pop()
+            lines.append(line)
+            line, width = [(last[0], last[1], last[2], 0)], last[2]
         gap = space if line and not glue else 0
         line.append((word, hot, w, gap))
         width += gap + w
@@ -91,6 +97,7 @@ def render(post):
         if height <= inner or size <= 26:
             if visual and (height > inner or size < 32):
                 # the picture leaves too little room for this text: drop it
+                if os.environ.get("POSTER_DEBUG"): print("visual dropped:", post.get("id"), file=sys.stderr)
                 visual, size = None, 50
                 continue
             break
