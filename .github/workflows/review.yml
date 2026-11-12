@@ -21,7 +21,7 @@ on:
           - remind
           - listen
       slot:
-        description: 'preview only: resend just this slot (12:00, 17:00, 18:00 or 19:30); empty = all'
+        description: 'preview only: resend just this slot (12:00, 17:00, 18:00, 19:30, "agent" = all agent posts, or one agent slot like "18:30 ig1"); empty = all'
         required: false
         default: ''
       date:

@@ -20,6 +20,10 @@
  * Multilevel channel: one post a day at 18:00 to @dilshod_multilevel, previewed
  * at 21:00 with the others and posted by the listener (src/multilevel.js).
  *
+ * Agent posts: posts written by the SMM agents (content/agent-queue.json) are
+ * previewed at 21:00 too, with a third ✏️ button that asks what to change
+ * (src/agent-posts.js).
+ *
  * Turned on by the TELEGRAM_ADMIN_ID secret (the admin's numeric user id).
  * Without it the bot posts straight to the channel as before.
  */
@@ -31,6 +35,7 @@ import { execSync } from 'child_process';
 import { callApi, setTargetChat, validateConfig } from './telegram.js';
 import { MULTILEVEL_TIME, MULTILEVEL_MINUTES, prepareMultilevelDraft, publishMultilevel } from './multilevel.js';
 import { HELP_TEXT, videoInMessage, prepareVideoNote, prepareDriveVideo, publishVideoNote, hasFfmpeg } from './video-note.js';
+import { prepareAgentDrafts, publishAgentDraft, dueAgentKeys, isAgentDraft, loadQueue, validPost, agentSlot } from './agent-posts.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REVIEW_FILE = join(__dirname, '..', 'content', 'review.json');
@@ -75,17 +80,23 @@ function sendAdmin(text, extra = {}) {
   return callApi('sendMessage', { chat_id: ADMIN_ID, text, parse_mode: 'HTML', disable_web_page_preview: true, ...extra });
 }
 
-/** The two buttons; the chosen one is marked so the choice is visible on the buttons themselves. */
-function buttons(key, status = 'pending') {
+/**
+ * The two buttons; the chosen one is marked so the choice is visible on the
+ * buttons themselves. Agent posts get a third one, ✏️, to ask for changes.
+ */
+function buttons(key, status = 'pending', editable = false) {
   const ok = status === 'approved' ? '✅ Chiqadi ✔️' : '✅ Chiqsin';
   const no = status === 'rejected' ? '❌ Chiqmaydi ✔️' : '❌ Chiqmasin';
-  return {
-    inline_keyboard: [[
-      { text: ok, callback_data: `r:ok:${key}` },
-      { text: no, callback_data: `r:no:${key}` },
-    ]],
-  };
+  const rows = [[
+    { text: ok, callback_data: `r:ok:${key}` },
+    { text: no, callback_data: `r:no:${key}` },
+  ]];
+  if (editable) rows.push([{ text: status === 'edit_requested' ? '✏️ Tahrir so‘raldi ✔️' : '✏️ Tahrirlash', callback_data: `r:ed:${key}` }]);
+  return { inline_keyboard: rows };
 }
+
+/** Draft states in which the admin can still decide. */
+const OPEN = ['pending', 'approved', 'rejected', 'edit_requested'];
 
 const STATUS_TEXT = {
   pending: '⏳ Javobingiz kutilmoqda',
@@ -93,6 +104,7 @@ const STATUS_TEXT = {
   rejected: '❌ Bekor qilindi, kanalga chiqmaydi',
   published: '📢 Kanalga chiqdi',
   skipped: '⏭ Tasdiqlanmagani uchun chiqmadi',
+  edit_requested: '✏️ Tahrir so‘raldi: agentlar tuzatib, yangi variantni yuboradi',
 };
 
 function buttonsText(draft) {
@@ -106,7 +118,7 @@ function buttonsText(draft) {
  */
 async function refreshButtons(key, draft) {
   const done = draft.status === 'published' || draft.status === 'skipped';
-  const markup = done ? { inline_keyboard: [] } : buttons(key, draft.status);
+  const markup = done ? { inline_keyboard: [] } : buttons(key, draft.status, isAgentDraft(draft));
   const harmless = (error) => {
     if (!/not modified|not found|can't be edited/.test(error.message)) console.log(`⚠️ Could not update buttons for ${key}: ${error.message}`);
   };
@@ -135,13 +147,20 @@ async function applyUpdate(state, update) {
   const query = update.callback_query;
   if (!query) return null;
   if (/^v:/.test(query.data || '')) return handleQueueButton(state, query);
-  const match = /^r:(ok|no):(.+)$/.exec(query.data || '');
+  const match = /^r:(ok|no|ed):(.+)$/.exec(query.data || '');
   const draft = match && state.drafts[match[2]];
   let answer = '⚠️ Bu post endi o‘zgartirib bo‘lmaydi';
   let key = null;
   if (String(query.from.id) !== String(ADMIN_ID)) {
     answer = '⛔ Faqat admin tasdiqlay oladi';
-  } else if (draft && ['pending', 'approved', 'rejected'].includes(draft.status)) {
+  } else if (match?.[1] === 'ed' && draft && isAgentDraft(draft) && OPEN.includes(draft.status)) {
+    // The next text the admin sends is the change request (see handleMessage)
+    state.edit_wait = match[2];
+    await sendAdmin(`✏️ <b>${draft.label}</b>\nNima o‘zgarsin? Bitta xabarda yozing, agentlar tuzatib, yangi variantni yuboradi.\n/bekor — tahrirni bekor qilish`, {
+      reply_markup: { force_reply: true, input_field_placeholder: 'Nima o‘zgarsin?' },
+    });
+    answer = '✏️ Nima o‘zgarishini yozing';
+  } else if (match && match[1] !== 'ed' && draft && OPEN.includes(draft.status)) {
     draft.status = match[1] === 'ok' ? 'approved' : 'rejected';
     draft.decided_at = new Date().toISOString();
     const tapped = query.message?.message_id;
@@ -211,6 +230,7 @@ function expectedDate(state, position) {
 /** A message from the admin in the private chat. Other people's messages are ignored. */
 async function handleMessage(state, message) {
   if (String(message.from?.id) !== String(ADMIN_ID) || message.chat?.type !== 'private') return null;
+  if (state.edit_wait && message.text) return handleEditRequest(state, message.text);
   const video = videoInMessage(message);
   if (!video) {
     if (/^\/(video|start|help)\b/.test(message.text || '')) await sendAdmin(HELP_TEXT);
@@ -237,6 +257,26 @@ async function handleMessage(state, message) {
     try { await sendAdmin(`⚠️ Videoni dumaloq qilib bo‘lmadi.\n${error.message}\n\n${HELP_TEXT}`); } catch {}
     return null;
   }
+}
+
+/** The admin's answer after ✏️: saved on the draft for the agents to pick up. */
+async function handleEditRequest(state, text) {
+  const key = state.edit_wait;
+  delete state.edit_wait;
+  const draft = state.drafts[key];
+  if (/^\/bekor\b/.test(text)) {
+    await sendAdmin('↩️ Tahrir bekor qilindi, post avvalgi holatida qoldi.');
+    return '#edit';
+  }
+  if (!draft || !OPEN.includes(draft.status)) {
+    await sendAdmin('⚠️ Bu postni endi o‘zgartirib bo‘lmaydi.');
+    return '#edit';
+  }
+  draft.status = 'edit_requested';
+  draft.edit_request = text;
+  draft.decided_at = new Date().toISOString();
+  await sendAdmin('📝 Qabul qilindi. Agentlar tuzatib, yangi variantni shu yerga ✅ / ❌ bilan yuboradi.');
+  return key;
 }
 
 async function showQueue(state) {
@@ -406,6 +446,42 @@ async function publishDueMultilevel(state) {
 }
 
 /**
+ * Telegram agent posts whose time has come: approved ones go to their channel,
+ * the rest are marked skipped. Returns true if the state changed.
+ */
+async function publishDueAgentPosts(state) {
+  const d = new Date(Date.now() + 5 * 60 * 60 * 1000);
+  const now = d.getUTCHours() * 60 + d.getUTCMinutes();
+  let changed = false;
+  for (const key of dueAgentKeys(state, tashkentDate(), now)) {
+    const draft = state.drafts[key];
+    if (!['pending', 'approved', 'edit_requested'].includes(draft.status)) continue;
+    if (draft.status !== 'approved') {
+      draft.status = 'skipped';
+      await refreshButtons(key, draft);
+      changed = true;
+      continue;
+    }
+    try {
+      await publishAgentDraft(draft);
+    } catch (error) {
+      console.log(`⚠️ Agent post ${key} not published: ${error.message}`);
+      if (!draft.error_sent) {
+        draft.error_sent = true;
+        try { await sendAdmin(`⚠️ Agent posti chiqmadi (${draft.label}): ${error.message}\nQayta urinib ko‘raman.`); } catch {}
+        changed = true;
+      }
+      continue;
+    }
+    draft.status = 'published';
+    draft.published_at = new Date().toISOString();
+    await refreshButtons(key, draft);
+    changed = true;
+  }
+  return changed;
+}
+
+/**
  * Read button taps from Telegram, save them, and confirm them so they are
  * not read twice. The admin can change their mind until the post goes out.
  * `timeout` > 0 waits (long polling) for a tap to arrive.
@@ -451,7 +527,8 @@ async function listen(state) {
     try {
       const videoChanged = await publishDueVideo(state);
       const multilevelChanged = await publishDueMultilevel(state);
-      if ((await syncDecisions(state, wait)) || videoChanged || multilevelChanged) {
+      const agentChanged = await publishDueAgentPosts(state);
+      if ((await syncDecisions(state, wait)) || videoChanged || multilevelChanged || agentChanged) {
         persist();
       }
     } catch (error) {
@@ -490,7 +567,7 @@ export async function submitDraft(state, { date, slot, label, meta, send }) {
   // A resent preview keeps the old buttons working and updated
   const previous = state.drafts[key];
   if (previous?.buttons_message_id) draft.extra_button_ids = [...(previous.extra_button_ids || []), previous.buttons_message_id];
-  const message = await sendAdmin(buttonsText(draft), { reply_markup: buttons(key) });
+  const message = await sendAdmin(buttonsText(draft), { reply_markup: buttons(key, 'pending', isAgentDraft(draft)) });
   draft.buttons_message_id = message.message_id;
   state.drafts[key] = draft;
   save(state);
@@ -535,7 +612,7 @@ async function remind(state) {
   for (const [key, draft] of waiting) {
     const message = await sendAdmin(`⏰ <b>Eslatma:</b> bugungi ${draft.slot} posti hali tasdiqlanmagan.\nTasdiqlamasangiz, kanalga chiqmaydi.`, {
       reply_to_message_id: draft.buttons_message_id,
-      reply_markup: buttons(key),
+      reply_markup: buttons(key, 'pending', isAgentDraft(draft)),
     });
     draft.extra_button_ids = [...(draft.extra_button_ids || []), message.message_id];
   }
@@ -569,6 +646,32 @@ async function preview(state, only) {
     }
   }
   if (!only || only === MULTILEVEL_TIME) await previewMultilevel(state, date);
+  await previewAgentPosts(state, date, only);
+}
+
+/** Agent posts for `date`. `only` = "agent" for all of them, or one agent slot ("18:00 ig1"). */
+async function previewAgentPosts(state, date, only) {
+  const known = ['12:00', '19:30', VIDEO_TIME, MULTILEVEL_TIME];
+  if (known.includes(only)) return;
+  const pick = only === 'agent' ? '' : only;
+  let drafts = [];
+  try {
+    drafts = prepareAgentDrafts(date, ADMIN_ID, pick);
+  } catch (error) {
+    console.error(`⚠️ Agent queue unreadable: ${error.message}`);
+    await sendAdmin(`⚠️ Agentlar navbatini o‘qib bo‘lmadi: ${error.message}`);
+    return;
+  }
+  const bad = loadQueue().filter((p) => p.date === date && !validPost(p));
+  if (bad.length) await sendAdmin(`⚠️ Agentlarning ${bad.length} ta posti noto‘g‘ri yozilgan, ko‘rsatilmadi: ${bad.map((p) => p.id || '?').join(', ')}`);
+  for (const draft of drafts) {
+    try {
+      await submitDraft(state, { date, ...draft });
+    } catch (error) {
+      console.error(`⚠️ Agent preview failed (${draft.slot}): ${error.message}`);
+      await sendAdmin(`⚠️ Agent postini ko‘rsatib bo‘lmadi (${draft.slot}): ${error.message}`);
+    }
+  }
 }
 
 async function previewMultilevel(state, date) {
