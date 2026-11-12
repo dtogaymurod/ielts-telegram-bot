@@ -135,10 +135,21 @@ def versus(img, d, art):
         row = (Y1 - Y0 - 130) / len(items)
         for i, (icon, text) in enumerate(items):
             cy = Y0 + 122 + row * (i + 0.5)
-            r = min(row / 2 - 34, 62)
-            d = icon_disc(img, icon, x + cw / 2, cy - 22, r)
-            f = fit(d, text, "black", 34, cw - 36, 20)
-            centred(d, text, x + cw / 2, cy - 22 + r + 10, f, NAVY if colour == GREEN else (120, 70, 70))
+            # long sentences wrap onto up to three lines under a smaller icon
+            size, f = 34, font("black", 34)
+            lines = wrap(d, text, f, cw - 40)
+            while len(lines) > 3 and size > 22:
+                size -= 2
+                f = font("black", size)
+                lines = wrap(d, text, f, cw - 40)
+            lh = int(size * 1.22)
+            r = min(row / 2 - 34, 62) - (len(lines) - 1) * 9
+            top = cy - (2 * r + 12 + len(lines) * lh) / 2 + 6
+            d = icon_disc(img, icon, x + cw / 2, top + r, r)
+            ty = top + 2 * r + 12
+            for line in lines:
+                centred(d, line, x + cw / 2, ty, f, NAVY if colour == GREEN else (120, 70, 70))
+                ty += lh
     # "vs" badge in the middle
     cx, cy = (X0 + X1) / 2, (Y0 + Y1) / 2 + 40
     d.ellipse([cx - 44, cy - 44, cx + 44, cy + 44], fill=NAVY, outline=WHITE, width=6)
