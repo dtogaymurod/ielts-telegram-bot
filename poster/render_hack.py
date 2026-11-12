@@ -21,7 +21,7 @@ from pathlib import Path
 from PIL import ImageDraw
 
 import render_genz
-from render_genz import NAVY, ORANGE, WHITE, card, emoji, frame, note
+from render_genz import NAVY, WHITE, card, emoji, frame, note
 import visuals
 from render_post import PAD, H, W, font
 
@@ -78,6 +78,9 @@ def measure(d, rows, size):
 
 
 def render(post):
+    render_genz.use_theme(post.get("theme", "orange"), post.get("exam"), post.get("handle"))
+    if post.get("pill"):
+        render_genz.PILLS[post["skill"]] = post["pill"]
     img = frame(post["skill"], post["title"], post["subtitle"])
     card(img, [PAD, TOP, W - PAD, BOTTOM])
     d = ImageDraw.Draw(img)
@@ -104,11 +107,11 @@ def render(post):
     for (marker, _), (lines, reg, bold, space) in zip(rows, blocks):
         mid = y + line_h // 2
         if len(marker) <= 2 and marker.isalnum():
-            d.ellipse([PAD + 40, mid - 34, PAD + 108, mid + 34], fill=ORANGE)
+            d.ellipse([PAD + 40, mid - 34, PAD + 108, mid + 34], fill=render_genz.ORANGE)
             nf = font("black", 36)
             d.text((PAD + 74 - d.textlength(marker, font=nf) / 2, mid - 22), marker, font=nf, fill=WHITE)
         else:
-            tint = {"❌": (255, 232, 230), "✅": (226, 247, 235)}.get(marker, (255, 238, 226))
+            tint = {"❌": (255, 232, 230), "✅": (226, 247, 235)}.get(marker, render_genz.THEME["tint"])
             d.rounded_rectangle([PAD + 36, mid - 40, PAD + 116, mid + 40], radius=22, fill=tint)
             emoji(img, marker, PAD + 52, mid - 24, 48)
         d = ImageDraw.Draw(img)
@@ -116,7 +119,7 @@ def render(post):
             x = TEXT_X
             for word, hot, w, pad in line:
                 x += pad
-                d.text((x, y), word, font=bold if hot else reg, fill=ORANGE if hot else NAVY)
+                d.text((x, y), word, font=bold if hot else reg, fill=render_genz.ORANGE if hot else NAVY)
                 x += w
             y += line_h
         y += gap

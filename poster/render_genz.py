@@ -38,6 +38,34 @@ LINE = (236, 232, 228)
 GREEN = (52, 199, 120)
 RED = (235, 77, 75)
 
+# Colour themes. "orange" is the @dilshod_english look; the Multilevel channel
+# has its own colours so the two channels never look the same. A post picks a
+# theme with "theme" (render_hack.py, render_visual.py), which also sets the
+# exam label, the handle and the round photo: a theme's "avatar" file in
+# poster/assets is used when it exists, avatar.png otherwise.
+THEMES = {
+    "orange": {"top": (240, 100, 50), "bottom": (210, 60, 40), "accent": (226, 83, 42),
+               "tint": (255, 238, 226), "soft": (255, 244, 236), "sub": (255, 230, 215),
+               "insta": (255, 225, 210), "rule": (255, 170, 140),
+               "shadow": (90, 20, 0, 80), "exam": "IELTS", "handle": HANDLE},
+    "green": {"top": (22, 163, 120), "bottom": (8, 108, 88), "accent": (8, 138, 98),
+              "tint": (220, 245, 235), "soft": (235, 250, 243), "sub": (214, 245, 232),
+              "insta": (214, 245, 232), "rule": (120, 210, 175),
+              "shadow": (0, 50, 30, 80), "exam": "MULTILEVEL", "handle": "@dilshod_multilevel",
+              "avatar": "avatar-multilevel.png"},
+}
+THEME = THEMES["orange"]
+EXAM = "IELTS"
+
+
+def use_theme(name, exam=None, handle=None):
+    """Switch every drawing helper to another colour theme."""
+    global THEME, ORANGE, EXAM, HANDLE
+    THEME = THEMES[name]
+    ORANGE = THEME["accent"]
+    EXAM = exam or THEME["exam"]
+    HANDLE = handle or THEME["handle"]
+
 PILLS = {
     "upgrade": "BASIC vs BAND 9",
     "slang": "TIKTOK vs IELTS",
@@ -104,13 +132,15 @@ def strike(d, x, y, text, f, fill):
 def card(img, box, radius=36):
     shadow = Image.new("RGBA", img.size, (0, 0, 0, 0))
     ImageDraw.Draw(shadow).rounded_rectangle(
-        [box[0], box[1] + 10, box[2], box[3] + 10], radius=radius, fill=(90, 20, 0, 80))
+        [box[0], box[1] + 10, box[2], box[3] + 10], radius=radius, fill=THEME["shadow"])
     img.paste(shadow.filter(ImageFilter.GaussianBlur(20)), (0, 0), shadow.filter(ImageFilter.GaussianBlur(20)))
     ImageDraw.Draw(img).rounded_rectangle(box, radius=radius, fill=WHITE)
 
 
 def avatar(img):
-    path = ASSETS / "avatar.png"
+    path = ASSETS / THEME.get("avatar", "avatar.png")
+    if not path.exists():
+        path = ASSETS / "avatar.png"
     if not path.exists():
         return
     size = 132
@@ -131,11 +161,12 @@ def frame(kind, title, subtitle):
     d = ImageDraw.Draw(img)
     for y in range(H):
         t = y / H
-        d.line([0, y, W, y], fill=(int(240 - 30 * t), int(100 - 40 * t), int(50 - 10 * t)))
+        top, bottom = THEME["top"], THEME["bottom"]
+        d.line([0, y, W, y], fill=tuple(int(a + (b - a) * t) for a, b in zip(top, bottom)))
 
     bf = font("black", 40)
     d.text((PAD, 82), BRAND, font=bf, fill=WHITE)
-    d.text((PAD + d.textlength(BRAND + " ", font=bf), 82), "| IELTS", font=bf, fill=NAVY)
+    d.text((PAD + d.textlength(BRAND + " ", font=bf), 82), f"| {EXAM}", font=bf, fill=NAVY)
     pill = PILLS[kind]
     pf = font("bold", 24)
     pw = d.textlength(pill, font=pf)
@@ -144,12 +175,12 @@ def frame(kind, title, subtitle):
     avatar(img)
 
     d.text((PAD, 226), title, font=fit(d, title, "black", 60, W - 2 * PAD, 40), fill=WHITE)
-    d.text((PAD, 304), subtitle, font=fit(d, subtitle, "medium", 30, W - 2 * PAD), fill=(255, 230, 215))
+    d.text((PAD, 304), subtitle, font=fit(d, subtitle, "medium", 30, W - 2 * PAD), fill=THEME["sub"])
 
-    d.line([PAD, H - 150, W - PAD, H - 150], fill=(255, 170, 140), width=2)
+    d.line([PAD, H - 150, W - PAD, H - 150], fill=THEME["rule"], width=2)
     d.text((PAD, H - 108), HANDLE, font=font("bold", 32), fill=WHITE)
     sf = font("medium", 26)
-    d.text((W - PAD - d.textlength(INSTAGRAM, font=sf), H - 102), INSTAGRAM, font=sf, fill=(255, 225, 210))
+    d.text((W - PAD - d.textlength(INSTAGRAM, font=sf), H - 102), INSTAGRAM, font=sf, fill=THEME["insta"])
     return img
 
 

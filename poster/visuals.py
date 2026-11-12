@@ -11,13 +11,18 @@ A post may carry an optional "visual" object:
 """
 from PIL import ImageDraw
 
-from render_genz import GREEN, GREY, NAVY, ORANGE, RED, WHITE, emoji, fit
+import render_genz
+from render_genz import GREEN, GREY, NAVY, RED, WHITE, emoji, fit
 from render_post import font
 
 HEIGHT = 230
-TINT = (255, 244, 236)
 SOFT_LINE = (238, 222, 212)
-COLOURS = [ORANGE, NAVY, GREEN, GREY]
+
+
+
+def colours():
+    """Series colours, following the poster's colour theme."""
+    return [render_genz.ORANGE, NAVY, GREEN, GREY]
 
 
 def is_text(icon):
@@ -36,7 +41,7 @@ def flow(img, d, v, box):
             w = max(2 * r, d.textlength(icon, font=f) + 48)
             d.rounded_rectangle([cx - w / 2, cy - r, cx + w / 2, cy + r], radius=r, fill=WHITE)
             b = d.textbbox((0, 0), icon, font=f)
-            d.text((cx - (b[0] + b[2]) / 2, cy - (b[1] + b[3]) / 2), icon, font=f, fill=ORANGE)
+            d.text((cx - (b[0] + b[2]) / 2, cy - (b[1] + b[3]) / 2), icon, font=f, fill=render_genz.ORANGE)
         else:
             d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=WHITE)
             emoji(img, icon, cx - 36, cy - 36, 72)
@@ -47,7 +52,7 @@ def flow(img, d, v, box):
             sf = font("black", 34 if sep == "vs" else 44)
             sx = box[0] + cell * (i + 1)
             b = d.textbbox((0, 0), sep, font=sf)
-            d.text((sx - (b[0] + b[2]) / 2, cy - (b[1] + b[3]) / 2), sep, font=sf, fill=ORANGE)
+            d.text((sx - (b[0] + b[2]) / 2, cy - (b[1] + b[3]) / 2), sep, font=sf, fill=render_genz.ORANGE)
     return d
 
 
@@ -70,7 +75,7 @@ def swap(img, d, v, box):
             d.line([tx - 4, cy, tx + b[2] + 4, cy], fill=RED, width=4)
     af = font("black", 46)
     b = d.textbbox((0, 0), "→", font=af)
-    d.text((mid - 15 - (b[0] + b[2]) / 2, cy - (b[1] + b[3]) / 2), "→", font=af, fill=ORANGE)
+    d.text((mid - 15 - (b[0] + b[2]) / 2, cy - (b[1] + b[3]) / 2), "→", font=af, fill=render_genz.ORANGE)
     return d
 
 
@@ -87,10 +92,10 @@ def form(img, d, v, box):
     x += d.textlength(before, font=f)
     tf = font("black", 30)
     gap_w = d.textlength(v["tag"], font=tf) + 84
-    d.rounded_rectangle([x, y - 8, x + gap_w, y + 56], radius=10, outline=ORANGE, width=4, fill=TINT)
+    d.rounded_rectangle([x, y - 8, x + gap_w, y + 56], radius=10, outline=render_genz.ORANGE, width=4, fill=render_genz.THEME["soft"])
     emoji(img, v["icon"], x + 14, y + 2, 40)
     d = ImageDraw.Draw(img)
-    d.text((x + 64, y + 4), v["tag"], font=tf, fill=ORANGE)
+    d.text((x + 64, y + 4), v["tag"], font=tf, fill=render_genz.ORANGE)
     d.text((x + gap_w + 12, y), after, font=f, fill=NAVY)
     return d
 
@@ -105,7 +110,7 @@ def lines(img, d, v, box):
               "flat": [0.5, 0.55, 0.48, 0.52, 0.5], "wave": [0.3, 0.75, 0.35, 0.8, 0.45]}
     series = v["series"]
     ly = (box[1] + box[3]) / 2 - len(series) * 32 + 8
-    for (label, trend, icon), col in zip(series, COLOURS):
+    for (label, trend, icon), col in zip(series, colours()):
         pts = [(x0 + 20 + i * (x1 - x0 - 40) / 4, y1 - h * (y1 - y0)) for i, h in enumerate(shapes[trend])]
         d.line(pts, fill=col, width=8, joint="curve")
         for p in pts:
@@ -128,8 +133,8 @@ def bars(img, d, v, box):
     for i, (label, val) in enumerate(items):
         cx = x0 + cell * (i + 0.5)
         h = (y1 - y0) * val / top
-        d.rounded_rectangle([cx - bw / 2, y1 - h, cx + bw / 2, y1], radius=12, fill=COLOURS[0] if val == top else NAVY)
-        d.rectangle([cx - bw / 2, y1 - min(h, 12), cx + bw / 2, y1], fill=COLOURS[0] if val == top else NAVY)
+        d.rounded_rectangle([cx - bw / 2, y1 - h, cx + bw / 2, y1], radius=12, fill=colours()[0] if val == top else NAVY)
+        d.rectangle([cx - bw / 2, y1 - min(h, 12), cx + bw / 2, y1], fill=colours()[0] if val == top else NAVY)
         lf = fit(d, label, "bold", 26, cell - 16, 18)
         d.text((cx - d.textlength(label, font=lf) / 2, y1 + 14), label, font=lf, fill=NAVY)
     return d
@@ -142,9 +147,9 @@ def pie(img, d, v, box):
     total = sum(p for p, _ in items)
     start = -90
     ly = cy - len(items) * 28 + 4
-    for (pct, label), col in zip(items, COLOURS):
+    for (pct, label), col in zip(items, colours()):
         end = start + 360 * pct / total
-        d.pieslice([cx - r, cy - r, cx + r, cy + r], start, end, fill=col, outline=TINT, width=5)
+        d.pieslice([cx - r, cy - r, cx + r, cy + r], start, end, fill=col, outline=render_genz.THEME["soft"], width=5)
         start = end
         lx = cx + r + 60
         d.rounded_rectangle([lx, ly + 6, lx + 30, ly + 36], radius=8, fill=col)
@@ -159,5 +164,5 @@ KINDS = {"flow": flow, "swap": swap, "form": form, "lines": lines, "bars": bars,
 
 def draw(img, v, box):
     d = ImageDraw.Draw(img)
-    d.rounded_rectangle(box, radius=28, fill=TINT)
+    d.rounded_rectangle(box, radius=28, fill=render_genz.THEME["soft"])
     return KINDS[v["type"]](img, d, v, box)
