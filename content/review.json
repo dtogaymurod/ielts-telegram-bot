@@ -411,6 +411,44 @@
       "buttons_message_id": 152,
       "decided_at": "2026-11-12T16:01:09.458Z",
       "published_at": "2026-11-13T13:00:14.085Z"
+    },
+    "2026-11-14 12:00": {
+      "date": "2026-11-14",
+      "slot": "12:00",
+      "label": "Shanba, 14.11 · 12:00 · To‘g‘ri yoki xato? #2",
+      "meta": {
+        "kind": "truefalse",
+        "index": 1
+      },
+      "status": "pending",
+      "created_at": "2026-11-13T15:59:22.296Z",
+      "buttons_message_id": 156
+    },
+    "2026-11-14 19:30": {
+      "date": "2026-11-14",
+      "slot": "19:30",
+      "label": "Shanba, 14.11 · 19:30 · Yolg‘iz bo‘ri #18",
+      "meta": {
+        "type": "lonewolf",
+        "index": 18
+      },
+      "status": "pending",
+      "created_at": "2026-11-13T15:59:23.860Z",
+      "buttons_message_id": 159
+    },
+    "2026-11-14 18:00": {
+      "date": "2026-11-14",
+      "slot": "18:00",
+      "label": "Shanba, 14.11 · 18:00 · 🟢 Multilevel kanal · Norasmiy xat: 3 qadam (bazada 413 ta qoldi)",
+      "meta": {
+        "multilevel_index": 1,
+        "post_id": "ml_002",
+        "photo": "AgACAgIAAxkDAAOhavcz3KaXxVqOdd1Sy2H1-myHrycAAkkiaxvDULlLS_kPOeFiX9cBAAMCAAN3AAM9BA",
+        "caption": "<b>Norasmiy xat: 3 qadam</b>\n\nNorasmiy xatda eng köp ball savollardan birini unutib qöyganda ketadi 😬\n\nYozib bölgaç, topşiriqdagi savollarni bittalab belgilab çiqing ✔️\n\n1. Salomlaşing: <b>Hi Tom</b>, <b>Thanks for your letter!</b>\n2. Topşiriqdagi <b>har bir savolga</b> bittadan gap bilan javob bering\n3. Iliq yakunlang: <b>Write back soon!</b>, <b>Take care</b>\n❌ Rasmiy sözlar işlatmang: <b>Dear Sir</b> bu yerda xato\n\nDöstingizga yuboring, u ham Multilevel topşiryaptimi? 👀"
+      },
+      "status": "pending",
+      "created_at": "2026-11-13T15:59:25.130Z",
+      "buttons_message_id": 162
     }
   },
   "imported": [
