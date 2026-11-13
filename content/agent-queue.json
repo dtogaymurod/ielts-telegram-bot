@@ -1,15 +1,4 @@
 {
   "_note": "Posts written by the SMM agents (repo dilshodustoz/smm-agents), already checked by the Muharrir agent. Shown at the 21:00 review with ✅ / ❌ / ✏️ (src/agent-posts.js). channel: tg_english | tg_multilevel | ig_ustoz. Telegram posts are published by the listener at their time; ig_ustoz posts are published by the agents' own task after approval.",
-  "posts": [
-    {
-      "id": "seats20-ml",
-      "date": "2026-11-14",
-      "time": "10:00",
-      "channel": "tg_multilevel",
-      "format": "post",
-      "caption": "<b>Yakşanbadagi bepul Full mock joylari deyarli tugadi, şuning uçun yana 20 ta joy oçdim.</b>\n\nYakşanba, 09:00–18:00. Bu joylar ham tugasa, röyxat keyingi haftagaça yopiladi.\n\nJoy band qiliş: <a href=\"https://t.me/tddmockbot?start=tg_post\">@tddmockbot</a>",
-      "images": [],
-      "rev": 1
-    }
-  ]
+  "posts": []
 }
