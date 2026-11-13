@@ -390,10 +390,11 @@
         "bank_index": 1,
         "title": "Part 1: 1 minute is too long"
       },
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-11-12T15:59:14.383Z",
       "buttons_message_id": 149,
-      "decided_at": "2026-11-12T16:00:51.644Z"
+      "decided_at": "2026-11-12T16:00:51.644Z",
+      "published_at": "2026-11-13T14:29:25.887Z"
     },
     "2026-11-13 18:00": {
       "date": "2026-11-13",
