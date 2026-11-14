@@ -35,7 +35,7 @@ import { execSync } from 'child_process';
 import { callApi, setTargetChat, validateConfig } from './telegram.js';
 import { MULTILEVEL_TIME, MULTILEVEL_MINUTES, prepareMultilevelDraft, publishMultilevel } from './multilevel.js';
 import { HELP_TEXT, videoInMessage, prepareVideoNote, prepareDriveVideo, publishVideoNote, hasFfmpeg } from './video-note.js';
-import { prepareAgentDrafts, publishAgentDraft, publishInstagramDraft, isInstagramDraft, dueAgentKeys, isAgentDraft, loadQueue, validPost, agentSlot } from './agent-posts.js';
+import { prepareAgentDrafts, publishAgentDraft, publishInstagramDraft, isInstagramDraft, deliverStoryDraft, isStoryDraft, dueAgentKeys, isAgentDraft, loadQueue, validPost, agentSlot } from './agent-posts.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REVIEW_FILE = join(__dirname, '..', 'content', 'review.json');
@@ -465,6 +465,7 @@ async function publishDueAgentPosts(state) {
     }
     try {
       if (isInstagramDraft(draft)) await publishInstagramDraft(draft, tashkentDate());
+      else if (isStoryDraft(draft)) await deliverStoryDraft(draft, ADMIN_ID);
       else await publishAgentDraft(draft);
     } catch (error) {
       console.log(`⚠️ Agent post ${key} not published: ${error.message}`);

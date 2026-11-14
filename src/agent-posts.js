@@ -6,7 +6,7 @@
  * content/agent-queue.json:
  *
  *   { "posts": [ { "id": "ig1", "date": "2026-11-16", "time": "18:00",
- *                  "channel": "tg_english" | "tg_multilevel" | "ig_ustoz",
+ *                  "channel": "tg_english" | "tg_multilevel" | "ig_ustoz" | "ig_story",
  *                  "format": "post" | "carousel" | "reels",
  *                  "caption": "HTML text", "images": ["https://… or repo/path.png"],
  *                  "rev": 1 } ] }
@@ -20,12 +20,15 @@
  *          (POST /api/x/media for repo pictures, then POST /api/x/ig), which
  *          publishes them to Instagram (publishInstagramDraft). Needs the
  *          SMM_KEY secret; without it Instagram drafts are left untouched.
+ *          Instagram stories (ig_story): the approved picture is sent to the
+ *          admin as a file at its time, ready to share to the story by hand
+ *          (deliverStoryDraft); "caption" is the note shown with it (sticker, link).
  */
 
 import { readFileSync, existsSync } from 'fs';
 import { join, dirname, isAbsolute } from 'path';
 import { fileURLToPath } from 'url';
-import { callApi, sendLocalPhoto, setTargetChat } from './telegram.js';
+import { callApi, sendLocalPhoto, sendDocument, setTargetChat } from './telegram.js';
 import { MULTILEVEL_CHANNEL_ID } from './multilevel.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -36,6 +39,7 @@ const CHANNELS = {
   tg_english: { label: '🤖 Agent · @dilshod_english', chat: () => process.env.TELEGRAM_CHANNEL_ID },
   tg_multilevel: { label: '🤖 Agent · @dilshod_multilevel', chat: () => MULTILEVEL_CHANNEL_ID },
   ig_ustoz: { label: '📸 Agent · Instagram @dilshod.ustoz', chat: null },
+  ig_story: { label: '📱 Agent · Instagram story (tayyor fayl sizga keladi)', chat: null },
 };
 
 const CAPTION_LIMIT = 1024;
@@ -169,6 +173,31 @@ export function isInstagramDraft(draft) {
   return draft?.meta?.channel === 'ig_ustoz';
 }
 
+export function isStoryDraft(draft) {
+  return draft?.meta?.channel === 'ig_story';
+}
+
+/**
+ * Send an approved story to the admin as files (full quality, not compressed
+ * like a photo), with the note on what to add when sharing it.
+ */
+export async function deliverStoryDraft(draft, adminId) {
+  const images = (draft.meta.images || []).filter((path) => !isUrl(path));
+  if (!images.length) throw new Error('a story needs a picture file in the repo');
+  const note = plainCaption(draft.meta.caption);
+  setTargetChat(adminId);
+  try {
+    for (const [i, path] of images.entries()) {
+      const caption = i === 0
+        ? `📱 <b>Story tayyor</b>\nFaylni saqlang va Instagram story'ga qo'ying.${note ? `\n\n${note.replace(/&/g, '&amp;').replace(/</g, '&lt;')}` : ''}`.slice(0, CAPTION_LIMIT)
+        : '';
+      await sendDocument(localPath(path), path.split('/').pop(), caption);
+    }
+  } finally {
+    setTargetChat(process.env.TELEGRAM_CHANNEL_ID);
+  }
+}
+
 /** True when this bot can hand Instagram posts to the mock site. */
 export function instagramReady() {
   return Boolean(process.env.SMM_KEY);
@@ -228,12 +257,12 @@ export async function publishInstagramDraft(draft, date) {
 
 /**
  * Agent drafts for `date` whose time has come (Tashkent minutes since midnight):
- * Telegram ones always, Instagram ones only when this bot can publish them.
+ * Telegram ones and stories always, Instagram posts only when this bot can publish them.
  */
 export function dueAgentKeys(state, date, nowMinutes) {
   return Object.entries(state.drafts)
     .filter(([key, d]) => key.startsWith(`${date} `) && isAgentDraft(d)
-      && (CHANNELS[d.meta.channel]?.chat || (isInstagramDraft(d) && instagramReady())))
+      && (CHANNELS[d.meta.channel]?.chat || isStoryDraft(d) || (isInstagramDraft(d) && instagramReady())))
     .filter(([, d]) => {
       const [h, m] = d.slot.split(' ')[0].split(':').map(Number);
       return h * 60 + m <= nowMinutes;
