@@ -420,10 +420,11 @@
         "kind": "truefalse",
         "index": 1
       },
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-11-13T15:59:22.296Z",
       "buttons_message_id": 156,
-      "decided_at": "2026-11-13T15:59:45.182Z"
+      "decided_at": "2026-11-13T15:59:45.182Z",
+      "published_at": "2026-11-14T06:59:29.638Z"
     },
     "2026-11-14 19:30": {
       "date": "2026-11-14",
