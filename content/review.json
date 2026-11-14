@@ -536,10 +536,11 @@
           "url": "https://t.me/tddmockbot?start=tg_post"
         }
       },
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-11-14T12:20:24.670Z",
       "buttons_message_id": 206,
-      "decided_at": "2026-11-14T12:21:12.529Z"
+      "decided_at": "2026-11-14T12:21:12.529Z",
+      "published_at": "2026-11-14T12:21:15.132Z"
     }
   },
   "imported": [
