@@ -543,6 +543,46 @@
       "buttons_message_id": 206,
       "decided_at": "2026-11-14T12:21:12.529Z",
       "published_at": "2026-11-14T12:21:15.132Z"
+    },
+    "2026-11-15 12:00": {
+      "date": "2026-11-15",
+      "slot": "12:00",
+      "label": "Yakshanba, 15.11 · 12:00 · Hafta testi",
+      "meta": {
+        "kind": "weekly",
+        "index": 0
+      },
+      "status": "pending",
+      "created_at": "2026-11-14T15:59:17.852Z",
+      "buttons_message_id": 214
+    },
+    "2026-11-15 19:30": {
+      "date": "2026-11-15",
+      "slot": "19:30",
+      "label": "Yakshanba, 15.11 · 19:30 · Kundalik post (LISTENING)",
+      "meta": {
+        "type": "skill",
+        "skill": "listening",
+        "bank_index": 1,
+        "title": "Is it 15 or 50?"
+      },
+      "status": "pending",
+      "created_at": "2026-11-14T15:59:19.358Z",
+      "buttons_message_id": 217
+    },
+    "2026-11-15 18:00": {
+      "date": "2026-11-15",
+      "slot": "18:00",
+      "label": "Yakshanba, 15.11 · 18:00 · 🟢 Multilevel kanal · 2 ta rasmni soliştiriş (bazada 412 ta qoldi)",
+      "meta": {
+        "multilevel_index": 2,
+        "post_id": "ml_003",
+        "photo": "AgACAgIAAxkDAAPbaviFWW3kp5UVcXF3VRpK7z8Ea_QAAsYgaxsuV8BLYJ4l5p7P2KEBAAMCAAN3AAM9BA",
+        "caption": "<b>2 ta rasmni soliştiriş</b>\n\nRasmlarni soliştirişda köpçilik faqat körganini sanab çiqadi. Imtihonçi esa soliştirişni va fikringizni kutadi 🎯\n\nŞu 3 iborani bugun ovoz çiqarib 3 marta ayting 🔁\n\n1. <b>Both pictures show</b> ... (ikkalasida ham ...)\n2. <b>In the first picture</b> ..., <b>while in the second</b> ... (birinçisida ..., ikkinçisida esa ...)\n3. <b>I'd prefer</b> the first one <b>because</b> ... (men birinçisini tanlardim, çunki ...)\n💡 Faqat tasvirlamang: <b>farqini</b> va <b>öz fikringizni</b> ham ayting\n\nIzohlarda öz misolingizni yozing, tekşirib beraman 👇"
+      },
+      "status": "pending",
+      "created_at": "2026-11-14T15:59:21.955Z",
+      "buttons_message_id": 220
     }
   },
   "imported": [
