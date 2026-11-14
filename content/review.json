@@ -1,5 +1,5 @@
 {
-  "last_update_id": 111953017,
+  "last_update_id": 111953018,
   "drafts": {
     "2026-11-01 19:30": {
       "date": "2026-11-01",
@@ -552,9 +552,10 @@
         "kind": "weekly",
         "index": 0
       },
-      "status": "pending",
+      "status": "approved",
       "created_at": "2026-11-14T15:59:17.852Z",
-      "buttons_message_id": 214
+      "buttons_message_id": 214,
+      "decided_at": "2026-11-14T16:11:49.061Z"
     },
     "2026-11-15 19:30": {
       "date": "2026-11-15",
