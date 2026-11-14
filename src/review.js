@@ -35,7 +35,7 @@ import { execSync } from 'child_process';
 import { callApi, setTargetChat, validateConfig } from './telegram.js';
 import { MULTILEVEL_TIME, MULTILEVEL_MINUTES, prepareMultilevelDraft, publishMultilevel } from './multilevel.js';
 import { HELP_TEXT, videoInMessage, prepareVideoNote, prepareDriveVideo, publishVideoNote, hasFfmpeg } from './video-note.js';
-import { prepareAgentDrafts, publishAgentDraft, dueAgentKeys, isAgentDraft, loadQueue, validPost, agentSlot } from './agent-posts.js';
+import { prepareAgentDrafts, publishAgentDraft, publishInstagramDraft, isInstagramDraft, dueAgentKeys, isAgentDraft, loadQueue, validPost, agentSlot } from './agent-posts.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REVIEW_FILE = join(__dirname, '..', 'content', 'review.json');
@@ -104,6 +104,7 @@ const STATUS_TEXT = {
   rejected: '❌ Bekor qilindi, kanalga chiqmaydi',
   published: '📢 Kanalga chiqdi',
   skipped: '⏭ Tasdiqlanmagani uchun chiqmadi',
+  failed: '⚠️ Chiqmadi (xato)',
   edit_requested: '✏️ Tahrir so‘raldi: agentlar tuzatib, yangi variantni yuboradi',
 };
 
@@ -117,7 +118,7 @@ function buttonsText(draft) {
  * reminder are updated too.
  */
 async function refreshButtons(key, draft) {
-  const done = draft.status === 'published' || draft.status === 'skipped';
+  const done = ['published', 'skipped', 'failed'].includes(draft.status);
   const markup = done ? { inline_keyboard: [] } : buttons(key, draft.status, isAgentDraft(draft));
   const harmless = (error) => {
     if (!/not modified|not found|can't be edited/.test(error.message)) console.log(`⚠️ Could not update buttons for ${key}: ${error.message}`);
@@ -446,8 +447,8 @@ async function publishDueMultilevel(state) {
 }
 
 /**
- * Telegram agent posts whose time has come: approved ones go to their channel,
- * the rest are marked skipped. Returns true if the state changed.
+ * Agent posts whose time has come: approved ones go to their channel (Instagram
+ * ones to the mock site's Instagram queue), the rest are marked skipped. Returns true if the state changed.
  */
 async function publishDueAgentPosts(state) {
   const d = new Date(Date.now() + 5 * 60 * 60 * 1000);
@@ -463,9 +464,21 @@ async function publishDueAgentPosts(state) {
       continue;
     }
     try {
-      await publishAgentDraft(draft);
+      if (isInstagramDraft(draft)) await publishInstagramDraft(draft, tashkentDate());
+      else await publishAgentDraft(draft);
     } catch (error) {
       console.log(`⚠️ Agent post ${key} not published: ${error.message}`);
+      if (isInstagramDraft(draft)) {
+        // Instagram: three tries, then give up (no endless uploads)
+        draft.tries = (draft.tries || 0) + 1;
+        changed = true;
+        if (draft.tries >= 3) {
+          draft.status = 'failed';
+          await refreshButtons(key, draft);
+          try { await sendAdmin(`⚠️ Instagram posti chiqmadi (${draft.label}): ${error.message}`); } catch {}
+        }
+        continue;
+      }
       if (!draft.error_sent) {
         draft.error_sent = true;
         try { await sendAdmin(`⚠️ Agent posti chiqmadi (${draft.label}): ${error.message}\nQayta urinib ko‘raman.`); } catch {}
