@@ -1,4 +1,4 @@
 {
-  "_note": "Posts written by the SMM agents (repo dilshodustoz/smm-agents), already checked by the Muharrir agent. Shown at the 21:00 review with ✅ / ❌ / ✏️ (src/agent-posts.js). channel: tg_english | tg_multilevel | ig_ustoz. Telegram posts are published by the listener at their time; ig_ustoz posts are published by the agents' own task after approval.",
+  "_note": "Posts written by the SMM agents (repo dilshodustoz/smm-agents), already checked by the Muharrir agent. Shown at the 21:00 review with ✅ / ❌ / ✏️ (src/agent-posts.js). channel: tg_english | tg_multilevel | ig_ustoz. Telegram posts are published by the listener at their time; approved ig_ustoz posts are handed by the listener to the mock site's Instagram queue (pictures: JPEG files in content/agent-media/).",
   "posts": []
 }
