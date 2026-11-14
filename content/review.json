@@ -457,20 +457,23 @@
     "2026-11-14 14:30 reel1": {
       "date": "2026-11-14",
       "slot": "14:30 reel1",
-      "label": "Shanba, 14.11 · 14:30 reel1 · 📸 Agent · Instagram @dilshod.ustoz · reels",
+      "label": "Shanba, 14.11 · 14:30 reel1 · 📸 Agent · Instagram @dilshod.ustoz · reels · 2-variant",
       "meta": {
         "agent_id": "reel1",
         "channel": "ig_ustoz",
         "format": "reels",
-        "rev": 1,
+        "rev": 2,
         "images": [],
         "video": "content/agent-media/2026-11-14-reel1.mp4",
         "caption": "Mock'ni telefondan topşirsa böladimi? Ha, böladi.\n\nHaqiqiy imtihon formati, taymer töxtamaydi, natija darhol çiqadi.\n\nHaqiqiy IELTS imtihoni 3 mln söm atrofida turadi. Bu ekranni birinçi marta öşa kuni körmang.\n\nErtaga, yakşanba kuni 09:00 dan 18:00 gaça BEPUL Full mock. Röyxatdan ötiş uçun link bioda yoki Telegram: @tddmockbot\n\n#ielts #ieltsmock #ieltsuzbekistan #ieltspreparation #mocktest",
-        "voice_prompt_id": 166
+        "voice_prompt_id": 171
       },
-      "status": "skipped",
-      "created_at": "2026-11-14T09:27:29.065Z",
-      "buttons_message_id": 167
+      "status": "pending",
+      "created_at": "2026-11-14T09:33:04.962Z",
+      "extra_button_ids": [
+        167
+      ],
+      "buttons_message_id": 172
     }
   },
   "imported": [
