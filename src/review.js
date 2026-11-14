@@ -467,7 +467,7 @@ async function publishDueMultilevel(state) {
 
 /**
  * Agent posts whose time has come: approved ones go to their channel (Instagram
- * ones to the mock site's Instagram queue), the rest are marked skipped. Returns true if the state changed.
+ * ones to the mock site's Instagram queue); unapproved ones wait for ✅ until the day ends. Returns true if the state changed.
  */
 async function publishDueAgentPosts(state) {
   const d = new Date(Date.now() + 5 * 60 * 60 * 1000);
@@ -476,12 +476,9 @@ async function publishDueAgentPosts(state) {
   for (const key of dueAgentKeys(state, tashkentDate(), now)) {
     const draft = state.drafts[key];
     if (!['pending', 'approved', 'edit_requested'].includes(draft.status)) continue;
-    if (draft.status !== 'approved') {
-      draft.status = 'skipped';
-      await refreshButtons(key, draft);
-      changed = true;
-      continue;
-    }
+    // Not approved yet: it stays open for the rest of the day and goes out as soon as
+    // the admin taps ✅ (a "post it now" reel is previewed after its time has passed).
+    if (draft.status !== 'approved') continue;
     try {
       if (isInstagramDraft(draft)) await publishInstagramDraft(draft, tashkentDate());
       else if (isStoryDraft(draft)) await deliverStoryDraft(draft, ADMIN_ID);
