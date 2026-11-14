@@ -1,4 +1,16 @@
 {
   "_note": "Posts written by the SMM agents (repo dilshodustoz/smm-agents), already checked by the Muharrir agent. Shown at the 21:00 review with ✅ / ❌ / ✏️ (src/agent-posts.js). channel: tg_english | tg_multilevel | ig_ustoz. Telegram posts are published by the listener at their time; approved ig_ustoz posts are handed by the listener to the mock site's Instagram queue (pictures: JPEG files in content/agent-media/).",
-  "posts": []
+  "posts": [
+    {
+      "id": "reel1",
+      "date": "2026-11-14",
+      "time": "14:30",
+      "channel": "ig_ustoz",
+      "format": "reels",
+      "video": "content/agent-media/2026-11-14-reel1.mp4",
+      "script": "Mock'ni telefondan topşirsa bölarkanmi?\nHa, böladi. Haqiqiy imtihon formati, xuddi özi.\nTaymer töxtamaydi. Imtihondagidek.\nJavobni özingiz yozasiz. Natija darhol çiqadi.\n3 mln sömlik imtihonda bu ekranni birinçi marta körmang.\nErtaga BEPUL Full mock!",
+      "caption": "Mock'ni telefondan topşirsa böladimi? Ha, böladi.\n\nHaqiqiy imtihon formati, taymer töxtamaydi, natija darhol çiqadi.\n\nHaqiqiy IELTS imtihoni 3 mln söm atrofida turadi. Bu ekranni birinçi marta öşa kuni körmang.\n\nErtaga, yakşanba kuni 09:00 dan 18:00 gaça BEPUL Full mock. Röyxatdan ötiş uçun link bioda yoki Telegram: @tddmockbot\n\n#ielts #ieltsmock #ieltsuzbekistan #ieltspreparation #mocktest",
+      "rev": 1
+    }
+  ]
 }
