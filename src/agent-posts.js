@@ -134,7 +134,7 @@ export function prepareAgentDrafts(date, adminId, only = '') {
     .map((post) => {
       const channel = CHANNELS[post.channel];
       const meta = { agent_id: post.id, channel: post.channel, format: post.format || 'post', rev: post.rev || 1, images: post.images || [] };
-      if (isReelPost(post)) meta.video = post.video;
+      if (isReelPost(post)) { meta.video = post.video; meta.script = post.script || ''; meta.segments = Array.isArray(post.segments) ? post.segments : []; }
       const rev = meta.rev > 1 ? ` · ${meta.rev}-variant` : '';
       return {
         slot: agentSlot(post),
