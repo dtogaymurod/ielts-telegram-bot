@@ -11,6 +11,10 @@
  *                  "caption": "HTML text", "images": ["https://… or repo/path.png"],
  *                  "rev": 1 } ] }
  *
+ *   Telegram posts may also carry "video": "content/agent-media/x.mp4" (sent
+ *   instead of pictures, caption under it) and "button": { "text": "...",
+ *   "url": "https://t.me/..." } (one link button under the post).
+ *
  *   21:00  review.js preview shows tomorrow's agent posts with ✅ / ❌ / ✏️.
  *          ✏️ asks the admin what to change and saves the answer on the draft
  *          (status "edit_requested", draft.edit_request); the agents rewrite
@@ -30,7 +34,7 @@ import { join, dirname, isAbsolute } from 'path';
 import { fileURLToPath } from 'url';
 import { callApi, sendLocalPhoto, sendDocument, setTargetChat } from './telegram.js';
 import { MULTILEVEL_CHANNEL_ID } from './multilevel.js';
-import { isReelPost, isReelDraft, showReel, attachVoice } from './agent-reels.js';
+import { isReelPost, isReelDraft, showReel, attachVoice, sendVideo } from './agent-reels.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -87,6 +91,12 @@ async function sendOnePhoto(chatId, path, caption) {
   return sendLocalPhoto(localPath(path), caption);
 }
 
+/** One link button under a Telegram post, or nothing. */
+function linkButton(button) {
+  if (!button?.text || !/^https:\/\//.test(button.url || '')) return null;
+  return { inline_keyboard: [[{ text: String(button.text).slice(0, 60), url: button.url }]] };
+}
+
 /**
  * Show a post in a chat exactly as it will look. Returns what is needed to
  * post the same thing to the channel later (Telegram file ids).
@@ -95,8 +105,14 @@ async function render(chatId, post) {
   const caption = post.caption || '';
   const images = post.images || [];
   const shortCaption = caption.length <= CAPTION_LIMIT;
+  const markup = linkButton(post.button);
+  if (post.video) {
+    const sent = await sendVideo(chatId, localPath(post.video), shortCaption ? caption : '', markup);
+    if (!shortCaption) await callApi('sendMessage', { chat_id: chatId, text: caption, parse_mode: 'HTML', disable_web_page_preview: true });
+    return { photos: [], video_id: sent.video?.file_id };
+  }
   if (!images.length) {
-    await callApi('sendMessage', { chat_id: chatId, text: caption, parse_mode: 'HTML', disable_web_page_preview: true });
+    await callApi('sendMessage', { chat_id: chatId, text: caption, parse_mode: 'HTML', disable_web_page_preview: true, ...(markup ? { reply_markup: markup } : {}) });
     return { photos: [] };
   }
   const photos = [];
@@ -134,7 +150,7 @@ export function prepareAgentDrafts(date, adminId, only = '') {
     .map((post) => {
       const channel = CHANNELS[post.channel];
       const meta = { agent_id: post.id, channel: post.channel, format: post.format || 'post', rev: post.rev || 1, images: post.images || [] };
-      if (isReelPost(post)) meta.video = post.video;
+      if (isReelPost(post)) { meta.video = post.video; meta.script = post.script || ''; meta.segments = Array.isArray(post.segments) ? post.segments : []; }
       const rev = meta.rev > 1 ? ` · ${meta.rev}-variant` : '';
       return {
         slot: agentSlot(post),
@@ -148,6 +164,8 @@ export function prepareAgentDrafts(date, adminId, only = '') {
           }
           const shown = await render(adminId, post);
           meta.photos = shown.photos;
+          if (shown.video_id) meta.video_id = shown.video_id;
+          if (post.button) meta.button = post.button;
         },
       };
     });
@@ -161,8 +179,14 @@ export async function publishAgentDraft(draft) {
   const caption = draft.meta.caption || '';
   const photos = (draft.meta.photos || []).filter(Boolean);
   const shortCaption = caption.length <= CAPTION_LIMIT;
+  const markup = linkButton(draft.meta.button);
+  if (draft.meta.video_id) {
+    await callApi('sendVideo', { chat_id: chatId, video: draft.meta.video_id, caption: shortCaption ? caption : '', parse_mode: 'HTML', supports_streaming: true, ...(markup ? { reply_markup: markup } : {}) });
+    if (!shortCaption) await callApi('sendMessage', { chat_id: chatId, text: caption, parse_mode: 'HTML', disable_web_page_preview: true });
+    return;
+  }
   if (!photos.length) {
-    await callApi('sendMessage', { chat_id: chatId, text: caption, parse_mode: 'HTML', disable_web_page_preview: true });
+    await callApi('sendMessage', { chat_id: chatId, text: caption, parse_mode: 'HTML', disable_web_page_preview: true, ...(markup ? { reply_markup: markup } : {}) });
     return;
   }
   if (photos.length === 1) {
