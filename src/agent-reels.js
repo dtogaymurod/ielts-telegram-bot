@@ -46,12 +46,13 @@ function duration(path) {
   return Number(out.trim()) || 0;
 }
 
-async function sendVideo(chatId, path, caption = '') {
+export async function sendVideo(chatId, path, caption = '', markup = null) {
   const form = new FormData();
   form.append('chat_id', String(chatId));
   form.append('video', new Blob([readFileSync(path)], { type: 'video/mp4' }), 'reel.mp4');
   form.append('supports_streaming', 'true');
   if (caption) { form.append('caption', caption); form.append('parse_mode', 'HTML'); }
+  if (markup) form.append('reply_markup', JSON.stringify(markup));
   const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendVideo`, { method: 'POST', body: form });
   const data = await response.json();
   if (!data.ok) throw new Error(`Telegram API error [${data.error_code}]: ${data.description}`);
