@@ -35,7 +35,7 @@ import { execSync } from 'child_process';
 import { callApi, setTargetChat, validateConfig } from './telegram.js';
 import { MULTILEVEL_TIME, MULTILEVEL_MINUTES, prepareMultilevelDraft, publishMultilevel } from './multilevel.js';
 import { HELP_TEXT, videoInMessage, prepareVideoNote, prepareDriveVideo, publishVideoNote, hasFfmpeg } from './video-note.js';
-import { prepareAgentDrafts, publishAgentDraft, publishInstagramDraft, isInstagramDraft, deliverStoryDraft, isStoryDraft, dueAgentKeys, isAgentDraft, loadQueue, validPost, agentSlot } from './agent-posts.js';
+import { prepareAgentDrafts, publishAgentDraft, publishInstagramDraft, isInstagramDraft, deliverStoryDraft, isStoryDraft, reelForVoice, addVoiceToReel, dueAgentKeys, isAgentDraft, loadQueue, validPost, agentSlot } from './agent-posts.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REVIEW_FILE = join(__dirname, '..', 'content', 'review.json');
@@ -232,6 +232,8 @@ function expectedDate(state, position) {
 async function handleMessage(state, message) {
   if (String(message.from?.id) !== String(ADMIN_ID) || message.chat?.type !== 'private') return null;
   if (state.edit_wait && message.text) return handleEditRequest(state, message.text);
+  const voice = message.voice || message.audio;
+  if (voice) return handleReelVoice(state, message, voice);
   const video = videoInMessage(message);
   if (!video) {
     if (/^\/(video|start|help)\b/.test(message.text || '')) await sendAdmin(HELP_TEXT);
@@ -256,6 +258,23 @@ async function handleMessage(state, message) {
   } catch (error) {
     console.log(`⚠️ Round video failed: ${error.message}`);
     try { await sendAdmin(`⚠️ Videoni dumaloq qilib bo‘lmadi.\n${error.message}\n\n${HELP_TEXT}`); } catch {}
+    return null;
+  }
+}
+
+/** A voice message for an agent reel: it becomes the reel's sound (src/agent-reels.js). */
+async function handleReelVoice(state, message, voice) {
+  const key = reelForVoice(state, message);
+  if (!key) {
+    await sendAdmin('🎙 Bu ovoz qaysi reels uchun? Reels ostidagi "Ovoz matni" xabariga javob (reply) qilib yuboring.');
+    return null;
+  }
+  try {
+    await addVoiceToReel(state.drafts[key], voice, ADMIN_ID);
+    return key;
+  } catch (error) {
+    console.log(`⚠️ Reel voice failed: ${error.message}`);
+    try { await sendAdmin(`⚠️ Ovozni videoga qo‘shib bo‘lmadi: ${error.message}`); } catch {}
     return null;
   }
 }

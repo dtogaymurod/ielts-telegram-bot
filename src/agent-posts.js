@@ -30,6 +30,7 @@ import { join, dirname, isAbsolute } from 'path';
 import { fileURLToPath } from 'url';
 import { callApi, sendLocalPhoto, sendDocument, setTargetChat } from './telegram.js';
 import { MULTILEVEL_CHANNEL_ID } from './multilevel.js';
+import { isReelPost, isReelDraft, showReel, attachVoice } from './agent-reels.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -56,7 +57,8 @@ export function loadQueue() {
 export function validPost(post) {
   return Boolean(
     post && /^[\w-]{1,20}$/.test(post.id || '') && /^\d{4}-\d{2}-\d{2}$/.test(post.date || '')
-      && /^\d{2}:\d{2}$/.test(post.time || '') && CHANNELS[post.channel] && (post.caption || post.images?.length),
+      && /^\d{2}:\d{2}$/.test(post.time || '') && CHANNELS[post.channel] && (post.caption || post.images?.length)
+      && (!isReelPost(post) || /\.mp4$/i.test(post.video || '')),
   );
 }
 
@@ -132,15 +134,20 @@ export function prepareAgentDrafts(date, adminId, only = '') {
     .map((post) => {
       const channel = CHANNELS[post.channel];
       const meta = { agent_id: post.id, channel: post.channel, format: post.format || 'post', rev: post.rev || 1, images: post.images || [] };
+      if (isReelPost(post)) meta.video = post.video;
       const rev = meta.rev > 1 ? ` · ${meta.rev}-variant` : '';
       return {
         slot: agentSlot(post),
         label: `${channel.label}${post.format ? ` · ${post.format}` : ''}${rev}`,
         meta,
         send: async () => {
+          meta.caption = post.caption || '';
+          if (isReelPost(post)) {
+            meta.voice_prompt_id = await showReel(callApi, adminId, post, localPath(post.video));
+            return;
+          }
           const shown = await render(adminId, post);
           meta.photos = shown.photos;
-          meta.caption = post.caption || '';
         },
       };
     });
@@ -203,6 +210,34 @@ export function instagramReady() {
   return Boolean(process.env.SMM_KEY);
 }
 
+/** Store a file on the mock site (30 days) and return its public URL. */
+async function uploadMedia(path, name, type) {
+  const upload = await siteCall('/api/x/media', {
+    method: 'POST',
+    headers: { 'Content-Type': type, 'X-Name': name },
+    body: readFileSync(path),
+  });
+  if (!upload.data.ok) throw new Error(`upload failed (${upload.status}): ${upload.data.error || '?'}`);
+  return upload.data.url;
+}
+
+/**
+ * A voice message from the admin for an open reel draft: the one whose script
+ * message it answers, otherwise the only open reel. Returns the draft key or null.
+ */
+export function reelForVoice(state, message) {
+  const open = Object.entries(state.drafts).filter(([, d]) => isReelDraft(d) && ['pending', 'approved'].includes(d.status));
+  const replied = message.reply_to_message?.message_id;
+  const hit = open.find(([, d]) => replied && d.meta.voice_prompt_id === replied);
+  if (hit) return hit[0];
+  return open.length === 1 ? open[0][0] : null;
+}
+
+export async function addVoiceToReel(draft, voice, adminId) {
+  if (!instagramReady()) throw new Error('SMM_KEY secret is not set');
+  await attachVoice(callApi, adminId, draft, voice, localPath(draft.meta.video), (path, name) => uploadMedia(path, name, 'video/mp4'));
+}
+
 async function siteCall(path, options) {
   const response = await fetch(`${SITE}${path}`, {
     ...options,
@@ -228,6 +263,17 @@ export function plainCaption(html) {
  */
 export async function publishInstagramDraft(draft, date) {
   if (!instagramReady()) throw new Error('SMM_KEY secret is not set');
+  if (isReelDraft(draft)) {
+    // with the teacher's voice if one was sent, otherwise the silent subtitled reel
+    const video = draft.meta.video_url || await uploadMedia(localPath(draft.meta.video), draft.meta.video.split('/').pop(), 'video/mp4');
+    const queuedReel = await siteCall('/api/x/ig', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ref: `${date}-${draft.meta.agent_id}-r${draft.meta.rev || 1}`, kind: 'reels', caption: plainCaption(draft.meta.caption), video_url: video }),
+    });
+    if (queuedReel.status !== 409 && !queuedReel.data.ok) throw new Error(`Instagram queue refused (${queuedReel.status}): ${queuedReel.data.error || '?'}`);
+    return;
+  }
   const kind = IG_KINDS[draft.meta.format];
   if (!kind) throw new Error(`Instagram format not supported yet: ${draft.meta.format}`);
   const images = draft.meta.images || [];
