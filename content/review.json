@@ -1,5 +1,5 @@
 {
-  "last_update_id": 111953020,
+  "last_update_id": 111953021,
   "drafts": {
     "2026-11-01 19:30": {
       "date": "2026-11-01",
@@ -582,9 +582,10 @@
         "photo": "AgACAgIAAxkDAAPbaviFWW3kp5UVcXF3VRpK7z8Ea_QAAsYgaxsuV8BLYJ4l5p7P2KEBAAMCAAN3AAM9BA",
         "caption": "<b>2 ta rasmni soliştiriş</b>\n\nRasmlarni soliştirişda köpçilik faqat körganini sanab çiqadi. Imtihonçi esa soliştirişni va fikringizni kutadi 🎯\n\nŞu 3 iborani bugun ovoz çiqarib 3 marta ayting 🔁\n\n1. <b>Both pictures show</b> ... (ikkalasida ham ...)\n2. <b>In the first picture</b> ..., <b>while in the second</b> ... (birinçisida ..., ikkinçisida esa ...)\n3. <b>I'd prefer</b> the first one <b>because</b> ... (men birinçisini tanlardim, çunki ...)\n💡 Faqat tasvirlamang: <b>farqini</b> va <b>öz fikringizni</b> ham ayting\n\nIzohlarda öz misolingizni yozing, tekşirib beraman 👇"
       },
-      "status": "pending",
+      "status": "approved",
       "created_at": "2026-11-14T15:59:21.955Z",
-      "buttons_message_id": 220
+      "buttons_message_id": 220,
+      "decided_at": "2026-11-14T16:14:49.794Z"
     }
   },
   "imported": [
