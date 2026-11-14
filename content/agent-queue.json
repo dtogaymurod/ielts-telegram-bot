@@ -11,6 +11,20 @@
       "script": "Mock'ni telefondan topşirsa bölarkanmi?\nHa, böladi. Haqiqiy imtihon formati, xuddi özi.\nTaymer töxtamaydi. Imtihondagidek.\nJavobni özingiz yozasiz. Natija darhol çiqadi.\n3 mln sömlik imtihonda bu ekranni birinçi marta körmang.\nErtaga BEPUL Full mock!",
       "caption": "Mock'ni telefondan topşirsa böladimi? Ha, böladi.\n\nHaqiqiy imtihon formati, taymer töxtamaydi, natija darhol çiqadi.\n\nHaqiqiy IELTS imtihoni 3 mln söm atrofida turadi. Bu ekranni birinçi marta öşa kuni körmang.\n\nErtaga, yakşanba kuni 09:00 dan 18:00 gaça BEPUL Full mock. Röyxatdan ötiş uçun link bioda yoki Telegram: @tddmockbot\n\n#ielts #ieltsmock #ieltsuzbekistan #ieltspreparation #mocktest",
       "rev": 7
+    },
+    {
+      "id": "reeltg",
+      "date": "2026-11-14",
+      "time": "17:20",
+      "channel": "tg_english",
+      "format": "post",
+      "video": "content/agent-media/2026-11-14-reel1.mp4",
+      "button": {
+        "text": "📱 Open the mock bot",
+        "url": "https://t.me/tddmockbot?start=tg_post"
+      },
+      "caption": "<b>Can you take an IELTS mock on your phone?</b> Yes, you can.\n\n✅ Real exam format\n⏱ The timer never stops\n📊 Your result comes straight away\n\nThe real exam costs about 3 mln so'm. Don't see this screen for the first time on exam day.\n\n🗓 <b>FREE Full mock tomorrow</b>, Sunday 09:00–18:00.",
+      "rev": 1
     }
   ]
 }
