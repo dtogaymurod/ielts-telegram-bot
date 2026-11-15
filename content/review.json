@@ -1,24 +1,6 @@
 {
   "last_update_id": 111953025,
   "drafts": {
-    "2026-11-01 19:30": {
-      "date": "2026-11-01",
-      "slot": "19:30",
-      "label": "Yakshanba, 01.11 · 19:30 · Kundalik post (LISTENING)",
-      "meta": {
-        "type": "skill",
-        "skill": "listening",
-        "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Qo'shma so'zlar tuzog'i:</b>\nSpiker ikkita alohida so'zni urg'u bilan aytib, sizni ikkita bo'sh joy bor deb o'ylatadi. Masalan: <i>\"We need a new bicycle rack\"</i> o'rniga <i>\"bicycle... rack\"</i> deb to'xtalishi mumkin, siz esa buni <i>bicycle track</i> deb yozib adashasiz.\n\n💡 <b>Oltin qoida:</b>\nMatn ma'nosiga qarang. Agar u bitta buyumni bildirsa, so'zlarni qo'shib yozing: <i>\"The library offers a great <b>study room</b> for students.\"</i>\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
-      },
-      "status": "published",
-      "created_at": "2026-10-31T15:59:32.405Z",
-      "buttons_message_id": 11,
-      "decided_at": "2026-11-01T06:19:48.382Z",
-      "extra_button_ids": [
-        12
-      ],
-      "published_at": "2026-11-01T14:29:35.014Z"
-    },
     "2026-11-02 12:00": {
       "date": "2026-11-02",
       "slot": "12:00",
@@ -657,10 +639,103 @@
         "caption": "<b>Do you know your band score today?</b>\n\nMany students only guess. If you guess too high, you may book the exam too early. If you guess too low, you may lose confidence for no reason.\n\nA full mock in the real CD IELTS format gives you a clear answer, with a timer that never stops.\n\nThe real exam costs about 3 million soums. Find out where you stand before you pay for it.\n\n🗓 <b>Free Full mock this Sunday, 09:00–18:00.</b>\n👉 <a href=\"https://t.me/tddmockbot?start=tg_post\">Book your seat</a>",
         "photos": []
       },
-      "status": "approved",
-      "created_at": "2026-11-15T15:59:24.519Z",
-      "buttons_message_id": 235,
-      "decided_at": "2026-11-15T16:14:23.652Z"
+      "status": "pending",
+      "created_at": "2026-11-15T20:14:26.412Z",
+      "extra_button_ids": [
+        235
+      ],
+      "buttons_message_id": 247
+    },
+    "2026-11-16 09:00 rm01q": {
+      "date": "2026-11-16",
+      "slot": "09:00 rm01q",
+      "label": "Dushanba, 16.11 · 09:00 rm01q · 📸 Agent · Instagram @dilshod.ustoz · reels",
+      "meta": {
+        "agent_id": "rm01q",
+        "channel": "ig_ustoz",
+        "format": "reels",
+        "rev": 1,
+        "images": [],
+        "video": "content/agent-media/2026-11-16-rm01q.mp4",
+        "script": "Ovoz va musiqa allaqachon videoda (thread'da yig'ilgan). Ovozli xabar yubormang, faqat ✅ bosing.",
+        "segments": [],
+        "caption": "81% of students got this one wrong in our Sunday mock. 🎧\n\nListen once, like the real exam. What would YOU write?\n\n💬 Comment your answer. Full explanation tonight at 8 PM.\n\n#ielts #ieltslistening #ieltsmock #ieltsuzbekistan #cdielts",
+        "voice_prompt_id": 239
+      },
+      "status": "pending",
+      "created_at": "2026-11-15T20:14:22.125Z",
+      "buttons_message_id": 240
+    },
+    "2026-11-16 09:05 rm01qtg": {
+      "date": "2026-11-16",
+      "slot": "09:05 rm01qtg",
+      "label": "Dushanba, 16.11 · 09:05 rm01qtg · 🤖 Agent · @dilshod_english · post",
+      "meta": {
+        "agent_id": "rm01qtg",
+        "channel": "tg_english",
+        "format": "post",
+        "rev": 1,
+        "images": [],
+        "caption": "🎧 <b>Real mistake from our Sunday mock</b>\n\n81% of students got this one wrong.\nListening, Part 4. ONE WORD ONLY:\n\n<i>There are few systems for ______ satellites.</i>\n\nListen once, like the real exam, and vote below 👇\nFull explanation tonight at 20:00.",
+        "poll": {
+          "question": "There are few systems for ___ satellites. What's the answer?",
+          "options": [
+            "safety",
+            "tracking",
+            "space",
+            "trucking"
+          ],
+          "correct": 1,
+          "explanation": "Full breakdown tonight at 20:00 👀"
+        },
+        "photos": [],
+        "video_id": "BAACAgIAAxkDAAPyavoSoZp190PAD1m5Lv4tOEdkm2EAAr-wAAJIbdBLCmAAAVT0FCkzPQQ"
+      },
+      "status": "pending",
+      "created_at": "2026-11-15T20:14:25.851Z",
+      "buttons_message_id": 244
+    },
+    "2026-11-16 20:00 rm01a": {
+      "date": "2026-11-16",
+      "slot": "20:00 rm01a",
+      "label": "Dushanba, 16.11 · 20:00 rm01a · 📸 Agent · Instagram @dilshod.ustoz · reels",
+      "meta": {
+        "agent_id": "rm01a",
+        "channel": "ig_ustoz",
+        "format": "reels",
+        "rev": 1,
+        "images": [],
+        "video": "content/agent-media/2026-11-16-rm01a.mp4",
+        "script": "Ovoz va musiqa allaqachon videoda (thread'da yig'ilgan). Ovozli xabar yubormang, faqat ✅ bosing.",
+        "segments": [],
+        "caption": "The answer: TRACKING. Most people fell for \"safety\". Here's why 👇\n\nRule: don't write the first word that fits the gap. Wait for the paraphrase.\n\nCheck your real CD IELTS level: link in bio.\n\n#ielts #ieltslistening #ieltsmock #ieltsuzbekistan #cdielts",
+        "voice_prompt_id": 251
+      },
+      "status": "pending",
+      "created_at": "2026-11-15T20:14:29.539Z",
+      "buttons_message_id": 252
+    },
+    "2026-11-16 20:05 rm01atg": {
+      "date": "2026-11-16",
+      "slot": "20:05 rm01atg",
+      "label": "Dushanba, 16.11 · 20:05 rm01atg · 🤖 Agent · @dilshod_english · post",
+      "meta": {
+        "agent_id": "rm01atg",
+        "channel": "tg_english",
+        "format": "post",
+        "rev": 1,
+        "images": [],
+        "caption": "✅ <b>Answer: TRACKING</b>\n\n\"safety of satellites\" fits the gap perfectly, and that's the trap.\n\nThe question says <b>few systems</b>. The speaker says <b>we don't have anything like enough proper ways</b> of tracking them. Same idea, different words.\n\nAnd watch your spelling: <i>trucking</i> ≠ <i>tracking</i>.\n\n📌 Rule: don't write the first word that fits. Wait for the paraphrase.",
+        "photos": [],
+        "video_id": "BAACAgIAAxkDAAP-avoSqK1hVytLSzh6iI3KGV8L2poAAsGwAAJIbdBL2lwc-xeeKSA9BA",
+        "button": {
+          "text": "📱 Take a CD IELTS mock",
+          "url": "https://t.me/tddmockbot?start=tg_mistakes"
+        }
+      },
+      "status": "pending",
+      "created_at": "2026-11-15T20:14:32.571Z",
+      "buttons_message_id": 255
     }
   },
   "imported": [
