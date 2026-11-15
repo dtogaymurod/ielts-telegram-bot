@@ -1,5 +1,5 @@
 {
-  "last_update_id": 111953024,
+  "last_update_id": 111953025,
   "drafts": {
     "2026-11-01 19:30": {
       "date": "2026-11-01",
@@ -657,9 +657,10 @@
         "caption": "<b>Do you know your band score today?</b>\n\nMany students only guess. If you guess too high, you may book the exam too early. If you guess too low, you may lose confidence for no reason.\n\nA full mock in the real CD IELTS format gives you a clear answer, with a timer that never stops.\n\nThe real exam costs about 3 million soums. Find out where you stand before you pay for it.\n\n🗓 <b>Free Full mock this Sunday, 09:00–18:00.</b>\n👉 <a href=\"https://t.me/tddmockbot?start=tg_post\">Book your seat</a>",
         "photos": []
       },
-      "status": "pending",
+      "status": "approved",
       "created_at": "2026-11-15T15:59:24.519Z",
-      "buttons_message_id": 235
+      "buttons_message_id": 235,
+      "decided_at": "2026-11-15T16:14:23.652Z"
     }
   },
   "imported": [
