@@ -208,6 +208,12 @@ async function publishAgentBody(draft) {
   const photos = (draft.meta.photos || []).filter(Boolean);
   const shortCaption = caption.length <= CAPTION_LIMIT;
   const markup = linkButton(draft.meta.button);
+  if (!draft.meta.video_id && draft.meta.video) {
+    // approved without a preview upload (approved by the teacher in the project thread): send the file itself
+    await sendVideo(chatId, localPath(draft.meta.video), shortCaption ? caption : '', markup);
+    if (!shortCaption) await callApi('sendMessage', { chat_id: chatId, text: caption, parse_mode: 'HTML', disable_web_page_preview: true });
+    return;
+  }
   if (draft.meta.video_id) {
     await callApi('sendVideo', { chat_id: chatId, video: draft.meta.video_id, caption: shortCaption ? caption : '', parse_mode: 'HTML', supports_streaming: true, ...(markup ? { reply_markup: markup } : {}) });
     if (!shortCaption) await callApi('sendMessage', { chat_id: chatId, text: caption, parse_mode: 'HTML', disable_web_page_preview: true });
