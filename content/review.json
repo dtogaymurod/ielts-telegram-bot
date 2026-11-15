@@ -1,5 +1,5 @@
 {
-  "last_update_id": 111953023,
+  "last_update_id": 111953024,
   "drafts": {
     "2026-11-01 19:30": {
       "date": "2026-11-01",
@@ -639,9 +639,10 @@
         "photo": "AgACAgIAAxkDAAPnavnW279g2jIus2Cj5jAsZTBzK_8AAvQkaxtIbdBLpoK4eJI4chkBAAMCAAN3AAM9BA",
         "caption": "<b>Reading'da vaqt yetmayaptimi?</b>\n\nReading'da eng katta duşman bu vaqt ⏳\n\nBugun bitta matnni taymer bilan işlab köring va natijani izohda yozing 👇\n\n❌ Har bir sözni tarjima qilib öqiş\n✅ Avval <b>savolni</b> öqing, keyin matndan <b>kalit sözni</b> qidiring\n✅ Qiyin savolda töxtab qolmang, <b>keyinroq qayting</b>\n💡 Har kuni 1 ta matnni <b>taymer</b> bilan işlang\n\nQaysi biri siz uçun yangi böldi? Izohda yozing 👇"
       },
-      "status": "pending",
+      "status": "approved",
       "created_at": "2026-11-15T15:59:24.087Z",
-      "buttons_message_id": 232
+      "buttons_message_id": 232,
+      "decided_at": "2026-11-15T16:13:49.888Z"
     },
     "2026-11-16 15:00 2026-11-16-tg-1": {
       "date": "2026-11-16",
