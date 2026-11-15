@@ -35,6 +35,63 @@
       "caption": "<b>Do you know your band score today?</b>\n\nMany students only guess. If you guess too high, you may book the exam too early. If you guess too low, you may lose confidence for no reason.\n\nA full mock in the real CD IELTS format gives you a clear answer, with a timer that never stops.\n\nThe real exam costs about 3 million soums. Find out where you stand before you pay for it.\n\n🗓 <b>Free Full mock this Sunday, 09:00–18:00.</b>\n👉 <a href=\"https://t.me/tddmockbot?start=tg_post\">Book your seat</a>",
       "images": [],
       "rev": 1
+    },
+    {
+      "id": "rm01q",
+      "date": "2026-11-16",
+      "time": "09:00",
+      "channel": "ig_ustoz",
+      "format": "reels",
+      "video": "content/agent-media/2026-11-16-rm01q.mp4",
+      "script": "Ovoz va musiqa allaqachon videoda (thread'da yig'ilgan). Ovozli xabar yubormang, faqat ✅ bosing.",
+      "caption": "81% of students got this one wrong in our Sunday mock. 🎧\n\nListen once, like the real exam. What would YOU write?\n\n💬 Comment your answer. Full explanation tonight at 8 PM.\n\n#ielts #ieltslistening #ieltsmock #ieltsuzbekistan #cdielts",
+      "rev": 1
+    },
+    {
+      "id": "rm01qtg",
+      "date": "2026-11-16",
+      "time": "09:05",
+      "channel": "tg_english",
+      "format": "post",
+      "video": "content/agent-media/2026-11-16-rm01q.mp4",
+      "caption": "🎧 <b>Real mistake from our Sunday mock</b>\n\n81% of students got this one wrong.\nListening, Part 4. ONE WORD ONLY:\n\n<i>There are few systems for ______ satellites.</i>\n\nListen once, like the real exam, and vote below 👇\nFull explanation tonight at 20:00.",
+      "poll": {
+        "question": "There are few systems for ___ satellites. What's the answer?",
+        "options": [
+          "safety",
+          "tracking",
+          "space",
+          "trucking"
+        ],
+        "correct": 1,
+        "explanation": "Full breakdown tonight at 20:00 👀"
+      },
+      "rev": 1
+    },
+    {
+      "id": "rm01a",
+      "date": "2026-11-16",
+      "time": "20:00",
+      "channel": "ig_ustoz",
+      "format": "reels",
+      "video": "content/agent-media/2026-11-16-rm01a.mp4",
+      "script": "Ovoz va musiqa allaqachon videoda (thread'da yig'ilgan). Ovozli xabar yubormang, faqat ✅ bosing.",
+      "caption": "The answer: TRACKING. Most people fell for \"safety\". Here's why 👇\n\nRule: don't write the first word that fits the gap. Wait for the paraphrase.\n\nCheck your real CD IELTS level: link in bio.\n\n#ielts #ieltslistening #ieltsmock #ieltsuzbekistan #cdielts",
+      "rev": 1
+    },
+    {
+      "id": "rm01atg",
+      "date": "2026-11-16",
+      "time": "20:05",
+      "channel": "tg_english",
+      "format": "post",
+      "video": "content/agent-media/2026-11-16-rm01a.mp4",
+      "button": {
+        "text": "📱 Take a CD IELTS mock",
+        "url": "https://t.me/tddmockbot?start=tg_mistakes"
+      },
+      "caption": "✅ <b>Answer: TRACKING</b>\n\n\"safety of satellites\" fits the gap perfectly, and that's the trap.\n\nThe question says <b>few systems</b>. The speaker says <b>we don't have anything like enough proper ways</b> of tracking them. Same idea, different words.\n\nAnd watch your spelling: <i>trucking</i> ≠ <i>tracking</i>.\n\n📌 Rule: don't write the first word that fits. Wait for the paraphrase.",
+      "rev": 1
     }
   ]
 }
