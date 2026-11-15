@@ -14,6 +14,9 @@
  *   Telegram posts may also carry "video": "content/agent-media/x.mp4" (sent
  *   instead of pictures, caption under it) and "button": { "text": "...",
  *   "url": "https://t.me/..." } (one link button under the post).
+ *   Telegram posts may also carry "poll": { "question": "...", "options": ["a","b",...],
+ *   "correct": 1, "explanation": "..." }: a quiz poll sent right after the post
+ *   ("correct" = index of the right option; without it a normal anonymous poll).
  *
  *   21:00  review.js preview shows tomorrow's agent posts with ✅ / ❌ / ✏️.
  *          ✏️ asks the admin what to change and saves the answer on the draft
@@ -91,6 +94,25 @@ async function sendOnePhoto(chatId, path, caption) {
   return sendLocalPhoto(localPath(path), caption);
 }
 
+/** A poll attached to a Telegram post: question + 2..10 options. */
+function validPoll(poll) {
+  return Boolean(poll && typeof poll.question === 'string' && poll.question.trim()
+    && Array.isArray(poll.options) && poll.options.length >= 2 && poll.options.length <= 10);
+}
+
+/** Send the poll; a quiz when "correct" points at one of the options. */
+async function sendPoll(chatId, poll) {
+  const quiz = Number.isInteger(poll.correct) && poll.correct >= 0 && poll.correct < poll.options.length;
+  return callApi('sendPoll', {
+    chat_id: chatId,
+    question: String(poll.question).slice(0, 300),
+    options: poll.options.map((o) => ({ text: String(o).slice(0, 100) })),
+    is_anonymous: true,
+    ...(quiz ? { type: 'quiz', correct_option_id: poll.correct } : {}),
+    ...(quiz && poll.explanation ? { explanation: String(poll.explanation).slice(0, 200) } : {}),
+  });
+}
+
 /** One link button under a Telegram post, or nothing. */
 function linkButton(button) {
   if (!button?.text || !/^https:\/\//.test(button.url || '')) return null;
@@ -163,6 +185,7 @@ export function prepareAgentDrafts(date, adminId, only = '') {
             return;
           }
           const shown = await render(adminId, post);
+          if (validPoll(post.poll)) { meta.poll = post.poll; await sendPoll(adminId, post.poll); }
           meta.photos = shown.photos;
           if (shown.video_id) meta.video_id = shown.video_id;
           if (post.button) meta.button = post.button;
@@ -173,6 +196,11 @@ export function prepareAgentDrafts(date, adminId, only = '') {
 
 /** Post an approved Telegram agent draft to its channel. */
 export async function publishAgentDraft(draft) {
+  await publishAgentBody(draft);
+  if (validPoll(draft.meta.poll)) await sendPoll(CHANNELS[draft.meta.channel].chat(), draft.meta.poll);
+}
+
+async function publishAgentBody(draft) {
   const channel = CHANNELS[draft.meta.channel];
   if (!channel?.chat) throw new Error(`Not a Telegram post: ${draft.meta.channel}`);
   const chatId = channel.chat();
