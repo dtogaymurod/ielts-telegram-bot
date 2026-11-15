@@ -662,9 +662,10 @@
         "caption": "81% of students got this one wrong in our Sunday mock. 🎧\n\nListen once, like the real exam. What would YOU write?\n\n💬 Comment your answer. Full explanation tonight at 8 PM.\n\n#ielts #ieltslistening #ieltsmock #ieltsuzbekistan #cdielts",
         "voice_prompt_id": 239
       },
-      "status": "pending",
+      "status": "approved",
       "created_at": "2026-11-15T20:14:22.125Z",
-      "buttons_message_id": 240
+      "buttons_message_id": 240,
+      "approved_in": "project thread, Dilshod 2026-11-16 01:19"
     },
     "2026-11-16 09:05 rm01qtg": {
       "date": "2026-11-16",
@@ -689,11 +690,12 @@
           "explanation": "Full breakdown tonight at 20:00 👀"
         },
         "photos": [],
-        "video_id": "BAACAgIAAxkDAAPyavoSoZp190PAD1m5Lv4tOEdkm2EAAr-wAAJIbdBLCmAAAVT0FCkzPQQ"
+        "video": "content/agent-media/2026-11-16-rm01q.mp4"
       },
-      "status": "pending",
+      "status": "approved",
       "created_at": "2026-11-15T20:14:25.851Z",
-      "buttons_message_id": 244
+      "buttons_message_id": 244,
+      "approved_in": "project thread, Dilshod 2026-11-16 01:19"
     },
     "2026-11-16 20:00 rm01a": {
       "date": "2026-11-16",
@@ -711,9 +713,10 @@
         "caption": "The answer: TRACKING. Most people fell for \"safety\". Here's why 👇\n\nRule: don't write the first word that fits the gap. Wait for the paraphrase.\n\nCheck your real CD IELTS level: link in bio.\n\n#ielts #ieltslistening #ieltsmock #ieltsuzbekistan #cdielts",
         "voice_prompt_id": 251
       },
-      "status": "pending",
+      "status": "approved",
       "created_at": "2026-11-15T20:14:29.539Z",
-      "buttons_message_id": 252
+      "buttons_message_id": 252,
+      "approved_in": "project thread, Dilshod 2026-11-16 01:19"
     },
     "2026-11-16 20:05 rm01atg": {
       "date": "2026-11-16",
@@ -727,15 +730,16 @@
         "images": [],
         "caption": "✅ <b>Answer: TRACKING</b>\n\n\"safety of satellites\" fits the gap perfectly, and that's the trap.\n\nThe question says <b>few systems</b>. The speaker says <b>we don't have anything like enough proper ways</b> of tracking them. Same idea, different words.\n\nAnd watch your spelling: <i>trucking</i> ≠ <i>tracking</i>.\n\n📌 Rule: don't write the first word that fits. Wait for the paraphrase.",
         "photos": [],
-        "video_id": "BAACAgIAAxkDAAP-avoSqK1hVytLSzh6iI3KGV8L2poAAsGwAAJIbdBL2lwc-xeeKSA9BA",
         "button": {
           "text": "📱 Take a CD IELTS mock",
           "url": "https://t.me/tddmockbot?start=tg_mistakes"
-        }
+        },
+        "video": "content/agent-media/2026-11-16-rm01a.mp4"
       },
-      "status": "pending",
+      "status": "approved",
       "created_at": "2026-11-15T20:14:32.571Z",
-      "buttons_message_id": 255
+      "buttons_message_id": 255,
+      "approved_in": "project thread, Dilshod 2026-11-16 01:19"
     }
   },
   "imported": [
