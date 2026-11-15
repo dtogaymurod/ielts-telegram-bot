@@ -51,6 +51,15 @@ export async function sendVideo(chatId, path, caption = '', markup = null) {
   form.append('chat_id', String(chatId));
   form.append('video', new Blob([readFileSync(path)], { type: 'video/mp4' }), 'reel.mp4');
   form.append('supports_streaming', 'true');
+  // Telegram shows a video without these as a square: tell it the real size
+  try {
+    const info = execFileSync('ffprobe', ['-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height:format=duration', '-of', 'json', path]).toString();
+    const meta = JSON.parse(info);
+    const s = meta.streams?.[0] || {};
+    if (s.width && s.height) { form.append('width', String(s.width)); form.append('height', String(s.height)); }
+    const d = Math.round(Number(meta.format?.duration) || 0);
+    if (d) form.append('duration', String(d));
+  } catch { /* ffprobe missing: Telegram guesses */ }
   if (caption) { form.append('caption', caption); form.append('parse_mode', 'HTML'); }
   if (markup) form.append('reply_markup', JSON.stringify(markup));
   const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendVideo`, { method: 'POST', body: form });
