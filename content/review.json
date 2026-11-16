@@ -755,6 +755,82 @@
       "buttons_message_id": 255,
       "approved_in": "project thread, Dilshod 2026-11-16 01:19",
       "published_at": "2026-11-16T15:05:13.900Z"
+    },
+    "2026-11-17 12:00": {
+      "date": "2026-11-17",
+      "slot": "12:00",
+      "label": "Seshanba, 17.11 · 12:00 · Oddiy vs Band 9 #3",
+      "meta": {
+        "kind": "upgrade",
+        "index": 2
+      },
+      "status": "pending",
+      "created_at": "2026-11-16T15:59:55.003Z",
+      "buttons_message_id": 266
+    },
+    "2026-11-17 19:30": {
+      "date": "2026-11-17",
+      "slot": "19:30",
+      "label": "Seshanba, 17.11 · 19:30 · Yolg‘iz bo‘ri #19",
+      "meta": {
+        "type": "lonewolf",
+        "index": 19
+      },
+      "status": "pending",
+      "created_at": "2026-11-16T15:59:56.591Z",
+      "buttons_message_id": 269
+    },
+    "2026-11-17 18:00": {
+      "date": "2026-11-17",
+      "slot": "18:00",
+      "label": "Seshanba, 17.11 · 18:00 · 🟢 Multilevel kanal · Audio boşlanmasdan oldin (bazada 410 ta qoldi)",
+      "meta": {
+        "multilevel_index": 4,
+        "post_id": "ml_005",
+        "photo": "AgACAgIAAxkDAAIBD2r7KH0cNjLaCF-MpITv6cPey-hOAAI_I2sbSG3YSxx5R53nZFOBAQADAgADdwADPQQ",
+        "caption": "<b>Audio boşlanmasdan oldin</b>\n\nKöpçilik audio boşlangunça kutib ötiradi. Aslida eng muhim iş şu paytda qilinadi 🎧\n\n1. Savollarni öqib, <b>kalit sözlarni</b> belgilang\n2. Böş joyga nima kerakligini taxmin qiling: <b>son</b>, <b>ism</b> yoki <b>sana</b>?\n3. Variantlardagi <b>farqni</b> oldindan köring\n💡 Audio boşlangaç, savolga emas, <b>tinglaşga</b> e'tibor bering\n\nSaqlab qöying, imtihondan oldin kerak böladi 📌"
+      },
+      "status": "pending",
+      "created_at": "2026-11-16T15:59:57.919Z",
+      "buttons_message_id": 272
+    },
+    "2026-11-17 14:30 2026-11-17-tgml-1": {
+      "date": "2026-11-17",
+      "slot": "14:30 2026-11-17-tgml-1",
+      "label": "Seshanba, 17.11 · 14:30 2026-11-17-tgml-1 · 🤖 Agent · @dilshod_multilevel · post",
+      "meta": {
+        "agent_id": "2026-11-17-tgml-1",
+        "channel": "tg_multilevel",
+        "format": "post",
+        "rev": 1,
+        "images": [],
+        "caption": "<b>Multilevel Writing: ball yöqotadigan 3 ta oddiy xato</b>\n\n1. <b>Run-on sentence.</b> Ikki gapni faqat vergul bilan ulamang.\n❌ <i>I love my city, it is very green.</i>\n✅ <i>I love my city because it is very green.</i>\n\n2. <b>Savolga javob bermaslik.</b> Topşiriq \"why\" deb sörasa, sababni yozing. Umumiy gap ball bermaydi.\n\n3. <b>Bir sözni takrorlaş.</b> Har gapda <i>good</i> örniga: <i>useful, enjoyable, convenient</i>.\n\nWriting'ingizni şanba kuni sinab köring: bepul Multilevel mock, 09:00–18:00.\n👉 <a href=\"https://t.me/tddcefrbot\">@tddcefrbot</a>",
+        "photos": []
+      },
+      "status": "pending",
+      "created_at": "2026-11-16T15:59:58.447Z",
+      "buttons_message_id": 275
+    },
+    "2026-11-17 19:30 2026-11-17-ig-1": {
+      "date": "2026-11-17",
+      "slot": "19:30 2026-11-17-ig-1",
+      "label": "Seshanba, 17.11 · 19:30 2026-11-17-ig-1 · 📸 Agent · Instagram @dilshod.ustoz · post",
+      "meta": {
+        "agent_id": "2026-11-17-ig-1",
+        "channel": "ig_ustoz",
+        "format": "post",
+        "rev": 1,
+        "images": [
+          "content/agent-media/2026-11-17-2026-11-17-ig-1.jpg"
+        ],
+        "caption": "See this screen before you pay for the real exam.\n\nThe real IELTS exam costs about 3 million soums. If you see the CD format for the first time on exam day, everything is new at once: the timer, the audio that plays only once, the answer boxes you type into. That stress costs marks.\n\nA mock in the real CD format lets you meet all of this at home first. On exam day, the screen feels familiar, and you can focus on the questions.\n\nMock Set atigi 29 000 söm: @tddmockbot (link in bio) orqali hoziroq boşlang.\n\n#IELTS #CDIELTS #IELTSmock #IELTSUzbekistan",
+        "photos": [
+          "AgACAgIAAxkDAAIBFWr7KH-GkEKAMYsoXbYKbgz5ogRqAAJAI2sbSG3YS3PtnHnPy5wVAQADAgADdwADPQQ"
+        ]
+      },
+      "status": "pending",
+      "created_at": "2026-11-16T15:59:59.501Z",
+      "buttons_message_id": 278
     }
   },
   "imported": [
