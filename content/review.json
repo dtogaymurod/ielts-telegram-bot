@@ -1,5 +1,5 @@
 {
-  "last_update_id": 111953025,
+  "last_update_id": 111953026,
   "drafts": {
     "2026-11-02 12:00": {
       "date": "2026-11-02",
@@ -607,12 +607,13 @@
       "meta": {
         "video_id": "d-1sTJCxoTfR_bD9fV2RmkiyS5fJnVGjq36"
       },
-      "status": "pending",
+      "status": "approved",
       "created_at": "2026-11-15T15:59:23.061Z",
       "buttons_message_id": 229,
       "extra_button_ids": [
         256
-      ]
+      ],
+      "decided_at": "2026-11-16T04:00:01.794Z"
     },
     "2026-11-16 18:00": {
       "date": "2026-11-16",
