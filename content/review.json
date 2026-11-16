@@ -595,10 +595,11 @@
         "bank_index": 2,
         "title": "T/F/NG vs Y/N/NG"
       },
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-11-15T15:59:22.621Z",
       "buttons_message_id": 226,
-      "decided_at": "2026-11-15T16:12:56.329Z"
+      "decided_at": "2026-11-15T16:12:56.329Z",
+      "published_at": "2026-11-16T14:29:36.377Z"
     },
     "2026-11-16 17:00": {
       "date": "2026-11-16",
