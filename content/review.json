@@ -1,5 +1,5 @@
 {
-  "last_update_id": 111953031,
+  "last_update_id": 111953032,
   "drafts": {
     "2026-11-02 12:00": {
       "date": "2026-11-02",
@@ -792,9 +792,10 @@
         "photo": "AgACAgIAAxkDAAIBD2r7KH0cNjLaCF-MpITv6cPey-hOAAI_I2sbSG3YSxx5R53nZFOBAQADAgADdwADPQQ",
         "caption": "<b>Audio boşlanmasdan oldin</b>\n\nKöpçilik audio boşlangunça kutib ötiradi. Aslida eng muhim iş şu paytda qilinadi 🎧\n\n1. Savollarni öqib, <b>kalit sözlarni</b> belgilang\n2. Böş joyga nima kerakligini taxmin qiling: <b>son</b>, <b>ism</b> yoki <b>sana</b>?\n3. Variantlardagi <b>farqni</b> oldindan köring\n💡 Audio boşlangaç, savolga emas, <b>tinglaşga</b> e'tibor bering\n\nSaqlab qöying, imtihondan oldin kerak böladi 📌"
       },
-      "status": "pending",
+      "status": "approved",
       "created_at": "2026-11-16T15:59:57.919Z",
-      "buttons_message_id": 272
+      "buttons_message_id": 272,
+      "decided_at": "2026-11-16T16:13:52.757Z"
     },
     "2026-11-17 14:30 2026-11-17-tgml-1": {
       "date": "2026-11-17",
