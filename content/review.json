@@ -607,13 +607,14 @@
       "meta": {
         "video_id": "d-1sTJCxoTfR_bD9fV2RmkiyS5fJnVGjq36"
       },
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-11-15T15:59:23.061Z",
       "buttons_message_id": 229,
       "extra_button_ids": [
         256
       ],
-      "decided_at": "2026-11-16T04:00:01.794Z"
+      "decided_at": "2026-11-16T04:00:01.794Z",
+      "published_at": "2026-11-16T12:00:36.509Z"
     },
     "2026-11-16 18:00": {
       "date": "2026-11-16",
@@ -797,13 +798,6 @@
     "1Pl77KvQg9L2-brFOsyrEG7UlBQ1VaJ8-"
   ],
   "videos": [
-    {
-      "id": "d-1sTJCxoTfR_bD9fV2RmkiyS5fJnVGjq36",
-      "name": "reels3_introduction_formulasi_v2",
-      "file_id": "DQACAgIAAxkDAANravIQIxMzgqqQ9U-vv7I1UtRew7wAAhm5AAJwA5FLwLRk8aoZfJY9BA",
-      "duration": 56,
-      "added_at": "2026-11-09T18:25:39.499Z"
-    },
     {
       "id": "d-1a_EI51p3EFz4cJ9zVhLUpGlz8cgoNQFA",
       "name": "reels_examiner_aybdormi",
