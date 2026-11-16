@@ -750,10 +750,11 @@
         },
         "video": "content/agent-media/2026-11-16-rm01a.mp4"
       },
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-11-15T20:14:32.571Z",
       "buttons_message_id": 255,
-      "approved_in": "project thread, Dilshod 2026-11-16 01:19"
+      "approved_in": "project thread, Dilshod 2026-11-16 01:19",
+      "published_at": "2026-11-16T15:05:13.900Z"
     }
   },
   "imported": [
