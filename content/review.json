@@ -1,5 +1,5 @@
 {
-  "last_update_id": 111953037,
+  "last_update_id": 111953038,
   "drafts": {
     "2026-11-03 12:00": {
       "date": "2026-11-03",
@@ -891,9 +891,10 @@
         "caption": "<b>Which section is pulling your band down?</b>\n\nYour overall band is the average of your four section scores. One weak section can hold the whole score back, even if the other three are strong.\n\nBut you can't fix a weak section you haven't found. \"I think my Writing is fine\" is a guess, not a result.\n\nA full mock (<a href=\"https://t.me/tddmockbot?start=tg_post\">in the bot</a>) gives you a separate score for Listening, Reading, Writing and Speaking. Then you know exactly where to spend your study time.\n\nWhich section is your weakest? Tell me in the comments 👇",
         "photos": []
       },
-      "status": "pending",
+      "status": "approved",
       "created_at": "2026-11-17T15:59:46.730Z",
-      "buttons_message_id": 295
+      "buttons_message_id": 295,
+      "decided_at": "2026-11-17T17:10:53.077Z"
     }
   },
   "imported": [
