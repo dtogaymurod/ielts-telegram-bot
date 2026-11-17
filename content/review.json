@@ -1,5 +1,5 @@
 {
-  "last_update_id": 111953039,
+  "last_update_id": 111953040,
   "drafts": {
     "2026-11-03 12:00": {
       "date": "2026-11-03",
@@ -876,9 +876,10 @@
         "video_url": "https://mock.dilshodustoz.workers.dev/media/smm/2026-11-17/c7Rr414w688-2026-11-18-ig-reel-1-voice.mp4",
         "voice_seconds": 25
       },
-      "status": "pending",
+      "status": "rejected",
       "created_at": "2026-11-17T15:59:46.266Z",
-      "buttons_message_id": 292
+      "buttons_message_id": 292,
+      "decided_at": "2026-11-17T17:53:35.240Z"
     },
     "2026-11-18 20:15 2026-11-18-tg-2": {
       "date": "2026-11-18",
