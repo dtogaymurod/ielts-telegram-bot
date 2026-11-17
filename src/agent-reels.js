@@ -19,6 +19,15 @@
  *   time   the approved reel is put into the mock site's Instagram queue
  *          (publishReel). Without a voice message it goes out silent.
  *
+ * Premium reels (2026-11-17, the teacher rejected the stretched "pop" mix as
+ * cartoonish): when the queue entry carries "reel_spec", the reel is rendered
+ * again around the voice (reels/audio/build_reel.py, a copy of smm-agents
+ * design/): the voice is cleaned and tightened, every scene and every subtitle
+ * word follows the teacher's words, and a calm music bed ducks under the
+ * voice. The tools it needs (playwright, chromium, pocketsphinx) are installed
+ * on the first voice message of a run. If anything fails, the old mix is used,
+ * now with the same voice cleaning.
+ *
  * Needs ffmpeg (installed in review.yml) and the SMM_KEY secret.
  */
 
@@ -26,6 +35,13 @@ import { mkdtempSync, rmSync, writeFileSync, readFileSync } from 'fs';
 import { tmpdir } from 'os';
 import { join } from 'path';
 import { execFileSync } from 'child_process';
+import { fileURLToPath } from 'url';
+
+const ROOT = join(fileURLToPath(new URL('.', import.meta.url)), '..');
+// the teacher's voice: rumble, noise and the muffled 200-500 Hz go, clarity and air come in, then an even level
+export const VOICE_CHAIN = 'highpass=f=85,highpass=f=85,afftdn=nf=-42:nr=8:tn=1,equalizer=f=220:t=q:w=1.1:g=-4,equalizer=f=500:t=q:w=1.4:g=-1.5,'
+  + 'equalizer=f=3400:t=q:w=1.3:g=4,equalizer=f=6800:t=q:w=1.4:g=2.5,highshelf=f=10000:g=2,deesser=i=0.35,'
+  + 'acompressor=threshold=-22dB:ratio=3.2:attack=6:release=110:makeup=5,alimiter=limit=0.89';
 
 const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const MIN_STRETCH = 0.6;
@@ -179,7 +195,7 @@ export function mixVoice(videoPath, voicePath, outPath, { segments = [], lines =
   execFileSync('ffmpeg', [
     '-y', '-v', 'error', '-i', videoPath, '-i', voicePath,
     '-filter_complex',
-    `[0:v]setpts=${stretch.toFixed(4)}*PTS,fps=30[v];[1:a]adelay=${Math.round(LEAD * 1000)}:all=1,loudnorm=I=-16:TP=-1.5:LRA=11,apad[a]`,
+    `[0:v]setpts=${stretch.toFixed(4)}*PTS,fps=30[v];[1:a]${VOICE_CHAIN},adelay=${Math.round(LEAD * 1000)}:all=1,loudnorm=I=-16:TP=-1.5:LRA=11,apad[a]`,
     '-map', '[v]', '-map', '[a]', '-t', total.toFixed(2),
     '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '21', '-pix_fmt', 'yuv420p',
     '-c:a', 'aac', '-b:a', '128k', '-ar', '44100', '-ac', '2', '-movflags', '+faststart', outPath,
@@ -211,8 +227,8 @@ function mixSynced(videoPath, voicePath, outPath, segments, lines, video, voice)
   });
   const total = targets.reduce((a, b) => a + b, 0);
   const audio = shift >= 0
-    ? `[1:a]atrim=start=${shift.toFixed(3)},asetpts=PTS-STARTPTS,loudnorm=I=-16:TP=-1.5:LRA=11,apad[a]`
-    : `[1:a]adelay=${Math.round(-shift * 1000)}:all=1,loudnorm=I=-16:TP=-1.5:LRA=11,apad[a]`;
+    ? `[1:a]atrim=start=${shift.toFixed(3)},asetpts=PTS-STARTPTS,${VOICE_CHAIN},loudnorm=I=-16:TP=-1.5:LRA=11,apad[a]`
+    : `[1:a]${VOICE_CHAIN},adelay=${Math.round(-shift * 1000)}:all=1,loudnorm=I=-16:TP=-1.5:LRA=11,apad[a]`;
   execFileSync('ffmpeg', [
     '-y', '-v', 'error', '-i', videoPath, '-i', voicePath,
     '-filter_complex',
@@ -222,6 +238,29 @@ function mixSynced(videoPath, voicePath, outPath, segments, lines, video, voice)
     '-c:a', 'aac', '-b:a', '128k', '-ar', '44100', '-ac', '2', '-movflags', '+faststart', outPath,
   ], { stdio: 'inherit' });
   return { total, voice, cut: false, maxVoice: 0, synced: true, starts };
+}
+
+let toolsReady = false;
+/** playwright + chromium + pocketsphinx for the premium render, once per run. */
+function premiumTools() {
+  if (toolsReady) return;
+  const run = (cmd, args) => execFileSync(cmd, args, { cwd: ROOT, stdio: 'inherit', timeout: 6 * 60 * 1000 });
+  try { execFileSync('python3', ['-c', 'import pocketsphinx, numpy'], { stdio: 'ignore' }); } catch { run('python3', ['-m', 'pip', 'install', '-q', 'pocketsphinx', 'numpy']); }
+  try { execFileSync('node', ['-e', "require.resolve('playwright')"], { cwd: ROOT, stdio: 'ignore' }); } catch { run('npm', ['install', '--no-save', '--no-audit', '--no-fund', 'playwright@1.49.1']); }
+  run('npx', ['playwright', 'install', '--with-deps', 'chromium']);
+  toolsReady = true;
+}
+
+/** The premium reel, rendered again around the teacher's voice. */
+export function renderPremium(spec, voicePath, outPath) {
+  premiumTools();
+  const dir = mkdtempSync(join(tmpdir(), 'reelspec-'));
+  try {
+    const specPath = join(dir, 'spec.json');
+    writeFileSync(specPath, JSON.stringify({ ...spec, style: 'premium' }));
+    execFileSync('python3', [join(ROOT, 'reels', 'audio', 'build_reel.py'), specPath, voicePath, outPath], { cwd: ROOT, stdio: 'inherit', timeout: 10 * 60 * 1000 });
+    return { total: duration(outPath), voice: duration(voicePath), cut: false, maxVoice: 0, synced: true, premium: true };
+  } finally { rmSync(dir, { recursive: true, force: true }); }
 }
 
 /**
@@ -239,10 +278,14 @@ export async function attachVoice(callApi, adminId, draft, voice, videoPath, upl
     writeFileSync(voicePath, Buffer.from(await response.arrayBuffer()));
     const out = join(dir, 'reel.mp4');
     const lines = String(draft.meta.script || '').split('\n').map((l) => l.trim()).filter(Boolean);
-    const mix = mixVoice(videoPath, voicePath, out, { segments: draft.meta.segments || [], lines });
+    let mix = null;
+    if (draft.meta.reel_spec) {
+      try { mix = renderPremium(draft.meta.reel_spec, voicePath, out); } catch (error) { console.log(`⚠️ Premium render failed, mixing the old way: ${error.message}`); }
+    }
+    if (!mix) mix = mixVoice(videoPath, voicePath, out, { segments: draft.meta.segments || [], lines });
     draft.meta.video_url = await upload(out, `${draft.meta.agent_id}-voice.mp4`);
     draft.meta.voice_seconds = Math.round(mix.voice);
-    const notes = [`🎬 <b>Ovoz qo‘shildi</b>${mix.synced ? ' va sahnalar gaplaringizga moslandi' : ''} (${Math.round(mix.total)} soniya). Yoqsa, yuqoridagi ✅ ni bosing. Yoqmasa, ovozni qayta yuboring.`];
+    const notes = [`🎬 <b>Ovoz qo‘shildi</b>${mix.premium ? ': ovoz tozalandi, sahnalar va subtitr gaplaringizga moslandi, fon musiqa qo‘yildi' : mix.synced ? ' va sahnalar gaplaringizga moslandi' : ''} (${Math.round(mix.total)} soniya). Yoqsa, yuqoridagi ✅ ni bosing. Yoqmasa, ovozni qayta yuboring.`];
     if (mix.cut) notes.push(`⚠️ Ovoz uzun bo‘lib, oxiri kesildi. ${Math.floor(mix.maxVoice)} soniyagacha qilib qayta yuboring.`);
     await sendVideo(adminId, out, notes.join('\n'));
   } finally {
