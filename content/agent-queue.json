@@ -1,0 +1,160 @@
+{
+  "_note": "Posts written by the SMM agents (repo dilshodustoz/smm-agents), already checked by the Muharrir agent. Shown at the 21:00 review with ✅ / ❌ / ✏️ (src/agent-posts.js). channel: tg_english | tg_multilevel | ig_ustoz. Telegram posts are published by the listener at their time; approved ig_ustoz posts are handed by the listener to the mock site's Instagram queue (pictures: JPEG files in content/agent-media/).",
+  "posts": [
+    {
+      "id": "reel1",
+      "date": "2026-11-14",
+      "time": "16:40",
+      "channel": "ig_ustoz",
+      "format": "reels",
+      "video": "content/agent-media/2026-11-14-reel1.mp4",
+      "script": "Mock'ni telefondan topşirsa bölarkanmi?\nHa, böladi. Haqiqiy imtihon formati, xuddi özi.\nTaymer töxtamaydi. Imtihondagidek.\nJavobni özingiz yozasiz. Natija darhol çiqadi.\n3 mln sömlik imtihonda bu ekranni birinçi marta körmang.\nErtaga BEPUL Full mock!",
+      "caption": "Mock'ni telefondan topşirsa böladimi? Ha, böladi.\n\nHaqiqiy imtihon formati, taymer töxtamaydi, natija darhol çiqadi.\n\nHaqiqiy IELTS imtihoni 3 mln söm atrofida turadi. Bu ekranni birinçi marta öşa kuni körmang.\n\nErtaga, yakşanba kuni 09:00 dan 18:00 gaça BEPUL Full mock. Röyxatdan ötiş uçun link bioda yoki Telegram: @tddmockbot\n\n#ielts #ieltsmock #ieltsuzbekistan #ieltspreparation #mocktest",
+      "rev": 7
+    },
+    {
+      "id": "reeltg",
+      "date": "2026-11-14",
+      "time": "17:20",
+      "channel": "tg_english",
+      "format": "post",
+      "video": "content/agent-media/2026-11-14-reel1.mp4",
+      "button": {
+        "text": "📱 Open the mock bot",
+        "url": "https://t.me/tddmockbot?start=tg_post"
+      },
+      "caption": "<b>Can you take an IELTS mock on your phone?</b> Yes, you can.\n\n✅ Real exam format\n⏱ The timer never stops\n📊 Your result comes straight away\n\nThe real exam costs about 3 mln so'm. Don't see this screen for the first time on exam day.\n\n🗓 <b>FREE Full mock tomorrow</b>, Sunday 09:00–18:00.",
+      "rev": 1
+    },
+    {
+      "id": "2026-11-16-tg-1",
+      "date": "2026-11-16",
+      "time": "15:00",
+      "channel": "tg_english",
+      "format": "post",
+      "caption": "<b>Do you know your band score today?</b>\n\nMany students only guess. If you guess too high, you may book the exam too early. If you guess too low, you may lose confidence for no reason.\n\nThe Mock Set gives you a clear answer: full tests in the real CD IELTS format, with a timer that never stops.\n\nThe real exam costs about 3 million soums. The Mock Set costs 29,000 soums. Check your level before you pay for the real thing.\n\n👉 <a href=\"https://t.me/tddmockbot?start=tg_post\">Get your Mock Set in the bot</a>",
+      "images": [],
+      "rev": 4
+    },
+    {
+      "id": "rm01q",
+      "date": "2026-11-16",
+      "time": "09:00",
+      "channel": "ig_ustoz",
+      "format": "reels",
+      "video": "content/agent-media/2026-11-16-rm01q.mp4",
+      "script": "Ovoz va musiqa allaqachon videoda (thread'da yig'ilgan). Ovozli xabar yubormang, faqat ✅ bosing.",
+      "caption": "81% of students got this one wrong in our Sunday mock. 🎧\n\nListen once, like the real exam. What would YOU write?\n\n💬 Comment your answer. Full explanation tonight at 8 PM.\n\n#ielts #ieltslistening #ieltsmock #ieltsuzbekistan #cdielts",
+      "rev": 1
+    },
+    {
+      "id": "rm01qtg",
+      "date": "2026-11-16",
+      "time": "09:05",
+      "channel": "tg_english",
+      "format": "post",
+      "video": "content/agent-media/2026-11-16-rm01q.mp4",
+      "caption": "🎧 <b>Real mistake from our Sunday mock</b>\n\n81% of students got this one wrong.\nListening, Part 4. ONE WORD ONLY:\n\n<i>There are few systems for ______ satellites.</i>\n\nListen once, like the real exam, and vote below 👇\nFull explanation tonight at 20:00.",
+      "poll": {
+        "question": "There are few systems for ___ satellites. What's the answer?",
+        "options": [
+          "safety",
+          "tracking",
+          "space",
+          "trucking"
+        ],
+        "correct": 1,
+        "explanation": "Full breakdown tonight at 20:00 👀"
+      },
+      "rev": 1
+    },
+    {
+      "id": "rm01a",
+      "date": "2026-11-16",
+      "time": "20:00",
+      "channel": "ig_ustoz",
+      "format": "reels",
+      "video": "content/agent-media/2026-11-16-rm01a.mp4",
+      "script": "Ovoz va musiqa allaqachon videoda (thread'da yig'ilgan). Ovozli xabar yubormang, faqat ✅ bosing.",
+      "caption": "The answer: TRACKING. Most people fell for \"safety\". Here's why 👇\n\nRule: don't write the first word that fits the gap. Wait for the paraphrase.\n\nCheck your real CD IELTS level: link in bio.\n\n#ielts #ieltslistening #ieltsmock #ieltsuzbekistan #cdielts",
+      "rev": 1
+    },
+    {
+      "id": "rm01atg",
+      "date": "2026-11-16",
+      "time": "20:05",
+      "channel": "tg_english",
+      "format": "post",
+      "video": "content/agent-media/2026-11-16-rm01a.mp4",
+      "button": {
+        "text": "📱 Take a CD IELTS mock",
+        "url": "https://t.me/tddmockbot?start=tg_mistakes"
+      },
+      "caption": "✅ <b>Answer: TRACKING</b>\n\n\"safety of satellites\" fits the gap perfectly, and that's the trap.\n\nThe question says <b>few systems</b>. The speaker says <b>we don't have anything like enough proper ways</b> of tracking them. Same idea, different words.\n\nAnd watch your spelling: <i>trucking</i> ≠ <i>tracking</i>.\n\n📌 Rule: don't write the first word that fits. Wait for the paraphrase.",
+      "rev": 1
+    },
+    {
+      "id": "2026-11-17-tgml-1",
+      "date": "2026-11-17",
+      "time": "14:30",
+      "channel": "tg_multilevel",
+      "format": "post",
+      "caption": "<b>Multilevel Writing: ball yöqotadigan 3 ta oddiy xato</b>\n\n1. <b>Run-on sentence.</b> Ikki gapni faqat vergul bilan ulamang.\n❌ <i>I love my city, it is very green.</i>\n✅ <i>I love my city because it is very green.</i>\n\n2. <b>Savolga javob bermaslik.</b> Topşiriq \"why\" deb sörasa, sababni yozing. Umumiy gap ball bermaydi.\n\n3. <b>Bir sözni takrorlaş.</b> Har gapda <i>good</i> örniga: <i>useful, enjoyable, convenient</i>.\n\nWriting'ingizni şanba kuni sinab köring: bepul Multilevel mock, 09:00–18:00.\n👉 <a href=\"https://t.me/tddcefrbot\">@tddcefrbot</a>",
+      "images": [],
+      "rev": 1
+    },
+    {
+      "id": "2026-11-17-ig-1",
+      "date": "2026-11-17",
+      "time": "19:30",
+      "channel": "ig_ustoz",
+      "format": "post",
+      "caption": "See this screen before you pay for the real exam.\n\nThe real IELTS exam costs about 3 million soums. If you see the CD format for the first time on exam day, everything is new at once: the timer, the audio that plays only once, the answer boxes you type into. That stress costs marks.\n\nA mock in the real CD format lets you meet all of this at home first. On exam day, the screen feels familiar, and you can focus on the questions.\n\nMock Set atigi 29 000 söm: @tddmockbot (link in bio) orqali hoziroq boşlang.\n\n#IELTS #CDIELTS #IELTSmock #IELTSUzbekistan",
+      "images": [
+        "content/agent-media/2026-11-17-2026-11-17-ig-1.jpg"
+      ],
+      "rev": 1
+    },
+    {
+      "id": "2026-11-18-ig-reel-1",
+      "date": "2026-11-18",
+      "time": "09:00",
+      "channel": "ig_ustoz",
+      "format": "reels",
+      "caption": "Three traps on the CD IELTS Listening screen 🎧\n\n1. The audio plays once. There is no pause and no replay, so your focus has to stay on the recording.\n2. You type your answers while you listen. A spelling mistake makes the answer wrong, so practise typing words correctly under pressure.\n3. The timer keeps running, even between parts. Use every pause to read the next questions.\n\nThe real exam costs about 3 million soums. Don't see this screen for the first time on exam day.\n\nHaqiqiy CD formatdagi Mock Set atigi 29 000 söm: @tddmockbot (link in bio) orqali hoziroq boşlang.\n\n#IELTS #CDIELTS #IELTSListening #IELTSUzbekistan",
+      "images": [],
+      "video": "content/agent-media/2026-11-18-2026-11-18-ig-reel-1.mp4",
+      "script": "Three traps on the CD Listening screen.\nOne. The audio plays once. No pause, no replay.\nTwo. You type while you listen. One typo is a wrong answer.\nThree. The timer keeps running, even between parts.\nSee this screen before exam day.",
+      "segments": [
+        2418,
+        2914,
+        3658,
+        3162,
+        2200
+      ],
+      "rev": 1
+    },
+    {
+      "id": "2026-11-18-tg-2",
+      "date": "2026-11-18",
+      "time": "20:15",
+      "channel": "tg_english",
+      "format": "post",
+      "caption": "<b>Which section is pulling your band down?</b>\n\nYour overall band is the average of your four section scores. One weak section can hold the whole score back, even if the other three are strong.\n\nBut you can't fix a weak section you haven't found. \"I think my Writing is fine\" is a guess, not a result.\n\nA full mock (<a href=\"https://t.me/tddmockbot?start=tg_post\">in the bot</a>) gives you a separate score for Listening, Reading, Writing and Speaking. Then you know exactly where to spend your study time.\n\nWhich section is your weakest? Tell me in the comments 👇",
+      "images": [],
+      "rev": 1
+    },
+    {
+      "id": "2026-11-19-story-1",
+      "date": "2026-11-19",
+      "time": "18:30",
+      "channel": "ig_story",
+      "format": "story",
+      "caption": "Havola stikeri qöşing: t.me/tddmockbot?start=ig_story, stiker matni \"Joy band qiling\". Joy sonini yozmang.",
+      "images": [
+        "content/agent-media/2026-11-19-2026-11-19-story-1.jpg"
+      ],
+      "rev": 1
+    }
+  ]
+}

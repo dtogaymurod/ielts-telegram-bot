@@ -78,3 +78,22 @@ export function renderHackPoster(post) {
     return null;
   }
 }
+
+const VISUAL_SCRIPT = join(__dirname, '..', 'poster', 'render_visual.py');
+
+/** Render a picture-first poster (Multilevel channel); null on failure. */
+export function renderVisualPoster(post) {
+  try {
+    const outPath = join(mkdtempSync(join(tmpdir(), 'visual-')), 'poster.png');
+    execFileSync('python3', [VISUAL_SCRIPT, '-', outPath], {
+      input: JSON.stringify(post),
+      stdio: ['pipe', 'pipe', 'pipe'],
+      timeout: 60_000,
+    });
+    return outPath;
+  } catch (error) {
+    const detail = error.stderr?.toString().trim() || error.message;
+    console.warn(`⚠️ Visual poster rendering failed: ${detail}`);
+    return null;
+  }
+}

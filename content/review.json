@@ -1,115 +1,6 @@
 {
-  "last_update_id": 111953006,
+  "last_update_id": 111953045,
   "drafts": {
-    "2026-11-01 19:30": {
-      "date": "2026-11-01",
-      "slot": "19:30",
-      "label": "Yakshanba, 01.11 · 19:30 · Kundalik post (LISTENING)",
-      "meta": {
-        "type": "skill",
-        "skill": "listening",
-        "text": "🎧 <b>IELTS LISTENING | 1 MINUTE HACK</b>\n━━━━━━━━━━━━━━━━━━━━\n\n⚠️ <b>Qo'shma so'zlar tuzog'i:</b>\nSpiker ikkita alohida so'zni urg'u bilan aytib, sizni ikkita bo'sh joy bor deb o'ylatadi. Masalan: <i>\"We need a new bicycle rack\"</i> o'rniga <i>\"bicycle... rack\"</i> deb to'xtalishi mumkin, siz esa buni <i>bicycle track</i> deb yozib adashasiz.\n\n💡 <b>Oltin qoida:</b>\nMatn ma'nosiga qarang. Agar u bitta buyumni bildirsa, so'zlarni qo'shib yozing: <i>\"The library offers a great <b>study room</b> for students.\"</i>\n\n💡 <i>IELTSga tayyorlanayotgan do'stlaringizga ham ulashing!</i>\n\n👉 Telegram: @dilshod_english\n📸 Instagram: instagram.com/dilshod.ustoz"
-      },
-      "status": "published",
-      "created_at": "2026-10-31T15:59:32.405Z",
-      "buttons_message_id": 11,
-      "decided_at": "2026-11-01T06:19:48.382Z",
-      "extra_button_ids": [
-        12
-      ],
-      "published_at": "2026-11-01T14:29:35.014Z"
-    },
-    "2026-11-02 12:00": {
-      "date": "2026-11-02",
-      "slot": "12:00",
-      "label": "Dushanba, 02.11 · 12:00 · Red flag / Green flag #1",
-      "meta": {
-        "kind": "redflag",
-        "index": 0
-      },
-      "status": "published",
-      "created_at": "2026-11-01T15:59:46.506Z",
-      "buttons_message_id": 16,
-      "decided_at": "2026-11-01T16:05:10.941Z",
-      "published_at": "2026-11-02T07:06:07.140Z"
-    },
-    "2026-11-02 19:30": {
-      "date": "2026-11-02",
-      "slot": "19:30",
-      "label": "Dushanba, 02.11 · 19:30 · Kundalik post (READING)",
-      "meta": {
-        "type": "skill",
-        "skill": "reading",
-        "bank_index": 0,
-        "title": "Hammasini o‘qiysizmi?"
-      },
-      "status": "published",
-      "created_at": "2026-11-01T16:25:14.300Z",
-      "extra_button_ids": [
-        19
-      ],
-      "buttons_message_id": 22,
-      "decided_at": "2026-11-01T16:29:27.261Z",
-      "published_at": "2026-11-02T14:37:07.739Z"
-    },
-    "2026-11-03 12:00": {
-      "date": "2026-11-03",
-      "slot": "12:00",
-      "label": "Seshanba, 03.11 · 12:00 · Oddiy vs Band 9 #1",
-      "meta": {
-        "kind": "upgrade",
-        "index": 0
-      },
-      "status": "published",
-      "created_at": "2026-11-02T16:41:37.386Z",
-      "buttons_message_id": 25,
-      "decided_at": "2026-11-02T16:46:51.439Z",
-      "published_at": "2026-11-03T06:59:24.108Z"
-    },
-    "2026-11-03 19:30": {
-      "date": "2026-11-03",
-      "slot": "19:30",
-      "label": "Seshanba, 03.11 · 19:30 · Yolg‘iz bo‘ri #13",
-      "meta": {
-        "type": "lonewolf",
-        "index": 13
-      },
-      "status": "published",
-      "created_at": "2026-11-02T16:41:39.389Z",
-      "buttons_message_id": 28,
-      "decided_at": "2026-11-02T16:47:11.672Z",
-      "published_at": "2026-11-03T14:29:34.563Z"
-    },
-    "2026-11-04 12:00": {
-      "date": "2026-11-04",
-      "slot": "12:00",
-      "label": "Chorshanba, 04.11 · 12:00 · POV (matn) #1",
-      "meta": {
-        "kind": "pov",
-        "index": 0
-      },
-      "status": "published",
-      "created_at": "2026-11-03T15:59:34.543Z",
-      "buttons_message_id": 31,
-      "decided_at": "2026-11-03T16:02:21.975Z",
-      "published_at": "2026-11-04T06:59:38.225Z"
-    },
-    "2026-11-04 19:30": {
-      "date": "2026-11-04",
-      "slot": "19:30",
-      "label": "Chorshanba, 04.11 · 19:30 · Kundalik post (WRITING)",
-      "meta": {
-        "type": "skill",
-        "skill": "writing",
-        "bank_index": 0,
-        "title": "Overview yo‘qmi? Band 5"
-      },
-      "status": "published",
-      "created_at": "2026-11-03T15:59:38.491Z",
-      "buttons_message_id": 34,
-      "decided_at": "2026-11-03T16:02:29.554Z",
-      "published_at": "2026-11-04T14:29:03.470Z"
-    },
     "2026-11-05 12:00": {
       "date": "2026-11-05",
       "slot": "12:00",
@@ -333,10 +224,11 @@
         "kind": "collocation",
         "index": 0
       },
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-11-11T19:06:18.370Z",
       "buttons_message_id": 136,
-      "decided_at": "2026-11-11T19:06:43.282Z"
+      "decided_at": "2026-11-11T19:06:43.282Z",
+      "published_at": "2026-11-12T06:59:11.299Z"
     },
     "2026-11-12 19:30": {
       "date": "2026-11-12",
@@ -346,10 +238,11 @@
         "type": "lonewolf",
         "index": 17
       },
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-11-11T19:06:19.925Z",
       "buttons_message_id": 139,
-      "decided_at": "2026-11-11T19:07:00.468Z"
+      "decided_at": "2026-11-11T19:07:00.468Z",
+      "published_at": "2026-11-12T14:29:46.174Z"
     },
     "2026-11-12 17:00": {
       "date": "2026-11-12",
@@ -358,10 +251,674 @@
       "meta": {
         "video_id": "d-1uGtcRvIbXTLpPiBwxih9bRaqzR2W40YX"
       },
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-11-11T19:06:20.453Z",
       "buttons_message_id": 142,
-      "decided_at": "2026-11-11T19:07:09.907Z"
+      "decided_at": "2026-11-11T19:07:09.907Z",
+      "published_at": "2026-11-12T12:00:41.441Z"
+    },
+    "2026-11-13 12:00": {
+      "date": "2026-11-13",
+      "slot": "12:00",
+      "label": "Juma, 13.11 · 12:00 · Emoji topishmoq #2",
+      "meta": {
+        "kind": "emoji",
+        "index": 1
+      },
+      "status": "published",
+      "created_at": "2026-11-12T15:59:12.514Z",
+      "buttons_message_id": 146,
+      "decided_at": "2026-11-12T16:00:36.337Z",
+      "published_at": "2026-11-13T07:01:41.961Z"
+    },
+    "2026-11-13 19:30": {
+      "date": "2026-11-13",
+      "slot": "19:30",
+      "label": "Juma, 13.11 · 19:30 · Kundalik post (SPEAKING)",
+      "meta": {
+        "type": "skill",
+        "skill": "speaking",
+        "bank_index": 1,
+        "title": "Part 1: 1 minute is too long"
+      },
+      "status": "published",
+      "created_at": "2026-11-12T15:59:14.383Z",
+      "buttons_message_id": 149,
+      "decided_at": "2026-11-12T16:00:51.644Z",
+      "published_at": "2026-11-13T14:29:25.887Z"
+    },
+    "2026-11-13 18:00": {
+      "date": "2026-11-13",
+      "slot": "18:00",
+      "label": "Juma, 13.11 · 18:00 · 🟢 Multilevel kanal · Multilevel: 4 qism (bazada 414 ta qoldi)",
+      "meta": {
+        "multilevel_index": 0,
+        "post_id": "ml_001",
+        "photo": "AgACAgIAAxkDAAOXavXiUwABZQ7S3irdIolynBEAAVDUEwACoR1rG8NQqUtz8lx-XjGJPgEAAwIAA3cAAz0E",
+        "caption": "<b>Multilevel: 4 qism</b>\n\nKanalga xuş kelibsiz! 🎉 Bu yerda har kuni Multilevel imtihoniga oid bitta foydali post çiqadi.\n\nBugun eng muhimidan boşlaymiz: imtihon qanday tuzilgan.\n\n🎧 <b>Listening</b>: audio tinglab, savollarga javob berasiz\n📖 <b>Reading</b>: matnlar va har xil turdagi savollar\n✍️ <b>Writing</b>: 2 ta xat (norasmiy va rasmiy) + esse\n🗣 <b>Speaking</b>: savollar, rasmlarni soliştiriş va fikr bildiriş\n\nSaqlab qöying, imtihondan oldin kerak böladi 📌"
+      },
+      "status": "published",
+      "created_at": "2026-11-12T15:59:15.688Z",
+      "buttons_message_id": 152,
+      "decided_at": "2026-11-12T16:01:09.458Z",
+      "published_at": "2026-11-13T13:00:14.085Z"
+    },
+    "2026-11-14 12:00": {
+      "date": "2026-11-14",
+      "slot": "12:00",
+      "label": "Shanba, 14.11 · 12:00 · To‘g‘ri yoki xato? #2",
+      "meta": {
+        "kind": "truefalse",
+        "index": 1
+      },
+      "status": "published",
+      "created_at": "2026-11-13T15:59:22.296Z",
+      "buttons_message_id": 156,
+      "decided_at": "2026-11-13T15:59:45.182Z",
+      "published_at": "2026-11-14T06:59:29.638Z"
+    },
+    "2026-11-14 19:30": {
+      "date": "2026-11-14",
+      "slot": "19:30",
+      "label": "Shanba, 14.11 · 19:30 · Yolg‘iz bo‘ri #18",
+      "meta": {
+        "type": "lonewolf",
+        "index": 18
+      },
+      "status": "published",
+      "created_at": "2026-11-13T15:59:23.860Z",
+      "buttons_message_id": 159,
+      "decided_at": "2026-11-13T16:00:01.014Z",
+      "published_at": "2026-11-14T14:28:56.079Z"
+    },
+    "2026-11-14 18:00": {
+      "date": "2026-11-14",
+      "slot": "18:00",
+      "label": "Shanba, 14.11 · 18:00 · 🟢 Multilevel kanal · Norasmiy xat: 3 qadam (bazada 413 ta qoldi)",
+      "meta": {
+        "multilevel_index": 1,
+        "post_id": "ml_002",
+        "photo": "AgACAgIAAxkDAAOhavcz3KaXxVqOdd1Sy2H1-myHrycAAkkiaxvDULlLS_kPOeFiX9cBAAMCAAN3AAM9BA",
+        "caption": "<b>Norasmiy xat: 3 qadam</b>\n\nNorasmiy xatda eng köp ball savollardan birini unutib qöyganda ketadi 😬\n\nYozib bölgaç, topşiriqdagi savollarni bittalab belgilab çiqing ✔️\n\n1. Salomlaşing: <b>Hi Tom</b>, <b>Thanks for your letter!</b>\n2. Topşiriqdagi <b>har bir savolga</b> bittadan gap bilan javob bering\n3. Iliq yakunlang: <b>Write back soon!</b>, <b>Take care</b>\n❌ Rasmiy sözlar işlatmang: <b>Dear Sir</b> bu yerda xato\n\nDöstingizga yuboring, u ham Multilevel topşiryaptimi? 👀"
+      },
+      "status": "published",
+      "created_at": "2026-11-13T15:59:25.130Z",
+      "buttons_message_id": 162,
+      "decided_at": "2026-11-13T16:00:11.008Z",
+      "published_at": "2026-11-14T13:00:02.526Z"
+    },
+    "2026-11-14 14:30 reel1": {
+      "date": "2026-11-14",
+      "slot": "14:30 reel1",
+      "label": "Shanba, 14.11 · 14:30 reel1 · 📸 Agent · Instagram @dilshod.ustoz · reels · 2-variant",
+      "meta": {
+        "agent_id": "reel1",
+        "channel": "ig_ustoz",
+        "format": "reels",
+        "rev": 2,
+        "images": [],
+        "video": "content/agent-media/2026-11-14-reel1.mp4",
+        "caption": "Mock'ni telefondan topşirsa böladimi? Ha, böladi.\n\nHaqiqiy imtihon formati, taymer töxtamaydi, natija darhol çiqadi.\n\nHaqiqiy IELTS imtihoni 3 mln söm atrofida turadi. Bu ekranni birinçi marta öşa kuni körmang.\n\nErtaga, yakşanba kuni 09:00 dan 18:00 gaça BEPUL Full mock. Röyxatdan ötiş uçun link bioda yoki Telegram: @tddmockbot\n\n#ielts #ieltsmock #ieltsuzbekistan #ieltspreparation #mocktest",
+        "voice_prompt_id": 171
+      },
+      "status": "skipped",
+      "created_at": "2026-11-14T09:33:04.962Z",
+      "extra_button_ids": [
+        167
+      ],
+      "buttons_message_id": 172
+    },
+    "2026-11-14 15:20 reel1": {
+      "date": "2026-11-14",
+      "slot": "15:20 reel1",
+      "label": "Shanba, 14.11 · 15:20 reel1 · 📸 Agent · Instagram @dilshod.ustoz · reels · 3-variant",
+      "meta": {
+        "agent_id": "reel1",
+        "channel": "ig_ustoz",
+        "format": "reels",
+        "rev": 3,
+        "images": [],
+        "video": "content/agent-media/2026-11-14-reel1.mp4",
+        "caption": "Mock'ni telefondan topşirsa böladimi? Ha, böladi.\n\nHaqiqiy imtihon formati, taymer töxtamaydi, natija darhol çiqadi.\n\nHaqiqiy IELTS imtihoni 3 mln söm atrofida turadi. Bu ekranni birinçi marta öşa kuni körmang.\n\nErtaga, yakşanba kuni 09:00 dan 18:00 gaça BEPUL Full mock. Röyxatdan ötiş uçun link bioda yoki Telegram: @tddmockbot\n\n#ielts #ieltsmock #ieltsuzbekistan #ieltspreparation #mocktest",
+        "voice_prompt_id": 178
+      },
+      "status": "skipped",
+      "created_at": "2026-11-14T09:45:39.177Z",
+      "buttons_message_id": 179
+    },
+    "2026-11-14 16:40 reel1": {
+      "date": "2026-11-14",
+      "slot": "16:40 reel1",
+      "label": "Shanba, 14.11 · 16:40 reel1 · 📸 Agent · Instagram @dilshod.ustoz · reels · 7-variant",
+      "meta": {
+        "agent_id": "reel1",
+        "channel": "ig_ustoz",
+        "format": "reels",
+        "rev": 7,
+        "images": [],
+        "video": "content/agent-media/2026-11-14-reel1.mp4",
+        "caption": "Mock'ni telefondan topşirsa böladimi? Ha, böladi.\n\nHaqiqiy imtihon formati, taymer töxtamaydi, natija darhol çiqadi.\n\nHaqiqiy IELTS imtihoni 3 mln söm atrofida turadi. Bu ekranni birinçi marta öşa kuni körmang.\n\nErtaga, yakşanba kuni 09:00 dan 18:00 gaça BEPUL Full mock. Röyxatdan ötiş uçun link bioda yoki Telegram: @tddmockbot\n\n#ielts #ieltsmock #ieltsuzbekistan #ieltspreparation #mocktest",
+        "voice_prompt_id": 202
+      },
+      "status": "published",
+      "created_at": "2026-11-14T12:11:11.091Z",
+      "extra_button_ids": [
+        186,
+        193,
+        198
+      ],
+      "buttons_message_id": 203,
+      "decided_at": "2026-11-14T12:15:24.523Z",
+      "published_at": "2026-11-14T12:15:29.366Z"
+    },
+    "2026-11-14 17:20 reeltg": {
+      "date": "2026-11-14",
+      "slot": "17:20 reeltg",
+      "label": "Shanba, 14.11 · 17:20 reeltg · 🤖 Agent · @dilshod_english · post",
+      "meta": {
+        "agent_id": "reeltg",
+        "channel": "tg_english",
+        "format": "post",
+        "rev": 1,
+        "images": [],
+        "caption": "<b>Can you take an IELTS mock on your phone?</b> Yes, you can.\n\n✅ Real exam format\n⏱ The timer never stops\n📊 Your result comes straight away\n\nThe real exam costs about 3 mln so'm. Don't see this screen for the first time on exam day.\n\n🗓 <b>FREE Full mock tomorrow</b>, Sunday 09:00–18:00.",
+        "photos": [],
+        "video_id": "BAACAgIAAxkDAAPNavhSCB6LwwABfEw_zfLM_9ZKnXJNAALWpwACLlfAS0fL5fYhIw2FPQQ",
+        "button": {
+          "text": "📱 Open the mock bot",
+          "url": "https://t.me/tddmockbot?start=tg_post"
+        }
+      },
+      "status": "published",
+      "created_at": "2026-11-14T12:20:24.670Z",
+      "buttons_message_id": 206,
+      "decided_at": "2026-11-14T12:21:12.529Z",
+      "published_at": "2026-11-14T12:21:15.132Z"
+    },
+    "2026-11-15 12:00": {
+      "date": "2026-11-15",
+      "slot": "12:00",
+      "label": "Yakshanba, 15.11 · 12:00 · Hafta testi",
+      "meta": {
+        "kind": "weekly",
+        "index": 0
+      },
+      "status": "published",
+      "created_at": "2026-11-14T15:59:17.852Z",
+      "buttons_message_id": 214,
+      "decided_at": "2026-11-14T16:12:00.128Z",
+      "published_at": "2026-11-15T06:59:43.225Z"
+    },
+    "2026-11-15 19:30": {
+      "date": "2026-11-15",
+      "slot": "19:30",
+      "label": "Yakshanba, 15.11 · 19:30 · Kundalik post (LISTENING)",
+      "meta": {
+        "type": "skill",
+        "skill": "listening",
+        "bank_index": 1,
+        "title": "Is it 15 or 50?"
+      },
+      "status": "published",
+      "created_at": "2026-11-14T15:59:19.358Z",
+      "buttons_message_id": 217,
+      "decided_at": "2026-11-14T16:14:15.569Z",
+      "published_at": "2026-11-15T14:29:03.352Z"
+    },
+    "2026-11-15 18:00": {
+      "date": "2026-11-15",
+      "slot": "18:00",
+      "label": "Yakshanba, 15.11 · 18:00 · 🟢 Multilevel kanal · 2 ta rasmni soliştiriş (bazada 412 ta qoldi)",
+      "meta": {
+        "multilevel_index": 2,
+        "post_id": "ml_003",
+        "photo": "AgACAgIAAxkDAAPbaviFWW3kp5UVcXF3VRpK7z8Ea_QAAsYgaxsuV8BLYJ4l5p7P2KEBAAMCAAN3AAM9BA",
+        "caption": "<b>2 ta rasmni soliştiriş</b>\n\nRasmlarni soliştirişda köpçilik faqat körganini sanab çiqadi. Imtihonçi esa soliştirişni va fikringizni kutadi 🎯\n\nŞu 3 iborani bugun ovoz çiqarib 3 marta ayting 🔁\n\n1. <b>Both pictures show</b> ... (ikkalasida ham ...)\n2. <b>In the first picture</b> ..., <b>while in the second</b> ... (birinçisida ..., ikkinçisida esa ...)\n3. <b>I'd prefer</b> the first one <b>because</b> ... (men birinçisini tanlardim, çunki ...)\n💡 Faqat tasvirlamang: <b>farqini</b> va <b>öz fikringizni</b> ham ayting\n\nIzohlarda öz misolingizni yozing, tekşirib beraman 👇"
+      },
+      "status": "published",
+      "created_at": "2026-11-14T15:59:21.955Z",
+      "buttons_message_id": 220,
+      "decided_at": "2026-11-14T16:14:49.794Z",
+      "published_at": "2026-11-15T13:00:44.439Z"
+    },
+    "2026-11-16 12:00": {
+      "date": "2026-11-16",
+      "slot": "12:00",
+      "label": "Dushanba, 16.11 · 12:00 · Red flag / Green flag #2",
+      "meta": {
+        "kind": "redflag",
+        "index": 1
+      },
+      "status": "approved",
+      "created_at": "2026-11-15T15:59:21.535Z",
+      "buttons_message_id": 223,
+      "decided_at": "2026-11-15T16:12:39.838Z"
+    },
+    "2026-11-16 19:30": {
+      "date": "2026-11-16",
+      "slot": "19:30",
+      "label": "Dushanba, 16.11 · 19:30 · Kundalik post (READING)",
+      "meta": {
+        "type": "skill",
+        "skill": "reading",
+        "bank_index": 2,
+        "title": "T/F/NG vs Y/N/NG"
+      },
+      "status": "published",
+      "created_at": "2026-11-15T15:59:22.621Z",
+      "buttons_message_id": 226,
+      "decided_at": "2026-11-15T16:12:56.329Z",
+      "published_at": "2026-11-16T14:29:36.377Z"
+    },
+    "2026-11-16 17:00": {
+      "date": "2026-11-16",
+      "slot": "17:00",
+      "label": "Dushanba, 16.11 · 17:00 · 🎥 Dumaloq video (navbatda 37 ta)",
+      "meta": {
+        "video_id": "d-1sTJCxoTfR_bD9fV2RmkiyS5fJnVGjq36"
+      },
+      "status": "published",
+      "created_at": "2026-11-15T15:59:23.061Z",
+      "buttons_message_id": 229,
+      "extra_button_ids": [
+        256
+      ],
+      "decided_at": "2026-11-16T04:00:01.794Z",
+      "published_at": "2026-11-16T12:00:36.509Z"
+    },
+    "2026-11-16 18:00": {
+      "date": "2026-11-16",
+      "slot": "18:00",
+      "label": "Dushanba, 16.11 · 18:00 · 🟢 Multilevel kanal · Reading'da vaqt yetmayaptimi? (bazada 411 ta qoldi)",
+      "meta": {
+        "multilevel_index": 3,
+        "post_id": "ml_004",
+        "photo": "AgACAgIAAxkDAAPnavnW279g2jIus2Cj5jAsZTBzK_8AAvQkaxtIbdBLpoK4eJI4chkBAAMCAAN3AAM9BA",
+        "caption": "<b>Reading'da vaqt yetmayaptimi?</b>\n\nReading'da eng katta duşman bu vaqt ⏳\n\nBugun bitta matnni taymer bilan işlab köring va natijani izohda yozing 👇\n\n❌ Har bir sözni tarjima qilib öqiş\n✅ Avval <b>savolni</b> öqing, keyin matndan <b>kalit sözni</b> qidiring\n✅ Qiyin savolda töxtab qolmang, <b>keyinroq qayting</b>\n💡 Har kuni 1 ta matnni <b>taymer</b> bilan işlang\n\nQaysi biri siz uçun yangi böldi? Izohda yozing 👇"
+      },
+      "status": "published",
+      "created_at": "2026-11-15T15:59:24.087Z",
+      "buttons_message_id": 232,
+      "decided_at": "2026-11-15T16:13:49.888Z",
+      "published_at": "2026-11-16T13:00:41.158Z"
+    },
+    "2026-11-16 15:00 2026-11-16-tg-1": {
+      "date": "2026-11-16",
+      "slot": "15:00 2026-11-16-tg-1",
+      "label": "Dushanba, 16.11 · 15:00 2026-11-16-tg-1 · 🤖 Agent · @dilshod_english · post · 4-variant",
+      "meta": {
+        "agent_id": "2026-11-16-tg-1",
+        "channel": "tg_english",
+        "format": "post",
+        "rev": 4,
+        "images": [],
+        "caption": "<b>Do you know your band score today?</b>\n\nMany students only guess. If you guess too high, you may book the exam too early. If you guess too low, you may lose confidence for no reason.\n\nThe Mock Set gives you a clear answer: full tests in the real CD IELTS format, with a timer that never stops.\n\nThe real exam costs about 3 million soums. The Mock Set costs 29,000 soums. Check your level before you pay for the real thing.\n\n👉 <a href=\"https://t.me/tddmockbot?start=tg_post\">Get your Mock Set in the bot</a>",
+        "photos": []
+      },
+      "status": "published",
+      "created_at": "2026-11-16T06:50:39.409Z",
+      "extra_button_ids": [
+        235,
+        257,
+        247
+      ],
+      "buttons_message_id": 263,
+      "decided_at": "2026-11-16T06:56:32.012Z",
+      "published_at": "2026-11-16T10:00:29.639Z"
+    },
+    "2026-11-16 09:00 rm01q": {
+      "date": "2026-11-16",
+      "slot": "09:00 rm01q",
+      "label": "Dushanba, 16.11 · 09:00 rm01q · 📸 Agent · Instagram @dilshod.ustoz · reels",
+      "meta": {
+        "agent_id": "rm01q",
+        "channel": "ig_ustoz",
+        "format": "reels",
+        "rev": 1,
+        "images": [],
+        "video": "content/agent-media/2026-11-16-rm01q.mp4",
+        "script": "Ovoz va musiqa allaqachon videoda (thread'da yig'ilgan). Ovozli xabar yubormang, faqat ✅ bosing.",
+        "segments": [],
+        "caption": "81% of students got this one wrong in our Sunday mock. 🎧\n\nListen once, like the real exam. What would YOU write?\n\n💬 Comment your answer. Full explanation tonight at 8 PM.\n\n#ielts #ieltslistening #ieltsmock #ieltsuzbekistan #cdielts",
+        "voice_prompt_id": 239
+      },
+      "status": "published",
+      "created_at": "2026-11-15T20:14:22.125Z",
+      "buttons_message_id": 240,
+      "approved_in": "project thread, Dilshod 2026-11-16 01:19",
+      "published_at": "2026-11-16T04:00:09.650Z"
+    },
+    "2026-11-16 09:05 rm01qtg": {
+      "date": "2026-11-16",
+      "slot": "09:05 rm01qtg",
+      "label": "Dushanba, 16.11 · 09:05 rm01qtg · 🤖 Agent · @dilshod_english · post",
+      "meta": {
+        "agent_id": "rm01qtg",
+        "channel": "tg_english",
+        "format": "post",
+        "rev": 1,
+        "images": [],
+        "caption": "🎧 <b>Real mistake from our Sunday mock</b>\n\n81% of students got this one wrong.\nListening, Part 4. ONE WORD ONLY:\n\n<i>There are few systems for ______ satellites.</i>\n\nListen once, like the real exam, and vote below 👇\nFull explanation tonight at 20:00.",
+        "poll": {
+          "question": "There are few systems for ___ satellites. What's the answer?",
+          "options": [
+            "safety",
+            "tracking",
+            "space",
+            "trucking"
+          ],
+          "correct": 1,
+          "explanation": "Full breakdown tonight at 20:00 👀"
+        },
+        "photos": [],
+        "video": "content/agent-media/2026-11-16-rm01q.mp4"
+      },
+      "status": "published",
+      "created_at": "2026-11-15T20:14:25.851Z",
+      "buttons_message_id": 244,
+      "approved_in": "project thread, Dilshod 2026-11-16 01:19",
+      "published_at": "2026-11-16T04:05:49.490Z"
+    },
+    "2026-11-16 20:00 rm01a": {
+      "date": "2026-11-16",
+      "slot": "20:00 rm01a",
+      "label": "Dushanba, 16.11 · 20:00 rm01a · 📸 Agent · Instagram @dilshod.ustoz · reels",
+      "meta": {
+        "agent_id": "rm01a",
+        "channel": "ig_ustoz",
+        "format": "reels",
+        "rev": 1,
+        "images": [],
+        "video": "content/agent-media/2026-11-16-rm01a.mp4",
+        "script": "Ovoz va musiqa allaqachon videoda (thread'da yig'ilgan). Ovozli xabar yubormang, faqat ✅ bosing.",
+        "segments": [],
+        "caption": "The answer: TRACKING. Most people fell for \"safety\". Here's why 👇\n\nRule: don't write the first word that fits the gap. Wait for the paraphrase.\n\nCheck your real CD IELTS level: link in bio.\n\n#ielts #ieltslistening #ieltsmock #ieltsuzbekistan #cdielts",
+        "voice_prompt_id": 251
+      },
+      "status": "published",
+      "created_at": "2026-11-15T20:14:29.539Z",
+      "buttons_message_id": 252,
+      "approved_in": "project thread, Dilshod 2026-11-16 01:19",
+      "published_at": "2026-11-16T15:00:07.080Z"
+    },
+    "2026-11-16 20:05 rm01atg": {
+      "date": "2026-11-16",
+      "slot": "20:05 rm01atg",
+      "label": "Dushanba, 16.11 · 20:05 rm01atg · 🤖 Agent · @dilshod_english · post",
+      "meta": {
+        "agent_id": "rm01atg",
+        "channel": "tg_english",
+        "format": "post",
+        "rev": 1,
+        "images": [],
+        "caption": "✅ <b>Answer: TRACKING</b>\n\n\"safety of satellites\" fits the gap perfectly, and that's the trap.\n\nThe question says <b>few systems</b>. The speaker says <b>we don't have anything like enough proper ways</b> of tracking them. Same idea, different words.\n\nAnd watch your spelling: <i>trucking</i> ≠ <i>tracking</i>.\n\n📌 Rule: don't write the first word that fits. Wait for the paraphrase.",
+        "photos": [],
+        "button": {
+          "text": "📱 Take a CD IELTS mock",
+          "url": "https://t.me/tddmockbot?start=tg_mistakes"
+        },
+        "video": "content/agent-media/2026-11-16-rm01a.mp4"
+      },
+      "status": "published",
+      "created_at": "2026-11-15T20:14:32.571Z",
+      "buttons_message_id": 255,
+      "approved_in": "project thread, Dilshod 2026-11-16 01:19",
+      "published_at": "2026-11-16T15:05:13.900Z"
+    },
+    "2026-11-17 12:00": {
+      "date": "2026-11-17",
+      "slot": "12:00",
+      "label": "Seshanba, 17.11 · 12:00 · Oddiy vs Band 9 #3",
+      "meta": {
+        "kind": "upgrade",
+        "index": 2
+      },
+      "status": "published",
+      "created_at": "2026-11-16T15:59:55.003Z",
+      "buttons_message_id": 266,
+      "decided_at": "2026-11-16T16:13:30.995Z",
+      "published_at": "2026-11-17T07:00:01.003Z"
+    },
+    "2026-11-17 19:30": {
+      "date": "2026-11-17",
+      "slot": "19:30",
+      "label": "Seshanba, 17.11 · 19:30 · Yolg‘iz bo‘ri #19",
+      "meta": {
+        "type": "lonewolf",
+        "index": 19
+      },
+      "status": "published",
+      "created_at": "2026-11-16T15:59:56.591Z",
+      "buttons_message_id": 269,
+      "decided_at": "2026-11-16T16:13:42.234Z",
+      "published_at": "2026-11-17T14:28:44.329Z"
+    },
+    "2026-11-17 18:00": {
+      "date": "2026-11-17",
+      "slot": "18:00",
+      "label": "Seshanba, 17.11 · 18:00 · 🟢 Multilevel kanal · Audio boşlanmasdan oldin (bazada 410 ta qoldi)",
+      "meta": {
+        "multilevel_index": 4,
+        "post_id": "ml_005",
+        "photo": "AgACAgIAAxkDAAIBD2r7KH0cNjLaCF-MpITv6cPey-hOAAI_I2sbSG3YSxx5R53nZFOBAQADAgADdwADPQQ",
+        "caption": "<b>Audio boşlanmasdan oldin</b>\n\nKöpçilik audio boşlangunça kutib ötiradi. Aslida eng muhim iş şu paytda qilinadi 🎧\n\n1. Savollarni öqib, <b>kalit sözlarni</b> belgilang\n2. Böş joyga nima kerakligini taxmin qiling: <b>son</b>, <b>ism</b> yoki <b>sana</b>?\n3. Variantlardagi <b>farqni</b> oldindan köring\n💡 Audio boşlangaç, savolga emas, <b>tinglaşga</b> e'tibor bering\n\nSaqlab qöying, imtihondan oldin kerak böladi 📌"
+      },
+      "status": "published",
+      "created_at": "2026-11-16T15:59:57.919Z",
+      "buttons_message_id": 272,
+      "decided_at": "2026-11-16T16:13:52.757Z",
+      "published_at": "2026-11-17T13:00:14.530Z"
+    },
+    "2026-11-17 14:30 2026-11-17-tgml-1": {
+      "date": "2026-11-17",
+      "slot": "14:30 2026-11-17-tgml-1",
+      "label": "Seshanba, 17.11 · 14:30 2026-11-17-tgml-1 · 🤖 Agent · @dilshod_multilevel · post",
+      "meta": {
+        "agent_id": "2026-11-17-tgml-1",
+        "channel": "tg_multilevel",
+        "format": "post",
+        "rev": 1,
+        "images": [],
+        "caption": "<b>Multilevel Writing: ball yöqotadigan 3 ta oddiy xato</b>\n\n1. <b>Run-on sentence.</b> Ikki gapni faqat vergul bilan ulamang.\n❌ <i>I love my city, it is very green.</i>\n✅ <i>I love my city because it is very green.</i>\n\n2. <b>Savolga javob bermaslik.</b> Topşiriq \"why\" deb sörasa, sababni yozing. Umumiy gap ball bermaydi.\n\n3. <b>Bir sözni takrorlaş.</b> Har gapda <i>good</i> örniga: <i>useful, enjoyable, convenient</i>.\n\nWriting'ingizni şanba kuni sinab köring: bepul Multilevel mock, 09:00–18:00.\n👉 <a href=\"https://t.me/tddcefrbot\">@tddcefrbot</a>",
+        "photos": []
+      },
+      "status": "published",
+      "created_at": "2026-11-16T15:59:58.447Z",
+      "buttons_message_id": 275,
+      "decided_at": "2026-11-16T16:14:05.169Z",
+      "published_at": "2026-11-17T09:30:45.085Z"
+    },
+    "2026-11-17 19:30 2026-11-17-ig-1": {
+      "date": "2026-11-17",
+      "slot": "19:30 2026-11-17-ig-1",
+      "label": "Seshanba, 17.11 · 19:30 2026-11-17-ig-1 · 📸 Agent · Instagram @dilshod.ustoz · post",
+      "meta": {
+        "agent_id": "2026-11-17-ig-1",
+        "channel": "ig_ustoz",
+        "format": "post",
+        "rev": 1,
+        "images": [
+          "content/agent-media/2026-11-17-2026-11-17-ig-1.jpg"
+        ],
+        "caption": "See this screen before you pay for the real exam.\n\nThe real IELTS exam costs about 3 million soums. If you see the CD format for the first time on exam day, everything is new at once: the timer, the audio that plays only once, the answer boxes you type into. That stress costs marks.\n\nA mock in the real CD format lets you meet all of this at home first. On exam day, the screen feels familiar, and you can focus on the questions.\n\nMock Set atigi 29 000 söm: @tddmockbot (link in bio) orqali hoziroq boşlang.\n\n#IELTS #CDIELTS #IELTSmock #IELTSUzbekistan",
+        "photos": [
+          "AgACAgIAAxkDAAIBFWr7KH-GkEKAMYsoXbYKbgz5ogRqAAJAI2sbSG3YS3PtnHnPy5wVAQADAgADdwADPQQ"
+        ]
+      },
+      "status": "published",
+      "created_at": "2026-11-16T15:59:59.501Z",
+      "buttons_message_id": 278,
+      "decided_at": "2026-11-16T16:14:30.393Z",
+      "published_at": "2026-11-17T14:30:43.702Z"
+    },
+    "2026-11-18 12:00": {
+      "date": "2026-11-18",
+      "slot": "12:00",
+      "label": "Chorshanba, 18.11 · 12:00 · POV (matn) #2",
+      "meta": {
+        "kind": "pov",
+        "index": 1
+      },
+      "status": "published",
+      "created_at": "2026-11-17T15:59:40.800Z",
+      "buttons_message_id": 281,
+      "decided_at": "2026-11-17T16:32:58.886Z",
+      "published_at": "2026-11-18T06:59:13.443Z"
+    },
+    "2026-11-18 19:30": {
+      "date": "2026-11-18",
+      "slot": "19:30",
+      "label": "Chorshanba, 18.11 · 19:30 · Kundalik post (WRITING)",
+      "meta": {
+        "type": "skill",
+        "skill": "writing",
+        "bank_index": 2,
+        "title": "Don't copy the question"
+      },
+      "status": "published",
+      "created_at": "2026-11-17T15:59:42.128Z",
+      "buttons_message_id": 284,
+      "decided_at": "2026-11-17T16:33:03.229Z",
+      "published_at": "2026-11-18T14:30:11.637Z"
+    },
+    "2026-11-18 18:00": {
+      "date": "2026-11-18",
+      "slot": "18:00",
+      "label": "Chorshanba, 18.11 · 18:00 · 🟢 Multilevel kanal · since yoki for? (bazada 409 ta qoldi)",
+      "meta": {
+        "multilevel_index": 5,
+        "post_id": "ml_006",
+        "photo": "AgACAgIAAxkDAAIBHmr8ee84q0HEDImkWHjCgqeZKISYAAKMG2sbTAXoS2bnI0xEI8gtAQADAgADdwADPQQ",
+        "caption": "<b>since yoki for?</b>\n\nSpeaking'da \"since 5 years\" deyiş juda köp uçraydi 😅\n\nIzohda özingiz haqingizda since va for bilan bittadan gap yozing 👇\n\n⏱ <b>for</b> + muddat: for <b>three years</b>, for <b>a week</b>\n📍 <b>since</b> + boşlangan payt: since <b>2020</b>, since <b>Monday</b>\n✅ I have lived here <b>for</b> five years.\n✅ I have lived here <b>since</b> 2021.\n\nDöstingizga yuboring, u ham Multilevel topşiryaptimi? 👀"
+      },
+      "status": "published",
+      "created_at": "2026-11-17T15:59:43.451Z",
+      "buttons_message_id": 287,
+      "decided_at": "2026-11-17T16:33:14.559Z",
+      "published_at": "2026-11-18T13:00:07.657Z"
+    },
+    "2026-11-18 09:00 2026-11-18-ig-reel-1": {
+      "date": "2026-11-18",
+      "slot": "09:00 2026-11-18-ig-reel-1",
+      "label": "Chorshanba, 18.11 · 09:00 2026-11-18-ig-reel-1 · 📸 Agent · Instagram @dilshod.ustoz · reels",
+      "meta": {
+        "agent_id": "2026-11-18-ig-reel-1",
+        "channel": "ig_ustoz",
+        "format": "reels",
+        "rev": 2,
+        "images": [],
+        "video": "content/agent-media/2026-11-18-cd-traps-premium.mp4",
+        "script": "Three traps on the CD Listening screen.\nOne. The audio plays once. No pause, no replay.\nTwo. You type while you listen. One typo is a wrong answer.\nThree. The timer keeps running, even between parts.\nSee this screen before exam day.",
+        "segments": [
+          2418,
+          2914,
+          3658,
+          3162,
+          2200
+        ],
+        "caption": "Three traps on the CD IELTS Listening screen 🎧\n\n1. The audio plays once. There is no pause and no replay, so your focus has to stay on the recording.\n2. You type your answers while you listen. A spelling mistake makes the answer wrong, so practise typing words correctly under pressure.\n3. The timer keeps running, even between parts. Use every pause to read the next questions.\n\nThe real exam costs about 3 million soums. Don't see this screen for the first time on exam day.\n\nHaqiqiy CD formatdagi Mock Set atigi 29 000 söm: @tddmockbot (link in bio) orqali hoziroq boşlang.\n\n#IELTS #CDIELTS #IELTSListening #IELTSUzbekistan",
+        "voice_prompt_id": 291,
+        "voice_seconds": 25
+      },
+      "status": "published",
+      "created_at": "2026-11-17T15:59:46.266Z",
+      "buttons_message_id": 292,
+      "approved_in": "project thread, Dilshod 2026-11-18 10:44 (premium remake with his voice)",
+      "published_at": "2026-11-18T05:56:34.571Z"
+    },
+    "2026-11-18 20:15 2026-11-18-tg-2": {
+      "date": "2026-11-18",
+      "slot": "20:15 2026-11-18-tg-2",
+      "label": "Chorshanba, 18.11 · 20:15 2026-11-18-tg-2 · 🤖 Agent · @dilshod_english · post",
+      "meta": {
+        "agent_id": "2026-11-18-tg-2",
+        "channel": "tg_english",
+        "format": "post",
+        "rev": 1,
+        "images": [],
+        "caption": "<b>Which section is pulling your band down?</b>\n\nYour overall band is the average of your four section scores. One weak section can hold the whole score back, even if the other three are strong.\n\nBut you can't fix a weak section you haven't found. \"I think my Writing is fine\" is a guess, not a result.\n\nA full mock (<a href=\"https://t.me/tddmockbot?start=tg_post\">in the bot</a>) gives you a separate score for Listening, Reading, Writing and Speaking. Then you know exactly where to spend your study time.\n\nWhich section is your weakest? Tell me in the comments 👇",
+        "photos": []
+      },
+      "status": "published",
+      "created_at": "2026-11-17T15:59:46.730Z",
+      "buttons_message_id": 295,
+      "decided_at": "2026-11-17T17:10:53.077Z",
+      "published_at": "2026-11-18T15:15:26.463Z"
+    },
+    "2026-11-19 12:00": {
+      "date": "2026-11-19",
+      "slot": "12:00",
+      "label": "Payshanba, 19.11 · 12:00 · So‘rovnoma #1",
+      "meta": {
+        "kind": "poll",
+        "index": 0
+      },
+      "status": "approved",
+      "created_at": "2026-11-18T15:59:19.686Z",
+      "buttons_message_id": 300,
+      "decided_at": "2026-11-18T16:23:52.939Z"
+    },
+    "2026-11-19 19:30": {
+      "date": "2026-11-19",
+      "slot": "19:30",
+      "label": "Payshanba, 19.11 · 19:30 · Yolg‘iz bo‘ri #20",
+      "meta": {
+        "type": "lonewolf",
+        "index": 20
+      },
+      "status": "approved",
+      "created_at": "2026-11-18T15:59:21.043Z",
+      "buttons_message_id": 303,
+      "decided_at": "2026-11-18T16:23:58.168Z"
+    },
+    "2026-11-19 17:00": {
+      "date": "2026-11-19",
+      "slot": "17:00",
+      "label": "Payshanba, 19.11 · 17:00 · 🎥 Dumaloq video (navbatda 36 ta)",
+      "meta": {
+        "video_id": "d-1a_EI51p3EFz4cJ9zVhLUpGlz8cgoNQFA"
+      },
+      "status": "approved",
+      "created_at": "2026-11-18T15:59:21.458Z",
+      "buttons_message_id": 306,
+      "decided_at": "2026-11-18T16:24:04.108Z"
+    },
+    "2026-11-19 18:00": {
+      "date": "2026-11-19",
+      "slot": "18:00",
+      "label": "Payshanba, 19.11 · 18:00 · 🟢 Multilevel kanal · Esse uçun 4 ta paragraf (bazada 408 ta qoldi)",
+      "meta": {
+        "multilevel_index": 6,
+        "post_id": "ml_007",
+        "photo": "AgACAgIAAxkDAAIBNGr9y1rzQXXrLrDAhfVf7hQiB2bJAAIhHmsbxCHpS-RaSSAvccDUAQADAgADdwADPQQ",
+        "caption": "<b>Esse uçun 4 ta paragraf</b>\n\nTuzilişi aniq esseni öqiş oson, imtihonçi ham buni yaxşi köradi ✍️\n\nSaqlab qöying, keyingi postlarda har bir paragrafni alohida köramiz 📌\n\n1. <b>Kiriş</b>: mavzuni öz sözingiz bilan ayting va fikringizni bildiring\n2. <b>1-sabab</b> + misol\n3. <b>2-sabab</b> + misol\n4. <b>Xulosa</b>: fikringizni boşqa sözlar bilan qaytaring\n\nIzohlarda öz misolingizni yozing, tekşirib beraman 👇"
+      },
+      "status": "approved",
+      "created_at": "2026-11-18T15:59:22.312Z",
+      "buttons_message_id": 309,
+      "decided_at": "2026-11-18T16:24:29.466Z"
+    },
+    "2026-11-19 18:30 2026-11-19-story-1": {
+      "date": "2026-11-19",
+      "slot": "18:30 2026-11-19-story-1",
+      "label": "Payshanba, 19.11 · 18:30 2026-11-19-story-1 · 📱 Agent · Instagram story (tayyor fayl sizga keladi) · story",
+      "meta": {
+        "agent_id": "2026-11-19-story-1",
+        "channel": "ig_story",
+        "format": "story",
+        "rev": 1,
+        "images": [
+          "content/agent-media/2026-11-19-2026-11-19-story-1.jpg"
+        ],
+        "caption": "Havola stikeri qöşing: t.me/tddmockbot?start=ig_story, stiker matni \"Joy band qiling\". Joy sonini yozmang.",
+        "photos": [
+          "AgACAgIAAxkDAAIBN2r9y1oqH7F_Vw3m0X8_wdM7CIW9AAIiHmsbxCHpS0OrT60q18tsAQADAgADdwADPQQ"
+        ]
+      },
+      "status": "approved",
+      "created_at": "2026-11-18T15:59:23.209Z",
+      "buttons_message_id": 312,
+      "decided_at": "2026-11-18T16:24:45.470Z"
     }
   },
   "imported": [
@@ -409,20 +966,6 @@
     "1Pl77KvQg9L2-brFOsyrEG7UlBQ1VaJ8-"
   ],
   "videos": [
-    {
-      "id": "d-1uGtcRvIbXTLpPiBwxih9bRaqzR2W40YX",
-      "name": "reels2_nega_however_v2",
-      "file_id": "DQACAgIAAxkDAANqavIQHBWqiwdnrkOGoJL-gk5DuNQAAhi5AAJwA5FLbZKfSX8zjAw9BA",
-      "duration": 46,
-      "added_at": "2026-11-09T18:25:32.838Z"
-    },
-    {
-      "id": "d-1sTJCxoTfR_bD9fV2RmkiyS5fJnVGjq36",
-      "name": "reels3_introduction_formulasi_v2",
-      "file_id": "DQACAgIAAxkDAANravIQIxMzgqqQ9U-vv7I1UtRew7wAAhm5AAJwA5FLwLRk8aoZfJY9BA",
-      "duration": 56,
-      "added_at": "2026-11-09T18:25:39.499Z"
-    },
     {
       "id": "d-1a_EI51p3EFz4cJ9zVhLUpGlz8cgoNQFA",
       "name": "reels_examiner_aybdormi",
@@ -675,5 +1218,8 @@
       "duration": 60,
       "added_at": "2026-11-09T18:23:04.888Z"
     }
-  ]
+  ],
+  "multilevel": {
+    "next": 6
+  }
 }

@@ -1,10 +1,10 @@
 {
   "_note": "Ready-made 19:30 skill posts (Sun/Mon/Wed/Fri), Gen Z style, drawn with poster/render_hack.py (orange design). next = index of the next unused post per skill. Gemini is only a fallback when a skill runs out.",
   "next": {
-    "listening": 1,
-    "reading": 2,
-    "writing": 2,
-    "speaking": 1
+    "listening": 2,
+    "reading": 3,
+    "writing": 3,
+    "speaking": 2
   },
   "listening": [
     {

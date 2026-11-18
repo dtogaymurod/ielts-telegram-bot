@@ -21,7 +21,7 @@ on:
           - remind
           - listen
       slot:
-        description: 'preview only: resend just this slot (12:00 or 19:30); empty = both'
+        description: 'preview only: resend just this slot (12:00, 17:00, 18:00, 19:30, "agent" = all agent posts, or one agent slot like "18:30 ig1"); empty = all'
         required: false
         default: ''
       date:
@@ -82,6 +82,7 @@ jobs:
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
           TELEGRAM_ADMIN_ID: ${{ secrets.TELEGRAM_ADMIN_ID }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          SMM_KEY: ${{ secrets.SMM_KEY }}
           REVIEW_SLOT: ${{ github.event.inputs.slot }}
           REVIEW_DATE: ${{ github.event.inputs.date }}
         run: node src/review.js ${{ github.event.inputs.mode }}

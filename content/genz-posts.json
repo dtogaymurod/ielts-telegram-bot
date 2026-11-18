@@ -1,15 +1,15 @@
 {
   "next_index": {
-    "upgrade": 2,
+    "upgrade": 3,
     "slang": 1,
-    "emoji": 1,
-    "truefalse": 1,
+    "emoji": 2,
+    "truefalse": 2,
     "redflag": 1,
-    "collocation": 0,
+    "collocation": 1,
     "band": 1,
-    "pov": 1,
+    "pov": 2,
     "poll": 0,
-    "weekly": 0
+    "weekly": 1
   },
   "upgrade": [
     {
