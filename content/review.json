@@ -832,9 +832,9 @@
         "agent_id": "2026-11-18-ig-reel-1",
         "channel": "ig_ustoz",
         "format": "reels",
-        "rev": 1,
+        "rev": 2,
         "images": [],
-        "video": "content/agent-media/2026-11-18-2026-11-18-ig-reel-1.mp4",
+        "video": "content/agent-media/2026-11-18-cd-traps-premium.mp4",
         "script": "Three traps on the CD Listening screen.\nOne. The audio plays once. No pause, no replay.\nTwo. You type while you listen. One typo is a wrong answer.\nThree. The timer keeps running, even between parts.\nSee this screen before exam day.",
         "segments": [
           2418,
@@ -845,13 +845,12 @@
         ],
         "caption": "Three traps on the CD IELTS Listening screen 🎧\n\n1. The audio plays once. There is no pause and no replay, so your focus has to stay on the recording.\n2. You type your answers while you listen. A spelling mistake makes the answer wrong, so practise typing words correctly under pressure.\n3. The timer keeps running, even between parts. Use every pause to read the next questions.\n\nThe real exam costs about 3 million soums. Don't see this screen for the first time on exam day.\n\nHaqiqiy CD formatdagi Mock Set atigi 29 000 söm: @tddmockbot (link in bio) orqali hoziroq boşlang.\n\n#IELTS #CDIELTS #IELTSListening #IELTSUzbekistan",
         "voice_prompt_id": 291,
-        "video_url": "https://mock.dilshodustoz.workers.dev/media/smm/2026-11-17/c7Rr414w688-2026-11-18-ig-reel-1-voice.mp4",
         "voice_seconds": 25
       },
-      "status": "rejected",
+      "status": "approved",
       "created_at": "2026-11-17T15:59:46.266Z",
       "buttons_message_id": 292,
-      "decided_at": "2026-11-17T17:53:35.240Z"
+      "approved_in": "project thread, Dilshod 2026-11-18 10:44 (premium remake with his voice)"
     },
     "2026-11-18 20:15 2026-11-18-tg-2": {
       "date": "2026-11-18",
