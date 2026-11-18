@@ -35,7 +35,7 @@ import { execSync } from 'child_process';
 import { callApi, setTargetChat, validateConfig } from './telegram.js';
 import { MULTILEVEL_TIME, MULTILEVEL_MINUTES, prepareMultilevelDraft, publishMultilevel } from './multilevel.js';
 import { HELP_TEXT, videoInMessage, prepareVideoNote, prepareDriveVideo, publishVideoNote, hasFfmpeg } from './video-note.js';
-import { prepareAgentDrafts, publishAgentDraft, publishInstagramDraft, isInstagramDraft, deliverStoryDraft, isStoryDraft, reelForVoice, addVoiceToReel, dueAgentKeys, isAgentDraft, loadQueue, validPost, agentSlot } from './agent-posts.js';
+import { prepareAgentDrafts, publishAgentDraft, publishInstagramDraft, isInstagramDraft, deliverStoryDraft, isStoryDraft, reelForVoice, addVoiceToReel, cameraReelFor, addCameraVideo, dueAgentKeys, isAgentDraft, loadQueue, validPost, agentSlot } from './agent-posts.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REVIEW_FILE = join(__dirname, '..', 'content', 'review.json');
@@ -169,6 +169,7 @@ async function applyUpdate(state, update) {
       draft.extra_button_ids = [...(draft.extra_button_ids || []), tapped];
     }
     answer = draft.status === 'approved' ? '✅ Qabul qilindi: post vaqtida chiqadi' : '❌ Qabul qilindi: post chiqmaydi';
+    if (draft.status === 'approved' && draft.meta?.camera && !draft.meta.video_url) answer = '✅ Qabul qilindi. Videongizni yuboring: kelishi bilan chiqadi';
     key = match[2];
   }
   // Stops the spinner on the button. Fails harmlessly for taps older than a few minutes.
@@ -235,6 +236,8 @@ async function handleMessage(state, message) {
   const voice = message.voice || message.audio;
   if (voice) return handleReelVoice(state, message, voice);
   const video = videoInMessage(message);
+  const cameraKey = video && cameraReelFor(state, message);
+  if (cameraKey) return handleCameraVideo(state, cameraKey, video);
   if (!video) {
     if (/^\/(video|start|help)\b/.test(message.text || '')) await sendAdmin(HELP_TEXT);
     if (/^\/navbat\b/.test(message.text || '')) await showQueue(state);
@@ -275,6 +278,19 @@ async function handleReelVoice(state, message, voice) {
   } catch (error) {
     console.log(`⚠️ Reel voice failed: ${error.message}`);
     try { await sendAdmin(`⚠️ Ovozni videoga qo‘shib bo‘lmadi: ${error.message}`); } catch {}
+    return null;
+  }
+}
+
+/** The teacher's own video for a camera reel: edited into the finished reel (src/agent-reels.js). */
+async function handleCameraVideo(state, key, video) {
+  try {
+    await sendAdmin('⏳ Video qabul qilindi, montaj qilyapman (1–3 daqiqa).');
+    await addCameraVideo(state.drafts[key], video, ADMIN_ID);
+    return key;
+  } catch (error) {
+    console.log(`⚠️ Camera reel failed: ${error.message}`);
+    try { await sendAdmin(`⚠️ Videoni montaj qilib bo‘lmadi: ${error.message}`); } catch {}
     return null;
   }
 }
@@ -479,6 +495,15 @@ async function publishDueAgentPosts(state) {
     // Not approved yet: it stays open for the rest of the day and goes out as soon as
     // the admin taps ✅ (a "post it now" reel is previewed after its time has passed).
     if (draft.status !== 'approved') continue;
+    // a camera reel waits for the teacher's video (the rest of the day), with one reminder
+    if (draft.meta?.camera && !draft.meta.video_url) {
+      if (!draft.camera_reminded) {
+        draft.camera_reminded = true;
+        changed = true;
+        try { await sendAdmin(`🎥 ${draft.label}: vaqti keldi, lekin video yo‘q. "Kamera matni" xabariga javob qilib videoni yuboring, kelishi bilan chiqadi.`); } catch {}
+      }
+      continue;
+    }
     try {
       if (isInstagramDraft(draft)) await publishInstagramDraft(draft, tashkentDate());
       else if (isStoryDraft(draft)) await deliverStoryDraft(draft, ADMIN_ID);

@@ -37,7 +37,7 @@ import { join, dirname, isAbsolute } from 'path';
 import { fileURLToPath } from 'url';
 import { callApi, sendLocalPhoto, sendDocument, setTargetChat } from './telegram.js';
 import { MULTILEVEL_CHANNEL_ID } from './multilevel.js';
-import { isReelPost, isReelDraft, showReel, attachVoice, sendVideo } from './agent-reels.js';
+import { isReelPost, isReelDraft, showReel, showCameraReel, attachVoice, attachCamera, sendVideo } from './agent-reels.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -65,7 +65,7 @@ export function validPost(post) {
   return Boolean(
     post && /^[\w-]{1,20}$/.test(post.id || '') && /^\d{4}-\d{2}-\d{2}$/.test(post.date || '')
       && /^\d{2}:\d{2}$/.test(post.time || '') && CHANNELS[post.channel] && (post.caption || post.images?.length)
-      && (!isReelPost(post) || /\.mp4$/i.test(post.video || '')),
+      && (!isReelPost(post) || /\.mp4$/i.test(post.video || '') || (post.camera === true && String(post.script || '').trim())),
   );
 }
 
@@ -172,7 +172,7 @@ export function prepareAgentDrafts(date, adminId, only = '') {
     .map((post) => {
       const channel = CHANNELS[post.channel];
       const meta = { agent_id: post.id, channel: post.channel, format: post.format || 'post', rev: post.rev || 1, images: post.images || [] };
-      if (isReelPost(post)) { meta.video = post.video; meta.script = post.script || ''; meta.segments = Array.isArray(post.segments) ? post.segments : []; if (post.reel_spec) meta.reel_spec = post.reel_spec; }
+      if (isReelPost(post)) { meta.video = post.video || ''; meta.script = post.script || ''; if (post.camera === true) { meta.camera = true; meta.hook = post.hook || ''; } meta.segments = Array.isArray(post.segments) ? post.segments : []; if (post.reel_spec) meta.reel_spec = post.reel_spec; }
       const rev = meta.rev > 1 ? ` · ${meta.rev}-variant` : '';
       return {
         slot: agentSlot(post),
@@ -181,7 +181,9 @@ export function prepareAgentDrafts(date, adminId, only = '') {
         send: async () => {
           meta.caption = post.caption || '';
           if (isReelPost(post)) {
-            meta.voice_prompt_id = await showReel(callApi, adminId, post, localPath(post.video));
+            meta.voice_prompt_id = post.camera === true
+              ? await showCameraReel(callApi, adminId, post)
+              : await showReel(callApi, adminId, post, localPath(post.video));
             return;
           }
           const shown = await render(adminId, post);
@@ -296,6 +298,23 @@ export async function addVoiceToReel(draft, voice, adminId) {
   await attachVoice(callApi, adminId, draft, voice, localPath(draft.meta.video), (path, name) => uploadMedia(path, name, 'video/mp4'));
 }
 
+/**
+ * A video from the admin for an open camera reel: only when it answers that
+ * reel's script message (other videos stay round videos for the channel).
+ */
+export function cameraReelFor(state, message) {
+  const replied = message.reply_to_message?.message_id;
+  if (!replied) return null;
+  const hit = Object.entries(state.drafts).find(([, d]) => isReelDraft(d) && d.meta.camera && d.meta.voice_prompt_id === replied
+    && ['pending', 'approved', 'edit_requested'].includes(d.status));
+  return hit ? hit[0] : null;
+}
+
+export async function addCameraVideo(draft, video, adminId) {
+  if (!instagramReady()) throw new Error('SMM_KEY secret is not set');
+  await attachCamera(callApi, adminId, draft, video, (path, name) => uploadMedia(path, name, 'video/mp4'));
+}
+
 async function siteCall(path, options) {
   const response = await fetch(`${SITE}${path}`, {
     ...options,
@@ -322,6 +341,8 @@ export function plainCaption(html) {
 export async function publishInstagramDraft(draft, date) {
   if (!instagramReady()) throw new Error('SMM_KEY secret is not set');
   if (isReelDraft(draft)) {
+    // a camera reel goes out only with the teacher's own video
+    if (draft.meta.camera && !draft.meta.video_url) throw new Error('kamera reels uchun video hali yuborilmagan');
     // with the teacher's voice if one was sent, otherwise the silent subtitled reel
     const video = draft.meta.video_url || await uploadMedia(localPath(draft.meta.video), draft.meta.video.split('/').pop(), 'video/mp4');
     const queuedReel = await siteCall('/api/x/ig', {
