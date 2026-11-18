@@ -1,0 +1,166 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Premium reels (ustoz 2026-11-17: "pop" uslubi multfilmga o'xşab qoldi). Qoidalar:
+   - bitta urğu rangi (brend to'q sariq), qolgani grafit/oq; obvodkali (stroke) matn, nurlar, sakraydigan prujina yo'q
+   - harakat sekin va silliq (ease-in-out), kamera ekranga "kirib boradi", kerakli joy yoritiladi
+   - subtitr ustoz ovoziga so'zma-so'z mos (spec.words), aytilgan so'z oq, aytilmagani xira
+   CSS animatsiya yo'q: har kadr renderAt(ms) bilan chiziladi (reel.mjs kadrma-kadr oladi). */
+*{margin:0;box-sizing:border-box}
+:root{--acc:#F97316;--acc2:#FDBA74}
+body{width:1080px;height:1920px;overflow:hidden;position:relative;background:#0B0B0E;color:#fff;
+  font-family:'Inter Display','Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+#glow{position:absolute;width:1500px;height:1500px;left:-210px;top:120px;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(234,88,12,.42),rgba(234,88,12,.13) 45%,rgba(234,88,12,0) 72%)}
+#glow2{position:absolute;width:1100px;height:1100px;left:300px;top:900px;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(255,255,255,.06),rgba(255,255,255,0) 70%)}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse 75% 60% at 50% 42%,rgba(0,0,0,0) 55%,rgba(0,0,0,.6) 100%)}
+#grain{position:absolute;inset:-50px;opacity:.06;mix-blend-mode:overlay}
+.kick{position:absolute;left:0;right:0;top:170px;text-align:center;font-size:28px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.62)}
+.kick i{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--acc);margin:0 18px 4px 0;box-shadow:0 0 18px var(--acc)}
+#head{position:absolute;left:80px;right:80px;top:236px;height:120px;text-align:center}
+#num{font-size:30px;font-weight:600;letter-spacing:.18em;color:var(--acc2)}
+#ttl{margin-top:10px;font-size:68px;font-weight:700;letter-spacing:-.02em;line-height:1}
+#win{position:absolute;left:0;right:0;top:330px;height:1020px;overflow:hidden;
+  -webkit-mask-image:linear-gradient(#0000,#000 9%,#000 91%,#0000);mask-image:linear-gradient(#0000,#000 9%,#000 91%,#0000)}
+#cam{position:absolute;left:0;top:0;width:1080px;height:1020px;transform-origin:0 0}
+#rig{position:absolute;left:260px;top:-40px;width:560px;height:1140px;perspective:2400px}
+#phone{position:absolute;inset:0;transform-style:preserve-3d}
+.frame{position:absolute;inset:0;border-radius:86px;
+  background:linear-gradient(145deg,#8d8a86 0%,#3d3b39 18%,#6f6c68 40%,#262523 62%,#5e5b57 85%,#2a2927 100%);
+  box-shadow:0 60px 120px rgba(0,0,0,.55),0 20px 40px rgba(0,0,0,.45),0 0 90px rgba(234,88,12,.22)}
+.bezel{position:absolute;inset:6px;border-radius:80px;background:#050506}
+.scr{position:absolute;left:18px;top:18px;right:18px;bottom:18px;border-radius:68px;overflow:hidden;background:#fff}
+.status{position:absolute;left:0;right:0;top:0;height:54px;background:#fff;color:#111;font:600 19px Inter,sans-serif;display:flex;align-items:center;justify-content:space-between;padding:8px 46px 0 52px;z-index:2}
+.status em{display:inline-block;width:30px;height:14px;border:2px solid #111;border-radius:5px;position:relative}
+.status em:before{content:"";position:absolute;inset:2px 7px 2px 2px;background:#111;border-radius:2px}
+.island{position:absolute;left:50%;top:14px;width:124px;height:36px;margin-left:-62px;border-radius:20px;background:#000;z-index:3}
+#img{position:absolute;left:0;top:54px;width:524px}
+#dim{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:4}
+#spot{position:absolute;border-radius:14px;border:3px solid var(--acc);box-shadow:0 0 0 2000px rgba(8,8,10,.58),0 0 26px rgba(249,115,22,.75),inset 0 0 14px rgba(249,115,22,.25)}
+.url{position:absolute;left:0;right:0;bottom:0;height:78px;background:#F2F2F4;border-top:1px solid #ddd;z-index:2}
+.url b{position:absolute;left:28px;right:28px;top:10px;height:38px;border-radius:12px;background:#E3E3E7;color:#333;font:600 16px Inter,sans-serif;display:flex;align-items:center;justify-content:center}
+.url i{position:absolute;left:50%;bottom:8px;width:130px;height:5px;margin-left:-65px;border-radius:3px;background:#111}
+#gloss{position:absolute;inset:18px;border-radius:68px;pointer-events:none}
+#cap{position:absolute;left:70px;right:70px;top:1400px;text-align:center;font-size:66px;line-height:1.16;font-weight:700;letter-spacing:-.015em}
+#cap span{display:inline-block;margin:0 .13em}
+#end{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 90px}
+#e1{font-size:104px;line-height:1.02;font-weight:800;letter-spacing:-.035em}
+#e1 em{font-style:normal;color:var(--acc)}
+#e2{margin-top:64px;font-size:46px;font-weight:600;padding:22px 44px;border-radius:999px;border:2px solid rgba(249,115,22,.85);background:rgba(249,115,22,.12)}
+#e3{margin-top:30px;font-size:36px;font-weight:500;color:rgba(255,255,255,.72);letter-spacing:.01em}
+#e4{margin-top:12px;font-size:36px;font-weight:600;color:var(--acc2)}
+#bar{position:absolute;left:0;top:0;height:5px;background:linear-gradient(90deg,#C2410C,#F97316);width:0}
+</style></head><body>
+<div id="glow"></div><div id="glow2"></div><canvas id="grain" width="590" height="1010"></canvas>
+<div class="kick" id="kick"><i></i><span id="k"></span></div>
+<div id="head"><div id="num"></div><div id="ttl"></div></div>
+<div id="win"><div id="cam"><div id="rig"><div id="phone">
+  <div class="frame"></div><div class="bezel"></div>
+  <div class="scr"><img id="img"><div id="dim"><div id="spot"></div></div>
+    <div class="status"><span>9:41</span><span><em></em></span></div><div class="island"></div>
+    <div class="url"><b id="url"></b><i></i></div></div>
+  <div id="gloss"></div>
+</div></div></div></div>
+<div id="cap"></div>
+<div id="end"><div id="e1"></div><div id="e2"></div><div id="e3"></div><div id="e4"></div></div>
+<div id="vig"></div><div id="bar"></div>
+<script>
+const S = window.SPEC, $ = (i) => document.getElementById(i);
+const plain = (t) => String(t || '').replace(/<[^>]+>/g, '').trim();
+const RAW = [S.hook, ...S.beats.map((b) => b.text), S.cta];
+const LINES = RAW.map(plain), N = LINES.length, CTA = N - 1;
+// sahna uzunligi: ustoz ovozidan (durations, ms) yoki matn uzunligidan taxminan
+const D = Array.isArray(S.durations) && S.durations.length === N ? S.durations : LINES.map((l) => Math.max(2400, l.length * 62));
+const START = D.map((_, i) => D.slice(0, i).reduce((a, b) => a + b, 0) / 1000);
+window.SEGMENTS = D; window.TOTAL = D.reduce((a, b) => a + b, 0);
+// so'zlar: [matn, boşi, oxiri, sahna, urğu]
+const KEY = RAW.map((r) => new Set([...String(r || '').matchAll(/<(?:b|u)>(.*?)<\/(?:b|u)>/g)].flatMap((m) => m[1].split(/\s+/).map((w) => w.replace(/[^\w']/g, '').toLowerCase()))));
+let WORDS = [];
+if (Array.isArray(S.words) && Array.isArray(S.line_of) && S.words.length === S.line_of.length) WORDS = S.words.map((w, k) => [w[0], w[1], w[2], S.line_of[k]]);
+else LINES.forEach((l, i) => { const ws = l.split(/\s+/), d = D[i] / 1000, step = Math.min(.36, (d - .5) / ws.length); ws.forEach((w, j) => WORDS.push([w, START[i] + .25 + j * step, START[i] + .25 + (j + .9) * step, i])); });
+WORDS.forEach((w) => w.push(KEY[w[3]].has(w[0].replace(/[^\w']/g, '').toLowerCase())));
+// subtitr bo'laklari: har sahnada gap-gap (. ! ?), 7 so'zdan uzuni vergulda yoki o'rtada bölinadi
+const CHUNKS = [];
+for (let i = 0; i < CTA; i++) {
+  const ws = WORDS.filter((w) => w[3] === i), sent = []; let cur = [];
+  ws.forEach((w, j) => { cur.push(w); if (/[.!?]$/.test(w[0]) || j === ws.length - 1) { sent.push(cur); cur = []; } });
+  // juda qisqa gap ("One.") keyingisiga qo'şiladi
+  const merged = []; sent.forEach((x) => { const last = merged[merged.length - 1]; if (last && (last.length < 3 || x.length < 2) && last.length + x.length <= 8) last.push(...x); else merged.push(x); });
+  merged.forEach((x) => {
+    if (x.length <= 7) return CHUNKS.push(x);
+    let cut = x.findIndex((w, j) => j >= 2 && j <= x.length - 3 && /,$/.test(w[0])) + 1 || Math.ceil(x.length / 2);
+    CHUNKS.push(x.slice(0, cut), x.slice(cut));
+  });
+}
+CHUNKS.forEach((c, k) => { c.from = k && CHUNKS[k - 1][0][3] === c[0][3] ? c[0][1] - .05 : Math.min(c[0][1] - .05, START[c[0][3]] + .1); c.to = k < CHUNKS.length - 1 ? CHUNKS[k + 1][0][1] - .05 : START[CTA]; });
+// ekran joylari (rasm piksellarida, phone-listening.jpg 1170×1992)
+const REG = Object.assign({ timer: [688, 22, 470, 112], audio: [18, 148, 650, 86], answers: [455, 962, 400, 128], questions: [40, 480, 1100, 620], header: [0, 0, 1170, 240], nav: [0, 1640, 1170, 130] }, S.regions || {});
+const FOCUS = ['full', ...S.beats.map((b) => b.focus || 'full')];
+const IMGW = 524, K = IMGW / 1170, RIG = { x: 260, y: -40 }, SCR = { x: 18, y: 18 + 54 };
+// kamera: [scale, tx, ty] — joy oynaning markaziga keltiriladi
+function camFor(f, i) {
+  if (i >= CTA) return [.86, 76, 120];
+  const r = REG[f];
+  if (!r) return [1 + i * .02, -(i * .02) * 540, -(i * .02) * 470];
+  const cx = RIG.x + SCR.x + (r[0] + r[2] / 2) * K, cy = RIG.y + SCR.y + (r[1] + r[3] / 2) * K;
+  const s = Math.min(2.05, 860 / (r[2] * K));
+  return [s, 540 - cx * s, 500 - cy * s];
+}
+const ease = (x) => (x <= 0 ? 0 : x >= 1 ? 1 : x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+const out = (x) => (x <= 0 ? 0 : x >= 1 ? 1 : 1 - Math.pow(1 - x, 3));
+const mix = (a, b, k) => a.map((v, j) => v + (b[j] - v) * k);
+$('k').textContent = S.kicker || ''; $('url').textContent = S.url || 'ielts.dilshodustoz.uz';
+$('e1').innerHTML = String(S.cta || '').replace(/<u>(.*?)<\/u>/g, '<em>$1</em>').replace(/<b>(.*?)<\/b>/g, '<em>$1</em>');
+$('e2').textContent = S.cta2 || ''; $('e3').textContent = S.url || 'ielts.dilshodustoz.uz'; $('e4').textContent = S.handle || '@tddmockbot';
+$('img').src = S.screen;
+// plyonka donasi (grain): bir marta chiziladi, har kadr suriladi
+const g = $('grain').getContext('2d'), gd = g.createImageData(590, 1010);
+for (let p = 0; p < gd.data.length; p += 4) { const v = Math.random() * 255; gd.data[p] = gd.data[p + 1] = gd.data[p + 2] = v; gd.data[p + 3] = 255; }
+g.putImageData(gd, 0, 0); $('grain').style.width = '1180px'; $('grain').style.height = '2020px';
+window.prepare = () => {};
+let lastChunk = -1;
+window.renderAt = (ms) => {
+  const t = ms / 1000; let i = 0; while (i < N - 1 && t >= START[i + 1]) i++;
+  const u = t - START[i];
+  // fon: yorug'lik sekin suzadi
+  $('glow').style.transform = `translate(${Math.sin(t * .35) * 70}px,${Math.cos(t * .27) * 50 - (i === CTA ? 260 * out(u / 1.2) : 0)}px)`;
+  $('grain').style.transform = `translate(${-(Math.floor(t * 24) * 37 % 50)}px,${-(Math.floor(t * 24) * 53 % 50)}px)`;
+  // kamera: oldingi joydan yangisiga 1 soniyada silliq
+  const prev = i ? camFor(FOCUS[i - 1], i - 1) : [1, 0, 0];
+  let c = mix(prev, camFor(FOCUS[i] ?? 'full', i), ease(u / (i === CTA ? 1.1 : .95)));
+  c[0] *= 1 + .012 * u;   // sezilmas doimiy "kirib borish"
+  $('cam').style.transform = `translate(${c[1]}px,${c[2]}px) scale(${c[0]})`;
+  // telefon: kirişda pastdan chiqadi, keyin juda yengil suzadi
+  const intro = out(t / 1.1);
+  const ry = -9 + 6 * Math.sin(t * .45), rx = 4 + 2 * Math.cos(t * .38);
+  $('phone').style.transform = `translateY(${(1 - intro) * 260 + Math.sin(t * .9) * 6}px) rotateY(${ry * (FOCUS[i] === 'full' || i === CTA ? 1 : .35)}deg) rotateX(${rx * (FOCUS[i] === 'full' ? 1 : .35)}deg)`;
+  $('phone').style.filter = intro < 1 ? `blur(${(1 - intro) * 14}px)` : 'none';
+  $('rig').style.opacity = i === CTA ? 1 - out(u / .7) : Math.min(1, t / .5);
+  $('gloss').style.background = `linear-gradient(${120 + ry * 3}deg,rgba(255,255,255,.16) 0%,rgba(255,255,255,0) 26%,rgba(255,255,255,0) 74%,rgba(255,255,255,.05) 100%)`;
+  // yoritish: kerakli joy atrofi qorong'ilashadi
+  const r = REG[FOCUS[i]], sp = $('spot'), on = r && i < CTA ? out((u - .35) / .5) : 0;
+  if (r && i < CTA) { sp.style.left = r[0] * K - 6 + 'px'; sp.style.top = r[1] * K + 54 - 6 + 'px'; sp.style.width = r[2] * K + 12 + 'px'; sp.style.height = r[3] * K + 12 + 'px'; }
+  sp.style.opacity = on; sp.style.display = on > 0 ? 'block' : 'none';
+  // sarlavha: 01 / 03 + qisqa nom
+  const bt = i >= 1 && i < CTA ? S.beats[i - 1] : null, hk = $('head');
+  if (bt) { $('num').textContent = `${String(i).padStart(2, '0')} / ${String(S.beats.length).padStart(2, '0')}`; $('ttl').textContent = bt.tag ? bt.tag.charAt(0) + bt.tag.slice(1).toLowerCase() : ''; }
+  const hin = bt ? out((u - .15) / .5) * (1 - out((u - D[i] / 1000 + .25) / .25)) : 0;
+  hk.style.opacity = hin; hk.style.transform = `translateY(${(1 - hin) * 18}px)`;
+  $('kick').style.opacity = i === CTA ? 1 - out(u / .5) : out((t - .3) / .6) * (bt ? .0 + (1 - hin) : 1);
+  // subtitr
+  const cap = $('cap'); let ck = -1;
+  CHUNKS.forEach((ch, k) => { if (t >= ch.from && t < ch.to) ck = k; });
+  if (ck !== lastChunk) { cap.innerHTML = ck < 0 ? '' : CHUNKS[ck].map((w) => `<span>${w[0].replace(/&/g, '&amp;').replace(/</g, '&lt;')}</span>`).join(' '); lastChunk = ck; }
+  if (ck >= 0) {
+    const ch = CHUNKS[ck], a = out((t - ch.from) / .18), z = 1 - out((t - ch.to + .12) / .12);
+    cap.style.opacity = Math.min(a, z); cap.style.transform = `translateY(${(1 - a) * 14}px)`;
+    [...cap.children].forEach((el, j) => { const w = ch[j], said = t >= w[1] - .03; el.style.color = said ? (w[4] ? 'var(--acc)' : '#fff') : 'rgba(255,255,255,.32)'; });
+  } else cap.style.opacity = 0;
+  // yakun
+  const e = i === CTA ? u : -1;
+  $('end').style.display = e >= 0 ? 'flex' : 'none';
+  if (e >= 0) [['e1', .35], ['e2', .9], ['e3', 1.2], ['e4', 1.35]].forEach(([id, at]) => { const k = out((e - at) / .6); $(id).style.opacity = k; $(id).style.transform = `translateY(${(1 - k) * 24}px)`; $(id).style.filter = k < 1 ? `blur(${(1 - k) * 8}px)` : 'none'; });
+  $('bar').style.width = (ms / window.TOTAL * 100) + '%';
+};
+</script></body></html>
