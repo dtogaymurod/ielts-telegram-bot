@@ -847,10 +847,11 @@
         "voice_prompt_id": 291,
         "voice_seconds": 25
       },
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-11-17T15:59:46.266Z",
       "buttons_message_id": 292,
-      "approved_in": "project thread, Dilshod 2026-11-18 10:44 (premium remake with his voice)"
+      "approved_in": "project thread, Dilshod 2026-11-18 10:44 (premium remake with his voice)",
+      "published_at": "2026-11-18T05:56:34.571Z"
     },
     "2026-11-18 20:15 2026-11-18-tg-2": {
       "date": "2026-11-18",
