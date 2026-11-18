@@ -143,6 +143,18 @@
       "caption": "<b>Which section is pulling your band down?</b>\n\nYour overall band is the average of your four section scores. One weak section can hold the whole score back, even if the other three are strong.\n\nBut you can't fix a weak section you haven't found. \"I think my Writing is fine\" is a guess, not a result.\n\nA full mock (<a href=\"https://t.me/tddmockbot?start=tg_post\">in the bot</a>) gives you a separate score for Listening, Reading, Writing and Speaking. Then you know exactly where to spend your study time.\n\nWhich section is your weakest? Tell me in the comments 👇",
       "images": [],
       "rev": 1
+    },
+    {
+      "id": "2026-11-19-story-1",
+      "date": "2026-11-19",
+      "time": "18:30",
+      "channel": "ig_story",
+      "format": "story",
+      "caption": "Havola stikeri qöşing: t.me/tddmockbot?start=ig_story, stiker matni \"Joy band qiling\". Joy sonini yozmang.",
+      "images": [
+        "content/agent-media/2026-11-19-2026-11-19-story-1.jpg"
+      ],
+      "rev": 1
     }
   ]
 }
