@@ -805,10 +805,11 @@
         "bank_index": 2,
         "title": "Don't copy the question"
       },
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-11-17T15:59:42.128Z",
       "buttons_message_id": 284,
-      "decided_at": "2026-11-17T16:33:03.229Z"
+      "decided_at": "2026-11-17T16:33:03.229Z",
+      "published_at": "2026-11-18T14:30:11.637Z"
     },
     "2026-11-18 18:00": {
       "date": "2026-11-18",
