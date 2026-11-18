@@ -292,3 +292,75 @@ export async function attachVoice(callApi, adminId, draft, voice, videoPath, upl
     rmSync(dir, { recursive: true, force: true });
   }
 }
+
+/*
+ * Camera reels (2026-11-18): the teacher asked that reels show only him, not
+ * generated screens. The agents queue the script with "camera": true and no
+ * video; at 21:00 the bot sends the script ("Kamera matni"). The teacher
+ * answers it with a vertical video of himself reading it. The bot cuts the
+ * long pauses, cleans the voice, adds word-by-word subtitles and a calm music
+ * bed (reels/audio/camera_reel.py), shows the result and stores it on the mock
+ * site. Without a video the reel does not go out.
+ */
+
+/** Preview of a camera reel: the caption, then the script to film. Returns the script message id. */
+export async function showCameraReel(callApi, adminId, post) {
+  const caption = String(post.caption || '');
+  if (caption) await callApi('sendMessage', { chat_id: adminId, text: `📝 <b>Caption:</b>\n${esc(caption)}`.slice(0, 4000), parse_mode: 'HTML', disable_web_page_preview: true });
+  const prompt = await callApi('sendMessage', {
+    chat_id: adminId,
+    parse_mode: 'HTML',
+    text: [
+      '🎥 <b>Kamera matni</b> (reels: kadrda faqat siz):',
+      '',
+      esc(post.script || ''),
+      '',
+      'Telefonni <b>tik (vertikal)</b> ushlab, yuzingiz yorug‘ tomonda bo‘lsin, kameraga qarab o‘qing. 20–45 soniya.',
+      'Shu xabarga <b>javob (reply) qilib videoni</b> yuboring. Bot pauzalarni qisqartiradi, ovozni tozalaydi, subtitr va fon musiqa qo‘yib natijani ko‘rsatadi. Yoqmasa, qayta yuboring.',
+      'Video kelmasa, bu reels chiqmaydi.',
+    ].join('\n'),
+  });
+  return prompt.message_id;
+}
+
+let cameraReady = false;
+function cameraTools() {
+  if (cameraReady) return;
+  try { execFileSync('python3', ['-c', 'import pocketsphinx, numpy'], { stdio: 'ignore' }); } catch {
+    execFileSync('python3', ['-m', 'pip', 'install', '-q', 'pocketsphinx', 'numpy'], { cwd: ROOT, stdio: 'inherit', timeout: 6 * 60 * 1000 });
+  }
+  cameraReady = true;
+}
+
+/**
+ * The teacher's video for a camera reel: edit, show, store. Sets
+ * draft.meta.video_url. Throws an Error whose message is shown to the admin.
+ */
+export async function attachCamera(callApi, adminId, draft, video, upload) {
+  if (video.file_size && video.file_size > 20 * 1024 * 1024) {
+    throw new Error('video 20 MB dan katta (Telegram botga shundan kattasini bermaydi). Videoni "fayl" emas, oddiy video qilib yuboring yoki qisqaroq yozing.');
+  }
+  const dir = mkdtempSync(join(tmpdir(), 'camreel-'));
+  try {
+    cameraTools();
+    const file = await callApi('getFile', { file_id: video.file_id });
+    const response = await fetch(`https://api.telegram.org/file/bot${BOT_TOKEN}/${file.file_path}`);
+    if (!response.ok) throw new Error(`videoni yuklab bo‘lmadi (${response.status})`);
+    const src = join(dir, 'camera.mp4');
+    writeFileSync(src, Buffer.from(await response.arrayBuffer()));
+    const scriptPath = join(dir, 'script.txt');
+    writeFileSync(scriptPath, String(draft.meta.script || '').trim() + '\n');
+    const out = join(dir, 'reel.mp4');
+    const args = [join(ROOT, 'reels', 'audio', 'camera_reel.py'), src, scriptPath, out];
+    if (draft.meta.hook) args.push('--hook', String(draft.meta.hook));
+    execFileSync('python3', args, { cwd: ROOT, stdio: 'inherit', timeout: 10 * 60 * 1000 });
+    let info = {};
+    try { info = JSON.parse(readFileSync(`${out}.json`, 'utf-8')); } catch {}
+    draft.meta.video_url = await upload(out, `${draft.meta.agent_id}-camera.mp4`);
+    const notes = [`🎬 <b>Reels tayyor</b> (${Math.round(info.dur || duration(out))} soniya): pauzalar qisqardi${info.cut_seconds ? ` (−${info.cut_seconds} s)` : ''}, ovoz tozalandi, subtitr va fon musiqa qo‘yildi. Yoqsa, yuqoridagi ✅ ni bosing. Yoqmasa, videoni qayta yuboring.`];
+    if (info.aligned === false) notes.push('ℹ️ Subtitr gaplaringizga taxminan moslandi: matndan chetga chiqqan bo‘lsangiz, biroz oldin-keyin bo‘lishi mumkin.');
+    await sendVideo(adminId, out, notes.join('\n'));
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+}
