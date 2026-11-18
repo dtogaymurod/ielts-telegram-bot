@@ -874,6 +874,76 @@
       "buttons_message_id": 295,
       "decided_at": "2026-11-17T17:10:53.077Z",
       "published_at": "2026-11-18T15:15:26.463Z"
+    },
+    "2026-11-19 12:00": {
+      "date": "2026-11-19",
+      "slot": "12:00",
+      "label": "Payshanba, 19.11 · 12:00 · So‘rovnoma #1",
+      "meta": {
+        "kind": "poll",
+        "index": 0
+      },
+      "status": "pending",
+      "created_at": "2026-11-18T15:59:19.686Z",
+      "buttons_message_id": 300
+    },
+    "2026-11-19 19:30": {
+      "date": "2026-11-19",
+      "slot": "19:30",
+      "label": "Payshanba, 19.11 · 19:30 · Yolg‘iz bo‘ri #20",
+      "meta": {
+        "type": "lonewolf",
+        "index": 20
+      },
+      "status": "pending",
+      "created_at": "2026-11-18T15:59:21.043Z",
+      "buttons_message_id": 303
+    },
+    "2026-11-19 17:00": {
+      "date": "2026-11-19",
+      "slot": "17:00",
+      "label": "Payshanba, 19.11 · 17:00 · 🎥 Dumaloq video (navbatda 36 ta)",
+      "meta": {
+        "video_id": "d-1a_EI51p3EFz4cJ9zVhLUpGlz8cgoNQFA"
+      },
+      "status": "pending",
+      "created_at": "2026-11-18T15:59:21.458Z",
+      "buttons_message_id": 306
+    },
+    "2026-11-19 18:00": {
+      "date": "2026-11-19",
+      "slot": "18:00",
+      "label": "Payshanba, 19.11 · 18:00 · 🟢 Multilevel kanal · Esse uçun 4 ta paragraf (bazada 408 ta qoldi)",
+      "meta": {
+        "multilevel_index": 6,
+        "post_id": "ml_007",
+        "photo": "AgACAgIAAxkDAAIBNGr9y1rzQXXrLrDAhfVf7hQiB2bJAAIhHmsbxCHpS-RaSSAvccDUAQADAgADdwADPQQ",
+        "caption": "<b>Esse uçun 4 ta paragraf</b>\n\nTuzilişi aniq esseni öqiş oson, imtihonçi ham buni yaxşi köradi ✍️\n\nSaqlab qöying, keyingi postlarda har bir paragrafni alohida köramiz 📌\n\n1. <b>Kiriş</b>: mavzuni öz sözingiz bilan ayting va fikringizni bildiring\n2. <b>1-sabab</b> + misol\n3. <b>2-sabab</b> + misol\n4. <b>Xulosa</b>: fikringizni boşqa sözlar bilan qaytaring\n\nIzohlarda öz misolingizni yozing, tekşirib beraman 👇"
+      },
+      "status": "pending",
+      "created_at": "2026-11-18T15:59:22.312Z",
+      "buttons_message_id": 309
+    },
+    "2026-11-19 18:30 2026-11-19-story-1": {
+      "date": "2026-11-19",
+      "slot": "18:30 2026-11-19-story-1",
+      "label": "Payshanba, 19.11 · 18:30 2026-11-19-story-1 · 📱 Agent · Instagram story (tayyor fayl sizga keladi) · story",
+      "meta": {
+        "agent_id": "2026-11-19-story-1",
+        "channel": "ig_story",
+        "format": "story",
+        "rev": 1,
+        "images": [
+          "content/agent-media/2026-11-19-2026-11-19-story-1.jpg"
+        ],
+        "caption": "Havola stikeri qöşing: t.me/tddmockbot?start=ig_story, stiker matni \"Joy band qiling\". Joy sonini yozmang.",
+        "photos": [
+          "AgACAgIAAxkDAAIBN2r9y1oqH7F_Vw3m0X8_wdM7CIW9AAIiHmsbxCHpS0OrT60q18tsAQADAgADdwADPQQ"
+        ]
+      },
+      "status": "pending",
+      "created_at": "2026-11-18T15:59:23.209Z",
+      "buttons_message_id": 312
     }
   },
   "imported": [
