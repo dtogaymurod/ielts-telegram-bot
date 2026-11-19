@@ -1,33 +1,6 @@
 {
   "last_update_id": 111953049,
   "drafts": {
-    "2026-11-05 12:00": {
-      "date": "2026-11-05",
-      "slot": "12:00",
-      "label": "Payshanba, 05.11 · 12:00 · So‘rovnoma #1",
-      "meta": {
-        "kind": "poll",
-        "index": 0
-      },
-      "status": "approved",
-      "created_at": "2026-11-04T15:59:36.890Z",
-      "buttons_message_id": 37,
-      "decided_at": "2026-11-04T16:01:34.122Z"
-    },
-    "2026-11-05 19:30": {
-      "date": "2026-11-05",
-      "slot": "19:30",
-      "label": "Payshanba, 05.11 · 19:30 · Yolg‘iz bo‘ri #14",
-      "meta": {
-        "type": "lonewolf",
-        "index": 14
-      },
-      "status": "published",
-      "created_at": "2026-11-04T15:59:38.408Z",
-      "buttons_message_id": 40,
-      "decided_at": "2026-11-04T16:01:20.396Z",
-      "published_at": "2026-11-05T14:29:19.336Z"
-    },
     "2026-11-06 12:00": {
       "date": "2026-11-06",
       "slot": "12:00",
