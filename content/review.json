@@ -1,5 +1,5 @@
 {
-  "last_update_id": 111953046,
+  "last_update_id": 111953047,
   "drafts": {
     "2026-11-05 12:00": {
       "date": "2026-11-05",
@@ -948,9 +948,10 @@
         "bank_index": 2,
         "title": "A memorised answer = 0"
       },
-      "status": "pending",
+      "status": "approved",
       "created_at": "2026-11-19T15:59:32.906Z",
-      "buttons_message_id": 320
+      "buttons_message_id": 320,
+      "decided_at": "2026-11-19T16:04:06.031Z"
     },
     "2026-11-20 18:00": {
       "date": "2026-11-20",
