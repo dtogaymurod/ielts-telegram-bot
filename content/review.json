@@ -879,10 +879,11 @@
       "meta": {
         "video_id": "d-1a_EI51p3EFz4cJ9zVhLUpGlz8cgoNQFA"
       },
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-11-18T15:59:21.458Z",
       "buttons_message_id": 306,
-      "decided_at": "2026-11-18T16:24:04.108Z"
+      "decided_at": "2026-11-18T16:24:04.108Z",
+      "published_at": "2026-11-19T12:00:24.680Z"
     },
     "2026-11-19 18:00": {
       "date": "2026-11-19",
@@ -967,13 +968,6 @@
     "1Pl77KvQg9L2-brFOsyrEG7UlBQ1VaJ8-"
   ],
   "videos": [
-    {
-      "id": "d-1a_EI51p3EFz4cJ9zVhLUpGlz8cgoNQFA",
-      "name": "reels_examiner_aybdormi",
-      "file_id": "DQACAgIAAxkDAANsavIQKukeMA6n_UBxvRjlHFdHw6YAAhu5AAJwA5FLHUHeO3MYAUU9BA",
-      "duration": 60,
-      "added_at": "2026-11-09T18:25:46.449Z"
-    },
     {
       "id": "d-1VR3g-MNBgKKBSasdxqP_aK95xsRl0crf",
       "name": "reels_problem_vs_cause",
