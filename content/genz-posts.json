@@ -8,7 +8,7 @@
     "collocation": 1,
     "band": 1,
     "pov": 2,
-    "poll": 0,
+    "poll": 1,
     "weekly": 1
   },
   "upgrade": [
