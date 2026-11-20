@@ -167,6 +167,18 @@
         "content/agent-media/2026-11-20-2026-11-20-ig-2.jpg"
       ],
       "rev": 1
+    },
+    {
+      "id": "2026-11-21-story-2",
+      "date": "2026-11-21",
+      "time": "18:30",
+      "channel": "ig_story",
+      "format": "story",
+      "caption": "Havola stikeri qöşing: t.me/tddmockbot?start=ig_story, stiker matni \"Joy band qiling\". Joy sonini yozmang.",
+      "images": [
+        "content/agent-media/2026-11-21-2026-11-21-story-2.jpg"
+      ],
+      "rev": 1
     }
   ]
 }
