@@ -966,6 +966,65 @@
       "buttons_message_id": 326,
       "decided_at": "2026-11-19T16:04:38.066Z",
       "published_at": "2026-11-20T04:00:06.109Z"
+    },
+    "2026-11-21 12:00": {
+      "date": "2026-11-21",
+      "slot": "12:00",
+      "label": "Shanba, 21.11 · 12:00 · To‘g‘ri yoki xato? #3",
+      "meta": {
+        "kind": "truefalse",
+        "index": 2
+      },
+      "status": "pending",
+      "created_at": "2026-11-20T16:27:36.602Z",
+      "buttons_message_id": 330
+    },
+    "2026-11-21 19:30": {
+      "date": "2026-11-21",
+      "slot": "19:30",
+      "label": "Shanba, 21.11 · 19:30 · Yolg‘iz bo‘ri #21",
+      "meta": {
+        "type": "lonewolf",
+        "index": 21
+      },
+      "status": "pending",
+      "created_at": "2026-11-20T16:27:38.292Z",
+      "buttons_message_id": 333
+    },
+    "2026-11-21 18:00": {
+      "date": "2026-11-21",
+      "slot": "18:00",
+      "label": "Shanba, 21.11 · 18:00 · 🟢 Multilevel kanal · Şaxsiy savollarga javob (bazada 406 ta qoldi)",
+      "meta": {
+        "multilevel_index": 8,
+        "post_id": "ml_009",
+        "photo": "AgACAgIAAxkDAAIBT2sAAXT7d5xnRZzQb8Az5ydCZZsJ9AACXChrGyVXAAFIGytAgDvJmMsBAAMCAAN3AAM9BA",
+        "caption": "<b>Şaxsiy savollarga javob</b>\n\nJavob + sabab + misol. Şu formula birinçi qismdagi har qanday savolga işlaydi 🔑\n\n❌ Do you like reading? → <b>Yes.</b>\n✅ <b>Yes, I do.</b> Javob bering\n✅ <b>Sabab</b> ayting: because it helps me relax\n✅ <b>Misol</b> keltiring: right now I'm reading a novel by ...\n\nSaqlab qöying, imtihondan oldin kerak böladi 📌"
+      },
+      "status": "pending",
+      "created_at": "2026-11-20T16:27:39.878Z",
+      "buttons_message_id": 336
+    },
+    "2026-11-21 18:30 2026-11-21-story-2": {
+      "date": "2026-11-21",
+      "slot": "18:30 2026-11-21-story-2",
+      "label": "Shanba, 21.11 · 18:30 2026-11-21-story-2 · 📱 Agent · Instagram story (tayyor fayl sizga keladi) · story",
+      "meta": {
+        "agent_id": "2026-11-21-story-2",
+        "channel": "ig_story",
+        "format": "story",
+        "rev": 1,
+        "images": [
+          "content/agent-media/2026-11-21-2026-11-21-story-2.jpg"
+        ],
+        "caption": "Havola stikeri qöşing: t.me/tddmockbot?start=ig_story, stiker matni \"Joy band qiling\". Joy sonini yozmang.",
+        "photos": [
+          "AgACAgIAAxkDAAIBUmsAAXT9D2c4i5_wTj5Jou5T6CyE0wACXShrGyVXAAFIPYYYPkj2nKoBAAMCAAN3AAM9BA"
+        ]
+      },
+      "status": "pending",
+      "created_at": "2026-11-20T16:27:42.116Z",
+      "buttons_message_id": 339
     }
   },
   "imported": [
