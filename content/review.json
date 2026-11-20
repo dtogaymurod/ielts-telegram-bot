@@ -937,10 +937,11 @@
         "photo": "AgACAgIAAxkDAAIBQmr_HOV0x_f_PFM4JqLIo9gfaR-OAAIWI2sbxCH5SzZid_PF-9ojAQADAgADdwADPQQ",
         "caption": "<b>very good örniga</b>\n\n\"very\" sözini haddan köp işlatiş darajangizni pasaytirib körsatadi 📉\n\nBugun Speaking'da şulardan bittasini albatta işlating 💪\n\n😐 very good → <b>excellent</b>, <b>outstanding</b>\n😐 very bad → <b>terrible</b>, <b>awful</b>\n😐 very big → <b>huge</b>, <b>enormous</b>\n😐 very tired → <b>exhausted</b>\n\nQaysi biri siz uçun yangi böldi? Izohda yozing 👇"
       },
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-11-19T15:59:34.153Z",
       "buttons_message_id": 323,
-      "decided_at": "2026-11-19T16:04:12.073Z"
+      "decided_at": "2026-11-19T16:04:12.073Z",
+      "published_at": "2026-11-20T13:00:37.244Z"
     },
     "2026-11-20 09:00 2026-11-20-ig-2": {
       "date": "2026-11-20",
@@ -1258,6 +1259,6 @@
     }
   ],
   "multilevel": {
-    "next": 7
+    "next": 8
   }
 }
