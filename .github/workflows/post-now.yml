@@ -1,0 +1,30 @@
+name: Post agent post now
+
+# Sends one Telegram post from content/agent-queue.json to its channel right away,
+# outside the 21:00 review. Only for posts approved in the project thread
+# (the queue entry must have "approved_in"). Writes no state, so it does not wait
+# for the running review listener.
+on:
+  workflow_dispatch:
+    inputs:
+      id:
+        description: 'Agent post id in content/agent-queue.json'
+        required: true
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install
+      - name: Post
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          POST_ID: ${{ github.event.inputs.id }}
+        run: node scripts/post-now.js "$POST_ID"

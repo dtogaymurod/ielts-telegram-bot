@@ -157,7 +157,7 @@ export async function sendPhoto(photoUrl, caption = '') {
  * @param {string} filePath - Path to the local photo
  * @param {string} caption - HTML formatted caption (max 1024 chars)
  */
-export async function sendLocalPhoto(filePath, caption = '') {
+export async function sendLocalPhoto(filePath, caption = '', replyMarkup = null) {
   const url = `${BASE_URL}/sendPhoto`;
   const formData = new FormData();
   formData.append('chat_id', targetChat);
@@ -168,6 +168,7 @@ export async function sendLocalPhoto(filePath, caption = '') {
   
   formData.append('caption', caption);
   formData.append('parse_mode', 'HTML');
+  if (replyMarkup) formData.append('reply_markup', JSON.stringify(replyMarkup));
 
   for (let attempt = 1; attempt <= 3; attempt++) {
     try {
