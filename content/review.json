@@ -1,5 +1,5 @@
 {
-  "last_update_id": 111953055,
+  "last_update_id": 111953056,
   "drafts": {
     "2026-11-07 12:00": {
       "date": "2026-11-07",
@@ -1042,9 +1042,10 @@
         "photo": "AgACAgIAAxkDAAIBYWsBwAQ31Bycy5RxI2sk3JX-BV0MAAISIWsbJVcISLdpNJIvcysPAQADAgADdwADPQQ",
         "caption": "<b>Sonlarni adaştirmang</b>\n\nSonlar va sanalar Listening'da eng köp ball olib ketadi 😬\n\nDöstingizga 14, 40, 17, 70 ni aralaş ayting, u yozsin. Keyin almaşing 🔁\n\n1. fif<b>TEEN</b>: urğu oxirida, çöziq tovuş\n2. <b>FIF</b>ty: urğu boşida, qisqa tovuş\n⚠️ Telefon raqamlarida <b>double 5</b> = 55, <b>oh</b> = 0\n💡 Har kuni 13–19 va 30–90 juftlarini tinglab maşq qiling\n\nDöstingizga yuboring, u ham Multilevel topşiryaptimi? 👀"
       },
-      "status": "pending",
+      "status": "approved",
       "created_at": "2026-11-21T16:00:04.517Z",
-      "buttons_message_id": 354
+      "buttons_message_id": 354,
+      "decided_at": "2026-11-21T16:20:22.601Z"
     }
   },
   "imported": [
