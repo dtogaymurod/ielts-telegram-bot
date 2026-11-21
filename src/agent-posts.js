@@ -211,6 +211,27 @@ export async function postNow(post) {
   if (validPoll(post.poll)) await sendPoll(chatId, post.poll);
 }
 
+/**
+ * Swap the picture of a post already in the channel (message id `messageId`)
+ * for the post's current first image, keeping its caption and button.
+ * The image is read from GitHub (the repo is public), so it must be on main.
+ */
+export async function replacePhoto(post, messageId) {
+  const channel = CHANNELS[post?.channel];
+  if (!channel?.chat || !post.images?.length) throw new Error(`No Telegram picture post: ${post?.id}`);
+  if (!post.approved_in) throw new Error(`Post ${post.id} has no "approved_in": approve it first`);
+  const path = post.images[0];
+  const url = isUrl(path) ? path : `https://raw.githubusercontent.com/dtogaymurod/ielts-telegram-bot/main/${path}`;
+  const caption = post.caption || '';
+  const markup = linkButton(post.button);
+  await callApi('editMessageMedia', {
+    chat_id: channel.chat(),
+    message_id: Number(messageId),
+    media: { type: 'photo', media: url, ...(caption.length <= CAPTION_LIMIT ? { caption, parse_mode: 'HTML' } : {}) },
+    ...(markup ? { reply_markup: markup } : {}),
+  });
+}
+
 /** Post an approved Telegram agent draft to its channel. */
 export async function publishAgentDraft(draft) {
   await publishAgentBody(draft);
