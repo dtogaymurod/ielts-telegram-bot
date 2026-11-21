@@ -179,6 +179,23 @@
         "content/agent-media/2026-11-21-2026-11-21-story-2.jpg"
       ],
       "rev": 1
+    },
+    {
+      "id": "ml-promo-1",
+      "date": "2026-11-21",
+      "time": "09:30",
+      "channel": "tg_english",
+      "format": "post",
+      "images": [
+        "content/agent-media/2026-11-21-ml-crosspromo.png"
+      ],
+      "caption": "🚀 <b>MULTILEVEL MOCK IS COMING SOON</b>\n\nPreparing for the Multilevel (CEFR) exam as well? Then this is for you.\n\nI am preparing a full Multilevel mock exam in the real exam format. It will be announced first in my Multilevel channel, so subscribers will be the first to know and the first to take it.\n\nMany of you study for both IELTS and Multilevel. The two exams look similar, but the tasks, timing and scoring are different, and some IELTS habits can cost you points in Multilevel.\n\nWhat you'll find in @dilshod_multilevel:\n• The Multilevel mock announcement, before anyone else\n• Writing and Speaking tips built for the Multilevel format\n• Common traps that cost candidates points, and how to avoid them\n• Short \"save this\" lessons: clear explanations in Uzbek, examples in English\n\nDon't miss the launch. Tap the button below to join 👇",
+      "button": {
+        "text": "👉 Join @dilshod_multilevel",
+        "url": "https://t.me/dilshod_multilevel"
+      },
+      "rev": 3,
+      "approved_in": "project thread, Dilshod 2026-11-21 09:06 (Tashkent)"
     }
   ]
 }

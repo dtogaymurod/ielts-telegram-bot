@@ -86,12 +86,12 @@ function localPath(path) {
 }
 
 /** Send one picture (URL or file in the repo) to the current target chat. */
-async function sendOnePhoto(chatId, path, caption) {
+async function sendOnePhoto(chatId, path, caption, markup = null) {
   if (isUrl(path)) {
-    return callApi('sendPhoto', { chat_id: chatId, photo: path, caption, parse_mode: 'HTML' });
+    return callApi('sendPhoto', { chat_id: chatId, photo: path, caption, parse_mode: 'HTML', ...(markup ? { reply_markup: markup } : {}) });
   }
   setTargetChat(chatId);
-  return sendLocalPhoto(localPath(path), caption);
+  return sendLocalPhoto(localPath(path), caption, markup);
 }
 
 /** A poll attached to a Telegram post: question + 2..10 options. */
@@ -139,7 +139,7 @@ async function render(chatId, post) {
   }
   const photos = [];
   if (images.length === 1) {
-    const sent = await sendOnePhoto(chatId, images[0], shortCaption ? caption : '');
+    const sent = await sendOnePhoto(chatId, images[0], shortCaption ? caption : '', shortCaption ? markup : null);
     photos.push(sent.photo?.at(-1)?.file_id || images[0]);
   } else {
     // Album (carousel): URLs go straight in, repo files one by one first to get their ids
@@ -196,6 +196,21 @@ export function prepareAgentDrafts(date, adminId, only = '') {
     });
 }
 
+/**
+ * Post a Telegram agent post straight to its channel, without the 21:00 review.
+ * Only for posts the teacher approved in the project thread ("approved_in" set).
+ * Used by scripts/post-now.js (workflow post-now.yml).
+ */
+export async function postNow(post) {
+  if (!validPost(post)) throw new Error(`Not a valid agent post: ${post?.id}`);
+  if (!post.approved_in) throw new Error(`Post ${post.id} has no "approved_in": approve it first`);
+  const channel = CHANNELS[post.channel];
+  if (!channel?.chat) throw new Error(`Not a Telegram post: ${post.channel}`);
+  const chatId = channel.chat();
+  await render(chatId, post);
+  if (validPoll(post.poll)) await sendPoll(chatId, post.poll);
+}
+
 /** Post an approved Telegram agent draft to its channel. */
 export async function publishAgentDraft(draft) {
   await publishAgentBody(draft);
@@ -226,7 +241,7 @@ async function publishAgentBody(draft) {
     return;
   }
   if (photos.length === 1) {
-    await callApi('sendPhoto', { chat_id: chatId, photo: photos[0], caption: shortCaption ? caption : '', parse_mode: 'HTML' });
+    await callApi('sendPhoto', { chat_id: chatId, photo: photos[0], caption: shortCaption ? caption : '', parse_mode: 'HTML', ...(markup && shortCaption ? { reply_markup: markup } : {}) });
   } else {
     await callApi('sendMediaGroup', {
       chat_id: chatId,
