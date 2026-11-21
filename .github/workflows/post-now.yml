@@ -10,6 +10,10 @@ on:
       id:
         description: 'Agent post id in content/agent-queue.json'
         required: true
+      message_id:
+        description: 'Optional: channel message id of the post already sent; its picture is replaced (caption and button kept)'
+        required: false
+        default: ''
 
 jobs:
   post:
@@ -27,4 +31,5 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
           POST_ID: ${{ github.event.inputs.id }}
-        run: node scripts/post-now.js "$POST_ID"
+          MESSAGE_ID: ${{ github.event.inputs.message_id }}
+        run: node scripts/post-now.js "$POST_ID" $MESSAGE_ID
