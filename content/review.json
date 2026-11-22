@@ -1000,10 +1000,11 @@
         "bank_index": 2,
         "title": "The word limit eats points"
       },
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-11-21T16:00:03.143Z",
       "buttons_message_id": 351,
-      "decided_at": "2026-11-21T16:19:53.183Z"
+      "decided_at": "2026-11-21T16:19:53.183Z",
+      "published_at": "2026-11-22T14:28:51.984Z"
     },
     "2026-11-22 18:00": {
       "date": "2026-11-22",
