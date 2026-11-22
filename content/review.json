@@ -1,5 +1,5 @@
 {
-  "last_update_id": 111953059,
+  "last_update_id": 111953060,
   "drafts": {
     "2026-11-08 12:00": {
       "date": "2026-11-08",
@@ -1072,9 +1072,10 @@
         "photo": "AgACAgIAAxkDAAIBbmsDEWrif39FqfjsDUw8je3xYn0SAAIkI2sbzgABGUhTQJuZO1ntpQEAAwIAA3cAAz0E",
         "caption": "<b>Rasmiy xatni boşlaş</b>\n\nRasmiy xatda birinçi gapdanoq nima uçun yozayotganingiz aniq bölsin 🎯\n\n✅ <b>Dear Sir or Madam,</b> (ismini bilmasangiz)\n✅ <b>Dear Mr Brown,</b> (ismini bilsangiz)\n✅ Maqsadni darrov ayting: <b>I am writing to complain about</b> ...\n❌ <b>Hi</b>, <b>How are you?</b>, qisqartmalar (I'm, don't) işlatmang\n\nIzohlarda öz misolingizni yozing, tekşirib beraman 👇"
       },
-      "status": "pending",
+      "status": "approved",
       "created_at": "2026-11-22T15:59:39.020Z",
-      "buttons_message_id": 367
+      "buttons_message_id": 367,
+      "decided_at": "2026-11-22T16:11:41.119Z"
     }
   },
   "imported": [
