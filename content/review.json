@@ -1,36 +1,6 @@
 {
   "last_update_id": 111953067,
   "drafts": {
-    "2026-11-09 12:00": {
-      "date": "2026-11-09",
-      "slot": "12:00",
-      "label": "Dushanba, 09.11 · 12:00 · Band 5 vs Band 8 #1",
-      "meta": {
-        "kind": "band",
-        "index": 0
-      },
-      "status": "published",
-      "created_at": "2026-11-08T15:59:41.421Z",
-      "buttons_message_id": 67,
-      "decided_at": "2026-11-08T16:20:04.308Z",
-      "published_at": "2026-11-09T07:00:18.134Z"
-    },
-    "2026-11-09 19:30": {
-      "date": "2026-11-09",
-      "slot": "19:30",
-      "label": "Dushanba, 09.11 · 19:30 · Kundalik post (READING)",
-      "meta": {
-        "type": "skill",
-        "skill": "reading",
-        "bank_index": 1,
-        "title": "False yoki Not Given?"
-      },
-      "status": "published",
-      "created_at": "2026-11-08T15:59:42.909Z",
-      "buttons_message_id": 70,
-      "decided_at": "2026-11-08T16:20:23.061Z",
-      "published_at": "2026-11-09T14:29:01.286Z"
-    },
     "2026-11-10 12:00": {
       "date": "2026-11-10",
       "slot": "12:00",
@@ -58,19 +28,6 @@
       "buttons_message_id": 76,
       "decided_at": "2026-11-09T16:07:17.231Z",
       "published_at": "2026-11-10T14:28:54.840Z"
-    },
-    "2026-11-09 video-78": {
-      "date": "2026-11-09",
-      "slot": "video",
-      "label": "🎥 Dumaloq video",
-      "meta": {
-        "file_id": "DQACAgIAAxkDAANQavH9fTGXTErL_e421FZc6ggak5kAAjS4AAJwA5FLiZ5vLGL3S9g9BA",
-        "duration": 60
-      },
-      "status": "rejected",
-      "created_at": "2026-11-09T17:06:06.100Z",
-      "buttons_message_id": 81,
-      "decided_at": "2026-11-09T17:11:13.607Z"
     },
     "2026-11-11 12:00": {
       "date": "2026-11-11",
