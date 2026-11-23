@@ -1051,6 +1051,99 @@
       "buttons_message_id": 367,
       "decided_at": "2026-11-22T16:11:41.119Z",
       "published_at": "2026-11-23T13:00:28.842Z"
+    },
+    "2026-11-24 12:00": {
+      "date": "2026-11-24",
+      "slot": "12:00",
+      "label": "Seshanba, 24.11 · 12:00 · Oddiy vs Band 9 #4",
+      "meta": {
+        "kind": "upgrade",
+        "index": 3
+      },
+      "status": "pending",
+      "created_at": "2026-11-23T16:00:03.942Z",
+      "buttons_message_id": 370
+    },
+    "2026-11-24 19:30": {
+      "date": "2026-11-24",
+      "slot": "19:30",
+      "label": "Seshanba, 24.11 · 19:30 · Yolg‘iz bo‘ri #22",
+      "meta": {
+        "type": "lonewolf",
+        "index": 22
+      },
+      "status": "pending",
+      "created_at": "2026-11-23T16:00:11.909Z",
+      "buttons_message_id": 373
+    },
+    "2026-11-24 18:00": {
+      "date": "2026-11-24",
+      "slot": "18:00",
+      "label": "Seshanba, 24.11 · 18:00 · 🟢 Multilevel kanal · Ball va daraja (bazada 403 ta qoldi)",
+      "meta": {
+        "multilevel_index": 11,
+        "post_id": "ml_012",
+        "photo": "AgACAgIAAxkDAAIBd2sEYw2ERE6K4DXtr6BSAAH5FIg0jAACpSNrG7_VIUjHe3trFFVuQwEAAwIAA3cAAz0E",
+        "caption": "<b>Ball va daraja</b>\n\nSizning maqsadingiz qaysi daraja? B1, B2 yoki C1? Izohda yozing 👇\n\n🔵 <b>B1</b>: örta daraja, kundalik mavzularda erkin gapira olasiz\n🟢 <b>B2</b>: örtadan yuqori, murakkab mavzularni ham tuşunasiz\n🟣 <b>C1</b>: yuqori daraja, ingliz tilida erkin işlay olasiz\n💡 Avval <b>maqsad darajangizni</b> belgilang, keyin reja tuzing\n\nQaysi biri siz uçun yangi böldi? Izohda yozing 👇"
+      },
+      "status": "pending",
+      "created_at": "2026-11-23T16:00:13.687Z",
+      "buttons_message_id": 376
+    },
+    "2026-11-24 09:00 2026-11-24-ig-1": {
+      "date": "2026-11-24",
+      "slot": "09:00 2026-11-24-ig-1",
+      "label": "Seshanba, 24.11 · 09:00 2026-11-24-ig-1 · 📸 Agent · Instagram @dilshod.ustoz · post",
+      "meta": {
+        "agent_id": "2026-11-24-ig-1",
+        "channel": "ig_ustoz",
+        "format": "post",
+        "rev": 1,
+        "images": [
+          "content/agent-media/2026-11-24-2026-11-24-ig-1.jpg"
+        ],
+        "caption": "On paper, IELTS Listening gives you 10 extra minutes at the end to copy your answers onto the answer sheet.\n\nOn the computer, it doesn't. You type each answer into the box while you listen, and at the end you get only 2 minutes to check.\n\nThe timer keeps running the whole time, even between parts. So don't plan to \"fix it later\". Answer as you go, and use the pauses between parts to read the next questions.\n\nSave this post for your next practice test.\n\nSaqlab qöying va Listening'ga tayyorlanayotgan döstingizga yuboring.\n\n#IELTS #CDIELTS #IELTSListening #IELTSUzbekistan",
+        "photos": [
+          "AgACAgIAAxkDAAIBemsEYw_cIVI8BmQm6VxsmffQeqHrAAKmI2sbv9UhSOwAATSW-afErQEAAwIAA3cAAz0E"
+        ]
+      },
+      "status": "pending",
+      "created_at": "2026-11-23T16:00:15.394Z",
+      "buttons_message_id": 379
+    },
+    "2026-11-24 14:30 2026-11-24-tgml-1": {
+      "date": "2026-11-24",
+      "slot": "14:30 2026-11-24-tgml-1",
+      "label": "Seshanba, 24.11 · 14:30 2026-11-24-tgml-1 · 🤖 Agent · @dilshod_multilevel · post",
+      "meta": {
+        "agent_id": "2026-11-24-tgml-1",
+        "channel": "tg_multilevel",
+        "format": "post",
+        "rev": 1,
+        "images": [],
+        "caption": "<b>Saqlab qöying: Multilevel Writing xati uçun tayyor boşlaniş va yakun</b>\n\n<b>Norasmiy xat (döstga):</b>\nBoşlaniş: <i>Hi Aziz, thanks for your message. It was great to hear from you.</i>\nYakun: <i>Write back soon. Best wishes,</i> + ismingiz\n\n<b>Rasmiy xat (rahbarga, kompaniyaga):</b>\nBoşlaniş: <i>Dear Sir or Madam, I am writing to complain about / ask about...</i>\nYakun: <i>I look forward to hearing from you. Yours faithfully,</i> + ismingiz\n\nMaslahat: kişini ismi bilan atasangiz (<i>Dear Mr Karimov</i>), yakun <i>Yours sincerely</i> böladi.\n\nSaqlab qöying va döstingizga yuboring 📌",
+        "photos": []
+      },
+      "status": "pending",
+      "created_at": "2026-11-23T16:00:16.136Z",
+      "buttons_message_id": 382
+    },
+    "2026-11-24 15:00 2026-11-24-tg-1": {
+      "date": "2026-11-24",
+      "slot": "15:00 2026-11-24-tg-1",
+      "label": "Seshanba, 24.11 · 15:00 2026-11-24-tg-1 · 🤖 Agent · @dilshod_english · post",
+      "meta": {
+        "agent_id": "2026-11-24-tg-1",
+        "channel": "tg_english",
+        "format": "post",
+        "rev": 1,
+        "images": [],
+        "caption": "<b>Three 7s and one 5. What is your overall band?</b>\n\nYour overall band is the average of your four sections, rounded to the nearest half band.\n\nListening 7.0\nReading 7.0\nSpeaking 7.0\nWriting 5.0\n\n(7 + 7 + 7 + 5) ÷ 4 = <b>6.5</b>\n\nWith Writing at 7.0, you would get 7.0. One weak section cost you half a band.\n\nRaise Writing to 6.0, and the average is 6.75, which rounds up to <b>7.0</b>. Find your weakest section and fix it first.\n\nWhich section would you raise first? Tell me in the comments 👇\n\nPreparing for Multilevel? Join <a href=\"https://t.me/dilshod_multilevel\">@dilshod_multilevel</a>",
+        "photos": []
+      },
+      "status": "pending",
+      "created_at": "2026-11-23T16:00:16.734Z",
+      "buttons_message_id": 385
     }
   },
   "imported": [
