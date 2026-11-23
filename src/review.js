@@ -674,16 +674,27 @@ async function remind(state) {
   }
   console.log(`⏰ ${waiting.length} post(s) waiting for approval today.`);
   save(state);
+  // the weekly camera pack goes out with Sunday's 09:00 run, its reminder with Tuesday's
+  const weekday = dateAt(today).getUTCDay();
+  try {
+    if (weekday === 0) await sendCameraPack(state);
+    if (weekday === 2) await remindCameraPack(state);
+  } catch (error) {
+    console.error(`⚠️ Camera pack step failed: ${error.message}`);
+    try { await sendAdmin(`⚠️ Kamera paketini yuborib bölmadi: ${error.message}`); } catch {}
+  }
+  save(state);
 }
 
 /*
  * Weekly camera pack (2026-11-23): the teacher films all of next week's camera
  * reels in one sitting on Monday or Tuesday (he is busy Friday–Saturday). On
- * Sunday evening the agents queue them (content/agent-queue.json,
+ * Saturday evening the agents queue them; Sunday's 09:00 `remind` run (or mode
+ * `pack`) (content/agent-queue.json,
  * "camera": true) and `pack` sends every one that is not with him yet, each as
  * the usual preview with its "Kamera matni" message. He answers each with a
  * video; the 21:00 preview does not send them again. `packremind` (Saturday)
- * (Tuesday) lists the ones still without a video. The pack run also sends the
+ * (Tuesday's 09:00 `remind` run, or mode `packremind`) lists the ones still without a video. The pack run also sends the
  * weekly questions (askWeekly).
  */
 const PACK_DAYS = 10;
@@ -765,7 +776,7 @@ async function remindCameraPack(state) {
 
 /*
  * Weekly questions (2026-11-23): real stories make the posts sound like the
- * teacher, so on Sunday evening (after the camera pack) the bot asks him a few short questions. His text
+ * teacher, so on Sunday morning (after the camera pack) the bot asks him a few short questions. His text
  * answers (a reply to that message, or any plain text in the next 2 days) are
  * kept in state.inbox; the Strateg agent copies them into smm-agents
  * brand/ustoz-hikoyalari.md and plans posts on them. Nothing is invented.
