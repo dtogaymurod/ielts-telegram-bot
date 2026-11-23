@@ -1,5 +1,5 @@
 {
-  "last_update_id": 111953062,
+  "last_update_id": 111953063,
   "drafts": {
     "2026-11-09 12:00": {
       "date": "2026-11-09",
@@ -1088,9 +1088,10 @@
         "photo": "AgACAgIAAxkDAAIBd2sEYw2ERE6K4DXtr6BSAAH5FIg0jAACpSNrG7_VIUjHe3trFFVuQwEAAwIAA3cAAz0E",
         "caption": "<b>Ball va daraja</b>\n\nSizning maqsadingiz qaysi daraja? B1, B2 yoki C1? Izohda yozing 👇\n\n🔵 <b>B1</b>: örta daraja, kundalik mavzularda erkin gapira olasiz\n🟢 <b>B2</b>: örtadan yuqori, murakkab mavzularni ham tuşunasiz\n🟣 <b>C1</b>: yuqori daraja, ingliz tilida erkin işlay olasiz\n💡 Avval <b>maqsad darajangizni</b> belgilang, keyin reja tuzing\n\nQaysi biri siz uçun yangi böldi? Izohda yozing 👇"
       },
-      "status": "pending",
+      "status": "approved",
       "created_at": "2026-11-23T16:00:13.687Z",
-      "buttons_message_id": 376
+      "buttons_message_id": 376,
+      "decided_at": "2026-11-23T16:26:46.925Z"
     },
     "2026-11-24 09:00 2026-11-24-ig-1": {
       "date": "2026-11-24",
