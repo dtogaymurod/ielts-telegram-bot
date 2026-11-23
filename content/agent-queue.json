@@ -2,31 +2,6 @@
   "_note": "Posts written by the SMM agents (repo dilshodustoz/smm-agents), already checked by the Muharrir agent. Shown at the 21:00 review with ✅ / ❌ / ✏️ (src/agent-posts.js). channel: tg_english | tg_multilevel | ig_ustoz. Telegram posts are published by the listener at their time; approved ig_ustoz posts are handed by the listener to the mock site's Instagram queue (pictures: JPEG files in content/agent-media/).",
   "posts": [
     {
-      "id": "reel1",
-      "date": "2026-11-14",
-      "time": "16:40",
-      "channel": "ig_ustoz",
-      "format": "reels",
-      "video": "content/agent-media/2026-11-14-reel1.mp4",
-      "script": "Mock'ni telefondan topşirsa bölarkanmi?\nHa, böladi. Haqiqiy imtihon formati, xuddi özi.\nTaymer töxtamaydi. Imtihondagidek.\nJavobni özingiz yozasiz. Natija darhol çiqadi.\n3 mln sömlik imtihonda bu ekranni birinçi marta körmang.\nErtaga BEPUL Full mock!",
-      "caption": "Mock'ni telefondan topşirsa böladimi? Ha, böladi.\n\nHaqiqiy imtihon formati, taymer töxtamaydi, natija darhol çiqadi.\n\nHaqiqiy IELTS imtihoni 3 mln söm atrofida turadi. Bu ekranni birinçi marta öşa kuni körmang.\n\nErtaga, yakşanba kuni 09:00 dan 18:00 gaça BEPUL Full mock. Röyxatdan ötiş uçun link bioda yoki Telegram: @tddmockbot\n\n#ielts #ieltsmock #ieltsuzbekistan #ieltspreparation #mocktest",
-      "rev": 7
-    },
-    {
-      "id": "reeltg",
-      "date": "2026-11-14",
-      "time": "17:20",
-      "channel": "tg_english",
-      "format": "post",
-      "video": "content/agent-media/2026-11-14-reel1.mp4",
-      "button": {
-        "text": "📱 Open the mock bot",
-        "url": "https://t.me/tddmockbot?start=tg_post"
-      },
-      "caption": "<b>Can you take an IELTS mock on your phone?</b> Yes, you can.\n\n✅ Real exam format\n⏱ The timer never stops\n📊 Your result comes straight away\n\nThe real exam costs about 3 mln so'm. Don't see this screen for the first time on exam day.\n\n🗓 <b>FREE Full mock tomorrow</b>, Sunday 09:00–18:00.",
-      "rev": 1
-    },
-    {
       "id": "2026-11-16-tg-1",
       "date": "2026-11-16",
       "time": "15:00",
@@ -210,6 +185,38 @@
       "caption": "🚀 <b>Multilevel mock tez orada!</b>\n\nHaqiqiy imtihon formatida töliq Multilevel mock tayyorlayapman. Darajangizni imtihondan oldin bilib olasiz va qaysi bölimda ball yöqotayotganingizni körasiz.\n\n📢 E'lon birinçi bölib şu kanalda çiqadi. Bildirişnomalarni yoqib qöying 🔔\n\n🇬🇧 A full Multilevel mock in the real exam format is coming soon. Stay tuned!\n\nKutayotgan bölsangiz, 🔥 qöying.",
       "rev": 3,
       "approved_in": "project thread, Dilshod 2026-11-21 09:37 (Tashkent)"
+    },
+    {
+      "id": "2026-11-24-ig-1",
+      "date": "2026-11-24",
+      "time": "09:00",
+      "channel": "ig_ustoz",
+      "format": "post",
+      "caption": "On paper, IELTS Listening gives you 10 extra minutes at the end to copy your answers onto the answer sheet.\n\nOn the computer, it doesn't. You type each answer into the box while you listen, and at the end you get only 2 minutes to check.\n\nThe timer keeps running the whole time, even between parts. So don't plan to \"fix it later\". Answer as you go, and use the pauses between parts to read the next questions.\n\nSave this post for your next practice test.\n\nSaqlab qöying va Listening'ga tayyorlanayotgan döstingizga yuboring.\n\n#IELTS #CDIELTS #IELTSListening #IELTSUzbekistan",
+      "images": [
+        "content/agent-media/2026-11-24-2026-11-24-ig-1.jpg"
+      ],
+      "rev": 1
+    },
+    {
+      "id": "2026-11-24-tgml-1",
+      "date": "2026-11-24",
+      "time": "14:30",
+      "channel": "tg_multilevel",
+      "format": "post",
+      "caption": "<b>Saqlab qöying: Multilevel Writing xati uçun tayyor boşlaniş va yakun</b>\n\n<b>Norasmiy xat (döstga):</b>\nBoşlaniş: <i>Hi Aziz, thanks for your message. It was great to hear from you.</i>\nYakun: <i>Write back soon. Best wishes,</i> + ismingiz\n\n<b>Rasmiy xat (rahbarga, kompaniyaga):</b>\nBoşlaniş: <i>Dear Sir or Madam, I am writing to complain about / ask about...</i>\nYakun: <i>I look forward to hearing from you. Yours faithfully,</i> + ismingiz\n\nMaslahat: kişini ismi bilan atasangiz (<i>Dear Mr Karimov</i>), yakun <i>Yours sincerely</i> böladi.\n\nSaqlab qöying va döstingizga yuboring 📌",
+      "images": [],
+      "rev": 1
+    },
+    {
+      "id": "2026-11-24-tg-1",
+      "date": "2026-11-24",
+      "time": "15:00",
+      "channel": "tg_english",
+      "format": "post",
+      "caption": "<b>Three 7s and one 5. What is your overall band?</b>\n\nYour overall band is the average of your four sections, rounded to the nearest half band.\n\nListening 7.0\nReading 7.0\nSpeaking 7.0\nWriting 5.0\n\n(7 + 7 + 7 + 5) ÷ 4 = <b>6.5</b>\n\nWith Writing at 7.0, you would get 7.0. One weak section cost you half a band.\n\nRaise Writing to 6.0, and the average is 6.75, which rounds up to <b>7.0</b>. Find your weakest section and fix it first.\n\nWhich section would you raise first? Tell me in the comments 👇\n\nPreparing for Multilevel? Join <a href=\"https://t.me/dilshod_multilevel\">@dilshod_multilevel</a>",
+      "images": [],
+      "rev": 1
     }
   ]
 }
