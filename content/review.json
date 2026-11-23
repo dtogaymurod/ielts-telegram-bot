@@ -1,35 +1,6 @@
 {
   "last_update_id": 111953060,
   "drafts": {
-    "2026-11-08 12:00": {
-      "date": "2026-11-08",
-      "slot": "12:00",
-      "label": "Yakshanba, 08.11 · 12:00 · Hafta testi",
-      "meta": {
-        "kind": "weekly",
-        "index": 0
-      },
-      "status": "rejected",
-      "created_at": "2026-11-07T15:59:34.212Z",
-      "buttons_message_id": 60,
-      "decided_at": "2026-11-07T16:14:00.637Z"
-    },
-    "2026-11-08 19:30": {
-      "date": "2026-11-08",
-      "slot": "19:30",
-      "label": "Yakshanba, 08.11 · 19:30 · Kundalik post (LISTENING)",
-      "meta": {
-        "type": "skill",
-        "skill": "listening",
-        "bank_index": 0,
-        "title": "Birinchi javob — tuzoq"
-      },
-      "status": "published",
-      "created_at": "2026-11-07T15:59:35.381Z",
-      "buttons_message_id": 63,
-      "decided_at": "2026-11-07T16:14:08.114Z",
-      "published_at": "2026-11-08T14:28:54.458Z"
-    },
     "2026-11-09 12:00": {
       "date": "2026-11-09",
       "slot": "12:00",
