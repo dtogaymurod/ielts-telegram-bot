@@ -233,6 +233,7 @@ function expectedDate(state, position) {
 async function handleMessage(state, message) {
   if (String(message.from?.id) !== String(ADMIN_ID) || message.chat?.type !== 'private') return null;
   if (state.edit_wait && message.text) return handleEditRequest(state, message.text);
+  if (isWeeklyAnswer(state, message)) return saveWeeklyAnswer(state, message);
   const voice = message.voice || message.audio;
   if (voice) return handleReelVoice(state, message, voice);
   const video = videoInMessage(message);
@@ -675,6 +676,139 @@ async function remind(state) {
   save(state);
 }
 
+/*
+ * Weekly camera pack (2026-11-23): the teacher films all of next week's camera
+ * reels in one sitting. On Friday the agents queue them (content/agent-queue.json,
+ * "camera": true) and `pack` sends every one that is not with him yet, each as
+ * the usual preview with its "Kamera matni" message. He answers each with a
+ * video; the 21:00 preview does not send them again. `packremind` (Saturday)
+ * lists the ones still without a video.
+ */
+const PACK_DAYS = 10;
+
+function upcomingCameraKeys(state) {
+  const today = tashkentDate();
+  return Object.keys(state.drafts)
+    .filter((key) => key.slice(0, 10) >= today && state.drafts[key].meta?.camera && OPEN.includes(state.drafts[key].status))
+    .sort();
+}
+
+async function sendCameraPack(state) {
+  const items = [];
+  for (let offset = 1; offset <= PACK_DAYS; offset += 1) {
+    const date = tashkentDate(offset);
+    let drafts = [];
+    try {
+      drafts = prepareAgentDrafts(date, ADMIN_ID).filter((d) => d.meta.camera);
+    } catch (error) {
+      await sendAdmin(`⚠️ Agentlar navbatini öqib bölmadi: ${error.message}`);
+      return;
+    }
+    for (const draft of drafts) {
+      const sent = state.drafts[`${date} ${draft.slot}`];
+      if (sent?.meta?.camera && (sent.meta.rev || 1) === draft.meta.rev) continue;
+      items.push({ date, draft });
+    }
+  }
+  if (!items.length) {
+    console.log('🎥 Camera pack: nothing new to send.');
+    return;
+  }
+  await sendAdmin([
+    `🎥 <b>Kamera paketi: ${items.length} ta video</b>`,
+    '',
+    'Keyingi haftaning hamma reelsi şu yerda. Bir ötirişda yozib oling (15–30 daqiqa):',
+    '1. Har bir "Kamera matni" xabarini öqing, telefonni tik uşlab yozing.',
+    '2. Videoni <b>şu xabarga javob (reply) qilib</b> yuboring. Bot montaj qilib körsatadi.',
+    '3. Yoqsa ✅ ni bosing: reels öz kunida 09:00 da çiqadi.',
+    '',
+    'Matn yoqmasa ✏️ ni bosing, agentlar özgartiradi. Ertaga eslataman.',
+  ].join('\n'));
+  for (const { date, draft } of items) {
+    try {
+      await submitDraft(state, { date, ...draft });
+    } catch (error) {
+      console.error(`⚠️ Camera pack item failed (${draft.slot}): ${error.message}`);
+      await sendAdmin(`⚠️ Paketdagi reelsni körsatib bölmadi (${draft.slot}): ${error.message}`);
+    }
+  }
+  console.log(`🎥 Camera pack: ${items.length} reel(s) sent.`);
+}
+
+async function remindCameraPack(state) {
+  const keys = upcomingCameraKeys(state);
+  const missing = keys.filter((key) => !state.drafts[key].meta.video_url);
+  if (!missing.length) {
+    console.log(`🎥 Camera pack reminder: ${keys.length} reel(s), all have videos.`);
+    return;
+  }
+  const lines = missing.map((key) => `• ${state.drafts[key].label}`);
+  await sendAdmin([
+    `⏰ <b>Kamera paketi: ${keys.length} tadan ${missing.length} tasi hali yozilmagan</b>`,
+    '',
+    ...lines,
+    '',
+    'Har birining "Kamera matni" xabariga javob qilib videoni yuboring. Video kelmasa, şu reels çiqmaydi.',
+  ].join('\n'));
+  for (const key of missing) {
+    const draft = state.drafts[key];
+    if (!draft.meta.voice_prompt_id) continue;
+    try {
+      await sendAdmin(`🎥 ${draft.label}`, { reply_to_message_id: draft.meta.voice_prompt_id });
+    } catch {}
+  }
+}
+
+/*
+ * Weekly questions (2026-11-23): real stories make the posts sound like the
+ * teacher, so on Sunday evening the bot asks him a few short questions. His text
+ * answers (a reply to that message, or any plain text in the next 2 days) are
+ * kept in state.inbox; the Strateg agent copies them into smm-agents
+ * brand/ustoz-hikoyalari.md and plans posts on them. Nothing is invented.
+ */
+const ASK_HOURS = 48;
+const INBOX_DAYS = 60;
+
+const WEEKLY_QUESTIONS = [
+  '1. Bu hafta darsda yoki mockda esingizda qolgan bitta holat? (öquvçining ismisiz)',
+  '2. Öquvçilar sizga bu hafta qanday savol berişdi?',
+  '3. Nimaga hayron qoldingiz yoki nimaga qarşisiz? (IELTS haqida bitta fikr)',
+];
+
+async function askWeekly(state) {
+  const message = await sendAdmin([
+    '📝 <b>Haftalik 3 ta savol</b> (2–3 daqiqa)',
+    '',
+    'Javoblaringizdan agentlar sizning ovozingizda post va reels ssenariysi yozadi. Hech narsa öylab topilmaydi, faqat siz aytgan narsa.',
+    '',
+    ...WEEKLY_QUESTIONS,
+    '',
+    'Şu xabarga <b>javob qilib matn</b> yozing (bir yoki bir neçta xabar). Qisqa bölsa ham böladi. Javob bermasangiz, agentlar odatdagi dars postlarini yozadi.',
+  ].join('\n'));
+  state.ask = { message_id: message.message_id, sent_at: new Date().toISOString() };
+  save(state);
+}
+
+function isWeeklyAnswer(state, message) {
+  if (!state.ask?.message_id) return false;
+  if (message.reply_to_message?.message_id === state.ask.message_id) return Boolean(message.text || message.voice);
+  // plain text soon after the questions counts too (commands and edit requests do not)
+  const fresh = Date.now() - Date.parse(state.ask.sent_at) < ASK_HOURS * 60 * 60 * 1000;
+  return fresh && Boolean(message.text) && !message.text.startsWith('/') && !message.reply_to_message;
+}
+
+async function saveWeeklyAnswer(state, message) {
+  const oldest = new Date(Date.now() - INBOX_DAYS * 24 * 60 * 60 * 1000).toISOString();
+  state.inbox = (state.inbox || []).filter((item) => item.at >= oldest);
+  if (message.voice && !message.text) {
+    await sendAdmin('🎙 Ovozli xabarni agentlar hozirça öqiy olmaydi. Iltimos, qisqa matn qilib yozing.', { reply_to_message_id: message.message_id });
+    return null;
+  }
+  state.inbox.push({ at: new Date().toISOString(), ask_id: state.ask.message_id, text: message.text });
+  await sendAdmin('✍️ Saqlandi. Agentlar keyingi reels ssenariylari va postlarda işlatadi.', { reply_to_message_id: message.message_id });
+  return '#inbox';
+}
+
 /** Tomorrow's posts to the admin. `only` (e.g. "19:30") resends just that slot. */
 async function preview(state, only) {
   // REVIEW_DATE (YYYY-MM-DD) catches up a missed evening preview, e.g. today's posts after midnight
@@ -720,6 +854,9 @@ async function previewAgentPosts(state, date, only) {
   const bad = loadQueue().filter((p) => p.date === date && !validPost(p));
   if (bad.length) await sendAdmin(`⚠️ Agentlarning ${bad.length} ta posti noto‘g‘ri yozilgan, ko‘rsatilmadi: ${bad.map((p) => p.id || '?').join(', ')}`);
   for (const draft of drafts) {
+    // a camera reel from the weekly pack is already with the admin (maybe with his video): keep it
+    const sent = state.drafts[`${date} ${draft.slot}`];
+    if (!pick && draft.meta.camera && sent?.meta?.camera && (sent.meta.rev || 1) === draft.meta.rev) continue;
     try {
       await submitDraft(state, { date, ...draft });
     } catch (error) {
@@ -750,7 +887,10 @@ async function main() {
   const state = await openReview();
   if (mode === 'preview') await preview(state, process.argv[3] || process.env.REVIEW_SLOT || '');
   else if (mode === 'remind') await remind(state);
-  else if (mode !== 'sync' && mode !== 'listen') throw new Error('Usage: node src/review.js preview|remind|sync|listen');
+  else if (mode === 'pack') await sendCameraPack(state);
+  else if (mode === 'packremind') await remindCameraPack(state);
+  else if (mode === 'ask') await askWeekly(state);
+  else if (mode !== 'sync' && mode !== 'listen') throw new Error('Usage: node src/review.js preview|remind|pack|packremind|ask|sync|listen');
   // After sending, stay online so a tap gets an answer right away
   if (mode !== 'sync' && process.env.REVIEW_LISTEN !== '0') await listen(state);
 }

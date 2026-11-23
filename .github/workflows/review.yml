@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: 'preview (21:00), remind (09:00) or listen'
+        description: 'preview (21:00), remind (09:00), listen, pack (Friday camera pack), packremind (Saturday), ask (Sunday weekly questions)'
         required: true
         default: 'preview'
         type: choice
@@ -20,6 +20,9 @@ on:
           - preview
           - remind
           - listen
+          - pack
+          - packremind
+          - ask
       slot:
         description: 'preview only: resend just this slot (12:00, 17:00, 18:00, 19:30, "agent" = all agent posts, or one agent slot like "18:30 ig1"); empty = all'
         required: false
