@@ -678,11 +678,13 @@ async function remind(state) {
 
 /*
  * Weekly camera pack (2026-11-23): the teacher films all of next week's camera
- * reels in one sitting. On Friday the agents queue them (content/agent-queue.json,
+ * reels in one sitting on Monday or Tuesday (he is busy Friday–Saturday). On
+ * Sunday evening the agents queue them (content/agent-queue.json,
  * "camera": true) and `pack` sends every one that is not with him yet, each as
  * the usual preview with its "Kamera matni" message. He answers each with a
  * video; the 21:00 preview does not send them again. `packremind` (Saturday)
- * lists the ones still without a video.
+ * (Tuesday) lists the ones still without a video. The pack run also sends the
+ * weekly questions (askWeekly).
  */
 const PACK_DAYS = 10;
 
@@ -712,17 +714,18 @@ async function sendCameraPack(state) {
   }
   if (!items.length) {
     console.log('🎥 Camera pack: nothing new to send.');
+    await askWeekly(state);
     return;
   }
   await sendAdmin([
     `🎥 <b>Kamera paketi: ${items.length} ta video</b>`,
     '',
-    'Keyingi haftaning hamma reelsi şu yerda. Bir ötirişda yozib oling (15–30 daqiqa):',
+    'Keyingi haftaning hamma reelsi şu yerda. Dushanba yoki seşanba bir ötirişda yozib oling (15–30 daqiqa):',
     '1. Har bir "Kamera matni" xabarini öqing, telefonni tik uşlab yozing.',
     '2. Videoni <b>şu xabarga javob (reply) qilib</b> yuboring. Bot montaj qilib körsatadi.',
     '3. Yoqsa ✅ ni bosing: reels öz kunida 09:00 da çiqadi.',
     '',
-    'Matn yoqmasa ✏️ ni bosing, agentlar özgartiradi. Ertaga eslataman.',
+    'Matn yoqmasa ✏️ ni bosing, agentlar özgartiradi. Seşanba kuni eslataman.',
   ].join('\n'));
   for (const { date, draft } of items) {
     try {
@@ -733,6 +736,7 @@ async function sendCameraPack(state) {
     }
   }
   console.log(`🎥 Camera pack: ${items.length} reel(s) sent.`);
+  await askWeekly(state);
 }
 
 async function remindCameraPack(state) {
@@ -761,7 +765,7 @@ async function remindCameraPack(state) {
 
 /*
  * Weekly questions (2026-11-23): real stories make the posts sound like the
- * teacher, so on Sunday evening the bot asks him a few short questions. His text
+ * teacher, so on Sunday evening (after the camera pack) the bot asks him a few short questions. His text
  * answers (a reply to that message, or any plain text in the next 2 days) are
  * kept in state.inbox; the Strateg agent copies them into smm-agents
  * brand/ustoz-hikoyalari.md and plans posts on them. Nothing is invented.

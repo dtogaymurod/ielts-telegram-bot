@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: 'preview (21:00), remind (09:00), listen, pack (Friday camera pack), packremind (Saturday), ask (Sunday weekly questions)'
+        description: 'preview (21:00), remind (09:00), listen, pack (Sunday camera pack + weekly questions), packremind (Tuesday), ask (questions only)'
         required: true
         default: 'preview'
         type: choice
