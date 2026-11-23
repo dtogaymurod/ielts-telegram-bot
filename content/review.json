@@ -1,5 +1,5 @@
 {
-  "last_update_id": 111953063,
+  "last_update_id": 111953065,
   "drafts": {
     "2026-11-09 12:00": {
       "date": "2026-11-09",
@@ -1110,9 +1110,11 @@
           "AgACAgIAAxkDAAIBemsEYw_cIVI8BmQm6VxsmffQeqHrAAKmI2sbv9UhSOwAATSW-afErQEAAwIAA3cAAz0E"
         ]
       },
-      "status": "pending",
+      "status": "edit_requested",
       "created_at": "2026-11-23T16:00:15.394Z",
-      "buttons_message_id": 379
+      "buttons_message_id": 379,
+      "edit_request": "Mana shunaqa rasmlarni heç kim körmayapti.",
+      "decided_at": "2026-11-23T16:27:27.559Z"
     },
     "2026-11-24 14:30 2026-11-24-tgml-1": {
       "date": "2026-11-24",
