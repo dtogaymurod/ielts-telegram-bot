@@ -1162,24 +1162,24 @@
     "2026-11-26 09:00 2026-11-25-ig-reel-1": {
       "date": "2026-11-26",
       "slot": "09:00 2026-11-25-ig-reel-1",
-      "label": "Payshanba, 26.11 · 09:00 2026-11-25-ig-reel-1 · 📸 Agent · Instagram @dilshod.ustoz · reels",
+      "label": "Payshanba, 26.11 · 09:00 2026-11-25-ig-reel-1 · 📸 Agent · Instagram @dilshod.ustoz · reels · 2-variant",
       "meta": {
         "agent_id": "2026-11-25-ig-reel-1",
         "channel": "ig_ustoz",
         "format": "reels",
-        "rev": 1,
+        "rev": 2,
         "images": [],
-        "video": "",
+        "video": "content/agent-media/2026-11-26-2026-11-25-ig-reel-1.mp4",
         "script": "Half an answer, half a band.\nLook at this Task 2 question: \"Discuss both views and give your own opinion.\"\nThat is three jobs, not one.\nView one. View two. Your opinion.\nMany students write a great essay about one view and forget the rest.\nIf you skip one part, you can't get a 6 for Task Response.\nEven with perfect grammar.\nSo before you write, underline every instruction in the question.\nAfter each paragraph, ask yourself: which part does this answer?\nSave this and check your next essay.",
-        "camera": true,
-        "hook": "Half an answer, half a band.",
         "segments": [],
         "caption": "Half an answer, half a band.\n\n\"Discuss both views and give your own opinion\" is three tasks in one question: view one, view two and your opinion.\n\nIf your essay skips one of them, Task Response can't reach a 6, even if your grammar is excellent.\n\nBefore you write, underline every instruction. After each paragraph, ask yourself: which part of the question does this answer?\n\nSave this and use it on your next Task 2.\n\nMultilevel'ga tayyorlanyapsizmi? Telegram: @dilshod_multilevel\n\n#IELTSWriting #IELTSTask2 #IELTSpreparation #CDIELTS",
         "voice_prompt_id": 406
       },
-      "status": "pending",
+      "status": "approved",
       "created_at": "2026-11-24T15:59:32.972Z",
-      "buttons_message_id": 407
+      "buttons_message_id": 407,
+      "decided_at": "2026-11-24T17:33:24.449Z",
+      "approved_in": "thread"
     }
   },
   "imported": [
