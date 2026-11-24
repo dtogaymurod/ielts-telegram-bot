@@ -1089,10 +1089,11 @@
         "caption": "<b>Saqlab qöying: Multilevel Writing xati uçun tayyor boşlaniş va yakun</b>\n\n<b>Norasmiy xat (döstga):</b>\nBoşlaniş: <i>Hi Aziz, thanks for your message. It was great to hear from you.</i>\nYakun: <i>Write back soon. Best wishes,</i> + ismingiz\n\n<b>Rasmiy xat (rahbarga, kompaniyaga):</b>\nBoşlaniş: <i>Dear Sir or Madam, I am writing to complain about / ask about...</i>\nYakun: <i>I look forward to hearing from you. Yours faithfully,</i> + ismingiz\n\nMaslahat: kişini ismi bilan atasangiz (<i>Dear Mr Karimov</i>), yakun <i>Yours sincerely</i> böladi.\n\nSaqlab qöying va döstingizga yuboring 📌",
         "photos": []
       },
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-11-23T16:00:16.136Z",
       "buttons_message_id": 382,
-      "decided_at": "2026-11-23T16:28:06.922Z"
+      "decided_at": "2026-11-23T16:28:06.922Z",
+      "published_at": "2026-11-24T09:30:20.234Z"
     },
     "2026-11-24 15:00 2026-11-24-tg-1": {
       "date": "2026-11-24",
