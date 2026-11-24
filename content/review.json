@@ -1108,10 +1108,11 @@
         "caption": "<b>Three 7s and one 5. What is your overall band?</b>\n\nYour overall band is the average of your four sections, rounded to the nearest half band.\n\nListening 7.0\nReading 7.0\nSpeaking 7.0\nWriting 5.0\n\n(7 + 7 + 7 + 5) ÷ 4 = <b>6.5</b>\n\nWith Writing at 7.0, you would get 7.0. One weak section cost you half a band.\n\nRaise Writing to 6.0, and the average is 6.75, which rounds up to <b>7.0</b>. Find your weakest section and fix it first.\n\nWhich section would you raise first? Tell me in the comments 👇\n\nPreparing for Multilevel? Join <a href=\"https://t.me/dilshod_multilevel\">@dilshod_multilevel</a>",
         "photos": []
       },
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-11-23T16:00:16.734Z",
       "buttons_message_id": 385,
-      "decided_at": "2026-11-23T16:28:35.831Z"
+      "decided_at": "2026-11-23T16:28:35.831Z",
+      "published_at": "2026-11-24T10:00:36.185Z"
     }
   },
   "imported": [
