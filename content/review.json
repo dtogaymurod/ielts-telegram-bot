@@ -1,5 +1,5 @@
 {
-  "last_update_id": 111953067,
+  "last_update_id": 111953069,
   "drafts": {
     "2026-11-10 12:00": {
       "date": "2026-11-10",
@@ -1067,12 +1067,14 @@
           "AgACAgIAAxkDAAIBhmsFM7YFS_w6IszMGf0L4IkUHBmGAALJGWsbv9UpSOCYUA9BiIDfAQADAgADdwADPQQ"
         ]
       },
-      "status": "pending",
+      "status": "edit_requested",
       "created_at": "2026-11-24T06:50:30.845Z",
       "extra_button_ids": [
         379
       ],
-      "buttons_message_id": 391
+      "buttons_message_id": 391,
+      "edit_request": "Bunga öxşagan postlarni çiqarişimiz qançalik foydali",
+      "decided_at": "2026-11-24T07:51:15.664Z"
     },
     "2026-11-24 14:30 2026-11-24-tgml-1": {
       "date": "2026-11-24",
