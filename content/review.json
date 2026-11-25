@@ -1155,6 +1155,93 @@
       "decided_at": "2026-11-24T17:33:24.449Z",
       "approved_in": "thread",
       "published_at": "2026-11-25T13:00:17.129Z"
+    },
+    "2026-11-26 12:00": {
+      "date": "2026-11-26",
+      "slot": "12:00",
+      "label": "Payshanba, 26.11 · 12:00 · Make, do yoki take? #2",
+      "meta": {
+        "kind": "collocation",
+        "index": 1
+      },
+      "status": "pending",
+      "created_at": "2026-11-25T15:59:42.244Z",
+      "buttons_message_id": 411
+    },
+    "2026-11-26 19:30": {
+      "date": "2026-11-26",
+      "slot": "19:30",
+      "label": "Payshanba, 26.11 · 19:30 · Yolg‘iz bo‘ri #23",
+      "meta": {
+        "type": "lonewolf",
+        "index": 23
+      },
+      "status": "pending",
+      "created_at": "2026-11-25T15:59:44.104Z",
+      "buttons_message_id": 414
+    },
+    "2026-11-26 17:00": {
+      "date": "2026-11-26",
+      "slot": "17:00",
+      "label": "Payshanba, 26.11 · 17:00 · 🎥 Dumaloq video (navbatda 34 ta)",
+      "meta": {
+        "video_id": "d-1ZHsG2QEt5Wfq7VjP9z6p-CXUxFWNhmRx"
+      },
+      "status": "pending",
+      "created_at": "2026-11-25T15:59:44.688Z",
+      "buttons_message_id": 417
+    },
+    "2026-11-26 18:00": {
+      "date": "2026-11-26",
+      "slot": "18:00",
+      "label": "Payshanba, 26.11 · 18:00 · 🟢 Multilevel kanal · Tayyorlaniş uçun 1 daqiqa (bazada 401 ta qoldi)",
+      "meta": {
+        "multilevel_index": 13,
+        "post_id": "ml_014",
+        "photo": "AgACAgIAAxkDAAIBo2sHBfGQR-1fj6EtzICXtpkM1jdjAAKeOGsb4x44SOUx1_hmcZRXAQADAgADdwADPQQ",
+        "caption": "<b>Tayyorlaniş uçun 1 daqiqa</b>\n\nBir daqiqa kam tuyuladi, lekin töğri işlatsangiz yetarli ⏱\n\nUyda taymer bilan sinab köring.\n\n1. Har bir savolga <b>2–3 söz</b> yozing, töliq gap emas\n2. Har savolga bitta <b>misol</b> yoki <b>voqea</b> öylang\n3. Boşlaş uçun bitta gap tayyorlang: <b>I'd like to talk about</b> ...\n❌ Matnni töliq yozib, keyin öqib bermang\n\nDöstingizga yuboring, u ham Multilevel topşiryaptimi? 👀"
+      },
+      "status": "pending",
+      "created_at": "2026-11-25T15:59:45.999Z",
+      "buttons_message_id": 420
+    },
+    "2026-11-26 14:30 2026-11-26-tgml-2": {
+      "date": "2026-11-26",
+      "slot": "14:30 2026-11-26-tgml-2",
+      "label": "Payshanba, 26.11 · 14:30 2026-11-26-tgml-2 · 🤖 Agent · @dilshod_multilevel · post",
+      "meta": {
+        "agent_id": "2026-11-26-tgml-2",
+        "channel": "tg_multilevel",
+        "format": "post",
+        "rev": 1,
+        "images": [],
+        "caption": "<b>Rasmiy xatda \"Hi\" yozsangiz, ball ketadi</b>\n\nMultilevel Writing'da rasmiy xat (rahbarga, kompaniyaga) rasmiy ohangda yoziladi. Döstga yozgandek iboralar ohangni buzadi va ball yöqotasiz.\n\n❌ <i>Hi! Thanks a lot for the job ad. I'm gonna apply.</i>\n✅ <i>Dear Sir or Madam, I am writing to apply for the position advertised on your website.</i>\n\n❌ <i>Can you send me the info?</i>\n✅ <i>I would be grateful if you could send me further information.</i>\n\nQoida: rasmiy xatda <i>Hi, Thanks a lot, gonna</i> va qisqartmalar (<i>I'm, can't</i>) işlatilmaydi.\n\nMultilevel formatida maşq qiling, setlar botda:\n👉 <a href=\"https://t.me/tddcefrbot\">@tddcefrbot</a>",
+        "photos": []
+      },
+      "status": "pending",
+      "created_at": "2026-11-25T15:59:46.562Z",
+      "buttons_message_id": 423
+    },
+    "2026-11-26 18:30 2026-11-26-story-1": {
+      "date": "2026-11-26",
+      "slot": "18:30 2026-11-26-story-1",
+      "label": "Payshanba, 26.11 · 18:30 2026-11-26-story-1 · 📱 Agent · Instagram story (tayyor fayl sizga keladi) · story",
+      "meta": {
+        "agent_id": "2026-11-26-story-1",
+        "channel": "ig_story",
+        "format": "story",
+        "rev": 1,
+        "images": [
+          "content/agent-media/2026-11-26-2026-11-26-story-1.jpg"
+        ],
+        "caption": "Havola stikeri qöşing: t.me/tddmockbot?start=ig_story, stiker matni \"Joy band qiling\". Joy sonini yozmang.",
+        "photos": [
+          "AgACAgIAAxkDAAIBqWsHBfNtLqDA1UfXajRyPsFnLt6qAAKfOGsb4x44SDEOFI1OP1WzAQADAgADdwADPQQ"
+        ]
+      },
+      "status": "pending",
+      "created_at": "2026-11-25T15:59:47.711Z",
+      "buttons_message_id": 426
     }
   },
   "imported": [
