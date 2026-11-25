@@ -1,5 +1,5 @@
 {
-  "last_update_id": 111953075,
+  "last_update_id": 111953076,
   "drafts": {
     "2026-11-11 12:00": {
       "date": "2026-11-11",
@@ -1204,9 +1204,10 @@
         "photo": "AgACAgIAAxkDAAIBo2sHBfGQR-1fj6EtzICXtpkM1jdjAAKeOGsb4x44SOUx1_hmcZRXAQADAgADdwADPQQ",
         "caption": "<b>Tayyorlaniş uçun 1 daqiqa</b>\n\nBir daqiqa kam tuyuladi, lekin töğri işlatsangiz yetarli ⏱\n\nUyda taymer bilan sinab köring.\n\n1. Har bir savolga <b>2–3 söz</b> yozing, töliq gap emas\n2. Har savolga bitta <b>misol</b> yoki <b>voqea</b> öylang\n3. Boşlaş uçun bitta gap tayyorlang: <b>I'd like to talk about</b> ...\n❌ Matnni töliq yozib, keyin öqib bermang\n\nDöstingizga yuboring, u ham Multilevel topşiryaptimi? 👀"
       },
-      "status": "pending",
+      "status": "approved",
       "created_at": "2026-11-25T15:59:45.999Z",
-      "buttons_message_id": 420
+      "buttons_message_id": 420,
+      "decided_at": "2026-11-25T16:09:37.825Z"
     },
     "2026-11-26 14:30 2026-11-26-tgml-2": {
       "date": "2026-11-26",
