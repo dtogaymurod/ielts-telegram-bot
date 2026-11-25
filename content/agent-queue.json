@@ -2,57 +2,6 @@
   "_note": "Posts written by the SMM agents (repo dilshodustoz/smm-agents), already checked by the Muharrir agent. Shown at the 21:00 review with ✅ / ❌ / ✏️ (src/agent-posts.js). channel: tg_english | tg_multilevel | ig_ustoz. Telegram posts are published by the listener at their time; approved ig_ustoz posts are handed by the listener to the mock site's Instagram queue (pictures: JPEG files in content/agent-media/).",
   "posts": [
     {
-      "id": "2026-11-17-tgml-1",
-      "date": "2026-11-17",
-      "time": "14:30",
-      "channel": "tg_multilevel",
-      "format": "post",
-      "caption": "<b>Multilevel Writing: ball yöqotadigan 3 ta oddiy xato</b>\n\n1. <b>Run-on sentence.</b> Ikki gapni faqat vergul bilan ulamang.\n❌ <i>I love my city, it is very green.</i>\n✅ <i>I love my city because it is very green.</i>\n\n2. <b>Savolga javob bermaslik.</b> Topşiriq \"why\" deb sörasa, sababni yozing. Umumiy gap ball bermaydi.\n\n3. <b>Bir sözni takrorlaş.</b> Har gapda <i>good</i> örniga: <i>useful, enjoyable, convenient</i>.\n\nWriting'ingizni şanba kuni sinab köring: bepul Multilevel mock, 09:00–18:00.\n👉 <a href=\"https://t.me/tddcefrbot\">@tddcefrbot</a>",
-      "images": [],
-      "rev": 1
-    },
-    {
-      "id": "2026-11-17-ig-1",
-      "date": "2026-11-17",
-      "time": "19:30",
-      "channel": "ig_ustoz",
-      "format": "post",
-      "caption": "See this screen before you pay for the real exam.\n\nThe real IELTS exam costs about 3 million soums. If you see the CD format for the first time on exam day, everything is new at once: the timer, the audio that plays only once, the answer boxes you type into. That stress costs marks.\n\nA mock in the real CD format lets you meet all of this at home first. On exam day, the screen feels familiar, and you can focus on the questions.\n\nMock Set atigi 29 000 söm: @tddmockbot (link in bio) orqali hoziroq boşlang.\n\n#IELTS #CDIELTS #IELTSmock #IELTSUzbekistan",
-      "images": [
-        "content/agent-media/2026-11-17-2026-11-17-ig-1.jpg"
-      ],
-      "rev": 1
-    },
-    {
-      "id": "2026-11-18-ig-reel-1",
-      "date": "2026-11-18",
-      "time": "09:00",
-      "channel": "ig_ustoz",
-      "format": "reels",
-      "caption": "Three traps on the CD IELTS Listening screen 🎧\n\n1. The audio plays once. There is no pause and no replay, so your focus has to stay on the recording.\n2. You type your answers while you listen. A spelling mistake makes the answer wrong, so practise typing words correctly under pressure.\n3. The timer keeps running, even between parts. Use every pause to read the next questions.\n\nThe real exam costs about 3 million soums. Don't see this screen for the first time on exam day.\n\nHaqiqiy CD formatdagi Mock Set atigi 29 000 söm: @tddmockbot (link in bio) orqali hoziroq boşlang.\n\n#IELTS #CDIELTS #IELTSListening #IELTSUzbekistan",
-      "images": [],
-      "video": "content/agent-media/2026-11-18-2026-11-18-ig-reel-1.mp4",
-      "script": "Three traps on the CD Listening screen.\nOne. The audio plays once. No pause, no replay.\nTwo. You type while you listen. One typo is a wrong answer.\nThree. The timer keeps running, even between parts.\nSee this screen before exam day.",
-      "segments": [
-        2418,
-        2914,
-        3658,
-        3162,
-        2200
-      ],
-      "rev": 1
-    },
-    {
-      "id": "2026-11-18-tg-2",
-      "date": "2026-11-18",
-      "time": "20:15",
-      "channel": "tg_english",
-      "format": "post",
-      "caption": "<b>Which section is pulling your band down?</b>\n\nYour overall band is the average of your four section scores. One weak section can hold the whole score back, even if the other three are strong.\n\nBut you can't fix a weak section you haven't found. \"I think my Writing is fine\" is a guess, not a result.\n\nA full mock (<a href=\"https://t.me/tddmockbot?start=tg_post\">in the bot</a>) gives you a separate score for Listening, Reading, Writing and Speaking. Then you know exactly where to spend your study time.\n\nWhich section is your weakest? Tell me in the comments 👇",
-      "images": [],
-      "rev": 1
-    },
-    {
       "id": "2026-11-19-story-1",
       "date": "2026-11-19",
       "time": "18:30",
@@ -163,6 +112,28 @@
       "rev": 2,
       "video": "content/agent-media/2026-11-26-2026-11-25-ig-reel-1.mp4",
       "approved_in": "thread"
+    },
+    {
+      "id": "2026-11-26-tgml-2",
+      "date": "2026-11-26",
+      "time": "14:30",
+      "channel": "tg_multilevel",
+      "format": "post",
+      "caption": "<b>Rasmiy xatda \"Hi\" yozsangiz, ball ketadi</b>\n\nMultilevel Writing'da rasmiy xat (rahbarga, kompaniyaga) rasmiy ohangda yoziladi. Döstga yozgandek iboralar ohangni buzadi va ball yöqotasiz.\n\n❌ <i>Hi! Thanks a lot for the job ad. I'm gonna apply.</i>\n✅ <i>Dear Sir or Madam, I am writing to apply for the position advertised on your website.</i>\n\n❌ <i>Can you send me the info?</i>\n✅ <i>I would be grateful if you could send me further information.</i>\n\nQoida: rasmiy xatda <i>Hi, Thanks a lot, gonna</i> va qisqartmalar (<i>I'm, can't</i>) işlatilmaydi.\n\nMultilevel formatida maşq qiling, setlar botda:\n👉 <a href=\"https://t.me/tddcefrbot\">@tddcefrbot</a>",
+      "images": [],
+      "rev": 1
+    },
+    {
+      "id": "2026-11-26-story-1",
+      "date": "2026-11-26",
+      "time": "18:30",
+      "channel": "ig_story",
+      "format": "story",
+      "caption": "Havola stikeri qöşing: t.me/tddmockbot?start=ig_story, stiker matni \"Joy band qiling\". Joy sonini yozmang.",
+      "images": [
+        "content/agent-media/2026-11-26-2026-11-26-story-1.jpg"
+      ],
+      "rev": 1
     }
   ]
 }
