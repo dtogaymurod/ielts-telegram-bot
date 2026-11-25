@@ -1,5 +1,5 @@
 {
-  "last_update_id": 111953077,
+  "last_update_id": 111953078,
   "drafts": {
     "2026-11-11 12:00": {
       "date": "2026-11-11",
@@ -1244,9 +1244,10 @@
           "AgACAgIAAxkDAAIBqWsHBfNtLqDA1UfXajRyPsFnLt6qAAKfOGsb4x44SDEOFI1OP1WzAQADAgADdwADPQQ"
         ]
       },
-      "status": "pending",
+      "status": "rejected",
       "created_at": "2026-11-25T15:59:47.711Z",
-      "buttons_message_id": 426
+      "buttons_message_id": 426,
+      "decided_at": "2026-11-25T16:09:59.400Z"
     }
   },
   "imported": [
