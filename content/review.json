@@ -1,5 +1,5 @@
 {
-  "last_update_id": 111953073,
+  "last_update_id": 111953074,
   "drafts": {
     "2026-11-11 12:00": {
       "date": "2026-11-11",
@@ -1177,9 +1177,10 @@
         "type": "lonewolf",
         "index": 23
       },
-      "status": "pending",
+      "status": "approved",
       "created_at": "2026-11-25T15:59:44.104Z",
-      "buttons_message_id": 414
+      "buttons_message_id": 414,
+      "decided_at": "2026-11-25T16:09:11.626Z"
     },
     "2026-11-26 17:00": {
       "date": "2026-11-26",
