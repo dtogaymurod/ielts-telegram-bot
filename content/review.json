@@ -1,5 +1,5 @@
 {
-  "last_update_id": 111953080,
+  "last_update_id": 111953081,
   "drafts": {
     "2026-11-12 12:00": {
       "date": "2026-11-12",
@@ -1262,9 +1262,10 @@
         "photo": "AgACAgIAAxkDAAIBs2sIV3yo_zOJwh65_Bw2ydpeWeYsAAJOIGsbQdpBSFeaBU7mENQIAQADAgADdwADPQQ",
         "caption": "<b>Soliştiriş: -er yoki more?</b>\n\nRasmlarni soliştirişda soliştirma darajasiz gapirib bölmaydi 🖼\n\nIzohda ikki şaharni soliştirib bitta gap yozing 👇\n\n✅ Qisqa söz: cheap → <b>cheaper</b>, big → <b>bigger</b>\n✅ Uzun söz: expensive → <b>more expensive</b>\n⚠️ good → <b>better</b>, bad → <b>worse</b>\n❌ <b>more better</b>, <b>more cheaper</b> deb aytmang\n\nIzohlarda öz misolingizni yozing, tekşirib beraman 👇"
       },
-      "status": "pending",
+      "status": "approved",
       "created_at": "2026-11-26T15:59:56.370Z",
-      "buttons_message_id": 436
+      "buttons_message_id": 436,
+      "decided_at": "2026-11-26T16:01:57.573Z"
     },
     "2026-11-27 09:00 2026-11-27-ig-2": {
       "date": "2026-11-27",
