@@ -1193,10 +1193,11 @@
         "caption": "<b>Rasmiy xatda \"Hi\" yozsangiz, ball ketadi</b>\n\nMultilevel Writing'da rasmiy xat (rahbarga, kompaniyaga) rasmiy ohangda yoziladi. Döstga yozgandek iboralar ohangni buzadi va ball yöqotasiz.\n\n❌ <i>Hi! Thanks a lot for the job ad. I'm gonna apply.</i>\n✅ <i>Dear Sir or Madam, I am writing to apply for the position advertised on your website.</i>\n\n❌ <i>Can you send me the info?</i>\n✅ <i>I would be grateful if you could send me further information.</i>\n\nQoida: rasmiy xatda <i>Hi, Thanks a lot, gonna</i> va qisqartmalar (<i>I'm, can't</i>) işlatilmaydi.\n\nMultilevel formatida maşq qiling, setlar botda:\n👉 <a href=\"https://t.me/tddcefrbot\">@tddcefrbot</a>",
         "photos": []
       },
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-11-25T15:59:46.562Z",
       "buttons_message_id": 423,
-      "decided_at": "2026-11-25T16:09:56.792Z"
+      "decided_at": "2026-11-25T16:09:56.792Z",
+      "published_at": "2026-11-26T09:30:01.079Z"
     },
     "2026-11-26 18:30 2026-11-26-story-1": {
       "date": "2026-11-26",
