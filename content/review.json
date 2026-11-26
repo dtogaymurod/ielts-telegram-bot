@@ -1176,10 +1176,11 @@
         "photo": "AgACAgIAAxkDAAIBo2sHBfGQR-1fj6EtzICXtpkM1jdjAAKeOGsb4x44SOUx1_hmcZRXAQADAgADdwADPQQ",
         "caption": "<b>Tayyorlaniş uçun 1 daqiqa</b>\n\nBir daqiqa kam tuyuladi, lekin töğri işlatsangiz yetarli ⏱\n\nUyda taymer bilan sinab köring.\n\n1. Har bir savolga <b>2–3 söz</b> yozing, töliq gap emas\n2. Har savolga bitta <b>misol</b> yoki <b>voqea</b> öylang\n3. Boşlaş uçun bitta gap tayyorlang: <b>I'd like to talk about</b> ...\n❌ Matnni töliq yozib, keyin öqib bermang\n\nDöstingizga yuboring, u ham Multilevel topşiryaptimi? 👀"
       },
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-11-25T15:59:45.999Z",
       "buttons_message_id": 420,
-      "decided_at": "2026-11-25T16:09:37.825Z"
+      "decided_at": "2026-11-25T16:09:37.825Z",
+      "published_at": "2026-11-26T13:00:47.184Z"
     },
     "2026-11-26 14:30 2026-11-26-tgml-2": {
       "date": "2026-11-26",
@@ -1501,6 +1502,6 @@
     }
   ],
   "multilevel": {
-    "next": 13
+    "next": 14
   }
 }
