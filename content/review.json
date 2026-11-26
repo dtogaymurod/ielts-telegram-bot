@@ -1160,10 +1160,11 @@
       "meta": {
         "video_id": "d-1ZHsG2QEt5Wfq7VjP9z6p-CXUxFWNhmRx"
       },
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-11-25T15:59:44.688Z",
       "buttons_message_id": 417,
-      "decided_at": "2026-11-25T16:09:23.802Z"
+      "decided_at": "2026-11-25T16:09:23.802Z",
+      "published_at": "2026-11-26T12:00:20.173Z"
     },
     "2026-11-26 18:00": {
       "date": "2026-11-26",
@@ -1267,13 +1268,6 @@
     "1Pl77KvQg9L2-brFOsyrEG7UlBQ1VaJ8-"
   ],
   "videos": [
-    {
-      "id": "d-1ZHsG2QEt5Wfq7VjP9z6p-CXUxFWNhmRx",
-      "name": "introduction_inglizcha_oylang",
-      "file_id": "DQACAgIAAxkDAANiavIP6RDi_VYbziLn5UW_Xc_Rm2IAAhC5AAJwA5FLxIupWK3I5Eo9BA",
-      "duration": 45,
-      "added_at": "2026-11-09T18:24:42.316Z"
-    },
     {
       "id": "d-1lvffnpnl0vMACUf7sPwLKhQSBGsYj2Mb",
       "name": "double_question_1_remix",
