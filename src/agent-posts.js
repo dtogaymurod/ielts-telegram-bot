@@ -167,6 +167,8 @@ async function render(chatId, post) {
 export function prepareAgentDrafts(date, adminId, only = '') {
   return loadQueue()
     .filter((post) => post.date === date && validPost(post))
+    // approved in the project thread: sent by post-now.yml, not previewed again (no double post)
+    .filter((post) => !post.approved_in)
     .filter((post) => !only || only === agentSlot(post))
     .sort((a, b) => a.time.localeCompare(b.time))
     .map((post) => {

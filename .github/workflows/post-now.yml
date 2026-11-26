@@ -30,6 +30,7 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          SMM_KEY: ${{ secrets.SMM_KEY }}
           POST_ID: ${{ github.event.inputs.id }}
           MESSAGE_ID: ${{ github.event.inputs.message_id }}
         run: node scripts/post-now.js "$POST_ID" $MESSAGE_ID

@@ -3,9 +3,10 @@
  *   node scripts/post-now.js <post id>               send it
  *   node scripts/post-now.js <post id> <message id>  swap the picture of the
  *                                                     channel message already sent
+ * Instagram posts (ig_ustoz) go to the mock site's Instagram queue.
  * Only posts the teacher approved in the project thread ("approved_in") go out.
  */
-import { loadQueue, postNow, replacePhoto } from '../src/agent-posts.js';
+import { loadQueue, postNow, replacePhoto, publishInstagramDraft } from '../src/agent-posts.js';
 
 const [id, messageId] = process.argv.slice(2);
 const post = loadQueue().find((p) => p.id === id);
@@ -16,6 +17,11 @@ if (!post) {
 if (messageId) {
   await replacePhoto(post, messageId);
   console.log(`✅ Picture of message ${messageId} replaced with ${post.images[0]}`);
+} else if (post.channel === 'ig_ustoz') {
+  // Instagram: straight to the mock site's Instagram queue (Make posts it), same as an approved 21:00 draft
+  if (!post.approved_in) throw new Error(`Post ${id} has no "approved_in": approve it first`);
+  await publishInstagramDraft({ meta: { ...post, agent_id: post.id } }, post.date);
+  console.log(`✅ Queued ${id} for Instagram`);
 } else {
   await postNow(post);
   console.log(`✅ Posted ${id} to ${post.channel}`);
