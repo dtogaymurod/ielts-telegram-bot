@@ -234,6 +234,18 @@ export async function replacePhoto(post, messageId) {
   });
 }
 
+/** Replace the text and button of a text-only post already in the channel (message id `messageId`). */
+export async function editText(post, messageId) {
+  const channel = CHANNELS[post?.channel];
+  if (!channel?.chat || !post.caption) throw new Error(`No Telegram text post: ${post?.id}`);
+  if (!post.approved_in) throw new Error(`Post ${post.id} has no "approved_in": approve it first`);
+  const markup = linkButton(post.button);
+  await callApi('editMessageText', {
+    chat_id: channel.chat(), message_id: Number(messageId), text: post.caption, parse_mode: 'HTML', disable_web_page_preview: true,
+    ...(markup ? { reply_markup: markup } : {}),
+  });
+}
+
 /** Post an approved Telegram agent draft to its channel. */
 export async function publishAgentDraft(draft) {
   await publishAgentBody(draft);

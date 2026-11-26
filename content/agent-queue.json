@@ -155,13 +155,14 @@
       "time": "08:00",
       "channel": "tg_multilevel",
       "format": "post",
-      "caption": "🔥 <b>Bepul Multilevel mock: şu yakşanba!</b>\n\n📅 <b>Yakşanba, 29-noyabr, 06:00 dan 18:00 gaça</b> (Toşkent vaqti)\n🎧 Listening, 📖 Reading, ✍️ Writing: haqiqiy imtihon formatida, telefon yoki kompyuterdan, butunlay online.\n📊 Natijangiz şu kuni botga keladi.\n🪑 Joylar çeklangan.\n\nQanday qatnaşiladi: yakşanba 06:00 dan keyin botga kiring, röyxatdan öting va 2 soat içida boşlang.\n\n🇬🇧 Free Multilevel mock this Sunday, 29 November, 06:00–18:00. Listening, Reading and Writing in the real exam format. Your result arrives in the bot the same day. Seats are limited.\n\n👇 Botni hozir oçib qöying, yakşanba ertalab kiring.",
+      "caption": "🔥 <b>Bepul Multilevel mock: şu yakşanba!</b>\n\n📅 <b>Yakşanba, 29-noyabr, 06:00 dan 18:00 gaça</b> (Toşkent vaqti)\n🎧 Listening, 📖 Reading, ✍️ Writing: haqiqiy imtihon formatida, telefon yoki kompyuterdan, butunlay online.\n📊 Natijangiz şu kuni botga keladi.\n🪑 Joylar çeklangan.\n\nQanday qatnaşiladi: botda hozirdan joyingizni band qiling, yakşanba 06:00 dan 18:00 gaça özingizga qulay paytda boşlaysiz. Boşlaniş vaqtida bot eslatadi.\n\n🇬🇧 Free Multilevel mock this Sunday, 29 November. Book your seat now and start any time between 06:00 and 18:00. Listening, Reading and Writing in the real exam format. Your result arrives in the bot the same day. Seats are limited.\n\n👇 Joyingizni hozir band qiling.",
       "button": {
-        "text": "📝 Botni oçiş",
+        "text": "📝 Joy band qiliş",
         "url": "https://t.me/tddcefrbot?start=tg_sun29"
       },
-      "rev": 1,
-      "approved_in": "project thread, Dilshod 2026-11-26 07:29 (Tashkent)"
+      "rev": 2,
+      "approved_in": "project thread, Dilshod 2026-11-26 07:29 (Tashkent); edit to advance booking: Dilshod 2026-11-26 07:36",
+      "channel_message_id": 22
     },
     {
       "id": "1129-ig",
@@ -217,20 +218,6 @@
       },
       "rev": 1,
       "approved_in": "project thread, Dilshod 2026-11-26 07:29 (Tashkent)"
-    },
-    {
-      "id": "1129-ml-book",
-      "date": "2026-11-26",
-      "time": "08:00",
-      "channel": "tg_multilevel",
-      "format": "post",
-      "caption": "✅ <b>Yakşanba Multilevel mockiga endi oldindan yozilsa böladi!</b>\n\nJoyingizni hozir band qiling, yakşanba kuni 06:00 dan 18:00 gaça özingizga qulay paytda boşlaysiz. Boşlaniş vaqtida bot eslatadi.\n\n🪑 Joylar çeklangan.\n\n🇬🇧 You can now book your seat for Sunday's free Multilevel mock in advance. Start any time on Sunday between 06:00 and 18:00.\n\n👇 Joy band qiliş",
-      "button": {
-        "text": "📝 Joy band qiliş",
-        "url": "https://t.me/tddcefrbot?start=tg_sun29"
-      },
-      "rev": 1,
-      "approved_in": "project thread, Dilshod 2026-11-26 07:35 (Tashkent)"
     }
   ]
 }
