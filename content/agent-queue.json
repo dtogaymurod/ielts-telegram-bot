@@ -146,7 +146,8 @@
         "text": "📝 Book my seat",
         "url": "https://t.me/tddmockbot?start=tg_sun29"
       },
-      "rev": 1
+      "rev": 1,
+      "approved_in": "project thread, Dilshod 2026-11-26 07:29 (Tashkent)"
     },
     {
       "id": "1129-tg-ml",
@@ -159,7 +160,8 @@
         "text": "📝 Botni oçiş",
         "url": "https://t.me/tddcefrbot?start=tg_sun29"
       },
-      "rev": 1
+      "rev": 1,
+      "approved_in": "project thread, Dilshod 2026-11-26 07:29 (Tashkent)"
     },
     {
       "id": "1129-ig",
@@ -171,7 +173,8 @@
       "images": [
         "content/agent-media/2026-11-26-1129-ig.jpg"
       ],
-      "rev": 1
+      "rev": 1,
+      "approved_in": "project thread, Dilshod 2026-11-26 07:29 (Tashkent)"
     },
     {
       "id": "1129-ml-eve",
@@ -184,7 +187,8 @@
         "text": "📝 Botni oçiş",
         "url": "https://t.me/tddcefrbot?start=tg_sun29"
       },
-      "rev": 1
+      "rev": 1,
+      "approved_in": "project thread, Dilshod 2026-11-26 07:29 (Tashkent)"
     },
     {
       "id": "1129-ml-start",
@@ -197,7 +201,8 @@
         "text": "📝 Botni oçiş",
         "url": "https://t.me/tddcefrbot?start=tg_sun29"
       },
-      "rev": 1
+      "rev": 1,
+      "approved_in": "project thread, Dilshod 2026-11-26 07:29 (Tashkent)"
     },
     {
       "id": "1129-en-start",
@@ -210,7 +215,8 @@
         "text": "📝 Open the bot",
         "url": "https://t.me/tddmockbot?start=tg_sun29"
       },
-      "rev": 1
+      "rev": 1,
+      "approved_in": "project thread, Dilshod 2026-11-26 07:29 (Tashkent)"
     }
   ]
 }
