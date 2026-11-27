@@ -1222,10 +1222,11 @@
         "photo": "AgACAgIAAxkDAAIBs2sIV3yo_zOJwh65_Bw2ydpeWeYsAAJOIGsbQdpBSFeaBU7mENQIAQADAgADdwADPQQ",
         "caption": "<b>Soliştiriş: -er yoki more?</b>\n\nRasmlarni soliştirişda soliştirma darajasiz gapirib bölmaydi 🖼\n\nIzohda ikki şaharni soliştirib bitta gap yozing 👇\n\n✅ Qisqa söz: cheap → <b>cheaper</b>, big → <b>bigger</b>\n✅ Uzun söz: expensive → <b>more expensive</b>\n⚠️ good → <b>better</b>, bad → <b>worse</b>\n❌ <b>more better</b>, <b>more cheaper</b> deb aytmang\n\nIzohlarda öz misolingizni yozing, tekşirib beraman 👇"
       },
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-11-26T15:59:56.370Z",
       "buttons_message_id": 436,
-      "decided_at": "2026-11-26T16:01:57.573Z"
+      "decided_at": "2026-11-26T16:01:57.573Z",
+      "published_at": "2026-11-27T13:00:39.549Z"
     },
     "2026-11-27 09:00 2026-11-27-ig-2": {
       "date": "2026-11-27",
@@ -1548,6 +1549,6 @@
     }
   ],
   "multilevel": {
-    "next": 14
+    "next": 15
   }
 }
