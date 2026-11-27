@@ -1,5 +1,5 @@
 {
-  "last_update_id": 111953085,
+  "last_update_id": 111953086,
   "drafts": {
     "2026-11-13 12:00": {
       "date": "2026-11-13",
@@ -1307,9 +1307,10 @@
         "photo": "AgACAgIAAxkDAAIBw2sJqPbRnHJiTuX7JNuEuQGF_QqkAAIJJ2sbQdpRSCkoDvIRW9T0AQADAgADdwADPQQ",
         "caption": "<b>Fikr bildiriş iboralari</b>\n\n\"I think\" xato emas, lekin har gapda takrorlansa zerikarli eşitiladi 🙃\n\nSaqlab qöying va Speaking'da almaştirib işlating 📌\n\n💬 <b>In my opinion</b>, ...\n💬 <b>From my point of view</b>, ...\n💬 <b>I strongly believe that</b> ...\n💬 <b>As far as I'm concerned</b>, ...\n\nQaysi biri siz uçun yangi böldi? Izohda yozing 👇"
       },
-      "status": "pending",
+      "status": "approved",
       "created_at": "2026-11-27T15:59:50.543Z",
-      "buttons_message_id": 452
+      "buttons_message_id": 452,
+      "decided_at": "2026-11-27T16:07:09.423Z"
     },
     "2026-11-28 15:00 2026-11-28-tgml-3": {
       "date": "2026-11-28",
