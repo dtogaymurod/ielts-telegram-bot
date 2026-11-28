@@ -1,5 +1,5 @@
 {
-  "last_update_id": 111953090,
+  "last_update_id": 111953091,
   "drafts": {
     "2026-11-14 12:00": {
       "date": "2026-11-14",
@@ -1348,9 +1348,10 @@
         "photo": "AgACAgIAAxkDAAIB12sK-oVznXl14eUwBHmMesZrTrCmAAKVI2sbkDJZSMNZbCCK9_l1AQADAgADdwADPQQ",
         "caption": "<b>Esse kirişini yoziş</b>\n\nKiriş qisqa va aniq bölsa, imtihonçi darrov fikringizni tuşunadi ✍️\n\n1. Mavzuni <b>öz sözingiz bilan</b> qayta ayting\n2. Fikringizni aniq bildiring: <b>I believe that</b> ...\n❌ Topşiriqni sözma-söz köçirmang\n💡 Kirişda misol keltirmang, ularni <b>asosiy qismga</b> qoldiring\n\nSaqlab qöying, imtihondan oldin kerak böladi 📌"
       },
-      "status": "pending",
+      "status": "approved",
       "created_at": "2026-11-28T16:00:05.448Z",
-      "buttons_message_id": 472
+      "buttons_message_id": 472,
+      "decided_at": "2026-11-28T16:04:03.693Z"
     }
   },
   "imported": [
