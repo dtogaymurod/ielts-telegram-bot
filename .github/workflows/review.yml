@@ -3,7 +3,7 @@ name: IELTS Review (preview & reminder)
 on:
   # Started by the external timer (cron-job.org → workflow_dispatch), see docs/TIMER_SETUP.md.
   #   21:00 Tashkent — mode: preview (tomorrow's posts go to the admin with ✅ / ❌ buttons)
-  #   09:00 Tashkent — mode: remind  (reminder for posts still waiting)
+  #   09:00 Tashkent — mode: remind  (reminder for posts still waiting; Sunday also the camera pack, Tuesday its reminder)
   #   mode: listen — only answers button taps; started by the post workflows
   #   when they finish, and by itself when a listening run hits the 6h limit.
   # After sending, every mode stays online until shortly before the next post
@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: 'preview (21:00), remind (09:00) or listen'
+        description: 'preview (21:00), remind (09:00), listen, pack (camera pack + weekly questions; also sent by Sunday remind), packremind (also run by Tuesday remind), ask (questions only)'
         required: true
         default: 'preview'
         type: choice
@@ -20,6 +20,9 @@ on:
           - preview
           - remind
           - listen
+          - pack
+          - packremind
+          - ask
       slot:
         description: 'preview only: resend just this slot (12:00, 17:00, 18:00, 19:30, "agent" = all agent posts, or one agent slot like "18:30 ig1"); empty = all'
         required: false
